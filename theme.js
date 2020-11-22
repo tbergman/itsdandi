@@ -1,3 +1,4 @@
+import { transform } from "framer-motion";
 const theme = {
   breakpoints: ["1024px"],
   fonts: {
@@ -41,11 +42,72 @@ const theme = {
     lightViolet: "#FDF1FF",
   },
   wrapper: {
-    display: "grid",
-    gridTemplateColumns: ["repeat(6, 1fr)", "repeat(12,1fr)"],
-    gridTemplateRows: ["auto"],
-    columnGap: ["20px", "40px"],
-    mx: ["20px", "40px"],
+    // display: "grid",
+    // gridTemplateColumns: ["repeat(6, 1fr)", "repeat(12,1fr)"],
+    // gridTemplateRows: ["auto"],
+    // columnGap: ["20px", "40px"],
+    // mx: ["20px", "40px"],
+  },
+  pages: {
+    home: {
+      top: {
+        height: ["542px", "677px"],
+        mx: ["20px", "40px"],
+        bg: "transparent",
+        bigLogo: {
+          svg: {
+            position: "absolute",
+            top: ["24px", "44px"],
+            left: ["20px", "40px"],
+            height: "108px",
+            width: "367px",
+            mb: ["20px", "40px"],
+            transform: "rotate(90deg) translateX(-30%)",
+            transformOrigin: "bottom left",
+          },
+        },
+        header: {
+          display: "grid",
+          gridTemplateColumns: ["repeat(6, 1fr)", "repeat(12,1fr)"],
+          columnGap: ["20px", "40px"],
+          gridTemplateRows: "auto",
+          h1: {
+            gridArea: ["1/7/2/-1"],
+            mt: ["2.35em"],
+            ml: ["5.4vw"],
+          },
+          button: {
+            gridArea: ["2/7/3/-1"],
+            width: "160px",
+            height: "48px",
+            ml: ["5.4vw"],
+            mt: "48px",
+            bg: "yellow",
+            color: "black",
+            borderRadius: "200px",
+            display: "flex",
+            flexFlow: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            a: {
+              textDecoration: "none",
+            },
+            p: {
+              fontSize: "16px",
+            },
+          },
+        },
+        bars: {
+          position: "absolute",
+          bottom: 0,
+          left: "200px",
+          width: "95px",
+          height: "309px",
+          borderRadius: "20px 20px 0px 0px",
+          bg: "turquoise",
+        },
+      },
+    },
   },
   components: {
     navigation: {
@@ -68,6 +130,7 @@ const theme = {
       fontSize: "heading1",
       lineHeight: "heading1",
       fontWeight: "bold",
+      m: 0,
     },
     h2: {
       fontFamily: "body",
