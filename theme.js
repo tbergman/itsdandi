@@ -15,6 +15,7 @@ const theme = {
     heading4: ["18px", "18px"],
     body: ["16px", "20px"],
     small: ["13px", "13px"],
+    nav: ["14px", "14px"],
   },
   lineHeights: {
     heading1: ["43.2px", "64px"],
@@ -27,7 +28,7 @@ const theme = {
   colors: {
     black: "#1A1A1D",
     grey: "#909095",
-    white: "#EDEDF1",
+    white: "#f2f2f2",
     orange: "#FF9133",
     yellow: "#FFD93B",
     lightYellow: "#FBF792",
@@ -56,7 +57,7 @@ const theme = {
         bg: "transparent",
         bigLogo: {
           svg: {
-            position: "absolute",
+            position: "fixed",
             top: ["24px", "44px"],
             left: ["20px", "40px"],
             height: "108px",
@@ -83,7 +84,7 @@ const theme = {
             ml: ["5.4vw"],
             mt: "48px",
             bg: "yellow",
-            color: "black",
+
             borderRadius: "200px",
             display: "flex",
             flexFlow: "row",
@@ -91,6 +92,7 @@ const theme = {
             alignItems: "center",
             a: {
               textDecoration: "none",
+              color: "black",
             },
             p: {
               fontSize: "16px",
@@ -105,14 +107,33 @@ const theme = {
           height: "309px",
           borderRadius: "20px 20px 0px 0px",
           bg: "turquoise",
+          color: "black",
         },
       },
     },
   },
   components: {
     navigation: {
+      position: "fixed",
       height: "94px",
       width: "100%",
+      bg: "black",
+      display: "flex",
+      fontFamily: "body",
+
+      justifyContent: "flex-end",
+      px: ["40px"],
+      pt: ["44px"],
+      ".item": {
+        fontSize: "nav",
+        lineHeight: "small",
+        color: "white",
+        ml: ["32px"],
+        textDecoration: "none",
+      },
+      ".login": {
+        color: "yellow",
+      },
     },
     footer: {
       height: "684px",

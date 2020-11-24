@@ -5,6 +5,8 @@ import { useViewportScroll, motion, useTransform } from "framer-motion";
 const BigLogo = () => {
   const { scrollYProgress } = useViewportScroll();
 
+  const opacityAnim = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+
   return (
     <div
       sx={{
@@ -12,6 +14,9 @@ const BigLogo = () => {
       }}
     >
       <motion.svg
+        style={{
+          opacity: opacityAnim,
+        }}
         width="82"
         height="25"
         viewBox="0 0 82 25"
