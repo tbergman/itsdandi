@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import Link from "next/link";
+import { ReactSVG } from "react-svg";
 
 const Navigation = () => {
   return (
@@ -78,6 +79,7 @@ const Navigation = () => {
       <a href="www.google.com" target="_blank" className="item">
         <div className="login">
           <div>Log in</div>
+          <ReactSVG className="arrow" src="/assets/svgs/arrow.svg" />
         </div>
       </a>
     </nav>

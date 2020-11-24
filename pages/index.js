@@ -10,6 +10,7 @@ import {
   useTransform,
   useViewportScroll,
 } from "framer-motion";
+import MobileNav from "../src/components/mobilenav";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       }}
     >
       <Navigation />
+      <MobileNav />
       <Top />
       <Footer />
     </div>

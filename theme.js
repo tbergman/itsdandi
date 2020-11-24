@@ -53,6 +53,7 @@ const theme = {
     home: {
       top: {
         height: ["542px", "677px"],
+
         mx: ["20px", "40px"],
         bg: "transparent",
         bigLogo: {
@@ -60,8 +61,8 @@ const theme = {
             position: "fixed",
             top: ["24px", "44px"],
             left: ["20px", "40px"],
-            height: "108px",
-            width: "367px",
+            height: ["37px", "108px"],
+            width: ["125px", "367px"],
             mb: ["20px", "40px"],
             transform: "rotate(90deg) translateX(-30%)",
             transformOrigin: "bottom left",
@@ -72,16 +73,19 @@ const theme = {
           gridTemplateColumns: ["repeat(6, 1fr)", "repeat(12,1fr)"],
           columnGap: ["20px", "40px"],
           gridTemplateRows: "auto",
+          justifyItems: "end",
           h1: {
-            gridArea: ["1/7/2/-1"],
-            mt: ["2.35em"],
-            ml: ["5.4vw"],
+            gridArea: ["1/1/2/-1", "1/7/2/-1"],
+            width: ["6.5em", "auto"],
+            height: ["3em"],
+            mt: ["3em", "2.35em"],
+            ml: [0, "5.4vw"],
           },
           button: {
-            gridArea: ["2/7/3/-1"],
+            gridArea: ["2/1/3/-1", "2/7/3/-1"],
             width: "160px",
             height: "48px",
-            ml: ["5.4vw"],
+            ml: [0, "5.4vw"],
             mt: "48px",
             bg: "yellow",
 
@@ -118,7 +122,7 @@ const theme = {
       height: "94px",
       width: "100%",
       bg: "black",
-      display: "flex",
+      display: ["none", "flex"],
       fontFamily: "body",
 
       justifyContent: "flex-end",
@@ -133,6 +137,36 @@ const theme = {
       },
       ".login": {
         color: "yellow",
+        display: "flex",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        ".arrow": {
+          pl: "14px",
+        },
+      },
+    },
+    mobilenav: {
+      position: "fixed",
+      display: ["flex", "none"],
+      justifyContent: "flex-end",
+      height: "74px",
+      width: "100%",
+      bg: "black",
+      ".hamburger": {
+        mr: "20px",
+        mt: "33px",
+        position: "relative",
+        height: "21px",
+        width: "25px",
+        span: {
+          position: "absolute",
+          left: 0,
+          p: 0,
+          m: 0,
+          height: "3px",
+          width: "25px",
+          bg: "white",
+        },
       },
     },
     footer: {
@@ -148,8 +182,8 @@ const theme = {
     },
     h1: {
       fontFamily: "body",
-      fontSize: "heading1",
-      lineHeight: "heading1",
+      fontSize: ["36px", "60px"],
+      lineHeight: ["43.2px", "64px"],
       fontWeight: "bold",
       m: 0,
     },
