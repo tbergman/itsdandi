@@ -7,7 +7,13 @@ const Bars = () => {
       sx={{
         variant: "pages.home.top.bars",
       }}
-    ></div>
+    >
+      <div className="barWrapper">
+        <span id="bar1"></span>
+        <span id="bar2"></span>
+        <span id="bar3"></span>
+      </div>
+    </div>
   );
 };
 
