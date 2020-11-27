@@ -10,7 +10,11 @@ const LearnMore = () => {
         variant: "pages.home.learnmore",
       }}
     >
-      <div className="learnMoreGrid">
+      <div
+        sx={{
+          variant: "grid",
+        }}
+      >
         <div className="learnMoreText">
           <Styled.p>Learn more about Dandi</Styled.p>
           <svg

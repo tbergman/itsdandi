@@ -48,6 +48,13 @@ const theme = {
   },
   colWidthMob: `calc(calc(100vw - 140px)/6)`,
   colWidthDesktop: `calc(calc(100vw - 520px)/12)`,
+  grid: {
+    display: "grid",
+    gridTemplateColumns: ["repeat(6,1fr)"],
+    gridTemplateRows: "auto",
+    gridGap: ["20px", "40px"],
+    mx: ["20px", "40px"],
+  },
   wrapper: {
     // display: "grid",
     // gridTemplateColumns: ["repeat(6, 1fr)", "repeat(12,1fr)"],
@@ -169,13 +176,6 @@ const theme = {
       },
       learnmore: {
         bg: "violet",
-        ".learnMoreGrid": {
-          display: "grid",
-          gridTemplateColumns: ["repeat(6,1fr)"],
-          gridTemplateRows: "auto",
-          gridGap: ["20px", "40px"],
-          mx: ["20px", "40px"],
-        },
 
         ".learnMoreText": {
           gridArea: ["1/2/2/-1"],
@@ -208,15 +208,67 @@ const theme = {
       },
       carousel: {
         bg: "transparent",
-        height: "1000px",
+        ".carouselHeader": {
+          gridArea: ["1/1/2/-1"],
+          mt: ["80px"],
+        },
+        ".carouselSpacer": {
+          gridArea: ["2/1/3/-1"],
+          position: "relative",
+          div: {
+            position: "absolute",
+            bg: "#1F1F21",
+            left: "-20px",
+            height: "200px",
+            width: "100vw",
+          },
+        },
+        ".carouselMain": {
+          gridArea: ["3/1/4/-1"],
+          height: "500px",
+          width: "100%",
+          bg: "grey",
+        },
       },
       payequity: {
         bg: "lightGray",
-        height: "750px",
+        ".payEquityHeader": {
+          gridArea: ["1/1/2/-1"],
+          mt: ["80px"],
+          color: "black",
+        },
+        ".payEquityGraphic": {
+          position: "relative",
+          gridArea: ["2/1/3/-1"],
+          height: "600px",
+          div: {
+            position: "absolute",
+            bg: "#F2F2F2",
+            height: "100%",
+            width: "100vw",
+            left: "-20px",
+          },
+        },
       },
       partners: {
         bg: "clearWhite",
-        height: "462px",
+        ".partnersHeader": {
+          color: "black",
+          mt: "80px",
+          gridArea: ["1/1/2/-1"],
+        },
+        ".logoCarousel": {
+          gridArea: ["2/1/3/-1"],
+          height: "250px",
+          position: "relative",
+          div: {
+            position: "absolute",
+            height: "100%",
+            width: "100vw",
+            left: "-20px",
+            bg: "black",
+          },
+        },
       },
       advancedei: {
         bg: "lightTurquoise",

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Styled } from "theme-ui";
 
 const Partners = () => {
   return (
@@ -7,7 +7,20 @@ const Partners = () => {
       sx={{
         variant: "pages.home.partners",
       }}
-    ></div>
+    >
+      <div
+        sx={{
+          variant: "grid",
+        }}
+      >
+        <div className="partnersHeader">
+          <Styled.h2>Serious about change? You're in good company. </Styled.h2>
+        </div>
+        <div className="logoCarousel">
+          <div></div>
+        </div>
+      </div>
+    </div>
   );
 };
 
