@@ -218,7 +218,7 @@ const theme = {
       position: "fixed",
       zIndex: 1000,
       display: ["flex", "none"],
-      justifyContent: "flex-end",
+      justifyContent: "space-between",
       height: "74px",
       width: "100%",
       bg: "black",
@@ -236,6 +236,15 @@ const theme = {
           height: "3px",
           width: "25px",
           bg: "white",
+        },
+      },
+      ".logo": {
+        mt: "24px",
+        ml: "20px",
+        svg: {
+          path: {
+            fill: "white",
+          },
         },
       },
     },
