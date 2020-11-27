@@ -10,7 +10,7 @@ const MyApp = ({ Component, pageProps }) => {
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
-          href="/fonts/DandiGroteskDisplay.tff"
+          href="/fonts/DandiGroteskDisplay.ttf"
           rel="preload"
           as="font"
           crossOrigin=""

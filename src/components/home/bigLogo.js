@@ -5,7 +5,7 @@ import { useViewportScroll, motion, useTransform } from "framer-motion";
 const BigLogo = () => {
   const { scrollYProgress } = useViewportScroll();
 
-  const opacityAnim = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const opacityAnim = useTransform(scrollYProgress, [0, 0.05], [1, 0]);
 
   return (
     <div
