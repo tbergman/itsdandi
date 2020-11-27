@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Dandi Grotesk";
+  font-family: "Dandi Grotesk Display";
   src: url("/fonts/DandiGroteskDisplay.ttf");
   font-style: bold;
   font-weight: 500;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: "Dandi Grotesk";
+  font-family: "Dandi Grotesk Medium";
   src: url("/fonts/DandiSansMedium.ttf");
   font-style: normal;
   font-weight: 500;

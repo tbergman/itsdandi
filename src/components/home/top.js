@@ -13,6 +13,7 @@ const Home = () => {
     >
       <BigLogo />
       <Header />
+      <div className="spacer"></div>
       <Bars />
     </div>
   );

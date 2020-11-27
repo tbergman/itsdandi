@@ -3,6 +3,8 @@ const theme = {
   breakpoints: ["1024px"],
   fonts: {
     body: '"Dandi Grotesk", sans-serif',
+    display: '"Dandi Grotesk Display", sans-serif',
+    medium: '"Dandi Grotesk Medium", sans-serif',
   },
   fontWeights: {
     normal: 500,
@@ -56,7 +58,7 @@ const theme = {
   pages: {
     home: {
       top: {
-        height: ["542px", "677px"],
+        // height: ["542px", "677px"],
 
         mx: ["20px", "40px"],
         bg: "transparent",
@@ -107,10 +109,13 @@ const theme = {
         },
         bars: {
           position: "absolute",
+          display: "none",
           left: 0,
-          top: "353px",
+          // top: "16px",
+          pt: "16px",
           width: "100%",
-          height: "250px",
+          height: "191px",
+          // height: "250px",
           ".barWrapper": {
             position: "relative",
             width: "100%",
@@ -119,15 +124,15 @@ const theme = {
           "#bar1": {
             bg: "turquoise",
             width: [(t) => `calc(${t.colWidthMob} + 10px)`],
-            height: "100%",
+            height: "250px",
             borderRadius: "7px",
             ml: ["20px"],
             position: "absolute",
             backgroundRepeat: "no-repeat",
             backgroundImage: (t) =>
               `linear-gradient(to right, ${t.colors.blue},${t.colors.blue})`,
-            backgroundPosition: "0 179px",
-            backgroundSize: "100% 71px",
+            backgroundPosition: "0 175px",
+            backgroundSize: "100% 75px",
           },
           "#bar2": {
             bg: "turquoise",
@@ -140,14 +145,14 @@ const theme = {
             backgroundRepeat: "no-repeat",
             backgroundImage: (t) =>
               `linear-gradient(to right, ${t.colors.blue},${t.colors.blue})`,
-            backgroundPosition: "0 82px",
-            backgroundSize: "100% 71px",
+            backgroundPosition: "0 78px",
+            backgroundSize: "100% 75px",
           },
           "#bar3": {
             bg: "turquoise",
             width: [(t) => `calc(${t.colWidthMob} + 10px)`],
-            height: "71px",
-            top: "179px",
+            height: "75px",
+            top: "175px",
             borderRadius: "0px 0px 7px 7px",
             ml: [(t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`],
             position: "absolute",
@@ -155,13 +160,51 @@ const theme = {
             backgroundImage: (t) =>
               `linear-gradient(to right, ${t.colors.blue},${t.colors.blue})`,
             backgroundPosition: "0 0",
-            backgroundSize: "100% 71px",
+            backgroundSize: "100% 75px",
           },
+        },
+        ".spacer": {
+          height: "191px",
         },
       },
       learnmore: {
         bg: "violet",
-        height: "1149px",
+        ".learnMoreGrid": {
+          display: "grid",
+          gridTemplateColumns: ["repeat(6,1fr)"],
+          gridTemplateRows: "auto",
+          gridGap: ["20px", "40px"],
+          mx: ["20px", "40px"],
+        },
+
+        ".learnMoreText": {
+          gridArea: ["1/2/2/-1"],
+          ml: [(t) => `calc(${t.colWidthMob} + 10px)`],
+          pt: "101px",
+          color: "black",
+        },
+        ".laptopImage": {
+          gridArea: ["2/1/3/-1"],
+          height: "250px",
+          position: "relative",
+          ".imageWrapper": {
+            position: "absolute",
+            top: 0,
+            bottom: 0,
+            left: "-20px",
+            width: "100vw",
+            bg: "grey",
+          },
+        },
+        ".learnMoreHeader": {
+          gridArea: ["3/1/4/-1"],
+          color: "black",
+        },
+        ".learnMoreMainText": {
+          gridArea: ["4/1/5/-1"],
+          color: "black",
+          mb: ["168px"],
+        },
       },
       carousel: {
         bg: "transparent",
@@ -285,10 +328,10 @@ const theme = {
       fontWeight: "normal",
     },
     p: {
-      fontFamily: "body",
-      fontSize: "body",
+      fontFamily: "Dandi Grotesk",
+      fontSize: ["16px", "20px"],
       lineHeight: "body",
-      fontWeight: "normal",
+      fontWeight: "400",
     },
     h5: {
       fontFamily: "body",
