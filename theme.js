@@ -290,6 +290,18 @@ const theme = {
           gridArea: ["1/1/2/-1"],
           mt: ["80px"],
           color: "black",
+          h2: {
+            fontFamily: "display",
+            fontWeight: "500",
+            fontSize: "32px",
+            lineHeight: "38.4px",
+          },
+          ".payEquityBody": {
+            mt: "20px",
+            fontWeight: "400",
+            lineHeight: "24px",
+            fontFamily: "body",
+          },
         },
         ".payEquityGraphic": {
           position: "relative",
@@ -310,6 +322,12 @@ const theme = {
           color: "black",
           mt: "80px",
           gridArea: ["1/1/2/-1"],
+          h2: {
+            fontSize: "32px",
+            fontFamily: "display",
+            fontWeight: "500",
+            lineHeight: "38.4px",
+          },
         },
         ".logoCarousel": {
           gridArea: ["2/1/3/-1"],
