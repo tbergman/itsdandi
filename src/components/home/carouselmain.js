@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 
 const CarouselMain = () => {
   const [current, setCurrent] = useState(0);
+  const time = 5000;
   const slides = [
     {
       header: "Get the full people picture",
@@ -23,7 +24,7 @@ const CarouselMain = () => {
 
   useEffect(() => {
     const next = (current + 1) % slides.length;
-    const id = setTimeout(() => setCurrent(next), 5000);
+    const id = setTimeout(() => setCurrent(next), time);
     return () => clearTimeout(id);
   }, [current]);
 
@@ -39,13 +40,22 @@ const CarouselMain = () => {
               }}
               className="progressBar"
             >
-              <div
+              <motion.div
+                initial={{
+                  height: 0,
+                }}
+                animate={{
+                  height: "100%",
+                }}
+                transition={{
+                  duration: time / 1000,
+                }}
                 sx={{
                   visibility: current === i ? "visible" : "hidden",
                   height: "100%",
                 }}
                 className="progressBarAnimation"
-              ></div>
+              ></motion.div>
             </div>
             <Styled.p
               sx={{
