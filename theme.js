@@ -232,20 +232,56 @@ const theme = {
         },
         ".carouselSpacer": {
           gridArea: ["2/1/3/-1"],
+          height: "200px",
           position: "relative",
           div: {
             position: "absolute",
             bg: "#1F1F21",
             left: "-20px",
-            height: "200px",
+            height: "100%",
             width: "100vw",
           },
         },
         ".carouselMain": {
+          mt: ["30px"],
           gridArea: ["3/1/4/-1"],
-          height: "500px",
           width: "100%",
-          bg: "grey",
+          display: "flex",
+          flexFlow: "column wrap",
+
+          ".carouselItem": {
+            mb: ["24px"],
+            ".carouselItemHeader": {
+              position: "relative",
+              display: "flex",
+              alignItems: "center",
+              ".progressBar": {
+                position: "absolute",
+                height: "32px",
+                width: "2px",
+                bg: "#EDEDF1",
+                borderRadius: "6px",
+                ".progressBarAnimation": {
+                  bg: "turquoise",
+                  width: "100%",
+                  borderRadius: "6px",
+                },
+              },
+              p: {
+                ml: "20px",
+                fontWeight: "500",
+                fontFamily: "medium",
+              },
+            },
+            ".carouselItemBody": {
+              mx: "20px",
+              mt: "8px",
+              p: {
+                fontWeight: "400",
+                fontFamily: "body",
+              },
+            },
+          },
         },
       },
       payequity: {
@@ -373,8 +409,6 @@ const theme = {
       alignItems: "center",
       p: {
         mr: "10px",
-        fontFamily: "medium",
-        fontWeight: "500",
       },
     },
   },
