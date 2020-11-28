@@ -11,7 +11,13 @@ const Button = () => {
     >
       <Link href="/">
         <a>
-          <Styled.p>Request a demo</Styled.p>
+          <Styled.p
+            sx={{
+              fontWeight: "500",
+            }}
+          >
+            Request a demo
+          </Styled.p>
         </a>
       </Link>
     </div>

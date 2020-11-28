@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import Link from "next/link";
-import { ReactSVG } from "react-svg";
+import LearnMoreLink from "../learnmorelink";
 
 const LearnMore = () => {
   return (
@@ -16,7 +15,14 @@ const LearnMore = () => {
         }}
       >
         <div className="learnMoreText">
-          <Styled.p>Learn more about Dandi</Styled.p>
+          <Styled.p
+            sx={{
+              fontFamily: "display",
+              fontWeight: "500",
+            }}
+          >
+            Learn more about Dandi
+          </Styled.p>
           <svg
             width="51"
             height="105"
@@ -34,24 +40,27 @@ const LearnMore = () => {
           <div className="imageWrapper"></div>
         </div>
         <div className="learnMoreHeader">
-          <Styled.h2>
+          <Styled.h2
+            sx={{
+              fontFamily: "display",
+              fontWeight: "500",
+            }}
+          >
             Dandi is your platform for diversity, equity, and inclusion
           </Styled.h2>
-          <Link href="/">
-            <a className="learnMoreLink">
-              <Styled.p>Learn more</Styled.p>
-              <ReactSVG src="/assets/svgs/arrow.svg" />
-            </a>
-          </Link>
+          <LearnMoreLink href="/" text="Learn more" color="black" />
         </div>
         <div className="learnMoreMainText">
           <Styled.p>
             When DEI advances, everyone wins. But progress has been too slow for
             too long, and employees are tired of waiting. We built Dandi for the
-            businesses that are ready to do more. With Dandi, businesses harness
-            the power of data to advance their DEI efforts, faster and smarter
-            than ever before. So today’s DEI challenges can finally take their
-            rightful place: In the past.
+            businesses that are ready to do more. <br />
+            <br />
+            With Dandi, businesses harness the power of data to advance their
+            DEI efforts, faster and smarter than ever before. So today’s DEI
+            challenges can finally take their rightful place: <br />
+            <br />
+            In the past.
           </Styled.p>
         </div>
       </div>

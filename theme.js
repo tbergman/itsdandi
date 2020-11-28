@@ -116,9 +116,8 @@ const theme = {
         },
         bars: {
           position: "absolute",
-          display: "none",
           left: 0,
-          // top: "16px",
+          top: 325,
           pt: "16px",
           width: "100%",
           height: "191px",
@@ -182,6 +181,15 @@ const theme = {
           ml: [(t) => `calc(${t.colWidthMob} + 10px)`],
           pt: "101px",
           color: "black",
+          fontFamily: "display",
+          fontWeight: "500",
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "flex-end",
+          svg: {
+            ml: "10px",
+            pt: "15px",
+          },
         },
         ".laptopImage": {
           gridArea: ["2/1/3/-1"],
@@ -211,6 +219,16 @@ const theme = {
         ".carouselHeader": {
           gridArea: ["1/1/2/-1"],
           mt: ["80px"],
+          h2: {
+            fontFamily: "display",
+            fontWeight: "500",
+            mb: "20px",
+          },
+          p: {
+            fontFamily: "body",
+            fontWeight: "400",
+            mb: "24px",
+          },
         },
         ".carouselSpacer": {
           gridArea: ["2/1/3/-1"],
@@ -348,6 +366,17 @@ const theme = {
       width: "100%",
       bg: "black",
     },
+    learnMoreLink: {
+      textDecoration: "none",
+      display: "flex",
+
+      alignItems: "center",
+      p: {
+        mr: "10px",
+        fontFamily: "medium",
+        fontWeight: "500",
+      },
+    },
   },
   styles: {
     root: {
@@ -355,10 +384,10 @@ const theme = {
       color: "white",
     },
     h1: {
-      fontFamily: "body",
+      fontFamily: "display",
       fontSize: ["36px", "60px"],
       lineHeight: ["43.2px", "64px"],
-      fontWeight: "bold",
+      fontWeight: "500",
       m: 0,
     },
     h2: {
@@ -366,30 +395,35 @@ const theme = {
       fontSize: "heading2",
       lineHeight: "heading2",
       fontWeight: "bold",
+      m: 0,
     },
     h3: {
       fontFamily: "body",
       fontSize: "heading3",
       lineHeight: "heading3",
       fontWeight: "bold",
+      m: 0,
     },
     h4: {
       fontFamily: "body",
       fontSize: "heading4",
       lineHeight: "heading4",
       fontWeight: "normal",
+      m: 0,
     },
     p: {
-      fontFamily: "Dandi Grotesk",
+      fontFamily: "body",
       fontSize: ["16px", "20px"],
       lineHeight: "body",
       fontWeight: "400",
+      m: 0,
     },
     h5: {
       fontFamily: "body",
       fontSize: "small",
       lineHeight: "small",
       fontWeight: "normal",
+      m: 0,
     },
   },
 };

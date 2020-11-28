@@ -9,7 +9,7 @@ const Header = () => {
         variant: "pages.home.top.header",
       }}
     >
-      <Styled.h1>How business gets better for everyone.</Styled.h1>
+      <Styled.h1>How business gets better for everyone</Styled.h1>
       <Button />
     </div>
   );
