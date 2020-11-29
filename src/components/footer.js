@@ -2,9 +2,15 @@
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
 import FooterForm from "./footerform";
-import Link from "next/link";
+import LearnMoreLink from "./learnmorelink";
 
 const Footer = () => {
+  const socialsIcons = [
+    "/assets/svgs/fb.svg",
+    "/assets/svgs/linkedin.svg",
+    "/assets/svgs/twitter.svg",
+  ];
+
   return (
     <div
       sx={{
@@ -26,15 +32,30 @@ const Footer = () => {
         </div>
 
         <FooterForm />
-        <div className="socials"></div>
-        <Link href="/">
-          <a className="signupLink">
-            <Styled.p>Sign up for newsletter</Styled.p>
-            <ReactSVG src="/assets/svgs/arrow.svg" />
-          </a>
-        </Link>
-        <div className="footerLogo"></div>
-        <Styled.p>Ⓒ Dandi Technologies, Inc.</Styled.p>
+        <div className="socials">
+          {socialsIcons.map((icon, i) => (
+            <div
+              sx={{
+                gridArea: [`1/${i + 1}/2/${i + 2}`],
+              }}
+              key={i}
+            >
+              <ReactSVG src={icon} />
+            </div>
+          ))}
+        </div>
+        <div className="signupLink">
+          <LearnMoreLink
+            href="/"
+            text="Sign up for newsletter"
+            color="#FFD93B"
+          />
+        </div>
+
+        <div className="bottomSection">
+          <ReactSVG src="/assets/svgs/dandiLogo.svg" />
+          <Styled.p>Ⓒ Dandi Technologies, Inc.</Styled.p>
+        </div>
       </div>
     </div>
   );

@@ -457,7 +457,7 @@ const theme = {
       },
     },
     footer: {
-      bg: "black",
+      bg: "#1F1F21",
       ".footerHeader": {
         gridArea: ["1/1/2/-1"],
         h2: {
@@ -477,6 +477,30 @@ const theme = {
         gridArea: ["2/1/3/-1"],
         display: "flex",
         flexFlow: "column wrap",
+      },
+      ".socials": {
+        gridArea: ["3/1/4/-1"],
+        mt: ["20px"],
+        display: "grid",
+        gridTemplateColumns: ["repeat(6,1fr)"],
+        columnGap: ["20px"],
+        gridTemplateRows: "auto",
+      },
+      ".signupLink": {
+        gridArea: ["4/1/5/-1"],
+        mb: ["44px"],
+      },
+      ".bottomSection": {
+        gridArea: ["5/1/6/-1"],
+        p: {
+          mt: ["12px"],
+          mb: ["40px"],
+          fontSize: ["13px"],
+          fontFamily: "body",
+          fontWeight: "500",
+          color: "white",
+          opacity: 0.24,
+        },
       },
     },
     learnMoreLink: {
