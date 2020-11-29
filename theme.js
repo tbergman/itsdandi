@@ -461,8 +461,37 @@ const theme = {
         },
       },
       marketplacepartners: {
-        bg: "lightViolet",
-        height: "630px",
+        color: "black",
+        position: "relative",
+        bg: "#FFF",
+        ".mppTop": {
+          gridArea: ["1/1/2/-1"],
+          height: "184px",
+          width: "100vw",
+          left: ["-20px"],
+          position: "relative",
+          bg: "lightViolet",
+        },
+        ".mppMain": {
+          gridArea: ["2/1/3/-1"],
+          mt: ["149px"],
+          h2: {},
+          p: {
+            mt: ["20px"],
+          },
+          ".mppLink": {
+            mb: ["80px"],
+            p: {
+              mt: 0,
+            },
+          },
+        },
+        ".circles": {
+          position: "absolute",
+          height: "215px",
+          width: "100%",
+          bottom: "-107.5px",
+        },
       },
     },
   },
