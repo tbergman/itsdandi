@@ -55,13 +55,7 @@ const theme = {
     gridGap: ["20px", "40px"],
     mx: ["20px", "40px"],
   },
-  wrapper: {
-    // display: "grid",
-    // gridTemplateColumns: ["repeat(6, 1fr)", "repeat(12,1fr)"],
-    // gridTemplateRows: ["auto"],
-    // columnGap: ["20px", "40px"],
-    // mx: ["20px", "40px"],
-  },
+  wrapper: {},
   pages: {
     home: {
       top: {
@@ -479,6 +473,11 @@ const theme = {
           fontWeight: "400",
         },
       },
+      ".footerForm": {
+        gridArea: ["2/1/3/-1"],
+        display: "flex",
+        flexFlow: "column wrap",
+      },
     },
     learnMoreLink: {
       textDecoration: "none",
@@ -488,6 +487,60 @@ const theme = {
       p: {
         mr: "10px",
       },
+    },
+  },
+  forms: {
+    input: {
+      height: ["64px"],
+      bg: "#262629",
+      px: ["24px"],
+      mb: ["12px"],
+      borderRadius: "8px",
+      border: "none",
+      fontFamily: "body",
+      fontWeight: "400",
+      fontSize: ["18px"],
+      color: "white",
+      ":focus": {
+        outline: "none",
+      },
+      "::placeholder": {
+        opacity: 0.24,
+      },
+    },
+    select: {
+      // A reset of styles, including removing the default dropdown arrow
+      appearance: "none",
+      // Additional resets for further consistency
+      border: "none",
+      borderRadius: "8px",
+      // p: " 0 1em 0 0",
+      mb: ["12px"],
+      px: ["24px"],
+      width: "100%",
+      height: ["64px"],
+      fontFamily: "body",
+      fontSize: ["18px"],
+      cursor: "pointer",
+      lineHeight: "inherit",
+      outline: "none",
+      bg: "#262629",
+      color: "white",
+      option: {},
+    },
+  },
+  buttons: {
+    primary: {
+      bg: "#3A3A3D",
+      height: ["56px"],
+      mt: ["12px"],
+      color: "black",
+      borderRadius: "200px",
+      width: ["191px"],
+      fontFamily: "body",
+      fontWeight: "500",
+      fontSize: ["18px"],
+      cursor: "pointer",
     },
   },
   styles: {

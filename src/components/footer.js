@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
-import Form from "./form";
+import FooterForm from "./footerform";
 import Link from "next/link";
 
 const Footer = () => {
@@ -25,7 +25,7 @@ const Footer = () => {
           </Styled.p>
         </div>
 
-        {/* <Form />
+        <FooterForm />
         <div className="socials"></div>
         <Link href="/">
           <a className="signupLink">
@@ -34,7 +34,7 @@ const Footer = () => {
           </a>
         </Link>
         <div className="footerLogo"></div>
-        <Styled.p>Ⓒ Dandi Technologies, Inc.</Styled.p> */}
+        <Styled.p>Ⓒ Dandi Technologies, Inc.</Styled.p>
       </div>
     </div>
   );
