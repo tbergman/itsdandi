@@ -344,7 +344,54 @@ const theme = {
       },
       advancedei: {
         bg: "lightTurquoise",
-        height: "1319px",
+        ".advancedeiHeader": {
+          gridArea: ["1/1/2/-1"],
+          h2: {
+            mt: "80px",
+            fontFamily: "display",
+            fontWeight: "500",
+            color: "black",
+          },
+          ".advancedeiSub": {
+            mt: "30px",
+            fontFamily: "body",
+            fontWeight: "400",
+            color: "black",
+          },
+          ".advancedeiLink": {
+            mt: "8px",
+            mb: "20px",
+            p: {
+              fontFamily: "medium",
+              fontWeight: "500",
+            },
+          },
+        },
+        ".advancedeiGraphics": {
+          gridArea: ["2/1/3/-1"],
+          height: "120px",
+          position: "relative",
+          width: "100vw",
+          left: ["-20px", "40px"],
+          ".advancedeiBox1": {
+            position: "absolute",
+            left: 0,
+            bottom: 0,
+            height: "67px",
+            width: "115px",
+            bg: "#02C3CF",
+            zIndex: 99,
+          },
+          ".advancedeiBox2": {
+            position: "absolute",
+            left: "42px",
+            bottom: "0",
+            width: "134px",
+            height: "120px",
+            bg: "#A4F0F4",
+            zIndex: 89,
+          },
+        },
       },
       marketplacepartners: {
         bg: "lightViolet",
@@ -416,9 +463,22 @@ const theme = {
       },
     },
     footer: {
-      height: ["1176px", "684px"],
-      width: "100%",
       bg: "black",
+      ".footerHeader": {
+        gridArea: ["1/1/2/-1"],
+        h2: {
+          mt: ["80px"],
+          fontFamily: "display",
+          fontWeight: "500",
+          fontSize: "28px",
+        },
+        p: {
+          mt: ["20px"],
+          mb: ["20px"],
+          fontFamily: "body",
+          fontWeight: "400",
+        },
+      },
     },
     learnMoreLink: {
       textDecoration: "none",
@@ -444,8 +504,8 @@ const theme = {
     },
     h2: {
       fontFamily: "body",
-      fontSize: "heading2",
-      lineHeight: "heading2",
+      fontSize: ["32px", "40px"],
+      lineHeight: ["38.4px"],
       fontWeight: "bold",
       m: 0,
     },

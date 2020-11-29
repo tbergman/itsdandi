@@ -16,11 +16,16 @@ const Footer = () => {
           variant: "grid",
         }}
       >
-        <Styled.h2>Take Dandi for a test drive</Styled.h2>
-        <Styled.p>
-          Because there’s only one place for today’s DEI challenges: The past.
-        </Styled.p>
-        <Form />
+        <div className="footerHeader">
+          <Styled.h2>Take Dandi for a test drive</Styled.h2>
+          <Styled.p>
+            Because there’s only one place for today’s DEI challenges: <br />
+            <br />
+            The past.
+          </Styled.p>
+        </div>
+
+        {/* <Form />
         <div className="socials"></div>
         <Link href="/">
           <a className="signupLink">
@@ -29,7 +34,7 @@ const Footer = () => {
           </a>
         </Link>
         <div className="footerLogo"></div>
-        <Styled.p>Ⓒ Dandi Technologies, Inc.</Styled.p>
+        <Styled.p>Ⓒ Dandi Technologies, Inc.</Styled.p> */}
       </div>
     </div>
   );
