@@ -8,6 +8,7 @@ import Carousel from "../src/components/home/carousel";
 import PayEquity from "../src/components/home/payequity";
 import Partners from "../src/components/home/partners";
 import AdvanceDEI from "../src/components/home/advancedei";
+import Quotes from "../src/components/home/quotes";
 import MarketPlacePartners from "../src/components/home/marketplacepartners";
 
 import {
@@ -33,6 +34,7 @@ const Home = () => {
       <PayEquity />
       <Partners />
       <AdvanceDEI />
+      <Quotes />
       <MarketPlacePartners />
       <Footer />
     </div>
