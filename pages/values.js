@@ -2,14 +2,12 @@
 import { jsx, useThemeUI } from "theme-ui";
 import Navigation from "../src/components/navigation";
 import Footer from "../src/components/footer";
-import Top from "../src/components/home/top";
-import LearnMore from "../src/components/home/learnmore";
-import Carousel from "../src/components/home/carousel";
-import PayEquity from "../src/components/home/payequity";
-import Partners from "../src/components/home/partners";
-import AdvanceDEI from "../src/components/home/advancedei";
-import Quotes from "../src/components/home/quotes";
-import MarketPlacePartners from "../src/components/home/marketplacepartners";
+import SubNavigation from "../src/components/values/subnavigation";
+import Header from "../src/components/values/payequity/header";
+import Compensation from "../src/components/values/payequity/compensation";
+import Reports from "../src/components/values/payequity/reports";
+import Quote from "../src/components/values/payequity/quote";
+import Affordable from "../src/components/values/payequity/affordable";
 import { useState } from "react";
 
 import {
@@ -24,16 +22,17 @@ const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const ctx = useThemeUI();
   const { theme } = ctx;
+  const subPages = ["Pay Equity", "The Next DEI Journey", "For Your Role"];
   const colors = [
     {
-      bg: theme.colors.black,
-      color: theme.colors.white,
+      bg: "#FFF",
+      color: theme.colors.black,
     },
   ];
   return (
     <div
       sx={{
-        bg: "black",
+        bg: "#FFF",
       }}
     >
       <Navigation />
@@ -42,14 +41,12 @@ const Home = () => {
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <Top />
-      <LearnMore />
-      <Carousel />
-      <PayEquity />
-      <Partners />
-      <AdvanceDEI />
-      <Quotes />
-      <MarketPlacePartners />
+      <Header />
+      <Compensation />
+      <Reports />
+      <Quote />
+      <Affordable />
+      <SubNavigation subPages={subPages} />
       <Footer />
     </div>
   );

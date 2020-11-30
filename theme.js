@@ -6,6 +6,33 @@ const theme = {
     display: '"Dandi Grotesk Display", sans-serif',
     medium: '"Dandi Grotesk Medium", sans-serif',
   },
+  space: [
+    0,
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64,
+    72,
+    80,
+    88,
+    96,
+    104,
+    112,
+    120,
+    128,
+    136,
+    144,
+    152,
+    160,
+    168,
+    176,
+    184,
+    192,
+  ],
   fontWeights: {
     normal: 500,
     bold: 500,
@@ -55,7 +82,6 @@ const theme = {
     gridGap: ["20px", "40px"],
     mx: ["20px", "40px"],
   },
-  wrapper: {},
   pages: {
     home: {
       top: {
@@ -494,6 +520,228 @@ const theme = {
         },
       },
     },
+    values: {
+      payequity: {
+        header: {
+          ".headerText": {
+            mt: [18],
+            gridArea: ["1/1/2/-1"],
+            color: "black",
+          },
+          h2: {},
+          h4: {
+            mt: ["18px"],
+            mb: ["18px"],
+          },
+          ".headerGraphic": {
+            gridArea: ["2/1/3/-1"],
+            position: "relative",
+            height: ["100px"],
+            width: "100vw",
+            left: ["-20px"],
+            ".headerImage": {
+              position: "absolute",
+              bg: "gray",
+              opacity: 0.2,
+              height: "200%",
+              width: "100%",
+            },
+          },
+        },
+        compensation: {
+          bg: "lightGray",
+          ".compensationTop": {
+            gridArea: ["1/1/2/-1"],
+            mt: [23],
+            color: "black",
+            h2: {
+              fontFamily: "medium",
+              fontSize: ["32px"],
+              fontWeight: "500",
+              lineHeight: ["38.4px"],
+            },
+            p: {
+              mt: [3],
+              mb: [8],
+            },
+            ".compensationTopGraphic": {
+              position: "relative",
+              height: "60px",
+              img: {
+                position: "absolute",
+                height: "200%",
+                width: "100%",
+                zIndex: 999,
+              },
+            },
+          },
+          ".compensationBottom": {
+            bg: "black",
+            position: "relative",
+            width: "100vw",
+            left: ["-20px"],
+            gridArea: ["2/1/3/-1"],
+            ".text": {
+              mt: [13],
+              mx: ["20px"],
+            },
+            ".compensationGraph": {
+              mt: [5],
+              mb: [9],
+              mx: ["20px"],
+              height: ["215px"],
+              display: "flex",
+              flexFlow: "row nowrap",
+              ".dataPoint": {
+                flex: 1,
+                height: "100%",
+                display: "flex",
+                alignItems: "flex-end",
+                ".yAxis": {
+                  position: "relative",
+                  transform: "translateX(1000%)",
+                  height: "70%",
+                  bottom: "20%",
+                  borderLeft: "2px solid #00FCFF",
+                  h3: {
+                    position: "absolute",
+                    top: "8px",
+                    left: "8px",
+                    color: "#00FCFF",
+                    lineHeight: ["9px"],
+                  },
+                },
+                p: {
+                  fontSize: ["11px"],
+                  color: "white",
+                  opacity: 0.7,
+                },
+              },
+            },
+          },
+        },
+        reports: {
+          ".reportsText": {
+            gridArea: ["1/1/2/-1"],
+            color: "black",
+            h2: {
+              mt: [10],
+              fontFamily: "medium",
+            },
+            p: {
+              mt: [3],
+              mb: [8],
+            },
+          },
+        },
+        quote: {
+          bg: "#FAFAFA",
+          ".imageWrapper": {
+            position: "relative",
+            gridArea: ["1/1/2/-1"],
+            height: ["160px"],
+            width: ["100vw"],
+            left: ["-20px"],
+            img: {
+              position: "absolute",
+              height: "100%",
+              width: "100%",
+            },
+          },
+          ".mainText": {
+            color: "black",
+            gridArea: ["2/1/3/-1"],
+            position: "relative",
+            ".quotationMark": {
+              position: "absolute",
+              top: ["32px"],
+            },
+            h3: {
+              mt: [4],
+              ml: [5],
+              fontFamily: "display",
+              fontWeight: "500",
+              fontSize: ["24px"],
+              lineHeight: ["31.2px"],
+            },
+            p: {
+              mt: [4],
+              ml: [5],
+              mb: [8],
+              lineHeight: ["20px"],
+              fontSize: ["14px"],
+            },
+          },
+        },
+        affordable: {
+          ".header": {
+            gridArea: ["1/1/2/-1"],
+            color: "black",
+            h2: {
+              mt: [8],
+              fontFamily: "medium",
+            },
+            p: {
+              mt: [3],
+            },
+            ".affordableLink": {
+              p: {
+                mt: 0,
+                fontFamily: "medium",
+              },
+            },
+          },
+          ".graphic": {
+            gridArea: ["2/1/3/-1"],
+            position: "relative",
+            height: "500px",
+            width: "100vw",
+            left: ["-20px"],
+            ".placeholder": {
+              bg: "gray",
+              height: "100%",
+              width: "100%",
+            },
+          },
+        },
+      },
+
+      subnavigation: {
+        ".next": {
+          height: ["224px"],
+          bg: "turquoise",
+          color: "black",
+          ".half": {
+            ml: ["50%"],
+            height: "100%",
+            display: "flex",
+            flexFlow: "column nowrap",
+            justifyContent: "flex-end",
+            h3: {
+              fontWeight: "500",
+              fontFamily: "medium",
+              mb: [8],
+            },
+            div: {
+              mb: [4],
+              svg: {
+                path: {
+                  fill: "black",
+                  stroke: "black",
+                },
+                line: {
+                  fill: "black",
+                  stroke: "black",
+                },
+              },
+            },
+          },
+        },
+        ".prev": {
+          height: ["224px"],
+        },
+      },
+    },
   },
   components: {
     navigation: {
@@ -525,40 +773,7 @@ const theme = {
       },
     },
     mobilenav: {
-      position: "fixed",
-      zIndex: 1000,
-      display: ["flex", "none"],
-      justifyContent: "space-between",
-      height: "74px",
-      width: "100%",
-      bg: "black",
-      ".hamburger": {
-        cursor: "pointer",
-        mr: "20px",
-        mt: "33px",
-        position: "relative",
-        height: "21px",
-        width: "25px",
-        span: {
-          position: "absolute",
-          transition: "all 200ms ease-out",
-          left: 0,
-          p: 0,
-          m: 0,
-          height: "3px",
-          width: "25px",
-          bg: "white",
-        },
-      },
-      ".logo": {
-        mt: "24px",
-        ml: "20px",
-        svg: {
-          path: {
-            fill: "white",
-          },
-        },
-      },
+      //
     },
     footer: {
       bg: "#1F1F21",
@@ -692,16 +907,16 @@ const theme = {
     },
     h3: {
       fontFamily: "body",
-      fontSize: "heading3",
-      lineHeight: "heading3",
-      fontWeight: "bold",
+      fontSize: ["24px"],
+      lineHeight: ["24px"],
+      fontWeight: "500",
       m: 0,
     },
     h4: {
       fontFamily: "body",
-      fontSize: "heading4",
-      lineHeight: "heading4",
-      fontWeight: "normal",
+      fontSize: ["18px"],
+      lineHeight: ["30px"],
+      fontWeight: ["400"],
       m: 0,
     },
     p: {

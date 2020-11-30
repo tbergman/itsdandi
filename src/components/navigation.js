@@ -28,7 +28,7 @@ const Navigation = () => {
               opacity: 0.5,
             }}
           >
-            Values
+            Why Dandy?
           </div>
         </a>
       </Link>
