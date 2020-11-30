@@ -10,7 +10,12 @@ const FooterForm = () => {
       <Input placeholder="Phone Number" />
       <Input placeholder="Company Name" />
       <Input placeholder="Website URL" />
-      <Select>
+      <Select
+        sx={{
+          color: "white",
+          opacity: 0.24,
+        }}
+      >
         <option value="">How many employees work there?</option>
         <option value="1-10">1-10</option>
         <option value="10-100">1-100</option>

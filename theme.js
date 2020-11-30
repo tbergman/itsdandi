@@ -533,6 +533,7 @@ const theme = {
       width: "100%",
       bg: "black",
       ".hamburger": {
+        cursor: "pointer",
         mr: "20px",
         mt: "33px",
         position: "relative",
@@ -540,6 +541,7 @@ const theme = {
         width: "25px",
         span: {
           position: "absolute",
+          transition: "all 200ms ease-out",
           left: 0,
           p: 0,
           m: 0,

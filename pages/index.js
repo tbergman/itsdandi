@@ -10,6 +10,7 @@ import Partners from "../src/components/home/partners";
 import AdvanceDEI from "../src/components/home/advancedei";
 import Quotes from "../src/components/home/quotes";
 import MarketPlacePartners from "../src/components/home/marketplacepartners";
+import { useState } from "react";
 
 import {
   motion,
@@ -20,6 +21,7 @@ import {
 import MobileNav from "../src/components/mobilenav";
 
 const Home = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div
       sx={{
@@ -27,7 +29,7 @@ const Home = () => {
       }}
     >
       <Navigation />
-      <MobileNav />
+      <MobileNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Top />
       <LearnMore />
       <Carousel />

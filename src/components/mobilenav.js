@@ -1,8 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  transform,
+} from "framer-motion";
 
-const MobileNav = () => {
+const MobileNav = ({ menuOpen, setMenuOpen }) => {
   const { scrollYProgress } = useViewportScroll();
 
   const opacityAnim = useTransform(scrollYProgress, [0, 0.05, 0.1], [0, 0, 1]);
@@ -39,20 +44,24 @@ const MobileNav = () => {
         </motion.svg>
       </div>
 
-      <div className="hamburger">
+      <div onClick={() => setMenuOpen(!menuOpen)} className="hamburger">
         <span
           sx={{
-            top: "0",
+            top: menuOpen ? "33.33%" : "0",
+            transform: menuOpen ? "rotate(45deg)" : "rotate(0deg)",
           }}
         />
         <span
           sx={{
             top: "7px",
+            opacity: menuOpen ? 0 : 1,
+            transform: menuOpen ? "translateX(10px)" : "translateX(0)",
           }}
         />
         <span
           sx={{
-            top: "14px",
+            top: menuOpen ? "33.33%" : "14px",
+            transform: menuOpen ? "rotate(-45deg)" : "rotate(0deg)",
           }}
         />
       </div>
