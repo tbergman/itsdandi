@@ -807,28 +807,29 @@ const theme = {
             },
             h3: {
               mt: [3],
-              mb: [4],
+              mb: [21],
               fontSize: ["20px"],
               fontWeight: "400",
               lineHeight: ["24px"],
             },
           },
           ".graphic": {
-            mb: [5],
             position: "relative",
             gridArea: ["2/1/3/-1"],
             width: "100vw",
-            height: ["210px"],
+            // height: ["210px"],
             left: ["-20px"],
             pl: ["20px"],
             img: {
               position: "absolute",
               width: "calc(100% - 20px)",
-              height: "100%",
+              height: "210px",
+              top: ["-144px"],
             },
           },
         },
         textmodules: {
+          pt: [14],
           bg: "lightGray",
           ".modulesWrapper": {
             ml: ["20px"],

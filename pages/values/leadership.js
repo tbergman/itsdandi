@@ -44,7 +44,7 @@ const Values = () => {
     {
       title: `Compensation`,
       body: `Equal pay for equal work. It sounds simple, but compensation teams know that it’s a tricky thing to get right. With sophisticated wage gap analysis built right in, Dandi makes it easier to find and address pay discrepancies`,
-      linkText: `Equal pay for equal work. It sounds simple, but compensation teams know that it’s a tricky thing to get right. With sophisticated wage gap analysis built right in, Dandi makes it easier to find and address pay discrepancies`,
+      linkText: `Dandi helps advance pay equity`,
       linkUrl: "/",
     },
     {
