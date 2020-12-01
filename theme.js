@@ -79,7 +79,8 @@ const theme = {
     display: "grid",
     gridTemplateColumns: ["repeat(6,1fr)"],
     gridTemplateRows: "auto",
-    gridGap: ["20px", "40px"],
+    columnGap: ["20px", "40px"],
+    rowGap: 0,
     mx: ["20px", "40px"],
   },
   pages: {
@@ -731,26 +732,139 @@ const theme = {
             },
           },
         },
-        gettingstarted: {
-          bg: "white",
-          opacity: 0.96,
+        textblock: {
+          // bg: "white",
+          // opacity: 0.96,
           h2: {
             gridArea: ["1/1/2/-1"],
+            fontWeight: "500",
+            fontFamily: "display",
             color: "black",
             mt: [10],
           },
           ".text": {
             mt: [3],
+            mb: [7],
             gridArea: ["2/1/3/-1"],
             color: "black",
-            ".textSection:": {
-              mb: [3],
-              color: "blue",
-              ".title": {
+          },
+        },
+        partners: {
+          bg: "white",
+          ".graphic": {
+            gridArea: ["1/1/2/-1"],
+            width: "100vw",
+            left: ["-20px"],
+            position: "relative",
+            display: "flex",
+            justifyContent: "center",
+            div: {
+              position: "absolute",
+              height: "216px",
+              width: "216px",
+              top: ["-108px"],
+              div: {
+                position: "relative",
+                top: 0,
+                svg: {
+                  height: "100%",
+                  width: "100%",
+                },
+              },
+            },
+          },
+          ".text": {
+            color: "black",
+            gridArea: ["2/1/3/-1"],
+            h2: {
+              mt: [18],
+              fontFamily: "medium",
+            },
+            p: {
+              mt: [3],
+              lineHeight: ["24px"],
+            },
+            ".partnersLink": {
+              mt: [1],
+              mb: [10],
+              p: {
+                mt: 0,
+                fontFamily: "display",
                 fontWeight: "500",
               },
-              ".body": {
+            },
+          },
+        },
+      },
+      leadership: {
+        header: {
+          ".text": {
+            color: "black",
+            gridArea: ["1/1/2/-1"],
+            h1: {
+              mt: [18],
+            },
+            h3: {
+              mt: [3],
+              mb: [4],
+              fontSize: ["20px"],
+              fontWeight: "400",
+              lineHeight: ["24px"],
+            },
+          },
+          ".graphic": {
+            mb: [5],
+            position: "relative",
+            gridArea: ["2/1/3/-1"],
+            width: "100vw",
+            height: ["210px"],
+            left: ["-20px"],
+            pl: ["20px"],
+            img: {
+              position: "absolute",
+              width: "calc(100% - 20px)",
+              height: "100%",
+            },
+          },
+        },
+        textmodules: {
+          bg: "lightGray",
+          ".modulesWrapper": {
+            ml: ["20px"],
+            ".module": {
+              color: "black",
+              ".divider": {
+                position: "relative",
+                width: "100%",
+                height: ["1px"],
+                span: {
+                  position: "absolute",
+                  height: "100%",
+                  width: "100%",
+                  bg: "black",
+                },
+              },
+              h2: {
+                pt: [2],
+                fontWeight: "500",
+                fontFamily: "medium",
+              },
+              p: {
+                mr: ["20px"],
                 fontWeight: "400",
+                lineHeight: ["24px"],
+                pt: [3],
+              },
+              ".link": {
+                mt: [1],
+                pb: [5],
+                mr: ["20px"],
+                p: {
+                  p: 0,
+                  fontWeight: "500",
+                  fontFamily: "medium",
+                  lineHeight: "18.88px",
+                },
               },
             },
           },
