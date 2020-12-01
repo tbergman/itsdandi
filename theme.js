@@ -522,6 +522,45 @@ const theme = {
       },
     },
     values: {
+      quote: {
+        // bg: "#FAFAFA",
+        ".imageWrapper": {
+          position: "relative",
+          gridArea: ["1/1/2/-1"],
+          height: ["160px"],
+          width: ["100vw"],
+          left: ["-20px"],
+          img: {
+            position: "absolute",
+            height: "100%",
+            width: "100%",
+          },
+        },
+        ".mainText": {
+          color: "black",
+          gridArea: ["2/1/3/-1"],
+          position: "relative",
+          ".quotationMark": {
+            position: "absolute",
+            top: ["32px"],
+          },
+          h3: {
+            mt: [4],
+            ml: [5],
+            fontFamily: "display",
+            fontWeight: "500",
+            fontSize: ["24px"],
+            lineHeight: ["31.2px"],
+          },
+          p: {
+            mt: [4],
+            ml: [5],
+            mb: [8],
+            lineHeight: ["20px"],
+            fontSize: ["14px"],
+          },
+        },
+      },
       payequity: {
         header: {
           ".headerText": {
@@ -635,45 +674,7 @@ const theme = {
             },
           },
         },
-        quote: {
-          bg: "#FAFAFA",
-          ".imageWrapper": {
-            position: "relative",
-            gridArea: ["1/1/2/-1"],
-            height: ["160px"],
-            width: ["100vw"],
-            left: ["-20px"],
-            img: {
-              position: "absolute",
-              height: "100%",
-              width: "100%",
-            },
-          },
-          ".mainText": {
-            color: "black",
-            gridArea: ["2/1/3/-1"],
-            position: "relative",
-            ".quotationMark": {
-              position: "absolute",
-              top: ["32px"],
-            },
-            h3: {
-              mt: [4],
-              ml: [5],
-              fontFamily: "display",
-              fontWeight: "500",
-              fontSize: ["24px"],
-              lineHeight: ["31.2px"],
-            },
-            p: {
-              mt: [4],
-              ml: [5],
-              mb: [8],
-              lineHeight: ["20px"],
-              fontSize: ["14px"],
-            },
-          },
-        },
+
         affordable: {
           ".header": {
             gridArea: ["1/1/2/-1"],

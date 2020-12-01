@@ -5,6 +5,7 @@ import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/values/subnavigation";
 import Header from "../../src/components/values/leadership/header";
 import TextModules from "../../src/components/values/leadership/textmodules";
+import Quote from "../../src/components/values/quote";
 import { useState } from "react";
 
 import {
@@ -68,6 +69,13 @@ const Values = () => {
       />
       <Header />
       <TextModules modules={modules} />
+      <Quote
+        imageUrl={"/assets/images/tamarcus-brown.png"}
+        text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity`}
+        name={`Name Namesson`}
+        title={`Title, Company`}
+        bg={theme.colors.yellow}
+      />
       <SubNavigation subPages={subPages} />
       <Footer />
     </div>

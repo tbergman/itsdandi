@@ -6,7 +6,7 @@ import SubNavigation from "../../src/components/values/subnavigation";
 import Header from "../../src/components/values/payequity/header";
 import Compensation from "../../src/components/values/payequity/compensation";
 import Reports from "../../src/components/values/payequity/reports";
-import Quote from "../../src/components/values/payequity/quote";
+import Quote from "../../src/components/values/quote";
 import Affordable from "../../src/components/values/payequity/affordable";
 import { useState } from "react";
 
@@ -44,7 +44,14 @@ const Home = () => {
       <Header />
       <Compensation />
       <Reports />
-      <Quote />
+      <Quote
+        imageUrl="/assets/images/tamarcus-brown.png"
+        text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus &
+            equity`}
+        name={`Name Namesson`}
+        title={`Title, Company`}
+        bg="#FAFAFA"
+      />
       <Affordable />
       <SubNavigation subPages={subPages} />
       <Footer />
