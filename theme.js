@@ -705,14 +705,66 @@ const theme = {
           },
         },
       },
+      deijourney: {
+        header: {
+          ".top": {
+            color: "black",
+            gridArea: ["1/1/2/-1"],
+            h1: {
+              mt: [18],
+            },
+            h3: {
+              mt: [2],
+              fontSize: ["20px"],
+              lineHeight: ["30px"],
+              mb: [12],
+            },
+          },
+          ".graphic": {
+            gridArea: ["2/1/3/-1"],
+            position: "relative",
+            zIndex: 999,
+            div: {
+              position: "absolute",
+              top: ["-29.5px"],
+              right: ["0"],
+            },
+          },
+        },
+        gettingstarted: {
+          bg: "white",
+          opacity: 0.96,
+          h2: {
+            gridArea: ["1/1/2/-1"],
+            color: "black",
+            mt: [10],
+          },
+          ".text": {
+            mt: [3],
+            gridArea: ["2/1/3/-1"],
+            color: "black",
+            ".textSection:": {
+              mb: [3],
+              color: "blue",
+              ".title": {
+                fontWeight: "500",
+              },
+              ".body": {
+                fontWeight: "400",
+              },
+            },
+          },
+        },
+      },
 
       subnavigation: {
         ".next": {
           height: ["224px"],
-          bg: "turquoise",
+          bg: "violet",
           color: "black",
-          ".half": {
-            ml: ["50%"],
+          ".secondHalf": {
+            ml: ["53%"],
+            mr: ["20px"],
             height: "100%",
             display: "flex",
             flexFlow: "column nowrap",
@@ -723,15 +775,22 @@ const theme = {
               mb: [8],
             },
             div: {
-              mb: [4],
-              svg: {
-                path: {
-                  fill: "black",
-                  stroke: "black",
-                },
-                line: {
-                  fill: "black",
-                  stroke: "black",
+              div: {
+                svg: {
+                  height: ["24px"],
+                  width: ["32px"],
+                  position: "relative",
+                  mb: [4],
+                  g: {
+                    position: "absolute",
+                    left: 0,
+                    path: {
+                      stroke: "black",
+                    },
+                    line: {
+                      stroke: "black",
+                    },
+                  },
                 },
               },
             },
@@ -739,6 +798,42 @@ const theme = {
         },
         ".prev": {
           height: ["224px"],
+          bg: "blue",
+          color: "black",
+          ".firstHalf": {
+            // mr: ["50%"],
+            ml: [10],
+            height: "100%",
+            display: "flex",
+            flexFlow: "column nowrap",
+            justifyContent: "flex-end",
+            h3: {
+              fontWeight: "500",
+              fontFamily: "medium",
+              mb: [8],
+            },
+            div: {
+              div: {
+                svg: {
+                  transform: "rotate(180deg)",
+                  height: ["24px"],
+                  width: ["32px"],
+                  position: "relative",
+                  mb: [4],
+                  g: {
+                    position: "absolute",
+                    left: 0,
+                    path: {
+                      stroke: "black",
+                    },
+                    line: {
+                      stroke: "black",
+                    },
+                  },
+                },
+              },
+            },
+          },
         },
       },
     },

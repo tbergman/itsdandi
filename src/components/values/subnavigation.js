@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
+import next from "next";
 
 const SubNavigation = ({ subPages }) => {
   return (
@@ -10,12 +11,23 @@ const SubNavigation = ({ subPages }) => {
       }}
     >
       <div className="next">
-        <div className="half">
+        <div className="secondHalf">
           <ReactSVG src="assets/svgs/arrow.svg" />
-          <Styled.h3>{subPages[1]}</Styled.h3>
+          <Styled.h3>
+            Next <br />
+            {subPages[2]}
+          </Styled.h3>
         </div>
       </div>
-      <div className="prev">{subPages[0]}</div>
+      <div className="prev">
+        <div className="firstHalf">
+          <ReactSVG src="assets/svgs/arrow.svg" />
+          <Styled.h3>
+            Prev <br />
+            {subPages[0]}
+          </Styled.h3>
+        </div>
+      </div>
     </div>
   );
 };
