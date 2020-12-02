@@ -2,10 +2,10 @@
 import { jsx, useThemeUI } from "theme-ui";
 import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
-import SubNavigation from "../../src/components/values/subnavigation";
+import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/values/leadership/header";
 import TextModules from "../../src/components/values/leadership/textmodules";
-import Quote from "../../src/components/values/quote";
+import Quote from "../../src/components/quote";
 import { useState } from "react";
 
 import {

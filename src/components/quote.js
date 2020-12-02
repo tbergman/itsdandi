@@ -13,7 +13,6 @@ const Quote = ({ imageUrl, text, name, title, bg }) => {
       <div
         sx={{
           variant: "grid",
-          rowGap: 0,
         }}
       >
         <div className="imageWrapper">

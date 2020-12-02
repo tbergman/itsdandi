@@ -2,7 +2,7 @@
 import { jsx, useThemeUI } from "theme-ui";
 import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
-import SubNavigation from "../../src/components/values/subnavigation";
+import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/values/deijourney/header";
 import TextBlock from "../../src/components/values/deijourney/textblock";
 import Partners from "../../src/components/values/deijourney/partners";

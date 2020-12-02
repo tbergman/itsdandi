@@ -3,11 +3,11 @@ import { jsx, useThemeUI } from "theme-ui";
 import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
-import Header from "../../src/components/values/payequity/header";
-import Compensation from "../../src/components/values/payequity/compensation";
-import Reports from "../../src/components/values/payequity/reports";
+import Header from "../../src/components/product/measure/header";
+import Metrics from "../../src/components/product/measure/metrics";
 import Quote from "../../src/components/quote";
-import Affordable from "../../src/components/values/payequity/affordable";
+import WhyMeasure from "../../src/components/product/measure/whymeasure";
+import Intersectional from "../../src/components/product/measure/intersectional";
 import { useState } from "react";
 
 import {
@@ -18,17 +18,24 @@ import {
 } from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
 
-const Home = () => {
+const Product = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const ctx = useThemeUI();
   const { theme } = ctx;
-  const subPages = ["Pay Equity", "The DEI Journey", "For Your Role"];
+  const subPages = [
+    "Measure",
+    "Analyze",
+    "Collaborate",
+    "Security",
+    "Integrations",
+  ];
   const colors = [
     {
       bg: "#FFF",
       color: theme.colors.black,
     },
   ];
+
   return (
     <div
       sx={{
@@ -42,21 +49,21 @@ const Home = () => {
         colors={colors}
       />
       <Header />
-      <Compensation />
-      <Reports />
+      <Metrics />
       <Quote
-        imageUrl="/assets/images/tamarcus-brown.png"
-        text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus &
-            equity`}
+        imageUrl={`/assets/images/tamarcus-brown.png`}
+        text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity
+`}
         name={`Name Namesson`}
-        title={`Title, Company`}
-        bg="#FAFAFA"
+        title={`Ceo, Company`}
+        color={theme.colors.white}
       />
-      <Affordable />
+      <WhyMeasure />
+      <Intersectional />
       <SubNavigation subPages={subPages} />
       <Footer />
     </div>
   );
 };
 
-export default Home;
+export default Product;
