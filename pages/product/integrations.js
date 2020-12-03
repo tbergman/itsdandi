@@ -3,11 +3,9 @@ import { jsx, useThemeUI } from "theme-ui";
 import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
-import Header from "../../src/components/product/security/header";
-import BestInClass from "../../src/components/product/security/bestinclass";
-import Quote from "../../src/components/quote";
-import Workflows from "../../src/components/product/security/workflows";
-import Connect from "../../src/components/product/security/connect";
+import Header from "../../src/components/product/integrations/header";
+import Connections from "../../src/components/product/integrations/connections";
+import Secure from "../../src/components/product/integrations/secure";
 import { useState } from "react";
 
 import {
@@ -49,16 +47,8 @@ const Product = () => {
         colors={colors}
       />
       <Header />
-      <BestInClass />
-      <Quote
-        imageUrl="/assets/images/tamarcus-brown.png"
-        text={`I trust Dandi with our most sensitive info`}
-        name={`Name Namesson`}
-        title={`Ceo,Company`}
-        color={theme.colors.white}
-      />
-      <Workflows />
-      <Connect />
+      <Connections />
+      <Secure />
       <SubNavigation subPages={subPages} />
       <Footer />
     </div>

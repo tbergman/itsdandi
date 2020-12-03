@@ -1394,6 +1394,203 @@ const theme = {
             },
           },
         },
+        bestinclass: {
+          bg: "black",
+          ".toptext": {
+            gridArea: ["1/1/2/-1"],
+            mt: [10],
+            mb: [5],
+            h2: {},
+            p: {
+              mt: [3],
+            },
+          },
+          ".modules": {
+            gridArea: ["2/1/3/-1"],
+            display: "flex",
+            flexFlow: "column",
+            mb: [12],
+            ".module": {
+              mb: [5],
+              ".divider": {
+                position: "relative",
+                mb: ["4px"],
+                height: ["10px"],
+                width: "100%",
+                svg: {
+                  height: "100%",
+                  width: "100%",
+                  position: "absolute",
+                },
+              },
+            },
+          },
+        },
+        workflows: {
+          bg: "transparent",
+          color: "black",
+          ".toptext": {
+            gridArea: ["1/1/2/-1"],
+            mt: [8],
+            mb: [8],
+            h2: {},
+            p: {
+              mt: [3],
+            },
+          },
+          ".categories": {
+            gridArea: ["2/1/3/-1"],
+            display: "flex",
+            flexFlow: ["column"],
+            ".graphic": {
+              position: "relative",
+              width: "100vw",
+              left: ["-20px"],
+              div: {
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                div: {
+                  width: "100%",
+                  height: "100%",
+                  top: 0,
+                  left: 0,
+                  display: "flex",
+                  justifyContent: "flex-end",
+                },
+              },
+            },
+            ".category": {
+              zIndex: 999,
+              mb: [5],
+              ".title": {
+                width: "60%",
+                fontWeight: "500",
+                fontFamily: "display",
+              },
+              ".body": {
+                width: "60%",
+                fontWeight: "400",
+              },
+            },
+          },
+        },
+        connect: {
+          bg: "transparent",
+          color: "black",
+          ".text": {
+            gridArea: ["1/1/2/-1"],
+            mt: [0],
+            mb: [7],
+            h2: {},
+            ".link": {
+              mt: [1],
+              p: {
+                fontWeight: "500",
+                fontFamily: "display",
+              },
+            },
+          },
+          ".graphic": {
+            gridArea: ["2/1/3/-1"],
+            mb: [12],
+            width: "100vw",
+            left: ["-20px"],
+            position: "relative",
+            height: ["271px"],
+            div: {
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              div: {
+                width: "100%",
+                height: "100%",
+                top: 0,
+                left: 0,
+                display: "flex",
+                justifyContent: "center",
+              },
+            },
+          },
+        },
+      },
+      integrations: {
+        header: {
+          bg: "rgba(242, 242, 242, 0.5)",
+          ".text": {
+            gridArea: ["1/1/2/-1"],
+            mt: [18],
+            color: "black",
+            h1: {},
+            h3: {
+              mt: [2],
+              mb: [12],
+              fontWeight: "400",
+              lineHeight: ["30px"],
+              fontSize: ["20px"],
+            },
+          },
+          ".buttonWrapper": {
+            gridArea: ["2/1/3/-1"],
+            position: "relative",
+            ".button": {
+              position: "absolute",
+              top: ["-28px"],
+            },
+          },
+        },
+        connections: {
+          bg: "transparent",
+          color: "black",
+          ".text": {
+            gridArea: ["1/1/2/-1"],
+            mt: [10],
+            mb: [7],
+            h2: {},
+            p: {
+              mt: [3],
+            },
+          },
+          ".logos": {
+            gridArea: ["2/1/3/-1"],
+            mb: [7],
+            height: "300px",
+            position: "relative",
+            div: {
+              height: "100%",
+              width: "100%",
+              position: "absolute",
+              bg: "gray",
+            },
+          },
+        },
+        secure: {
+          bg: "transparent",
+          color: "black",
+          ".text": {
+            gridArea: ["1/1/2/-1"],
+            mt: [7],
+            mb: [4],
+            h2: {},
+            p: {
+              mt: [3],
+            },
+            ".link": {
+              mt: [1],
+              p: {
+                mt: 0,
+                fontWeight: "500",
+                fontFamily: "display",
+              },
+            },
+          },
+          ".graphic": {
+            gridArea: ["2/1/3/-1"],
+            mb: [12],
+            display: "flex",
+            justifyContent: "center",
+          },
+        },
       },
     },
   },
