@@ -1593,6 +1593,120 @@ const theme = {
         },
       },
     },
+    pricing: {
+      header: {
+        bg: "transparent",
+        color: "black",
+        ".text": {
+          gridArea: ["1/1/2/-1"],
+          mt: [18],
+          h1: {},
+          h3: {
+            mt: [3],
+            fontSize: ["18px"],
+          },
+        },
+        ".graphic": {
+          gridArea: ["2/1/3/-1"],
+          width: "100vw",
+          left: ["-20px"],
+          position: "relative",
+          div: {
+            width: "100%",
+            height: "100%",
+            div: {
+              height: "100%",
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-end",
+              svg: {
+                height: "100%",
+              },
+            },
+          },
+        },
+      },
+      cost: {
+        bg: "#F8F8F8",
+        color: "black",
+        ".toptext": {
+          gridArea: ["1/1/2/-1"],
+          mt: [5],
+          mb: [3],
+          p: {},
+        },
+        ".list": {
+          gridArea: ["2/1/3/-1"],
+          ".title": {
+            fontWeight: "500",
+            fontFamily: "display",
+          },
+          ul: {
+            pl: [3],
+            li: {
+              mb: [3],
+              listStyle: "none",
+              position: "relative",
+              "::after": {
+                content: "''",
+                top: "20%",
+                left: "-22px",
+                borderRadius: "10px",
+                position: "absolute",
+                height: "6px",
+                width: "6px",
+                bg: "blue",
+              },
+            },
+          },
+        },
+        ".calculator": {
+          gridArea: ["3/1/4/-1"],
+          mt: [8],
+          ".description": {
+            p: {
+              color: "blue",
+            },
+          },
+          ".label": {
+            mt: [4],
+            display: "flex",
+            justifyContent: "space-between",
+            p: {
+              fontWeight: "500",
+              fontFamily: "display",
+              color: "blue",
+            },
+          },
+          ".slider": {
+            height: "20px",
+            bg: "gray",
+            mt: [3],
+          },
+          ".result": {
+            mt: [5],
+            mb: [5],
+            h1: {
+              fontSize: ["72px"],
+              fontWeight: "500",
+              fontFamily: "display",
+              lineHeight: ["100px"],
+              color: "blue",
+            },
+          },
+        },
+      },
+      betterinsights: {
+        bg: "black",
+        ".toptext": {
+          gridArea: ["1/1/2/-1"],
+          mt: [8],
+          mb: [3],
+          h2: {},
+          p: { mt: [3] },
+        },
+      },
+    },
   },
   components: {
     navigation: {
