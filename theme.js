@@ -1,4 +1,5 @@
 import { transform } from "framer-motion";
+import Customizable from "./src/components/product/collaborate/customizable";
 const theme = {
   breakpoints: ["1024px"],
   fonts: {
@@ -1080,6 +1081,319 @@ const theme = {
             },
           },
         },
+        thoughtful: {
+          color: "black",
+          ".top": {
+            gridArea: ["1/1/2/-1"],
+            h2: {
+              mt: [12],
+            },
+            p: {
+              mt: [3],
+
+              mb: [5],
+            },
+          },
+          ".team": {
+            gridArea: ["2/1/3/-1"],
+            ".divider": {
+              position: "relative",
+              height: "1px",
+              width: "100%",
+              span: {
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                bg: "#CACACE",
+              },
+            },
+            ".header": {
+              mt: [1],
+              p: {
+                fontWeight: "500",
+                fontFamily: "medium",
+              },
+            },
+            ".links": {
+              mt: [0],
+              mb: [12],
+              display: "flex",
+              flexFlow: ["column"],
+              p: {
+                fontWeight: "500",
+                mt: 0,
+                fontFamily: "display",
+              },
+            },
+          },
+        },
+      },
+      analyze: {
+        header: {
+          bg: "transparent",
+          ".text": {
+            gridArea: ["1/1/2/-1"],
+            mt: [18],
+            color: "black",
+            h1: {},
+            h3: {
+              mt: [2],
+              mb: [12],
+              fontWeight: "400",
+              lineHeight: ["30px"],
+              fontSize: ["20px"],
+            },
+          },
+          ".buttonWrapper": {
+            gridArea: ["2/1/3/-1"],
+            position: "relative",
+            ".button": {
+              position: "absolute",
+              top: ["-28px"],
+            },
+          },
+        },
+        insights: {
+          bg: "black",
+          h2: {
+            mt: [10],
+            gridArea: ["1/1/2/-1"],
+          },
+          ".insightscircle": {
+            mt: [4],
+            gridArea: ["2/1/3/-1"],
+          },
+          ".text": {
+            mt: [6],
+            gridArea: ["3/1/4/-1"],
+          },
+          ".confidence": {
+            mt: [8],
+            mb: [10],
+            gridArea: ["4/1/5/-1"],
+            border: (t) => `solid 2px ${t.colors.turquoise}`,
+            borderRadius: ["20px"],
+            ".lockWrapper": {
+              position: "relative",
+              div: {
+                position: "absolute",
+                width: ["38px"],
+                height: ["28px"],
+                top: ["-17px"],
+                left: ["45px"],
+                bg: "black",
+                mx: [1],
+                div: {
+                  position: "relative",
+                  top: 0,
+                  left: 0,
+                  m: 0,
+                  height: "100%",
+                  width: "100%",
+                  svg: {
+                    height: "100%",
+                    width: "100%",
+                  },
+                },
+              },
+            },
+            ".text": {
+              mx: [3],
+              mt: [4],
+              mb: [4],
+              h3: {
+                fontSize: ["24px"],
+                fontWeight: "500",
+                fontFamily: "medium",
+                mb: [1],
+              },
+              p: {},
+              ".link": {
+                mt: [1],
+                p: {
+                  fontWeight: "500",
+                  fontFamily: "body",
+                },
+              },
+            },
+          },
+        },
+        newinsights: {
+          bg: "transparent",
+          color: "black",
+          h2: {
+            gridArea: ["1/1/2/-1"],
+            mt: [12],
+          },
+          p: {
+            gridArea: ["2/1/3/-1"],
+            mt: [3],
+            mb: [6],
+          },
+        },
+        inaction: {
+          bg: "black",
+          ".graphic": {
+            mt: [8],
+            gridArea: ["1/1/2/-1"],
+            position: "relative",
+            height: ["225px"],
+            width: "100vw",
+            left: ["-20px"],
+            div: {
+              position: "absolute",
+              height: "100%",
+              width: "100%",
+              bg: "#000",
+            },
+          },
+          ".text": {
+            gridArea: ["2/1/3/-1"],
+            mt: [6],
+            mb: [9],
+            ".divider": {
+              height: "1px",
+              width: "100%",
+              position: "relative",
+              span: {
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                bg: "yellow",
+              },
+            },
+            p: {
+              mt: [2],
+              fontWeight: "500",
+              fontFamily: "body",
+            },
+            ".link": {
+              mt: [1],
+              p: {
+                mt: 0,
+                fontWeight: "500",
+                fontFamily: "display",
+              },
+            },
+          },
+        },
+        sharable: {
+          bg: "transparent",
+          color: "black",
+          ".text": {
+            mt: [12],
+            mb: [5],
+            gridArea: ["1/1/2/-1"],
+            h2: {},
+            p: {
+              mt: [3],
+            },
+          },
+          ".graphic": {
+            gridArea: ["2/1/3/-1"],
+            mb: [13],
+            display: "flex",
+            justifyContent: "center",
+          },
+        },
+      },
+      collaborate: {
+        header: {
+          bg: "transparent",
+          ".text": {
+            gridArea: ["1/1/2/-1"],
+            mt: [18],
+            color: "black",
+            h1: {},
+            h3: {
+              mt: [2],
+              mb: [12],
+              fontWeight: "400",
+              lineHeight: ["30px"],
+              fontSize: ["20px"],
+            },
+          },
+          ".buttonWrapper": {
+            gridArea: ["2/1/3/-1"],
+            position: "relative",
+            ".button": {
+              position: "absolute",
+              top: ["-28px"],
+            },
+          },
+        },
+        deiwork: {
+          bg: "black",
+          ".text": {
+            gridArea: ["1/1/2/-1"],
+            mt: [10],
+            mb: [9],
+            h2: {},
+            p: {
+              mt: [3],
+            },
+          },
+          ".carousel": {
+            gridArea: ["2/1/3/-1"],
+            mb: [10],
+            ".graphic": {
+              position: "relative",
+              height: ["90px"],
+              width: "100%",
+              img: {
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+              },
+            },
+            ".carouselMain": {
+              mt: [4],
+            },
+          },
+        },
+        customizable: {
+          bg: "transparent",
+          color: "black",
+          ".text": {
+            gridArea: ["1/1/2/-1"],
+            mt: [10],
+            mb: [10],
+            h2: {},
+            p: { mt: [3] },
+          },
+          ".graphic": {
+            gridArea: ["2/1/3/-1"],
+            mb: [9],
+            display: "flex",
+            justifyContent: "center",
+          },
+        },
+      },
+      security: {
+        header: {
+          bg: "transparent",
+          ".text": {
+            gridArea: ["1/1/2/-1"],
+            mt: [18],
+            color: "black",
+            h1: {},
+            h3: {
+              mt: [2],
+              mb: [12],
+              fontWeight: "400",
+              lineHeight: ["30px"],
+              fontSize: ["20px"],
+            },
+          },
+          ".buttonWrapper": {
+            gridArea: ["2/1/3/-1"],
+            position: "relative",
+            ".button": {
+              position: "absolute",
+              top: ["-28px"],
+            },
+          },
+        },
       },
     },
   },
@@ -1253,10 +1567,10 @@ const theme = {
       m: 0,
     },
     h2: {
-      fontFamily: "body",
+      fontFamily: "display",
       fontSize: ["32px", "40px"],
       lineHeight: ["38.4px"],
-      fontWeight: "bold",
+      fontWeight: "500",
       m: 0,
     },
     h3: {
@@ -1276,7 +1590,7 @@ const theme = {
     p: {
       fontFamily: "body",
       fontSize: ["16px", "20px"],
-      lineHeight: "body",
+      lineHeight: ["24px"],
       fontWeight: "400",
       m: 0,
     },
