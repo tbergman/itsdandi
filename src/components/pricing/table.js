@@ -1,61 +1,112 @@
 /** @jsx jsx */
+import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
+
+const ItemSymbol = ({ input_, color }) => {
+  switch (input_) {
+    case "circle": {
+      return (
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="50" fill={color} />
+        </svg>
+      );
+    }
+    case false: {
+      return null;
+    }
+    default: {
+      return (
+        <Styled.p
+          sx={{
+            color: color,
+            writingMode: "vertical-rl",
+            textAlign: "right",
+          }}
+        >
+          {input_}
+        </Styled.p>
+      );
+    }
+  }
+};
 
 const Table = () => {
   const tableData = {
-    head: [
-      "",
-      "Dandi Logo",
-      "General HR software and add-ons",
-      "In-house analytics",
-    ],
     body: [
       {
         title: `Over 1 million DEI insights on day 1`,
-        dandi: true,
+        dandi: "circle",
         general: false,
         inhouse: false,
         bg: "#262629",
       },
       {
         title: `Easy API integrations with all your data sources`,
-        dandi: true,
+        dandi: "circle",
         general: false,
         inhouse: false,
         bg: "transparent",
       },
       {
         title: `Deep DEI subject-matter expertise`,
-        dandi: true,
+        dandi: "circle",
         general: false,
         inhouse: false,
         bg: "#262629",
       },
       {
         title: `Full measurement of the employee lifecycle`,
-        dandi: true,
+        dandi: "circle",
         general: false,
         inhouse: false,
         bg: "transparent",
       },
       {
         title: `Adjusted wage gap analysis`,
-        dandi: true,
+        dandi: "circle",
         general: false,
         inhouse: false,
         bg: "#262629",
       },
       {
         title: `On-demand data refreshes. As often as you like`,
-        dandi: true,
+        dandi: "circle",
         general: false,
-        inhouse: true,
+        inhouse: "circle",
         bg: "transparent",
       },
       {
         title: `Lawful domestic & international data collection guidance`,
-        dandi: true,
-        general: true,
+        dandi: "circle",
+        general: "Rarely",
+        inhouse: false,
+        bg: "#262629",
+      },
+      {
+        title: `Minimal investment of time and staff`,
+        dandi: "circle",
+        general: "circle",
+        inhouse: false,
+        bg: "transparent",
+      },
+      {
+        title: `Power to analyze over 1 million unique data sets`,
+        dandi: "circle",
+        general: false,
+        inhouse: "Rarely",
+        bg: "#262629",
+      },
+      {
+        title: `Robust support and education`,
+        dandi: "circle",
+        general: false,
+        inhouse: false,
+        bg: "transparent",
+      },
+      {
+        title: `Weekly product updates`,
+        dandi: "circle",
+        general: "Not for DEI",
         inhouse: false,
         bg: "#262629",
       },
@@ -64,11 +115,18 @@ const Table = () => {
   return (
     <div className="table">
       <div className="head">
-        {tableData.head.map((headItem, i) => (
-          <div className="headItem" key={i}>
-            <Styled.p>{headItem}</Styled.p>
-          </div>
-        ))}
+        <div className="headItem"></div>
+        <div className="headItem">
+          <div className="focusborder"></div>
+          <ReactSVG className="logo" src="/assets/svgs/dandiLogo.svg" />
+        </div>
+
+        <div className="headItem">
+          <Styled.p>General HR software and add-ons</Styled.p>
+        </div>
+        <div className="headItem">
+          <Styled.p>In-house analytics</Styled.p>
+        </div>
       </div>
       <div className="body">
         {tableData.body.map((bodyItem, i) => (
@@ -80,21 +138,37 @@ const Table = () => {
             key={i}
           >
             <div className="bodyGrid">
-              <div className="bodyItem">
+              <div
+                sx={{
+                  justifyContent: "flex-start",
+                }}
+                className="bodyItem"
+              >
                 <Styled.p>{bodyItem.title}</Styled.p>
               </div>
-              <div className="bodyItem">
-                {bodyItem.dandi && (
-                  <svg viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="50" fill="#FFD93B" />
-                  </svg>
-                )}
+              <div
+                sx={{
+                  justifyContent: "center",
+                }}
+                className="bodyItem"
+              >
+                <ItemSymbol input_={bodyItem.dandi} color="#FFD93B" />
               </div>
-              <div className="bodyItem">
-                <Styled.p>{bodyItem.general ? "*" : ""}</Styled.p>
+              <div
+                sx={{
+                  justifyContent: "center",
+                }}
+                className="bodyItem"
+              >
+                <ItemSymbol input_={bodyItem.general} color="#CACACE" />
               </div>
-              <div className="bodyItem">
-                <Styled.p>{bodyItem.inhouse ? "*" : ""}</Styled.p>
+              <div
+                sx={{
+                  justifyContent: "center",
+                }}
+                className="bodyItem"
+              >
+                <ItemSymbol input_={bodyItem.inhouse} color="#CACACE" />
               </div>
             </div>
           </div>

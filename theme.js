@@ -1709,13 +1709,33 @@ const theme = {
           mb: [9],
           gridArea: ["2/1/3/-1"],
           ".head": {
+            position: "relative",
+            width: "100vw",
+            left: ["-20px"],
+            pl: ["20px"],
             display: "grid",
             gridAutoRows: ["200px"],
-            gridTemplateColumns: ["3fr 1fr 1fr 1fr"],
+            gridTemplateColumns: ["4fr 1fr 1fr 1fr"],
             ".headItem": {
               display: "flex",
-              justifyContent: "flex-end",
+              justifyContent: "center",
               mb: [3],
+              position: "relative",
+              ".focusborder": {
+                position: "absolute",
+                top: "30%",
+                zIndex: 999,
+                width: "100%",
+                height: "610%",
+                border: (t) => `solid 1px ${t.colors.yellow}`,
+              },
+              ".logo": {
+                position: "absolute",
+                top: ["37%"],
+                left: ["22%"],
+                transform: ["rotate(90deg)"],
+                transformOrigin: ["bottom left"],
+              },
               p: {
                 writingMode: "vertical-rl",
                 textAlign: "right",
@@ -1730,15 +1750,15 @@ const theme = {
               position: "relative",
               ".bodyGrid": {
                 display: "grid",
-                mx: ["20px"],
-                gridTemplateColumns: ["3fr 1fr 1fr  1fr"],
+                ml: ["20px"],
+                gridTemplateColumns: ["4fr 1fr 1fr  1fr"],
                 gridAutoRows: ["auto"],
                 ".bodyItem": {
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "center",
                   mt: [3],
                   mb: [3],
+
                   p: {
                     fontSize: ["14px"],
                     lineHeight: ["16.8px"],
