@@ -1705,6 +1705,53 @@ const theme = {
           h2: {},
           p: { mt: [3] },
         },
+        ".table": {
+          mb: [9],
+          gridArea: ["2/1/3/-1"],
+          ".head": {
+            display: "grid",
+            gridAutoRows: ["200px"],
+            gridTemplateColumns: ["3fr 1fr 1fr 1fr"],
+            ".headItem": {
+              display: "flex",
+              justifyContent: "flex-end",
+              mb: [3],
+              p: {
+                writingMode: "vertical-rl",
+                textAlign: "right",
+                lineHeight: ["19.2px"],
+              },
+            },
+          },
+          ".body": {
+            ".bodyRow": {
+              width: ["100vw"],
+              left: ["-20px"],
+              position: "relative",
+              ".bodyGrid": {
+                display: "grid",
+                mx: ["20px"],
+                gridTemplateColumns: ["3fr 1fr 1fr  1fr"],
+                gridAutoRows: ["auto"],
+                ".bodyItem": {
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  mt: [3],
+                  mb: [3],
+                  p: {
+                    fontSize: ["14px"],
+                    lineHeight: ["16.8px"],
+                  },
+                  svg: {
+                    width: "10px",
+                    height: "10px",
+                  },
+                },
+              },
+            },
+          },
+        },
       },
     },
   },
