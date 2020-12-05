@@ -1774,6 +1774,99 @@ const theme = {
         },
       },
     },
+    community: {
+      board: {
+        header: {
+          bg: "transparent",
+          color: "black",
+          ".text": {
+            gridArea: ["1/1/2/-1"],
+            mt: [18],
+            h1: {},
+            h3: {
+              mt: [3],
+              fontSize: ["18px"],
+            },
+          },
+          ".graphic": {
+            gridArea: ["2/1/3/-1"],
+            width: "100vw",
+            left: ["-20px"],
+            position: "relative",
+            px: ["20px"],
+            mb: [1],
+            div: {
+              width: "100%",
+              height: "100%",
+              div: {
+                height: "100%",
+                width: "100%",
+                display: "flex",
+                justifyContent: "flex-end",
+                svg: {
+                  height: "100%",
+                },
+              },
+            },
+          },
+        },
+        better: {
+          bg: "#F8F8F8",
+          color: "black",
+          ".text": {
+            gridArea: ["1/1/2/-1"],
+            mt: [5],
+            mb: [10],
+            h2: {},
+            p: {
+              mt: [1],
+            },
+          },
+          ".people": {
+            gridArea: ["2/1/3/-1"],
+            display: "flex",
+            flexFlow: ["row wrap"],
+            ".person": {
+              flex: "0 50%",
+              mb: [4],
+              ".imagewrapper": {
+                clipPath: ["circle(60px)"],
+                position: "relative",
+                width: ["140px"],
+                height: ["140px"],
+                img: {
+                  position: "absolute",
+                  height: "100%",
+                  width: "100%",
+                  top: 0,
+                  left: 0,
+                },
+              },
+              ".text": {
+                mt: [1],
+                ml: [1],
+                mb: [0],
+                width: ["140px"],
+                ".name": {
+                  mt: 0,
+                  mb: 0,
+                  fontSize: ["14px"],
+                  fontWeight: "500",
+                  fontFamily: "display",
+                },
+                ".title": {
+                  mt: 0,
+                  mb: 0,
+                  fontSize: ["14px"],
+                  fontWeight: "400",
+                  fontFamily: "body",
+                },
+              },
+            },
+          },
+        },
+      },
+    },
   },
   components: {
     navigation: {
