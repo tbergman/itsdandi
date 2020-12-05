@@ -10,19 +10,69 @@ const Better = () => {
       title: `Managing Director, Head of DEI, Glocap`,
     },
     {
-      url: `/assets/images/elisa.png`,
-      name: `Elisa Leary`,
-      title: `Managing Director, Head of DEI, Glocap`,
+      url: `/assets/images/emily.png`,
+      name: `Emily Miethner`,
+      title: `Founder & CEO, FindSpark`,
     },
     {
-      url: `/assets/images/elisa.png`,
-      name: `Elisa Leary`,
-      title: `Managing Director, Head of DEI, Glocap`,
+      url: `/assets/images/carol.png`,
+      name: `Carol Watson`,
+      title: `Chief Inclusion Officer, BCW Global`,
     },
     {
-      url: `/assets/images/elisa.png`,
-      name: `Elisa Leary`,
-      title: `Managing Director, Head of DEI, Glocap`,
+      url: `/assets/images/lakuan.png`,
+      name: `Lakuan Terry Smith`,
+      title: `DEI Manager, Justworks`,
+    },
+    {
+      url: `/assets/images/kerel.png`,
+      name: `Kerel Cooper`,
+      title: `SVP, Global Marketing, LiveIntent`,
+    },
+    {
+      url: `/assets/images/michael.png`,
+      name: `Michael Texidor`,
+      title: `VP, Member Operations, IAB`,
+    },
+    {
+      url: `/assets/images/henry.png`,
+      name: `Herry Pierre Louis`,
+      title: `Product Manager, Oscar Health`,
+    },
+    {
+      url: `/assets/images/antoinette.png`,
+      name: `Antoinette Hamilton`,
+      title: `Global Head of I&D, Lam Researchal`,
+    },
+    {
+      url: `/assets/images/darren.png`,
+      name: `Darren Wesley Martin Jr.`,
+      title: `Founder & CEO, Streamlined Media`,
+    },
+    {
+      url: `/assets/images/damien.png`,
+      name: `Damien Wint`,
+      title: `Associate General Counsel, Advertising & Privacy, Facebook`,
+    },
+    {
+      url: `/assets/images/jill.png`,
+      name: `Jill Katz`,
+      title: `CHRO, Assemble HR Consulting`,
+    },
+    {
+      url: `/assets/images/peter.png`,
+      name: `Peter Phelan`,
+      title: `Founder & CEO, ValuesCulture`,
+    },
+    {
+      url: `/assets/images/netta.png`,
+      name: `Netta Conyers-Haynes`,
+      title: `VP, Communications, Sequoia Consulting Group`,
+    },
+    {
+      url: `/assets/images/stephen.png`,
+      name: `Stephen Kim`,
+      title: `Associate Director, Communication & Information, Princeton University Art Museum`,
     },
   ];
   return (
