@@ -81,7 +81,9 @@ const CarouselMain = () => {
             >
               {slide.body}
             </Styled.p>
-            <LearnMoreLink href="/" text="Learn more" color="#F9D2FF" />
+            <div className="link">
+              <LearnMoreLink href="/" text="Learn more" color="#F9D2FF" />
+            </div>
           </motion.div>
         </div>
       ))}
