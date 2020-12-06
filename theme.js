@@ -148,6 +148,17 @@ const theme = {
             position: "relative",
             width: "100%",
             height: "100%",
+            ".topslide": {
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              top: ["31.5%"],
+              left: 0,
+              zIndex: 999,
+              path: {
+                strokeWidth: 2,
+              },
+            },
           },
           "#bar1": {
             bg: "turquoise",
@@ -197,12 +208,12 @@ const theme = {
       },
       learnmore: {
         bg: "violet",
-
+        color: "black",
         ".learnMoreText": {
           gridArea: ["1/2/2/-1"],
           ml: [(t) => `calc(${t.colWidthMob} + 10px)`],
-          pt: "101px",
-          color: "black",
+          mt: [13],
+
           fontFamily: "display",
           fontWeight: "500",
           display: "flex",
@@ -210,30 +221,35 @@ const theme = {
           justifyContent: "flex-end",
           svg: {
             ml: "10px",
-            pt: "15px",
+            pt: ["4%"],
           },
         },
-        ".laptopImage": {
+        ".imagewrapper": {
           gridArea: ["2/1/3/-1"],
           height: "250px",
           position: "relative",
-          ".imageWrapper": {
+          width: ["100vw"],
+          left: ["-20px"],
+          img: {
             position: "absolute",
-            top: 0,
-            bottom: 0,
-            left: "-20px",
-            width: "100vw",
-            bg: "grey",
+            height: "100%",
+            width: "100%",
           },
         },
-        ".learnMoreHeader": {
+        ".text": {
           gridArea: ["3/1/4/-1"],
-          color: "black",
-        },
-        ".learnMoreMainText": {
-          gridArea: ["4/1/5/-1"],
-          color: "black",
-          mb: ["168px"],
+          mt: [6],
+          mb: [21],
+          h2: {},
+          ".link": {
+            mt: [1],
+            p: {
+              mt: 0,
+            },
+          },
+          p: {
+            mt: [3],
+          },
         },
       },
       carousel: {
@@ -307,51 +323,57 @@ const theme = {
         },
       },
       payequity: {
-        bg: "lightGray",
-        ".payEquityHeader": {
+        bg: "#F8F8F8",
+        color: "black",
+        ".text": {
           gridArea: ["1/1/2/-1"],
-          mt: ["80px"],
-          color: "black",
-          h2: {
-            fontFamily: "display",
-            fontWeight: "500",
-            fontSize: "32px",
-            lineHeight: "38.4px",
+          mt: [10],
+          mb: ["226px"],
+          h2: {},
+          p: {
+            mt: [3],
           },
-          ".payEquityBody": {
-            mt: "20px",
-            fontWeight: "400",
-            lineHeight: "24px",
-            fontFamily: "body",
+          ".link": {
+            mt: [1],
+            p: {
+              mt: 0,
+            },
           },
         },
-        ".payEquityGraphic": {
+        ".imagewrapper": {
           position: "relative",
+          width: ["100vw"],
+          left: ["-20px"],
           gridArea: ["2/1/3/-1"],
-          height: "600px",
           div: {
+            zIndex: 999,
             position: "absolute",
-            bg: "#F2F2F2",
-            height: "100%",
-            width: "100vw",
-            left: "-20px",
+            height: ["320px"],
+            width: ["100%"],
+            top: ["-40%"],
+            display: "flex",
+            justifyContent: "center",
           },
+        },
+        ".bottom": {
+          gridArea: ["3/1/4/-1"],
+          height: ["227px"],
+          width: ["100vw"],
+          left: ["-20px"],
+          position: "relative",
+          bg: "#F2F2F2",
         },
       },
       partners: {
         bg: "clearWhite",
-        ".partnersHeader": {
-          color: "black",
-          mt: "80px",
+        color: "black",
+        ".text": {
+          mt: [10],
+          mb: [9],
           gridArea: ["1/1/2/-1"],
-          h2: {
-            fontSize: "32px",
-            fontFamily: "display",
-            fontWeight: "500",
-            lineHeight: "38.4px",
-          },
+          h2: {},
         },
-        ".logoCarousel": {
+        ".carousel": {
           gridArea: ["2/1/3/-1"],
           height: "250px",
           position: "relative",
@@ -360,20 +382,17 @@ const theme = {
             height: "100%",
             width: "100vw",
             left: "-20px",
-            bg: "black",
+            bg: "gray",
           },
         },
       },
       advancedei: {
         bg: "lightTurquoise",
+        color: "black",
         ".advancedeiHeader": {
+          mt: [10],
           gridArea: ["1/1/2/-1"],
-          h2: {
-            mt: "80px",
-            fontFamily: "display",
-            fontWeight: "500",
-            color: "black",
-          },
+          h2: {},
           ".advancedeiSub": {
             mt: "30px",
             fontFamily: "body",
@@ -418,17 +437,26 @@ const theme = {
       quotes: {
         bg: "white",
         color: "black",
-        ".quotesImage": {
+        ".imagewrapper": {
           gridArea: ["1/1/2/-1"],
           position: "relative",
           height: ["240px"],
           width: "100vw",
           left: ["-20px"],
-          bg: "yellow",
+          img: {
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+          },
         },
         ".quotesText": {
           gridArea: ["2/1/3/-1"],
           position: "relative",
+          mt: [3],
 
           h3: {
             ml: [(t) => `calc(${t.colWidthMob} + 5px)`],
@@ -440,6 +468,7 @@ const theme = {
           ".quotesSource": {
             ml: [(t) => `calc(${t.colWidthMob} + 5px)`],
             mt: ["24px"],
+            mb: [5],
             ".quotesName": {
               fontFamily: "medium",
               fontWeight: "500",

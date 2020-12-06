@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui";
 import BigLogo from "./bigLogo";
 import Header from "./header";
-import Bars from "./bars";
+import Graphics from "./graphics";
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
       <BigLogo />
       <Header />
       <div className="spacer"></div>
-      <Bars />
+      <Graphics />
     </div>
   );
 };

@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui";
 import { motion } from "framer-motion";
 
-const Bars = () => {
+const Graphics = () => {
   return (
     <div
       sx={{
@@ -64,4 +64,4 @@ const Bars = () => {
   );
 };
 
-export default Bars;
+export default Graphics;

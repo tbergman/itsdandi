@@ -14,8 +14,8 @@ const Quotes = () => {
           variant: "grid",
         }}
       >
-        <div className="quotesImage">
-          <div className="image"></div>
+        <div className="imagewrapper">
+          <img src="/assets/images/carol1.png" alt="" />
         </div>
         <div className="quotesText">
           <ReactSVG

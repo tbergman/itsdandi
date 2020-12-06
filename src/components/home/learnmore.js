@@ -36,21 +36,16 @@ const LearnMore = () => {
             />
           </svg>
         </div>
-        <div className="laptopImage">
-          <div className="imageWrapper"></div>
+        <div className="imagewrapper">
+          <img src="/assets/images/computerdash.png" alt="" />
         </div>
-        <div className="learnMoreHeader">
-          <Styled.h2
-            sx={{
-              fontFamily: "display",
-              fontWeight: "500",
-            }}
-          >
+        <div className="text">
+          <Styled.h2>
             Dandi is your platform for diversity, equity, and inclusion
           </Styled.h2>
-          <LearnMoreLink href="/" text="Learn more" color="black" />
-        </div>
-        <div className="learnMoreMainText">
+          <div className="link">
+            <LearnMoreLink href="/" text="Learn more" color="black" />
+          </div>
           <Styled.p>
             When DEI advances, everyone wins. But progress has been too slow for
             too long, and employees are tired of waiting. We built Dandi for the

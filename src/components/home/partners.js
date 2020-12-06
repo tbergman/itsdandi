@@ -13,10 +13,10 @@ const Partners = () => {
           variant: "grid",
         }}
       >
-        <div className="partnersHeader">
+        <div className="text">
           <Styled.h2>Serious about change? You're in good company. </Styled.h2>
         </div>
-        <div className="logoCarousel">
+        <div className="carousel">
           <div></div>
         </div>
       </div>

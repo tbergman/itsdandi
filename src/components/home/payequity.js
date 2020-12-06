@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 
@@ -14,17 +15,13 @@ const PayEquity = () => {
           variant: "grid",
         }}
       >
-        <div className="payEquityHeader">
+        <div className="text">
           <Styled.h2>Dandi makes pay equity possible</Styled.h2>
-          <Styled.p className="payEquityBody">
+          <Styled.p>
             With sophisticated compensation analytics built right in, Dandi
             helps you find the pay gaps at your company—and make them disappear.{" "}
           </Styled.p>
-          <div
-            sx={{
-              mt: "20px",
-            }}
-          >
+          <div className="link">
             <LearnMoreLink
               href="/"
               text="Learn how Dandi helps advance pay equity."
@@ -32,9 +29,10 @@ const PayEquity = () => {
             />
           </div>
         </div>
-        <div className="payEquityGraphic">
-          <div></div>
+        <div className="imagewrapper">
+          <ReactSVG src="/assets/svgs/crosswalk.svg" />
         </div>
+        <div className="bottom"></div>
       </div>
     </div>
   );
