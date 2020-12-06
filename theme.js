@@ -2040,6 +2040,8 @@ const theme = {
             display: "flex",
             flexFlow: ["column"],
             ".textblock": {
+              mb: [7],
+
               ".divider": {
                 position: "relative",
                 height: "1px",
@@ -2058,6 +2060,120 @@ const theme = {
                 mb: [3],
                 h2: {},
                 p: { mt: [1] },
+              },
+              ".list": {
+                ".listtitle": {
+                  mb: [1],
+                  fontWeight: "500",
+                  fontFamily: "display",
+                },
+                ".listbox": {
+                  display: "flex",
+                  flexFlow: "column",
+                  ".listitem": {
+                    mb: [2],
+                    position: "relative",
+                    pl: [3],
+                    ":after": {
+                      content: "''",
+                      position: "absolute",
+                      height: ["8px"],
+                      width: ["8px"],
+                      borderRadius: ["8px"],
+                      bg: "blue",
+                      top: "25%",
+                      left: 0,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+        learnmore: {
+          bg: "yellow",
+          color: "black",
+          ".imagewrapper": {
+            position: "relative",
+            gridArea: ["1/1/2/-1"],
+            height: ["210px"],
+            width: "100vw",
+            left: ["-20px"],
+            img: {
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+            },
+          },
+          ".text": {
+            gridArea: ["2/1/3/-1"],
+            mt: [6],
+            mb: [8],
+            h2: {},
+            p: {
+              mt: [3],
+            },
+            ".link": {
+              mt: [1],
+              p: {
+                mt: 0,
+                fontWeight: "500",
+                fontFamily: "display",
+              },
+            },
+          },
+        },
+        getcreative: {
+          bg: "transparent",
+          color: "black",
+          mt: [6],
+          ".textblock": {
+            gridArea: ["1/1/2/-1"],
+            mb: [7],
+
+            ".divider": {
+              position: "relative",
+              height: "1px",
+              width: "100vw",
+              left: ["-20px"],
+              span: {
+                left: ["20px"],
+                position: "absolute",
+                height: ["100%"],
+                bg: "black",
+                right: 0,
+              },
+            },
+            ".toptext": {
+              mt: [1],
+              mb: [3],
+              h2: {},
+              p: { mt: [1] },
+            },
+            ".list": {
+              ".listtitle": {
+                mb: [1],
+                fontWeight: "500",
+                fontFamily: "display",
+              },
+              ".listbox": {
+                display: "flex",
+                flexFlow: "column",
+                ".listitem": {
+                  mb: [2],
+                  position: "relative",
+                  pl: [3],
+                  ":after": {
+                    content: "''",
+                    position: "absolute",
+                    height: ["8px"],
+                    width: ["8px"],
+                    borderRadius: ["8px"],
+                    bg: "blue",
+                    top: "25%",
+                    left: 0,
+                  },
+                },
               },
             },
           },

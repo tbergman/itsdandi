@@ -31,7 +31,7 @@ const CarouselMain = () => {
   return (
     <div className="carouselMain">
       {slides.map((slide, i) => (
-        <div className="carouselItem">
+        <div className="carouselItem" key={i}>
           <div className="carouselItemHeader">
             <div
               sx={{

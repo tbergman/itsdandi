@@ -5,6 +5,8 @@ import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/community/support/header";
 import Onboarding from "../../src/components/community/support/onboarding";
+import LearnMore from "../../src/components/community/support/learnmore";
+import GetCreative from "../../src/components/community/support/getcreative";
 
 import { useState } from "react";
 
@@ -46,6 +48,8 @@ const Community = () => {
       />
       <Header />
       <Onboarding />
+      <LearnMore />
+      <GetCreative />
       <SubNavigation subPages={subPages} />
       <Footer />
     </div>
