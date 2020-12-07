@@ -14,7 +14,7 @@ const Navigation = () => {
         <a className="item">
           <div
             sx={{
-              opacity: 1,
+              opacity: 0.95,
             }}
           >
             Home
@@ -65,17 +65,7 @@ const Navigation = () => {
           </div>
         </a>
       </Link>
-      <Link href="/team">
-        <a className="item">
-          <div
-            sx={{
-              opacity: 0.5,
-            }}
-          >
-            The team
-          </div>
-        </a>
-      </Link>
+
       <a href="www.google.com" target="_blank" className="item">
         <div className="login">
           <div>Log in</div>

@@ -33,6 +33,12 @@ const theme = {
     176,
     184,
     192,
+    200,
+    208,
+    216,
+    224,
+    232,
+    240,
   ],
   fontWeights: {
     normal: 500,
@@ -78,7 +84,7 @@ const theme = {
   colWidthDesktop: `calc(calc(100vw - 520px)/12)`,
   grid: {
     display: "grid",
-    gridTemplateColumns: ["repeat(6,1fr)"],
+    gridTemplateColumns: ["repeat(6,1fr)", "repeat(12,1fr)"],
     gridTemplateRows: "auto",
     columnGap: ["20px", "40px"],
     rowGap: 0,
@@ -87,9 +93,6 @@ const theme = {
   pages: {
     home: {
       top: {
-        // height: ["542px", "677px"],
-
-        mx: ["20px", "40px"],
         bg: "transparent",
         bigLogo: {
           svg: {
@@ -104,21 +107,20 @@ const theme = {
             transformOrigin: "bottom left",
           },
         },
-        header: {
-          display: "grid",
-          gridTemplateColumns: ["repeat(6, 1fr)", "repeat(12,1fr)"],
-          columnGap: ["20px", "40px"],
-          gridTemplateRows: "auto",
-          h1: {
-            gridArea: ["1/2/2/-1", "1/7/2/-1"],
-            ml: [(t) => `calc(${t.colWidthMob} + 10px)`],
-            mt: [`124px`],
-          },
-          button: {
+        ".text": {
+          gridArea: ["1/2/2/-1", "1/7/2/-1"],
+          ml: [
+            (t) => `calc(${t.colWidthMob} + 10px)`,
+            (t) => `calc(${t.colWidthDesktop})`,
+          ],
+          mt: [28],
+          h1: {},
+          ".button": {
+            position: "relative",
+            left: [0, "-8px"],
             gridArea: ["2/2/3/6", "2/7/3/-1"],
-            ml: [(t) => `calc(${t.colWidthMob} + 10px)`],
+            width: ["160px"],
             height: "48px",
-            // ml: [0, "5.4vw"],
             mt: ["24px", "48px"],
             bg: "yellow",
 
@@ -137,17 +139,24 @@ const theme = {
           },
         },
         bars: {
-          position: "absolute",
-          left: 0,
-          top: 325,
-          pt: "16px",
-          width: "100%",
-          height: "191px",
+          gridArea: ["2/1/3/-1"],
+          position: "relative",
+          width: "100vw",
+          left: ["-20px", "-40px"],
+          height: ["191px", "232px"],
+          // position: "absolute",
+          // left: [0],
+          // top: [325, "50%"],
+          // bottom: [0],
+          // pt: "16px",
+          // width: "100%",
+          // height: "191px",
           // height: "250px",
           ".barWrapper": {
-            position: "relative",
+            position: "absolute",
             width: "100%",
-            height: "100%",
+            height: ["250px", "434px"],
+            bottom: ["-71px", "-123px"],
             ".topslide": {
               position: "absolute",
               width: "100%",
@@ -162,74 +171,102 @@ const theme = {
           },
           "#bar1": {
             bg: "turquoise",
-            width: [(t) => `calc(${t.colWidthMob} + 10px)`],
-            height: "250px",
+            width: [
+              (t) => `calc(${t.colWidthMob} + 10px)`,
+              (t) => `calc(${t.colWidthDesktop} + 20px)`,
+            ],
+            height: ["100%"],
+            bottom: 0,
             borderRadius: "7px",
-            ml: ["20px"],
+            ml: ["20px", (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
             position: "absolute",
             backgroundRepeat: "no-repeat",
             backgroundImage: (t) =>
               `linear-gradient(to right, ${t.colors.blue},${t.colors.blue})`,
-            backgroundPosition: "0 175px",
-            backgroundSize: "100% 75px",
+            backgroundPosition: "0 100%",
+            backgroundSize: "100% 123px",
           },
           "#bar2": {
             bg: "turquoise",
-            width: [(t) => `calc(${t.colWidthMob} + 10px)`],
-            height: "153px",
-            top: "97px",
+            width: [
+              (t) => `calc(${t.colWidthMob} + 10px)`,
+              (t) => `calc(${t.colWidthDesktop} + 20px)`,
+            ],
+            height: ["153px", "61%"],
+            bottom: 0,
             borderRadius: "7px",
-            ml: [(t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`],
+            ml: [
+              (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 3) + 200px)`,
+            ],
             position: "absolute",
             backgroundRepeat: "no-repeat",
             backgroundImage: (t) =>
               `linear-gradient(to right, ${t.colors.blue},${t.colors.blue})`,
-            backgroundPosition: "0 78px",
-            backgroundSize: "100% 75px",
+            backgroundPosition: "0 100%",
+            backgroundSize: "100% 123px",
           },
           "#bar3": {
             bg: "turquoise",
-            width: [(t) => `calc(${t.colWidthMob} + 10px)`],
-            height: "75px",
-            top: "175px",
+            width: [
+              (t) => `calc(${t.colWidthMob} + 10px)`,
+              (t) => `calc(${t.colWidthDesktop} + 20px)`,
+            ],
+            height: ["28.4%"],
+            bottom: 0,
             borderRadius: "0px 0px 7px 7px",
-            ml: [(t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`],
+            ml: [
+              (t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
+            ],
             position: "absolute",
             backgroundRepeat: "no-repeat",
             backgroundImage: (t) =>
               `linear-gradient(to right, ${t.colors.blue},${t.colors.blue})`,
-            backgroundPosition: "0 0",
-            backgroundSize: "100% 75px",
+            backgroundPosition: "0 100%",
+            backgroundSize: "100% 123px",
           },
         },
         ".spacer": {
-          height: "191px",
+          gridArea: ["2/1/3/-1", "2/1/3/-1"],
+          height: ["191px", "232px"],
         },
       },
       learnmore: {
         bg: "violet",
         color: "black",
-        ".learnMoreText": {
-          gridArea: ["1/2/2/-1"],
-          ml: [(t) => `calc(${t.colWidthMob} + 10px)`],
-          mt: [13],
-
-          fontFamily: "display",
-          fontWeight: "500",
+        ".toptext": {
+          gridArea: ["1/2/2/-1", "1/7/2/-1"],
+          ml: [
+            (t) => `calc(${t.colWidthMob} + 10px)`,
+            (t) => `calc(${t.colWidthDesktop})`,
+          ],
+          mt: [13, 11],
           display: "flex",
           alignItems: "flex-start",
-          justifyContent: "flex-end",
+          justifyContent: ["flex-end", "flex-start"],
+          p: {
+            fontFamily: "display",
+            fontWeight: "500",
+            fontSize: ["16px"],
+            lineHeight: ["20px"],
+          },
           svg: {
             ml: "10px",
-            pt: ["4%"],
+            width: ["55px"],
+            pt: ["4%", "1.6%"],
           },
         },
         ".imagewrapper": {
-          gridArea: ["2/1/3/-1"],
-          height: "250px",
+          gridArea: ["2/1/3/-1", "2/1/3/-1"],
+          mb: [0, "333px"],
+          height: ["250px", "495px"],
           position: "relative",
-          width: ["100vw"],
-          left: ["-20px"],
+          width: [
+            "100vw",
+            (t) => `calc(calc(${t.colWidthDesktop} * 7) + 280px)`,
+          ],
+          left: ["-20px", "-40px"],
           img: {
             position: "absolute",
             height: "100%",
@@ -237,9 +274,10 @@ const theme = {
           },
         },
         ".text": {
-          gridArea: ["3/1/4/-1"],
-          mt: [6],
-          mb: [21],
+          gridArea: ["3/1/4/-1", "2/7/3/-2"],
+          mt: [6, 0],
+          ml: [0, (t) => `calc(${t.colWidthDesktop})`],
+          mb: [21, 0],
           h2: {},
           ".link": {
             mt: [1],
@@ -249,26 +287,28 @@ const theme = {
           },
           p: {
             mt: [3],
+            lineHeight: ["24px", "32px"],
           },
         },
       },
       carousel: {
         bg: "transparent",
         ".carouselHeader": {
-          gridArea: ["1/1/2/-1"],
-          mt: ["80px"],
+          gridArea: ["1/1/2/-1", "1/2/2/6"],
+          mt: [10, 16],
           h2: {
             fontFamily: "display",
             fontWeight: "500",
-            mb: "20px",
           },
           p: {
             fontFamily: "body",
             fontWeight: "400",
-            mb: "24px",
+            mt: [3, 4],
+            mb: ["24px"],
           },
         },
         ".carouselSpacer": {
+          display: ["block", "none"],
           gridArea: ["2/1/3/-1"],
           height: "200px",
           position: "relative",
@@ -2213,6 +2253,7 @@ const theme = {
   components: {
     navigation: {
       position: "fixed",
+      zIndex: 999,
       height: "94px",
       width: "100%",
       bg: "black",
@@ -2228,6 +2269,11 @@ const theme = {
         color: "white",
         ml: ["32px"],
         textDecoration: "none",
+        div: {
+          "&:hover": {
+            opacity: 0.95,
+          },
+        },
       },
       ".login": {
         color: "yellow",

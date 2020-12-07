@@ -13,6 +13,7 @@
     "next": "10.0.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-responsive": "^8.2.0",
     "react-svg": "^11.1.2",
     "theme-ui": "^0.4.0-rc.12"
   },

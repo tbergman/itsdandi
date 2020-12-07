@@ -18,45 +18,45 @@ const Graphics = () => {
         className="barWrapper"
       >
         <motion.span
-          initial={{
-            top: "250px",
-            height: "0",
-          }}
-          animate={{
-            top: 0,
-            height: "250px",
-          }}
-          transition={{
-            duration: 0.5,
-          }}
+          // initial={{
+          //   top: "250px",
+          //   height: "0",
+          // }}
+          // animate={{
+          //   top: 0,
+          //   height: "250px",
+          // }}
+          // transition={{
+          //   duration: 0.5,
+          // }}
           id="bar1"
         ></motion.span>
         <motion.span
-          initial={{
-            top: "250px",
-            height: "0",
-          }}
-          animate={{
-            top: "97px",
-            height: "153px",
-          }}
-          transition={{
-            duration: 0.5,
-          }}
+          // initial={{
+          //   top: "250px",
+          //   height: "0",
+          // }}
+          // animate={{
+          //   top: "97px",
+          //   height: "153px",
+          // }}
+          // transition={{
+          //   duration: 0.5,
+          // }}
           id="bar2"
         ></motion.span>
         <motion.span
-          initial={{
-            top: "250px",
-            height: "0",
-          }}
-          animate={{
-            top: "175px",
-            height: "75px",
-          }}
-          transition={{
-            duration: 0.5,
-          }}
+          // initial={{
+          //   top: "250px",
+          //   height: "0",
+          // }}
+          // animate={{
+          //   top: "175px",
+          //   height: "75px",
+          // }}
+          // transition={{
+          //   duration: 0.5,
+          // }}
           id="bar3"
         ></motion.span>
       </motion.div>
