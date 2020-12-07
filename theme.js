@@ -242,6 +242,7 @@ const theme = {
             (t) => `calc(${t.colWidthDesktop})`,
           ],
           mt: [13, 11],
+          mb: [0, 9],
           display: "flex",
           alignItems: "flex-start",
           justifyContent: ["flex-end", "flex-start"],
