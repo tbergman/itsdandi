@@ -39,7 +39,7 @@ const Community = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation />
+      <Navigation current="community" />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}

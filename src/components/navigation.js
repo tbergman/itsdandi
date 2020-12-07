@@ -3,7 +3,7 @@ import { jsx, Styled } from "theme-ui";
 import Link from "next/link";
 import { ReactSVG } from "react-svg";
 
-const Navigation = () => {
+const Navigation = ({ current }) => {
   return (
     <nav
       sx={{
@@ -14,29 +14,29 @@ const Navigation = () => {
         <a className="item">
           <div
             sx={{
-              opacity: 0.95,
+              opacity: current === "home" ? 0.95 : 0.5,
             }}
           >
             Home
           </div>
         </a>
       </Link>
-      <Link href="/values">
+      <Link href="/values/equitypay">
         <a className="item">
           <div
             sx={{
-              opacity: 0.5,
+              opacity: current === "values" ? 0.95 : 0.5,
             }}
           >
             Why Dandy?
           </div>
         </a>
       </Link>
-      <Link href="/product">
+      <Link href="/product/measure">
         <a className="item">
           <div
             sx={{
-              opacity: 0.5,
+              opacity: current === "product" ? 0.95 : 0.5,
             }}
           >
             Product
@@ -47,18 +47,18 @@ const Navigation = () => {
         <a className="item">
           <div
             sx={{
-              opacity: 0.5,
+              opacity: current === "pricing" ? 0.95 : 0.5,
             }}
           >
             Pricing
           </div>
         </a>
       </Link>
-      <Link href="/community">
+      <Link href="/community/board">
         <a className="item">
           <div
             sx={{
-              opacity: 0.5,
+              opacity: current === "community" ? 0.95 : 0.5,
             }}
           >
             Community

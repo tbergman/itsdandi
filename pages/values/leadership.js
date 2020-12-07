@@ -61,7 +61,7 @@ const Values = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation />
+      <Navigation current="values" />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}

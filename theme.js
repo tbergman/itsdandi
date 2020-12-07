@@ -117,6 +117,7 @@ const theme = {
           h1: {},
           ".button": {
             position: "relative",
+            zIndex: 99,
             left: [0, "-8px"],
             gridArea: ["2/2/3/6", "2/7/3/-1"],
             width: ["160px"],
@@ -294,7 +295,7 @@ const theme = {
       },
       carousel: {
         bg: "transparent",
-        ".carouselHeader": {
+        ".toptext": {
           gridArea: ["1/1/2/-1", "1/2/2/6"],
           mt: [10, 16],
           h2: {
@@ -308,56 +309,71 @@ const theme = {
             mb: ["24px"],
           },
         },
-        ".carouselSpacer": {
-          display: ["block", "none"],
-          gridArea: ["2/1/3/-1"],
-          height: "200px",
-          position: "relative",
-          div: {
-            position: "absolute",
-            bg: "#1F1F21",
-            left: "-20px",
-            height: "100%",
-            width: "100vw",
-          },
-        },
-        ".carouselMain": {
-          mt: ["30px"],
-          gridArea: ["3/1/4/-1"],
-          width: "100%",
-          display: "flex",
-          flexFlow: "column wrap",
 
-          ".carouselItem": {
-            mb: ["24px"],
-            ".carouselItemHeader": {
-              position: "relative",
-              display: "flex",
-              alignItems: "center",
-              ".progressBar": {
-                position: "absolute",
-                height: "32px",
-                width: "2px",
-                bg: "#EDEDF1",
-                borderRadius: "6px",
-                ".progressBarAnimation": {
-                  bg: "turquoise",
-                  width: "100%",
+        ".carousel": {
+          mt: ["30px"],
+          mb: [24],
+          position: "relative",
+          gridArea: ["3/1/4/-1", "2/1/3/-1"],
+          width: ["100%", "100vw"],
+          left: [0, "-40px"],
+
+          display: ["flex", "grid"],
+          gridTemplateColumns: ["repeat(12,1fr)"],
+          gridTemplateRows: ["auto"],
+          px: ["40px"],
+          columnGap: ["40px"],
+          rowGap: ["0"],
+          flexFlow: "column wrap",
+          ".description": {
+            gridArea: ["1/2/2/6"],
+          },
+          ".imagewrapper": {
+            gridArea: ["1/7/3/-1"],
+            position: "relative",
+            height: ["400px"],
+            img: {
+              position: "absolute",
+              height: ["100%"],
+              width: "100%",
+            },
+          },
+          ".texts": {
+            gridArea: ["2/2/3/6"],
+            mt: [6],
+            ".item": {
+              mb: ["24px", 2],
+              ".header": {
+                position: "relative",
+                display: "flex",
+                alignItems: "center",
+                ".progressBar": {
+                  position: "absolute",
+                  height: "32px",
+                  width: "2px",
+                  bg: "#EDEDF1",
                   borderRadius: "6px",
+                  ".progressBarAnimation": {
+                    bg: "turquoise",
+                    width: "100%",
+                    borderRadius: "6px",
+                  },
+                },
+                p: {
+                  ml: "20px",
+                  fontWeight: "500",
+                  fontFamily: "medium",
+                  fontSize: ["16px"],
                 },
               },
-              p: {
-                ml: "20px",
-                fontWeight: "500",
-                fontFamily: "medium",
-              },
             },
-            ".carouselItemBody": {
+            ".body": {
               mx: "20px",
               mt: "8px",
               p: {
                 fontWeight: "400",
                 fontFamily: "body",
+                fontSize: ["16px"],
               },
             },
           },
@@ -2450,7 +2466,7 @@ const theme = {
     p: {
       fontFamily: "body",
       fontSize: ["16px", "20px"],
-      lineHeight: ["24px"],
+      lineHeight: ["24px", "32px"],
       fontWeight: "400",
       m: 0,
     },

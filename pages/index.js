@@ -36,7 +36,7 @@ const Home = () => {
         bg: "black",
       }}
     >
-      <Navigation />
+      <Navigation current={`home`} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
