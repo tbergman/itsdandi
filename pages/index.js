@@ -45,11 +45,11 @@ const Home = () => {
       <Top />
       <LearnMore />
       <Carousel />
-      {/* <PayEquity />
+      <PayEquity />
       <Partners />
       <AdvanceDEI />
       <Quotes />
-      <MarketPlacePartners /> */}
+      <MarketPlacePartners />
       <Footer />
     </div>
   );

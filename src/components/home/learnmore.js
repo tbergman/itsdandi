@@ -40,7 +40,7 @@ const LearnMore = () => {
         </div>
         <div className="imagewrapper">
           {isDesktop ? (
-            <img src="/assets/images/computerdashdesktop.png" alt="" />
+            <img src="/assets/images/01_start_computer.png" alt="" />
           ) : (
             <img src="/assets/images/computerdash.png" alt="" />
           )}
@@ -49,11 +49,10 @@ const LearnMore = () => {
           <Styled.h2>
             Dandi is your platform for diversity, equity, and inclusion
           </Styled.h2>
-          {!isDesktop ? (
-            <div className="link">
-              <LearnMoreLink href="/" text="Learn more" color="black" />
-            </div>
-          ) : null}
+
+          <div className="link">
+            <LearnMoreLink href="/" text="Learn more" color="black" />
+          </div>
 
           {isDesktop ? (
             <Styled.p>

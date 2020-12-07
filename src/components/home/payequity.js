@@ -30,7 +30,8 @@ const PayEquity = () => {
           </div>
         </div>
         <div className="imagewrapper">
-          <ReactSVG src="/assets/svgs/crosswalk.svg" />
+          <img src="/assets/images/01_start_Pay equity.png" alt="" />
+          {/* <ReactSVG src="/assets/svgs/crosswalk.svg" /> */}
         </div>
         <div className="bottom"></div>
       </div>

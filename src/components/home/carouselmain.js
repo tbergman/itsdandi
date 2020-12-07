@@ -8,9 +8,9 @@ const CarouselMain = () => {
   const [current, setCurrent] = useState(0);
   const time = 5000;
   const images = [
-    "/assets/images/carousel1.png",
-    "/assets/images/carousel1.png",
-    "/assets/images/carousel1.png",
+    "/assets/images/01.start_Get the full picture.png",
+    "/assets/images/01_start_measure_move_forward.png",
+    "/assets/images/01_start_put your_insights_to_work.png",
   ];
   const slides = [
     {

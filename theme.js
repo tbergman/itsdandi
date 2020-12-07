@@ -136,6 +136,7 @@ const theme = {
             },
             p: {
               fontSize: "16px",
+              fontFamily: "medium",
             },
           },
         },
@@ -260,15 +261,15 @@ const theme = {
           },
         },
         ".imagewrapper": {
-          gridArea: ["2/1/3/-1", "2/1/3/-1"],
+          gridArea: ["2/1/3/-1", "2/6/3/-1"],
           mb: [0, "333px"],
           height: ["250px", "495px"],
           position: "relative",
           width: [
             "100vw",
-            (t) => `calc(calc(${t.colWidthDesktop} * 7) + 280px)`,
+            (t) => `calc(calc(${t.colWidthDesktop} * 6) + 280px)`,
           ],
-          left: ["-20px", "-40px"],
+          left: ["-20px", (t) => `calc(${t.colWidthDesktop})`],
           img: {
             position: "absolute",
             height: "100%",
@@ -276,19 +277,21 @@ const theme = {
           },
         },
         ".text": {
-          gridArea: ["3/1/4/-1", "2/7/3/-2"],
+          gridArea: ["3/1/4/-1", "2/2/3/6"],
           mt: [6, 0],
-          ml: [0, (t) => `calc(${t.colWidthDesktop})`],
-          mb: [21, 0],
+          ml: [0],
+          mb: [21, 26],
           h2: {},
           ".link": {
             mt: [1],
             p: {
               mt: 0,
+              fontFamily: "medium",
+              fontWeight: "500",
             },
           },
           p: {
-            mt: [3],
+            mt: [3, 4],
             lineHeight: ["24px", "32px"],
           },
         },
@@ -375,6 +378,13 @@ const theme = {
                 fontFamily: "body",
                 fontSize: ["16px"],
               },
+              ".link": {
+                p: {
+                  fontWeight: "500",
+                  fontFamily: "medium",
+                  fontSize: ["16px"],
+                },
+              },
             },
           },
         },
@@ -383,37 +393,46 @@ const theme = {
         bg: "#F8F8F8",
         color: "black",
         ".text": {
-          gridArea: ["1/1/2/-1"],
-          mt: [10],
-          mb: ["226px"],
+          gridArea: ["1/1/2/-1", "1/2/2/6"],
+          mt: [10, 21],
+          mb: ["226px", 0],
           h2: {},
           p: {
-            mt: [3],
+            mt: [3, 4],
+            fontSize: [""],
           },
           ".link": {
             mt: [1],
             p: {
               mt: 0,
+              fontSize: ["16px"],
+              fontWeight: "500",
+              fontFamily: "medium",
             },
           },
         },
         ".imagewrapper": {
           position: "relative",
-          width: ["100vw"],
-          left: ["-20px"],
-          gridArea: ["2/1/3/-1"],
-          div: {
-            zIndex: 999,
+          width: ["100vw", "50vw"],
+          left: [
+            "-20px",
+            (t) => `calc(calc(${t.colWidthDesktop} * 6)  + 220px  )`,
+          ],
+          height: ["auto", "592px"],
+          gridArea: ["2/1/3/-1", "1/1/2/-1"],
+          img: {
+            zIndex: 99,
             position: "absolute",
-            height: ["320px"],
+            height: ["320px", "100%"],
             width: ["100%"],
-            top: ["-40%"],
+            top: ["-40%", 0],
             display: "flex",
             justifyContent: "center",
           },
         },
         ".bottom": {
           gridArea: ["3/1/4/-1"],
+          display: ["block", "none"],
           height: ["227px"],
           width: ["100vw"],
           left: ["-20px"],
@@ -427,67 +446,117 @@ const theme = {
         ".text": {
           mt: [10],
           mb: [9],
-          gridArea: ["1/1/2/-1"],
-          h2: {},
+          gridArea: ["1/1/2/-1", "1/2/2/6"],
+          h2: {
+            lineHeight: ["48px"],
+          },
         },
         ".carousel": {
           gridArea: ["2/1/3/-1"],
           height: "250px",
+          width: "100vw",
+          left: ["-20px", "-40px"],
           position: "relative",
-          div: {
-            position: "absolute",
-            height: "100%",
-            width: "100vw",
-            left: "-20px",
-            bg: "gray",
+          overflowX: "scroll",
+          overflowY: "hidden",
+          display: "flex",
+          flexFlow: "column",
+          ".row1": {
+            width: "10000px",
+            display: "flex",
+            flexFlow: ["row nowrap"],
+            alignItems: "center",
+
+            ".imagewrapper": {
+              flex: "0 200px",
+              ml: [9],
+              img: {
+                objectFit: "contain",
+              },
+            },
+          },
+          ".row2": {
+            width: "10000px",
+            display: "flex",
+            flexFlow: ["row nowrap"],
+            alignItems: "center",
+
+            ".imagewrapper": {
+              flex: "0 200px",
+              ml: [9],
+              img: {
+                objectFit: "contain",
+              },
+            },
           },
         },
       },
       advancedei: {
         bg: "lightTurquoise",
         color: "black",
-        ".advancedeiHeader": {
-          mt: [10],
-          gridArea: ["1/1/2/-1"],
+        ".text": {
+          mt: [10, 22],
+          mb: [0, 30],
+          gridArea: ["1/1/2/-1", "1/7/2/-2"],
+          ml: [0, (t) => `calc(${t.colWidthDesktop})`],
           h2: {},
-          ".advancedeiSub": {
-            mt: "30px",
+          p: {
+            mt: ["30px", 4],
             fontFamily: "body",
             fontWeight: "400",
             color: "black",
           },
-          ".advancedeiLink": {
-            mt: "8px",
-            mb: "20px",
+          ".link": {
+            mt: [1, 3],
             p: {
               fontFamily: "medium",
               fontWeight: "500",
+              mt: 0,
             },
           },
         },
-        ".advancedeiGraphics": {
-          gridArea: ["2/1/3/-1"],
-          height: "120px",
+        ".graphics": {
+          gridArea: ["2/1/3/-1", "1/1/2/6"],
+          height: ["120px", "100%"],
           position: "relative",
-          width: "100vw",
-          left: ["-20px", "40px"],
-          ".advancedeiBox1": {
+          width: [
+            "100vw",
+            (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
+          ],
+          left: ["-20px", "-40px"],
+          ".box1": {
             position: "absolute",
             left: 0,
             bottom: 0,
-            height: "67px",
-            width: "115px",
+            height: ["67px", "36%"],
+            width: [
+              "115px",
+              (t) => `calc(calc(${t.colWidthDesktop} * 2.5) + 120px)`,
+            ],
             bg: "#02C3CF",
             zIndex: 99,
           },
-          ".advancedeiBox2": {
+          ".box2": {
             position: "absolute",
-            left: "42px",
+            left: ["42px", (t) => `calc(${t.colWidthDesktop} + 40px)`],
             bottom: "0",
-            width: "134px",
-            height: "120px",
+            width: [
+              "134px",
+              (t) => `calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
+            ],
+            height: ["120px", "64%"],
             bg: "#A4F0F4",
             zIndex: 89,
+          },
+          ".box3": {
+            position: "absolute",
+            display: ["none", "block"],
+            left: 0,
+            bottom: "0",
+            width: [(t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
+            height: ["120px", "100%"],
+            bg: "#000",
+            zIndex: 88,
           },
         },
       },
@@ -495,11 +564,14 @@ const theme = {
         bg: "white",
         color: "black",
         ".imagewrapper": {
-          gridArea: ["1/1/2/-1"],
+          gridArea: ["1/1/2/-1", "1/1/2/6"],
           position: "relative",
-          height: ["240px"],
-          width: "100vw",
-          left: ["-20px"],
+          height: ["240px", "760px"],
+          width: [
+            "100vw",
+            (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
+          ],
+          left: ["-20px", "-40px"],
           img: {
             position: "absolute",
             width: "100%",
@@ -510,47 +582,53 @@ const theme = {
             right: 0,
           },
         },
-        ".quotesText": {
-          gridArea: ["2/1/3/-1"],
+        ".text": {
+          gridArea: ["2/1/3/-1", "1/6/2/-2"],
           position: "relative",
-          mt: [3],
+          mt: [3, 25],
+          ml: [
+            (t) => `calc(${t.colWidthMob} + 5px)`,
+            (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`,
+          ],
 
           h3: {
-            ml: [(t) => `calc(${t.colWidthMob} + 5px)`],
             fontFamily: "display",
             fontWeight: "500",
-            fontSize: ["24px"],
-            lineHeight: ["31.2px"],
+            fontSize: ["24px", "40px"],
+            lineHeight: ["31.2px", "48px"],
           },
-          ".quotesSource": {
-            ml: [(t) => `calc(${t.colWidthMob} + 5px)`],
-            mt: ["24px"],
+          ".source": {
+            // ml: [(t) => `calc(${t.colWidthMob} + 5px)`],
+            mt: [3, 7],
             mb: [5],
-            ".quotesName": {
+            ".name": {
               fontFamily: "medium",
               fontWeight: "500",
-              lineHeight: "24px",
+              lineHeight: ["24px", "32px"],
+              fontSize: ["16px"],
             },
-            ".quotesTitle": {
+            ".title": {
               fontFamily: "body",
               fontWeight: "400",
+              fontSize: ["16px"],
               lineHeight: "24px",
             },
           },
-          ".quotationMark": {
+          ".quotationmark": {
             position: "absolute",
-            left: 0,
+            left: [0, (t) => `calc(${t.colWidthDesktop} * -1)`],
           },
         },
-        ".quotesNavigation": {
-          mt: ["20px"],
-          gridArea: ["3/1/4/-1"],
-          height: "64px",
-          width: "100vw",
-          left: ["-20px"],
+        ".navigation": {
+          mt: ["20px", 0],
+          gridArea: ["3/1/4/-1", "1/12/2/-1"],
+          height: ["64px", "100%"],
+          width: ["100vw", "auto"],
+          left: ["-20px", "unset"],
+          right: ["unset", "-40px"],
           position: "relative",
           display: "flex",
-          flexFlow: "row nowrap",
+          flexFlow: ["row nowrap", "column"],
           ".prev": {
             bg: "rgba(58, 58, 61, 0.1)",
             cursor: "pointer",
@@ -578,25 +656,28 @@ const theme = {
         color: "black",
         position: "relative",
         bg: "#FFF",
-        ".mppTop": {
-          gridArea: ["1/1/2/-1"],
+        ".graphics": {
+          gridArea: ["1/1/2/-1", "1/2/2/6"],
           height: "184px",
           width: "100vw",
           left: ["-20px"],
           position: "relative",
           bg: "lightViolet",
         },
-        ".mppMain": {
-          gridArea: ["2/1/3/-1"],
-          mt: ["149px"],
+        ".text": {
+          gridArea: ["2/1/3/-1", "1/7/2/-1"],
+          mt: ["149px", "275px"],
+          mb: ["303px"],
           h2: {},
           p: {
-            mt: ["20px"],
+            mt: ["20px", 4],
           },
-          ".mppLink": {
-            mb: ["80px"],
+          ".link": {
+            mt: [1],
+            mb: ["80px", 0],
             p: {
               mt: 0,
+              fontFamily: "medium",
             },
           },
         },
@@ -2282,7 +2363,7 @@ const theme = {
       pt: ["44px"],
       ".item": {
         fontSize: "nav",
-        lineHeight: "small",
+        fontFamily: "medium",
         color: "white",
         ml: ["32px"],
         textDecoration: "none",
@@ -2355,6 +2436,7 @@ const theme = {
     learnMoreLink: {
       textDecoration: "none",
       display: "flex",
+      cursor: "pointer",
 
       alignItems: "center",
       p: {
