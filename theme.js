@@ -95,6 +95,7 @@ const theme = {
       top: {
         bg: "transparent",
         bigLogo: {
+          display: "none",
           svg: {
             position: "fixed",
             zIndex: 9999,
@@ -2365,31 +2366,54 @@ const theme = {
       height: "94px",
       width: "100%",
       bg: "black",
-      display: ["none", "flex"],
+      display: ["none", "block"],
       fontFamily: "body",
-
-      justifyContent: "flex-end",
-      px: ["40px"],
-      pt: ["44px"],
-      ".item": {
-        fontSize: "nav",
-        fontFamily: "medium",
-        color: "white",
-        ml: ["32px"],
-        textDecoration: "none",
-        div: {
-          "&:hover": {
-            opacity: 0.95,
+      ".logowrapper": {
+        position: "relative",
+        width: "0",
+        height: "0",
+        left: 0,
+        ".logo": {
+          position: "absolute",
+          left: ["40px"],
+          top: ["40px"],
+          div: {
+            div: {
+              svg: {
+                fill: "#fff",
+                path: {
+                  fill: "#fff",
+                },
+              },
+            },
           },
         },
       },
-      ".login": {
-        color: "yellow",
+      ".links": {
         display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "flex-start",
-        ".arrow": {
-          pl: "14px",
+        justifyContent: "flex-end",
+        px: ["40px"],
+        pt: ["44px"],
+        ".item": {
+          fontSize: "nav",
+          fontFamily: "medium",
+          color: "white",
+          ml: ["32px"],
+          textDecoration: "none",
+          div: {
+            "&:hover": {
+              opacity: 0.95,
+            },
+          },
+        },
+        ".login": {
+          color: "yellow",
+          display: "flex",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          ".arrow": {
+            pl: "14px",
+          },
         },
       },
     },
