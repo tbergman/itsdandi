@@ -39,11 +39,7 @@ const LearnMore = () => {
           </svg>
         </div>
         <div className="imagewrapper">
-          {isDesktop ? (
-            <img src="/assets/images/01_start_computer.png" alt="" />
-          ) : (
-            <img src="/assets/images/computerdash.png" alt="" />
-          )}
+          <img src="/assets/images/01_start_computer.png" alt="" />
         </div>
         <div className="text">
           <Styled.h2>
