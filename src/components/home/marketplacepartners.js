@@ -17,7 +17,12 @@ const MarketPlacePartners = () => {
         }}
       >
         <div className="graphics">
-          <ReactSVG src="/assets/svgs/01_start_your_partners.svg" />
+          <div className="background">
+            <ReactSVG
+              className="circles"
+              src="/assets/svgs/01_start_your_partners.svg"
+            />
+          </div>
         </div>
         <div className="text">
           <Styled.h2>Your partners in transformation</Styled.h2>

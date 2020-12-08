@@ -22,7 +22,7 @@ const Footer = () => {
           variant: "grid",
         }}
       >
-        <div className="footerHeader">
+        <div className="header">
           <Styled.h2>Take Dandi for a test drive</Styled.h2>
           <Styled.p>
             Because there’s only one place for today’s DEI challenges: <br />
@@ -34,26 +34,30 @@ const Footer = () => {
         <FooterForm />
         <div className="socials">
           {socialsIcons.map((icon, i) => (
-            <div
+            <a
+              href="/"
+              target="_blank"
+              className="item"
               sx={{
                 gridArea: [`1/${i + 1}/2/${i + 2}`],
               }}
               key={i}
             >
               <ReactSVG src={icon} />
-            </div>
+            </a>
           ))}
         </div>
-        <div className="signupLink">
+        <div className="newsletter">
           <LearnMoreLink
             href="/"
             text="Sign up for newsletter"
             color="#FFD93B"
           />
         </div>
-
-        <div className="bottomSection">
+        <div className="logo">
           <ReactSVG src="/assets/svgs/dandiLogo.svg" />
+        </div>
+        <div className="copyright">
           <Styled.p>Ⓒ Dandi Technologies, Inc.</Styled.p>
         </div>
       </div>
