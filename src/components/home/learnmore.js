@@ -1,15 +1,32 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
+import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../helpers/devices";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
-const LearnMore = () => {
+const LearnMore = ({ setNavbarStyling, windowHeight }) => {
+  const ctx = useThemeUI();
+  const { inView, ref, entry } = useInView({
+    rootMargin: `0px 0px  -${windowHeight - 94}px 0px`,
+  });
+  const { theme } = ctx;
   const isDesktop = useMediaQuery({
     query: devices.desktop,
   });
+
+  useEffect(() => {
+    if (inView) {
+      setNavbarStyling({
+        ...theme.components.navigation.violet,
+      });
+    }
+  }, [inView]);
+
   return (
     <div
+      ref={ref}
       sx={{
         variant: "pages.home.learnmore",
       }}

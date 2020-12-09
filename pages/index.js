@@ -10,7 +10,7 @@ import Partners from "../src/components/home/partners";
 import AdvanceDEI from "../src/components/home/advancedei";
 import Quotes from "../src/components/home/quotes";
 import MarketPlacePartners from "../src/components/home/marketplacepartners";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   motion,
@@ -22,6 +22,10 @@ import MobileNav from "../src/components/mobilenav";
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [windowHeight, setWindowHeight] = useState(500);
+  const [navbarStyling, setNavbarStyling] = useState({
+    bg: "#1A1A1D",
+  });
   const ctx = useThemeUI();
   const { theme } = ctx;
   const colors = [
@@ -30,21 +34,34 @@ const Home = () => {
       color: theme.colors.white,
     },
   ];
+
+  useEffect(() => {
+    if (window) {
+      setWindowHeight(window.innerHeight);
+    }
+  }, []);
+
   return (
     <div
       sx={{
         bg: "black",
       }}
     >
-      <Navigation current={`home`} />
+      <Navigation current={`home`} styling={navbarStyling} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <Top />
-      <LearnMore />
-      <Carousel />
+      <Top setNavbarStyling={setNavbarStyling} />
+      <LearnMore
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+      />
+      <Carousel
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+      />
       <PayEquity />
       <Partners />
       <AdvanceDEI />

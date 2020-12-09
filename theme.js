@@ -2365,7 +2365,6 @@ const theme = {
       zIndex: 999,
       height: "94px",
       width: "100%",
-      bg: "black",
       display: ["none", "block"],
       fontFamily: "body",
       ".logowrapper": {
@@ -2398,7 +2397,7 @@ const theme = {
           fontSize: "nav",
           fontFamily: "medium",
           color: "white",
-          ml: ["32px"],
+          ml: [4],
           textDecoration: "none",
           div: {
             "&:hover": {
@@ -2414,6 +2413,44 @@ const theme = {
           ".arrow": {
             pl: "14px",
           },
+        },
+      },
+      default: {
+        bg: "black",
+        ".item": {
+          color: "white",
+        },
+        ".login": {
+          color: "yellow",
+          path: {
+            stroke: "yellow",
+          },
+          line: {
+            stroke: "yellow",
+          },
+        },
+        ".logo": {
+          path: {
+            fill: "white",
+          },
+        },
+      },
+      violet: {
+        bg: "violet",
+        ".item": {
+          color: (t) => `${t.colors.black} !important`,
+        },
+        ".login": {
+          color: (t) => `${t.colors.white} !important`,
+          path: {
+            fill: (t) => `${t.colors.white} !important`,
+          },
+          line: {
+            fill: (t) => `${t.colors.white} !important`,
+          },
+        },
+        ".logo": {
+          path: { fill: (t) => `${t.colors.black} !important` },
         },
       },
     },

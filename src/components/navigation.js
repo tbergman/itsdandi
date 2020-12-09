@@ -2,12 +2,16 @@
 import { jsx, Styled } from "theme-ui";
 import Link from "next/link";
 import { ReactSVG } from "react-svg";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
-const Navigation = ({ current }) => {
+const Navigation = ({ current, styling }) => {
   return (
-    <nav
+    <motion.nav
       sx={{
         variant: "components.navigation",
+        ...styling,
+        transition: "all 100ms cubic-bezier(.01,.66,.83,.67)",
       }}
     >
       <div className="logowrapper">
@@ -82,7 +86,7 @@ const Navigation = ({ current }) => {
           </div>
         </a>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
