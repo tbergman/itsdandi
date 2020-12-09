@@ -1,29 +1,18 @@
 /** @jsx jsx */
 import { jsx, Styled, useThemeUI } from "theme-ui";
 import CarouselMain from "./carouselmain";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import theme from "../../../theme";
+import InView from "../inview";
 
 const Carousel = ({ setNavbarStyling, windowHeight }) => {
   const ctx = useThemeUI();
-  const { inView, ref, entry } = useInView({
-    rootMargin: `0px 0px  -${windowHeight - 94}px 0px`,
-  });
   const { theme } = ctx;
 
-  useEffect(() => {
-    if (inView) {
-      setNavbarStyling({ ...theme.components.navigation.default });
-    }
-  }, [inView]);
-
   return (
-    <div
-      ref={ref}
-      sx={{
-        variant: "pages.home.carousel",
-      }}
+    <InView
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={theme.components.navigation.default}
+      variant="pages.home.carousel"
+      rootMargin={`0px 0px  -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -38,7 +27,7 @@ const Carousel = ({ setNavbarStyling, windowHeight }) => {
         </div>
         <CarouselMain />
       </div>
-    </div>
+    </InView>
   );
 };
 

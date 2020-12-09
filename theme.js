@@ -2443,10 +2443,82 @@ const theme = {
         ".login": {
           color: (t) => `${t.colors.white} !important`,
           path: {
-            fill: (t) => `${t.colors.white} !important`,
+            stroke: (t) => `${t.colors.white} !important`,
           },
           line: {
-            fill: (t) => `${t.colors.white} !important`,
+            stroke: (t) => `${t.colors.white} !important`,
+          },
+        },
+        ".logo": {
+          path: { fill: (t) => `${t.colors.black} !important` },
+        },
+      },
+      gray: {
+        bg: "#F8F8F8",
+        ".item": {
+          color: (t) => `${t.colors.black} !important`,
+        },
+        ".login": {
+          color: (t) => `${t.colors.yellow} !important`,
+          path: {
+            stroke: (t) => `${t.colors.yellow} !important`,
+          },
+          line: {
+            stroke: (t) => `${t.colors.yellow} !important`,
+          },
+        },
+        ".logo": {
+          path: { fill: (t) => `${t.colors.black} !important` },
+        },
+      },
+      gray2: {
+        bg: "#F2F2F2",
+        ".item": {
+          color: (t) => `${t.colors.black} !important`,
+        },
+        ".login": {
+          color: (t) => `${t.colors.yellow} !important`,
+          path: {
+            stroke: (t) => `${t.colors.yellow} !important`,
+          },
+          line: {
+            stroke: (t) => `${t.colors.yellow} !important`,
+          },
+        },
+        ".logo": {
+          path: { fill: (t) => `${t.colors.black} !important` },
+        },
+      },
+      white: {
+        bg: "#FFF",
+        ".item": {
+          color: (t) => `${t.colors.black} !important`,
+        },
+        ".login": {
+          color: (t) => `${t.colors.yellow} !important`,
+          path: {
+            stroke: (t) => `${t.colors.yellow} !important`,
+          },
+          line: {
+            stroke: (t) => `${t.colors.yellow} !important`,
+          },
+        },
+        ".logo": {
+          path: { fill: (t) => `${t.colors.black} !important` },
+        },
+      },
+      lightTurquoise: {
+        bg: "lightTurquoise",
+        ".item": {
+          color: (t) => `${t.colors.black} !important`,
+        },
+        ".login": {
+          color: (t) => `${t.colors.black} !important`,
+          path: {
+            stroke: (t) => `${t.colors.black} !important`,
+          },
+          line: {
+            stroke: (t) => `${t.colors.black} !important`,
           },
         },
         ".logo": {

@@ -1,11 +1,14 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
+import { jsx, Styled, useThemeUI } from "theme-ui";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import InView from "../inview";
+import theme from "../../../theme";
 
-const Partners = () => {
+const Partners = ({ setNavbarStyling, windowHeight }) => {
   const ref = useRef();
   const { scrollYProgress } = useViewportScroll();
+  const { theme } = useThemeUI();
 
   const logos = {
     row1: [
@@ -18,10 +21,11 @@ const Partners = () => {
     ],
   };
   return (
-    <div
-      sx={{
-        variant: "pages.home.partners",
-      }}
+    <InView
+      variant="pages.home.partners"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={theme.components.navigation.white}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -66,7 +70,7 @@ const Partners = () => {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </InView>
   );
 };
 

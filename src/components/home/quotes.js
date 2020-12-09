@@ -1,18 +1,21 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
-import { jsx, Styled } from "theme-ui";
+import { jsx, Styled, useThemeUI } from "theme-ui";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../helpers/devices";
+import InView from "../inview";
 
-const Quotes = () => {
+const Quotes = ({ setNavbarStyling, windowHeight }) => {
+  const { theme } = useThemeUI();
   const isDesktop = useMediaQuery({
     query: devices.desktop,
   });
   return (
-    <div
-      sx={{
-        variant: "pages.home.quotes",
-      }}
+    <InView
+      variant="pages.home.quotes"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={theme.components.navigation.gray2}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -47,7 +50,7 @@ const Quotes = () => {
           </div>
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

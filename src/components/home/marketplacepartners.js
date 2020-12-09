@@ -1,16 +1,20 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
+import { jsx, Styled, useThemeUI } from "theme-ui";
 import Circles from "./circles";
 import LearnMoreLink from "../learnmorelink";
 import { ReactSVG } from "react-svg";
+import InView from "../inview";
 
-const MarketPlacePartners = () => {
+const MarketPlacePartners = ({ setNavbarStyling, windowHeight }) => {
+  const { theme } = useThemeUI();
   return (
-    <div
-      sx={{
-        variant: "pages.home.marketplacepartners",
-      }}
+    <InView
+      variant="pages.home.marketplacepartners"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={theme.components.navigation.white}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
+      {" "}
       <div
         sx={{
           variant: "grid",
@@ -39,7 +43,7 @@ const MarketPlacePartners = () => {
           </div>
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

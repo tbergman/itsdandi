@@ -62,11 +62,23 @@ const Home = () => {
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
       />
-      <PayEquity />
-      <Partners />
-      <AdvanceDEI />
-      <Quotes />
-      <MarketPlacePartners />
+      <PayEquity
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+      />
+      <Partners
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+      />
+      <AdvanceDEI
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+      />
+      <Quotes setNavbarStyling={setNavbarStyling} windowHeight={windowHeight} />
+      <MarketPlacePartners
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+      />
       <Footer />
     </div>
   );

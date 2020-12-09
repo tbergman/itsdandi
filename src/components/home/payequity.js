@@ -1,14 +1,18 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
-import { jsx, Styled } from "theme-ui";
+import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
+import InView from "../inview";
 
-const PayEquity = () => {
+const PayEquity = ({ setNavbarStyling, windowHeight }) => {
+  const { theme } = useThemeUI();
+
   return (
-    <div
-      sx={{
-        variant: "pages.home.payequity",
-      }}
+    <InView
+      variant="pages.home.payequity"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={theme.components.navigation.gray}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -35,7 +39,7 @@ const PayEquity = () => {
         </div>
         <div className="bottom"></div>
       </div>
-    </div>
+    </InView>
   );
 };
 
