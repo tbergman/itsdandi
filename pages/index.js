@@ -21,13 +21,13 @@ import {
 import MobileNav from "../src/components/mobilenav";
 
 const Home = () => {
+  const { theme } = useThemeUI();
   const [menuOpen, setMenuOpen] = useState(false);
   const [windowHeight, setWindowHeight] = useState(500);
   const [navbarStyling, setNavbarStyling] = useState({
-    bg: "#1A1A1D",
+    bg: theme.colors.black,
   });
-  const ctx = useThemeUI();
-  const { theme } = ctx;
+
   const colors = [
     {
       bg: theme.colors.black,
