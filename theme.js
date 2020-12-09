@@ -2641,8 +2641,8 @@ const theme = {
       textDecoration: "none",
       display: "flex",
       cursor: "pointer",
-
       alignItems: "center",
+      width: "fit-content",
       p: {
         mr: "10px",
       },
