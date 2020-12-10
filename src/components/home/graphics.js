@@ -20,6 +20,7 @@ const Graphics = () => {
             }}
             transition={{
               duration: 0.5,
+              delay: 0.2,
             }}
             className="top"
           ></motion.div>
@@ -32,6 +33,7 @@ const Graphics = () => {
             }}
             transition={{
               duration: 0.5,
+              delay: 0.2,
             }}
             className="bottom"
           ></motion.div>
@@ -46,6 +48,7 @@ const Graphics = () => {
             }}
             transition={{
               duration: 0.5,
+              delay: 0.2,
             }}
             className="top"
           ></motion.div>
@@ -58,6 +61,7 @@ const Graphics = () => {
             }}
             transition={{
               duration: 0.5,
+              delay: 0.2,
             }}
             className="bottom"
           ></motion.div>
@@ -72,6 +76,7 @@ const Graphics = () => {
             }}
             transition={{
               duration: 0.5,
+              delay: 0.2,
             }}
             className="bottom"
           ></motion.div>

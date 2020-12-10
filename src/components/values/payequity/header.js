@@ -1,12 +1,16 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
+import { jsx, Styled, useThemeUI } from "theme-ui";
+import theme from "../../../../theme";
+import InView from "../../inview";
 
-const Header = () => {
+const Header = ({ setNavbarStyling, windowHeight }) => {
+  const { theme } = useThemeUI();
   return (
-    <div
-      sx={{
-        variant: "pages.values.payequity.header",
-      }}
+    <InView
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={theme.components.navigation.white}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      variant="pages.values.payequity.header"
     >
       <div
         sx={{
@@ -15,16 +19,16 @@ const Header = () => {
       >
         <div className="headerText">
           <Styled.h1>Dandi makes pay equity possible</Styled.h1>
-          <Styled.h4>
+          <Styled.h3>
             With sophisticated compensation analytics built right in, Dandi
             helps you find the pay gaps at your company—and make them disappear.
-          </Styled.h4>
+          </Styled.h3>
         </div>
         <div className="headerGraphic">
           <div className="headerImage"></div>
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

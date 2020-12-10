@@ -1,13 +1,17 @@
 /** @jsx jsx  */
-import { jsx, Styled } from "theme-ui";
+import { jsx, Styled, useThemeUI } from "theme-ui";
 import CompensationGraph from "./compensationgraph";
+import InView from "../../inview";
+import theme from "../../../../theme";
 
-const Compensation = () => {
+const Compensation = ({ setNavbarStyling, windowHeight }) => {
+  const { theme } = useThemeUI();
   return (
-    <div
-      sx={{
-        variant: "pages.values.payequity.compensation",
-      }}
+    <InView
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={theme.components.navigation.gray}
+      variant="pages.values.payequity.compensation"
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -15,33 +19,37 @@ const Compensation = () => {
           rowGap: 0,
         }}
       >
-        <div className="compensationTop">
+        <div className="top">
           <Styled.h2>The right way to track compensation</Styled.h2>
-          <Styled.p>
-            Equal pay for equal work—it’s one of the core principles of DEI, but
-            actually making it happen is harder than it sounds. That’s because
-            many of today’s compensation platforms and models lack the speed or
-            nuance needed to deliver the right insights. <br />
-            <br />
-            That’s where Dandi’s different. Informed by leading academic
-            research and industry best practices, our compensation analytics
-            offers a complete view of how your people are paid.
-          </Styled.p>
+          <div className="body">
+            <Styled.p className="section1">
+              Equal pay for equal work—it’s one of the core principles of DEI,
+              but actually making it happen is harder than it sounds. That’s
+              because many of today’s compensation platforms and models lack the
+              speed or nuance needed to deliver the right insights.
+            </Styled.p>
+            <Styled.p className="section2">
+              That’s where Dandi’s different. Informed by leading academic
+              research and industry best practices, our compensation analytics
+              offers a complete view of how your people are paid.
+            </Styled.p>
+          </div>
+
           <div className="compensationTopGraphic">
-            <img src="/assets/images/compensation_graph1.png" alt="graph" />
+            <img src="/assets/images/equitypay/compensation.png" alt="graph" />
           </div>
         </div>
         <div className="compensationBottom">
+          <CompensationGraph />
           <Styled.p className="text">
             In just a few clicks, you can see how factors like age, gender
             identity, LGBTQIA+ status, and marital status influence compensation
             at your company. Dandi also looks beyond salary to incorporate other
             forms of pay, like bonus and equity.
           </Styled.p>
-          <CompensationGraph />
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

@@ -8,7 +8,7 @@ import Compensation from "../../src/components/values/payequity/compensation";
 import Reports from "../../src/components/values/payequity/reports";
 import Quote from "../../src/components/quote";
 import Affordable from "../../src/components/values/payequity/affordable";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   motion,
@@ -20,8 +20,11 @@ import MobileNav from "../../src/components/mobilenav";
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const ctx = useThemeUI();
-  const { theme } = ctx;
+  const { theme } = useThemeUI();
+  const [windowHeight, setWindowHeight] = useState(500);
+  const [navBarStyling, setNavbarStyling] = useState({
+    ...theme.components.navigation.white,
+  });
   const subPages = ["Pay Equity", "The DEI Journey", "For Your Role"];
   const colors = [
     {
@@ -29,21 +32,35 @@ const Home = () => {
       color: theme.colors.black,
     },
   ];
+
+  useEffect(() => {
+    if (window) {
+      setWindowHeight(window.innerHeight);
+    }
+  }, []);
+
   return (
     <div
       sx={{
         bg: "#FFF",
       }}
     >
-      <Navigation current="values" />
+      <Navigation
+        current="values"
+        setNavbarStyling={setNavbarStyling}
+        styling={navBarStyling}
+      />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <Header />
-      <Compensation />
-      <Reports />
+      <Header setNavbarStyling={setNavbarStyling} windowHeight={windowHeight} />
+      <Compensation
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+      />
+      {/* <Reports />
       <Quote
         imageUrl="/assets/images/tamarcus-brown.png"
         text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus &
@@ -53,7 +70,7 @@ const Home = () => {
         bg="#FAFAFA"
       />
       <Affordable />
-      <SubNavigation subPages={subPages} />
+      <SubNavigation subPages={subPages} /> */}
       <Footer />
     </div>
   );

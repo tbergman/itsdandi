@@ -769,21 +769,26 @@ const theme = {
       payequity: {
         header: {
           ".headerText": {
-            mt: [18],
-            gridArea: ["1/1/2/-1"],
+            mt: [18, 22],
+            gridArea: ["1/1/2/-1", "1/3/2/9"],
             color: "black",
           },
-          h2: {},
-          h4: {
-            mt: ["18px"],
-            mb: ["18px"],
+          h1: {},
+          h3: {
+            mt: [2, 3],
+            mb: [2, 0],
+            fontFamily: "body",
+            fontWeight: "400",
+            lineHeight: "36px",
+            fontSize: ["24px"],
           },
           ".headerGraphic": {
-            gridArea: ["2/1/3/-1"],
+            gridArea: ["2/1/3/-1", "2/9/3/-1"],
             position: "relative",
-            height: ["100px"],
-            width: "100vw",
-            left: ["-20px"],
+            height: ["100px", "215px"],
+            width: ["100vw", "auto"],
+            left: ["-20px", 0],
+            bottom: ["unset", 0],
             ".headerImage": {
               position: "absolute",
               bg: "gray",
@@ -795,23 +800,39 @@ const theme = {
         },
         compensation: {
           bg: "lightGray",
-          ".compensationTop": {
-            gridArea: ["1/1/2/-1"],
-            mt: [23],
+          ".top": {
+            gridArea: ["1/1/2/-1", "1/3/2/-2"],
+            mt: [23, "248px "],
             color: "black",
             h2: {
-              fontFamily: "medium",
-              fontSize: ["32px"],
+              fontFamily: "display",
+              fontSize: ["32px", "40px"],
               fontWeight: "500",
-              lineHeight: ["38.4px"],
+              lineHeight: ["38.4px", "48px"],
             },
-            p: {
-              mt: [3],
-              mb: [8],
+            ".body": {
+              display: "flex",
+
+              ".section1": {
+                width: (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+                mr: (t) => `calc(${t.colWidthDesktop})`,
+              },
+              ".section2": {
+                width: (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+              },
+              p: {
+                mt: [3],
+                mb: [8, 11],
+                fontFamily: "body",
+                fontSize: "16px",
+                lineHeight: "24px",
+                fontWeight: "400",
+              },
             },
+
             ".compensationTopGraphic": {
               position: "relative",
-              height: "60px",
+              height: ["60px", "164px"],
               img: {
                 position: "absolute",
                 height: "200%",
@@ -821,20 +842,37 @@ const theme = {
             },
           },
           ".compensationBottom": {
+            pt: [0, 25],
+            pb: [0, 13],
             bg: "black",
             position: "relative",
-            width: "100vw",
-            left: ["-20px"],
+            width: ["100vw"],
+            left: ["-20px", "-40px"],
             gridArea: ["2/1/3/-1"],
+            display: "flex",
+            alignItems: "flex-start",
+
             ".text": {
-              mt: [13],
-              mx: ["20px"],
+              mt: [13, 2],
+              ml: ["20px", (t) => `calc(${t.colWidthDesktop})`],
+              width: [
+                "unset",
+                (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+              ],
+              fontFamily: "body",
+              fontSize: "16px",
+              lineHeight: "24px",
             },
             ".compensationGraph": {
-              mt: [5],
-              mb: [9],
-              mx: ["20px"],
+              mt: [5, 0],
+              mb: [9, 0],
+              mx: ["20px", 0],
+              ml: [0, (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
               height: ["215px"],
+              width: [
+                "unset",
+                (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+              ],
               display: "flex",
               flexFlow: "row nowrap",
               ".dataPoint": {
@@ -2485,12 +2523,12 @@ const theme = {
           color: (t) => `${t.colors.black} !important`,
         },
         ".login": {
-          color: (t) => `${t.colors.yellow} !important`,
+          color: (t) => `${t.colors.blue} !important`,
           path: {
-            stroke: (t) => `${t.colors.yellow} !important`,
+            stroke: (t) => `${t.colors.blue} !important`,
           },
           line: {
-            stroke: (t) => `${t.colors.yellow} !important`,
+            stroke: (t) => `${t.colors.blue} !important`,
           },
         },
         ".logo": {
@@ -2503,12 +2541,12 @@ const theme = {
           color: (t) => `${t.colors.black} !important`,
         },
         ".login": {
-          color: (t) => `${t.colors.yellow} !important`,
+          color: (t) => `${t.colors.blue} !important`,
           path: {
-            stroke: (t) => `${t.colors.yellow} !important`,
+            stroke: (t) => `${t.colors.blue} !important`,
           },
           line: {
-            stroke: (t) => `${t.colors.yellow} !important`,
+            stroke: (t) => `${t.colors.blue} !important`,
           },
         },
         ".logo": {
@@ -2521,12 +2559,12 @@ const theme = {
           color: (t) => `${t.colors.black} !important`,
         },
         ".login": {
-          color: (t) => `${t.colors.yellow} !important`,
+          color: (t) => `${t.colors.blue} !important`,
           path: {
-            stroke: (t) => `${t.colors.yellow} !important`,
+            stroke: (t) => `${t.colors.blue} !important`,
           },
           line: {
-            stroke: (t) => `${t.colors.yellow} !important`,
+            stroke: (t) => `${t.colors.blue} !important`,
           },
         },
         ".logo": {
