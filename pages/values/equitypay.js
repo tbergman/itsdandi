@@ -6,8 +6,10 @@ import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/values/payequity/header";
 import Compensation from "../../src/components/values/payequity/compensation";
 import Reports from "../../src/components/values/payequity/reports";
-import Quote from "../../src/components/quote";
+import QuoteSection from "../../src/components/values/payequity/quotesection";
 import Affordable from "../../src/components/values/payequity/affordable";
+import CompensationGraph from "../../src/components/values/payequity/compensationgraph";
+import MobileNav from "../../src/components/mobilenav";
 import { useState, useEffect } from "react";
 
 import {
@@ -16,7 +18,6 @@ import {
   useTransform,
   useViewportScroll,
 } from "framer-motion";
-import MobileNav from "../../src/components/mobilenav";
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -60,17 +61,24 @@ const Home = () => {
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
       />
-      {/* <Reports />
-      <Quote
-        imageUrl="/assets/images/tamarcus-brown.png"
-        text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus &
-            equity`}
-        name={`Name Namesson`}
-        title={`Title, Company`}
-        bg="#FAFAFA"
+      <CompensationGraph
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
       />
-      <Affordable />
-      <SubNavigation subPages={subPages} /> */}
+      <Reports
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+      />
+      <QuoteSection
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+      />
+
+      <Affordable
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+      />
+      {/* <SubNavigation subPages={subPages} /> */}
       <Footer />
     </div>
   );

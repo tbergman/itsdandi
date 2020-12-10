@@ -3,10 +3,18 @@ import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../helpers/devices";
-import { useInView } from "react-intersection-observer";
+import InView, { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useAnimation,
+} from "framer-motion";
 
 const LearnMore = ({ setNavbarStyling, windowHeight }) => {
+  const { scrollY } = useViewportScroll();
+  const animation = useAnimation();
   const ctx = useThemeUI();
   const { inView, ref, entry } = useInView({
     rootMargin: `0px 0px  -${windowHeight - 94}px 0px`,
@@ -21,8 +29,20 @@ const LearnMore = ({ setNavbarStyling, windowHeight }) => {
       setNavbarStyling({
         ...theme.components.navigation.violet,
       });
+      animation.start("visible");
     }
-  }, [inView]);
+  }, [inView, animation]);
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
 
   return (
     <div
@@ -36,7 +56,12 @@ const LearnMore = ({ setNavbarStyling, windowHeight }) => {
           variant: "grid",
         }}
       >
-        <div className="toptext">
+        <motion.div
+          style={{
+            opacity: useTransform(scrollY, [0, 175, 10000], [1, 0, 0]),
+          }}
+          className="toptext"
+        >
           <Styled.p>Learn more about Dandi</Styled.p>
           <svg
             width="51"
@@ -54,11 +79,16 @@ const LearnMore = ({ setNavbarStyling, windowHeight }) => {
               fill="black"
             />
           </svg>
-        </div>
+        </motion.div>
         <div className="imagewrapper">
           <img src="/assets/images/01_start_computer.png" alt="" />
         </div>
-        <div className="text">
+        <motion.div
+          initial="hidden"
+          animate={animation}
+          variants={variants}
+          className="text"
+        >
           <Styled.h2>
             Dandi is your platform for diversity, equity, and inclusion
           </Styled.h2>
@@ -90,7 +120,7 @@ const LearnMore = ({ setNavbarStyling, windowHeight }) => {
               In the past.
             </Styled.p>
           )}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

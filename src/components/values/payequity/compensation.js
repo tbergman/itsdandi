@@ -39,15 +39,6 @@ const Compensation = ({ setNavbarStyling, windowHeight }) => {
             <img src="/assets/images/equitypay/compensation.png" alt="graph" />
           </div>
         </div>
-        <div className="compensationBottom">
-          <CompensationGraph />
-          <Styled.p className="text">
-            In just a few clicks, you can see how factors like age, gender
-            identity, LGBTQIA+ status, and marital status influence compensation
-            at your company. Dandi also looks beyond salary to incorporate other
-            forms of pay, like bonus and equity.
-          </Styled.p>
-        </div>
       </div>
     </InView>
   );

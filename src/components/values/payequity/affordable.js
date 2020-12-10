@@ -1,13 +1,18 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
+import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
+import InView from "../../inview";
+import theme from "../../../../theme";
 
-const Affordable = () => {
+const Affordable = ({ setNavbarStyling, windowHeight }) => {
+  const { theme } = useThemeUI();
   return (
-    <div
-      sx={{
-        variant: "pages.values.payequity.affordable",
-      }}
+    <InView
+      variant="pages.values.payequity.affordable"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={theme.components.navigation.white}
+      rootMargin={`
+      0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -19,7 +24,7 @@ const Affordable = () => {
           <Styled.p>
             Dandi’s priced to work for businesses of every size.
           </Styled.p>
-          <div className="affordableLink">
+          <div className="link">
             <LearnMoreLink
               href="/pricing"
               text="Learn more about Dandi pricing."
@@ -28,10 +33,10 @@ const Affordable = () => {
           </div>
         </div>
         <div className="graphic">
-          <div className="placeholder"></div>
+          <img src="/assets/images/02_1_affordable.png" alt="" />
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

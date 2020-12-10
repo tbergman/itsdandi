@@ -175,6 +175,7 @@ const theme = {
             },
           },
           "#bar1": {
+            zIndex: 99,
             position: "absolute",
             height: "100%",
             width: [
@@ -202,6 +203,7 @@ const theme = {
             },
           },
           "#bar2": {
+            zIndex: 99,
             width: [
               (t) => `calc(${t.colWidthMob} + 10px)`,
               (t) => `calc(${t.colWidthDesktop} + 20px)`,
@@ -233,6 +235,7 @@ const theme = {
             },
           },
           "#bar3": {
+            zIndex: 99,
             width: [
               (t) => `calc(${t.colWidthMob} + 10px)`,
               (t) => `calc(${t.colWidthDesktop} + 20px)`,
@@ -264,13 +267,17 @@ const theme = {
       learnmore: {
         bg: "violet",
         color: "black",
+        position: "relative",
         ".toptext": {
-          gridArea: ["1/2/2/-1", "1/7/2/-1"],
+          position: "fixed",
+          bottom: 0,
+
+          // gridArea: ["1/2/2/-1", "1/7/2/-1"],
           ml: [
             (t) => `calc(${t.colWidthMob} + 10px)`,
-            (t) => `calc(${t.colWidthDesktop})`,
+            (t) => `calc(calc(${t.colWidthDesktop} * 7) + 280px)`,
           ],
-          mt: [13, 11],
+          // mt: [13, 0],
           mb: [0, 9],
           display: "flex",
           alignItems: "flex-start",
@@ -288,7 +295,8 @@ const theme = {
           },
         },
         ".imagewrapper": {
-          gridArea: ["2/1/3/-1", "2/6/3/-1"],
+          gridArea: ["2/1/3/-1", "1/6/2/-1"],
+          mt: [13, "290px"],
           mb: [0, "333px"],
           height: ["250px", "495px"],
           position: "relative",
@@ -304,8 +312,8 @@ const theme = {
           },
         },
         ".text": {
-          gridArea: ["3/1/4/-1", "2/2/3/6"],
-          mt: [6, 0],
+          gridArea: ["3/1/4/-1", "1/2/2/6"],
+          mt: [6, "290px"],
           ml: [0],
           mb: [21, 26],
           h2: {},
@@ -727,45 +735,6 @@ const theme = {
       },
     },
     values: {
-      quote: {
-        // bg: "#FAFAFA",
-        ".imageWrapper": {
-          position: "relative",
-          gridArea: ["1/1/2/-1"],
-          height: ["160px"],
-          width: ["100vw"],
-          left: ["-20px"],
-          img: {
-            position: "absolute",
-            height: "100%",
-            width: "100%",
-          },
-        },
-        ".mainText": {
-          color: "black",
-          gridArea: ["2/1/3/-1"],
-          position: "relative",
-          ".quotationMark": {
-            position: "absolute",
-            top: ["32px"],
-          },
-          h3: {
-            mt: [4],
-            ml: [5],
-            fontFamily: "display",
-            fontWeight: "500",
-            fontSize: ["24px"],
-            lineHeight: ["31.2px"],
-          },
-          p: {
-            mt: [4],
-            ml: [5],
-            mb: [8],
-            lineHeight: ["20px"],
-            fontSize: ["14px"],
-          },
-        },
-      },
       payequity: {
         header: {
           ".headerText": {
@@ -837,91 +806,116 @@ const theme = {
                 position: "absolute",
                 height: "200%",
                 width: "100%",
-                zIndex: 999,
+                zIndex: 99,
               },
             },
           },
-          ".compensationBottom": {
-            pt: [0, 25],
-            pb: [0, 13],
-            bg: "black",
-            position: "relative",
-            width: ["100vw"],
-            left: ["-20px", "-40px"],
-            gridArea: ["2/1/3/-1"],
+        },
+        compensationgraph: {
+          bg: "black",
+          ".wrapper": {
+            gridArea: ["1/3/2/-2"],
             display: "flex",
             alignItems: "flex-start",
-
-            ".text": {
-              mt: [13, 2],
-              ml: ["20px", (t) => `calc(${t.colWidthDesktop})`],
-              width: [
-                "unset",
-                (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
-              ],
-              fontFamily: "body",
-              fontSize: "16px",
-              lineHeight: "24px",
-            },
-            ".compensationGraph": {
-              mt: [5, 0],
-              mb: [9, 0],
-              mx: ["20px", 0],
-              ml: [0, (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
+            mt: ["244px"],
+            mb: [13],
+            ".graph": {
+              position: "relative",
               height: ["215px"],
               width: [
                 "unset",
                 (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
               ],
-              display: "flex",
-              flexFlow: "row nowrap",
-              ".dataPoint": {
-                flex: 1,
+              ".maingraph": {
+                width: "100%",
                 height: "100%",
                 display: "flex",
-                alignItems: "flex-end",
                 ".yAxis": {
+                  flex: "1 25%",
                   position: "relative",
-                  transform: "translateX(1000%)",
-                  height: "70%",
-                  bottom: "20%",
-                  borderLeft: "2px solid #00FCFF",
-                  h3: {
+                  ".bar": {
                     position: "absolute",
-                    top: "8px",
-                    left: "8px",
-                    color: "#00FCFF",
-                    lineHeight: ["9px"],
+                    left: "50%",
+
+                    borderLeft: "2px solid #00FCFF",
+                    bottom: 0,
+
+                    h3: {
+                      pl: [1],
+                      pt: [1],
+                      width: "25%",
+                      color: "#00FCFF",
+                      lineHeight: ["9px"],
+                    },
                   },
                 },
-                p: {
-                  fontSize: ["11px"],
-                  color: "white",
-                  opacity: 0.7,
+              },
+              ".divider": {
+                position: "absolute",
+                width: "100%",
+                height: "1px",
+                bg: "#3A3A3D",
+                bottom: 0,
+              },
+              ".labels": {
+                width: "100%",
+                display: "flex",
+                ".label": {
+                  flex: "1 25%",
+                  display: "flex",
+                  justifyContent: "center",
+                  p: {
+                    fontSize: ["11px"],
+                    color: "white",
+                    opacity: 0.7,
+                    lineHeight: "14px",
+                  },
                 },
               },
+            },
+            ".text": {
+              ml: [(t) => `calc(${t.colWidthDesktop})`],
+              width: [(t) => `calc(calc(${t.colWidthDesktop} * 4) +  160px)`],
+              fontSize: "16px",
+              lineHeight: "24px",
             },
           },
         },
         reports: {
-          ".reportsText": {
-            gridArea: ["1/1/2/-1"],
+          ".text": {
+            gridArea: ["1/1/2/-1", "1/3/2/-1"],
             color: "black",
+            display: "flex",
+            mt: [16],
+            mb: [20],
             h2: {
-              mt: [10],
-              fontFamily: "medium",
+              fontFamily: "display",
+              width: (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
             },
-            p: {
-              mt: [3],
-              mb: [8],
+            ".body": {
+              ml: [(t) => `calc(${t.colWidthDesktop})`],
+              width: [(t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`],
+              display: "flex",
+              flexFlow: "column",
+              p: {
+                fontSize: "16px",
+                lineHeight: "24px",
+              },
+              ".section1": {},
+              ".section2": {
+                mt: [3],
+              },
             },
           },
         },
+        quotesection: {},
 
         affordable: {
+          bg: "transparent",
+          color: "black",
           ".header": {
-            gridArea: ["1/1/2/-1"],
-            color: "black",
+            gridArea: ["1/1/2/-1", "1/8/2/-1"],
+
             h2: {
               mt: [8],
               fontFamily: "medium",
@@ -937,15 +931,15 @@ const theme = {
             },
           },
           ".graphic": {
-            gridArea: ["2/1/3/-1"],
+            gridArea: ["2/1/3/-1", "1/2/2/7"],
             position: "relative",
             height: "500px",
-            width: "100vw",
+            width: ["100vw", "auto"],
             left: ["-20px"],
-            ".placeholder": {
-              bg: "gray",
-              height: "100%",
+            img: {
+              position: "absolute",
               width: "100%",
+              height: "100%",
             },
           },
         },
@@ -2709,6 +2703,53 @@ const theme = {
       width: "fit-content",
       p: {
         mr: "10px",
+      },
+    },
+    shared: {
+      quote: {
+        ".imagewrapper": {
+          position: "relative",
+          gridArea: ["1/1/2/-1", "1/8/2/-1"],
+          height: [
+            "160px",
+            (t) => `calc(calc(calc(${t.colWidthDesktop} * 5) + 240px) * .83)`,
+          ],
+          width: [
+            "100vw",
+            (t) => `calc(calc(${t.colWidthDesktop} * 5) + 240px)`,
+          ],
+          left: ["-20px", "-40px"],
+          img: {
+            position: "absolute",
+            height: "100%",
+            width: "100%",
+          },
+        },
+        ".text": {
+          color: "black",
+          gridArea: ["2/1/3/-1", "1/3/2/7"],
+          mt: [4, 14],
+          position: "relative",
+          ".quotation": {
+            position: "absolute",
+            top: [4, 0],
+          },
+          h3: {
+            // mt: [4],
+            ml: [5],
+            fontFamily: "display",
+            fontSize: ["24px", "40px"],
+            lineHeight: ["31.2px", "48px"],
+          },
+          p: {
+            mt: [4],
+            ml: [5],
+            mb: [8],
+            lineHeight: ["20px"],
+            fontSize: ["14px"],
+            fontFamily: "body",
+          },
+        },
       },
     },
   },
