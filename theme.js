@@ -1029,40 +1029,19 @@ const theme = {
         },
       },
       leadership: {
-        header: {
-          ".text": {
-            color: "black",
-            gridArea: ["1/1/2/-1"],
-            h1: {
-              mt: [18],
-            },
-            h3: {
-              mt: [3],
-              mb: [21],
-              fontSize: ["20px"],
-              fontWeight: "400",
-              lineHeight: ["24px"],
-            },
-          },
-          ".graphic": {
-            position: "relative",
-            gridArea: ["2/1/3/-1"],
-            width: "100vw",
-            // height: ["210px"],
-            left: ["-20px"],
-            pl: ["20px"],
-            img: {
-              position: "absolute",
-              width: "calc(100% - 20px)",
-              height: "210px",
-              top: ["-144px"],
-            },
-          },
+        topimage: {
+          position: "absolute",
+          width: [(t) => `calc(calc(${t.colWidthDesktop} * 10) +  400px)`],
+          right: 0,
+          top: ["-260px"],
+          height: ["520px"],
+          bg: "violet",
+          opacity: 0.5,
         },
         textmodules: {
-          pt: [14],
+          pt: [14, "388px"],
           bg: "lightGray",
-          ".modulesWrapper": {
+          ".wrapper": {
             ml: ["20px"],
             ".module": {
               color: "black",

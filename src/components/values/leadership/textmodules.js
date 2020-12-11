@@ -9,7 +9,7 @@ const TextModules = ({ modules }) => {
         variant: "pages.values.leadership.textmodules",
       }}
     >
-      <div className="modulesWrapper">
+      <div className="wrapper">
         {modules.map((module, i) => (
           <div className="module" key={i}>
             <div className="divider">

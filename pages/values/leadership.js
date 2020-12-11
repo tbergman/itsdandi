@@ -3,11 +3,12 @@ import { jsx, useThemeUI } from "theme-ui";
 import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
-import Header from "../../src/components/values/leadership/header";
+import Header from "../../src/components/header";
+import TopImage from "../../src/components/values/leadership/topimage";
 import TextModules from "../../src/components/values/leadership/textmodules";
 import Quote from "../../src/components/quote";
 import SubMenu from "../../src/components/submenu";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   motion,
@@ -20,6 +21,16 @@ import MobileNav from "../../src/components/mobilenav";
 const Values = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
+  const [windowHeight, setWindowHeight] = useState(500);
+  const [navBarStyling, setNavbarStyling] = useState({
+    ...theme.components.navigation.white,
+  });
+  useEffect(() => {
+    if (window) {
+      setWindowHeight(window.innerHeight);
+    }
+  }, []);
+
   const subPages = [
     {
       name: "Pay Equity",
@@ -75,14 +86,24 @@ const Values = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation current="values" />
+      <Navigation current="values" styling={navBarStyling} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
       <SubMenu subPages={subPages} navBarStyling={navBarStyling} />
-      <Header />
+      <Header
+        title={`Work’s better with Dandi`}
+        body={`Whether you’re a DEI practitioner or a leader in another part of the business, our tools can also help you do more every day.`}
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+        styling={{
+          mb: [0, "360px"],
+        }}
+      >
+        <TopImage />
+      </Header>
       <TextModules modules={modules} />
       <Quote
         imageUrl={"/assets/images/tamarcus-brown.png"}
