@@ -3,10 +3,12 @@ import { jsx, useThemeUI } from "theme-ui";
 import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
-import Header from "../../src/components/values/deijourney/header";
+import Header from "../../src/components/header";
+import TopGraphic from "../../src/components/values/deijourney/topgraphic";
 import TextBlock from "../../src/components/values/deijourney/textblock";
 import Partners from "../../src/components/values/deijourney/partners";
-import { useState } from "react";
+import SubMenu from "../../src/components/submenu";
+import { useState, useEffect } from "react";
 
 import {
   motion,
@@ -18,9 +20,33 @@ import MobileNav from "../../src/components/mobilenav";
 
 const Values = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const ctx = useThemeUI();
-  const { theme } = ctx;
-  const subPages = ["Pay Equity", "The DEI Journey", "For Your Role"];
+  const { theme } = useThemeUI();
+  const [windowHeight, setWindowHeight] = useState(500);
+  const [navBarStyling, setNavbarStyling] = useState({
+    ...theme.components.navigation.white,
+  });
+  useEffect(() => {
+    if (window) {
+      setWindowHeight(window.innerHeight);
+    }
+  }, []);
+
+  const subPages = [
+    {
+      name: "Pay Equity",
+      url: "/values/equitypay",
+    },
+    {
+      name: "The DEI Journey",
+      url: "/values/deijourney",
+      current: true,
+    },
+    {
+      name: "For Your Role",
+      url: "/values/leadership",
+    },
+  ];
+
   const colors = [
     {
       bg: "#FFF",
@@ -57,20 +83,33 @@ const Values = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation current="values" />
+      <Navigation current="values" styling={navBarStyling} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <Header />
+      <SubMenu subPages={subPages} />
+      <Header
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+        styling={{
+          mb: [0, 9],
+        }}
+        title={`DEI is a journey. Dandi works with you every step of the way.`}
+        body={`Whether your business is just starting to focus on DEI or already has programs underway, Dandi has the flexibility to meet you where you are.`}
+      >
+        <TopGraphic />
+      </Header>
       <TextBlock
         title={`01. Getting Started`}
         sections={sections}
         styling={{
-          bg: theme.colors.white,
-          opacity: 0.96,
+          bg: "rgba(242, 242, 242, 0.96)",
         }}
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+        navBarStyling={theme.components.navigation.gray}
       />
       <TextBlock
         title={`02. Unpacking the data`}
@@ -83,17 +122,40 @@ const Values = () => {
             },
           },
         }}
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
       />
-      <Partners />
-      <TextBlock title={`03. Taking action`} sections={sections} />
+      {/* <Partners
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+      /> */}
+      <TextBlock
+        title={`03. Taking action`}
+        sections={sections}
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+      />
       <TextBlock
         title={`04. Sustaining Progress`}
         sections={sections}
         styling={{
           bg: "white",
         }}
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
       />
-      <SubNavigation subPages={subPages} />
+      <SubNavigation
+        next={{
+          name: "For Your Role",
+          url: "/values/leadership",
+          bg: theme.colors.violet,
+        }}
+        prev={{
+          name: "Pay Equity",
+          url: "/values/equitypay",
+          bg: theme.colors.blue,
+        }}
+      />
       <Footer />
     </div>
   );

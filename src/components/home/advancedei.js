@@ -27,7 +27,7 @@ const AdvanceDEI = ({ setNavbarStyling, windowHeight }) => {
           </Styled.p>
           <div className="link">
             <LearnMoreLink
-              href="/"
+              href="/values/deijourney"
               text="Learn more about the DEI journey."
               color="#1A1A1D"
             />

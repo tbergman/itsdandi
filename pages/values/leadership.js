@@ -6,6 +6,7 @@ import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/values/leadership/header";
 import TextModules from "../../src/components/values/leadership/textmodules";
 import Quote from "../../src/components/quote";
+import SubMenu from "../../src/components/submenu";
 import { useState } from "react";
 
 import {
@@ -18,9 +19,22 @@ import MobileNav from "../../src/components/mobilenav";
 
 const Values = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const ctx = useThemeUI();
-  const { theme } = ctx;
-  const subPages = ["Pay Equity", "The DEI Journey", "For Your Role"];
+  const { theme } = useThemeUI();
+  const subPages = [
+    {
+      name: "Pay Equity",
+      url: "/values/equitypay",
+    },
+    {
+      name: "The DEI Journey",
+      url: "/values/deijourney",
+    },
+    {
+      name: "For Your Role",
+      url: "/values/leadership",
+      current: true,
+    },
+  ];
   const colors = [
     {
       bg: "#FFF",
@@ -67,6 +81,7 @@ const Values = () => {
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
+      <SubMenu subPages={subPages} />
       <Header />
       <TextModules modules={modules} />
       <Quote
@@ -76,7 +91,19 @@ const Values = () => {
         title={`Title, Company`}
         bg={theme.colors.yellow}
       />
-      <SubNavigation subPages={subPages} />
+      <SubNavigation
+        next={{
+          name: "Pay Equity",
+          url: "/values/equitypay",
+          bg: theme.colors.blue,
+          goBack: true,
+        }}
+        prev={{
+          name: "The DEI Journey",
+          url: "/values/deijourney",
+          bg: theme.colors.violet,
+        }}
+      />
       <Footer />
     </div>
   );

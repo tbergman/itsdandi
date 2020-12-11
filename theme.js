@@ -736,36 +736,14 @@ const theme = {
     },
     values: {
       payequity: {
-        header: {
-          ".headerText": {
-            mt: [18, 22],
-            gridArea: ["1/1/2/-1", "1/3/2/9"],
-            color: "black",
-          },
-          h1: {},
-          h3: {
-            mt: [2, 3],
-            mb: [2, 0],
-            fontFamily: "body",
-            fontWeight: "400",
-            lineHeight: "36px",
-            fontSize: ["24px"],
-          },
-          ".headerGraphic": {
-            gridArea: ["2/1/3/-1", "2/9/3/-1"],
-            position: "relative",
-            height: ["100px", "215px"],
-            width: ["100vw", "auto"],
-            left: ["-20px", 0],
-            bottom: ["unset", 0],
-            ".headerImage": {
-              position: "absolute",
-              bg: "gray",
-              opacity: 0.2,
-              height: "200%",
-              width: "100%",
-            },
-          },
+        topgraphic: {
+          position: "absolute",
+          top: "-200px",
+          right: ["20px", "40px"],
+          height: ["400px"],
+          width: ["400px"],
+          bg: "yellow",
+          opacity: 0.5,
         },
         compensation: {
           bg: "lightGray",
@@ -914,59 +892,58 @@ const theme = {
           bg: "transparent",
           color: "black",
           ".header": {
-            gridArea: ["1/1/2/-1", "1/8/2/-1"],
+            mt: [8, "268px"],
+            mb: [0, "307px"],
+            gridArea: ["1/1/2/-1", "1/7/2/-1"],
+            ml: [0, (t) => `calc(${t.colWidthDesktop})`],
 
             h2: {
-              mt: [8],
-              fontFamily: "medium",
+              fontFamily: "display",
             },
             p: {
-              mt: [3],
+              mt: [3, 4],
+              fontSize: "16px",
             },
-            ".affordableLink": {
+            ".link": {
               p: {
-                mt: 0,
+                mt: [0],
                 fontFamily: "medium",
+                fontSize: "16px",
               },
             },
           },
           ".graphic": {
             gridArea: ["2/1/3/-1", "1/2/2/7"],
             position: "relative",
-            height: "500px",
+            height: ["500px", "auto"],
             width: ["100vw", "auto"],
-            left: ["-20px"],
+            left: ["-20px", 0],
+            display: ["block", "flex"],
+            alignItems: "center",
             img: {
-              position: "absolute",
+              position: ["absolute", "relative"],
               width: "100%",
-              height: "100%",
+              height: ["100%", "auto"],
             },
           },
         },
       },
       deijourney: {
-        header: {
-          ".top": {
-            color: "black",
-            gridArea: ["1/1/2/-1"],
-            h1: {
-              mt: [18],
-            },
-            h3: {
-              mt: [2],
-              fontSize: ["20px"],
-              lineHeight: ["30px"],
-              mb: [12],
-            },
-          },
-          ".graphic": {
-            gridArea: ["2/1/3/-1"],
-            position: "relative",
-            zIndex: 999,
+        topgraphic: {
+          position: "absolute",
+          zIndex: 99,
+          right: [(t) => `calc(calc(${t.colWidthDesktop}) + 80px)`],
+          width: ["200px"],
+          height: ["200px"],
+          top: ["-100px"],
+          div: {
+            height: "100%",
+            width: "100%",
             div: {
-              position: "absolute",
-              top: ["-29.5px"],
-              right: ["0"],
+              svg: {
+                height: "100%",
+                width: "100%",
+              },
             },
           },
         },
@@ -1111,77 +1088,63 @@ const theme = {
       },
 
       subnavigation: {
+        display: "flex",
+        height: ["224px", "356px"],
+
         ".next": {
-          height: ["224px"],
-          bg: "violet",
-          color: "black",
-          ".secondHalf": {
-            ml: ["53%"],
-            mr: ["20px"],
-            height: "100%",
-            display: "flex",
-            flexFlow: "column nowrap",
-            justifyContent: "flex-end",
-            h3: {
-              fontWeight: "500",
-              fontFamily: "medium",
-              mb: [8],
-            },
+          height: "100%",
+          flex: "0 50%",
+          display: "flex",
+          alignItems: "center",
+        },
+        ".full": {
+          flex: "0 100%",
+          pl: ["50vw"],
+        },
+
+        ".prev": {
+          height: "100%",
+          flex: "0 50%",
+          display: "flex",
+          alignItems: "center",
+        },
+
+        ".link": {
+          ml: ["53%", (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
+          textDecoration: "none",
+          height: ["100%", "auto"],
+          display: "flex",
+          flexFlow: "column nowrap",
+          justifyContent: "flex-end",
+          h3: {
+            fontFamily: "display",
+            fontSize: ["24px", "40px"],
+            lineHeight: ["24px", "40px"],
+            // mb: [8],
+            color: "black",
+          },
+          ".rotated": {
             div: {
-              div: {
-                svg: {
-                  height: ["24px"],
-                  width: ["32px"],
-                  position: "relative",
-                  mb: [4],
-                  g: {
-                    position: "absolute",
-                    left: 0,
-                    path: {
-                      stroke: "black",
-                    },
-                    line: {
-                      stroke: "black",
-                    },
-                  },
-                },
+              svg: {
+                transform: "rotate(180deg)",
               },
             },
           },
-        },
-        ".prev": {
-          height: ["224px"],
-          bg: "blue",
-          color: "black",
-          ".firstHalf": {
-            // mr: ["50%"],
-            ml: [10],
-            height: "100%",
-            display: "flex",
-            flexFlow: "column nowrap",
-            justifyContent: "flex-end",
-            h3: {
-              fontWeight: "500",
-              fontFamily: "medium",
-              mb: [8],
-            },
+          div: {
             div: {
-              div: {
-                svg: {
-                  transform: "rotate(180deg)",
-                  height: ["24px"],
-                  width: ["32px"],
-                  position: "relative",
-                  mb: [4],
-                  g: {
-                    position: "absolute",
-                    left: 0,
-                    path: {
-                      stroke: "black",
-                    },
-                    line: {
-                      stroke: "black",
-                    },
+              svg: {
+                height: ["24px"],
+                width: ["32px"],
+                position: "relative",
+                mb: [4, 7],
+                g: {
+                  position: "absolute",
+                  left: 0,
+                  path: {
+                    stroke: "black",
+                  },
+                  line: {
+                    stroke: "black",
                   },
                 },
               },
@@ -2584,6 +2547,43 @@ const theme = {
         },
       },
     },
+    submenu: {
+      position: "fixed",
+      top: [0, 24],
+      left: ["20px", "40px"],
+      ".container": {
+        display: "flex",
+        flexFlow: "column",
+        ".item": {
+          textDecoration: "none",
+          opacity: 0.5,
+          p: {
+            mb: [2],
+            fontSize: "14px",
+            lineHeight: "16px",
+            color: "black",
+            fontFamily: "medium",
+          },
+          "&:hover": {
+            opacity: 1,
+          },
+        },
+        ".current": {
+          opacity: 1,
+          position: "relative",
+          pl: [3],
+          ":after": {
+            position: "absolute",
+            content: '""',
+            left: 0,
+            top: ["25%"],
+            bg: "black",
+            height: "2px",
+            width: "12px",
+          },
+        },
+      },
+    },
     mobilenav: {
       //
     },
@@ -2749,6 +2749,29 @@ const theme = {
             fontSize: ["14px"],
             fontFamily: "body",
           },
+        },
+      },
+      header: {
+        color: "black",
+        ".text": {
+          mt: [18, 22],
+          gridArea: ["1/1/2/-1", "1/3/2/9"],
+        },
+        h1: {},
+        h3: {
+          mt: [2, 3],
+          // mb: [2, 0],
+          fontFamily: "body",
+          fontWeight: "400",
+          lineHeight: "36px",
+          fontSize: ["24px"],
+        },
+        ".graphic": {
+          gridArea: ["2/1/3/-1", "2/1/3/-1"],
+          position: "relative",
+          width: ["100vw"],
+          left: ["-20px", "-40px"],
+          // bottom: ["unset", 0],
         },
       },
     },

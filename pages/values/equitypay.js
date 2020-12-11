@@ -3,13 +3,15 @@ import { jsx, useThemeUI } from "theme-ui";
 import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
-import Header from "../../src/components/values/payequity/header";
+import Header from "../../src/components/header";
 import Compensation from "../../src/components/values/payequity/compensation";
 import Reports from "../../src/components/values/payequity/reports";
 import QuoteSection from "../../src/components/values/payequity/quotesection";
 import Affordable from "../../src/components/values/payequity/affordable";
 import CompensationGraph from "../../src/components/values/payequity/compensationgraph";
+import TopGraphic from "../../src/components/values/payequity/topgraphic";
 import MobileNav from "../../src/components/mobilenav";
+import SubMenu from "../../src/components/submenu";
 import { useState, useEffect } from "react";
 
 import {
@@ -26,7 +28,21 @@ const Home = () => {
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
   });
-  const subPages = ["Pay Equity", "The DEI Journey", "For Your Role"];
+  const subPages = [
+    {
+      name: "Pay Equity",
+      url: "/values/equitypay",
+      current: true,
+    },
+    {
+      name: "The DEI Journey",
+      url: "/values/deijourney",
+    },
+    {
+      name: "For Your Role",
+      url: "/values/leadership",
+    },
+  ];
   const colors = [
     {
       bg: "#FFF",
@@ -56,7 +72,18 @@ const Home = () => {
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <Header setNavbarStyling={setNavbarStyling} windowHeight={windowHeight} />
+      <SubMenu subPages={subPages} />
+      <Header
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+        styling={{
+          mb: [0, 15],
+        }}
+        title={`Dandi makes pay equity possible`}
+        body={`With sophisticated compensation analytics built right in, Dandi helps you find the pay gaps at your company—and make them disappear.`}
+      >
+        <TopGraphic />
+      </Header>
       <Compensation
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
@@ -78,7 +105,13 @@ const Home = () => {
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
       />
-      {/* <SubNavigation subPages={subPages} /> */}
+      <SubNavigation
+        next={{
+          name: "The DEI Journey",
+          url: "/values/deijourney",
+          bg: theme.colors.turquoise,
+        }}
+      />
       <Footer />
     </div>
   );

@@ -27,7 +27,7 @@ const PayEquity = ({ setNavbarStyling, windowHeight }) => {
           </Styled.p>
           <div className="link">
             <LearnMoreLink
-              href="/"
+              href="/values/equitypay"
               text="Learn how Dandi helps advance pay equity."
               color="#335AFF"
             />
