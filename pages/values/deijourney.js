@@ -89,7 +89,7 @@ const Values = () => {
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <SubMenu subPages={subPages} />
+      <SubMenu subPages={subPages} navBarStyling={navBarStyling} />
       <Header
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
@@ -114,26 +114,20 @@ const Values = () => {
       <TextBlock
         title={`02. Unpacking the data`}
         sections={sections}
-        styling={{
-          bg: "transparent",
-          div: {
-            ".text": {
-              mb: [22],
-            },
-          },
-        }}
+        navBarStyling={theme.components.navigation.white}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
       />
-      {/* <Partners
+      <Partners
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-      /> */}
+      />
       <TextBlock
         title={`03. Taking action`}
         sections={sections}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
+        navBarStyling={theme.components.navigation.white}
       />
       <TextBlock
         title={`04. Sustaining Progress`}
@@ -143,6 +137,10 @@ const Values = () => {
         }}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
+        styling={{
+          bg: "rgba(242, 242, 242, 0.96)",
+        }}
+        navBarStyling={theme.components.navigation.gray}
       />
       <SubNavigation
         next={{

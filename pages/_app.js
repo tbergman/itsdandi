@@ -31,19 +31,20 @@ const MyApp = ({ Component, pageProps, router }) => {
       </Head>
       <AnimatePresence>
         <motion.div
+          exit
           key={router.pathname}
-          transition={{
-            duration: 0.25,
-          }}
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          exit={{
-            opacity: 0,
-          }}
+          // transition={{
+          //   duration: 0.2,
+          // }}
+          // initial={{
+          //   opacity: 1,
+          // }}
+          // animate={{
+          //   opacity: 1,
+          // }}
+          // exit={{
+          //   opacity: 1,
+          // }}
           id="page-transition-container"
         >
           <Component {...pageProps} />

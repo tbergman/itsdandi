@@ -948,36 +948,52 @@ const theme = {
           },
         },
         textblock: {
-          // bg: "white",
-          // opacity: 0.96,
+          color: "black",
           h2: {
-            gridArea: ["1/1/2/-1"],
+            mt: [10, 16],
+            gridArea: ["1/1/2/-1", "1/3/2/-1"],
             fontWeight: "500",
             fontFamily: "display",
-            color: "black",
-            mt: [10],
           },
           ".text": {
-            mt: [3],
-            mb: [7],
-            gridArea: ["2/1/3/-1"],
-            color: "black",
+            gridArea: ["2/1/3/-1", "2/3/3/-1"],
+            mt: [3, 5],
+            mb: [7, 18],
+            display: "flex",
+            flexFlow: ["row wrap"],
+            ".section": {
+              width: [(t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`],
+              ".title": {
+                fontFamily: "medium",
+                fontSize: ["20px", "16px"],
+                lineHeight: ["20px", "24px"],
+              },
+              ".body": {
+                fontSize: ["20px", "16px"],
+                lineHeight: ["20px", "24px"],
+              },
+            },
+            ".section:nth-of-type(2n)": {
+              ml: [(t) => `calc(${t.colWidthDesktop})`],
+            },
           },
         },
         partners: {
           bg: "white",
+          color: "black",
           ".graphic": {
-            gridArea: ["1/1/2/-1"],
-            width: "100vw",
-            left: ["-20px"],
+            gridArea: ["1/1/2/-1", "1/8/2/-1"],
+            width: ["100vw", "auto"],
+            left: ["-20px", 0],
             position: "relative",
             display: "flex",
             justifyContent: "center",
+            alignItems: ["unset", "center"],
             div: {
-              position: "absolute",
-              height: "216px",
-              width: "216px",
-              top: ["-108px"],
+              position: ["absolute", "relative"],
+              height: ["216px", "288px"],
+              width: ["216px", "288px"],
+              top: ["-108px", 0],
               div: {
                 position: "relative",
                 top: 0,
@@ -989,19 +1005,20 @@ const theme = {
             },
           },
           ".text": {
-            color: "black",
-            gridArea: ["2/1/3/-1"],
+            gridArea: ["2/1/3/-1", "1/3/2/8"],
+            mt: [18],
+            mb: [10, 19],
             h2: {
-              mt: [18],
-              fontFamily: "medium",
+              fontFamily: "display",
             },
             p: {
-              mt: [3],
+              mt: [3, 4],
+              fontSize: ["20px", "16px"],
               lineHeight: ["24px"],
             },
             ".partnersLink": {
               mt: [1],
-              mb: [10],
+
               p: {
                 mt: 0,
                 fontFamily: "display",
@@ -2438,6 +2455,7 @@ const theme = {
       },
       default: {
         bg: "black",
+        color: "white",
         ".item": {
           color: "white",
         },
@@ -2458,6 +2476,7 @@ const theme = {
       },
       violet: {
         bg: "violet",
+        color: "black",
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
@@ -2476,6 +2495,7 @@ const theme = {
       },
       gray: {
         bg: "#F8F8F8",
+        color: "black",
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
@@ -2494,6 +2514,7 @@ const theme = {
       },
       gray2: {
         bg: "#F2F2F2",
+        color: "black",
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
@@ -2512,6 +2533,7 @@ const theme = {
       },
       white: {
         bg: "#FFF",
+        color: "black",
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
@@ -2530,6 +2552,7 @@ const theme = {
       },
       lightTurquoise: {
         bg: "lightTurquoise",
+        color: "black",
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
@@ -2555,10 +2578,12 @@ const theme = {
         display: "flex",
         flexFlow: "column",
         ".item": {
+          cursor: "pointer",
+          mb: [2],
           textDecoration: "none",
           opacity: 0.5,
+          height: "max-content",
           p: {
-            mb: [2],
             fontSize: "14px",
             lineHeight: "16px",
             color: "black",
@@ -2572,15 +2597,59 @@ const theme = {
           opacity: 1,
           position: "relative",
           pl: [3],
-          ":after": {
+          ".hamburger": {
             position: "absolute",
-            content: '""',
             left: 0,
-            top: ["25%"],
-            bg: "black",
-            height: "2px",
+            height: "100%",
             width: "12px",
+
+            "#line1": {
+              position: "absolute",
+              height: "2px",
+              bg: "black",
+              width: "100%",
+              top: 0,
+              transform: "translate3d(0,8px,0)",
+              transition: "all 250ms",
+            },
+            "#line2": {
+              position: "absolute",
+              height: "2px",
+              bg: "black",
+              width: "100%",
+              top: 0,
+              opacity: 0,
+              transform: "translate3d(-10px,10px,0)",
+              transition: "all 250ms",
+            },
           },
+          ".folded": {
+            "#line1": {
+              transform: "translate3d(0, 5px,0)",
+            },
+            "#line2": {
+              opacity: 1,
+              transform: "translate3d(0,10px,0)",
+            },
+          },
+          // ":after": {
+          //   position: "absolute",
+          //   content: '""',
+          //   left: 0,
+          //   top: ["25%"],
+          //   bg: "black",
+          //   height: "2px",
+          //   width: "12px",
+          // },
+          // ":before": {
+          //   position: "absolute",
+          //   content: '""',
+          //   left: 0,
+          //   top: ["50%"],
+          //   bg: "black",
+          //   height: "2px",
+          //   width: "12px",
+          // },
         },
       },
     },
@@ -2859,7 +2928,7 @@ const theme = {
     h2: {
       fontFamily: "display",
       fontSize: ["32px", "40px"],
-      lineHeight: ["38.4px"],
+      lineHeight: ["38.4px", "48px"],
       fontWeight: "500",
       m: 0,
     },

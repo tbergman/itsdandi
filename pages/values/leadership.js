@@ -81,7 +81,7 @@ const Values = () => {
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <SubMenu subPages={subPages} />
+      <SubMenu subPages={subPages} navBarStyling={navBarStyling} />
       <Header />
       <TextModules modules={modules} />
       <Quote

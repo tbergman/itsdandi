@@ -1,14 +1,17 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
-import { jsx, Styled } from "theme-ui";
+import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
+import InView from "../../inview";
 
-const Partners = () => {
+const Partners = ({ setNavbarStyling, windowHeight }) => {
+  const { theme } = useThemeUI();
   return (
-    <div
-      sx={{
-        variant: "pages.values.deijourney.partners",
-      }}
+    <InView
+      variant="pages.values.deijourney.partners"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={theme.components.navigation.gray}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -29,7 +32,7 @@ const Partners = () => {
           </div>
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

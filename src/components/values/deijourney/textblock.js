@@ -36,26 +36,11 @@ const TextBlock = ({
                 sx={{
                   mb: [3],
                 }}
-                className="textSection"
+                className="section"
                 key={i}
               >
-                <Styled.p
-                  sx={{
-                    fontWeight: "500",
-                    fontFamily: "medium",
-                    lineHeight: "24px",
-                  }}
-                >
-                  {section.title}
-                </Styled.p>
-                <Styled.p
-                  sx={{
-                    fontWeight: "400",
-                    lineHeight: "24px",
-                  }}
-                >
-                  {section.body}
-                </Styled.p>
+                <Styled.p className="title">{section.title}</Styled.p>
+                <Styled.p className="body">{section.body}</Styled.p>
               </div>
             ))}
           </div>

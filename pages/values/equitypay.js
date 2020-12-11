@@ -72,7 +72,7 @@ const Home = () => {
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <SubMenu subPages={subPages} />
+      <SubMenu subPages={subPages} navBarStyling={navBarStyling} />
       <Header
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
