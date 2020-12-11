@@ -13,7 +13,7 @@ const SubNavigation = ({ next, prev }) => {
       {prev && (
         <div
           sx={{
-            bg: prev.bg,
+            bg: prev.bg ? prev.bg : "black",
           }}
           className="prev"
         >
@@ -30,7 +30,7 @@ const SubNavigation = ({ next, prev }) => {
       )}
       <div
         sx={{
-          bg: next.bg,
+          bg: next.bg ? next.bg : "black",
         }}
         className={prev ? "next" : "next full"}
       >
