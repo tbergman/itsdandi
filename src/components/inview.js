@@ -8,6 +8,7 @@ const InView = ({
   rootMargin,
   setNavbarStyling,
   navBarStyling,
+  bg,
   children,
 }) => {
   const { inView, ref, entry } = useInView({
@@ -26,6 +27,7 @@ const InView = ({
     <div
       sx={{
         variant: variant,
+        bg: bg,
       }}
       ref={ref}
     >

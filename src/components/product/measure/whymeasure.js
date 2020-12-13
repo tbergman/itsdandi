@@ -1,7 +1,9 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
+import { jsx, Styled, useThemeUI } from "theme-ui";
+import InView from "../../inview";
 
-const WhyMeasure = () => {
+const WhyMeasure = ({ windowHeight, setNavbarStyling, navBarStyling }) => {
+  const { theme } = useThemeUI();
   const categories = [
     {
       color: "#FFD93B",
@@ -20,10 +22,11 @@ const WhyMeasure = () => {
     },
   ];
   return (
-    <div
-      sx={{
-        variant: "pages.product.measure.whymeasure",
-      }}
+    <InView
+      variant="pages.product.measure.whymeasure"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -31,22 +34,26 @@ const WhyMeasure = () => {
         }}
       >
         <div className="top">
-          <Styled.h2>Why measurement matters for DEI</Styled.h2>
-          <Styled.p>
-            Most areas of business have widely-recognized metrics. For instance,
-            accounting has a full glossary of terms that are used to explain
-            different aspects of financial performance. But, beyond some
-            foundational terms like representation, there are few DEI metrics
-            with industry-wide acceptance. And it’s held back progress for DEI
-            as a whole. <br />
-            <br />
-            That’s why Dandi has gone ahead and provided metrics for nearly a
-            dozen key areas related to DEI.
-          </Styled.p>
+          <div className="section1">
+            <Styled.h2>Why measurement matters for DEI</Styled.h2>
+          </div>
+          <div className="section2">
+            <Styled.p>
+              Most areas of business have widely-recognized metrics. For
+              instance, accounting has a full glossary of terms that are used to
+              explain different aspects of financial performance. But, beyond
+              some foundational terms like representation, there are few DEI
+              metrics with industry-wide acceptance. And it’s held back progress
+              for DEI as a whole. <br />
+              <br />
+              That’s why Dandi has gone ahead and provided metrics for nearly a
+              dozen key areas related to DEI.
+            </Styled.p>
+          </div>
         </div>
         <div className="categories">
           {categories.map((category, i) => (
-            <div className="categoryWrapper" key={i}>
+            <div className="category" key={i}>
               <div className="divider">
                 <span
                   sx={{
@@ -54,21 +61,19 @@ const WhyMeasure = () => {
                   }}
                 ></span>
               </div>
-              <div className="category">
-                <div className="left">
-                  <Styled.p>{category.title}</Styled.p>
-                </div>
-                <div className="right">
-                  {category.items.map((item, i) => (
-                    <Styled.p key={i}>{item}</Styled.p>
-                  ))}
-                </div>
+              <div className="title">
+                <Styled.p>{category.title}</Styled.p>
+              </div>
+              <div className="items">
+                {category.items.map((item, i) => (
+                  <Styled.p key={i}>{item}</Styled.p>
+                ))}
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

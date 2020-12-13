@@ -4,19 +4,22 @@ import InView from "./inview";
 
 const Header = ({
   setNavbarStyling,
+  navBarStyling,
   windowHeight,
   title,
   body,
   styling,
+  bg,
   children,
 }) => {
   const { theme } = useThemeUI();
   return (
     <InView
       setNavbarStyling={setNavbarStyling}
-      navBarStyling={theme.components.navigation.white}
+      navBarStyling={navBarStyling}
       rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
       variant="components.shared.header"
+      bg="rgba(242, 242, 242, 0.5)"
     >
       <div
         sx={{

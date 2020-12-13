@@ -1,33 +1,46 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
+import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
+import InView from "../../inview";
 
-const TextModules = ({ modules }) => {
+const TextModules = ({ modules, setNavbarStyling, windowHeight }) => {
+  const { theme } = useThemeUI();
   return (
-    <div
-      sx={{
-        variant: "pages.values.leadership.textmodules",
-      }}
+    <InView
+      variant="pages.values.leadership.textmodules"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={theme.components.navigation.gray}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
-      <div className="wrapper">
-        {modules.map((module, i) => (
-          <div className="module" key={i}>
-            <div className="divider">
-              <span />
+      <div
+        sx={{
+          variant: "grid",
+        }}
+      >
+        <div className="wrapper">
+          {modules.map((module, i) => (
+            <div className="module" key={i}>
+              <div className="divider">
+                <span />
+              </div>
+              <div className="section1">
+                <Styled.h2>{module.title}</Styled.h2>
+              </div>
+              <div className="section2">
+                <Styled.p>{module.body}</Styled.p>
+                <div className="link">
+                  <LearnMoreLink
+                    href={module.linkUrl}
+                    text={module.linkText}
+                    color="#335AFF"
+                  />
+                </div>
+              </div>
             </div>
-            <Styled.h2>{module.title}</Styled.h2>
-            <Styled.p>{module.body}</Styled.p>
-            <div className="link">
-              <LearnMoreLink
-                href={module.linkUrl}
-                text={module.linkText}
-                color="#335AFF"
-              />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

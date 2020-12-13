@@ -104,14 +104,12 @@ const Values = () => {
       >
         <TopImage />
       </Header>
-      <TextModules modules={modules} />
-      <Quote
-        imageUrl={"/assets/images/tamarcus-brown.png"}
-        text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity`}
-        name={`Name Namesson`}
-        title={`Title, Company`}
-        bg={theme.colors.yellow}
+      <TextModules
+        modules={modules}
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
       />
+      <Quote setNavbarStyling={setNavbarStyling} windowHeight={windowHeight} />
       <SubNavigation
         next={{
           name: "Pay Equity",

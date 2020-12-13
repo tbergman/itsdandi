@@ -46,8 +46,18 @@ const SubMenu = ({ subPages, navBarStyling }) => {
                     scrollYPos >= 200 ? "hamburger folded" : "hamburger"
                   }
                 >
-                  <motion.span id="line1" />
-                  <motion.span id="line2" />
+                  <motion.span
+                    sx={{
+                      bg: navBarStyling.color,
+                    }}
+                    id="line1"
+                  />
+                  <motion.span
+                    sx={{
+                      bg: navBarStyling.color,
+                    }}
+                    id="line2"
+                  />
                 </motion.div>
               )}
               <Styled.p>{page.name}</Styled.p>

@@ -6,7 +6,7 @@ import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
 import Compensation from "../../src/components/values/payequity/compensation";
 import Reports from "../../src/components/values/payequity/reports";
-import QuoteSection from "../../src/components/values/payequity/quotesection";
+import Quote from "../../src/components/quote";
 import Affordable from "../../src/components/values/payequity/affordable";
 import CompensationGraph from "../../src/components/values/payequity/compensationgraph";
 import TopGraphic from "../../src/components/values/payequity/topgraphic";
@@ -96,10 +96,7 @@ const Home = () => {
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
       />
-      <QuoteSection
-        setNavbarStyling={setNavbarStyling}
-        windowHeight={windowHeight}
-      />
+      <Quote setNavbarStyling={setNavbarStyling} windowHeight={windowHeight} />
 
       <Affordable
         setNavbarStyling={setNavbarStyling}

@@ -1,16 +1,26 @@
 /** @jsx jsx */
-
-import { ReactSVG } from "react-svg";
 import { jsx, Styled, useThemeUI } from "theme-ui";
+import InView from "./inview";
+import { ReactSVG } from "react-svg";
 
-const Quote = ({ imageUrl, text, name, title, bg }) => {
+const Quote = ({
+  setNavbarStyling,
+  windowHeight,
+  bg,
+  navBarStyling,
+  imageUrl,
+  name,
+  title,
+  text,
+}) => {
   const { theme } = useThemeUI();
   return (
-    <div
-      sx={{
-        variant: "components.shared.quote",
-        bg: bg,
-      }}
+    <InView
+      variant="components.shared.quote"
+      navBarStyling={navBarStyling}
+      setNavbarStyling={setNavbarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      bg={bg}
     >
       <div
         sx={{
@@ -30,7 +40,7 @@ const Quote = ({ imageUrl, text, name, title, bg }) => {
           </Styled.p>
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

@@ -82,6 +82,7 @@ const theme = {
   },
   colWidthMob: `calc(calc(100vw - 140px)/6)`,
   colWidthDesktop: `calc(calc(100vw - 520px)/12)`,
+  desktopSectionWidth: `calc(calc(calc(calc(100vw - 520px)/12) * 4) + 160px)`,
   grid: {
     display: "grid",
     gridTemplateColumns: ["repeat(6,1fr)", "repeat(12,1fr)"],
@@ -1042,12 +1043,22 @@ const theme = {
           pt: [14, "388px"],
           bg: "lightGray",
           ".wrapper": {
-            ml: ["20px"],
+            gridArea: ["1/1/2/-1", "1/3/2/-1"],
+            ml: ["20px", 0],
             ".module": {
               color: "black",
+              position: "relative",
+              display: "flex",
+              pt: [2],
+              mb: [11],
               ".divider": {
-                position: "relative",
-                width: "100%",
+                position: "absolute",
+                top: 0,
+                width: [
+                  "100%",
+                  (t) => `calc(calc(${t.colWidthDesktop} * 10) + 400px)`,
+                ],
+
                 height: ["1px"],
                 span: {
                   position: "absolute",
@@ -1056,26 +1067,28 @@ const theme = {
                   bg: "black",
                 },
               },
-              h2: {
-                pt: [2],
-                fontWeight: "500",
-                fontFamily: "medium",
+              ".section1": {
+                width: [(t) => `calc(calc(${t.colWidthDesktop} * 5) + 160px)`],
+
+                h2: {
+                  fontFamily: "display",
+                },
               },
-              p: {
-                mr: ["20px"],
-                fontWeight: "400",
-                lineHeight: ["24px"],
-                pt: [3],
-              },
-              ".link": {
-                mt: [1],
-                pb: [5],
-                mr: ["20px"],
+              ".section2": {
+                width: [(t) => `calc(calc(${t.colWidthDesktop} * 5) + 160px)`],
+                pr: ["20px", (t) => `calc(calc(${t.colWidthDesktop}) + 40px)`],
                 p: {
-                  p: 0,
-                  fontWeight: "500",
-                  fontFamily: "medium",
-                  lineHeight: "18.88px",
+                  lineHeight: ["24px"],
+                  fontSize: ["20px", "16px"],
+                },
+                ".link": {
+                  mt: [1],
+                  p: {
+                    p: 0,
+
+                    fontFamily: "medium",
+                    lineHeight: "18.88px",
+                  },
                 },
               },
             },
@@ -1151,76 +1164,93 @@ const theme = {
     },
     product: {
       measure: {
-        header: {
-          bg: "rgba(242, 242, 242, 0.5)",
-          ".text": {
-            gridArea: ["1/1/2/-1"],
-            mt: [18],
-            color: "black",
-            h1: {},
-            h3: {
-              mt: [2],
-              mb: [12],
-              fontWeight: "400",
-              lineHeight: ["30px"],
-              fontSize: ["20px"],
-            },
-          },
-          ".buttonWrapper": {
-            gridArea: ["2/1/3/-1"],
-            position: "relative",
-            ".button": {
-              position: "absolute",
-              top: ["-28px"],
-            },
-          },
-        },
+        // header: {
+        //   bg: "rgba(242, 242, 242, 0.5)",
+        //   ".text": {
+        //     gridArea: ["1/1/2/-1"],
+        //     mt: [18],
+        //     color: "black",
+        //     h1: {},
+        //     h3: {
+        //       mt: [2],
+        //       mb: [12],
+        //       fontWeight: "400",
+        //       lineHeight: ["30px"],
+        //       fontSize: ["20px"],
+        //     },
+        //   },
+        //   ".buttonWrapper": {
+        //     gridArea: ["2/1/3/-1"],
+        //     position: "relative",
+        //     ".button": {
+        //       position: "absolute",
+        //       top: ["-28px"],
+        //     },
+        //   },
+        // },
         metrics: {
           bg: "transparent",
           color: "black",
-          h2: {
-            gridArea: ["1/1/2/-1"],
-            fontFamily: "display",
-            mr: ["20px"],
-            fontWeight: "500",
-            fontSize: ["32px"],
-            mt: [10],
+
+          ".section1": {
+            mt: [10, 16],
+            gridArea: ["1/1/2/-1", "1/3/2/7"],
+            h2: {},
           },
-          p: {
-            gridArea: ["2/1/3/-1"],
-            mt: [3],
-            mb: [10],
-            lineHeight: ["24px"],
-            fontWeight: "400",
+          ".section2": {
+            mt: [10, 16],
+            gridArea: ["2/1/3/-1", "1/7/2/-2"],
+            ml: [0, (t) => t.colWidthDesktop],
+            mb: [10, 16],
+            p: {
+              lineHeight: ["24px"],
+              fontSize: ["20px", "16px"],
+            },
           },
         },
         whymeasure: {
           bg: "transparent",
           color: "black",
+
           ".top": {
-            gridArea: ["1/1/2/-1"],
-            h2: {
-              mt: [8],
-              fontWeight: "500",
-              fontFamily: "display",
+            gridArea: ["1/1/2/-1", "1/3/2/-2"],
+            display: "flex",
+            mt: [8, 16],
+            mb: [6, 13],
+            ".section1": {
+              flex: "auto",
+              width: [(t) => t.desktopSectionWidth],
+              h2: {},
             },
-            p: {
-              mt: [3],
-              mb: [6],
-              fontWeight: "400",
-              lineHeight: ["24px"],
+
+            ".section2": {
+              width: [(t) => t.desktopSectionWidth],
+              ml: [(t) => `calc(${t.colWidthDesktop})`],
+              p: {
+                mt: [3, 0],
+                fontSize: ["20px", "16px"],
+                lineHeight: ["24px"],
+              },
             },
           },
+
           ".categories": {
             mb: [7],
-            gridArea: ["2/1/3/-1"],
+            gridArea: ["2/1/3/-1", "2/3/3/-1"],
             display: "flex",
-            flexFlow: ["column"],
-            ".categoryWrapper": {
+            flexFlow: ["column", "row"],
+            ".category": {
+              width: [
+                "auto",
+                (t) => `calc(calc(${t.colWidthDesktop} * 3) +  80px)`,
+              ],
+              mr: [0, "40px"],
+              position: "relative",
               ".divider": {
-                mb: [1],
-                mt: [1],
-                position: "relative",
+                mb: [1, 0],
+                mt: [1, 0],
+                top: ["unset", 4],
+                position: ["relative", "absolute"],
                 width: "100%",
                 height: ["2px"],
                 span: {
@@ -1229,24 +1259,20 @@ const theme = {
                   height: "100%",
                 },
               },
-              ".category": {
-                display: "flex",
-                ".left": {
-                  flex: 1,
-                  p: {
-                    fontWeight: "500",
-                    fontSize: ["14px"],
-                    lineHeight: ["21px"],
-                    fontFamily: "display",
-                  },
+              ".title": {
+                mb: [4],
+                p: {
+                  fontFamily: "medium",
+                  fontSize: "14px",
+                  lineHeight: "21px",
                 },
-                ".right": {
-                  flex: 1,
-                  p: {
-                    fontWeight: "400",
-                    fontSize: ["14px"],
-                    lineHeight: ["21px"],
-                  },
+              },
+              ".items": {
+                display: "flex",
+                flexFlow: "column",
+                p: {
+                  fontSize: ["14px"],
+                  lineHeight: ["21px"],
                 },
               },
             },
@@ -1254,11 +1280,11 @@ const theme = {
         },
         intersectional: {
           bg: "black",
-          color: "rgba(242, 242, 242, 0.95)",
+          color: "white",
           ".graphic": {
-            mt: [10],
-            gridArea: ["1/1/2/-1"],
-            height: ["225px"],
+            mt: [10, 16],
+            gridArea: ["1/1/2/-1", "1/7/2/-1"],
+            height: ["225px", "405px"],
             position: "relative",
             img: {
               position: "absolute",
@@ -1267,57 +1293,67 @@ const theme = {
             },
           },
           ".text": {
-            gridArea: ["2/1/3/-1"],
+            mt: [10, 16],
+            mb: [12, 27],
+            gridArea: ["2/1/3/-1", "1/3/2/6"],
             p: {
-              fontWeight: "400",
               lineHeight: ["24px"],
-              mt: [10],
-              mb: [12],
             },
           },
         },
         thoughtful: {
+          bg: "transparent",
           color: "black",
-          ".top": {
-            gridArea: ["1/1/2/-1"],
-            h2: {
-              mt: [12],
-            },
+          ".section1": {
+            gridArea: ["1/1/2/-1", "1/3/2/8"],
+            mt: [12, 16],
+            mb: [5, 19],
+            h2: {},
             p: {
-              mt: [3],
-
-              mb: [5],
+              mt: [3, 4],
+              pr: [(t) => t.colWidthDesktop],
             },
           },
-          ".team": {
-            gridArea: ["2/1/3/-1"],
-            ".divider": {
-              position: "relative",
-              height: "1px",
-              width: "100%",
-              span: {
-                position: "absolute",
-                height: "100%",
-                width: "100%",
-                bg: "#CACACE",
-              },
-            },
-            ".header": {
-              mt: [1],
+          ".section2": {
+            gridArea: ["2/1/3/-1", "1/7/2/-2"],
+            ml: [(t) => t.colWidthDesktop],
+            mt: [0, 26],
+            ".text": {
               p: {
-                fontWeight: "500",
-                fontFamily: "medium",
-              },
-            },
-            ".links": {
-              mt: [0],
-              mb: [12],
-              display: "flex",
-              flexFlow: ["column"],
-              p: {
-                fontWeight: "500",
                 mt: 0,
-                fontFamily: "display",
+                pr: 0,
+              },
+            },
+            ".team": {
+              mt: [3],
+              ".divider": {
+                position: "relative",
+                height: "1px",
+                width: "100%",
+                span: {
+                  position: "absolute",
+                  height: "100%",
+                  width: "100%",
+                  bg: "#CACACE",
+                },
+              },
+              ".header": {
+                mt: [1],
+                p: {
+                  fontWeight: "500",
+                  fontFamily: "medium",
+                },
+              },
+              ".links": {
+                mt: [0, 1],
+                mb: [12],
+                display: "flex",
+                flexFlow: ["column"],
+                p: {
+                  fontWeight: "500",
+                  mt: 0,
+                  fontFamily: "display",
+                },
               },
             },
           },
@@ -2548,6 +2584,25 @@ const theme = {
           path: { fill: (t) => `${t.colors.black} !important` },
         },
       },
+      yellow: {
+        bg: "yellow",
+        color: "black",
+        ".item": {
+          color: (t) => `${t.colors.black} !important`,
+        },
+        ".login": {
+          color: (t) => `${t.colors.white} !important`,
+          path: {
+            stroke: (t) => `${t.colors.white} !important`,
+          },
+          line: {
+            stroke: (t) => `${t.colors.white} !important`,
+          },
+        },
+        ".logo": {
+          path: { fill: (t) => `${t.colors.black} !important` },
+        },
+      },
     },
     submenu: {
       position: "fixed",
@@ -2559,13 +2614,14 @@ const theme = {
         ".item": {
           cursor: "pointer",
           mb: [2],
+          color: "inherit",
           textDecoration: "none",
           opacity: 0.5,
           height: "max-content",
           p: {
             fontSize: "14px",
             lineHeight: "16px",
-            color: "black",
+            color: "inherit",
             fontFamily: "medium",
           },
           "&:hover": {
@@ -2585,7 +2641,7 @@ const theme = {
             "#line1": {
               position: "absolute",
               height: "2px",
-              bg: "black",
+
               width: "100%",
               top: 0,
               transform: "translate3d(0,8px,0)",
@@ -2594,7 +2650,6 @@ const theme = {
             "#line2": {
               position: "absolute",
               height: "2px",
-              bg: "black",
               width: "100%",
               top: 0,
               opacity: 0,
@@ -2744,6 +2799,7 @@ const theme = {
       },
     },
     learnMoreLink: {
+      mb: [4],
       textDecoration: "none",
       display: "flex",
       cursor: "pointer",
@@ -2927,8 +2983,8 @@ const theme = {
     },
     p: {
       fontFamily: "body",
-      fontSize: ["16px", "20px"],
-      lineHeight: ["24px", "32px"],
+      fontSize: ["20px", "16px"],
+      lineHeight: ["24px"],
       fontWeight: "400",
       m: 0,
     },
