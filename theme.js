@@ -1568,30 +1568,35 @@ const theme = {
         },
         deiwork: {
           bg: "black",
-          ".text": {
-            gridArea: ["1/1/2/-1"],
-            mt: [10],
-            mb: [9],
-            h2: {},
-            p: {
-              mt: [3],
-            },
+          ".title": {
+            gridArea: ["1/3/2/7"],
+            mt: [0, 19],
           },
-          ".carousel": {
-            gridArea: ["2/1/3/-1"],
-            mb: [10],
-            ".graphic": {
-              position: "relative",
-              height: ["90px"],
-              width: "100%",
-              img: {
-                position: "absolute",
-                height: "100%",
-                width: "100%",
+          ".wrapper": {
+            gridArea: ["2/3/3/-1"],
+            display: "flex",
+            mt: [4],
+            mb: [19],
+            ".section1": {
+              display: "flex",
+              flexFlow: "column",
+              ".text": {
+                width: [(t) => t.desktopSectionWidth],
+                h2: {},
+                p: {},
+              },
+              ".carousel": {
+                bg: "yellow",
+                opacity: 0.5,
               },
             },
-            ".carouselMain": {
-              mt: [4],
+            ".section2": {
+              width: [(t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`],
+              ml: [(t) => t.colWidthDesktop],
+              img: {
+                width: "100%",
+                objectFit: "contain",
+              },
             },
           },
         },
