@@ -6,6 +6,8 @@ import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/product/collaborate/header";
 import DeiWork from "../../src/components/product/collaborate/deiwork";
 import Customizable from "../../src/components/product/collaborate/customizable";
+import { subPages } from "../../src/helpers/product/subpages";
+import pages from "../../src/helpers/product/pages";
 import { useState } from "react";
 
 import {
@@ -15,18 +17,18 @@ import {
   useViewportScroll,
 } from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
+import SubMenu from "../../src/components/submenu";
 
 const Product = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const ctx = useThemeUI();
-  const { theme } = ctx;
-  const subPages = [
-    "Measure",
-    "Analyze",
-    "Collaborate",
-    "Security",
-    "Integrations",
-  ];
+  const { theme } = useThemeUI();
+  const subPages_ = subPages({
+    pages,
+    currentIndex: 2,
+    nextBg: "yellow",
+    prevBg: "turquoise",
+  });
+
   const colors = [
     {
       bg: "#FFF",
@@ -46,10 +48,11 @@ const Product = () => {
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
+      <SubMenu navBarStyling={navBarStyling} subPages={subPages_.subPages} />
       <Header />
       <DeiWork />
       <Customizable />
-      <SubNavigation subPages={subPages} />
+      <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );

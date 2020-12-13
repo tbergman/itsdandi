@@ -3,12 +3,14 @@ import { jsx, useThemeUI } from "theme-ui";
 import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
-import Header from "../../src/components/product/analyze/header";
+import Header from "../../src/components/header";
 import Insights from "../../src/components/product/analyze/insights";
 import NewInsights from "../../src/components/product/analyze/newinsights";
 import InAction from "../../src/components/product/analyze/inaction";
 import Sharable from "../../src/components/product/analyze/sharable";
-import { useState } from "react";
+import { subPages } from "../../src/helpers/product/subpages";
+import pages from "../../src/helpers/product/pages";
+import { useState, useEffect } from "react";
 
 import {
   motion,
@@ -17,18 +19,27 @@ import {
   useViewportScroll,
 } from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
+import SubMenu from "../../src/components/submenu";
 
 const Product = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const ctx = useThemeUI();
-  const { theme } = ctx;
-  const subPages = [
-    "Measure",
-    "Analyze",
-    "Collaborate",
-    "Security",
-    "Integrations",
-  ];
+  const { theme } = useThemeUI();
+  const [windowHeight, setWindowHeight] = useState(500);
+  const [navBarStyling, setNavbarStyling] = useState({
+    ...theme.components.navigation.gray,
+  });
+  useEffect(() => {
+    if (window) {
+      setWindowHeight(window.innerHeight);
+    }
+  }, []);
+
+  const subPages_ = subPages({
+    pages,
+    currentIndex: 1,
+    nextBg: "yellow",
+    prevBg: "turquoise",
+  });
   const colors = [
     {
       bg: "#FFF",
@@ -42,18 +53,44 @@ const Product = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation current="product" />
+      <Navigation current="product" navBarStyling={navBarStyling} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <Header />
-      <Insights />
-      <NewInsights />
-      <InAction />
-      <Sharable />
-      <SubNavigation subPages={subPages} />
+      <SubMenu navBarStyling={navBarStyling} subPages={subPages_.subPages} />
+      <Header
+        title={`See what your HR data’s trying to tell you`}
+        body={`Dandi helps you understand your people data in a whole new way.`}
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.gray}
+        windowHeight={windowHeight}
+        styling={{
+          mb: [0, 23],
+        }}
+      ></Header>
+      <Insights
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.default}
+        windowHeight={windowHeight}
+      />
+      <NewInsights
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.white}
+        windowHeight={windowHeight}
+      />
+      <InAction
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.default}
+        windowHeight={windowHeight}
+      />
+      <Sharable
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.white}
+        windowHeight={windowHeight}
+      />
+      <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );

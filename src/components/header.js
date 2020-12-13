@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, useThemeUI } from "theme-ui";
+import { jsx, Styled } from "theme-ui";
 import InView from "./inview";
 
 const Header = ({
@@ -12,7 +12,6 @@ const Header = ({
   bg,
   children,
 }) => {
-  const { theme } = useThemeUI();
   return (
     <InView
       setNavbarStyling={setNavbarStyling}

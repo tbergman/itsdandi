@@ -10,6 +10,8 @@ import WhyMeasure from "../../src/components/product/measure/whymeasure";
 import Intersectional from "../../src/components/product/measure/intersectional";
 import Thoughtful from "../../src/components/product/measure/thoughtful";
 import SubMenu from "../../src/components/submenu";
+import { subPages } from "../../src/helpers/product/subpages";
+import pages from "../../src/helpers/product/pages";
 import { useState, useEffect } from "react";
 
 import {
@@ -33,29 +35,12 @@ const Product = () => {
     }
   }, []);
 
-  const subPages = [
-    {
-      name: "Measure",
-      url: "/product/measure",
-      current: true,
-    },
-    {
-      name: "Analyze",
-      url: "/product/analyze",
-    },
-    {
-      name: "Collaborate",
-      url: "/product/collaborate",
-    },
-    {
-      name: "Security",
-      url: "/product/security",
-    },
-    {
-      name: "Integrations",
-      url: "/product/integrations",
-    },
-  ];
+  const subPages_ = subPages({
+    pages,
+    currentIndex: 0,
+    nextBg: "turquoise",
+  });
+
   const colors = [
     {
       bg: "#FFF",
@@ -75,7 +60,7 @@ const Product = () => {
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <SubMenu navBarStyling={navBarStyling} subPages={subPages} />
+      <SubMenu navBarStyling={navBarStyling} subPages={subPages_.subPages} />
       <Header
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
@@ -120,13 +105,7 @@ const Product = () => {
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
       />
-      <SubNavigation
-        next={{
-          name: "Analyze",
-          url: "/product/analyze",
-          bg: "turquoise",
-        }}
-      />
+      <SubNavigation next={subPages_.next} />
       <Footer />
     </div>
   );

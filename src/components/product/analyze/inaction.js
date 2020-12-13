@@ -1,13 +1,15 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
+import InView from "../../inview";
 
-const InAction = () => {
+const InAction = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   return (
-    <div
-      sx={{
-        variant: "pages.product.analyze.inaction",
-      }}
+    <InView
+      variant="pages.product.analyze.inaction"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -30,7 +32,7 @@ const InAction = () => {
           </div>
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

@@ -1360,48 +1360,40 @@ const theme = {
         },
       },
       analyze: {
-        header: {
-          bg: "transparent",
-          ".text": {
-            gridArea: ["1/1/2/-1"],
-            mt: [18],
-            color: "black",
-            h1: {},
-            h3: {
-              mt: [2],
-              mb: [12],
-              fontWeight: "400",
-              lineHeight: ["30px"],
-              fontSize: ["20px"],
-            },
-          },
-          ".buttonWrapper": {
-            gridArea: ["2/1/3/-1"],
-            position: "relative",
-            ".button": {
-              position: "absolute",
-              top: ["-28px"],
-            },
-          },
-        },
         insights: {
           bg: "black",
-          h2: {
-            mt: [10],
-            gridArea: ["1/1/2/-1"],
+          ".top": {
+            mt: [10, 16],
+            gridArea: ["1/1/2/-1", "1/3/2/9"],
+            h2: {},
           },
-          ".insightscircle": {
-            mt: [4],
-            gridArea: ["2/1/3/-1"],
+          ".middle": {
+            mt: [4, 10],
+            mb: [19],
+            gridArea: ["2/1/3/-1", "2/3/3/-1"],
+            display: "flex",
+            ".section1": {
+              width: [(t) => t.desktopSectionWidth],
+              ".insightscircle": {
+                svg: {
+                  height: ["100%"],
+                  width: "100%",
+                },
+              },
+            },
+            ".section2": {
+              width: [(t) => t.desktopSectionWidth],
+              ml: [(t) => t.colWidthDesktop],
+              display: "flex",
+              alignItems: "center",
+              ".text": {},
+            },
           },
-          ".text": {
-            mt: [6],
-            gridArea: ["3/1/4/-1"],
-          },
-          ".confidence": {
-            mt: [8],
-            mb: [10],
-            gridArea: ["4/1/5/-1"],
+
+          ".bottom": {
+            mt: [8, 0],
+            mb: [10, 13],
+            gridArea: ["4/1/5/-1", "3/3/4/-2"],
             border: (t) => `solid 2px ${t.colors.turquoise}`,
             borderRadius: ["20px"],
             ".lockWrapper": {
@@ -1411,7 +1403,10 @@ const theme = {
                 width: ["38px"],
                 height: ["28px"],
                 top: ["-17px"],
-                left: ["45px"],
+                left: [
+                  "45px",
+                  (t) => `calc(calc(${t.colWidthDesktop}) - 16px)`,
+                ],
                 bg: "black",
                 mx: [1],
                 div: {
@@ -1429,12 +1424,12 @@ const theme = {
               },
             },
             ".text": {
-              mx: [3],
-              mt: [4],
-              mb: [4],
+              mx: [3, (t) => t.colWidthDesktop],
+              mt: [4, 8],
+              mb: [4, 9],
               h3: {
                 fontSize: ["24px"],
-                fontWeight: "500",
+
                 fontFamily: "medium",
                 mb: [1],
               },
@@ -1442,8 +1437,7 @@ const theme = {
               ".link": {
                 mt: [1],
                 p: {
-                  fontWeight: "500",
-                  fontFamily: "body",
+                  fontFamily: "medium",
                 },
               },
             },
@@ -1452,25 +1446,32 @@ const theme = {
         newinsights: {
           bg: "transparent",
           color: "black",
-          h2: {
-            gridArea: ["1/1/2/-1"],
-            mt: [12],
-          },
-          p: {
-            gridArea: ["2/1/3/-1"],
-            mt: [3],
-            mb: [6],
+          ".wrapper": {
+            gridArea: ["1/1/2/-1", "1/3/2/-2"],
+            mt: [12, 16],
+            mb: [16],
+            display: "flex",
+            ".section1": {
+              width: [(t) => t.desktopSectionWidth],
+              h2: {},
+            },
+            ".section2": {
+              width: [(t) => t.desktopSectionWidth],
+              ml: [(t) => t.colWidthDesktop],
+              p: {},
+            },
           },
         },
         inaction: {
           bg: "black",
           ".graphic": {
-            mt: [8],
-            gridArea: ["1/1/2/-1"],
+            mt: [8, 16],
+            mb: [0, 16],
+            gridArea: ["1/1/2/-1", "1/7/2/-1"],
             position: "relative",
-            height: ["225px"],
-            width: "100vw",
-            left: ["-20px"],
+            height: ["225px", "336px"],
+            width: ["100vw", "auto"],
+            left: ["-20px", 0],
             div: {
               position: "absolute",
               height: "100%",
@@ -1479,8 +1480,8 @@ const theme = {
             },
           },
           ".text": {
-            gridArea: ["2/1/3/-1"],
-            mt: [6],
+            gridArea: ["2/1/3/-1", "1/3/2/6"],
+            mt: [6, 16],
             mb: [9],
             ".divider": {
               height: "1px",
@@ -1495,15 +1496,13 @@ const theme = {
             },
             p: {
               mt: [2],
-              fontWeight: "500",
-              fontFamily: "body",
             },
             ".link": {
               mt: [1],
               p: {
                 mt: 0,
-                fontWeight: "500",
-                fontFamily: "display",
+
+                fontFamily: "medium",
               },
             },
           },
@@ -1512,19 +1511,33 @@ const theme = {
           bg: "transparent",
           color: "black",
           ".text": {
+            display: "flex",
+            flexFlow: "column",
+            justifyContent: "center",
             mt: [12],
             mb: [5],
-            gridArea: ["1/1/2/-1"],
+            gridArea: ["1/1/2/-1", "1/3/2/7"],
             h2: {},
             p: {
               mt: [3],
             },
           },
           ".graphic": {
-            gridArea: ["2/1/3/-1"],
-            mb: [13],
+            gridArea: ["2/1/3/-1", "1/7/2/-1"],
+            mt: [0, 16],
+            mb: [13, 16],
+            ml: [(t) => t.colWidthDesktop],
+            height: ["440px"],
             display: "flex",
             justifyContent: "center",
+            div: {
+              height: "100%",
+              width: "100%",
+              svg: {
+                width: "inherit",
+                height: "inherit",
+              },
+            },
           },
         },
       },

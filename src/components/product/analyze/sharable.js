@@ -1,13 +1,15 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
+import InView from "../../inview";
 
-const Sharable = () => {
+const Sharable = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   return (
-    <div
-      sx={{
-        variant: "pages.product.analyze.sharable",
-      }}
+    <InView
+      variant="pages.product.analyze.sharable"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -30,7 +32,7 @@ const Sharable = () => {
           <ReactSVG src="/assets/svgs/sharable.svg" />
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

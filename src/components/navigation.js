@@ -5,12 +5,12 @@ import { ReactSVG } from "react-svg";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
-const Navigation = ({ current, styling }) => {
+const Navigation = ({ current, navBarStyling }) => {
   return (
     <motion.nav
       sx={{
         variant: "components.navigation",
-        ...styling,
+        ...navBarStyling,
         transition: "all 100ms cubic-bezier(.01,.66,.83,.67)",
       }}
     >
