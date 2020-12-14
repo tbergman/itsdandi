@@ -279,7 +279,7 @@ const theme = {
             (t) => `calc(calc(${t.colWidthDesktop} * 7) + 280px)`,
           ],
           // mt: [13, 0],
-          mb: [0, 9],
+          mb: [1],
           display: "flex",
           alignItems: "flex-start",
           justifyContent: ["flex-end", "flex-start"],
@@ -2025,9 +2025,36 @@ const theme = {
             },
             ".slider": {
               height: "20px",
-              bg: "gray",
               mt: [3],
+
+              "input[type=range]": {
+                width: "100%",
+                m: 0,
+                bg: "transparent",
+                appearance: "none",
+              },
+              "input[type=range]:focus": {
+                outline: "none",
+              },
+              "input[type=range]::-webkit-slider-runnable-track": {
+                bg: "blue",
+                border: "none",
+                width: "100%",
+                height: "2px",
+                cursor: "pointer",
+              },
+              "input[type=range]::-webkit-slider-thumb": {
+                mt: ["-11px"],
+                width: "24px",
+                height: "24px",
+                bg: "blue",
+                border: "none",
+                cursor: "pointer",
+                appearance: "none",
+                borderRadius: "50px",
+              },
             },
+
             ".result": {
               mt: [5],
               mb: [5],
