@@ -48,7 +48,7 @@ const Workflows = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
           </div>
         </div>
         <div className="graphic">
-          <ReactSVG src="/assets/svgs/securitygraphic.svg" />
+          <ReactSVG src="/assets/svgs/product/security/illustration_03.4.2.svg" />
         </div>
       </div>
     </InView>

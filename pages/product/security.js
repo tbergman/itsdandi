@@ -37,8 +37,8 @@ const Product = () => {
   const subPages_ = subPages({
     pages,
     currentIndex: 3,
-    nextBg: "blue",
-    prevBg: "violet",
+    nextBg: "turquoise",
+    prevBg: "yellow",
   });
   const colors = [
     {
@@ -94,7 +94,11 @@ const Product = () => {
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
       />
-      <Connect />
+      <Connect
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.white}
+        windowHeight={windowHeight}
+      />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>

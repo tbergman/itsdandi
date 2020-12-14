@@ -3,7 +3,7 @@ export const subPages = ({ pages, currentIndex, nextBg, prevBg }) => {
     next:
       currentIndex < pages.length - 1
         ? { ...pages[currentIndex + 1], bg: nextBg }
-        : { ...pages[0], bg: nextBg },
+        : { ...pages[0], bg: nextBg, goBack: true },
     prev: currentIndex >= 1 ? { ...pages[currentIndex - 1], bg: prevBg } : null,
     subPages: pages.map((page, i) => {
       if (i === currentIndex) {

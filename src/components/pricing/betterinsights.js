@@ -1,13 +1,15 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import Table from "./table";
+import InView from "../inview";
 
-const BetterInsights = () => {
+const BetterInsights = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   return (
-    <div
-      sx={{
-        variant: "pages.pricing.betterinsights",
-      }}
+    <InView
+      variant="pages.pricing.betterinsights"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -27,7 +29,7 @@ const BetterInsights = () => {
         </div>
         <Table />
       </div>
-    </div>
+    </InView>
   );
 };
 

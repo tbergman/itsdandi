@@ -5,7 +5,7 @@ import Footer from "../src/components/footer";
 import Header from "../src/components/pricing/header";
 import Cost from "../src/components/pricing/cost";
 import BetterInsights from "../src/components/pricing/betterinsights";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   motion,
@@ -17,8 +17,17 @@ import MobileNav from "../src/components/mobilenav";
 
 const Pricing = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const ctx = useThemeUI();
-  const { theme } = ctx;
+  const { theme } = useThemeUI();
+  const [windowHeight, setWindowHeight] = useState(500);
+  const [navBarStyling, setNavbarStyling] = useState({
+    ...theme.components.navigation.white,
+  });
+  useEffect(() => {
+    if (window) {
+      setWindowHeight(window.innerHeight);
+    }
+  }, []);
+
   const colors = [
     {
       bg: "#FFF",
@@ -31,15 +40,27 @@ const Pricing = () => {
         bg: "#fff",
       }}
     >
-      <Navigation current="pricing" />
+      <Navigation current="pricing" navBarStyling={navBarStyling} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <Header />
-      <Cost />
-      <BetterInsights />
+      <Header
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.white}
+        windowHeight={windowHeight}
+      />
+      <Cost
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.gray}
+        windowHeight={windowHeight}
+      />
+      <BetterInsights
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.default}
+        windowHeight={windowHeight}
+      />
       <Footer />
     </div>
   );

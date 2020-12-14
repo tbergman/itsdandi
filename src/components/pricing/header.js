@@ -1,13 +1,15 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
+import InView from "../inview";
 
-const Header = () => {
+const Header = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   return (
-    <div
-      sx={{
-        variant: "pages.pricing.header",
-      }}
+    <InView
+      variant="pages.pricing.header"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -19,14 +21,18 @@ const Header = () => {
             Dandi is priced to work for businesses of every size
           </Styled.h1>
           <Styled.h3>
-            Invest more in your people—and less in pricey software.
+            We keep Dandi affordable so you can invest more in your people—and
+            less in pricey software.
           </Styled.h3>
         </div>
         <div className="graphic">
-          <ReactSVG src="/assets/svgs/pricinggraphic.svg" />
+          <div className="box1"></div>
+          <div className="box2"></div>
+          <div className="box3"></div>
+          {/* <ReactSVG src="/assets/svgs/pricinggraphic.svg" /> */}
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

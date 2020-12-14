@@ -1709,30 +1709,20 @@ const theme = {
             position: "relative",
             gridArea: ["1/2/2/7"],
             ml: [(t) => `calc(${t.colWidthDesktop} + 20px)`],
+            display: "flex",
+            alignItems: "center",
             div: {
               width: ["464px"],
-              height: "auto",
+              height: ["464px"],
             },
-            // div: {
-            //   position: "absolute",
-            //   left: 0,
-            //   height: "100%",
-            //   width: "100%",
-            //   div: {
-            //     width: "100%",
-            //     height: "100%",
-            //     top: 0,
-            //     left: 0,
-            //     display: "flex",
-            //     justifyContent: "flex-end",
-            //   },
-            // },
           },
           ".wrapper": {
             gridArea: ["1/1/2/-1", "1/6/2/-1"],
+            zIndex: 99,
             mt: [26],
             mb: [26],
             ".toptext": {
+              mr: [(t) => `calc(calc(${t.colWidthDesktop} * 3) + 80px)`],
               h2: {},
               p: {
                 mt: [3],
@@ -1744,7 +1734,6 @@ const theme = {
               flexFlow: ["column", "row"],
 
               ".category": {
-                zIndex: 99,
                 width: [(t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`],
                 mr: ["40px"],
 
@@ -1765,28 +1754,35 @@ const theme = {
         connect: {
           bg: "transparent",
           color: "black",
-          ".text": {
-            gridArea: ["1/1/2/-1"],
-            mt: [0],
-            mb: [7],
-            h2: {},
-            ".link": {
-              mt: [1],
-              p: {
-                fontWeight: "500",
-                fontFamily: "display",
+          ".wrapper": {
+            gridArea: ["1/1/2/-1", "1/3/2/8"],
+            display: "flex",
+            alignItems: "center",
+            ".text": {
+              // mt: [0],
+              // mb: [7],
+
+              h2: {},
+              ".link": {
+                mt: [1],
+                p: {
+                  fontFamily: "medium",
+                },
               },
             },
           },
+
           ".graphic": {
-            gridArea: ["2/1/3/-1"],
-            mb: [12],
-            width: "100vw",
-            left: ["-20px"],
-            position: "relative",
-            height: ["271px"],
+            gridArea: ["2/1/3/-1", "1/8/2/-2"],
+            mt: [16],
+            mb: [16],
+            width: ["auto"],
+            ml: [(t) => t.colWidthDesktop],
+            height: ["271px", "auto"],
+            display: "flex",
+
+            justifyContent: "flex-end",
             div: {
-              position: "absolute",
               width: "100%",
               height: "100%",
               div: {
@@ -1794,8 +1790,12 @@ const theme = {
                 height: "100%",
                 top: 0,
                 left: 0,
-                display: "flex",
-                justifyContent: "center",
+                // display: "flex",
+                // justifyContent: "center",
+                svg: {
+                  height: "100%",
+                  width: "100%",
+                },
               },
             },
           },
@@ -1830,52 +1830,75 @@ const theme = {
           bg: "transparent",
           color: "black",
           ".text": {
-            gridArea: ["1/1/2/-1"],
-            mt: [10],
-            mb: [7],
-            h2: {},
+            gridArea: ["1/1/2/-1", "1/3/2/-1"],
+            mt: [10, 18],
+            mb: [7, 12],
+            display: "flex",
+            h2: {
+              width: [(t) => t.desktopSectionWidth],
+            },
             p: {
-              mt: [3],
+              width: [(t) => t.desktopSectionWidth],
+              ml: [(t) => t.colWidthDesktop],
+              mt: [3, 0],
             },
           },
           ".logos": {
-            gridArea: ["2/1/3/-1"],
+            gridArea: ["2/1/3/-1", "2/3/3/-1"],
             mb: [7],
-            height: "300px",
-            position: "relative",
-            div: {
-              height: "100%",
-              width: "100%",
-              position: "absolute",
-              bg: "gray",
+            display: "flex",
+            flexFlow: ["row wrap"],
+            justifyContent: "space-between",
+            ".logo": {
+              flex: "0 15%",
+              mb: [12],
             },
           },
         },
         secure: {
           bg: "transparent",
           color: "black",
-          ".text": {
-            gridArea: ["1/1/2/-1"],
+          ".wrapper": {
+            gridArea: ["1/1/2/-1", "1/3/2/7"],
             mt: [7],
             mb: [4],
-            h2: {},
-            p: {
-              mt: [3],
-            },
-            ".link": {
-              mt: [1],
+            display: "flex",
+            alignItems: "center",
+            ".text": {
+              h2: {},
               p: {
-                mt: 0,
-                fontWeight: "500",
-                fontFamily: "display",
+                mt: [3, 4],
+              },
+              ".link": {
+                mt: [1],
+                p: {
+                  mt: 0,
+
+                  fontFamily: "medium",
+                },
               },
             },
           },
+
           ".graphic": {
-            gridArea: ["2/1/3/-1"],
+            mt: [7],
+            gridArea: ["2/1/3/-1", "1/7/2/-1"],
+            ml: [(t) => t.colWidthDesktop],
             mb: [12],
             display: "flex",
             justifyContent: "center",
+            div: {
+              height: ["235px"],
+              width: ["150px"],
+              div: {
+                height: "inherit",
+                width: "inherit",
+                svg: {
+                  height: "inherit",
+                  width: "inherit",
+                },
+              },
+            },
           },
         },
       },
@@ -1885,100 +1908,136 @@ const theme = {
         bg: "transparent",
         color: "black",
         ".text": {
-          gridArea: ["1/1/2/-1"],
-          mt: [18],
-          h1: {},
+          gridArea: ["1/1/2/-1", "1/2/2/7"],
+          mr: [(t) => t.colWidthDesktop],
+          mt: [18, 21],
+          mb: [15],
+          h1: {
+            fontSize: ["52px"],
+            lineHeight: ["58px"],
+          },
           h3: {
             mt: [3],
-            fontSize: ["18px"],
           },
         },
         ".graphic": {
-          gridArea: ["2/1/3/-1"],
-          width: "100vw",
-          left: ["-20px"],
+          gridArea: ["2/1/3/-1", "1/7/2/-1"],
+          mt: [18, 21],
+          // width: "100vw",
+          // left: ["-20px"],
+
           position: "relative",
-          div: {
-            width: "100%",
+          ".box1": {
+            position: "absolute",
+            left: 0,
+            bottom: 0,
             height: "100%",
-            div: {
-              height: "100%",
-              width: "100%",
-              display: "flex",
-              justifyContent: "flex-end",
-              svg: {
-                height: "100%",
-              },
-            },
+            width: "100%",
+            bg: "#C6D9FF",
           },
+          ".box2": {
+            position: "absolute",
+
+            bg: "#335AFF",
+            bottom: 0,
+            left: [(t) => t.colWidthDesktop],
+            width: [(t) => `calc(calc(${t.colWidthDesktop} * 4) + 200px)`],
+            height: "73%",
+          },
+          ".box3": {
+            position: "absolute",
+            bottom: 0,
+            height: "40%",
+            width: [(t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
+            left: [(t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`],
+            bg: "#0227C4",
+          },
+          // div: {
+          //   width: "100%",
+          //   height: "100%",
+          //   div: {
+          //     height: "100%",
+          //     width: "100%",
+          //     display: "flex",
+          //     justifyContent: "flex-end",
+          //     svg: {
+          //       height: "100%",
+          //     },
+          //   },
+          // },
         },
       },
       cost: {
         bg: "#F8F8F8",
         color: "black",
-        ".toptext": {
-          gridArea: ["1/1/2/-1"],
-          mt: [5],
-          mb: [3],
-          p: {},
-        },
-        ".list": {
-          gridArea: ["2/1/3/-1"],
-          ".title": {
-            fontWeight: "500",
-            fontFamily: "display",
+        ".section1": {
+          gridArea: ["1/1/2/-1", "1/2/2/7"],
+          mt: [5, 16],
+          mb: [17],
+          ".toptext": {
+            mb: [3],
+            p: {},
           },
-          ul: {
-            pl: [3],
-            li: {
-              mb: [3],
-              listStyle: "none",
-              position: "relative",
-              "::after": {
-                content: "''",
-                top: "20%",
-                left: "-22px",
-                borderRadius: "10px",
-                position: "absolute",
-                height: "6px",
-                width: "6px",
-                bg: "blue",
+          ".list": {
+            // gridArea: ["2/1/3/-1"],
+            ".title": {
+              fontFamily: "display",
+            },
+            ul: {
+              pl: [3],
+              li: {
+                mb: [3],
+                listStyle: "none",
+                position: "relative",
+                "::after": {
+                  content: "''",
+                  top: "20%",
+                  left: "-22px",
+                  borderRadius: "10px",
+                  position: "absolute",
+                  height: "6px",
+                  width: "6px",
+                  bg: "blue",
+                },
               },
             },
           },
         },
-        ".calculator": {
-          gridArea: ["3/1/4/-1"],
-          mt: [8],
-          ".description": {
-            p: {
-              color: "blue",
+        ".section2": {
+          gridArea: ["3/1/4/-1", "1/7/2/-1"],
+          mt: [5, 16],
+          ml: [(t) => t.colWidthDesktop],
+          mr: [(t) => t.colWidthDesktop],
+          ".calculator": {
+            ".description": {
+              p: {
+                color: "blue",
+              },
             },
-          },
-          ".label": {
-            mt: [4],
-            display: "flex",
-            justifyContent: "space-between",
-            p: {
-              fontWeight: "500",
-              fontFamily: "display",
-              color: "blue",
+            ".label": {
+              mt: [4],
+              display: "flex",
+              justifyContent: "space-between",
+              p: {
+                fontFamily: "display",
+                color: "blue",
+              },
             },
-          },
-          ".slider": {
-            height: "20px",
-            bg: "gray",
-            mt: [3],
-          },
-          ".result": {
-            mt: [5],
-            mb: [5],
-            h1: {
-              fontSize: ["72px"],
-              fontWeight: "500",
-              fontFamily: "display",
-              lineHeight: ["100px"],
-              color: "blue",
+            ".slider": {
+              height: "20px",
+              bg: "gray",
+              mt: [3],
+            },
+            ".result": {
+              mt: [5],
+              mb: [5],
+              h1: {
+                fontSize: ["72px"],
+
+                fontFamily: "display",
+                lineHeight: ["100px"],
+                color: "blue",
+              },
             },
           },
         },
