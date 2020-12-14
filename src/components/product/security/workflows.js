@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
+import InView from "../../inview";
 
-const Workflows = () => {
+const Workflows = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   const categories = [
     {
       title: `Role-based access`,
@@ -18,36 +19,39 @@ const Workflows = () => {
     },
   ];
   return (
-    <div
-      sx={{
-        variant: "pages.product.security.workflows",
-      }}
+    <InView
+      variant="pages.product.security.workflows"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
           variant: "grid",
         }}
       >
-        <div className="toptext">
-          <Styled.h2>Keeping workflows secure</Styled.h2>
-          <Styled.p>
-            With Dandi, you can be sure that sensitive information never travels
-            further than it should.
-          </Styled.p>
-        </div>
-        <div className="categories">
-          <div className="graphic">
-            <ReactSVG src="/assets/svgs/securitygraphic.svg" />
+        <div className="wrapper">
+          <div className="toptext">
+            <Styled.h2>Keeping workflows secure</Styled.h2>
+            <Styled.p>
+              With Dandi, you can be sure that sensitive information never
+              travels further than it should.
+            </Styled.p>
           </div>
-          {categories.map((category, i) => (
-            <div className="category" key={i}>
-              <Styled.p className="title">{category.title}</Styled.p>
-              <Styled.p className="body">{category.body}</Styled.p>
-            </div>
-          ))}
+          <div className="categories">
+            {categories.map((category, i) => (
+              <div className="category" key={i}>
+                <Styled.p className="title">{category.title}</Styled.p>
+                <Styled.p className="body">{category.body}</Styled.p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="graphic">
+          <ReactSVG src="/assets/svgs/securitygraphic.svg" />
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

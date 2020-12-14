@@ -73,7 +73,11 @@ const Product = () => {
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
       />
-      <Customizable />
+      <Customizable
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.white}
+        windowHeight={windowHeight}
+      />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>

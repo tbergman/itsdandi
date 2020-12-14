@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import { motion } from "framer-motion";
+import InView from "../../inview";
 
-const BestInClass = () => {
+const BestInClass = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   const modules = [
     {
       length: "65%",
@@ -24,10 +25,11 @@ const BestInClass = () => {
     },
   ];
   return (
-    <div
-      sx={{
-        variant: "pages.product.security.bestinclass",
-      }}
+    <InView
+      variant="pages.product.security.bestinclass"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -43,38 +45,41 @@ const BestInClass = () => {
         </div>
         <div className="modules">
           {modules.map((module, i) => (
-            <div className="module" key={i}>
+            <div
+              sx={{
+                width: module.length,
+              }}
+              className="module"
+              key={i}
+            >
               <div className="divider">
                 <svg>
                   <motion.line
                     x1="0%"
                     y1="50%"
-                    x2={module.length}
+                    x2="99%"
                     y2="50%"
                     stroke={module.color}
                     strokeWidth="2"
                   />
-                  <motion.circle
-                    cx={module.length}
-                    cy="50%"
-                    r="5"
-                    fill={module.color}
-                  />
+                  <motion.circle cx="99%" cy="50%" r="5" fill={module.color} />
                 </svg>
               </div>
-              <Styled.p
-                sx={{
-                  color: module.color,
-                }}
-              >
-                {module.title}
-              </Styled.p>
-              <Styled.p>{module.body}</Styled.p>
+              <div className="text">
+                <Styled.p
+                  sx={{
+                    color: module.color,
+                  }}
+                >
+                  {module.title}
+                </Styled.p>
+                <Styled.p>{module.body}</Styled.p>
+              </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

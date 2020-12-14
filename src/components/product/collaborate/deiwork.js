@@ -1,25 +1,39 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import Carousel from "./carousel";
+import Carousel from "../../carousel";
 import InView from "../../inview";
+import { useState, useEffect } from "react";
 
 const DeiWork = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
-  const items = [
+  const [current, setCurrent] = useState(0);
+  const time = 5000;
+
+  useEffect(() => {
+    const next = (current + 1) % slides.length;
+    const id = setTimeout(() => setCurrent(next), time);
+    return () => clearTimeout(id);
+  }, [current]);
+
+  const slides = [
     {
-      title: "Dashboard templates",
+      header: "Dashboard templates",
       body: `Inspired by the best dashboards we’ve seen on the platform, Dandi templates make it easy to start tracking the right things, right away.`,
+      imageUrl: "/assets/images/03.3_dashboard_templats.png",
     },
     {
-      title: "Visualizations",
+      header: "Visualizations",
       body: `Export beautifully designed charts and graphs for readouts and presentations.`,
+      imageUrl: "/assets/images/03.2_visualisations.png",
     },
     {
-      title: "Assignments",
+      header: "Assignments",
       body: `Want to make sure someone follows up on a key piece of information? Assignments help keep everyone on track.`,
+      imageUrl: "/assets/images/03.2_assignments.png",
     },
     {
-      title: "Goals",
-      body: `Make sure you’re hitting all the little milestones along the way to the big ones. `,
+      header: "Goals",
+      body: `Make sure you’re hitting all the little milestones along the way to the big ones.`,
+      imageUrl: "/assets/images/03.2_goals.png",
     },
   ];
 
@@ -46,10 +60,12 @@ const DeiWork = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
                 of advancing DEI easier and more impactful.
               </Styled.p>
             </div>
-            <div className="carousel"></div>
+            <div className="carousel">
+              <Carousel slides={slides} current={current} color="yellow" />
+            </div>
           </div>
           <div className="section2">
-            <img src="/assets/images/03.3_dashboard_templats.png" alt="" />
+            <img src={slides[current].imageUrl} alt="" />
           </div>
         </div>
       </div>

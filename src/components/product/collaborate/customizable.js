@@ -1,13 +1,15 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
+import InView from "../../inview";
 
-const Customizable = () => {
+const Customizable = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   return (
-    <div
-      sx={{
-        variant: "pages.product.collaborate.customizable",
-      }}
+    <InView
+      variant="pages.product.collaborate.customizable"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -26,7 +28,7 @@ const Customizable = () => {
           <ReactSVG src="/assets/svgs/customizable.svg" />
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

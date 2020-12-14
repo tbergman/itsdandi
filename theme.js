@@ -1,4 +1,4 @@
-import { transform } from "framer-motion";
+import { transform, useTransform } from "framer-motion";
 import Customizable from "./src/components/product/collaborate/customizable";
 const theme = {
   breakpoints: ["1024px"],
@@ -1578,16 +1578,16 @@ const theme = {
             mt: [4],
             mb: [19],
             ".section1": {
+              width: [(t) => t.desktopSectionWidth],
               display: "flex",
               flexFlow: "column",
               ".text": {
-                width: [(t) => t.desktopSectionWidth],
                 h2: {},
                 p: {},
               },
               ".carousel": {
-                bg: "yellow",
-                opacity: 0.5,
+                mt: [8],
+                mr: [(t) => t.colWidthDesktop],
               },
             },
             ".section2": {
@@ -1604,17 +1604,32 @@ const theme = {
           bg: "transparent",
           color: "black",
           ".text": {
-            gridArea: ["1/1/2/-1"],
-            mt: [10],
-            mb: [10],
+            gridArea: ["1/1/2/-1", "1/3/2/8"],
+            mt: [10, 16],
+            mb: [10, 16],
             h2: {},
             p: { mt: [3] },
           },
           ".graphic": {
-            gridArea: ["2/1/3/-1"],
+            gridArea: ["2/1/3/-1", "1/8/2/-1"],
+            mt: [0, 16],
             mb: [9],
+            height: ["184px"],
+            width: "auto",
             display: "flex",
             justifyContent: "center",
+            div: {
+              height: "100%",
+              width: "auto",
+              div: {
+                height: "100%",
+                width: "auto",
+                svg: {
+                  height: "100%",
+                  width: "auto",
+                },
+              },
+            },
           },
         },
       },
@@ -1646,24 +1661,27 @@ const theme = {
         bestinclass: {
           bg: "black",
           ".toptext": {
-            gridArea: ["1/1/2/-1"],
-            mt: [10],
-            mb: [5],
+            gridArea: ["1/1/2/-1", "1/3/2/8"],
+            mt: [10, 16],
+
             h2: {},
             p: {
-              mt: [3],
+              mt: [3, 4],
             },
           },
           ".modules": {
-            gridArea: ["2/1/3/-1"],
+            gridArea: ["2/1/3/-1", "2/3/3/-2"],
+            mt: [5],
+            mb: [5],
             display: "flex",
             flexFlow: "column",
             mb: [12],
             ".module": {
-              mb: [5],
+              mb: [5, 8],
+
+              position: "relative",
               ".divider": {
                 position: "relative",
-                mb: ["4px"],
                 height: ["10px"],
                 width: "100%",
                 svg: {
@@ -1672,54 +1690,74 @@ const theme = {
                   position: "absolute",
                 },
               },
+              ".text": {
+                mt: [1],
+                display: "flex",
+                flexFlow: ["column", "row"],
+                justifyContent: ["space-between"],
+                p: {
+                  width: [(t) => `calc(${t.colWidthDesktop} * 3)`],
+                },
+              },
             },
           },
         },
         workflows: {
           bg: "transparent",
           color: "black",
-          ".toptext": {
-            gridArea: ["1/1/2/-1"],
-            mt: [8],
-            mb: [8],
-            h2: {},
-            p: {
-              mt: [3],
+          ".graphic": {
+            position: "relative",
+            gridArea: ["1/2/2/7"],
+            ml: [(t) => `calc(${t.colWidthDesktop} + 20px)`],
+            div: {
+              width: ["464px"],
+              height: "auto",
             },
+            // div: {
+            //   position: "absolute",
+            //   left: 0,
+            //   height: "100%",
+            //   width: "100%",
+            //   div: {
+            //     width: "100%",
+            //     height: "100%",
+            //     top: 0,
+            //     left: 0,
+            //     display: "flex",
+            //     justifyContent: "flex-end",
+            //   },
+            // },
           },
-          ".categories": {
-            gridArea: ["2/1/3/-1"],
-            display: "flex",
-            flexFlow: ["column"],
-            ".graphic": {
-              position: "relative",
-              width: "100vw",
-              left: ["-20px"],
-              div: {
-                position: "absolute",
-                height: "100%",
-                width: "100%",
-                div: {
-                  width: "100%",
-                  height: "100%",
-                  top: 0,
-                  left: 0,
-                  display: "flex",
-                  justifyContent: "flex-end",
-                },
+          ".wrapper": {
+            gridArea: ["1/1/2/-1", "1/6/2/-1"],
+            mt: [26],
+            mb: [26],
+            ".toptext": {
+              h2: {},
+              p: {
+                mt: [3],
               },
             },
-            ".category": {
-              zIndex: 999,
-              mb: [5],
-              ".title": {
-                width: "60%",
-                fontWeight: "500",
-                fontFamily: "display",
-              },
-              ".body": {
-                width: "60%",
-                fontWeight: "400",
+            ".categories": {
+              mt: [8, 10],
+              display: "flex",
+              flexFlow: ["column", "row"],
+
+              ".category": {
+                zIndex: 99,
+                width: [(t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`],
+                mr: ["40px"],
+
+                ".title": {
+                  // width: "60%",
+
+                  fontFamily: "display",
+                },
+                ".body": {
+                  // width: "60%",
+                  mt: [2],
+                  fontFamily: "body",
+                },
               },
             },
           },
@@ -2894,6 +2932,43 @@ const theme = {
           width: ["100vw"],
           left: ["-20px", "-40px"],
           // bottom: ["unset", 0],
+        },
+      },
+      carousel: {
+        position: "relative",
+        width: ["100%"],
+        flexFlow: ["column wrap"],
+        ".item": {
+          mb: [2],
+          ".header": {
+            position: "relative",
+            pl: [2],
+            ".progressBar": {
+              position: "absolute",
+              left: 0,
+              height: "100%",
+              width: "2px",
+              borderRadius: "6px",
+              bg: "rgba(242, 242, 242, 0.24)",
+              ".animation": {
+                bg: "yellow",
+                width: "100%",
+                height: "0",
+                borderRadius: "6px",
+              },
+              ".active": {
+                transition: "height 5000ms linear",
+                height: "100%",
+              },
+            },
+            p: {},
+          },
+
+          ".body": {
+            mt: [1],
+            ml: [2],
+            p: {},
+          },
         },
       },
     },
