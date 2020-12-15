@@ -17,7 +17,10 @@ const BetterInsights = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
         }}
       >
         <div className="toptext">
-          <Styled.h2>Better insights. Greater value.</Styled.h2>
+          <Styled.h2>
+            Better insights.
+            <br /> Greater value.
+          </Styled.h2>
           <Styled.p>
             Before Dandi, businesses had two main options for getting DEI
             insights—using existing software that wasn’t really built for the

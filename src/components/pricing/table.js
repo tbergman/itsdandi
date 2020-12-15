@@ -19,8 +19,8 @@ const ItemSymbol = ({ input_, color }) => {
         <Styled.p
           sx={{
             color: color,
-            writingMode: "vertical-rl",
-            textAlign: "right",
+            writingMode: ["vertical-rl", "unset"],
+            textAlign: ["right", "unset"],
           }}
         >
           {input_}
