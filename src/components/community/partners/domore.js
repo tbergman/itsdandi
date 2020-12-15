@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import Person from "../person";
+import InView from "../../inview";
 
-const DoMore = () => {
+const DoMore = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   const people = [
     {
       url: `/assets/images/carol.png`,
@@ -51,10 +52,11 @@ const DoMore = () => {
     },
   ];
   return (
-    <div
-      sx={{
-        variant: "pages.community.partners.domore",
-      }}
+    <InView
+      variant="pages.community.partners.domore"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -78,7 +80,7 @@ const DoMore = () => {
           ))}
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

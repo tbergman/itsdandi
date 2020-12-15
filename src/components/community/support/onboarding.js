@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import TextBlock from "./textblock";
+import InView from "../../inview";
 
-const Onboarding = () => {
+const Onboarding = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   const modules = [
     {
       title: "Onboarding",
@@ -27,19 +28,17 @@ const Onboarding = () => {
   ];
 
   return (
-    <div
-      sx={{
-        variant: "pages.community.support.onboarding",
-      }}
+    <InView
+      variant="pages.community.support.onboarding"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
           variant: "grid",
         }}
       >
-        <div className="imagewrapper">
-          <img src="/assets/images/onboarding.png" alt="" />
-        </div>
         <div className="textmodules">
           {modules.map((module, i) => (
             <TextBlock
@@ -52,7 +51,7 @@ const Onboarding = () => {
           ))}
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

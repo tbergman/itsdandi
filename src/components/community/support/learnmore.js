@@ -1,13 +1,15 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
+import InView from "../../inview";
 
-const LearnMore = () => {
+const LearnMore = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   return (
-    <div
-      sx={{
-        variant: "pages.community.support.learnmore",
-      }}
+    <InView
+      variant="pages.community.support.learnmore"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -17,6 +19,7 @@ const LearnMore = () => {
         <div className="imagewrapper">
           <img src="/assets/images/supportimage.png" alt="" />
         </div>
+
         <div className="text">
           <Styled.h2>Your partners in change</Styled.h2>
           <Styled.p>
@@ -28,7 +31,7 @@ const LearnMore = () => {
           </div>
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

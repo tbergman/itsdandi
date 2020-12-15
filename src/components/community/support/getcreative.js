@@ -1,13 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import TextBlock from "./textblock";
+import InView from "../../inview";
 
-const GetCreative = () => {
+const GetCreative = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   return (
-    <div
-      sx={{
-        variant: "pages.community.support.getcreative",
-      }}
+    <InView
+      variant="pages.community.support.getcreative"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -26,7 +28,7 @@ const GetCreative = () => {
           ]}
         />
       </div>
-    </div>
+    </InView>
   );
 };
 

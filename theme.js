@@ -2228,17 +2228,29 @@ const theme = {
             display: "flex",
             flexFlow: ["row wrap"],
             justifyContent: ["space-between", "unset"],
+            ".person:nth-of-type(4n)": {
+              mr: 0,
+            },
             ".person": {
-              flex: ["0 50%", "0 25%"],
+              width: [(t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`],
+              mr: [(t) => `calc(${t.colWidthDesktop} *.848)`],
+
+              // flex: ["0 50%", "0 25%"],
               mb: [4],
               display: "flex",
               flexFlow: ["column"],
               alignItems: "center",
               ".imagewrapper": {
-                clipPath: ["circle(80px)"],
+                clipPath: ["circle(80px)", "circle(50%)"],
                 position: "relative",
-                width: ["160px"],
-                height: ["160px"],
+                width: [
+                  "160px",
+                  (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
+                ],
+                height: [
+                  "160px",
+                  (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
+                ],
                 img: {
                   position: "absolute",
                   height: "100%",
@@ -2248,10 +2260,10 @@ const theme = {
                 },
               },
               ".text": {
-                mt: [1],
+                mt: [1, 2],
                 ml: [1],
                 mb: [0],
-                width: ["150px"],
+                width: ["150px", "200px"],
                 ".name": {
                   mt: 0,
                   mb: 0,
@@ -2374,18 +2386,30 @@ const theme = {
         curious: {
           bg: "transparent",
           color: "black",
-          ".toptext": {
-            gridArea: ["1/1/2/-1"],
-            mt: [8],
+          ".section1": {
+            width: [(t) => t.desktopSectionWidth],
+          },
+          ".section2": {
+            width: [(t) => t.desktopSectionWidth],
+            ml: [(t) => t.colWidthDesktop],
+          },
+
+          ".row1": {
+            gridArea: ["1/1/2/-1", "1/3/2/-1"],
+            display: "flex",
+
+            mt: [8, 16],
             h2: {},
             p: {
               mt: [3],
             },
           },
-          ".bottomtext": {
-            gridArea: ["2/1/3/-1"],
-            mt: [8],
-            mb: [13],
+          ".row2": {
+            display: "flex",
+            gridArea: ["2/1/3/-1", "2/3/3/-1"],
+
+            mt: [8, 20],
+            mb: [13, 21],
             h2: {},
             p: {
               mt: [3],
@@ -2394,7 +2418,7 @@ const theme = {
               mt: [1],
               p: {
                 mt: 0,
-                fontWeight: "500",
+
                 fontFamily: "display",
               },
             },
@@ -2418,34 +2442,29 @@ const theme = {
         onboarding: {
           bg: "#F8F8F8",
           color: "black",
-          ".imagewrapper": {
-            gridArea: ["1/1/2/-1"],
-            position: "relative",
-            width: ["100vw"],
-            left: ["-20px"],
-            img: {
-              position: "absolute",
-              pl: ["20px"],
-              top: ["-120px"],
-              width: "100%",
-              height: ["210px"],
-            },
-          },
+
           ".textmodules": {
-            mt: [15],
-            gridArea: ["2/1/3/-1"],
+            mt: [15, "390px"],
+            mb: [10],
+            gridArea: ["1/1/2/-1", "1/3/2/-1"],
             display: "flex",
             flexFlow: ["column"],
             ".textblock": {
               mb: [7],
+              display: "flex",
+              position: "relative",
 
               ".divider": {
-                position: "relative",
+                position: "absolute",
+                top: 0,
                 height: "1px",
-                width: "100vw",
-                left: ["-20px"],
+                width: [
+                  "100vw",
+                  (t) => `calc(calc(${t.colWidthDesktop} * 10) + 400px)`,
+                ],
+                left: ["-20px", 0],
                 span: {
-                  left: ["20px"],
+                  left: ["20px", 0],
                   position: "absolute",
                   height: ["100%"],
                   bg: "black",
@@ -2453,12 +2472,16 @@ const theme = {
                 },
               },
               ".toptext": {
-                mt: [1],
+                width: [(t) => t.desktopSectionWidth],
+                mt: [2],
                 mb: [3],
                 h2: {},
                 p: { mt: [1] },
               },
               ".list": {
+                width: [(t) => t.desktopSectionWidth],
+                ml: [(t) => t.colWidthDesktop],
+                mt: [2],
                 ".listtitle": {
                   mb: [1],
                   fontWeight: "500",
@@ -2492,20 +2515,28 @@ const theme = {
           color: "black",
           ".imagewrapper": {
             position: "relative",
-            gridArea: ["1/1/2/-1"],
-            height: ["210px"],
-            width: "100vw",
-            left: ["-20px"],
+            gridArea: ["1/1/2/-1", "1/8/2/-1"],
+            height: ["210px", "100%"],
+            width: [
+              "100vw",
+              (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
+            ],
+            left: ["-20px", 0],
             img: {
-              position: "absolute",
+              // position: "absolute",
               width: "100%",
               height: "100%",
             },
           },
+
           ".text": {
-            gridArea: ["2/1/3/-1"],
-            mt: [6],
-            mb: [8],
+            gridArea: ["2/1/3/-1", "1/3/2/8"],
+            mr: [0, (t) => t.colWidthDesktop],
+            display: "flex",
+            justifyContent: "center",
+            flexFlow: ["row", "column"],
+            // mt: [6],
+            // mb: [8],
             h2: {},
             p: {
               mt: [3],
@@ -2523,18 +2554,25 @@ const theme = {
         getcreative: {
           bg: "transparent",
           color: "black",
-          mt: [6],
+          mt: [6, 13],
+          mb: [0, 22],
           ".textblock": {
-            gridArea: ["1/1/2/-1"],
+            gridArea: ["1/1/2/-1", "1/3/2/-1"],
             mb: [7],
+            position: "relative",
+            display: "flex",
 
             ".divider": {
-              position: "relative",
+              position: "absolute",
               height: "1px",
-              width: "100vw",
-              left: ["-20px"],
+              top: 0,
+              width: [
+                "100vw",
+                (t) => `calc(calc(${t.colWidthDesktop} * 10) +  400px)`,
+              ],
+              left: ["-20px", 0],
               span: {
-                left: ["20px"],
+                left: ["20px", 0],
                 position: "absolute",
                 height: ["100%"],
                 bg: "black",
@@ -2542,12 +2580,16 @@ const theme = {
               },
             },
             ".toptext": {
-              mt: [1],
+              width: [(t) => t.desktopSectionWidth],
+              mt: [2],
               mb: [3],
               h2: {},
               p: { mt: [1] },
             },
             ".list": {
+              width: [(t) => t.desktopSectionWidth],
+              ml: [(t) => t.colWidthDesktop],
+              mt: [2],
               ".listtitle": {
                 mb: [1],
                 fontWeight: "500",
@@ -3078,6 +3120,94 @@ const theme = {
             mt: [1],
             ml: [2],
             p: {},
+          },
+        },
+      },
+      people: {
+        bg: "#F8F8F8",
+        color: "black",
+        ".toptext": {
+          mt: [16],
+          mb: [12],
+          gridArea: ["1/1/2/-1", "1/3/2/-1"],
+          display: "flex",
+
+          ".section1": {
+            width: [(t) => t.desktopSectionWidth],
+          },
+          ".section2": {
+            ml: [(t) => t.colWidthDesktop],
+            width: [(t) => t.desktopSectionWidth],
+
+            h2: {},
+            p: {
+              mt: [1],
+            },
+          },
+        },
+
+        ".people": {
+          gridArea: ["2/1/3/-1", "2/3/3/-1"],
+          width: ["100vw", "unset"],
+          left: ["-20px", "unset"],
+          position: "relative",
+          mb: [14, 16],
+          display: "flex",
+          flexFlow: ["row wrap"],
+          justifyContent: ["space-between", "unset"],
+          ".person:nth-of-type(4n)": {
+            mr: 0,
+          },
+          ".person": {
+            width: [(t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`],
+            mr: [(t) => `calc(${t.colWidthDesktop} *.848)`],
+
+            // flex: ["0 50%", "0 25%"],
+            mb: [4],
+            display: "flex",
+            flexFlow: ["column"],
+            alignItems: "center",
+            ".imagewrapper": {
+              clipPath: ["circle(80px)", "circle(50%)"],
+              position: "relative",
+              width: [
+                "160px",
+                (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
+              ],
+              height: [
+                "160px",
+                (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
+              ],
+              img: {
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                top: 0,
+                left: 0,
+              },
+            },
+            ".text": {
+              mt: [1, 2],
+              ml: [1],
+              mb: [0],
+              width: ["150px", "200px"],
+              ".name": {
+                mt: 0,
+                mb: 0,
+                fontSize: ["14px"],
+                fontWeight: "400",
+                fontFamily: "display",
+                lineHeight: ["21px"],
+              },
+              ".title": {
+                mt: 0,
+                mb: 0,
+                fontSize: ["13px"],
+                fontWeight: "400",
+                fontFamily: "body",
+                lineHeight: ["19.5px"],
+              },
+            },
           },
         },
       },

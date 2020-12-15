@@ -3,12 +3,14 @@ import { jsx, useThemeUI } from "theme-ui";
 import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
-import Header from "../../src/components/community/support/header";
+import Header from "../../src/components/header";
 import Onboarding from "../../src/components/community/support/onboarding";
 import LearnMore from "../../src/components/community/support/learnmore";
 import GetCreative from "../../src/components/community/support/getcreative";
+import { subPages } from "../../src/helpers/subpages";
+import pages from "../../src/helpers/community/pages";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   motion,
@@ -17,16 +19,28 @@ import {
   useViewportScroll,
 } from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
+import SubMenu from "../../src/components/submenu";
 
 const Community = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const ctx = useThemeUI();
-  const { theme } = ctx;
-  const subPages = [
-    "DEI Advisory Board",
-    "Marketplace Partners",
-    "Service & Support",
-  ];
+  const { theme } = useThemeUI();
+
+  const [windowHeight, setWindowHeight] = useState(500);
+  const [navBarStyling, setNavbarStyling] = useState({
+    ...theme.components.navigation.white,
+  });
+  useEffect(() => {
+    if (window) {
+      setWindowHeight(window.innerHeight);
+    }
+  }, []);
+  const subPages_ = subPages({
+    pages,
+    currentIndex: 2,
+    nextBg: "#A8F1F4",
+    prevBg: "#FFB7B7",
+  });
+
   const colors = [
     {
       bg: "#FFF",
@@ -40,17 +54,40 @@ const Community = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation current="community" />
+      <Navigation current="community" navBarStyling={navBarStyling} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <Header />
-      <Onboarding />
-      <LearnMore />
-      <GetCreative />
-      <SubNavigation subPages={subPages} />
+      <SubMenu navBarStyling={navBarStyling} subPages={subPages_.subPages} />
+      <Header
+        title={`The support you need to advance DEI`}
+        body={`Some software companies are hands-off. But that’s not Dandi.`}
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.white}
+        windowHeight={windowHeight}
+        bg="#FFF"
+        styling={{
+          mb: [20],
+        }}
+      ></Header>
+      <Onboarding
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.gray}
+        windowHeight={windowHeight}
+      />
+      <LearnMore
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.yellow}
+        windowHeight={windowHeight}
+      />
+      <GetCreative
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.white}
+        windowHeight={windowHeight}
+      />
+      <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );

@@ -1,0 +1,45 @@
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui";
+import InView from "../inview";
+import Person from "./person";
+
+const People = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  title,
+  body,
+  people,
+}) => {
+  return (
+    <InView
+      variant="components.shared.people"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+    >
+      <div
+        sx={{
+          variant: "grid",
+        }}
+      >
+        <div className="toptext">
+          <div className="section1">
+            <Styled.h2>{title}</Styled.h2>
+          </div>
+          <div className="section2">
+            <Styled.p>{body}</Styled.p>
+          </div>
+        </div>
+
+        <div className="people">
+          {people.map((person, i) => (
+            <Person url={person.url} name={person.name} title={person.title} />
+          ))}
+        </div>
+      </div>
+    </InView>
+  );
+};
+
+export default People;
