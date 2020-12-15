@@ -12,6 +12,8 @@ import CompensationGraph from "../../src/components/values/payequity/compensatio
 import TopGraphic from "../../src/components/values/payequity/topgraphic";
 import MobileNav from "../../src/components/mobilenav";
 import SubMenu from "../../src/components/submenu";
+import { subPages } from "../../src/helpers/subpages";
+import pages from "../../src/helpers/values/pages";
 import { useState, useEffect } from "react";
 
 import {
@@ -28,21 +30,14 @@ const Home = () => {
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
   });
-  const subPages = [
-    {
-      name: "Pay Equity",
-      url: "/values/equitypay",
-      current: true,
-    },
-    {
-      name: "The DEI Journey",
-      url: "/values/deijourney",
-    },
-    {
-      name: "For Your Role",
-      url: "/values/leadership",
-    },
-  ];
+
+  const subPages_ = subPages({
+    pages,
+    currentIndex: 0,
+    nextBg: "",
+    prevBg: "",
+  });
+
   const colors = [
     {
       bg: "#FFF",

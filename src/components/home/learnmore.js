@@ -3,8 +3,7 @@ import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../helpers/devices";
-import InView, { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import InView from "../inview";
 import {
   motion,
   useViewportScroll,
@@ -12,26 +11,13 @@ import {
   useAnimation,
 } from "framer-motion";
 
-const LearnMore = ({ setNavbarStyling, windowHeight }) => {
+const LearnMore = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
   const { scrollY } = useViewportScroll();
   const animation = useAnimation();
-  const ctx = useThemeUI();
-  const { inView, ref, entry } = useInView({
-    rootMargin: `0px 0px  -${windowHeight - 94}px 0px`,
-  });
-  const { theme } = ctx;
+
   const isDesktop = useMediaQuery({
     query: devices.desktop,
   });
-
-  useEffect(() => {
-    if (inView) {
-      setNavbarStyling({
-        ...theme.components.navigation.violet,
-      });
-      animation.start("visible");
-    }
-  }, [inView, animation]);
 
   const variants = {
     hidden: {
@@ -45,11 +31,11 @@ const LearnMore = ({ setNavbarStyling, windowHeight }) => {
   };
 
   return (
-    <div
-      ref={ref}
-      sx={{
-        variant: "pages.home.learnmore",
-      }}
+    <InView
+      variant="pages.home.learnmore"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -83,12 +69,7 @@ const LearnMore = ({ setNavbarStyling, windowHeight }) => {
         <div className="imagewrapper">
           <img src="/assets/images/01_start_computer.png" alt="" />
         </div>
-        <motion.div
-          initial="hidden"
-          animate={animation}
-          variants={variants}
-          className="text"
-        >
+        <motion.div className="text">
           <Styled.h2>
             Dandi is your platform for diversity, equity, and inclusion
           </Styled.h2>
@@ -122,7 +103,7 @@ const LearnMore = ({ setNavbarStyling, windowHeight }) => {
           )}
         </motion.div>
       </div>
-    </div>
+    </InView>
   );
 };
 

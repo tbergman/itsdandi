@@ -1,15 +1,13 @@
 /** @jsx jsx */
-import { jsx, Styled, useThemeUI } from "theme-ui";
+import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 import InView from "../inview";
 
-const AdvanceDEI = ({ setNavbarStyling, windowHeight }) => {
-  const { theme } = useThemeUI();
-
+const AdvanceDEI = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
   return (
     <InView
       setNavbarStyling={setNavbarStyling}
-      navBarStyling={theme.components.navigation.lightTurquoise}
+      navBarStyling={navBarStyling}
       rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
       variant="pages.home.advancedei"
     >

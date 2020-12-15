@@ -5,10 +5,9 @@ import { useRef } from "react";
 import InView from "../inview";
 import theme from "../../../theme";
 
-const Partners = ({ setNavbarStyling, windowHeight }) => {
+const Partners = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
   const ref = useRef();
   const { scrollYProgress } = useViewportScroll();
-  const { theme } = useThemeUI();
 
   const logos = {
     row1: [
@@ -24,7 +23,7 @@ const Partners = ({ setNavbarStyling, windowHeight }) => {
     <InView
       variant="pages.home.partners"
       setNavbarStyling={setNavbarStyling}
-      navBarStyling={theme.components.navigation.white}
+      navBarStyling={navBarStyling}
       rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div

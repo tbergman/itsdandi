@@ -24,8 +24,8 @@ const Home = () => {
   const { theme } = useThemeUI();
   const [menuOpen, setMenuOpen] = useState(false);
   const [windowHeight, setWindowHeight] = useState(500);
-  const [navbarStyling, setNavbarStyling] = useState({
-    bg: theme.colors.black,
+  const [navBarStyling, setNavbarStyling] = useState({
+    ...theme.components.navigation.default,
   });
 
   const colors = [
@@ -47,37 +47,51 @@ const Home = () => {
         bg: "black",
       }}
     >
-      <Navigation current={`home`} styling={navbarStyling} />
+      <Navigation current={`home`} navBarStyling={navBarStyling} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <Top setNavbarStyling={setNavbarStyling} />
+      <Top
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.default}
+        windowHeight={windowHeight}
+      />
       <LearnMore
         setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.violet}
         windowHeight={windowHeight}
       />
       <Carousel
         setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
       />
       <PayEquity
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
+        navBarStyling={theme.components.navigation.gray}
       />
       <Partners
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
+        navBarStyling={theme.components.navigation.white}
       />
       <AdvanceDEI
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
+        navBarStyling={theme.components.navigation.lightTurquoise}
       />
-      <Quotes setNavbarStyling={setNavbarStyling} windowHeight={windowHeight} />
+      <Quotes
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+        navBarStyling={theme.components.navigation.gray2}
+      />
       <MarketPlacePartners
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
+        navBarStyling={theme.components.navigation.white}
       />
       <Footer />
     </div>

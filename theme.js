@@ -2592,7 +2592,6 @@ const theme = {
               mt: [2],
               ".listtitle": {
                 mb: [1],
-                fontWeight: "500",
                 fontFamily: "display",
               },
               ".listbox": {

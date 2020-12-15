@@ -3,28 +3,15 @@ import { jsx, Styled } from "theme-ui";
 import BigLogo from "./bigLogo";
 import Graphics from "./graphics";
 import Link from "next/link";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import InView from "../inview";
 
-const Home = ({ setNavbarStyling }) => {
-  const { inView, entry, ref } = useInView({
-    rootMargin: "-94px 0px 0px 0px",
-  });
-
-  useEffect(() => {
-    if (inView) {
-      setNavbarStyling({
-        bg: "#1A1A1D",
-      });
-    }
-  }, [inView]);
-
+const Home = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   return (
-    <div
-      ref={ref}
-      sx={{
-        variant: "pages.home.top",
-      }}
+    <InView
+      variant="pages.home.top"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
@@ -51,7 +38,7 @@ const Home = ({ setNavbarStyling }) => {
         {/* <div className="spacer"></div> */}
         <Graphics />
       </div>
-    </div>
+    </InView>
   );
 };
 

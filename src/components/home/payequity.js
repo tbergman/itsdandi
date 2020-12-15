@@ -4,14 +4,12 @@ import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 import InView from "../inview";
 
-const PayEquity = ({ setNavbarStyling, windowHeight }) => {
-  const { theme } = useThemeUI();
-
+const PayEquity = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
   return (
     <InView
       variant="pages.home.payequity"
       setNavbarStyling={setNavbarStyling}
-      navBarStyling={theme.components.navigation.gray}
+      navBarStyling={navBarStyling}
       rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div

@@ -3,14 +3,11 @@ import { jsx, Styled, useThemeUI } from "theme-ui";
 import CarouselMain from "./carouselmain";
 import InView from "../inview";
 
-const Carousel = ({ setNavbarStyling, windowHeight }) => {
-  const ctx = useThemeUI();
-  const { theme } = ctx;
-
+const Carousel = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
   return (
     <InView
       setNavbarStyling={setNavbarStyling}
-      navBarStyling={theme.components.navigation.default}
+      navBarStyling={navBarStyling}
       variant="pages.home.carousel"
       rootMargin={`0px 0px  -${windowHeight - 94}px 0px`}
     >
