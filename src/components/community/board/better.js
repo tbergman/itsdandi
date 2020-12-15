@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import Person from "../person";
+import InView from "../../inview";
 
-const Better = () => {
+const Better = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   const people = [
     {
       url: `/assets/images/elisa.png`,
@@ -76,30 +77,35 @@ const Better = () => {
     },
   ];
   return (
-    <div
-      sx={{
-        variant: "pages.community.board.better",
-      }}
+    <InView
+      variant="pages.community.board.better"
+      setNavbarStyling={setNavbarStyling}
+      navBarStyling={navBarStyling}
+      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div
         sx={{
           variant: "grid",
         }}
       >
-        <div className="text">
-          <Styled.h2>Making Dandi better for everyone</Styled.h2>
-          <Styled.p>
-            We’ve got a huge mission at Dandi—to make business better for
-            everyone. We know we can’t do it alone. And that’s where our DEI
-            Advisory Board comes in.
-            <br />
-            <br /> The Advisory Board, along with our Marketplace Partners,
-            provides an important point of contact with other DEI leaders.
-            Conceived as a working group of diverse talents and brilliant minds,
-            the Board offers ongoing input regarding our products and the
-            practice of DEI as a whole. They’re a vital complement to our team,
-            and we’re very lucky to have them working with us.
-          </Styled.p>
+        <div className="toptext">
+          <div className="section1">
+            <Styled.h2>Making Dandi better for everyone</Styled.h2>
+          </div>
+          <div className="section2">
+            <Styled.p>
+              We’ve got a huge mission at Dandi—to make business better for
+              everyone. We know we can’t do it alone. And that’s where our DEI
+              Advisory Board comes in.
+              <br />
+              <br /> The Advisory Board, along with our Marketplace Partners,
+              provides an important point of contact with other DEI leaders.
+              Conceived as a working group of diverse talents and brilliant
+              minds, the Board offers ongoing input regarding our products and
+              the practice of DEI as a whole. They’re a vital complement to our
+              team, and we’re very lucky to have them working with us.
+            </Styled.p>
+          </div>
         </div>
 
         <div className="people">
@@ -108,7 +114,7 @@ const Better = () => {
           ))}
         </div>
       </div>
-    </div>
+    </InView>
   );
 };
 

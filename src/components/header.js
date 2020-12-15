@@ -15,10 +15,10 @@ const Header = ({
   return (
     <InView
       setNavbarStyling={setNavbarStyling}
-      navBarStyling={navBarStyling}
+      navBarStyling={{ ...navBarStyling, bg: bg }}
       rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
       variant="components.shared.header"
-      bg="rgba(242, 242, 242, 0.5)"
+      bg={bg ? bg : "rgba(242, 242, 242, 0.5)"}
     >
       <div
         sx={{

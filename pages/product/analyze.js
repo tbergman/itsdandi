@@ -8,7 +8,7 @@ import Insights from "../../src/components/product/analyze/insights";
 import NewInsights from "../../src/components/product/analyze/newinsights";
 import InAction from "../../src/components/product/analyze/inaction";
 import Sharable from "../../src/components/product/analyze/sharable";
-import { subPages } from "../../src/helpers/product/subpages";
+import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
 import { useState, useEffect } from "react";
 

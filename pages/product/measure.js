@@ -10,7 +10,7 @@ import WhyMeasure from "../../src/components/product/measure/whymeasure";
 import Intersectional from "../../src/components/product/measure/intersectional";
 import Thoughtful from "../../src/components/product/measure/thoughtful";
 import SubMenu from "../../src/components/submenu";
-import { subPages } from "../../src/helpers/product/subpages";
+import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
 import { useState, useEffect } from "react";
 

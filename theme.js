@@ -2199,26 +2199,37 @@ const theme = {
         better: {
           bg: "#F8F8F8",
           color: "black",
-          ".text": {
-            gridArea: ["1/1/2/-1"],
-            mt: [5],
-            mb: [10],
-            h2: {},
-            p: {
-              mt: [1],
+          ".toptext": {
+            mt: [16],
+            mb: [12],
+            gridArea: ["1/1/2/-1", "1/3/2/-1"],
+            display: "flex",
+
+            ".section1": {
+              width: [(t) => t.desktopSectionWidth],
+            },
+            ".section2": {
+              ml: [(t) => t.colWidthDesktop],
+              width: [(t) => t.desktopSectionWidth],
+
+              h2: {},
+              p: {
+                mt: [1],
+              },
             },
           },
+
           ".people": {
-            gridArea: ["2/1/3/-1"],
-            width: ["100vw"],
-            left: ["-20px"],
+            gridArea: ["2/1/3/-1", "2/3/3/-1"],
+            width: ["100vw", "unset"],
+            left: ["-20px", "unset"],
             position: "relative",
-            mb: [14],
+            mb: [14, 16],
             display: "flex",
             flexFlow: ["row wrap"],
-            justifyContent: ["space-between"],
+            justifyContent: ["space-between", "unset"],
             ".person": {
-              flex: "0 50%",
+              flex: ["0 50%", "0 25%"],
               mb: [4],
               display: "flex",
               flexFlow: ["column"],
