@@ -8,7 +8,7 @@ import BestInClass from "../../src/components/product/security/bestinclass";
 import Quote from "../../src/components/quote";
 import Workflows from "../../src/components/product/security/workflows";
 import Connect from "../../src/components/product/security/connect";
-import { subPages } from "../../src/helpers/product/subpages";
+import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
 import { useState, useEffect } from "react";
 
@@ -66,6 +66,7 @@ const Product = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
+        bg="#fff"
         styling={{
           mb: [0, 16],
           h1: {
@@ -84,9 +85,9 @@ const Product = () => {
         text={`I trust Dandi with our most sensitive info`}
         name={`Name Namesson`}
         title={`Ceo,Company`}
-        color={theme.colors.white}
+        bg="white"
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.gray}
+        navBarStyling={theme.components.navigation.gray2}
         windowHeight={windowHeight}
       />
       <Workflows

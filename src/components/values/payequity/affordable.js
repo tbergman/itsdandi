@@ -4,13 +4,13 @@ import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
 import theme from "../../../../theme";
 
-const Affordable = ({ setNavbarStyling, windowHeight }) => {
+const Affordable = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
   const { theme } = useThemeUI();
   return (
     <InView
       variant="pages.values.payequity.affordable"
       setNavbarStyling={setNavbarStyling}
-      navBarStyling={theme.components.navigation.white}
+      navBarStyling={navBarStyling}
       rootMargin={`
       0px 0px -${windowHeight - 94}px 0px`}
     >

@@ -8,6 +8,8 @@ import TopGraphic from "../../src/components/values/deijourney/topgraphic";
 import TextBlock from "../../src/components/values/deijourney/textblock";
 import Partners from "../../src/components/values/deijourney/partners";
 import SubMenu from "../../src/components/submenu";
+import pages from "../../src/helpers/values/pages";
+import { subPages } from "../../src/helpers/subpages";
 import { useState, useEffect } from "react";
 
 import {
@@ -31,21 +33,12 @@ const Values = () => {
     }
   }, []);
 
-  const subPages = [
-    {
-      name: "Pay Equity",
-      url: "/values/equitypay",
-    },
-    {
-      name: "The DEI Journey",
-      url: "/values/deijourney",
-      current: true,
-    },
-    {
-      name: "For Your Role",
-      url: "/values/leadership",
-    },
-  ];
+  const subPages_ = subPages({
+    pages,
+    currentIndex: 1,
+    nextBg: "violet",
+    prevBg: "blue",
+  });
 
   const colors = [
     {
@@ -83,16 +76,18 @@ const Values = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation current="values" styling={navBarStyling} />
+      <Navigation current="values" navBarStyling={navBarStyling} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <SubMenu subPages={subPages} navBarStyling={navBarStyling} />
+      <SubMenu subPages={subPages_.subPages} navBarStyling={navBarStyling} />
       <Header
         setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
+        bg="#FFF"
         styling={{
           mb: [0, 9],
         }}
@@ -142,18 +137,7 @@ const Values = () => {
         }}
         navBarStyling={theme.components.navigation.gray}
       />
-      <SubNavigation
-        next={{
-          name: "For Your Role",
-          url: "/values/leadership",
-          bg: theme.colors.violet,
-        }}
-        prev={{
-          name: "Pay Equity",
-          url: "/values/equitypay",
-          bg: theme.colors.blue,
-        }}
-      />
+      <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );

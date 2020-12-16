@@ -6,7 +6,7 @@ import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
 import Connections from "../../src/components/product/integrations/connections";
 import Secure from "../../src/components/product/integrations/secure";
-import { subPages } from "../../src/helpers/product/subpages";
+import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
 import { useState, useEffect } from "react";
 
@@ -25,7 +25,7 @@ const Product = () => {
 
   const [windowHeight, setWindowHeight] = useState(500);
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.gray,
+    ...theme.components.navigation.gray2,
   });
   useEffect(() => {
     if (window) {
@@ -63,8 +63,9 @@ const Product = () => {
         title={`Easy integrations for better insights`}
         body={`Dandi ties together the data in your existing HR platforms to unlock over 1 million new DEI insights.`}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.gray}
+        navBarStyling={theme.components.navigation.gray2}
         windowHeight={windowHeight}
+        bg="white"
         styling={{
           mb: [16],
         }}

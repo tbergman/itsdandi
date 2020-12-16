@@ -34,7 +34,7 @@ const Home = () => {
   const subPages_ = subPages({
     pages,
     currentIndex: 0,
-    nextBg: "",
+    nextBg: "turquoise",
     prevBg: "",
   });
 
@@ -60,17 +60,19 @@ const Home = () => {
       <Navigation
         current="values"
         setNavbarStyling={setNavbarStyling}
-        styling={navBarStyling}
+        navBarStyling={navBarStyling}
       />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <SubMenu subPages={subPages} navBarStyling={navBarStyling} />
+      <SubMenu subPages={subPages_.subPages} navBarStyling={navBarStyling} />
       <Header
         setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
+        bg="#FFF"
         styling={{
           mb: [0, 15],
         }}
@@ -81,29 +83,37 @@ const Home = () => {
       </Header>
       <Compensation
         setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
       />
       <CompensationGraph
         setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
       />
       <Reports
         setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
       />
-      <Quote setNavbarStyling={setNavbarStyling} windowHeight={windowHeight} />
+      <Quote
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+        navBarStyling={theme.components.navigation.gray}
+        bg="#FAFAFA"
+        imageUrl="/assets/images/tamarcus-brown.png"
+        name={`Name Namesson`}
+        title={`Ceo, Company`}
+        text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity.
+`}
+      />
 
       <Affordable
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
+        navBarStyling={theme.components.navigation.white}
       />
-      <SubNavigation
-        next={{
-          name: "The DEI Journey",
-          url: "/values/deijourney",
-          bg: theme.colors.turquoise,
-        }}
-      />
+      <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );

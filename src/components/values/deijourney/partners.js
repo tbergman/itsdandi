@@ -4,13 +4,13 @@ import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
 
-const Partners = ({ setNavbarStyling, windowHeight }) => {
+const Partners = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
   const { theme } = useThemeUI();
   return (
     <InView
       variant="pages.values.deijourney.partners"
       setNavbarStyling={setNavbarStyling}
-      navBarStyling={theme.components.navigation.gray}
+      navBarStyling={navBarStyling}
       rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div

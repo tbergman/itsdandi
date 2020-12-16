@@ -54,7 +54,7 @@ const Product = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation current="product" styling={navBarStyling} />
+      <Navigation current="product" navBarStyling={navBarStyling} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}

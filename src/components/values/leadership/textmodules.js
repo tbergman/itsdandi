@@ -3,13 +3,18 @@ import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
 
-const TextModules = ({ modules, setNavbarStyling, windowHeight }) => {
+const TextModules = ({
+  modules,
+  setNavbarStyling,
+  windowHeight,
+  navBarStyling,
+}) => {
   const { theme } = useThemeUI();
   return (
     <InView
       variant="pages.values.leadership.textmodules"
       setNavbarStyling={setNavbarStyling}
-      navBarStyling={theme.components.navigation.gray}
+      navBarStyling={navBarStyling}
       rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <div

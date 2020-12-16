@@ -6,7 +6,7 @@ import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
 import DeiWork from "../../src/components/product/collaborate/deiwork";
 import Customizable from "../../src/components/product/collaborate/customizable";
-import { subPages } from "../../src/helpers/product/subpages";
+import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
 import { useState, useEffect } from "react";
 
@@ -64,6 +64,7 @@ const Product = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
+        bg="#fff"
         styling={{
           mb: [0, 23],
         }}

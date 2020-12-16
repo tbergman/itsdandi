@@ -66,6 +66,7 @@ const Product = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
+        bg="#FFF"
         styling={{
           mb: [0, 23],
         }}

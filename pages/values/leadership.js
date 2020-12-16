@@ -8,6 +8,8 @@ import TopImage from "../../src/components/values/leadership/topimage";
 import TextModules from "../../src/components/values/leadership/textmodules";
 import Quote from "../../src/components/quote";
 import SubMenu from "../../src/components/submenu";
+import pages from "../../src/helpers/values/pages";
+import { subPages } from "../../src/helpers/subpages";
 import { useState, useEffect } from "react";
 
 import {
@@ -31,21 +33,13 @@ const Values = () => {
     }
   }, []);
 
-  const subPages = [
-    {
-      name: "Pay Equity",
-      url: "/values/equitypay",
-    },
-    {
-      name: "The DEI Journey",
-      url: "/values/deijourney",
-    },
-    {
-      name: "For Your Role",
-      url: "/values/leadership",
-      current: true,
-    },
-  ];
+  const subPages_ = subPages({
+    pages,
+    currentIndex: 2,
+    nextBg: "blue",
+    prevBg: "violet",
+  });
+
   const colors = [
     {
       bg: "#FFF",
@@ -86,17 +80,19 @@ const Values = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation current="values" styling={navBarStyling} />
+      <Navigation current="values" navBarStyling={navBarStyling} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
-      <SubMenu subPages={subPages} navBarStyling={navBarStyling} />
+      <SubMenu subPages={subPages_.subPages} navBarStyling={navBarStyling} />
       <Header
         title={`Work’s better with Dandi`}
         body={`Whether you’re a DEI practitioner or a leader in another part of the business, our tools can also help you do more every day.`}
         setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.white}
+        bg="#FFF"
         windowHeight={windowHeight}
         styling={{
           mb: [0, "360px"],
@@ -107,9 +103,20 @@ const Values = () => {
       <TextModules
         modules={modules}
         setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
       />
-      <Quote setNavbarStyling={setNavbarStyling} windowHeight={windowHeight} />
+      <Quote
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navigation.yellow}
+        windowHeight={windowHeight}
+        name={`Name Namesson`}
+        title={`Ceo, Company`}
+        bg="yellow"
+        text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity
+`}
+        imageUrl="/assets/images/tamarcus-brown.png"
+      />
       <SubNavigation
         next={{
           name: "Pay Equity",
