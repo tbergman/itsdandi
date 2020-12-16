@@ -35,7 +35,7 @@ const PayEquity = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
           <img src="/assets/images/01_start_Pay equity.png" alt="" />
           {/* <ReactSVG src="/assets/svgs/crosswalk.svg" /> */}
         </div>
-        <div className="bottom"></div>
+        {/* <div className="bottom"></div> */}
       </div>
     </InView>
   );

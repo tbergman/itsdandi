@@ -116,6 +116,7 @@ const theme = {
             (t) => `calc(${t.colWidthDesktop})`,
           ],
           mt: [28],
+          mb: [3, 0],
           h1: {},
           ".button": {
             position: "relative",
@@ -161,7 +162,7 @@ const theme = {
             width: "100%",
             bottom: 0,
             left: 0,
-            height: ["250px", "310px"],
+            height: ["178px", "310px"],
             // bottom: ["-71px", "-123px"],
             ".topslide": {
               position: "absolute",
@@ -272,10 +273,11 @@ const theme = {
         ".toptext": {
           position: "fixed",
           bottom: 0,
+          zIndex: 99,
 
           // gridArea: ["1/2/2/-1", "1/7/2/-1"],
           ml: [
-            (t) => `calc(${t.colWidthMob} + 10px)`,
+            (t) => `calc(calc(${t.colWidthMob} * 2) + 30px)`,
             (t) => `calc(calc(${t.colWidthDesktop} * 7) + 280px)`,
           ],
           // mt: [13, 0],
@@ -297,9 +299,9 @@ const theme = {
         },
         ".imagewrapper": {
           gridArea: ["2/1/3/-1", "1/6/2/-1"],
-          mt: [13, "290px"],
+          mt: ["213px", "290px"],
           mb: [0, "333px"],
-          height: ["250px", "495px"],
+          height: ["277px", "495px"],
           position: "relative",
           width: [
             "100vw",
@@ -309,7 +311,8 @@ const theme = {
           img: {
             position: "absolute",
             height: "100%",
-            width: "100%",
+            width: ["unset", "100%"],
+            right: 0,
           },
         },
         ".text": {
@@ -328,6 +331,7 @@ const theme = {
           },
           p: {
             mt: [3, 4],
+            fontSize: ["16px", "20px"],
             lineHeight: ["24px", "32px"],
           },
         },
@@ -356,25 +360,35 @@ const theme = {
           gridArea: ["3/1/4/-1", "2/1/3/-1"],
           width: ["100%", "100vw"],
           left: [0, "-40px"],
-
           display: ["flex", "grid"],
           gridTemplateColumns: ["repeat(12,1fr)"],
           gridTemplateRows: ["auto"],
-          px: ["40px"],
+          px: [0, "40px"],
           columnGap: ["40px"],
           rowGap: ["0"],
           flexFlow: "column wrap",
           ".description": {
             gridArea: ["1/2/2/6"],
+            width: ["100%", "unset"],
+            p: {
+              fontSize: ["16px", "20px"],
+              lineHeight: ["32px"],
+            },
           },
           ".imagewrapper": {
             gridArea: ["1/7/3/-1"],
+            mt: [4, 0],
+            mb: [4, 0],
+            overflow: ["hidden", "unset"],
+            width: ["100vw", "100%"],
+            left: ["-20px", "unset"],
             position: "relative",
-            height: ["400px"],
+            height: ["294px", "400px"],
             img: {
               position: "absolute",
               height: ["100%"],
-              width: "100%",
+              width: ["unset", "100%"],
+              left: ["20px", "unset"],
             },
           },
           ".texts": {
@@ -431,7 +445,7 @@ const theme = {
         ".text": {
           gridArea: ["1/1/2/-1", "1/2/2/6"],
           mt: [10, 21],
-          mb: ["226px", 0],
+          mb: [3, 0],
           h2: {},
           p: {
             mt: [3, 4],
@@ -454,14 +468,15 @@ const theme = {
             "-20px",
             (t) => `calc(calc(${t.colWidthDesktop} * 6)  + 220px  )`,
           ],
-          height: ["auto", "592px"],
+          height: ["320px", "592px"],
           gridArea: ["2/1/3/-1", "1/1/2/-1"],
           img: {
             zIndex: 99,
             position: "absolute",
-            height: ["320px", "100%"],
+            height: ["100%", "100%"],
             width: ["100%"],
-            top: ["-40%", 0],
+            top: ["unset", 0],
+            bottom: [0, "unset"],
             display: "flex",
             justifyContent: "center",
           },
@@ -602,17 +617,19 @@ const theme = {
         ".imagewrapper": {
           gridArea: ["1/1/2/-1", "1/1/2/6"],
           position: "relative",
-          height: ["240px", "760px"],
+          height: ["0", "760px"],
+          pt: ["70%", 0],
+          overflow: ["hidden", "unset"],
           width: [
             "100vw",
             (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
           ],
           left: ["-20px", "-40px"],
-          img: {
+          picture: {
             position: "absolute",
             width: "100%",
-            height: "100%",
-            top: 0,
+            height: ["unset", "100%"],
+            top: [0],
             left: 0,
             bottom: 0,
             right: 0,
@@ -651,6 +668,7 @@ const theme = {
             },
           },
           ".quotationmark": {
+            display: ["none", "unset"],
             position: "absolute",
             left: [0, (t) => `calc(${t.colWidthDesktop} * -1)`],
           },
@@ -703,30 +721,43 @@ const theme = {
           position: "relative",
           ".circles": {
             position: "absolute",
-            width: ["464px"],
-            height: "100%",
+            width: ["215px", "464px"],
+            bottom: ["-107.5px", "unset"],
+            height: ["215px", "100%"],
             display: "flex",
             alignItems: "center",
-            right: ["-232px"],
+            right: ["20%", "-232px"],
+            div: {
+              width: "inherit",
+              height: "inherit",
+              svg: {
+                width: "inherit",
+                height: "inherit",
+                transform: ["rotate(90deg)", "unset"],
+              },
+            },
           },
           ".background": {
             position: "absolute",
             height: "100%",
-            width: [(t) => `calc(calc(${t.colWidthDesktop} * 3) + 160px)`],
+            width: [
+              "100%",
+              (t) => `calc(calc(${t.colWidthDesktop} * 3) + 160px)`,
+            ],
             bg: "lightViolet",
           },
         },
         ".text": {
           gridArea: ["2/1/3/-1", "1/7/2/-1"],
           mt: ["149px", "275px"],
-          mb: ["303px"],
+          mb: [10, "303px"],
           h2: {},
           p: {
             mt: ["20px", 4],
           },
           ".link": {
             mt: [1],
-            mb: ["80px", 0],
+            mb: [0],
             p: {
               mt: 0,
               fontFamily: "medium",
@@ -2900,9 +2931,9 @@ const theme = {
     footer: {
       bg: "#1F1F21",
       ".header": {
+        mt: [10, 11],
         gridArea: ["1/1/2/-1", "1/1/2/4"],
         h2: {
-          mt: [10, 11],
           fontFamily: "display",
           fontWeight: "500",
           fontSize: "28px",
@@ -2922,19 +2953,19 @@ const theme = {
         display: "flex",
         flexFlow: ["column wrap", "row wrap"],
         "input:nth-child(odd)": {
-          flex: "1 40%",
-          mr: ["6px"],
+          flex: [1, "1 40%"],
+          mr: [0, "6px"],
           mt: ["12px"],
           mb: 0,
         },
         "input:nth-child(even)": {
-          flex: "1 40%",
-          ml: ["6px"],
+          flex: [1, "1 40%"],
+          ml: [0, "6px"],
           mt: ["12px"],
           mb: 0,
         },
         ".dropdownwrapper": {
-          flex: "1 100%",
+          flex: [1, "1 100%"],
           height: ["64px"],
           borderRadius: "8px",
           bg: "#262629",
@@ -2964,7 +2995,7 @@ const theme = {
         },
         ".button": {
           mt: [5],
-          flex: "1 100%",
+          flex: [1, "1 100%"],
           display: "flex",
           justifyContent: "flex-end",
         },
@@ -2986,18 +3017,23 @@ const theme = {
       ".newsletter": {
         gridArea: ["4/1/5/-1", "3/4/4/7"],
         mb: ["44px", 6],
+        a: {
+          mb: 0,
+        },
         p: {
           fontSize: ["13px"],
           fontFamily: "medium",
         },
       },
       ".logo": {
-        gridArea: ["2/1/3/3"],
+        gridArea: ["5/1/6/-1", "2/1/3/3"],
         display: "flex",
         alignItems: "center",
       },
       ".copyright": {
-        gridArea: ["3/1/4/4"],
+        gridArea: ["6/1/7/-1", "3/1/4/4"],
+        mt: [1, 0],
+        mb: [4, 0],
         p: {
           fontSize: ["13px"],
           fontFamily: "medium",
@@ -3094,6 +3130,10 @@ const theme = {
           ".header": {
             position: "relative",
             pl: [2],
+            p: {
+              fontSize: ["16px"],
+              lineHeight: "18.8px",
+            },
             ".progressBar": {
               position: "absolute",
               left: 0,
@@ -3112,13 +3152,19 @@ const theme = {
                 height: "100%",
               },
             },
-            p: {},
           },
 
           ".body": {
-            mt: [1],
+            mt: [2],
             ml: [2],
-            p: {},
+            p: {
+              fontSize: ["16px"],
+              lineHeight: ["24px"],
+            },
+            ".link": {
+              mt: [2],
+              p: {},
+            },
           },
         },
       },
@@ -3315,7 +3361,7 @@ const theme = {
     },
     p: {
       fontFamily: "body",
-      fontSize: ["20px", "16px"],
+      fontSize: ["16px", "16px"],
       lineHeight: ["24px"],
       fontWeight: "400",
       m: 0,

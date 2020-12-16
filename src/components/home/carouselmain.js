@@ -3,6 +3,7 @@ import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import CarouselItem from "../carouselitem";
 
 const CarouselMain = () => {
   const [current, setCurrent] = useState(0);
@@ -49,58 +50,24 @@ const CarouselMain = () => {
       <div className="imagewrapper">
         <img src={images[current]} alt="" />
       </div>
-      <div className="texts">
+      <div
+        sx={{
+          variant: "components.shared.carousel",
+        }}
+      >
         {slides.map((slide, i) => (
-          <div className="item" key={i}>
-            <motion.div layout className="header">
-              <div
-                sx={{
-                  opacity: current === i ? 1 : 0.2,
-                  left: current === i ? 0 : "3px",
-                }}
-                className="progressBar"
-              >
-                {/* <motion.div
-                layout
-                transition={{
-                  duration: time / 1000,
-                }}
-                sx={{
-                  visibility: current === i ? "visible" : "hidden",
-                  height: current === i ? "100%" : 0,
-                }}
-                className="progressBarAnimation"
-              ></motion.div> */}
-              </div>
-              <Styled.p
-                sx={{
-                  opacity: current === i ? 1 : 0.5,
-                }}
-              >
-                {slide.header}
-              </Styled.p>
-            </motion.div>
-            <motion.div
-              layout
+          <CarouselItem key={i} header={slide.header} current={current === i}>
+            <Styled.p
               sx={{
-                height: current === i ? "auto" : 0,
-                opacity: current == i ? 1 : 0,
-                overflow: "hidden",
+                color: "rgba(242, 242, 242, 0.7)",
               }}
-              className="body"
             >
-              <Styled.p
-                sx={{
-                  opacity: ".7",
-                }}
-              >
-                {slide.body}
-              </Styled.p>
-              <div className="link">
-                <LearnMoreLink href="/" text="Learn more" color="#F9D2FF" />
-              </div>
-            </motion.div>
-          </div>
+              {slide.body}
+            </Styled.p>
+            <div className="link">
+              <LearnMoreLink href="/" text="Learn more" color="#F9D2FF" />
+            </div>
+          </CarouselItem>
         ))}
       </div>
     </div>

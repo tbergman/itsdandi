@@ -22,6 +22,7 @@ const Carousel = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
             And a whole lot more.
           </Styled.h2>
         </div>
+
         <CarouselMain />
       </div>
     </InView>

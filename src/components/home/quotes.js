@@ -22,7 +22,14 @@ const Quotes = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
         }}
       >
         <div className="imagewrapper">
-          <img src="/assets/images/carol1_desktop.png" alt="" />
+          <picture>
+            <source
+              media="(min-width: 800px)"
+              srcSet="/assets/images/carol1_desktop.png"
+            ></source>
+            <source srcSet="/assets/images/carol1.png"></source>
+            <img src="/assets/images/carol1_desktop.png" alt="" />
+          </picture>
         </div>
         <div className="text">
           <ReactSVG
