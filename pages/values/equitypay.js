@@ -14,6 +14,7 @@ import MobileNav from "../../src/components/mobilenav";
 import SubMenu from "../../src/components/submenu";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/values/pages";
+import MobileMenu from "../../src/components/mobilemenu";
 import { useState, useEffect } from "react";
 
 import {
@@ -38,18 +39,19 @@ const Home = () => {
     prevBg: "",
   });
 
-  const colors = [
-    {
-      bg: "#FFF",
-      color: theme.colors.black,
-    },
-  ];
+  const toggleMenu = (menuOpen) => {
+    const body = document.body;
+    return menuOpen
+      ? body.classList.add("menu-open")
+      : body.classList.remove("menu-open");
+  };
 
   useEffect(() => {
     if (window) {
       setWindowHeight(window.innerHeight);
     }
-  }, []);
+    toggleMenu(menuOpen);
+  }, [menuOpen]);
 
   return (
     <div
@@ -65,8 +67,9 @@ const Home = () => {
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
-        colors={colors}
+        navBarStyling={navBarStyling}
       />
+      <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
       <SubMenu subPages={subPages_.subPages} navBarStyling={navBarStyling} />
       <Header
         setNavbarStyling={setNavbarStyling}

@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import Carousel from "../../carousel";
 import InView from "../../inview";
 import { useState, useEffect } from "react";
 
@@ -61,7 +60,7 @@ const DeiWork = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
               </Styled.p>
             </div>
             <div className="carousel">
-              <Carousel slides={slides} current={current} color="yellow" />
+              {/* <Carousel slides={slides} current={current} color="yellow" /> */}
             </div>
           </div>
           <div className="section2">

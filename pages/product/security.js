@@ -20,6 +20,7 @@ import {
 } from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
 import SubMenu from "../../src/components/submenu";
+import MobileMenu from "../../src/components/mobilemenu";
 
 const Product = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,7 +33,8 @@ const Product = () => {
     if (window) {
       setWindowHeight(window.innerHeight);
     }
-  }, []);
+    toggleMenu(menuOpen);
+  }, [menuOpen]);
 
   const subPages_ = subPages({
     pages,
@@ -40,12 +42,12 @@ const Product = () => {
     nextBg: "turquoise",
     prevBg: "yellow",
   });
-  const colors = [
-    {
-      bg: "#FFF",
-      color: theme.colors.black,
-    },
-  ];
+  const toggleMenu = (menuOpen) => {
+    const body = document.body;
+    return menuOpen
+      ? body.classList.add("menu-open")
+      : body.classList.remove("menu-open");
+  };
 
   return (
     <div
@@ -57,8 +59,9 @@ const Product = () => {
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
-        colors={colors}
+        navBarStyling={navBarStyling}
       />
+      <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
       <SubMenu subPages={subPages_.subPages} navBarStyling={navBarStyling} />
       <Header
         title={`Your people data is precious. Protecting it is our top priority.`}

@@ -54,9 +54,9 @@ const Pricing = () => {
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
-        colors={colors}
+        navBarStyling={navBarStyling}
       />
-      <MobileMenu menuOpen={menuOpen} />
+      <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
       <Header
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}

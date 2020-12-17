@@ -19,6 +19,7 @@ import {
   useViewportScroll,
 } from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
+import MobileMenu from "../../src/components/mobilemenu";
 
 const Values = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,7 +32,8 @@ const Values = () => {
     if (window) {
       setWindowHeight(window.innerHeight);
     }
-  }, []);
+    toggleMenu(menuOpen);
+  }, [menuOpen]);
 
   const subPages_ = subPages({
     pages,
@@ -40,12 +42,12 @@ const Values = () => {
     prevBg: "violet",
   });
 
-  const colors = [
-    {
-      bg: "#FFF",
-      color: theme.colors.black,
-    },
-  ];
+  const toggleMenu = (menuOpen) => {
+    const body = document.body;
+    return menuOpen
+      ? body.classList.add("menu-open")
+      : body.classList.remove("menu-open");
+  };
 
   const modules = [
     {
@@ -84,8 +86,9 @@ const Values = () => {
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
-        colors={colors}
+        navBarStyling={navBarStyling}
       />
+      <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
       <SubMenu subPages={subPages_.subPages} navBarStyling={navBarStyling} />
       <Header
         title={`Work’s better with Dandi`}
