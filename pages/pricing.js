@@ -5,6 +5,7 @@ import Footer from "../src/components/footer";
 import Header from "../src/components/pricing/header";
 import Cost from "../src/components/pricing/cost";
 import BetterInsights from "../src/components/pricing/betterinsights";
+import MobileMenu from "../src/components/mobilemenu";
 import { useState, useEffect } from "react";
 
 import {
@@ -22,11 +23,20 @@ const Pricing = () => {
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
   });
+
+  const toggleMenu = (menuOpen) => {
+    const body = document.body;
+    return menuOpen
+      ? body.classList.add("menu-open")
+      : body.classList.remove("menu-open");
+  };
+
   useEffect(() => {
     if (window) {
       setWindowHeight(window.innerHeight);
     }
-  }, []);
+    toggleMenu(menuOpen);
+  }, [menuOpen]);
 
   const colors = [
     {
@@ -46,6 +56,7 @@ const Pricing = () => {
         setMenuOpen={setMenuOpen}
         colors={colors}
       />
+      <MobileMenu menuOpen={menuOpen} />
       <Header
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}

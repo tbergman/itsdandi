@@ -6,6 +6,7 @@ import Top from "../src/components/home/top";
 import LearnMore from "../src/components/home/learnmore";
 import Carousel from "../src/components/home/carousel";
 import PayEquity from "../src/components/home/payequity";
+import MobileMenu from "../src/components/mobilemenu";
 import Partners from "../src/components/home/partners";
 import AdvanceDEI from "../src/components/home/advancedei";
 import Quotes from "../src/components/home/quotes";
@@ -28,6 +29,13 @@ const Home = () => {
     ...theme.components.navigation.default,
   });
 
+  const toggleMenu = (menuOpen) => {
+    const body = document.body;
+    return menuOpen
+      ? body.classList.add("menu-open")
+      : body.classList.remove("menu-open");
+  };
+
   const colors = [
     {
       bg: theme.colors.black,
@@ -39,7 +47,8 @@ const Home = () => {
     if (window) {
       setWindowHeight(window.innerHeight);
     }
-  }, []);
+    toggleMenu(menuOpen);
+  }, [menuOpen]);
 
   return (
     <div
@@ -51,8 +60,9 @@ const Home = () => {
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
-        colors={colors}
+        navBarStyling={navBarStyling}
       />
+      <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
       <Top
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}

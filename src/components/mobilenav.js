@@ -8,7 +8,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 
-const MobileNav = ({ menuOpen, setMenuOpen, colors }) => {
+const MobileNav = ({ menuOpen, setMenuOpen, navBarStyling }) => {
   const { scrollYProgress } = useViewportScroll();
 
   const opacityAnim = useTransform(scrollYProgress, [0, 0.05, 0.1], [0, 0, 1]);
@@ -16,47 +16,22 @@ const MobileNav = ({ menuOpen, setMenuOpen, colors }) => {
   return (
     <div
       sx={{
-        position: "fixed",
-        zIndex: 1000,
-        display: ["flex", "none"],
-        justifyContent: "space-between",
-        height: "74px",
-        width: "100%",
-        bg: colors[0].bg,
-        ".hamburger": {
-          cursor: "pointer",
-          mr: "20px",
-          mt: "33px",
-          position: "relative",
-          height: "21px",
-          width: "25px",
-          span: {
-            position: "absolute",
-            transition: "all 200ms ease-out",
-            left: 0,
-            p: 0,
-            m: 0,
-            height: "3px",
-            width: "25px",
-            bg: colors[0].color,
-          },
-        },
-        ".logo": {
-          mt: "24px",
-          ml: "20px",
-          svg: {
-            path: {
-              fill: colors[0].color,
-            },
-          },
-        },
+        variant: "components.mobilenav",
+        ...navBarStyling,
+        transition: "all 100ms cubic-bezier(.01,.66,.83,.67)",
       }}
     >
       <Link href="/">
-        <a className="logo">
+        <a
+          sx={{
+            mt: 3,
+            ml: "20px",
+          }}
+          className="logo"
+        >
           <motion.svg
             style={{
-              opacity: opacityAnim,
+              opacity: menuOpen ? 1 : opacityAnim,
             }}
             width="32"
             height="27"
