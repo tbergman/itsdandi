@@ -77,7 +77,7 @@ const Home = () => {
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{
-          mb: [0, 15],
+          mb: [23, 15],
         }}
         title={`Dandi makes pay equity possible`}
         body={`With sophisticated compensation analytics built right in, Dandi helps you find the pay gaps at your company—and make them disappear.`}

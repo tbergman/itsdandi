@@ -770,12 +770,17 @@ const theme = {
       payequity: {
         topgraphic: {
           position: "absolute",
-          top: "-200px",
-          right: ["20px", "40px"],
-          height: ["400px"],
-          width: ["400px"],
-          bg: "yellow",
-          opacity: 0.5,
+          top: [0, "-200px"],
+
+          left: ["40px", "unset"],
+          height: [`calc(100vw - 80px)`, "400px"],
+          width: [`calc(100vw - 80px)`, "400px"],
+          img: {
+            position: "absolute",
+            height: "100%",
+            width: "100%",
+            bottom: ["45%", "unset"],
+          },
         },
         compensation: {
           bg: "lightGray",
@@ -791,21 +796,27 @@ const theme = {
             },
             ".body": {
               display: "flex",
-
+              flexFlow: ["column", "unset"],
+              mt: [3],
+              mb: [8, 11],
               ".section1": {
-                width: (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
-                mr: (t) => `calc(${t.colWidthDesktop})`,
+                width: [
+                  "unset",
+                  (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+                ],
+                mr: [0, (t) => `calc(${t.colWidthDesktop})`],
               },
               ".section2": {
-                width: (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+                mt: [3, 0],
+                width: [
+                  "unset",
+                  (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+                ],
               },
               p: {
-                mt: [3],
-                mb: [8, 11],
                 fontFamily: "body",
                 fontSize: "16px",
                 lineHeight: "24px",
-                fontWeight: "400",
               },
             },
 
@@ -824,16 +835,17 @@ const theme = {
         compensationgraph: {
           bg: "black",
           ".wrapper": {
-            gridArea: ["1/3/2/-2"],
+            gridArea: ["1/1/2/-1", "1/3/2/-2"],
             display: "flex",
+            flexFlow: ["column-reverse", "unset"],
             alignItems: "flex-start",
-            mt: ["244px"],
+            mt: [12, "244px"],
             mb: [13],
             ".graph": {
               position: "relative",
               height: ["215px"],
               width: [
-                "unset",
+                "100%",
                 (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
               ],
               ".maingraph": {
@@ -884,8 +896,11 @@ const theme = {
               },
             },
             ".text": {
-              ml: [(t) => `calc(${t.colWidthDesktop})`],
-              width: [(t) => `calc(calc(${t.colWidthDesktop} * 4) +  160px)`],
+              ml: [0, (t) => `calc(${t.colWidthDesktop})`],
+              width: [
+                "unset",
+                (t) => `calc(calc(${t.colWidthDesktop} * 4) +  160px)`,
+              ],
               fontSize: "16px",
               lineHeight: "24px",
             },
@@ -2726,6 +2741,11 @@ const theme = {
             fill: "white",
           },
         },
+        ".hamburger": {
+          span: {
+            bg: "white",
+          },
+        },
       },
       violet: {
         bg: "violet",
@@ -2802,6 +2822,11 @@ const theme = {
         ".logo": {
           path: { fill: (t) => `${t.colors.black} !important` },
         },
+        ".hamburger": {
+          span: {
+            bg: (t) => `${t.colors.black} !important`,
+          },
+        },
       },
       lightTurquoise: {
         bg: "lightTurquoise",
@@ -2841,54 +2866,66 @@ const theme = {
           path: { fill: (t) => `${t.colors.black} !important` },
         },
       },
-    },
-    mobilenav: {
-      position: "fixed",
-      zIndex: 1000,
-      display: ["flex", "none"],
-      justifyContent: "space-between",
-      height: "74px",
-      width: "100%",
-      bg: "black",
-      ".hamburger": {
-        cursor: "pointer",
-        mr: "20px",
-        mt: "33px",
-        position: "relative",
-        height: "21px",
-        width: "25px",
-        span: {
-          position: "absolute",
-          transition: "all 200ms ease-out",
-          left: 0,
-          p: 0,
-          m: 0,
-          height: "3px",
-          width: "25px",
-          bg: "white",
-        },
-      },
-      ".logo": {
-        svg: {
-          path: {
-            fill: "white",
+      mobilenav: {
+        position: "fixed",
+        zIndex: 1000,
+        width: "100%",
+        bg: "black",
+        ".wrapper": {
+          display: ["flex", "none"],
+          justifyContent: "space-between",
+          width: "100%",
+          ".hamburger": {
+            cursor: "pointer",
+            mr: "20px",
+            mt: "33px",
+            position: "relative",
+            height: "21px",
+            width: "25px",
+            span: {
+              position: "absolute",
+              transition: "all 200ms ease-out",
+              left: 0,
+              p: 0,
+              m: 0,
+              height: "3px",
+              width: "25px",
+              bg: "white",
+            },
+          },
+          ".logo": {
+            svg: {
+              path: {
+                fill: "white",
+              },
+            },
           },
         },
       },
     },
 
     submenu: {
-      position: "fixed",
-      top: [0, 24],
-      left: ["20px", "40px"],
+      position: ["absolute", "fixed"],
+      top: ["74px", 24],
+      left: [0, "40px"],
+      width: ["100vw", "unset"],
+      height: ["40px", "unset"],
+      overflowX: "hidden",
+      zIndex: 99,
       ".container": {
+        height: ["100%", "unset"],
+        width: "max-content",
+        borderBottom: "1px solid #CACACE",
         display: "flex",
-        flexFlow: "column",
+        flexFlow: ["row nowrap", "column"],
+        alignItems: ["center", "unset"],
         ".item": {
           cursor: "pointer",
-          mb: [2],
+          mb: [0, 2],
+          mr: [5, 0],
           color: "inherit",
           textDecoration: "none",
+          whiteSpace: "nowrap",
           opacity: 0.5,
           height: "max-content",
           p: {
@@ -2914,6 +2951,7 @@ const theme = {
             "#line1": {
               position: "absolute",
               height: "2px",
+              display: ["none", "unset"],
 
               width: "100%",
               top: 0,
@@ -3191,11 +3229,11 @@ const theme = {
         h1: {},
         h3: {
           mt: [2, 3],
-          // mb: [2, 0],
+
           fontFamily: "body",
-          fontWeight: "400",
-          lineHeight: "36px",
-          fontSize: ["24px"],
+
+          lineHeight: ["30px", "36px"],
+          fontSize: ["20px", "24px"],
         },
         ".graphic": {
           gridArea: ["2/1/3/-1", "2/1/3/-1"],

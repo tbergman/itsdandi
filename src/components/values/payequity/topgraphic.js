@@ -8,7 +8,7 @@ const TopGraphic = ({}) => {
         variant: "pages.values.payequity.topgraphic",
       }}
     >
-      <div className="placeholder"></div>
+      <img src="/assets/images/equitypay/topgraphic.png" alt="" />
     </div>
   );
 };
