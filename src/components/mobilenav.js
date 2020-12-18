@@ -66,7 +66,8 @@ const MobileNav = ({ menuOpen, setMenuOpen, navBarStyling, subPages }) => {
           >
             <motion.svg
               style={{
-                opacity: menuOpen ? 1 : opacityAnim,
+                // opacity: menuOpen ? 1 : opacityAnim,
+                opacity: 0,
               }}
               width="32"
               height="27"

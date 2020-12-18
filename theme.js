@@ -96,17 +96,19 @@ const theme = {
       top: {
         bg: "transparent",
         bigLogo: {
-          display: "none",
           svg: {
+            mb: ["20px", "40px"],
+            top: ["22px", "44px"],
+            left: ["20px", "40px"],
+            position: "fixed",
             position: "fixed",
             zIndex: 9999,
-            top: ["24px", "44px"],
+            top: ["22px", "44px"],
             left: ["20px", "40px"],
             height: [(t) => t.colWidthMob, (t) => t.colWidthDesktop],
             width: ["125px", "367px"],
             mb: ["20px", "40px"],
-            transform: "rotate(90deg) translateX(-30%)",
-            transformOrigin: "bottom left",
+            // transformOrigin: "50% ",
           },
         },
         ".text": {
@@ -116,7 +118,7 @@ const theme = {
             (t) => `calc(${t.colWidthDesktop})`,
           ],
           mt: [28],
-          mb: [3, 0],
+          mb: [2, 0],
           h1: {},
           ".button": {
             position: "relative",
@@ -858,7 +860,6 @@ const theme = {
                   ".bar": {
                     position: "absolute",
                     left: "50%",
-
                     borderLeft: "2px solid #00FCFF",
                     bottom: 0,
 
