@@ -3,14 +3,20 @@ import { ReactSVG } from "react-svg";
 import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 import InView from "../inview";
+import { rootMargin } from "../../helpers/utils";
 
-const PayEquity = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
+const PayEquity = ({
+  setNavbarStyling,
+  windowHeight,
+  navBarStyling,
+  isDesktop,
+}) => {
   return (
     <InView
       variant="pages.home.payequity"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

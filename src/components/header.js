@@ -11,13 +11,14 @@ const Header = ({
   body,
   styling,
   bg,
+  isDesktop,
   children,
 }) => {
   return (
     <InView
       setNavbarStyling={setNavbarStyling}
       navBarStyling={{ ...navBarStyling, bg: bg }}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
       variant="components.shared.header"
       bg={bg ? bg : "rgba(242, 242, 242, 0.5)"}
     >

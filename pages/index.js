@@ -11,6 +11,8 @@ import Partners from "../src/components/home/partners";
 import AdvanceDEI from "../src/components/home/advancedei";
 import Quotes from "../src/components/home/quotes";
 import MarketPlacePartners from "../src/components/home/marketplacepartners";
+import { useMediaQuery } from "react-responsive";
+import devices from "../src/helpers/devices";
 import { useState, useEffect } from "react";
 
 import {
@@ -23,6 +25,7 @@ import MobileNav from "../src/components/mobilenav";
 
 const Home = () => {
   const { theme } = useThemeUI();
+  const isDesktop = useMediaQuery({ query: devices.desktop });
   const [menuOpen, setMenuOpen] = useState(false);
   const [windowHeight, setWindowHeight] = useState(500);
   const [navBarStyling, setNavbarStyling] = useState({
@@ -35,13 +38,6 @@ const Home = () => {
       ? body.classList.add("menu-open")
       : body.classList.remove("menu-open");
   };
-
-  const colors = [
-    {
-      bg: theme.colors.black,
-      color: theme.colors.white,
-    },
-  ];
 
   useEffect(() => {
     if (window) {
@@ -67,41 +63,49 @@ const Home = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
+        isDesktop={isDesktop}
       />
       <LearnMore
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.violet}
         windowHeight={windowHeight}
+        isDesktop={isDesktop}
       />
       <Carousel
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
+        isDesktop={isDesktop}
       />
       <PayEquity
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.gray}
+        isDesktop={isDesktop}
       />
       <Partners
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.white}
+        isDesktop={isDesktop}
       />
       <AdvanceDEI
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.lightTurquoise}
+        isDesktop={isDesktop}
       />
       <Quotes
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.gray2}
+        isDesktop={isDesktop}
       />
       <MarketPlacePartners
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.white}
+        isDesktop={isDesktop}
       />
       <Footer />
     </div>

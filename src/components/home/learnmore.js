@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
-import { useMediaQuery } from "react-responsive";
-import devices from "../../helpers/devices";
 import InView from "../inview";
 import {
   motion,
@@ -10,14 +8,16 @@ import {
   useTransform,
   useAnimation,
 } from "framer-motion";
+import { rootMargin } from "../../helpers/utils";
 
-const LearnMore = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
+const LearnMore = ({
+  setNavbarStyling,
+  windowHeight,
+  navBarStyling,
+  isDesktop,
+}) => {
   const { scrollY } = useViewportScroll();
   const animation = useAnimation();
-
-  const isDesktop = useMediaQuery({
-    query: devices.desktop,
-  });
 
   const variants = {
     hidden: {
@@ -35,7 +35,7 @@ const LearnMore = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
       variant="pages.home.learnmore"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

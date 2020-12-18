@@ -4,18 +4,20 @@ import Circles from "./circles";
 import LearnMoreLink from "../learnmorelink";
 import { ReactSVG } from "react-svg";
 import InView from "../inview";
+import { rootMargin } from "../../helpers/utils";
 
 const MarketPlacePartners = ({
   setNavbarStyling,
   windowHeight,
   navBarStyling,
+  isDesktop,
 }) => {
   return (
     <InView
       variant="pages.home.marketplacepartners"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       {" "}
       <div

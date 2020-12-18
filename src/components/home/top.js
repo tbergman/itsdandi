@@ -6,20 +6,19 @@ import Link from "next/link";
 import InView from "../inview";
 import { rootMargin } from "../../helpers/utils";
 
-const Home = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const Home = ({ setNavbarStyling, navBarStyling, windowHeight, isDesktop }) => {
   return (
     <InView
       variant="pages.home.top"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={rootMargin(true, windowHeight)}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{
           variant: "grid",
         }}
       >
-        <BigLogo />
         <div className="text">
           <Styled.h1>How business gets better for everyone</Styled.h1>
           <div className="button">

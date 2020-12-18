@@ -7,6 +7,7 @@ import {
   transform,
 } from "framer-motion";
 import Link from "next/link";
+import BigLogo from "../components/home/bigLogo";
 
 const MobileNav = ({ menuOpen, setMenuOpen, navBarStyling, subPages }) => {
   const { scrollYProgress } = useViewportScroll();
@@ -64,7 +65,9 @@ const MobileNav = ({ menuOpen, setMenuOpen, navBarStyling, subPages }) => {
             }}
             className="logo"
           >
-            <motion.svg
+            <BigLogo navBarStyling={navBarStyling} menuOpen={menuOpen} />
+
+            {/* <motion.svg
               style={{
                 // opacity: menuOpen ? 1 : opacityAnim,
                 opacity: 0,
@@ -87,7 +90,7 @@ const MobileNav = ({ menuOpen, setMenuOpen, navBarStyling, subPages }) => {
                 d="M11.9936 5.34394L11.9936 0.504883L7.16412 0.504883L7.16412 5.34394L11.9936 5.34394Z"
                 fill="#1A1A1D"
               />
-            </motion.svg>
+            </motion.svg> */}
           </a>
         </Link>
         <div onClick={() => setMenuOpen(!menuOpen)} className="hamburger">

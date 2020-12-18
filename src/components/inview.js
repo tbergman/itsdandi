@@ -16,6 +16,7 @@ const InView = ({
   });
 
   useEffect(() => {
+    console.log(inView);
     if (inView) {
       setNavbarStyling({
         ...navBarStyling,

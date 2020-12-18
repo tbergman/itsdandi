@@ -2,14 +2,20 @@
 import { jsx, Styled, useThemeUI } from "theme-ui";
 import CarouselMain from "./carouselmain";
 import InView from "../inview";
+import { rootMargin } from "../../helpers/utils";
 
-const Carousel = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
+const Carousel = ({
+  setNavbarStyling,
+  windowHeight,
+  navBarStyling,
+  isDesktop,
+}) => {
   return (
     <InView
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
       variant="pages.home.carousel"
-      rootMargin={`0px 0px  -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

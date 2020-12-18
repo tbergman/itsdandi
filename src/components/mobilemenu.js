@@ -2,8 +2,48 @@
 import { jsx, Styled } from "theme-ui";
 import { ReactSVG } from "react-svg";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useReducer } from "react";
+
+const MSGS = {
+  TOGGLE: "TOGGLE",
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case MSGS.TOGGLE: {
+      const { target } = action.payload;
+      const current = state[target].open;
+
+      return {
+        ...state,
+        [`${target}`]: {
+          open: !current,
+        },
+      };
+    }
+
+    default: {
+      return {
+        ...state,
+      };
+    }
+  }
+};
 
 const MobileMenu = ({ menuOpen, navBarStyling }) => {
+  const [state, dispatch] = useReducer(reducer, {
+    values: {
+      open: false,
+    },
+    product: {
+      open: false,
+    },
+    community: {
+      open: false,
+    },
+  });
+
   const navItems = [
     {
       title: "Home",
@@ -11,6 +51,7 @@ const MobileMenu = ({ menuOpen, navBarStyling }) => {
     },
     {
       title: "Why Dandi?",
+      type: "values",
       sub: [
         {
           title: "Pay Equity",
@@ -28,6 +69,7 @@ const MobileMenu = ({ menuOpen, navBarStyling }) => {
     },
     {
       title: "Product",
+      type: "product",
       sub: [
         {
           title: "Measure",
@@ -57,6 +99,7 @@ const MobileMenu = ({ menuOpen, navBarStyling }) => {
     },
     {
       title: "Community",
+      type: "community",
       sub: [
         {
           title: "DEI Advisory Board",
@@ -73,6 +116,7 @@ const MobileMenu = ({ menuOpen, navBarStyling }) => {
       ],
     },
   ];
+
   return (
     <div
       sx={{
@@ -90,15 +134,25 @@ const MobileMenu = ({ menuOpen, navBarStyling }) => {
           {navItems.map((item, i) => (
             <div className="item">
               {item.sub ? (
-                <div className="wrapper">
+                <motion.div
+                  onClick={() =>
+                    dispatch({
+                      type: MSGS.TOGGLE,
+                      payload: {
+                        target: item.type,
+                      },
+                    })
+                  }
+                  className="wrapper"
+                >
                   <div className="main">
                     <Styled.h2>{item.title}</Styled.h2>
                     <ReactSVG src="/assets/svgs/arrow2.svg" />
                   </div>
-                  <div
-                    sx={{
-                      height: 0,
-                      overflow: "hidden",
+                  <motion.div
+                    layout
+                    style={{
+                      height: state[item.type].open ? "auto" : 0,
                     }}
                     className="sub"
                   >
@@ -109,8 +163,8 @@ const MobileMenu = ({ menuOpen, navBarStyling }) => {
                         </a>
                       </Link>
                     ))}
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               ) : (
                 <div className="wrapper">
                   <div className="main">

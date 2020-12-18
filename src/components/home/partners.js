@@ -4,8 +4,14 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import InView from "../inview";
 import theme from "../../../theme";
+import { rootMargin } from "../../helpers/utils";
 
-const Partners = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
+const Partners = ({
+  setNavbarStyling,
+  windowHeight,
+  navBarStyling,
+  isDesktop,
+}) => {
   const ref = useRef();
   const { scrollYProgress } = useViewportScroll();
 
@@ -24,7 +30,7 @@ const Partners = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
       variant="pages.home.partners"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

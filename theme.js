@@ -284,7 +284,7 @@ const theme = {
           ],
           // mt: [13, 0],
           mb: [1],
-          display: "flex",
+          display: ["none", "flex"],
           alignItems: "flex-start",
           justifyContent: ["flex-end", "flex-start"],
           p: {
@@ -2766,6 +2766,11 @@ const theme = {
         ".logo": {
           path: { fill: (t) => `${t.colors.black} !important` },
         },
+        ".hamburger": {
+          span: {
+            bg: (t) => `${t.colors.black} !important`,
+          },
+        },
       },
       gray: {
         bg: "#F8F8F8",
@@ -2785,6 +2790,11 @@ const theme = {
         ".logo": {
           path: { fill: (t) => `${t.colors.black} !important` },
         },
+        ".hamburger": {
+          span: {
+            bg: (t) => `${t.colors.black} !important`,
+          },
+        },
       },
       gray2: {
         bg: "#F2F2F2",
@@ -2803,6 +2813,11 @@ const theme = {
         },
         ".logo": {
           path: { fill: (t) => `${t.colors.black} !important` },
+        },
+        ".hamburger": {
+          span: {
+            bg: (t) => `${t.colors.black} !important`,
+          },
         },
       },
       white: {
@@ -2847,6 +2862,11 @@ const theme = {
         ".logo": {
           path: { fill: (t) => `${t.colors.black} !important` },
         },
+        ".hamburger": {
+          span: {
+            bg: (t) => `${t.colors.black} !important`,
+          },
+        },
       },
       yellow: {
         bg: "yellow",
@@ -2865,6 +2885,11 @@ const theme = {
         },
         ".logo": {
           path: { fill: (t) => `${t.colors.black} !important` },
+        },
+        ".hamburger": {
+          span: {
+            bg: (t) => `${t.colors.black} !important`,
+          },
         },
       },
       mobilenav: {
@@ -3012,8 +3037,10 @@ const theme = {
         ".item": {
           cursor: "pointer",
           mb: [2],
+
           ".wrapper": {
             // display: "flex",
+
             ".main": {
               display: "flex",
               justifyContent: "space-between",
@@ -3027,9 +3054,12 @@ const theme = {
                 },
               },
             },
+
             ".sub": {
               display: "flex",
               flexFlow: "column",
+              overflow: "hidden",
+          
 
               ".subitem": {
                 textDecoration: "none",

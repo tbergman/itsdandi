@@ -1,20 +1,21 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
-import { useMediaQuery } from "react-responsive";
-import devices from "../../helpers/devices";
 import InView from "../inview";
+import { rootMargin } from "../../helpers/utils";
 
-const Quotes = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
-  const isDesktop = useMediaQuery({
-    query: devices.desktop,
-  });
+const Quotes = ({
+  setNavbarStyling,
+  windowHeight,
+  navBarStyling,
+  isDesktop,
+}) => {
   return (
     <InView
       variant="pages.home.quotes"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{
