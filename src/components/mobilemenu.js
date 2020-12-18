@@ -132,7 +132,7 @@ const MobileMenu = ({ menuOpen, navBarStyling }) => {
       >
         <nav className="navitems">
           {navItems.map((item, i) => (
-            <div className="item">
+            <div className="item" key={i}>
               {item.sub ? (
                 <motion.div
                   onClick={() =>
@@ -157,7 +157,7 @@ const MobileMenu = ({ menuOpen, navBarStyling }) => {
                     className="sub"
                   >
                     {item.sub.map((sub, i) => (
-                      <Link href={sub.url}>
+                      <Link href={sub.url} key={i}>
                         <a className="subitem">
                           <Styled.p>{sub.title}</Styled.p>
                         </a>

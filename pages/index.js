@@ -32,6 +32,8 @@ const Home = () => {
     ...theme.components.navigation.default,
   });
 
+  console.log(isDesktop);
+
   const toggleMenu = (menuOpen) => {
     const body = document.body;
     return menuOpen
