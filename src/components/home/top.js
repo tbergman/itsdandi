@@ -4,6 +4,7 @@ import BigLogo from "./bigLogo";
 import Graphics from "./graphics";
 import Link from "next/link";
 import InView from "../inview";
+import { rootMargin } from "../../helpers/utils";
 
 const Home = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
   return (
@@ -11,7 +12,7 @@ const Home = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
       variant="pages.home.top"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(true, windowHeight)}
     >
       <div
         sx={{

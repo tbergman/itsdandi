@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import InView from "./inview";
+import { rootMargin } from "../helpers/utils";
 
 const Header = ({
   setNavbarStyling,
