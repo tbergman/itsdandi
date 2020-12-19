@@ -3,16 +3,21 @@ import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
 import theme from "../../../../theme";
+import { rootMargin } from "../../../helpers/utils";
 
-const Affordable = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
+const Affordable = ({
+  setNavbarStyling,
+  windowHeight,
+  navBarStyling,
+  isDesktop,
+}) => {
   const { theme } = useThemeUI();
   return (
     <InView
       variant="pages.values.payequity.affordable"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`
-      0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

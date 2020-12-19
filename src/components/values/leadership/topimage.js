@@ -7,7 +7,9 @@ const TopImage = () => {
       sx={{
         variant: "pages.values.leadership.topimage",
       }}
-    ></div>
+    >
+      <img src="/assets/images/leadership/top.png" alt="" />
+    </div>
   );
 };
 

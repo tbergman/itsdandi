@@ -2,6 +2,7 @@
 import { jsx, Styled, useThemeUI } from "theme-ui";
 import InView from "./inview";
 import { ReactSVG } from "react-svg";
+import { rootMargin } from "../helpers/utils";
 
 const Quote = ({
   setNavbarStyling,
@@ -12,6 +13,7 @@ const Quote = ({
   name,
   title,
   text,
+  isDesktop,
 }) => {
   const { theme } = useThemeUI();
   return (
@@ -19,7 +21,7 @@ const Quote = ({
       variant="components.shared.quote"
       navBarStyling={navBarStyling}
       setNavbarStyling={setNavbarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
       bg={bg}
     >
       <div

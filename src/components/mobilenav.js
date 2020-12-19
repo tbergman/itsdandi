@@ -65,7 +65,7 @@ const MobileNav = ({ menuOpen, setMenuOpen, navBarStyling, subPages }) => {
             }}
             className="logo"
           >
-            <BigLogo navBarStyling={navBarStyling} menuOpen={menuOpen} />
+            {/* <BigLogo navBarStyling={navBarStyling} menuOpen={menuOpen} /> */}
 
             {/* <motion.svg
               style={{

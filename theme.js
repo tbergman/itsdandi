@@ -845,7 +845,9 @@ const theme = {
             mb: [13],
             ".graph": {
               position: "relative",
-              height: ["215px"],
+              height: ["206px", "215px"],
+              left: ["-20px", "unset"],
+              mb: [6, 0],
               width: [
                 "100%",
                 (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
@@ -874,6 +876,7 @@ const theme = {
                 },
               },
               ".divider": {
+                display: ["none", "unset"],
                 position: "absolute",
                 width: "100%",
                 height: "1px",
@@ -881,6 +884,7 @@ const theme = {
                 bottom: 0,
               },
               ".labels": {
+                mt: ["30px", 0],
                 width: "100%",
                 display: "flex",
                 ".label": {
@@ -898,6 +902,7 @@ const theme = {
             },
             ".text": {
               ml: [0, (t) => `calc(${t.colWidthDesktop})`],
+              mb: [7, 0],
               width: [
                 "unset",
                 (t) => `calc(calc(${t.colWidthDesktop} * 4) +  160px)`,
@@ -912,15 +917,23 @@ const theme = {
             gridArea: ["1/1/2/-1", "1/3/2/-1"],
             color: "black",
             display: "flex",
-            mt: [16],
-            mb: [20],
+            flexFlow: ["column", "unset"],
+            mt: [10, 16],
+            mb: [8, 20],
             h2: {
               fontFamily: "display",
-              width: (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+              width: [
+                "100%",
+                (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+              ],
             },
             ".body": {
-              ml: [(t) => `calc(${t.colWidthDesktop})`],
-              width: [(t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`],
+              mt: [3, 0],
+              ml: [0, (t) => `calc(${t.colWidthDesktop})`],
+              width: [
+                "100%",
+                (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+              ],
               display: "flex",
               flexFlow: "column",
               p: {
@@ -963,15 +976,19 @@ const theme = {
           ".graphic": {
             gridArea: ["2/1/3/-1", "1/2/2/7"],
             position: "relative",
-            height: ["500px", "auto"],
-            width: ["100vw", "auto"],
-            left: ["-20px", 0],
-            display: ["block", "flex"],
+            mb: [10, 0],
+            height: [0],
+            width: [(t) => `calc(calc(${t.colWidthMob} * 4) + 100px)`, "auto"],
+            pt: [(t) => `calc(calc(${t.colWidthMob} * 4) + 100px)`, 0],
+            left: [(t) => t.colWidthMob, "unset"],
+            display: ["unset", "flex"],
             alignItems: "center",
             img: {
-              position: ["absolute", "relative"],
+              position: ["absolute"],
+              top: 0,
+              left: 0,
               width: "100%",
-              height: ["100%", "auto"],
+              height: ["100%"],
             },
           },
         },
@@ -980,10 +997,10 @@ const theme = {
         topgraphic: {
           position: "absolute",
           zIndex: 99,
-          right: [(t) => `calc(calc(${t.colWidthDesktop}) + 80px)`],
-          width: ["200px"],
-          height: ["200px"],
-          top: ["-100px"],
+          right: ["20px", (t) => `calc(calc(${t.colWidthDesktop}) + 80px)`],
+          width: [(t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`, "200px"],
+          height: [(t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`, "200px"],
+          top: [(t) => `calc(calc(${t.colWidthMob} + 20px) / -1)`, "-100px"],
           div: {
             height: "100%",
             width: "100%",
@@ -1008,43 +1025,55 @@ const theme = {
             mt: [3, 5],
             mb: [7, 18],
             display: "flex",
-            flexFlow: ["row wrap"],
+            flexFlow: ["column", "row wrap"],
             ".section": {
-              width: [(t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`],
+              width: [
+                "100%",
+                (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+              ],
               ".title": {
                 fontFamily: "medium",
-                fontSize: ["20px", "16px"],
-                lineHeight: ["20px", "24px"],
+                fontSize: ["16px"],
+                lineHeight: ["24px"],
               },
               ".body": {
-                fontSize: ["20px", "16px"],
-                lineHeight: ["20px", "24px"],
+                fontSize: ["16px"],
+                lineHeight: ["24px"],
               },
             },
             ".section:nth-of-type(2n)": {
-              ml: [(t) => `calc(${t.colWidthDesktop})`],
+              ml: [0, (t) => `calc(${t.colWidthDesktop})`],
             },
           },
         },
         partners: {
-          bg: "white",
+          bg: "rgba(250, 250, 250, 0.96)",
           color: "black",
           ".graphic": {
             gridArea: ["1/1/2/-1", "1/8/2/-1"],
-            width: ["100vw", "auto"],
-            left: ["-20px", 0],
             position: "relative",
+
             display: "flex",
             justifyContent: "center",
             alignItems: ["unset", "center"],
             div: {
               position: ["absolute", "relative"],
-              height: ["216px", "288px"],
-              width: ["216px", "288px"],
-              top: ["-108px", 0],
+              width: [
+                (t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`,
+                "288px",
+              ],
+              height: [
+                (t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`,
+                "288px",
+              ],
+              top: [
+                (t) => `calc(calc(calc(${t.colWidthMob} * 2) + 30px) / -1)`,
+                "unset",
+              ],
+              left: [(t) => `calc(${t.colWidthMob} + 20px)`, 0],
               div: {
-                position: "relative",
                 top: 0,
+                left: 0,
                 svg: {
                   height: "100%",
                   width: "100%",
@@ -1061,7 +1090,7 @@ const theme = {
             },
             p: {
               mt: [3, 4],
-              fontSize: ["20px", "16px"],
+              fontSize: ["16px"],
               lineHeight: ["24px"],
             },
             ".partnersLink": {
@@ -1079,30 +1108,43 @@ const theme = {
       leadership: {
         topimage: {
           position: "absolute",
-          width: [(t) => `calc(calc(${t.colWidthDesktop} * 10) +  400px)`],
+          width: [
+            "calc(100vw - 20px)",
+            (t) => `calc(calc(${t.colWidthDesktop} * 10) +  400px)`,
+          ],
           right: 0,
-          top: ["-260px"],
-          height: ["520px"],
-          bg: "violet",
-          opacity: 0.5,
+          top: [
+            (t) => `calc(calc(calc(calc(100vw -20px) * .6) / 2) / -1)`,
+            "-260px",
+          ],
+          height: [0, "520px"],
+          pt: ["60%", 0],
+          img: {
+            position: "absolute",
+            height: "100%",
+            width: "100%",
+            top: 0,
+            left: 0,
+          },
         },
         textmodules: {
-          pt: [14, "388px"],
+          pt: [18, "388px"],
           bg: "lightGray",
           ".wrapper": {
             gridArea: ["1/1/2/-1", "1/3/2/-1"],
-            ml: ["20px", 0],
+            ml: [0],
             ".module": {
               color: "black",
               position: "relative",
               display: "flex",
+              flexFlow: ["column", "unset"],
               pt: [2],
               mb: [11],
               ".divider": {
                 position: "absolute",
                 top: 0,
                 width: [
-                  "100%",
+                  "calc(100vw - 20px)",
                   (t) => `calc(calc(${t.colWidthDesktop} * 10) + 400px)`,
                 ],
 
@@ -1115,26 +1157,43 @@ const theme = {
                 },
               },
               ".section1": {
-                width: [(t) => `calc(calc(${t.colWidthDesktop} * 5) + 160px)`],
+                width: [
+                  "100%",
+                  (t) => `calc(calc(${t.colWidthDesktop} * 5) + 160px)`,
+                ],
 
                 h2: {
                   fontFamily: "display",
                 },
               },
               ".section2": {
-                width: [(t) => `calc(calc(${t.colWidthDesktop} * 5) + 160px)`],
-                pr: ["20px", (t) => `calc(calc(${t.colWidthDesktop}) + 40px)`],
+                width: [
+                  "100%",
+                  (t) => `calc(calc(${t.colWidthDesktop} * 5) + 160px)`,
+                ],
+                mt: [3, 0],
+                pr: [
+                  0,
+                  "20px",
+                  (t) => `calc(calc(${t.colWidthDesktop}) + 40px)`,
+                ],
                 p: {
                   lineHeight: ["24px"],
-                  fontSize: ["20px", "16px"],
+                  fontSize: ["16px"],
                 },
-                ".link": {
-                  mt: [1],
+                ".linksection": {
                   p: {
-                    p: 0,
-
                     fontFamily: "medium",
-                    lineHeight: "18.88px",
+                  },
+                  mt: [1, 0],
+                  ".link": {
+                    mt: [0, 1],
+                    p: {
+                      p: 0,
+
+                      fontFamily: "medium",
+                      lineHeight: "18.88px",
+                    },
                   },
                 },
               },
@@ -1145,11 +1204,13 @@ const theme = {
 
       subnavigation: {
         display: "flex",
-        height: ["224px", "356px"],
+        height: ["auto", "356px"],
+        flexFlow: ["column-reverse", "unset"],
 
         ".next": {
-          height: "100%",
-          flex: "0 50%",
+          height: ["224px", "100%"],
+          pl: [(t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`, 0],
+          flex: [1, "0 50%"],
           display: "flex",
           alignItems: "center",
         },
@@ -1159,19 +1220,21 @@ const theme = {
         },
 
         ".prev": {
-          height: "100%",
-          flex: "0 50%",
+          height: ["224px", "100%"],
+          flex: [1, "0 50%"],
+          pl: [(t) => `calc(${t.colWidthMob} + 40px)`, 0],
           display: "flex",
           alignItems: "center",
         },
 
         ".link": {
-          ml: ["53%", (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
+          ml: [0, (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
+          mr: [6, 0],
           textDecoration: "none",
           height: ["100%", "auto"],
           display: "flex",
           flexFlow: "column nowrap",
-          justifyContent: "flex-end",
+          justifyContent: ["center", "flex-end"],
           h3: {
             fontFamily: "display",
             fontSize: ["24px", "40px"],
@@ -1235,6 +1298,10 @@ const theme = {
         //     },
         //   },
         // },
+        topcontent: {
+          ".button": {},
+          ".graphics": {},
+        },
         metrics: {
           bg: "transparent",
           color: "black",
@@ -2932,15 +2999,17 @@ const theme = {
 
     submenu: {
       position: ["absolute", "fixed"],
+      display: ["none", "unset"],
       top: ["74px", 24],
       left: [0, "40px"],
       width: ["100vw", "unset"],
+      left: ["-20px"],
       height: ["40px", "unset"],
-      overflowX: "hidden",
+      overflow: "hidden",
       zIndex: 99,
       ".container": {
         height: ["100%", "unset"],
-        width: "max-content",
+        width: "100%",
         borderBottom: "1px solid #CACACE",
         display: "flex",
         flexFlow: ["row nowrap", "column"],
@@ -3059,7 +3128,6 @@ const theme = {
               display: "flex",
               flexFlow: "column",
               overflow: "hidden",
-          
 
               ".subitem": {
                 textDecoration: "none",
@@ -3147,15 +3215,15 @@ const theme = {
           },
         },
         ".button": {
-          mt: [5],
+          mt: [3, 5],
           flex: [1, "1 100%"],
           display: "flex",
-          justifyContent: "flex-end",
+          justifyContent: ["flex-start", "flex-end"],
         },
       },
       ".socials": {
         gridArea: ["3/1/4/-1", "2/4/3/6"],
-        mt: ["20px", 0],
+        mt: [6, 0],
         // display: "grid",
         // gridTemplateColumns: ["repeat(6,1fr)"],
         // columnGap: ["20px", "40px"],
@@ -3206,6 +3274,25 @@ const theme = {
       },
     },
     shared: {
+      button: {
+        width: [(t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`, "unset"],
+        bg: "blue",
+        borderRadius: ["200px"],
+        ".button": {
+          display: "flex",
+          alignItem: "center",
+          justifyContent: "center",
+          p: {
+            py: [2],
+            lineHeight: "18.88px",
+            fontFamily: "medium",
+          },
+          width: "100%",
+          height: "100%",
+          textDecoration: "none",
+          color: "white",
+        },
+      },
       quote: {
         ".imagewrapper": {
           position: "relative",
@@ -3232,7 +3319,7 @@ const theme = {
           position: "relative",
           ".quotation": {
             position: "absolute",
-            top: [4, 0],
+            top: [0],
           },
           h3: {
             // mt: [4],

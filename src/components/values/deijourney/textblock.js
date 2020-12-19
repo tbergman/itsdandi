@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled, useThemeUI } from "theme-ui";
+import { rootMargin } from "../../../helpers/utils";
 import InView from "../../inview";
 
 const TextBlock = ({
@@ -9,6 +10,7 @@ const TextBlock = ({
   setNavbarStyling,
   navBarStyling,
   windowHeight,
+  isDesktop,
 }) => {
   const { theme } = useThemeUI();
   return (
@@ -16,7 +18,7 @@ const TextBlock = ({
       variant="pages.values.deijourney.textblock"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

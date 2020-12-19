@@ -2,12 +2,14 @@
 import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
+import { rootMargin } from "../../../helpers/utils";
 
 const TextModules = ({
   modules,
   setNavbarStyling,
   windowHeight,
   navBarStyling,
+  isDesktop,
 }) => {
   const { theme } = useThemeUI();
   return (
@@ -15,7 +17,7 @@ const TextModules = ({
       variant="pages.values.leadership.textmodules"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{
@@ -33,12 +35,15 @@ const TextModules = ({
               </div>
               <div className="section2">
                 <Styled.p>{module.body}</Styled.p>
-                <div className="link">
-                  <LearnMoreLink
-                    href={module.linkUrl}
-                    text={module.linkText}
-                    color="#335AFF"
-                  />
+                <div className="linksection">
+                  <Styled.p>{module.bottomText}</Styled.p>
+                  <div className="link">
+                    <LearnMoreLink
+                      href={module.linkUrl}
+                      text={module.linkText}
+                      color="#335AFF"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

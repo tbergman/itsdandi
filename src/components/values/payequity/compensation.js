@@ -2,14 +2,20 @@
 import { jsx, Styled } from "theme-ui";
 import CompensationGraph from "./compensationgraph";
 import InView from "../../inview";
+import { rootMargin } from "../../../helpers/utils";
 
-const Compensation = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
+const Compensation = ({
+  setNavbarStyling,
+  windowHeight,
+  navBarStyling,
+  isDesktop,
+}) => {
   return (
     <InView
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
       variant="pages.values.payequity.compensation"
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

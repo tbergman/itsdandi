@@ -12,6 +12,7 @@ import Thoughtful from "../../src/components/product/measure/thoughtful";
 import SubMenu from "../../src/components/submenu";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
+import TopContent from "../../src/components/product/measure/topcontent";
 import { useState, useEffect } from "react";
 
 import {
@@ -22,10 +23,15 @@ import {
 } from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
 import MobileMenu from "../../src/components/mobilemenu";
+import { useMediaQuery } from "react-responsive";
+import devices from "../../src/helpers/devices";
 
 const Product = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
+  const isDesktop = useMediaQuery({
+    query: devices.desktop,
+  });
   const [windowHeight, setWindowHeight] = useState(500);
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.gray,
@@ -65,23 +71,28 @@ const Product = () => {
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
       <SubMenu navBarStyling={navBarStyling} subPages={subPages_.subPages} />
       <Header
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.gray}
         title={`DEI, made to measure`}
         body={`Simple. Precise. Eye-opening. Dandi sets the new standard for DEI measurement.`}
         styling={{
-          mb: [22],
+          mb: [12, 22],
         }}
         bg="white"
-      ></Header>
+      >
+        <TopContent />
+      </Header>
       <Metrics
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
       />
 
-      <Quote
+      {/* <Quote
+        isDesktop={isDesktop}
         imageUrl={`/assets/images/tamarcus-brown.png`}
         text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity
 `}
@@ -94,20 +105,23 @@ const Product = () => {
         bg="white"
       />
       <WhyMeasure
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
       />
       <Intersectional
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
       />
       <Thoughtful
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
-      />
+      /> */}
       <SubNavigation next={subPages_.next} />
       <Footer />
     </div>

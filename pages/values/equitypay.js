@@ -23,10 +23,15 @@ import {
   useTransform,
   useViewportScroll,
 } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
+import devices from "../../src/helpers/devices";
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
+  const isDesktop = useMediaQuery({
+    query: devices.desktop,
+  });
   const [windowHeight, setWindowHeight] = useState(500);
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
@@ -72,6 +77,7 @@ const Home = () => {
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
       <SubMenu subPages={subPages_.subPages} navBarStyling={navBarStyling} />
       <Header
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
@@ -88,16 +94,19 @@ const Home = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
+        isDesktop={isDesktop}
       />
       <CompensationGraph
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
+        isDesktop={isDesktop}
       />
       <Reports
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
+        isDesktop={isDesktop}
       />
       <Quote
         setNavbarStyling={setNavbarStyling}
@@ -107,14 +116,15 @@ const Home = () => {
         imageUrl="/assets/images/tamarcus-brown.png"
         name={`Name Namesson`}
         title={`Ceo, Company`}
-        text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity.
-`}
+        text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity.`}
+        isDesktop={isDesktop}
       />
 
       <Affordable
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.white}
+        isDesktop={isDesktop}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />

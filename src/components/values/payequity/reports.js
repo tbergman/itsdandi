@@ -1,14 +1,20 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
+import { rootMargin } from "../../../helpers/utils";
 import InView from "../../inview";
 
-const Reports = ({ setNavbarStyling, windowHeight, navBarStyling }) => {
+const Reports = ({
+  setNavbarStyling,
+  windowHeight,
+  navBarStyling,
+  isDesktop,
+}) => {
   return (
     <InView
       variant="pages.values.payequity.reports"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

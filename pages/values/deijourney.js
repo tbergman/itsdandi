@@ -20,10 +20,15 @@ import {
 } from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
 import MobileMenu from "../../src/components/mobilemenu";
+import { useMediaQuery } from "react-responsive";
+import devices from "../../src/helpers/devices";
 
 const Values = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
+  const isDesktop = useMediaQuery({
+    query: devices.desktop,
+  });
   const [windowHeight, setWindowHeight] = useState(500);
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
@@ -90,9 +95,10 @@ const Values = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
+        isDesktop={isDesktop}
         bg="#FFF"
         styling={{
-          mb: [0, 9],
+          mb: [12, 9],
         }}
         title={`DEI is a journey. Dandi works with you every step of the way.`}
         body={`Whether your business is just starting to focus on DEI or already has programs underway, Dandi has the flexibility to meet you where you are.`}
@@ -100,27 +106,36 @@ const Values = () => {
         <TopGraphic />
       </Header>
       <TextBlock
+        isDesktop={isDesktop}
         title={`01. Getting Started`}
         sections={sections}
         styling={{
-          bg: "rgba(242, 242, 242, 0.96)",
+          bg: "rgba(250, 250, 250, 0.96)",
         }}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.gray}
       />
       <TextBlock
+        isDesktop={isDesktop}
         title={`02. Unpacking the data`}
         sections={sections}
+        styling={{
+          ".text": {
+            mb: [21, 0],
+          },
+        }}
         navBarStyling={theme.components.navigation.white}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
       />
       <Partners
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
       />
       <TextBlock
+        isDesktop={isDesktop}
         title={`03. Taking action`}
         sections={sections}
         setNavbarStyling={setNavbarStyling}
@@ -128,16 +143,14 @@ const Values = () => {
         navBarStyling={theme.components.navigation.white}
       />
       <TextBlock
+        isDesktop={isDesktop}
         title={`04. Sustaining Progress`}
         sections={sections}
         styling={{
-          bg: "white",
+          bg: "rgba(250, 250, 250, 0.96)",
         }}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        styling={{
-          bg: "rgba(242, 242, 242, 0.96)",
-        }}
         navBarStyling={theme.components.navigation.gray}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
