@@ -1,14 +1,20 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
+import { rootMargin } from "../../../helpers/utils";
 import InView from "../../inview";
 
-const NewInsights = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const NewInsights = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+}) => {
   return (
     <InView
       variant="pages.product.analyze.newinsights"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

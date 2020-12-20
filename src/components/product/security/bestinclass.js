@@ -2,8 +2,14 @@
 import { jsx, Styled } from "theme-ui";
 import { motion } from "framer-motion";
 import InView from "../../inview";
+import { rootMargin } from "../../../helpers/utils";
 
-const BestInClass = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const BestInClass = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+}) => {
   const modules = [
     {
       length: "65%",
@@ -29,7 +35,7 @@ const BestInClass = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
       variant="pages.product.security.bestinclass"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{
@@ -57,12 +63,12 @@ const BestInClass = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
                   <motion.line
                     x1="0%"
                     y1="50%"
-                    x2="99%"
+                    x2="97%"
                     y2="50%"
                     stroke={module.color}
                     strokeWidth="2"
                   />
-                  <motion.circle cx="99%" cy="50%" r="5" fill={module.color} />
+                  <motion.circle cx="97%" cy="50%" r="5" fill={module.color} />
                 </svg>
               </div>
               <div className="text">

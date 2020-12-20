@@ -3,14 +3,20 @@ import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
 import devices from "../../../helpers/devices";
+import { rootMargin } from "../../../helpers/utils";
 
-const Thoughtful = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const Thoughtful = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+}) => {
   return (
     <InView
       variant="pages.product.measure.thoughtful"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

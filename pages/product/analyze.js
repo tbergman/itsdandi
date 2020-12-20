@@ -10,6 +10,7 @@ import InAction from "../../src/components/product/analyze/inaction";
 import Sharable from "../../src/components/product/analyze/sharable";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
+import TopContent from "../../src/components/product/analyze/topcontent";
 import { useState, useEffect } from "react";
 
 import {
@@ -21,10 +22,15 @@ import {
 import MobileNav from "../../src/components/mobilenav";
 import SubMenu from "../../src/components/submenu";
 import MobileMenu from "../../src/components/mobilemenu";
+import { useMediaQuery } from "react-responsive";
+import devices from "../../src/helpers/devices";
 
 const Product = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
+  const isDesktop = useMediaQuery({
+    query: devices.desktop,
+  });
   const [windowHeight, setWindowHeight] = useState(500);
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.gray,
@@ -72,25 +78,31 @@ const Product = () => {
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{
-          mb: [0, 23],
+          mb: [12, 23],
         }}
-      ></Header>
+      >
+        <TopContent />
+      </Header>
       <Insights
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
       />
       <NewInsights
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
       />
       <InAction
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
       />
       <Sharable
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}

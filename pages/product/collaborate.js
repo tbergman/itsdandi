@@ -8,6 +8,7 @@ import DeiWork from "../../src/components/product/collaborate/deiwork";
 import Customizable from "../../src/components/product/collaborate/customizable";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
+import TopContent from "../../src/components/product/collaborate/topcontent";
 import { useState, useEffect } from "react";
 
 import {
@@ -19,10 +20,15 @@ import {
 import MobileNav from "../../src/components/mobilenav";
 import SubMenu from "../../src/components/submenu";
 import MobileMenu from "../../src/components/mobilemenu";
+import { useMediaQuery } from "react-responsive";
+import devices from "../../src/helpers/devices";
 
 const Product = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
+  const isDesktop = useMediaQuery({
+    query: devices.desktop,
+  });
   const [windowHeight, setWindowHeight] = useState(500);
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.gray,
@@ -69,15 +75,19 @@ const Product = () => {
         windowHeight={windowHeight}
         bg="#fff"
         styling={{
-          mb: [0, 23],
+          mb: [13, 23],
         }}
-      ></Header>
+      >
+        <TopContent />
+      </Header>
       <DeiWork
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
       />
       <Customizable
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}

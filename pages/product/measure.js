@@ -91,7 +91,7 @@ const Product = () => {
         windowHeight={windowHeight}
       />
 
-      {/* <Quote
+      <Quote
         isDesktop={isDesktop}
         imageUrl={`/assets/images/tamarcus-brown.png`}
         text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity
@@ -121,7 +121,7 @@ const Product = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
-      /> */}
+      />
       <SubNavigation next={subPages_.next} />
       <Footer />
     </div>

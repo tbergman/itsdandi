@@ -1,15 +1,21 @@
 /** @jsx jsx */
 import { jsx, Styled, useThemeUI } from "theme-ui";
 import InView from "../../inview";
+import { rootMargin } from "../../../helpers/utils";
 
-const Intersectional = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const Intersectional = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+}) => {
   const { theme } = useThemeUI();
   return (
     <InView
       variant="pages.product.measure.intersectional"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

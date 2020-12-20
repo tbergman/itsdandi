@@ -2,8 +2,14 @@
 import { jsx, Styled } from "theme-ui";
 import InView from "../../inview";
 import { useState, useEffect } from "react";
+import { rootMargin } from "../../../helpers/utils";
 
-const DeiWork = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const DeiWork = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+}) => {
   const [current, setCurrent] = useState(0);
   const time = 5000;
 
@@ -17,7 +23,7 @@ const DeiWork = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
     {
       header: "Dashboard templates",
       body: `Inspired by the best dashboards we’ve seen on the platform, Dandi templates make it easy to start tracking the right things, right away.`,
-      imageUrl: "/assets/images/03.3_dashboard_templats.png",
+      imageUrl: ["/assets/images/03.3_dashboard_templats.png"],
     },
     {
       header: "Visualizations",
@@ -41,7 +47,7 @@ const DeiWork = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
       variant="pages.product.collaborate.deiwork"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

@@ -1,9 +1,15 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
+import { rootMargin } from "../../../helpers/utils";
 import InView from "../../inview";
 
-const Workflows = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const Workflows = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+}) => {
   const categories = [
     {
       title: `Role-based access`,
@@ -23,7 +29,7 @@ const Workflows = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
       variant="pages.product.security.workflows"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

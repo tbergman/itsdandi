@@ -10,6 +10,7 @@ import Workflows from "../../src/components/product/security/workflows";
 import Connect from "../../src/components/product/security/connect";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
+import TopContent from "../../src/components/product/security/topcontent";
 import { useState, useEffect } from "react";
 
 import {
@@ -21,10 +22,15 @@ import {
 import MobileNav from "../../src/components/mobilenav";
 import SubMenu from "../../src/components/submenu";
 import MobileMenu from "../../src/components/mobilemenu";
+import { useMediaQuery } from "react-responsive";
+import devices from "../../src/helpers/devices";
 
 const Product = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
+  const isDesktop = useMediaQuery({
+    query: devices.desktop,
+  });
   const [windowHeight, setWindowHeight] = useState(500);
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
@@ -71,19 +77,23 @@ const Product = () => {
         windowHeight={windowHeight}
         bg="#fff"
         styling={{
-          mb: [0, 16],
+          mb: [13, 16],
           h1: {
-            fontSize: ["52px"],
-            lineHeight: ["58px"],
+            fontSize: ["36px", "52px"],
+            lineHeight: ["43px", "58px"],
           },
         }}
-      ></Header>
+      >
+        <TopContent />
+      </Header>
       <BestInClass
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
       />
       <Quote
+        isDesktop={isDesktop}
         imageUrl="/assets/images/tamarcus-brown.png"
         text={`I trust Dandi with our most sensitive info`}
         name={`Name Namesson`}
@@ -94,11 +104,13 @@ const Product = () => {
         windowHeight={windowHeight}
       />
       <Workflows
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
       />
       <Connect
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}

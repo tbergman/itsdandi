@@ -4,14 +4,20 @@ import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InsightsCircle from "./insightscircle";
 import InView from "../../inview";
+import { rootMargin } from "../../../helpers/utils";
 
-const Insights = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const Insights = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+}) => {
   return (
     <InView
       variant="pages.product.analyze.insights"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

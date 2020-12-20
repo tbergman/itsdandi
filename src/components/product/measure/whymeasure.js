@@ -1,9 +1,14 @@
 /** @jsx jsx */
-import { jsx, Styled, useThemeUI } from "theme-ui";
+import { jsx, Styled } from "theme-ui";
+import { rootMargin } from "../../../helpers/utils";
 import InView from "../../inview";
 
-const WhyMeasure = ({ windowHeight, setNavbarStyling, navBarStyling }) => {
-  const { theme } = useThemeUI();
+const WhyMeasure = ({
+  windowHeight,
+  setNavbarStyling,
+  navBarStyling,
+  isDesktop,
+}) => {
   const categories = [
     {
       color: "#FFD93B",
@@ -26,7 +31,7 @@ const WhyMeasure = ({ windowHeight, setNavbarStyling, navBarStyling }) => {
       variant="pages.product.measure.whymeasure"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

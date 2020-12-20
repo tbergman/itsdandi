@@ -1,13 +1,19 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
+import { rootMargin } from "../../../helpers/utils";
 import InView from "../../inview";
 
-const Metrics = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const Metrics = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+}) => {
   return (
     <InView
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
       variant="pages.product.measure.metrics"
     >
       <div
