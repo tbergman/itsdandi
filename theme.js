@@ -1274,33 +1274,26 @@ const theme = {
     },
     product: {
       measure: {
-        // header: {
-        //   bg: "rgba(242, 242, 242, 0.5)",
-        //   ".text": {
-        //     gridArea: ["1/1/2/-1"],
-        //     mt: [18],
-        //     color: "black",
-        //     h1: {},
-        //     h3: {
-        //       mt: [2],
-        //       mb: [12],
-        //       fontWeight: "400",
-        //       lineHeight: ["30px"],
-        //       fontSize: ["20px"],
-        //     },
-        //   },
-        //   ".buttonWrapper": {
-        //     gridArea: ["2/1/3/-1"],
-        //     position: "relative",
-        //     ".button": {
-        //       position: "absolute",
-        //       top: ["-28px"],
-        //     },
-        //   },
-        // },
         topcontent: {
-          ".button": {},
-          ".graphics": {},
+          position: "relative",
+          ".buttonwrapper": {
+            position: "absolute",
+            bottom: ["-28px", "-25px"],
+            left: ["20px", "unset"],
+          },
+          ".graphics": {
+            position: "absolute",
+            left: [(t) => `calc(calc(${t.colWidthMob} * 4) + 70px)`],
+            right: 0,
+            bottom: 0,
+            overflow: "hidden",
+            display: "flex",
+            alignItems: "flex-end",
+            svg: {
+              width: "100%",
+              height: "100%",
+            },
+          },
         },
         metrics: {
           bg: "transparent",
@@ -3277,13 +3270,14 @@ const theme = {
       button: {
         width: [(t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`, "unset"],
         bg: "blue",
-        borderRadius: ["200px"],
+        borderRadius: ["168px", "180px"],
+        height: ["56px", "50px"],
         ".button": {
           display: "flex",
-          alignItem: "center",
+          alignItems: "center",
           justifyContent: "center",
           p: {
-            py: [2],
+            // py: [2],
             lineHeight: "18.88px",
             fontFamily: "medium",
           },

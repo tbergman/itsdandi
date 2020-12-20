@@ -77,10 +77,10 @@ const Product = () => {
         navBarStyling={theme.components.navigation.gray}
         title={`DEI, made to measure`}
         body={`Simple. Precise. Eye-opening. Dandi sets the new standard for DEI measurement.`}
+        bg="rgba(242, 242, 242, 0.5)"
         styling={{
           mb: [12, 22],
         }}
-        bg="white"
       >
         <TopContent />
       </Header>
