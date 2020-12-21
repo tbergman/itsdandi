@@ -2074,6 +2074,28 @@ const theme = {
             },
           },
         },
+        topcontent: {
+          position: "relative",
+          ".buttonwrapper": {
+            position: "absolute",
+            bottom: ["-28px", "-25px"],
+            left: ["20px", "unset"],
+          },
+          ".graphics": {
+            position: "absolute",
+            left: [(t) => `calc(calc(${t.colWidthMob} * 4) + 70px)`, "unset"],
+
+            bottom: 0,
+            display: "flex",
+            alignItems: "flex-end",
+            svg: {
+              width: "100%",
+              height: "100%",
+              left: 0,
+              top: 0,
+            },
+          },
+        },
         connections: {
           bg: "transparent",
           color: "black",
@@ -2082,12 +2104,13 @@ const theme = {
             mt: [10, 18],
             mb: [7, 12],
             display: "flex",
+            flexFlow: ["column", "unset"],
             h2: {
-              width: [(t) => t.desktopSectionWidth],
+              width: ["100%", (t) => t.desktopSectionWidth],
             },
             p: {
-              width: [(t) => t.desktopSectionWidth],
-              ml: [(t) => t.colWidthDesktop],
+              width: ["100%", (t) => t.desktopSectionWidth],
+              ml: [0, (t) => t.colWidthDesktop],
               mt: [3, 0],
             },
           },
@@ -2096,10 +2119,13 @@ const theme = {
             mb: [7],
             display: "flex",
             flexFlow: ["row wrap"],
-            justifyContent: "space-between",
+            justifyContent: ["space-between"],
+            alignItems: ["center", "unset"],
             ".logo": {
-              flex: "0 15%",
-              mb: [12],
+              mb: [5, 12],
+              img: {
+                width: "100%",
+              },
             },
           },
         },
@@ -2129,15 +2155,21 @@ const theme = {
           },
 
           ".graphic": {
-            mt: [7],
+            mt: [0, 7],
             gridArea: ["2/1/3/-1", "1/7/2/-1"],
-            ml: [(t) => t.colWidthDesktop],
-            mb: [12],
+            ml: [0, (t) => t.colWidthDesktop],
+            mb: [10, 12],
             display: "flex",
             justifyContent: "center",
             div: {
-              height: ["235px"],
-              width: ["150px"],
+              height: [
+                (t) => `calc(calc(calc(${t.colWidthMob} * 2) + 40px) * 1.65)`,
+                "235px",
+              ],
+              width: [
+                (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
+                "150px",
+              ],
               div: {
                 height: "inherit",
                 width: "inherit",
@@ -2159,21 +2191,26 @@ const theme = {
           gridArea: ["1/1/2/-1", "1/2/2/7"],
           mr: [(t) => t.colWidthDesktop],
           mt: [18, 21],
-          mb: [15],
+          mb: [2, 15],
           h1: {
-            fontSize: ["52px"],
-            lineHeight: ["58px"],
+            fontSize: ["36px", "52px"],
+            lineHeight: ["43px", "58px"],
           },
           h3: {
             mt: [3],
+            fontSize: ["20px"],
+            lineHeight: ["30px"],
           },
         },
         ".graphic": {
           gridArea: ["2/1/3/-1", "1/7/2/-1"],
-          mt: [18, 21],
-          // width: "100vw",
-          // left: ["-20px"],
-
+          mt: [0, 21],
+          width: [(t) => `calc(calc(${t.colWidthMob} * 3) + 60px)`, "unset"],
+          left: [(t) => `calc(calc(${t.colWidthMob} * 3) + 60px)`, "unset"],
+          height: [
+            (t) => `calc(calc(calc(${t.colWidthMob} * 3) + 60px) * .6)`,
+            "unset",
+          ],
           position: "relative",
           ".box1": {
             position: "absolute",
@@ -2185,19 +2222,30 @@ const theme = {
           },
           ".box2": {
             position: "absolute",
-
             bg: "#335AFF",
             bottom: 0,
-            left: [(t) => t.colWidthDesktop],
-            width: [(t) => `calc(calc(${t.colWidthDesktop} * 4) + 200px)`],
+            left: [
+              (t) => `calc(${t.colWidthMob} * .5)`,
+              (t) => t.colWidthDesktop,
+            ],
+            width: [
+              (t) => `calc(calc(${t.colWidthMob} * 2.5) + 60px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 4) + 200px)`,
+            ],
             height: "73%",
           },
           ".box3": {
             position: "absolute",
             bottom: 0,
             height: "40%",
-            width: [(t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
-            left: [(t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`],
+            width: [
+              (t) => `calc(calc(${t.colWidthMob} * 1.5) + 20px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,
+            ],
+            left: [
+              (t) => `calc(${t.colWidthMob} + 20px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`,
+            ],
             bg: "#0227C4",
           },
           // div: {
@@ -2221,7 +2269,7 @@ const theme = {
         ".section1": {
           gridArea: ["1/1/2/-1", "1/2/2/7"],
           mt: [5, 16],
-          mb: [17],
+          mb: [8, 17],
           ".toptext": {
             mb: [3],
             p: {},
@@ -2253,9 +2301,9 @@ const theme = {
         },
         ".section2": {
           gridArea: ["3/1/4/-1", "1/7/2/-1"],
-          mt: [5, 16],
-          ml: [(t) => t.colWidthDesktop],
-          mr: [(t) => t.colWidthDesktop],
+          mt: [0, 16],
+          ml: [0, (t) => t.colWidthDesktop],
+          mr: [0, (t) => t.colWidthDesktop],
           ".calculator": {
             ".description": {
               p: {
@@ -2324,14 +2372,15 @@ const theme = {
           mt: [8, 16],
           mb: [3, 10],
           display: "flex",
+          flexFlow: ["column", "unset"],
 
           h2: {
-            width: [(t) => t.desktopSectionWidth],
+            width: ["100%", (t) => t.desktopSectionWidth],
           },
           p: {
             mt: [3, 0],
-            width: [(t) => t.desktopSectionWidth],
-            ml: [(t) => t.colWidthDesktop],
+            width: ["100%", (t) => t.desktopSectionWidth],
+            ml: [0, (t) => t.colWidthDesktop],
           },
         },
         ".table": {
@@ -2346,7 +2395,7 @@ const theme = {
             pr: ["20px", "40px"],
             display: "grid",
             gridAutoRows: ["200px"],
-            gridTemplateColumns: ["4fr 1fr fr 1fr", "4fr 1fr 2fr 1fr"],
+            gridTemplateColumns: ["4fr 1fr 1fr 1fr", "4fr 1fr 2fr 1fr"],
             ".headItem": {
               display: "flex",
               justifyContent: "center",
@@ -2380,11 +2429,10 @@ const theme = {
             ".bodyRow": {
               pl: ["20px", (t) => `calc(calc(${t.colWidthDesktop}) + 80px)`],
               pr: ["20px", "40px"],
-
               position: "relative",
               ".bodyGrid": {
                 display: "grid",
-                ml: ["20px", 0],
+                ml: [0],
                 gridTemplateColumns: ["4fr 1fr 1fr  1fr", "4fr 1fr 2fr 1fr"],
                 gridAutoRows: ["auto"],
                 ".bodyItem": {
@@ -2441,6 +2489,20 @@ const theme = {
                   height: "100%",
                 },
               },
+            },
+          },
+        },
+        topcontent: {
+          position: "relative",
+
+          ".graphics": {
+            position: "absolute",
+            bottom: 0,
+            width: [(t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`],
+            left: [(t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`, "unset"],
+            svg: {
+              width: "100%",
+              height: "100%",
             },
           },
         },
@@ -2566,6 +2628,21 @@ const theme = {
             },
           },
         },
+        topcontent: {
+          position: "relative",
+          ".graphics": {
+            position: "absolute",
+            bottom: 0,
+            left: [(t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`, "unset"],
+            width: [(t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`, "unset"],
+            display: "flex",
+            alignItems: "flex-end",
+            svg: {
+              width: "100%",
+              height: "100%",
+            },
+          },
+        },
         domore: {
           bg: "#F8F8F8",
           color: "black",
@@ -2635,17 +2712,17 @@ const theme = {
           bg: "transparent",
           color: "black",
           ".section1": {
-            width: [(t) => t.desktopSectionWidth],
+            width: ["100%", (t) => t.desktopSectionWidth],
           },
           ".section2": {
-            width: [(t) => t.desktopSectionWidth],
-            ml: [(t) => t.colWidthDesktop],
+            width: ["100%", (t) => t.desktopSectionWidth],
+            ml: [0, (t) => t.colWidthDesktop],
           },
 
           ".row1": {
             gridArea: ["1/1/2/-1", "1/3/2/-1"],
             display: "flex",
-
+            flexFlow: ["column", "unset"],
             mt: [8, 16],
             h2: {},
             p: {
@@ -2655,7 +2732,7 @@ const theme = {
           ".row2": {
             display: "flex",
             gridArea: ["2/1/3/-1", "2/3/3/-1"],
-
+            flexFlow: ["column", "unset"],
             mt: [8, 20],
             mb: [13, 21],
             h2: {},
@@ -2687,19 +2764,39 @@ const theme = {
             },
           },
         },
+        topcontent: {
+          position: "relative",
+          ".image": {
+            position: "absolute",
+            bottom: 0,
+            height: [
+              (t) => `calc(calc(calc(${t.colWidthMob} * 6) + 120px) * .59)`,
+              "unset",
+            ],
+            width: [(t) => `calc(calc(${t.colWidthMob} * 6) + 120px)`, "unset"],
+            left: ["20px", "unset"],
+            img: {
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              bottom: "-50%",
+            },
+          },
+        },
         onboarding: {
           bg: "#F8F8F8",
           color: "black",
 
           ".textmodules": {
-            mt: [15, "390px"],
-            mb: [10],
+            mt: [16, "390px"],
+            mb: [5, 10],
             gridArea: ["1/1/2/-1", "1/3/2/-1"],
             display: "flex",
             flexFlow: ["column"],
             ".textblock": {
               mb: [7],
               display: "flex",
+              flexFlow: ["column", "unset"],
               position: "relative",
 
               ".divider": {
@@ -2720,15 +2817,15 @@ const theme = {
                 },
               },
               ".toptext": {
-                width: [(t) => t.desktopSectionWidth],
+                width: ["100%", (t) => t.desktopSectionWidth],
                 mt: [2],
                 mb: [3],
                 h2: {},
                 p: { mt: [1] },
               },
               ".list": {
-                width: [(t) => t.desktopSectionWidth],
-                ml: [(t) => t.colWidthDesktop],
+                width: ["100%", (t) => t.desktopSectionWidth],
+                ml: [0, (t) => t.colWidthDesktop],
                 mt: [2],
                 ".listtitle": {
                   mb: [1],
@@ -2764,14 +2861,16 @@ const theme = {
           ".imagewrapper": {
             position: "relative",
             gridArea: ["1/1/2/-1", "1/8/2/-1"],
-            height: ["210px", "100%"],
+            height: ["calc(100vw * .56)", "100%"],
             width: [
               "100vw",
               (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
             ],
             left: ["-20px", 0],
             img: {
-              // position: "absolute",
+              position: "absolute",
+              top: 0,
+              left: 0,
               width: "100%",
               height: "100%",
             },
@@ -2782,9 +2881,10 @@ const theme = {
             mr: [0, (t) => t.colWidthDesktop],
             display: "flex",
             justifyContent: "center",
-            flexFlow: ["row", "column"],
-            // mt: [6],
-            // mb: [8],
+            flexFlow: ["column"],
+            mb: [8, 0],
+            mt: [6, 0],
+
             h2: {},
             p: {
               mt: [3],
@@ -2809,6 +2909,7 @@ const theme = {
             mb: [7],
             position: "relative",
             display: "flex",
+            flexFlow: ["column", "unset"],
 
             ".divider": {
               position: "absolute",
@@ -2828,15 +2929,15 @@ const theme = {
               },
             },
             ".toptext": {
-              width: [(t) => t.desktopSectionWidth],
+              width: ["100%", (t) => t.desktopSectionWidth],
               mt: [2],
               mb: [3],
               h2: {},
               p: { mt: [1] },
             },
             ".list": {
-              width: [(t) => t.desktopSectionWidth],
-              ml: [(t) => t.colWidthDesktop],
+              width: ["100%", (t) => t.desktopSectionWidth],
+              ml: [0, (t) => t.colWidthDesktop],
               mt: [2],
               ".listtitle": {
                 mb: [1],
@@ -2926,6 +3027,14 @@ const theme = {
       default: {
         bg: "black",
         color: "white",
+        ".main": {
+          a: {
+            color: "white !important",
+          },
+          path: {
+            stroke: "white !important",
+          },
+        },
         ".item": {
           color: "white",
         },
@@ -2952,6 +3061,14 @@ const theme = {
       violet: {
         bg: "violet",
         color: "black",
+        ".main": {
+          a: {
+            color: "black !important",
+          },
+          path: {
+            stroke: "black !important",
+          },
+        },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
@@ -2976,6 +3093,14 @@ const theme = {
       gray: {
         bg: "#F8F8F8",
         color: "black",
+        ".main": {
+          a: {
+            color: "black !important",
+          },
+          path: {
+            stroke: "black !important",
+          },
+        },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
@@ -3000,6 +3125,14 @@ const theme = {
       gray2: {
         bg: "#F2F2F2",
         color: "black",
+        ".main": {
+          a: {
+            color: "black !important",
+          },
+          path: {
+            stroke: "black !important",
+          },
+        },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
@@ -3024,6 +3157,14 @@ const theme = {
       white: {
         bg: "#FFF",
         color: "black",
+        ".main": {
+          a: {
+            color: "black !important",
+          },
+          path: {
+            stroke: "black !important",
+          },
+        },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
@@ -3048,6 +3189,14 @@ const theme = {
       lightTurquoise: {
         bg: "lightTurquoise",
         color: "black",
+        ".main": {
+          a: {
+            color: "black !important",
+          },
+          path: {
+            stroke: "black !important",
+          },
+        },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
@@ -3072,6 +3221,14 @@ const theme = {
       yellow: {
         bg: "yellow",
         color: "black",
+        ".main": {
+          a: {
+            color: "black !important",
+          },
+          path: {
+            stroke: "black !important",
+          },
+        },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
@@ -3547,29 +3704,30 @@ const theme = {
         bg: "#F8F8F8",
         color: "black",
         ".toptext": {
-          mt: [16],
+          mt: [8, 16],
           mb: [12],
           gridArea: ["1/1/2/-1", "1/3/2/-1"],
           display: "flex",
+          flexFlow: ["column", "unset"],
 
           ".section1": {
-            width: [(t) => t.desktopSectionWidth],
+            width: ["100%", (t) => t.desktopSectionWidth],
           },
           ".section2": {
-            ml: [(t) => t.colWidthDesktop],
-            width: [(t) => t.desktopSectionWidth],
+            ml: [0, (t) => t.colWidthDesktop],
+            width: ["100%", (t) => t.desktopSectionWidth],
 
             h2: {},
             p: {
-              mt: [1],
+              mt: [2, 1],
             },
           },
         },
 
         ".people": {
           gridArea: ["2/1/3/-1", "2/3/3/-1"],
-          width: ["100vw", "unset"],
-          left: ["-20px", "unset"],
+          width: ["unset"],
+          left: ["unset"],
           position: "relative",
           mb: [14, 16],
           display: "flex",
@@ -3579,8 +3737,11 @@ const theme = {
             mr: 0,
           },
           ".person": {
-            width: [(t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`],
-            mr: [(t) => `calc(${t.colWidthDesktop} *.848)`],
+            width: [
+              (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
+            ],
+            mr: [0, (t) => `calc(${t.colWidthDesktop} *.848)`],
 
             // flex: ["0 50%", "0 25%"],
             mb: [4],

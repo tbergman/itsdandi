@@ -8,6 +8,7 @@ import Better from "../../src/components/community/board/better";
 import { subPages } from "../../src/helpers/subpages";
 import People from "../../src/components/community/people";
 import pages from "../../src/helpers/community/pages";
+import TopContent from "../../src/components/community/board/topcontent";
 import SubMenu from "../../src/components/submenu";
 import { useState, useEffect } from "react";
 
@@ -19,10 +20,15 @@ import {
 } from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
 import MobileMenu from "../../src/components/mobilemenu";
+import { useMediaQuery } from "react-responsive";
+import devices from "../../src/helpers/devices";
 
 const Community = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
+  const isDesktop = useMediaQuery({
+    query: devices.desktop,
+  });
   const [windowHeight, setWindowHeight] = useState(500);
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
@@ -130,6 +136,7 @@ const Community = () => {
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
       <SubMenu navBarStyling={navBarStyling} subPages={subPages_.subPages} />
       <Header
+        isDesktop={isDesktop}
         title={`Working together to advance DEI`}
         body={`A collective of leading thinkers and change-makers, Dandi’s DEI Advisory Board plays a crucial role in shaping our platform.`}
         setNavbarStyling={setNavbarStyling}
@@ -137,10 +144,13 @@ const Community = () => {
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{
-          mb: [16],
+          mb: [17, 16],
         }}
-      ></Header>
+      >
+        <TopContent />
+      </Header>
       <People
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}

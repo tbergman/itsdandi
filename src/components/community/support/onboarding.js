@@ -2,8 +2,14 @@
 import { jsx } from "theme-ui";
 import TextBlock from "./textblock";
 import InView from "../../inview";
+import { rootMargin } from "../../../helpers/utils";
 
-const Onboarding = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const Onboarding = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+}) => {
   const modules = [
     {
       title: "Onboarding",
@@ -32,7 +38,7 @@ const Onboarding = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
       variant="pages.community.support.onboarding"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

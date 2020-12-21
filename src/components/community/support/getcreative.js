@@ -2,14 +2,20 @@
 import { jsx } from "theme-ui";
 import TextBlock from "./textblock";
 import InView from "../../inview";
+import { rootMargin } from "../../../helpers/utils";
 
-const GetCreative = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const GetCreative = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+}) => {
   return (
     <InView
       variant="pages.community.support.getcreative"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

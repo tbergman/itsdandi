@@ -7,6 +7,7 @@ import Header from "../../src/components/header";
 import Onboarding from "../../src/components/community/support/onboarding";
 import LearnMore from "../../src/components/community/support/learnmore";
 import GetCreative from "../../src/components/community/support/getcreative";
+import TopContent from "../../src/components/community/support/topcontent";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/community/pages";
 
@@ -21,11 +22,15 @@ import {
 import MobileNav from "../../src/components/mobilenav";
 import SubMenu from "../../src/components/submenu";
 import MobileMenu from "../../src/components/mobilemenu";
+import { useMediaQuery } from "react-responsive";
+import devices from "../../src/helpers/devices";
 
 const Community = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
-
+  const isDesktop = useMediaQuery({
+    query: devices.desktop,
+  });
   const [windowHeight, setWindowHeight] = useState(500);
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
@@ -65,6 +70,7 @@ const Community = () => {
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
       <SubMenu navBarStyling={navBarStyling} subPages={subPages_.subPages} />
       <Header
+        isDesktop={isDesktop}
         title={`The support you need to advance DEI`}
         body={`Some software companies are hands-off. But that’s not Dandi.`}
         setNavbarStyling={setNavbarStyling}
@@ -72,20 +78,25 @@ const Community = () => {
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{
-          mb: [20],
+          mb: [21, 20],
         }}
-      ></Header>
+      >
+        <TopContent />
+      </Header>
       <Onboarding
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
       />
       <LearnMore
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.yellow}
         windowHeight={windowHeight}
       />
       <GetCreative
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}

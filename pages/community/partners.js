@@ -9,6 +9,7 @@ import People from "../../src/components/community/people";
 import Curious from "../../src/components/community/partners/curious";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/community/pages";
+import TopContent from "../../src/components/community/partners/topcontent";
 import SubMenu from "../../src/components/submenu";
 import { useState, useEffect } from "react";
 
@@ -20,11 +21,15 @@ import {
 } from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
 import MobileMenu from "../../src/components/mobilemenu";
+import { useMediaQuery } from "react-responsive";
+import devices from "../../src/helpers/devices";
 
 const Community = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
-
+  const isDesktop = useMediaQuery({
+    query: devices.desktop,
+  });
   const [windowHeight, setWindowHeight] = useState(500);
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
@@ -111,6 +116,7 @@ const Community = () => {
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
       <SubMenu subPages={subPages_.subPages} navBarStyling={navBarStyling} />
       <Header
+        isDesktop={isDesktop}
         title={`Your partners in change`}
         body={`Dandi's Marketplace Partners are here to help you navigate the challenges you meet along the way.`}
         setNavbarStyling={setNavbarStyling}
@@ -118,10 +124,13 @@ const Community = () => {
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{
-          mb: [16],
+          mb: [18, 16],
         }}
-      ></Header>
+      >
+        <TopContent />
+      </Header>
       <People
+        isDesktop={isDesktop}
         title={`Do more with your data`}
         body={`Composed of leading consultants and practitioners, Dandi’s Marketplace Partners are experts at leveraging data to advance DEI initiatives. Whether it’s helping make sense of your numbers, implementing new programs, or managing through organizational change, Partners can provide the extra know-how needed to make good things happen.`}
         setNavbarStyling={setNavbarStyling}
@@ -131,6 +140,7 @@ const Community = () => {
       />
 
       <Curious
+        isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}

@@ -2,14 +2,20 @@
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
+import { rootMargin } from "../../../helpers/utils";
 
-const LearnMore = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const LearnMore = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+}) => {
   return (
     <InView
       variant="pages.community.support.learnmore"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

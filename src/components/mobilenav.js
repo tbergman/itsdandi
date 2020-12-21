@@ -67,10 +67,10 @@ const MobileNav = ({ menuOpen, setMenuOpen, navBarStyling, subPages }) => {
           >
             {/* <BigLogo navBarStyling={navBarStyling} menuOpen={menuOpen} /> */}
 
-            {/* <motion.svg
+            <motion.svg
               style={{
+                opacity: 1,
                 // opacity: menuOpen ? 1 : opacityAnim,
-                opacity: 0,
               }}
               width="32"
               height="27"
@@ -90,7 +90,7 @@ const MobileNav = ({ menuOpen, setMenuOpen, navBarStyling, subPages }) => {
                 d="M11.9936 5.34394L11.9936 0.504883L7.16412 0.504883L7.16412 5.34394L11.9936 5.34394Z"
                 fill="#1A1A1D"
               />
-            </motion.svg> */}
+            </motion.svg>
           </a>
         </Link>
         <div onClick={() => setMenuOpen(!menuOpen)} className="hamburger">

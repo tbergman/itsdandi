@@ -2,14 +2,20 @@
 import { jsx, Styled } from "theme-ui";
 import Table from "./table";
 import InView from "../inview";
+import { rootMargin } from "../../helpers/utils";
 
-const BetterInsights = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const BetterInsights = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+}) => {
   return (
     <InView
       variant="pages.pricing.betterinsights"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

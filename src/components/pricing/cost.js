@@ -2,8 +2,9 @@
 import { jsx, Styled } from "theme-ui";
 import Calculator from "./calculator";
 import InView from "../inview";
+import { rootMargin } from "../../helpers/utils";
 
-const Cost = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const Cost = ({ setNavbarStyling, navBarStyling, windowHeight, isDesktop }) => {
   const bullets = [
     `Our customers are billed annually. We charge $10 per employee, per year.`,
     `There is also a one-time implementation fee, and a monthly data processing charge`,
@@ -13,7 +14,7 @@ const Cost = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
       variant="pages.pricing.cost"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{

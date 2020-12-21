@@ -1,26 +1,40 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
+import { rootMargin } from "../../../helpers/utils";
 import InView from "../../inview";
 
-const Connections = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
+const Connections = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+}) => {
   const logos = [
-    "/assets/images/product/integrations/workday.png",
-    "/assets/images/product/integrations/successfactor.png",
-    "/assets/images/product/integrations/adp.png",
-    "/assets/images/product/integrations/ultipro.png",
-    "/assets/images/product/integrations/namely.png",
-    "/assets/images/product/integrations/bamboohr.png",
-    "/assets/images/product/integrations/oracle.png",
-    "/assets/images/product/integrations/lever.png",
-    "/assets/images/product/integrations/greenhouse.png",
-    "/assets/images/product/integrations/cims.png",
+    { url: "/assets/images/product/integrations/workday.png", flex: "0 30%" },
+    { url: "/assets/images/product/integrations/adp.png", flex: "0 30%" },
+    { url: "/assets/images/product/integrations/oracle.png", flex: "0 30%" },
+    {
+      url: "/assets/images/product/integrations/successfactor.png",
+      flex: "0 70%",
+    },
+    { url: "/assets/images/product/integrations/cims.png", flex: "0 20%" },
+    { url: "/assets/images/product/integrations/lever.png", flex: "0 40%" },
+    { url: "/assets/images/product/integrations/namely.png", flex: "0 25%" },
+    { url: "/assets/images/product/integrations/ultipro.png", flex: "0 20%" },
+
+    { url: "/assets/images/product/integrations/bamboohr.png", flex: "0 45%" },
+
+    {
+      url: "/assets/images/product/integrations/greenhouse.png",
+      flex: "0 45%",
+    },
   ];
   return (
     <InView
       variant="pages.product.integrations.connections"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{
@@ -36,9 +50,15 @@ const Connections = ({ setNavbarStyling, navBarStyling, windowHeight }) => {
           </Styled.p>
         </div>
         <div className="logos">
-          {logos.map((url, i) => (
-            <div className="logo" key={i}>
-              <img src={url} alt="" />
+          {logos.map((logo, i) => (
+            <div
+              sx={{
+                flex: logo.flex,
+              }}
+              className="logo"
+              key={i}
+            >
+              <img src={logo.url} alt="" />
             </div>
           ))}
         </div>

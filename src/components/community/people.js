@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
+import { rootMargin } from "../../helpers/utils";
 import InView from "../inview";
 import Person from "./person";
 
@@ -9,6 +10,7 @@ const People = ({
   windowHeight,
   title,
   body,
+  isDesktop,
   people,
 }) => {
   return (
@@ -16,7 +18,7 @@ const People = ({
       variant="components.shared.people"
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
-      rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
+      rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
         sx={{
