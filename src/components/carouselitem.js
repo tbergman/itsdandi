@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui";
 import { motion } from "framer-motion";
 
-const CarouselItem = ({ header, current, children }) => {
+const CarouselItem = ({ header, current, progressBarBg, children }) => {
   return (
     <div className="item">
       <motion.div layout className="header">
@@ -16,6 +16,9 @@ const CarouselItem = ({ header, current, children }) => {
           className="progressBar"
         >
           <motion.div
+            sx={{
+              bg: progressBarBg,
+            }}
             className={current ? "animation active" : "animation"}
           ></motion.div>
         </div>

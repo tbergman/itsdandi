@@ -28,11 +28,10 @@ const Home = () => {
   const isDesktop = useMediaQuery({ query: devices.desktop });
   const [menuOpen, setMenuOpen] = useState(false);
   const [windowHeight, setWindowHeight] = useState(500);
+  const [staticLogo, setStaticLogo] = useState(false);
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.default,
   });
-
-  console.log(isDesktop);
 
   const toggleMenu = (menuOpen) => {
     const body = document.body;
@@ -54,7 +53,12 @@ const Home = () => {
         bg: "black",
       }}
     >
-      <Navigation current={`home`} navBarStyling={navBarStyling} />
+      <Navigation
+        current={`home`}
+        navBarStyling={navBarStyling}
+        staticLogo={staticLogo}
+        setStaticLogo={setStaticLogo}
+      />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}

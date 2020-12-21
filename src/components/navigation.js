@@ -4,8 +4,9 @@ import Link from "next/link";
 import { ReactSVG } from "react-svg";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import BigLogo from "./home/bigLogo";
 
-const Navigation = ({ current, navBarStyling }) => {
+const Navigation = ({ current, navBarStyling, staticLogo, setStaticLogo }) => {
   return (
     <motion.nav
       sx={{
@@ -17,6 +18,11 @@ const Navigation = ({ current, navBarStyling }) => {
       <div className="logowrapper">
         <Link href="/">
           <a className="logo">
+            {/* <BigLogo
+              navBarStyling={navBarStyling}
+              staticLogo={staticLogo}
+              setStaticLogo={setStaticLogo}
+            /> */}
             <ReactSVG src="/assets/svgs/smile.svg" />
           </a>
         </Link>

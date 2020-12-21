@@ -97,18 +97,13 @@ const theme = {
         bg: "transparent",
         bigLogo: {
           svg: {
-            mb: ["20px", "40px"],
-            top: ["22px", "44px"],
-            left: ["20px", "40px"],
-            position: "fixed",
             position: "fixed",
             zIndex: 9999,
-            top: ["22px", "44px"],
+            top: ["22px", "-25px"],
             left: ["20px", "40px"],
             height: [(t) => t.colWidthMob, (t) => t.colWidthDesktop],
             width: ["125px", "367px"],
             mb: ["20px", "40px"],
-            // transformOrigin: "50% ",
           },
         },
         ".text": {
@@ -357,7 +352,7 @@ const theme = {
 
         ".carousel": {
           mt: ["30px"],
-          mb: [24],
+          mb: [12, 24],
           position: "relative",
           gridArea: ["3/1/4/-1", "2/1/3/-1"],
           width: ["100%", "100vw"],
@@ -378,7 +373,7 @@ const theme = {
             },
           },
           ".imagewrapper": {
-            gridArea: ["1/7/3/-1"],
+            gridArea: ["2/1/3/-1", "1/7/3/-1"],
             mt: [4, 0],
             mb: [4, 0],
             overflow: ["hidden", "unset"],
@@ -392,6 +387,11 @@ const theme = {
               width: ["unset", "100%"],
               left: ["20px", "unset"],
             },
+          },
+          ".carouselwrapper": {
+            mt: [0, 4],
+            gridArea: ["3/1/4/-1", "2/2/3/6"],
+            width: "100%",
           },
           ".texts": {
             gridArea: ["2/2/3/6"],
@@ -510,12 +510,12 @@ const theme = {
           width: "100vw",
           left: ["-20px", "-40px"],
           position: "relative",
-          overflowX: "scroll",
           overflowY: "hidden",
           display: "flex",
           flexFlow: "column",
           ".row1": {
-            width: "10000px",
+            width: "100%",
+
             display: "flex",
             flexFlow: ["row nowrap"],
             alignItems: "center",
@@ -3674,7 +3674,7 @@ const theme = {
               borderRadius: "6px",
               bg: "rgba(242, 242, 242, 0.24)",
               ".animation": {
-                bg: "yellow",
+                // bg: "yellow",
                 width: "100%",
                 height: "0",
                 borderRadius: "6px",

@@ -50,25 +50,32 @@ const CarouselMain = () => {
       <div className="imagewrapper">
         <img src={images[current]} alt="" />
       </div>
-      <div
-        sx={{
-          variant: "components.shared.carousel",
-        }}
-      >
-        {slides.map((slide, i) => (
-          <CarouselItem key={i} header={slide.header} current={current === i}>
-            <Styled.p
-              sx={{
-                color: "rgba(242, 242, 242, 0.7)",
-              }}
+      <div className="carouselwrapper">
+        <div
+          sx={{
+            variant: "components.shared.carousel",
+          }}
+        >
+          {slides.map((slide, i) => (
+            <CarouselItem
+              key={i}
+              header={slide.header}
+              progressBarBg="turquoise"
+              current={current === i}
             >
-              {slide.body}
-            </Styled.p>
-            <div className="link">
-              <LearnMoreLink href="/" text="Learn more" color="#F9D2FF" />
-            </div>
-          </CarouselItem>
-        ))}
+              <Styled.p
+                sx={{
+                  color: "rgba(242, 242, 242, 0.7)",
+                }}
+              >
+                {slide.body}
+              </Styled.p>
+              <div className="link">
+                <LearnMoreLink href="/" text="Learn more" color="#F9D2FF" />
+              </div>
+            </CarouselItem>
+          ))}
+        </div>
       </div>
     </div>
   );
