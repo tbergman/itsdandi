@@ -9,7 +9,7 @@ const Quote = ({
   windowHeight,
   bg,
   navBarStyling,
-  imageUrl,
+  image,
   name,
   title,
   text,
@@ -30,7 +30,11 @@ const Quote = ({
         }}
       >
         <div className="imagewrapper">
-          <img src={imageUrl} alt="" />
+          <picture>
+            <source media="(min-width: 800px)" srcSet={image.desktop}></source>
+            <source srcSet={image.mobile}></source>
+            <img src={image.mobile} alt="" />
+          </picture>
         </div>
         <div className="text">
           <ReactSVG className="quotation" src="/assets/svgs/quotation.svg" />

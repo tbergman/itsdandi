@@ -113,7 +113,10 @@ const Home = () => {
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.gray}
         bg="#FAFAFA"
-        imageUrl="/assets/images/tamarcus-brown.png"
+        image={{
+          desktop: "/assets/images/tamarcus-brown-desktop.png",
+          mobile: "/assets/images/tamarcus-brown.png",
+        }}
         name={`Name Namesson`}
         title={`Ceo, Company`}
         text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity.`}

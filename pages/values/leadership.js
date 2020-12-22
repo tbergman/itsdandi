@@ -131,7 +131,10 @@ lifecycle.`,
         bg="yellow"
         text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity
 `}
-        imageUrl="/assets/images/tamarcus-brown.png"
+        image={{
+          desktop: "/assets/images/tamarcus-brown-desktop.png",
+          mobile: "/assets/images/tamarcus-brown.png",
+        }}
       />
       <SubNavigation
         next={{

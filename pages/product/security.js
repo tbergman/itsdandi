@@ -94,7 +94,10 @@ const Product = () => {
       />
       <Quote
         isDesktop={isDesktop}
-        imageUrl="/assets/images/tamarcus-brown.png"
+        image={{
+          desktop: "/assets/images/tamarcus-brown-desktop.png",
+          mobile: "/assets/images/tamarcus-brown.png",
+        }}
         text={`I trust Dandi with our most sensitive info`}
         name={`Name Namesson`}
         title={`Ceo,Company`}

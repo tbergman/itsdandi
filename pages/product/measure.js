@@ -82,7 +82,7 @@ const Product = () => {
           mb: [12, 22],
         }}
       >
-        <TopContent />
+        <TopContent isDesktop={isDesktop} />
       </Header>
       <Metrics
         isDesktop={isDesktop}
@@ -93,7 +93,10 @@ const Product = () => {
 
       <Quote
         isDesktop={isDesktop}
-        imageUrl={`/assets/images/tamarcus-brown.png`}
+        image={{
+          desktop: `/assets/images/tamarcus-brown-desktop.png`,
+          mobile: `/assets/images/tamarcus-brown.png`,
+        }}
         text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity
 `}
         name={`Name Namesson`}

@@ -8,7 +8,14 @@ const TopImage = () => {
         variant: "pages.values.leadership.topimage",
       }}
     >
-      <img src="/assets/images/leadership/top.png" alt="" />
+      <picture>
+        <source
+          media="(min-width: 800px)"
+          srcSet="/assets/images/values/leadership/top-desktop.png"
+        ></source>
+        <source srcSet="/assets/images/values/leadership/top-desktop.png"></source>
+        <img src="/assets/images/values/leadership/top-desktop.png" alt="" />
+      </picture>
     </div>
   );
 };

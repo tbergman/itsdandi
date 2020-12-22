@@ -122,7 +122,7 @@ const Values = () => {
         sections={sections}
         styling={{
           ".text": {
-            mb: [21, 0],
+            mb: [21, 18],
           },
         }}
         navBarStyling={theme.components.navigation.white}

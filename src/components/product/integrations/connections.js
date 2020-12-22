@@ -10,23 +10,47 @@ const Connections = ({
   isDesktop,
 }) => {
   const logos = [
-    { url: "/assets/images/product/integrations/workday.png", flex: "0 30%" },
-    { url: "/assets/images/product/integrations/adp.png", flex: "0 30%" },
-    { url: "/assets/images/product/integrations/oracle.png", flex: "0 30%" },
+    {
+      url: "/assets/images/product/integrations/workday.png",
+      flex: ["0 30%", "0 15%"],
+    },
+    {
+      url: "/assets/images/product/integrations/adp.png",
+      flex: ["0 30%", "0 10%"],
+    },
+    {
+      url: "/assets/images/product/integrations/oracle.png",
+      flex: ["0 30%", "0 12%"],
+    },
     {
       url: "/assets/images/product/integrations/successfactor.png",
-      flex: "0 70%",
+      flex: ["0 70%", "0 30%"],
     },
-    { url: "/assets/images/product/integrations/cims.png", flex: "0 20%" },
-    { url: "/assets/images/product/integrations/lever.png", flex: "0 40%" },
-    { url: "/assets/images/product/integrations/namely.png", flex: "0 25%" },
-    { url: "/assets/images/product/integrations/ultipro.png", flex: "0 20%" },
+    {
+      url: "/assets/images/product/integrations/cims.png",
+      flex: ["0 20%", "0 10%"],
+    },
+    {
+      url: "/assets/images/product/integrations/lever.png",
+      flex: ["0 40%", "0 20%"],
+    },
+    {
+      url: "/assets/images/product/integrations/namely.png",
+      flex: ["0 25%", "0 10%"],
+    },
+    {
+      url: "/assets/images/product/integrations/ultipro.png",
+      flex: ["0 20%", "0 10%"],
+    },
 
-    { url: "/assets/images/product/integrations/bamboohr.png", flex: "0 45%" },
+    {
+      url: "/assets/images/product/integrations/bamboohr.png",
+      flex: ["0 45%", "0 20%"],
+    },
 
     {
       url: "/assets/images/product/integrations/greenhouse.png",
-      flex: "0 45%",
+      flex: ["0 45%", "0 20%"],
     },
   ];
   return (

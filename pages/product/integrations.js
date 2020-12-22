@@ -79,7 +79,7 @@ const Product = () => {
           mb: [12, 16],
         }}
       >
-        <TopContent />
+        <TopContent isDesktop={isDesktop} />
       </Header>
       <Connections
         isDesktop={isDesktop}

@@ -23,7 +23,14 @@ const LearnMore = ({
         }}
       >
         <div className="imagewrapper">
-          <img src="/assets/images/supportimage.png" alt="" />
+          <picture>
+            <source
+              media="(min-width: 800px)"
+              srcSet="/assets/images/community/support/image43-desktop.png"
+            ></source>
+            <source srcSet="/assets/images/supportimage.png"></source>
+            <img src="/assets/images/supportimage.png" alt="" />
+          </picture>
         </div>
 
         <div className="text">

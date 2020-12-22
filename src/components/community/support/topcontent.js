@@ -9,7 +9,14 @@ const TopContent = () => {
       }}
     >
       <div className="image">
-        <img src="/assets/images/community/support/image39.png" alt="" />
+        <picture>
+          <source
+            media="(min-width: 800px)"
+            srcSet="/assets/images/community/support/image39-desktop.png"
+          ></source>
+          <source srcSet="/assets/images/community/support/image39.png"></source>
+          <img src="/assets/images/community/support/image39.png" alt="" />
+        </picture>
       </div>
     </div>
   );

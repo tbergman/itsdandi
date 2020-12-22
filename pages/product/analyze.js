@@ -81,7 +81,7 @@ const Product = () => {
           mb: [12, 23],
         }}
       >
-        <TopContent />
+        <TopContent isDesktop={isDesktop} />
       </Header>
       <Insights
         isDesktop={isDesktop}
