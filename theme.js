@@ -112,7 +112,7 @@ const theme = {
             (t) => `calc(${t.colWidthMob} + 10px)`,
             (t) => `calc(${t.colWidthDesktop})`,
           ],
-          mt: [28],
+          mt: [24, 28],
           mb: [2, 0],
           h1: {},
           ".button": {
@@ -121,7 +121,7 @@ const theme = {
             left: [0, "-8px"],
             gridArea: ["2/2/3/6", "2/7/3/-1"],
             width: ["160px"],
-            height: "48px",
+            height: ["56px", "56px"],
             mt: ["24px", "48px"],
             bg: "yellow",
 
@@ -316,7 +316,7 @@ const theme = {
           gridArea: ["3/1/4/-1", "1/2/2/6"],
           mt: [6, "290px"],
           ml: [0],
-          mb: [21, 26],
+          mb: [16, 26],
           h2: {},
           ".link": {
             mt: [1],
@@ -352,7 +352,7 @@ const theme = {
 
         ".carousel": {
           mt: ["30px"],
-          mb: [12, 24],
+          mb: [6, 24],
           position: "relative",
           gridArea: ["3/1/4/-1", "2/1/3/-1"],
           width: ["100%", "100vw"],
@@ -1154,7 +1154,7 @@ const theme = {
               display: "flex",
               flexFlow: ["column", "unset"],
               pt: [2],
-              mb: [11],
+              mb: [6, 11],
               ".divider": {
                 position: "absolute",
                 top: 0,
@@ -1263,8 +1263,8 @@ const theme = {
           div: {
             div: {
               svg: {
-                height: ["24px"],
-                width: ["32px"],
+                height: ["30px"],
+                width: ["30px"],
                 position: "relative",
                 mb: [4, 7],
                 g: {
@@ -1554,6 +1554,7 @@ const theme = {
               ml: [0, (t) => t.colWidthDesktop],
               display: "flex",
               alignItems: "center",
+              mt: [6, 0],
               ".text": {},
             },
           },
