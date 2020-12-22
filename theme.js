@@ -3353,7 +3353,7 @@ const theme = {
 
     submenu: {
       position: ["absolute", "fixed"],
-      display: ["none", "unset"],
+      display: ["none"],
       top: ["74px", 24],
       left: [0, "40px"],
       width: ["100vw", "unset"],
