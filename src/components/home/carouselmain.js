@@ -19,17 +19,20 @@ const CarouselMain = () => {
       body:
         "Dandi aggregates all your HR data to give an unprecedented view of the employee experience.",
       buttonText: "Learn more",
+      url: "/",
     },
     {
       header: "Measure, and move forward",
       body:
         "Dandi aggregates all your HR data to give an unprecedented view of the employee experience.",
       buttonText: "Learn more",
+      url: "/product/measure",
     },
     {
       header: `Put your insights to work`,
       body: `Dandi aggregates all your HR data to give an unprecedented view of the employee experience.`,
       buttonText: `Learn more`,
+      url: "/",
     },
   ];
 
@@ -59,6 +62,8 @@ const CarouselMain = () => {
           {slides.map((slide, i) => (
             <CarouselItem
               key={i}
+              idx={i}
+              setCurrent={setCurrent}
               header={slide.header}
               progressBarBg="turquoise"
               current={current === i}
@@ -71,7 +76,11 @@ const CarouselMain = () => {
                 {slide.body}
               </Styled.p>
               <div className="link">
-                <LearnMoreLink href="/" text="Learn more" color="#F9D2FF" />
+                <LearnMoreLink
+                  href={slide.url}
+                  text="Learn more"
+                  color="#F9D2FF"
+                />
               </div>
             </CarouselItem>
           ))}

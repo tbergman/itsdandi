@@ -19,4 +19,8 @@ export default [
     name: "Integrations",
     url: "/product/integrations",
   },
+  {
+    name: "Pricing",
+    url: "/pricing",
+  },
 ];

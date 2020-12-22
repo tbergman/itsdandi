@@ -3217,6 +3217,7 @@ const theme = {
           },
         },
       },
+
       white: {
         bg: "#FFF",
         color: "black",
@@ -3353,15 +3354,30 @@ const theme = {
 
     submenu: {
       position: ["absolute", "fixed"],
-      display: ["none"],
+      display: ["unset", "none"],
       top: ["74px", 24],
       left: [0, "40px"],
       width: ["100vw", "unset"],
-      left: ["-20px"],
       height: ["40px", "unset"],
       overflow: "hidden",
       zIndex: 99,
       ".container": {
+        ".arrow": {
+          cursor: "pointer",
+          position: "absolute",
+          bottom: "25%",
+          path: {
+            stroke: "#CACACE",
+          },
+        },
+        ".left": {
+          left: ["16px"],
+          transform: "rotate(90deg)",
+        },
+        ".right": {
+          right: ["16px"],
+          transform: "rotate(-90deg)",
+        },
         height: ["100%", "unset"],
         width: "100%",
         borderBottom: "1px solid #CACACE",
@@ -3728,9 +3744,17 @@ const theme = {
         width: ["100%"],
         flexFlow: ["column wrap"],
         ".item": {
+          "&:hover": {
+            ".header": {
+              p: {
+                color: "rgba(242, 242, 242, 1)",
+              },
+            },
+          },
           mb: [2],
           ".header": {
             position: "relative",
+            cursor: "pointer",
             pl: [2],
             p: {
               fontSize: ["16px"],
@@ -3750,7 +3774,7 @@ const theme = {
                 borderRadius: "6px",
               },
               ".active": {
-                transition: "height 5000ms linear",
+                transition: "height 7500ms linear",
                 height: "100%",
               },
             },

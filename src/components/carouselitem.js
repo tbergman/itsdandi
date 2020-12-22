@@ -2,9 +2,16 @@
 import { jsx, Styled } from "theme-ui";
 import { motion } from "framer-motion";
 
-const CarouselItem = ({ header, current, progressBarBg, children }) => {
+const CarouselItem = ({
+  header,
+  current,
+  setCurrent,
+  progressBarBg,
+  idx,
+  children,
+}) => {
   return (
-    <div className="item">
+    <div onClick={() => setCurrent(idx)} className="item">
       <motion.div layout className="header">
         <div
           sx={{

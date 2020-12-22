@@ -38,7 +38,7 @@ const SubNavigation = ({ next, prev }) => {
           <a className="link">
             <ReactSVG src="/assets/svgs/arrow.svg" />
             <Styled.h3>
-              {next.goBack ? "Back to top" : "Next"} <br />
+              Next <br />
               {next.name}
             </Styled.h3>
           </a>

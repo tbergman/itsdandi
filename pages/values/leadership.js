@@ -136,19 +136,7 @@ lifecycle.`,
           mobile: "/assets/images/tamarcus-brown.png",
         }}
       />
-      <SubNavigation
-        next={{
-          name: "Pay Equity",
-          url: "/values/equitypay",
-          bg: theme.colors.blue,
-          goBack: true,
-        }}
-        prev={{
-          name: "The DEI Journey",
-          url: "/values/deijourney",
-          bg: theme.colors.violet,
-        }}
-      />
+      <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );

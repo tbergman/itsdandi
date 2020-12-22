@@ -33,6 +33,7 @@ const Product = () => {
     query: devices.desktop,
   });
   const [windowHeight, setWindowHeight] = useState(500);
+  const [staticLogo, setStaticLogo] = useState(true);
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.gray,
   });
@@ -62,7 +63,12 @@ const Product = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation current="product" navBarStyling={navBarStyling} />
+      <Navigation
+        current="product"
+        navBarStyling={navBarStyling}
+        staticLogo={staticLogo}
+        setStaticLogo={setStaticLogo}
+      />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
@@ -77,7 +83,7 @@ const Product = () => {
         navBarStyling={theme.components.navigation.gray}
         title={`DEI, made to measure`}
         body={`Simple. Precise. Eye-opening. Dandi sets the new standard for DEI measurement.`}
-        bg="rgba(242, 242, 242, 0.5)"
+        bg="#F8F8F8"
         styling={{
           mb: [12, 22],
         }}

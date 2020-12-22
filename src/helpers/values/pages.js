@@ -11,4 +11,8 @@ export default [
     name: "For Your Role",
     url: "/values/leadership",
   },
+  {
+    name: "Measure",
+    url: "/product/measure",
+  },
 ];

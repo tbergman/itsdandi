@@ -79,6 +79,38 @@ const SubMenu = ({ subPages, navBarStyling }) => {
           }}
           className="container"
         >
+          <div className="arrow left">
+            <svg
+              width="20"
+              height="13"
+              viewBox="0 0 20 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.51472 1.51472L10 10L18.4853 1.51472"
+                stroke="#F2F2F2"
+                stroke-opacity="0.95"
+                stroke-width="3"
+              />
+            </svg>
+          </div>
+          <div className="arrow right">
+            <svg
+              width="20"
+              height="13"
+              viewBox="0 0 20 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.51472 1.51472L10 10L18.4853 1.51472"
+                stroke="#F2F2F2"
+                stroke-opacity="0.95"
+                stroke-width="3"
+              />
+            </svg>
+          </div>
           {subPages.map((page, i) => (
             <Link href={page.url} key={i}>
               <motion.a className={page.current ? "item current" : "item"}>
