@@ -3479,6 +3479,8 @@ const theme = {
       pt: [11],
       bg: "black",
       height: "100vh",
+      maxHeight: "fit-content",
+      overflowY: "scroll",
       width: "100vw",
       zIndex: 999,
       ".navitems": {
@@ -3500,6 +3502,17 @@ const theme = {
                 textDecoration: "none",
                 "&:visited": {
                   outline: "none",
+                },
+              },
+              ".arrow": {
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                svg: {
+                  transition: "transform 250ms ease-out",
+                  path: {
+                    strokeWidth: "3",
+                  },
                 },
               },
             },

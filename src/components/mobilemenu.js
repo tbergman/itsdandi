@@ -147,7 +147,27 @@ const MobileMenu = ({ menuOpen, navBarStyling }) => {
                 >
                   <div className="main">
                     <Styled.h2>{item.title}</Styled.h2>
-                    <ReactSVG src="/assets/svgs/arrow2.svg" />
+                    <div className="arrow">
+                      <motion.svg
+                        sx={{
+                          transform: state[item.type].open
+                            ? "rotate(180deg)"
+                            : "rotate(0deg)",
+                        }}
+                        width="20"
+                        height="13"
+                        viewBox="0 0 20 13"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <motion.path
+                          d="M1.51472 1.51472L10 10L18.4853 1.51472"
+                          stroke="#F2F2F2"
+                          stroke-opacity="0.95"
+                          stroke-width="3"
+                        />
+                      </motion.svg>
+                    </div>
                   </div>
                   <motion.div
                     layout
