@@ -1,13 +1,16 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
-import { rootMargin } from "../../../helpers/utils";
+import { rootMargin, rootMarginSub } from "../../../helpers/utils";
 import InView from "../../inview";
+import SubInView from "../../subinview";
 
 const Workflows = ({
   setNavbarStyling,
   navBarStyling,
   windowHeight,
+  subMenuStyling,
+  setSubMenuStyling,
   isDesktop,
 }) => {
   const categories = [
@@ -31,32 +34,38 @@ const Workflows = ({
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
     >
-      <div
-        sx={{
-          variant: "grid",
-        }}
+      <SubInView
+        subMenuStyling={subMenuStyling}
+        setSubMenuStyling={setSubMenuStyling}
+        rootMargin={rootMarginSub(windowHeight)}
       >
-        <div className="wrapper">
-          <div className="toptext">
-            <Styled.h2>Keeping workflows secure</Styled.h2>
-            <Styled.p>
-              With Dandi, you can be sure that sensitive information never
-              travels further than it should.
-            </Styled.p>
+        <div
+          sx={{
+            variant: "grid",
+          }}
+        >
+          <div className="wrapper">
+            <div className="toptext">
+              <Styled.h2>Keeping workflows secure</Styled.h2>
+              <Styled.p>
+                With Dandi, you can be sure that sensitive information never
+                travels further than it should.
+              </Styled.p>
+            </div>
+            <div className="categories">
+              {categories.map((category, i) => (
+                <div className="category" key={i}>
+                  <Styled.p className="title">{category.title}</Styled.p>
+                  <Styled.p className="body">{category.body}</Styled.p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="categories">
-            {categories.map((category, i) => (
-              <div className="category" key={i}>
-                <Styled.p className="title">{category.title}</Styled.p>
-                <Styled.p className="body">{category.body}</Styled.p>
-              </div>
-            ))}
+          <div className="graphic">
+            <ReactSVG src="/assets/svgs/product/security/illustration_03.4.2.svg" />
           </div>
         </div>
-        <div className="graphic">
-          <ReactSVG src="/assets/svgs/product/security/illustration_03.4.2.svg" />
-        </div>
-      </div>
+      </SubInView>
     </InView>
   );
 };

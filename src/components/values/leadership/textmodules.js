@@ -2,11 +2,14 @@
 import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
-import { rootMargin } from "../../../helpers/utils";
+import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import SubInView from "../../subinview";
 
 const TextModules = ({
   modules,
   setNavbarStyling,
+  subMenuStyling,
+  setSubMenuStyling,
   windowHeight,
   navBarStyling,
   isDesktop,
@@ -19,37 +22,43 @@ const TextModules = ({
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
     >
-      <div
-        sx={{
-          variant: "grid",
-        }}
+      <SubInView
+        subMenuStyling={subMenuStyling}
+        setSubMenuStyling={setSubMenuStyling}
+        rootMargin={rootMarginSub(windowHeight)}
       >
-        <div className="wrapper">
-          {modules.map((module, i) => (
-            <div className="module" key={i}>
-              <div className="divider">
-                <span />
-              </div>
-              <div className="section1">
-                <Styled.h2>{module.title}</Styled.h2>
-              </div>
-              <div className="section2">
-                <Styled.p>{module.body}</Styled.p>
-                <div className="linksection">
-                  <Styled.p>{module.bottomText}</Styled.p>
-                  <div className="link">
-                    <LearnMoreLink
-                      href={module.linkUrl}
-                      text={module.linkText}
-                      color="#335AFF"
-                    />
+        <div
+          sx={{
+            variant: "grid",
+          }}
+        >
+          <div className="wrapper">
+            {modules.map((module, i) => (
+              <div className="module" key={i}>
+                <div className="divider">
+                  <span />
+                </div>
+                <div className="section1">
+                  <Styled.h2>{module.title}</Styled.h2>
+                </div>
+                <div className="section2">
+                  <Styled.p>{module.body}</Styled.p>
+                  <div className="linksection">
+                    <Styled.p>{module.bottomText}</Styled.p>
+                    <div className="link">
+                      <LearnMoreLink
+                        href={module.linkUrl}
+                        text={module.linkText}
+                        color="#335AFF"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </SubInView>
     </InView>
   );
 };

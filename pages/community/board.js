@@ -30,6 +30,9 @@ const Community = () => {
     query: devices.desktop,
   });
   const [windowHeight, setWindowHeight] = useState(500);
+  const [subMenuStyling, setSubMenuStyling] = useState({
+    ...theme.components.submenu.white,
+  });
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
   });
@@ -134,9 +137,11 @@ const Community = () => {
         navBarStyling={navBarStyling}
       />
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
-      <SubMenu navBarStyling={navBarStyling} subPages={subPages_.subPages} />
+      <SubMenu subMenuStyling={subMenuStyling} subPages={subPages_.subPages} />
       <Header
         isDesktop={isDesktop}
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         title={`Working together to advance DEI`}
         body={`A collective of leading thinkers and change-makers, Dandi’s DEI Advisory Board plays a crucial role in shaping our platform.`}
         setNavbarStyling={setNavbarStyling}
@@ -150,6 +155,8 @@ const Community = () => {
         <TopContent />
       </Header>
       <People
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}

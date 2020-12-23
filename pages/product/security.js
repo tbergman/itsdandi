@@ -32,6 +32,9 @@ const Product = () => {
     query: devices.desktop,
   });
   const [windowHeight, setWindowHeight] = useState(500);
+  const [subMenuStyling, setSubMenuStyling] = useState({
+    ...theme.components.white,
+  });
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
   });
@@ -68,12 +71,14 @@ const Product = () => {
         navBarStyling={navBarStyling}
       />
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
-      <SubMenu subPages={subPages_.subPages} navBarStyling={navBarStyling} />
+      <SubMenu subPages={subPages_.subPages} subMenuStyling={subMenuStyling} />
       <Header
         title={`Your people data is precious. Protecting it is our top priority.`}
         body={`Learn more about the Dandi security standard.`}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
         bg="#fff"
         styling={{
@@ -87,6 +92,8 @@ const Product = () => {
         <TopContent />
       </Header>
       <BestInClass
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.default}
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
@@ -104,18 +111,24 @@ const Product = () => {
         bg="white"
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray2}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
       />
       <Workflows
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
       />
       <Connect
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />

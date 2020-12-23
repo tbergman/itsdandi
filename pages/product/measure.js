@@ -34,6 +34,9 @@ const Product = () => {
   });
   const [windowHeight, setWindowHeight] = useState(500);
   const [staticLogo, setStaticLogo] = useState(true);
+  const [subMenuStyling, setSubMenuStyling] = useState({
+    ...theme.components.submenu.white,
+  });
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.gray,
   });
@@ -75,12 +78,14 @@ const Product = () => {
         navBarStyling={navBarStyling}
       />
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
-      <SubMenu navBarStyling={navBarStyling} subPages={subPages_.subPages} />
+      <SubMenu subMenuStyling={subMenuStyling} subPages={subPages_.subPages} />
       <Header
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.gray}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         title={`DEI, made to measure`}
         body={`Simple. Precise. Eye-opening. Dandi sets the new standard for DEI measurement.`}
         bg="#F8F8F8"
@@ -94,11 +99,15 @@ const Product = () => {
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
       />
 
       <Quote
         isDesktop={isDesktop}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         image={{
           desktop: `/assets/images/tamarcus-brown-desktop.png`,
           mobile: `/assets/images/tamarcus-brown.png`,
@@ -115,6 +124,8 @@ const Product = () => {
       />
       <WhyMeasure
         isDesktop={isDesktop}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
@@ -123,12 +134,16 @@ const Product = () => {
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.default}
         windowHeight={windowHeight}
       />
       <Thoughtful
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
       />
       <SubNavigation next={subPages_.next} />

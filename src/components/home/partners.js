@@ -76,22 +76,28 @@ const Partners = ({
             ))}
           </motion.div>
 
-          {/* <motion.div
-            // style={{
-            //   translateX: useTransform(
-            //     scrollYProgress,
-            //     [0, 0.4, 0.7, 1],
-            //     [0, 0, 150, 0]
-            //   ),
-            // }}
+          <motion.div
+            animate={{
+              x: ["0%", "-90%"],
+            }}
+            transition={{
+              duration: 4,
+              loop: Infinity,
+              ease: "linear",
+            }}
             className="row2"
           >
-            {logos.row1.map((url, i) => (
-              <div className="imagewrapper" key={i}>
+            {logos.map((url, i) => (
+              <div className="imagewrapper">
                 <img src={url} alt="" />
               </div>
             ))}
-          </motion.div> */}
+            {logos.map((url, i) => (
+              <div className="imagewrapper">
+                <img src={url} alt="" />
+              </div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
     </InView>

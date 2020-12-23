@@ -32,6 +32,9 @@ const Product = () => {
     query: devices.desktop,
   });
   const [windowHeight, setWindowHeight] = useState(500);
+  const [subMenuStyling, setSubMenuStyling] = useState({
+    ...theme.components.submenu.white,
+  });
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.gray,
   });
@@ -69,12 +72,14 @@ const Product = () => {
         navBarStyling={navBarStyling}
       />
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
-      <SubMenu navBarStyling={navBarStyling} subPages={subPages_.subPages} />
+      <SubMenu subMenuStyling={subMenuStyling} subPages={subPages_.subPages} />
       <Header
         title={`See what your HR data’s trying to tell you`}
         body={`Dandi helps you understand your people data in a whole new way.`}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{
@@ -87,24 +92,32 @@ const Product = () => {
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.default}
         windowHeight={windowHeight}
       />
       <NewInsights
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
       />
       <InAction
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.default}
         windowHeight={windowHeight}
       />
       <Sharable
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />

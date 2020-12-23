@@ -3,12 +3,10 @@ import { jsx } from "theme-ui";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-const InView = ({
-  variant,
+const SubInView = ({
   rootMargin,
-  setNavbarStyling,
-  navBarStyling,
-  bg,
+  setSubMenuStyling,
+  subMenuStyling,
   children,
 }) => {
   const { inView, ref, entry } = useInView({
@@ -16,24 +14,16 @@ const InView = ({
   });
 
   useEffect(() => {
+    console.log(rootMargin);
+    console.log(inView);
     if (inView) {
-      setNavbarStyling({
-        ...navBarStyling,
+      setSubMenuStyling({
+        ...subMenuStyling,
       });
     }
   }, [inView]);
 
-  return (
-    <div
-      sx={{
-        variant: variant,
-        bg: bg,
-      }}
-      ref={ref}
-    >
-      {children}
-    </div>
-  );
+  return <div ref={ref}>{children}</div>;
 };
 
-export default InView;
+export default SubInView;

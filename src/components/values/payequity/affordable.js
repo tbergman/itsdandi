@@ -3,12 +3,15 @@ import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
 import theme from "../../../../theme";
-import { rootMargin } from "../../../helpers/utils";
+import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import SubInView from "../../subinview";
 
 const Affordable = ({
   setNavbarStyling,
   windowHeight,
   navBarStyling,
+  setSubMenuStyling,
+  subMenuStyling,
   isDesktop,
 }) => {
   const { theme } = useThemeUI();
@@ -19,28 +22,34 @@ const Affordable = ({
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
     >
-      <div
-        sx={{
-          variant: "grid",
-        }}
+      <SubInView
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={subMenuStyling}
+        rootMargin={rootMarginSub(windowHeight)}
       >
-        <div className="header">
-          <Styled.h2>Affordable by design</Styled.h2>
-          <Styled.p>
-            Dandi’s priced to work for businesses of every size.
-          </Styled.p>
-          <div className="link">
-            <LearnMoreLink
-              href="/pricing"
-              text="Learn more about Dandi pricing."
-              color="#335AFF"
-            />
+        <div
+          sx={{
+            variant: "grid",
+          }}
+        >
+          <div className="header">
+            <Styled.h2>Affordable by design</Styled.h2>
+            <Styled.p>
+              Dandi’s priced to work for businesses of every size.
+            </Styled.p>
+            <div className="link">
+              <LearnMoreLink
+                href="/pricing"
+                text="Learn more about Dandi pricing."
+                color="#335AFF"
+              />
+            </div>
+          </div>
+          <div className="graphic">
+            <img src="/assets/images/02_1_affordable.png" alt="" />
           </div>
         </div>
-        <div className="graphic">
-          <img src="/assets/images/02_1_affordable.png" alt="" />
-        </div>
-      </div>
+      </SubInView>
     </InView>
   );
 };

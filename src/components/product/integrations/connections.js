@@ -1,12 +1,15 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import { rootMargin } from "../../../helpers/utils";
+import { rootMargin, rootMarginSub } from "../../../helpers/utils";
 import InView from "../../inview";
+import SubInView from "../../subinview";
 
 const Connections = ({
   setNavbarStyling,
   navBarStyling,
   windowHeight,
+  subMenuStyling,
+  setSubMenuStyling,
   isDesktop,
 }) => {
   const logos = [
@@ -60,33 +63,39 @@ const Connections = ({
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
     >
-      <div
-        sx={{
-          variant: "grid",
-        }}
+      <SubInView
+        subMenuStyling={subMenuStyling}
+        setSubMenuStyling={setSubMenuStyling}
+        rootMargin={rootMarginSub(windowHeight)}
       >
-        <div className="text">
-          <Styled.h2>All the right connections</Styled.h2>
-          <Styled.p>
-            Dandi integrates simply and securely through the API’s of most
-            leading HR platforms. There’s no coding or data warehousing
-            required, so setup is a snap.
-          </Styled.p>
+        <div
+          sx={{
+            variant: "grid",
+          }}
+        >
+          <div className="text">
+            <Styled.h2>All the right connections</Styled.h2>
+            <Styled.p>
+              Dandi integrates simply and securely through the API’s of most
+              leading HR platforms. There’s no coding or data warehousing
+              required, so setup is a snap.
+            </Styled.p>
+          </div>
+          <div className="logos">
+            {logos.map((logo, i) => (
+              <div
+                sx={{
+                  flex: logo.flex,
+                }}
+                className="logo"
+                key={i}
+              >
+                <img src={logo.url} alt="" />
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="logos">
-          {logos.map((logo, i) => (
-            <div
-              sx={{
-                flex: logo.flex,
-              }}
-              className="logo"
-              key={i}
-            >
-              <img src={logo.url} alt="" />
-            </div>
-          ))}
-        </div>
-      </div>
+      </SubInView>
     </InView>
   );
 };

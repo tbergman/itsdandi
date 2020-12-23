@@ -2,12 +2,15 @@
 import { jsx } from "theme-ui";
 import TextBlock from "./textblock";
 import InView from "../../inview";
-import { rootMargin } from "../../../helpers/utils";
+import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import SubInView from "../../subinview";
 
 const Onboarding = ({
   setNavbarStyling,
   navBarStyling,
   windowHeight,
+  subMenuStyling,
+  setSubMenuStyling,
   isDesktop,
 }) => {
   const modules = [
@@ -40,23 +43,29 @@ const Onboarding = ({
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
     >
-      <div
-        sx={{
-          variant: "grid",
-        }}
+      <SubInView
+        subMenuStyling={subMenuStyling}
+        setSubMenuStyling={setSubMenuStyling}
+        rootMargin={rootMarginSub(windowHeight)}
       >
-        <div className="textmodules">
-          {modules.map((module, i) => (
-            <TextBlock
-              key={i}
-              title={module.title}
-              description={module.description}
-              listTitle={module.listTitle}
-              listItems={module.listItems}
-            />
-          ))}
+        <div
+          sx={{
+            variant: "grid",
+          }}
+        >
+          <div className="textmodules">
+            {modules.map((module, i) => (
+              <TextBlock
+                key={i}
+                title={module.title}
+                description={module.description}
+                listTitle={module.listTitle}
+                listItems={module.listItems}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </SubInView>
     </InView>
   );
 };

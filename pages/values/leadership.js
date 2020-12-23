@@ -30,6 +30,9 @@ const Values = () => {
     query: devices.desktop,
   });
   const [windowHeight, setWindowHeight] = useState(500);
+  const [subMenuStyling, setSubMenuStyling] = useState({
+    ...theme.components.submenu.white,
+  });
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
   });
@@ -99,13 +102,15 @@ lifecycle.`,
         navBarStyling={navBarStyling}
       />
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
-      <SubMenu subPages={subPages_.subPages} navBarStyling={navBarStyling} />
+      <SubMenu subPages={subPages_.subPages} subMenuStyling={subMenuStyling} />
       <Header
         isDesktop={isDesktop}
         title={`Work’s better with Dandi`}
         body={`Whether you’re a DEI practitioner or a leader in another part of the business, our tools can also help you do more every day.`}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         bg="#FFF"
         windowHeight={windowHeight}
         styling={{
@@ -119,12 +124,16 @@ lifecycle.`,
         modules={modules}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
       />
       <Quote
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.yellow}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
         name={`Name Namesson`}
         title={`Ceo, Company`}

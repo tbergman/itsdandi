@@ -32,6 +32,9 @@ const Community = () => {
     query: devices.desktop,
   });
   const [windowHeight, setWindowHeight] = useState(500);
+  const [subMenuStyling, setSubMenuStyling] = useState({
+    ...theme.components.submenu.white,
+  });
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
   });
@@ -68,9 +71,11 @@ const Community = () => {
         navBarStyling={navBarStyling}
       />
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
-      <SubMenu navBarStyling={navBarStyling} subPages={subPages_.subPages} />
+      <SubMenu subMenuStyling={subMenuStyling} subPages={subPages_.subPages} />
       <Header
         isDesktop={isDesktop}
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         title={`The support you need to advance DEI`}
         body={`Some software companies are hands-off. But that’s not Dandi.`}
         setNavbarStyling={setNavbarStyling}
@@ -85,18 +90,24 @@ const Community = () => {
       </Header>
       <Onboarding
         isDesktop={isDesktop}
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
       />
       <LearnMore
         isDesktop={isDesktop}
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.yellow}
         windowHeight={windowHeight}
       />
       <GetCreative
         isDesktop={isDesktop}
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}

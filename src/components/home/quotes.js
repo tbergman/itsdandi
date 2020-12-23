@@ -1,8 +1,11 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
+import { useState } from "react";
 import InView from "../inview";
 import { rootMargin } from "../../helpers/utils";
+import { AnimatePresence, motion } from "framer-motion";
+import { wrap } from "popmotion";
 
 const Quotes = ({
   setNavbarStyling,
@@ -10,6 +13,44 @@ const Quotes = ({
   navBarStyling,
   isDesktop,
 }) => {
+  const [[page, direction], setPage] = useState([0, 0]);
+
+  const variants = {
+    enter: (direction) => {
+      return {
+        x: direction > 0 ? 1000 : -1000,
+        opacity: 0,
+      };
+    },
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction) => {
+      return {
+        zIndex: 0,
+        x: direction < 0 ? 1000 : -1000,
+        opacity: 0,
+      };
+    },
+  };
+  const images = [
+    {
+      desktop: "/assets/images/carol1_desktop.png",
+      mobile: "/assets/images/carol1.png",
+    },
+    {
+      desktop: "/assets/images/supportimage.png",
+      mobile: "/assets/images/supportimage.png",
+    },
+  ];
+
+  const imageIndex = wrap(0, images.length, page);
+  const paginate = (newDirection) => {
+    setPage([page + newDirection, newDirection]);
+  };
+
   return (
     <InView
       variant="pages.home.quotes"
@@ -22,16 +63,33 @@ const Quotes = ({
           variant: "grid",
         }}
       >
-        <div className="imagewrapper">
-          <picture>
-            <source
-              media="(min-width: 800px)"
-              srcSet="/assets/images/carol1_desktop.png"
-            ></source>
-            <source srcSet="/assets/images/carol1.png"></source>
-            <img src="/assets/images/carol1_desktop.png" alt="" />
-          </picture>
-        </div>
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.div className="imagewrapper">
+            <motion.picture>
+              <motion.source
+                media="(min-width: 800px)"
+                srcSet={images[imageIndex].desktop}
+              ></motion.source>
+              <motion.source srcSet={images[imageIndex].mobile}></motion.source>
+
+              <motion.img
+                key={page}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
+                }}
+                src={images[imageIndex].desktop}
+                alt=""
+              />
+            </motion.picture>
+          </motion.div>
+        </AnimatePresence>
+
         <div className="text">
           <ReactSVG
             className="quotationmark"
@@ -49,10 +107,10 @@ const Quotes = ({
           </div>
         </div>
         <div className="navigation">
-          <div className="prev">
+          <div onClick={() => paginate(-1)} className="prev">
             <ReactSVG src="assets/svgs/prev.svg" />
           </div>
-          <div className="next">
+          <div onClick={() => paginate(1)} className="next">
             <ReactSVG src="assets/svgs/prev.svg" />
           </div>
         </div>

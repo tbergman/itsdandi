@@ -12,7 +12,7 @@ import useScrollPosition from "@react-hook/window-scroll";
 import { useMediaQuery } from "react-responsive";
 import devices from "../helpers/devices";
 
-const SubMenu = ({ subPages, navBarStyling }) => {
+const SubMenu = ({ subPages, subMenuStyling }) => {
   const isDesktop = useMediaQuery({
     query: devices.desktop,
   });
@@ -23,6 +23,7 @@ const SubMenu = ({ subPages, navBarStyling }) => {
 
   return (
     <div
+      className="submenu"
       sx={{
         variant: "components.submenu",
       }}
@@ -30,7 +31,7 @@ const SubMenu = ({ subPages, navBarStyling }) => {
       {isDesktop ? (
         <div
           sx={{
-            color: navBarStyling.color,
+            color: subMenuStyling.color,
           }}
           className="container"
         >
@@ -55,13 +56,13 @@ const SubMenu = ({ subPages, navBarStyling }) => {
                   >
                     <motion.span
                       sx={{
-                        bg: navBarStyling.color,
+                        bg: subMenuStyling.color,
                       }}
                       id="line1"
                     />
                     <motion.span
                       sx={{
-                        bg: navBarStyling.color,
+                        bg: subMenuStyling.color,
                       }}
                       id="line2"
                     />
@@ -75,7 +76,7 @@ const SubMenu = ({ subPages, navBarStyling }) => {
       ) : (
         <div
           sx={{
-            color: navBarStyling.color,
+            color: subMenuStyling.color,
           }}
           className="container"
         >

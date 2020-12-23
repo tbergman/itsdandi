@@ -1,13 +1,16 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import { rootMargin } from "../../helpers/utils";
+import { rootMargin, rootMarginSub } from "../../helpers/utils";
 import InView from "../inview";
+import SubInView from "../subinview";
 import Person from "./person";
 
 const People = ({
   setNavbarStyling,
   navBarStyling,
   windowHeight,
+  subMenuStyling,
+  setSubMenuStyling,
   title,
   body,
   isDesktop,
@@ -20,26 +23,36 @@ const People = ({
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
     >
-      <div
-        sx={{
-          variant: "grid",
-        }}
+      <SubInView
+        subMenuStyling={subMenuStyling}
+        setSubMenuStyling={setSubMenuStyling}
+        rootMargin={rootMarginSub(windowHeight)}
       >
-        <div className="toptext">
-          <div className="section1">
-            <Styled.h2>{title}</Styled.h2>
+        <div
+          sx={{
+            variant: "grid",
+          }}
+        >
+          <div className="toptext">
+            <div className="section1">
+              <Styled.h2>{title}</Styled.h2>
+            </div>
+            <div className="section2">
+              <Styled.p>{body}</Styled.p>
+            </div>
           </div>
-          <div className="section2">
-            <Styled.p>{body}</Styled.p>
-          </div>
-        </div>
 
-        <div className="people">
-          {people.map((person, i) => (
-            <Person url={person.url} name={person.name} title={person.title} />
-          ))}
+          <div className="people">
+            {people.map((person, i) => (
+              <Person
+                url={person.url}
+                name={person.name}
+                title={person.title}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </SubInView>
     </InView>
   );
 };

@@ -1,12 +1,15 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import { rootMargin } from "../../../helpers/utils";
+import { rootMargin, rootMarginSub } from "../../../helpers/utils";
 import InView from "../../inview";
+import SubInView from "../../subinview";
 
 const CompensationGraph = ({
   setNavbarStyling,
   windowHeight,
   navBarStyling,
+  setSubMenuStyling,
+  subMenuStyling,
   isDesktop,
 }) => {
   const data = [
@@ -38,44 +41,50 @@ const CompensationGraph = ({
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
     >
-      <div
-        sx={{
-          variant: "grid",
-        }}
+      <SubInView
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={subMenuStyling}
+        rootMargin={rootMarginSub(windowHeight)}
       >
-        <div className="wrapper">
-          <div className="graph">
-            <div className="maingraph">
-              {data.map((dataPoint, i) => (
-                <div className="yAxis" key={i}>
-                  <div
-                    sx={{
-                      height: dataPoint.height,
-                    }}
-                    className="bar"
-                  >
-                    <Styled.h3>{`${dataPoint.max}x`}</Styled.h3>
+        <div
+          sx={{
+            variant: "grid",
+          }}
+        >
+          <div className="wrapper">
+            <div className="graph">
+              <div className="maingraph">
+                {data.map((dataPoint, i) => (
+                  <div className="yAxis" key={i}>
+                    <div
+                      sx={{
+                        height: dataPoint.height,
+                      }}
+                      className="bar"
+                    >
+                      <Styled.h3>{`${dataPoint.max}x`}</Styled.h3>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+              <div className="divider"></div>
+              <div className="labels">
+                {data.map((dataPoint, i) => (
+                  <div className="label" key={i}>
+                    <Styled.p>{dataPoint.city}</Styled.p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="divider"></div>
-            <div className="labels">
-              {data.map((dataPoint, i) => (
-                <div className="label" key={i}>
-                  <Styled.p>{dataPoint.city}</Styled.p>
-                </div>
-              ))}
-            </div>
+            <Styled.p className="text">
+              In just a few clicks, you can see how factors like age, gender
+              identity, LGBTQIA+ status, and marital status influence
+              compensation at your company. Dandi also looks beyond salary to
+              incorporate other forms of pay, like bonus and equity.
+            </Styled.p>
           </div>
-          <Styled.p className="text">
-            In just a few clicks, you can see how factors like age, gender
-            identity, LGBTQIA+ status, and marital status influence compensation
-            at your company. Dandi also looks beyond salary to incorporate other
-            forms of pay, like bonus and equity.
-          </Styled.p>
         </div>
-      </div>
+      </SubInView>
     </InView>
   );
 };

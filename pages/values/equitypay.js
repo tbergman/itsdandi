@@ -33,6 +33,9 @@ const Home = () => {
     query: devices.desktop,
   });
   const [windowHeight, setWindowHeight] = useState(500);
+  const [subMenuStyling, setSubMenuStyling] = useState({
+    ...theme.components.submenu.white,
+  });
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
   });
@@ -75,11 +78,13 @@ const Home = () => {
         navBarStyling={navBarStyling}
       />
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
-      <SubMenu subPages={subPages_.subPages} navBarStyling={navBarStyling} />
+      <SubMenu subPages={subPages_.subPages} subMenuStyling={subMenuStyling} />
       <Header
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{
@@ -91,24 +96,32 @@ const Home = () => {
         <TopGraphic />
       </Header>
       <Compensation
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
       />
       <CompensationGraph
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.default}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
       />
       <Reports
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
       />
       <Quote
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.gray}
@@ -124,6 +137,8 @@ const Home = () => {
       />
 
       <Affordable
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.white}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.white}

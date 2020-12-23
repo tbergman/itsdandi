@@ -30,6 +30,9 @@ const Product = () => {
     query: devices.desktop,
   });
   const [windowHeight, setWindowHeight] = useState(500);
+  const [subMenuStyling, setSubMenuStyling] = useState({
+    ...theme.components.submenu.white,
+  });
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.gray,
   });
@@ -66,12 +69,14 @@ const Product = () => {
         navBarStyling={navBarStyling}
       />
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
-      <SubMenu navBarStyling={navBarStyling} subPages={subPages_.subPages} />
+      <SubMenu subMenuStyling={subMenuStyling} subPages={subPages_.subPages} />
       <Header
         title={`Unlocking the power of collaboration`}
         body={`With everyone working in Dandi, conversations get more productive and progress happens faster.`}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         windowHeight={windowHeight}
         bg="#fff"
         styling={{
@@ -84,12 +89,16 @@ const Product = () => {
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
+        subMenuStyling={theme.components.submenu.default}
+        setSubMenuStyling={setSubMenuStyling}
         windowHeight={windowHeight}
       />
       <Customizable
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         windowHeight={windowHeight}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />

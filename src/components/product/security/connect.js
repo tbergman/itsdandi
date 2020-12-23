@@ -3,11 +3,14 @@ import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
-import { rootMargin } from "../../../helpers/utils";
+import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import SubInView from "../../subinview";
 
 const Connect = ({
   setNavbarStyling,
   navBarStyling,
+  setSubMenuStyling,
+  subMenuStyling,
   windowHeight,
   isDesktop,
 }) => {
@@ -18,28 +21,34 @@ const Connect = ({
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
     >
-      <div
-        sx={{
-          variant: "grid",
-        }}
+      <SubInView
+        subMenuStyling={subMenuStyling}
+        setSubMenuStyling={setSubMenuStyling}
+        rootMargin={rootMarginSub(windowHeight)}
       >
-        <div className="wrapper">
-          <div className="text">
-            <Styled.h2>Connect with confidence</Styled.h2>
-            <div className="link">
-              <LearnMoreLink
-                href="/"
-                text={`Learn more about Dandi privacy and security`}
-                color="#335AFF"
-              />
+        <div
+          sx={{
+            variant: "grid",
+          }}
+        >
+          <div className="wrapper">
+            <div className="text">
+              <Styled.h2>Connect with confidence</Styled.h2>
+              <div className="link">
+                <LearnMoreLink
+                  href="/"
+                  text={`Learn more about Dandi privacy and security`}
+                  color="#335AFF"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="graphic">
-          <ReactSVG src="/assets/svgs/confidencegraphic.svg" />
+          <div className="graphic">
+            <ReactSVG src="/assets/svgs/confidencegraphic.svg" />
+          </div>
         </div>
-      </div>
+      </SubInView>
     </InView>
   );
 };

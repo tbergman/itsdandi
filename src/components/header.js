@@ -1,11 +1,14 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import InView from "./inview";
-import { rootMargin } from "../helpers/utils";
+import SubInView from "./subinview";
+import { rootMargin, rootMarginSub } from "../helpers/utils";
 
 const Header = ({
   setNavbarStyling,
   navBarStyling,
+  setSubMenuStyling,
+  subMenuStyling,
   windowHeight,
   title,
   body,
@@ -22,22 +25,28 @@ const Header = ({
       variant="components.shared.header"
       bg={bg ? bg : "rgba(242, 242, 242, 0.5)"}
     >
-      <div
-        sx={{
-          variant: "grid",
-        }}
+      <SubInView
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={{ ...subMenuStyling }}
+        rootMargin={rootMarginSub(windowHeight)}
       >
         <div
           sx={{
-            ...styling,
+            variant: "grid",
           }}
-          className="text"
         >
-          <Styled.h1>{title}</Styled.h1>
-          <Styled.h3>{body}</Styled.h3>
+          <div
+            sx={{
+              ...styling,
+            }}
+            className="text"
+          >
+            <Styled.h1>{title}</Styled.h1>
+            <Styled.h3>{body}</Styled.h3>
+          </div>
+          <div className="graphic">{children}</div>
         </div>
-        <div className="graphic">{children}</div>
-      </div>
+      </SubInView>
     </InView>
   );
 };

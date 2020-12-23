@@ -3,11 +3,14 @@ import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
-import { rootMargin } from "../../../helpers/utils";
+import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import SubInView from "../../subinview";
 
 const Secure = ({
   setNavbarStyling,
   navBarStyling,
+  subMenuStyling,
+  setSubMenuStyling,
   windowHeight,
   isDesktop,
 }) => {
@@ -18,31 +21,37 @@ const Secure = ({
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
     >
-      <div
-        sx={{
-          variant: "grid",
-        }}
+      <SubInView
+        subMenuStyling={subMenuStyling}
+        setSubMenuStyling={setSubMenuStyling}
+        rootMargin={rootMarginSub(windowHeight)}
       >
-        <div className="wrapper">
-          <div className="text">
-            <Styled.h2>Secure by design</Styled.h2>
-            <Styled.p>
-              Protecting your people data is our top priority.
-            </Styled.p>
-            <div className="link">
-              <LearnMoreLink
-                href="/"
-                text={`Learn more about Dandi privacy and security`}
-                color="#335AFF"
-              />
+        <div
+          sx={{
+            variant: "grid",
+          }}
+        >
+          <div className="wrapper">
+            <div className="text">
+              <Styled.h2>Secure by design</Styled.h2>
+              <Styled.p>
+                Protecting your people data is our top priority.
+              </Styled.p>
+              <div className="link">
+                <LearnMoreLink
+                  href="/"
+                  text={`Learn more about Dandi privacy and security`}
+                  color="#335AFF"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="graphic">
-          <ReactSVG src="/assets/svgs/biglock.svg" />
+          <div className="graphic">
+            <ReactSVG src="/assets/svgs/biglock.svg" />
+          </div>
         </div>
-      </div>
+      </SubInView>
     </InView>
   );
 };

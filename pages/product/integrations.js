@@ -30,6 +30,9 @@ const Product = () => {
     query: devices.desktop,
   });
   const [windowHeight, setWindowHeight] = useState(500);
+  const [subMenuStyling, setSubMenuStyling] = useState({
+    ...theme.components.submenu.white,
+  });
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.gray2,
   });
@@ -66,13 +69,15 @@ const Product = () => {
         navBarStyling={navBarStyling}
       />
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
-      <SubMenu navBarStyling={navBarStyling} subPages={subPages_.subPages} />
+      <SubMenu subMenuStyling={subMenuStyling} subPages={subPages_.subPages} />
       <Header
         isDesktop={isDesktop}
         title={`Easy integrations for better insights`}
         body={`Dandi ties together the data in your existing HR platforms to unlock over 1 million new DEI insights.`}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray2}
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         windowHeight={windowHeight}
         bg="rgba(242, 242, 242, 0.5)"
         styling={{
@@ -82,12 +87,16 @@ const Product = () => {
         <TopContent isDesktop={isDesktop} />
       </Header>
       <Connections
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
       />
       <Secure
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}

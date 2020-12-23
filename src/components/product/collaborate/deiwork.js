@@ -2,11 +2,14 @@
 import { jsx, Styled } from "theme-ui";
 import InView from "../../inview";
 import { useState, useEffect } from "react";
-import { rootMargin } from "../../../helpers/utils";
+import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import SubInView from "../../subinview";
 
 const DeiWork = ({
   setNavbarStyling,
   navBarStyling,
+  subMenuStyling,
+  setSubMenuStyling,
   windowHeight,
   isDesktop,
 }) => {
@@ -49,31 +52,37 @@ const DeiWork = ({
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
     >
-      <div
-        sx={{
-          variant: "grid",
-        }}
+      <SubInView
+        subMenuStyling={subMenuStyling}
+        setSubMenuStyling={setSubMenuStyling}
+        rootMargin={rootMarginSub(windowHeight)}
       >
-        <div className="title">
-          <Styled.h2>Making DEI work</Styled.h2>
-        </div>
-        <div className="wrapper">
-          <div className="section1">
-            <div className="text">
-              <Styled.p>
-                Dandi’s workflow tools are designed to make the day-to-day work
-                of advancing DEI easier and more impactful.
-              </Styled.p>
+        <div
+          sx={{
+            variant: "grid",
+          }}
+        >
+          <div className="title">
+            <Styled.h2>Making DEI work</Styled.h2>
+          </div>
+          <div className="wrapper">
+            <div className="section1">
+              <div className="text">
+                <Styled.p>
+                  Dandi’s workflow tools are designed to make the day-to-day
+                  work of advancing DEI easier and more impactful.
+                </Styled.p>
+              </div>
+              <div className="carousel">
+                {/* <Carousel slides={slides} current={current} color="yellow" /> */}
+              </div>
             </div>
-            <div className="carousel">
-              {/* <Carousel slides={slides} current={current} color="yellow" /> */}
+            <div className="section2">
+              <img src={slides[current].imageUrl} alt="" />
             </div>
           </div>
-          <div className="section2">
-            <img src={slides[current].imageUrl} alt="" />
-          </div>
         </div>
-      </div>
+      </SubInView>
     </InView>
   );
 };

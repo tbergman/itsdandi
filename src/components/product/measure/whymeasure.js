@@ -1,12 +1,15 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import { rootMargin } from "../../../helpers/utils";
+import { rootMargin, rootMarginSub } from "../../../helpers/utils";
 import InView from "../../inview";
+import SubInView from "../../subinview";
 
 const WhyMeasure = ({
   windowHeight,
   setNavbarStyling,
   navBarStyling,
+  subMenuStyling,
+  setSubMenuStyling,
   isDesktop,
 }) => {
   const categories = [
@@ -33,51 +36,57 @@ const WhyMeasure = ({
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
     >
-      <div
-        sx={{
-          variant: "grid",
-        }}
+      <SubInView
+        subMenuStyling={subMenuStyling}
+        setSubMenuStyling={setSubMenuStyling}
+        rootMargin={rootMarginSub(windowHeight)}
       >
-        <div className="top">
-          <div className="section1">
-            <Styled.h2>Why measurement matters for DEI</Styled.h2>
-          </div>
-          <div className="section2">
-            <Styled.p>
-              Most areas of business have widely-recognized metrics. For
-              instance, accounting has a full glossary of terms that are used to
-              explain different aspects of financial performance. But, beyond
-              some foundational terms like representation, there are few DEI
-              metrics with industry-wide acceptance. And it’s held back progress
-              for DEI as a whole. <br />
-              <br />
-              That’s why Dandi has gone ahead and provided metrics for nearly a
-              dozen key areas related to DEI.
-            </Styled.p>
-          </div>
-        </div>
-        <div className="categories">
-          {categories.map((category, i) => (
-            <div className="category" key={i}>
-              <div className="divider">
-                <span
-                  sx={{
-                    bg: category.color,
-                  }}
-                ></span>
-              </div>
-              <div className="title">
-                <Styled.p>{category.title}</Styled.p>
-              </div>
-              <div className="items">
-                {category.items.map((item, i) => (
-                  <Styled.p key={i}>{item}</Styled.p>
-                ))}
-              </div>
+        <div
+          sx={{
+            variant: "grid",
+          }}
+        >
+          <div className="top">
+            <div className="section1">
+              <Styled.h2>Why measurement matters for DEI</Styled.h2>
             </div>
-          ))}
+            <div className="section2">
+              <Styled.p>
+                Most areas of business have widely-recognized metrics. For
+                instance, accounting has a full glossary of terms that are used
+                to explain different aspects of financial performance. But,
+                beyond some foundational terms like representation, there are
+                few DEI metrics with industry-wide acceptance. And it’s held
+                back progress for DEI as a whole. <br />
+                <br />
+                That’s why Dandi has gone ahead and provided metrics for nearly
+                a dozen key areas related to DEI.
+              </Styled.p>
+            </div>
+          </div>
+          <div className="categories">
+            {categories.map((category, i) => (
+              <div className="category" key={i}>
+                <div className="divider">
+                  <span
+                    sx={{
+                      bg: category.color,
+                    }}
+                  ></span>
+                </div>
+                <div className="title">
+                  <Styled.p>{category.title}</Styled.p>
+                </div>
+                <div className="items">
+                  {category.items.map((item, i) => (
+                    <Styled.p key={i}>{item}</Styled.p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </SubInView>
     </InView>
   );
 };

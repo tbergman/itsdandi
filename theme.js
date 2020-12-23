@@ -470,7 +470,7 @@ const theme = {
             "-20px",
             (t) => `calc(calc(${t.colWidthDesktop} * 6)  + 220px  )`,
           ],
-          height: ["320px", "592px"],
+          height: ["320px", "calc(50vw * .82)"],
           gridArea: ["2/1/3/-1", "1/1/2/-1"],
           img: {
             zIndex: 99,
@@ -529,7 +529,7 @@ const theme = {
             },
           },
           ".row2": {
-            width: "10000px",
+            width: "100%",
             display: "flex",
             flexFlow: ["row nowrap"],
             alignItems: "center",
@@ -635,6 +635,10 @@ const theme = {
             left: 0,
             bottom: 0,
             right: 0,
+            img: {
+              width: "100%",
+              height: "100%",
+            },
           },
         },
         ".text": {
@@ -3036,7 +3040,7 @@ const theme = {
       position: "fixed",
       zIndex: 999,
       height: "94px",
-      width: "100%",
+      width: ["100vw"],
       display: ["none", "block"],
       fontFamily: "body",
       ".logowrapper": {
@@ -3354,7 +3358,6 @@ const theme = {
 
     submenu: {
       position: ["absolute", "fixed"],
-      display: ["unset", "none"],
       top: ["74px", 24],
       left: [0, "40px"],
       width: ["100vw", "unset"],
@@ -3380,7 +3383,7 @@ const theme = {
         },
         height: ["100%", "unset"],
         width: "100%",
-        borderBottom: "1px solid #CACACE",
+        borderBottom: ["1px solid #CACACE", "none"],
         display: "flex",
         flexFlow: ["row nowrap", "column"],
         alignItems: ["center", "unset"],
@@ -3461,6 +3464,13 @@ const theme = {
           //   width: "12px",
           // },
         },
+      },
+      default: {
+        color: "white",
+      },
+
+      white: {
+        color: "black",
       },
     },
     mobilemenu: {

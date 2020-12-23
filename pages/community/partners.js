@@ -31,6 +31,9 @@ const Community = () => {
     query: devices.desktop,
   });
   const [windowHeight, setWindowHeight] = useState(500);
+  const [subMenuStyling, setSubMenuStyling] = useState({
+    ...theme.components.submenu.white,
+  });
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.white,
   });
@@ -114,9 +117,11 @@ const Community = () => {
         navBarStyling={navBarStyling}
       />
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
-      <SubMenu subPages={subPages_.subPages} navBarStyling={navBarStyling} />
+      <SubMenu subPages={subPages_.subPages} subMenuStyling={subMenuStyling} />
       <Header
         isDesktop={isDesktop}
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         title={`Your partners in change`}
         body={`Dandi's Marketplace Partners are here to help you navigate the challenges you meet along the way.`}
         setNavbarStyling={setNavbarStyling}
@@ -130,6 +135,8 @@ const Community = () => {
         <TopContent />
       </Header>
       <People
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         isDesktop={isDesktop}
         title={`Do more with your data`}
         body={`Composed of leading consultants and practitioners, Dandi’s Marketplace Partners are experts at leveraging data to advance DEI initiatives. Whether it’s helping make sense of your numbers, implementing new programs, or managing through organizational change, Partners can provide the extra know-how needed to make good things happen.`}
@@ -140,6 +147,8 @@ const Community = () => {
       />
 
       <Curious
+        subMenuStyling={theme.components.submenu.white}
+        setSubMenuStyling={setSubMenuStyling}
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
