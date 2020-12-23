@@ -3983,6 +3983,8 @@ const theme = {
     root: {
       bg: "black",
       color: "white",
+      minHeight: "100vh",
+      minHeight: "-webkit-fill-available",
       "&.menu-open": {
         overflow: "hidden",
       },
