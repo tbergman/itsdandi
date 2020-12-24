@@ -28,6 +28,10 @@ import devices from "../../src/helpers/devices";
 const Product = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
+  const currentPage = {
+    main: "product",
+    sub: "analyze",
+  };
   const isDesktop = useMediaQuery({
     query: devices.desktop,
   });
@@ -65,13 +69,17 @@ const Product = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation current="product" navBarStyling={navBarStyling} />
+      <Navigation current={currentPage.main} navBarStyling={navBarStyling} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         navBarStyling={navBarStyling}
       />
-      <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
+      <MobileMenu
+        menuOpen={menuOpen}
+        navBarStyling={navBarStyling}
+        currentPage={currentPage.sub}
+      />
       <SubMenu subMenuStyling={subMenuStyling} subPages={subPages_.subPages} />
       <Header
         title={`See what your HR data’s trying to tell you`}

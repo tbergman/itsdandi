@@ -26,6 +26,10 @@ import devices from "../../src/helpers/devices";
 const Community = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
+  const currentPage = {
+    main: "community",
+    sub: "board",
+  };
   const isDesktop = useMediaQuery({
     query: devices.desktop,
   });
@@ -130,13 +134,17 @@ const Community = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation current="community" navBarStyling={navBarStyling} />
+      <Navigation current={currentPage.main} navBarStyling={navBarStyling} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         navBarStyling={navBarStyling}
       />
-      <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
+      <MobileMenu
+        menuOpen={menuOpen}
+        navBarStyling={navBarStyling}
+        currentPage={currentPage.sub}
+      />
       <SubMenu subMenuStyling={subMenuStyling} subPages={subPages_.subPages} />
       <Header
         isDesktop={isDesktop}

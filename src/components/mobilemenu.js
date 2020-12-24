@@ -56,14 +56,17 @@ const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
         {
           title: "Pay Equity",
           url: "/values/equitypay",
+          type: "equitypay",
         },
         {
           title: "The DEI Journey",
           url: "/values/deijourney",
+          type: "deijourney",
         },
         {
           title: "For Your Role",
           url: "/values/leadership",
+          type: "leadership",
         },
       ],
     },
@@ -74,22 +77,27 @@ const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
         {
           title: "Measure",
           url: "/product/measure",
+          type: "measure",
         },
         {
           title: "Analyze",
           url: "/product/analyze",
+          type: "analyze",
         },
         {
           title: "Collaborate",
           url: "/product/collaborate",
+          type: "collaborate",
         },
         {
           title: "Security",
           url: "/product/security",
+          type: "security",
         },
         {
           title: "Integrations",
           url: "/product/integrations",
+          type: "integrations",
         },
       ],
     },
@@ -104,14 +112,17 @@ const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
         {
           title: "DEI Advisory Board",
           url: "/community/board",
+          type: "board",
         },
         {
           title: "Marketplace Partners",
           url: "/community/partners",
+          type: "partners",
         },
         {
           title: "Service & Support",
           url: "/community/support",
+          type: "support",
         },
       ],
     },
@@ -173,14 +184,19 @@ const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
                     layout
                     style={{
                       height: state[item.type].open ? "auto" : 0,
-                      backgroundColor:
-                        item.type === currentPage ? "#262629" : "none",
+                      paddingTop: state[item.type].open ? "16px" : 0,
                     }}
                     className="sub"
                   >
                     {item.sub.map((sub, i) => (
                       <Link href={sub.url} key={i}>
-                        <a className="subitem">
+                        <a
+                          className={
+                            sub.type === currentPage
+                              ? "subitem current"
+                              : "subitem"
+                          }
+                        >
                           <Styled.p>{sub.title}</Styled.p>
                         </a>
                       </Link>

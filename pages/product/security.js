@@ -28,6 +28,10 @@ import devices from "../../src/helpers/devices";
 const Product = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
+  const currentPage = {
+    main: "product",
+    sub: "security",
+  };
   const isDesktop = useMediaQuery({
     query: devices.desktop,
   });
@@ -64,13 +68,17 @@ const Product = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation current="product" navBarStyling={navBarStyling} />
+      <Navigation current={currentPage.main} navBarStyling={navBarStyling} />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         navBarStyling={navBarStyling}
       />
-      <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
+      <MobileMenu
+        menuOpen={menuOpen}
+        navBarStyling={navBarStyling}
+        currentPage={currentPage.sub}
+      />
       <SubMenu subPages={subPages_.subPages} subMenuStyling={subMenuStyling} />
       <Header
         title={`Your people data is precious. Protecting it is our top priority.`}

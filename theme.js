@@ -3104,6 +3104,14 @@ const theme = {
             stroke: "white !important",
           },
         },
+        ".sub": {
+          ".subitem": {
+            color: (t) => `${t.colors.white} !important`,
+          },
+          ".current": {
+            bg: "#262629 !important",
+          },
+        },
         ".item": {
           color: "white",
         },
@@ -3141,6 +3149,14 @@ const theme = {
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
+        ".sub": {
+          ".subitem": {
+            color: (t) => `${t.colors.black} !important`,
+          },
+          ".current": {
+            bg: "#F8F8F8 !important",
+          },
+        },
         ".login": {
           color: (t) => `${t.colors.blue} !important`,
           path: {
@@ -3168,6 +3184,14 @@ const theme = {
           },
           path: {
             stroke: "black !important",
+          },
+        },
+        ".sub": {
+          ".subitem": {
+            color: (t) => `${t.colors.black} !important`,
+          },
+          ".current": {
+            bg: "yellow !important",
           },
         },
         ".item": {
@@ -3200,6 +3224,14 @@ const theme = {
           },
           path: {
             stroke: "black !important",
+          },
+        },
+        ".sub": {
+          ".subitem": {
+            color: (t) => `${t.colors.black} !important`,
+          },
+          ".current": {
+            bg: "#FFF !important",
           },
         },
         ".item": {
@@ -3235,6 +3267,14 @@ const theme = {
             stroke: "black !important",
           },
         },
+        ".sub": {
+          ".subitem": {
+            color: (t) => `${t.colors.black} !important`,
+          },
+          ".current": {
+            bg: "#F8F8F8 !important",
+          },
+        },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
@@ -3267,6 +3307,14 @@ const theme = {
             stroke: "black !important",
           },
         },
+        ".sub": {
+          ".subitem": {
+            color: (t) => `${t.colors.black} !important`,
+          },
+          ".current": {
+            bg: "#FFF !important",
+          },
+        },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
         },
@@ -3297,6 +3345,14 @@ const theme = {
           },
           path: {
             stroke: "black !important",
+          },
+        },
+        ".sub": {
+          ".subitem": {
+            color: (t) => `${t.colors.black} !important`,
+          },
+          ".current": {
+            bg: "#FFF !important",
           },
         },
         ".item": {
@@ -3523,7 +3579,7 @@ const theme = {
               display: "flex",
               flexFlow: "column",
               overflow: "hidden",
-              mt: [3],
+
               width: "100vw",
               left: "-20px",
               position: "relative",
@@ -3531,9 +3587,8 @@ const theme = {
               ".subitem": {
                 textDecoration: "none",
                 position: "relative",
-
+                pl: [4],
                 py: [2],
-                // mb: [1],
 
                 color: "white",
                 cursor: "pointer",

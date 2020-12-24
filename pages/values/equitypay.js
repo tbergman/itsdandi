@@ -29,6 +29,10 @@ import devices from "../../src/helpers/devices";
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
+  const currentPage = {
+    main: "values",
+    sub: "equitypay",
+  };
   const isDesktop = useMediaQuery({
     query: devices.desktop,
   });
@@ -68,7 +72,7 @@ const Home = () => {
       }}
     >
       <Navigation
-        current="values"
+        current={currentPage.main}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={navBarStyling}
       />
@@ -77,7 +81,11 @@ const Home = () => {
         setMenuOpen={setMenuOpen}
         navBarStyling={navBarStyling}
       />
-      <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
+      <MobileMenu
+        menuOpen={menuOpen}
+        navBarStyling={navBarStyling}
+        currentPage={currentPage.sub}
+      />
       <SubMenu subPages={subPages_.subPages} subMenuStyling={subMenuStyling} />
       <Header
         isDesktop={isDesktop}

@@ -28,6 +28,10 @@ import devices from "../../src/helpers/devices";
 
 const Product = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const currentPage = {
+    main: "product",
+    sub: "measure",
+  };
   const { theme } = useThemeUI();
   const isDesktop = useMediaQuery({
     query: devices.desktop,
@@ -67,7 +71,7 @@ const Product = () => {
       }}
     >
       <Navigation
-        current="product"
+        current={currentPage.main}
         navBarStyling={navBarStyling}
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
@@ -77,7 +81,11 @@ const Product = () => {
         setMenuOpen={setMenuOpen}
         navBarStyling={navBarStyling}
       />
-      <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
+      <MobileMenu
+        menuOpen={menuOpen}
+        navBarStyling={navBarStyling}
+        currentPage={currentPage.sub}
+      />
       <SubMenu subMenuStyling={subMenuStyling} subPages={subPages_.subPages} />
       <Header
         isDesktop={isDesktop}
