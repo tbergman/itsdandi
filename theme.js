@@ -3523,20 +3523,25 @@ const theme = {
               display: "flex",
               flexFlow: "column",
               overflow: "hidden",
+              mt: [3],
+              width: "100vw",
+              left: "-20px",
+              position: "relative",
 
               ".subitem": {
                 textDecoration: "none",
                 position: "relative",
-                bg: "#262629",
-                py: [1],
-                mb: [1],
-                width: "100vw",
-                left: "-20px",
-                pl: "20px",
+
+                py: [2],
+                // mb: [1],
+
                 color: "white",
                 cursor: "pointer",
                 "&:visited": {
                   outline: "none",
+                },
+                "&:hover": {
+                  bg: "#262629",
                 },
               },
             },
@@ -3687,6 +3692,7 @@ const theme = {
           justifyContent: "center",
           p: {
             // py: [2],
+            m: 0,
             lineHeight: "18.88px",
             fontFamily: "medium",
           },

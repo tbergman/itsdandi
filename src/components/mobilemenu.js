@@ -31,7 +31,7 @@ const reducer = (state, action) => {
   }
 };
 
-const MobileMenu = ({ menuOpen, navBarStyling }) => {
+const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
   const [state, dispatch] = useReducer(reducer, {
     values: {
       open: false,
@@ -173,6 +173,8 @@ const MobileMenu = ({ menuOpen, navBarStyling }) => {
                     layout
                     style={{
                       height: state[item.type].open ? "auto" : 0,
+                      backgroundColor:
+                        item.type === currentPage ? "#262629" : "none",
                     }}
                     className="sub"
                   >

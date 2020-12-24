@@ -64,7 +64,11 @@ const Home = () => {
         setMenuOpen={setMenuOpen}
         navBarStyling={navBarStyling}
       />
-      <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />
+      <MobileMenu
+        menuOpen={menuOpen}
+        navBarStyling={navBarStyling}
+        currentPage={`home`}
+      />
       <Top
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
