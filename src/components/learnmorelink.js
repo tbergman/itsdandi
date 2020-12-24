@@ -6,9 +6,6 @@ import { motion } from "framer-motion";
 
 const LearnMoreLink = ({ href, text, color }) => {
   const arrowMotion = {
-    initial: {
-      opacity: 1,
-    },
     hover: {
       x: 10,
     },
@@ -17,9 +14,7 @@ const LearnMoreLink = ({ href, text, color }) => {
   return (
     <Link href={href}>
       <motion.a
-        initial="inital"
         whileHover="hover"
-        animate="initial"
         sx={{
           variant: "components.learnMoreLink",
         }}
@@ -32,13 +27,36 @@ const LearnMoreLink = ({ href, text, color }) => {
           {text}
         </Styled.p>
 
-        <motion.div variants={arrowMotion}>
-          <ReactSVG
+        <motion.div className="arrow" variants={arrowMotion}>
+          <svg
+            width="15"
+            height="16"
+            viewBox="0 0 15 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 3.00464L14 8.00464L9 13.0046"
+              stroke={color}
+              stroke-width="1.6"
+            />
+            <line
+              x1="14"
+              y1="8.00425"
+              x2="1"
+              y2="8.00425"
+              stroke={color}
+              stroke-width="1.8"
+            />
+          </svg>
+
+          {/* <ReactSVG
             sx={{
               div: {
                 display: "flex",
                 alignItems: "center",
                 svg: {
+                  opacity: "1 !important",
                   g: {
                     path: {
                       stroke: color,
@@ -51,7 +69,7 @@ const LearnMoreLink = ({ href, text, color }) => {
               },
             }}
             src="/assets/svgs/arrow.svg"
-          />
+          /> */}
         </motion.div>
       </motion.a>
     </Link>

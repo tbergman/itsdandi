@@ -65,12 +65,12 @@ const Partners = ({
             className="row1"
           >
             {logos.map((url, i) => (
-              <div className="imagewrapper">
+              <div className="imagewrapper" key={i}>
                 <img src={url} alt="" />
               </div>
             ))}
             {logos.map((url, i) => (
-              <div className="imagewrapper">
+              <div className="imagewrapper" key={i}>
                 <img src={url} alt="" />
               </div>
             ))}
@@ -88,12 +88,12 @@ const Partners = ({
             className="row2"
           >
             {logos.map((url, i) => (
-              <div className="imagewrapper">
+              <div className="imagewrapper" key={i}>
                 <img src={url} alt="" />
               </div>
             ))}
             {logos.map((url, i) => (
-              <div className="imagewrapper">
+              <div className="imagewrapper" key={i}>
                 <img src={url} alt="" />
               </div>
             ))}

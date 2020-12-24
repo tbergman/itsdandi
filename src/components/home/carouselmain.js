@@ -36,6 +36,21 @@ const CarouselMain = () => {
     },
   ];
 
+  const variants = {
+    enter: {
+      opacity: 0,
+      x: 1000,
+    },
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: {
+      x: -1000,
+      opacity: 0,
+    },
+  };
+
   useEffect(() => {
     const next = (current + 1) % slides.length;
     const id = setTimeout(() => setCurrent(next), time);
@@ -50,9 +65,32 @@ const CarouselMain = () => {
           insights, along with powerful capabilities for making sense of it all.
         </Styled.p>
       </div>
-      <div className="imagewrapper">
-        <img src={images[current]} alt="" />
-      </div>
+      <AnimatePresence initial={false}>
+        <motion.div className="imagewrapper">
+          <motion.picture>
+            <motion.source
+              media="(min-width: 800px)"
+              srcSet={images[current]}
+            ></motion.source>
+            <motion.source srcSet={images[current]}></motion.source>
+
+            <motion.img
+              key={current}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 },
+              }}
+              src={images[current]}
+              alt=""
+            />
+          </motion.picture>
+        </motion.div>
+      </AnimatePresence>
+
       <div className="carouselwrapper">
         <div
           sx={{
@@ -79,6 +117,7 @@ const CarouselMain = () => {
                 <LearnMoreLink
                   href={slide.url}
                   text="Learn more"
+                  o
                   color="#F9D2FF"
                 />
               </div>

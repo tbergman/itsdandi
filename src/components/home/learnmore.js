@@ -9,6 +9,8 @@ import {
   useAnimation,
 } from "framer-motion";
 import { rootMargin } from "../../helpers/utils";
+import useWindowScroll from "@react-hook/window-scroll";
+import { useRef } from "react";
 
 const LearnMore = ({
   setNavbarStyling,
@@ -17,6 +19,7 @@ const LearnMore = ({
   isDesktop,
 }) => {
   const { scrollY } = useViewportScroll();
+  const scrollY_ = useWindowScroll(60);
   const animation = useAnimation();
 
   const variants = {

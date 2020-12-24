@@ -380,12 +380,14 @@ const theme = {
             width: ["100vw", "100%"],
             left: ["-20px", "unset"],
             position: "relative",
-            height: ["294px", "400px"],
-            img: {
-              position: "absolute",
-              height: ["100%"],
-              width: ["unset", "100%"],
-              left: ["20px", "unset"],
+            height: ["calc(100vw * .75)", "400px"],
+            picture: {
+              img: {
+                position: ["relative", "absolute"],
+                height: ["100%"],
+                width: ["unset", "100%"],
+                left: ["20px", "unset"],
+              },
             },
           },
           ".carouselwrapper": {
@@ -3664,6 +3666,10 @@ const theme = {
       width: "fit-content",
       p: {
         mr: "10px",
+      },
+      ".arrow": {
+        display: "flex",
+        alignItems: "center",
       },
     },
     shared: {

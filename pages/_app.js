@@ -10,6 +10,7 @@ const MyApp = ({ Component, pageProps, router }) => {
     <ThemeProvider theme={theme}>
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
         <link
           href="/fonts/DandiGroteskDisplay.ttf"
           rel="preload"
