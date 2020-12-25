@@ -35,8 +35,7 @@ const MyApp = ({ Component, pageProps, router }) => {
           exit
           key={router.pathname}
           initial={{
-            opacity: 0.5,
-
+            opacity: 1,
             x: 100,
             y: 0,
           }}

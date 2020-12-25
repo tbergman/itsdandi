@@ -1,9 +1,11 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
+import { jsx, Slider, Styled } from "theme-ui";
 import InView from "../../inview";
 import { useState, useEffect } from "react";
 import { rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
+import { motion, AnimatePresence } from "framer-motion";
+import CarouselItem from "../../carouselitem";
 
 const DeiWork = ({
   setNavbarStyling,
@@ -45,6 +47,21 @@ const DeiWork = ({
     },
   ];
 
+  const variants = {
+    enter: {
+      opacity: 0,
+      x: 1000,
+    },
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: {
+      x: -1000,
+      opacity: 0,
+    },
+  };
+
   return (
     <InView
       variant="pages.product.collaborate.deiwork"
@@ -64,22 +81,78 @@ const DeiWork = ({
         >
           <div className="title">
             <Styled.h2>Making DEI work</Styled.h2>
-          </div>
-          <div className="wrapper">
-            <div className="section1">
+            {!isDesktop && (
               <div className="text">
                 <Styled.p>
                   Dandi’s workflow tools are designed to make the day-to-day
                   work of advancing DEI easier and more impactful.
                 </Styled.p>
               </div>
+            )}
+          </div>
+          <div className="wrapper">
+            <div className="section1">
+              {isDesktop && (
+                <div className="text">
+                  <Styled.p>
+                    Dandi’s workflow tools are designed to make the day-to-day
+                    work of advancing DEI easier and more impactful.
+                  </Styled.p>
+                </div>
+              )}
+
               <div className="carousel">
-                {/* <Carousel slides={slides} current={current} color="yellow" /> */}
+                <div
+                  sx={{
+                    variant: "components.shared.carousel",
+                  }}
+                >
+                  {slides.map((slide, i) => (
+                    <CarouselItem
+                      key={i}
+                      idx={i}
+                      setCurrent={setCurrent}
+                      header={slide.header}
+                      progressBarBg="yellow"
+                      current={current === i}
+                    >
+                      <Styled.p
+                        sx={{
+                          color: "rgba(242, 242, 242, 0.7)",
+                        }}
+                      >
+                        {slide.body}
+                      </Styled.p>
+                    </CarouselItem>
+                  ))}
+                </div>
               </div>
             </div>
-            <div className="section2">
-              <img src={slides[current].imageUrl} alt="" />
-            </div>
+            <AnimatePresence initial={false}>
+              <motion.div className="section2">
+                <motion.picture>
+                  <source
+                    media="(min-width: 800px)"
+                    srcSet={slides[current].imageUrl}
+                  ></source>
+                  <source srcSet={slides[current].imageUrl}></source>
+
+                  <motion.img
+                    key={current}
+                    variants={variants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{
+                      x: { type: "spring", stiffness: 300, damping: 30 },
+                      opacity: { duration: 0.2 },
+                    }}
+                    src={slides[current].imageUrl}
+                    alt=""
+                  />
+                </motion.picture>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </SubInView>

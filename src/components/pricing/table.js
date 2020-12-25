@@ -11,6 +11,13 @@ const ItemSymbol = ({ input_, color }) => {
         </svg>
       );
     }
+    case "circleSmall": {
+      return (
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill={color} />
+        </svg>
+      );
+    }
     case false: {
       return null;
     }
@@ -72,7 +79,7 @@ const Table = () => {
         title: `On-demand data refreshes. As often as you like`,
         dandi: "circle",
         general: false,
-        inhouse: "circle",
+        inhouse: "circleSmall",
         bg: "transparent",
       },
       {
@@ -85,7 +92,7 @@ const Table = () => {
       {
         title: `Minimal investment of time and staff`,
         dandi: "circle",
-        general: "circle",
+        general: "circleSmall",
         inhouse: false,
         bg: "transparent",
       },
@@ -144,7 +151,7 @@ const Table = () => {
                 }}
                 className="bodyItem"
               >
-                <Styled.p>{bodyItem.title}</Styled.p>
+                <Styled.p className="title">{bodyItem.title}</Styled.p>
               </div>
               <div
                 sx={{

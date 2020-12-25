@@ -122,7 +122,10 @@ lifecycle.`,
         bg="#FFF"
         windowHeight={windowHeight}
         styling={{
-          mb: [21, "360px"],
+          mb: [
+            `calc(calc(calc(calc(100vw - 20px) * .6) * .7) + 32px)`,
+            "360px",
+          ],
         }}
       >
         <TopImage />

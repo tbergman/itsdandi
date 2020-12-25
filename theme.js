@@ -146,32 +146,25 @@ const theme = {
           width: "100vw",
           left: ["-20px", "-40px"],
           height: ["191px", "232px"],
-          // position: "absolute",
-          // left: [0],
-          // top: [325, "50%"],
-          // bottom: [0],
-          // pt: "16px",
-          // width: "100%",
-          // height: "191px",
-          // height: "250px",
+
           ".barWrapper": {
             position: "absolute",
             width: "100%",
             bottom: 0,
             left: 0,
             height: ["178px", "310px"],
-            // bottom: ["-71px", "-123px"],
-            ".topslide": {
-              position: "absolute",
-              width: "100%",
-              height: "100%",
-              top: ["31.5%"],
-              left: 0,
-              zIndex: 999,
-              path: {
-                strokeWidth: 2,
-              },
-            },
+
+            // ".topslide": {
+            //   position: "absolute",
+            //   width: "100%",
+            //   height: "100%",
+            //   top: ["31.5%"],
+            //   left: 0,
+            //   zIndex: 999,
+            //   path: {
+            //     strokeWidth: 2,
+            //   },
+            // },
           },
           "#bar1": {
             zIndex: 99,
@@ -255,6 +248,19 @@ const theme = {
               top: "100%",
               bg: "blue",
               borderRadius: "0px 0px 7px 7px",
+            },
+          },
+          "#line": {
+            position: "absolute",
+            height: ["140%"],
+            right: [(t) => `calc(calc(${t.colWidthMob} * 1.5) + 40px)`],
+            width: [(t) => `calc(calc(${t.colWidthMob} * 5.5) + 100px)`],
+            zIndex: 99,
+            svg: {
+              height: "100%",
+              position: "absolute",
+              top: 0,
+              right: 0,
             },
           },
         },
@@ -1131,7 +1137,7 @@ const theme = {
           ],
           right: 0,
           top: [
-            (t) => `calc(calc(calc(calc(100vw -20px) * .6) / 2) / -1)`,
+            (t) => `calc(calc(calc(calc(100vw - 20px) * .6) * .7) / -1)`,
             (t) =>
               `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) +  400px) * .45) * .5) / -1)`,
           ],
@@ -1149,7 +1155,10 @@ const theme = {
           },
         },
         textmodules: {
-          pt: [18, "388px"],
+          pt: [
+            `calc(calc(calc(calc(100vw - 20px) * .6) * .3) + 40px)`,
+            "388px",
+          ],
           bg: "lightGray",
           ".wrapper": {
             gridArea: ["1/1/2/-1", "1/3/2/-1"],
@@ -1780,21 +1789,23 @@ const theme = {
           ".title": {
             gridArea: ["1/1/2/-1", "1/3/2/7"],
             mt: [10, 19],
+            ".text": {
+              mt: [3, 0],
+              h2: {},
+              p: {},
+            },
           },
           ".wrapper": {
             gridArea: ["2/1/3/-1", "2/3/3/-1"],
             display: "flex",
-            flexFlow: ["column", "unset"],
+            flexFlow: ["column-reverse", "unset"],
             mt: [4],
             mb: [19],
             ".section1": {
               width: ["100%", (t) => t.desktopSectionWidth],
               display: "flex",
               flexFlow: "column",
-              ".text": {
-                h2: {},
-                p: {},
-              },
+
               ".carousel": {
                 mt: [8],
                 mr: [(t) => t.colWidthDesktop],
@@ -1806,12 +1817,13 @@ const theme = {
                 (t) => `calc(calc(${t.colWidthDesktop} * 6) + 200px)`,
               ],
               pt: ["83%", 0],
-              ml: [0, (t) => t.colWidthDesktop],
+              ml: [0],
+              mt: [6, 0],
               position: "relative",
               height: [
                 0,
                 (t) =>
-                  `calc(calc(calc(${t.colWidthDesktop} * 6) + 200px) * .69)`,
+                  `calc(calc(calc(${t.colWidthDesktop} * 6) + 200px) * .67)`,
               ],
               img: {
                 position: "absolute",
@@ -1971,20 +1983,31 @@ const theme = {
         },
         workflows: {
           bg: "transparent",
+          position: "relative",
           color: "black",
           ".graphic": {
-            position: "relative",
-            gridArea: ["1/1/2/-1", "1/2/2/7"],
-            ml: [0, (t) => `calc(${t.colWidthDesktop} + 20px)`],
+            mb: [10, 0],
+            position: ["relative", "absolute"],
+            gridArea: ["2/1/3/-1", "2/2/3/7"],
+            ml: [0],
             overflow: "hidden",
-            mb: [26, 0],
+            height: ["unset", "100%"],
+            width: [
+              "100vw",
+              (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+            ],
+            left: [
+              "-20px",
+              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
+            ],
+
             display: "flex",
             alignItems: ["flex-end", "center"],
             div: {
-              width: ["100%", "464px"],
-              pt: ["100%", 0],
-              height: [0, "464px"],
-              left: [(t) => `calc(${t.colWidthMob} + 10px)`, "unset"],
+              width: ["100%"],
+              pt: ["100%"],
+              height: [0],
+              left: [(t) => `calc(${t.colWidthMob} + 30px)`, "unset"],
               position: "relative",
               div: {
                 position: "absolute",
@@ -2000,11 +2023,11 @@ const theme = {
               },
             },
           },
-          ".wrapper": {
+          ".section1": {
             gridArea: ["1/1/2/-1", "1/6/2/-1"],
             zIndex: 99,
-            mt: [26],
-            mb: [26],
+            mt: [6, 26],
+            mb: [8, 5],
             ".toptext": {
               mr: [0, (t) => `calc(calc(${t.colWidthDesktop} * 3) + 80px)`],
               h2: {},
@@ -2012,12 +2035,22 @@ const theme = {
                 mt: [3],
               },
             },
+          },
+          ".section2": {
+            gridArea: ["2/1/3/5", "2/6/3/-1"],
+            mb: [10, 26],
             ".categories": {
-              mt: [8, 10],
+              // mt: [8, 10],
+
+              pt: [1, 0],
+              pb: [1, 0],
+              height: ["100%", "unset"],
               display: "flex",
               flexFlow: ["column", "row"],
+              justifyContent: ["space-between", "unset"],
 
               ".category": {
+                zIndex: 99,
                 width: [
                   "100%",
                   (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`,
@@ -2026,12 +2059,11 @@ const theme = {
 
                 ".title": {
                   // width: "60%",
-
                   fontFamily: "display",
                 },
                 ".body": {
                   // width: "60%",
-                  mt: [2],
+                  mt: [0, 2],
                   fontFamily: "body",
                 },
               },
@@ -2168,7 +2200,7 @@ const theme = {
           },
           ".logos": {
             gridArea: ["2/1/3/-1", "2/3/3/-1"],
-            mb: [7],
+            mb: [0, 7],
             display: "flex",
             flexFlow: ["row wrap"],
             justifyContent: ["space-between"],
@@ -2187,7 +2219,7 @@ const theme = {
           color: "black",
           ".wrapper": {
             gridArea: ["1/1/2/-1", "1/3/2/7"],
-            mt: [7],
+            mt: [4, 7],
             mb: [4],
             display: "flex",
             alignItems: "center",
@@ -2322,7 +2354,7 @@ const theme = {
         ".section1": {
           gridArea: ["1/1/2/-1", "1/2/2/7"],
           mt: [5, 16],
-          mb: [8, 17],
+          mb: [4, 17],
           ".toptext": {
             mb: [3],
             p: {},
@@ -2489,6 +2521,9 @@ const theme = {
                 gridTemplateColumns: ["4fr 1fr 1fr  1fr", "4fr 1fr 2fr 1fr"],
                 gridAutoRows: ["auto"],
                 ".bodyItem": {
+                  ".title": {
+                    mr: [2, 0],
+                  },
                   display: "flex",
                   alignItems: "center",
                   mt: [3],
@@ -4050,8 +4085,7 @@ const theme = {
     root: {
       bg: "black",
       color: "white",
-      minHeight: "100vh",
-      minHeight: "-webkit-fill-available",
+
       "&.menu-open": {
         overflow: "hidden",
       },

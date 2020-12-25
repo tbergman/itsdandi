@@ -35,7 +35,7 @@ const Home = ({ setNavbarStyling, navBarStyling, windowHeight, isDesktop }) => {
             </Link>
           </div>
         </div>
-        {/* <div className="spacer"></div> */}
+
         <Graphics />
       </div>
     </InView>

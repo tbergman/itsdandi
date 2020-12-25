@@ -13,11 +13,11 @@ const InView = ({
 }) => {
   const { inView, ref, entry } = useInView({
     rootMargin,
-    root: null,
   });
 
   useEffect(() => {
     if (inView) {
+      console.log(`hello?`);
       setNavbarStyling({
         ...navBarStyling,
       });

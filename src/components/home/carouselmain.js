@@ -117,7 +117,6 @@ const CarouselMain = () => {
                 <LearnMoreLink
                   href={slide.url}
                   text="Learn more"
-                  o
                   color="#F9D2FF"
                 />
               </div>

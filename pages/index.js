@@ -26,7 +26,10 @@ import MobileNav from "../src/components/mobilenav";
 const Home = () => {
   const { theme } = useThemeUI();
   const isDesktop = useMediaQuery({ query: devices.desktop });
-  const currentPage = "home";
+  const currentPage = {
+    main: "home",
+    sub: "home",
+  };
   const [menuOpen, setMenuOpen] = useState(false);
   const [windowHeight, setWindowHeight] = useState(500);
   const [staticLogo, setStaticLogo] = useState(false);
@@ -46,7 +49,7 @@ const Home = () => {
       setWindowHeight(window.innerHeight);
     }
     toggleMenu(menuOpen);
-  }, [menuOpen]);
+  }, [menuOpen, window]);
 
   return (
     <div
@@ -55,7 +58,7 @@ const Home = () => {
       }}
     >
       <Navigation
-        current={currentPage}
+        current={currentPage.main}
         navBarStyling={navBarStyling}
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
@@ -68,7 +71,7 @@ const Home = () => {
       <MobileMenu
         menuOpen={menuOpen}
         navBarStyling={navBarStyling}
-        currentPage={currentPage}
+        currentPage={currentPage.main}
       />
       <Top
         setNavbarStyling={setNavbarStyling}

@@ -48,7 +48,7 @@ const LearnMore = ({
               you navigate the challenges you meet along the way.
             </Styled.p>
             <div className="link">
-              <LearnMoreLink href="/" text={`Learn more`} color="#335AFF" />
+              <LearnMoreLink href="/" text={`Learn more`} color="#1A1A1D" />
             </div>
           </div>
         </div>

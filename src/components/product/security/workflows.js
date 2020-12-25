@@ -44,7 +44,7 @@ const Workflows = ({
             variant: "grid",
           }}
         >
-          <div className="wrapper">
+          <div className="section1">
             <div className="toptext">
               <Styled.h2>Keeping workflows secure</Styled.h2>
               <Styled.p>
@@ -52,6 +52,8 @@ const Workflows = ({
                 travels further than it should.
               </Styled.p>
             </div>
+          </div>
+          <div className="section2">
             <div className="categories">
               {categories.map((category, i) => (
                 <div className="category" key={i}>
