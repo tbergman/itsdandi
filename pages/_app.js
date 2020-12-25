@@ -36,7 +36,7 @@ const MyApp = ({ Component, pageProps, router }) => {
           key={router.pathname}
           initial={{
             opacity: 1,
-            x: 100,
+            x: 250,
             y: 0,
           }}
           animate={{
@@ -51,7 +51,7 @@ const MyApp = ({ Component, pageProps, router }) => {
           exit={{
             // scale: 0.96,
             opacity: 0,
-            x: -100,
+            x: -250,
             y: 0,
             transition: {
               duration: 0.1,
