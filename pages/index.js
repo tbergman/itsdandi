@@ -49,7 +49,7 @@ const Home = () => {
       setWindowHeight(window.innerHeight);
     }
     toggleMenu(menuOpen);
-  }, [menuOpen, window]);
+  }, [menuOpen]);
 
   return (
     <div
