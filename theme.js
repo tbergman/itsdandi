@@ -154,18 +154,6 @@ const theme = {
             bottom: 0,
             left: 0,
             height: ["178px", "310px"],
-
-            // ".topslide": {
-            //   position: "absolute",
-            //   width: "100%",
-            //   height: "100%",
-            //   top: ["31.5%"],
-            //   left: 0,
-            //   zIndex: 999,
-            //   path: {
-            //     strokeWidth: 2,
-            //   },
-            // },
           },
           "#bar1": {
             zIndex: 99,
@@ -203,7 +191,8 @@ const theme = {
             ],
             ml: [
               (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
-              (t) => `calc(calc(${t.colWidthDesktop} * 3) + 200px)`,
+              (t) =>
+                `calc(calc(calc(calc(${t.colWidthDesktop} * 2) + 120px) + calc(${t.colWidthDesktop} + 20px)) + 74px)`,
             ],
             bottom: 0,
             height: "100%",
@@ -238,7 +227,8 @@ const theme = {
             position: "absolute",
             ml: [
               (t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`,
-              (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
+              (t) =>
+                `calc(calc(calc(calc(${t.colWidthDesktop} * 2) + 120px) + calc(calc(${t.colWidthDesktop} * 2 ) + 114px)) + 74px)`,
             ],
 
             ".bottom": {
@@ -253,12 +243,23 @@ const theme = {
           },
           "#line": {
             position: "absolute",
-            height: ["140%"],
-            right: [(t) => `calc(calc(${t.colWidthMob} * 1.5) + 40px)`],
-            width: [(t) => `calc(calc(${t.colWidthMob} * 5.5) + 100px)`],
+            bottom: ["-30%"],
+            height: [
+              "140%",
+              (t) => `calc(calc(calc(${t.colWidthDesktop} * 7) + 280px) * .38)`,
+            ],
+            right: [
+              (t) => `calc(calc(${t.colWidthMob} * 1.5) + 40px)`,
+              "unset",
+            ],
+            width: [
+              (t) => `calc(calc(${t.colWidthMob} * 5.5) + 100px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 7) + 280px)`,
+            ],
             zIndex: 99,
             svg: {
               height: "100%",
+              width: ["unset", "100%"],
               position: "absolute",
               top: 0,
               right: 0,
