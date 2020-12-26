@@ -35,17 +35,16 @@ const MyApp = ({ Component, pageProps, router }) => {
           exit
           key={router.pathname}
           initial={{
-            opacity: 1,
+            opacity: 0.8,
             x: 0,
             y: 0,
           }}
           animate={{
             opacity: 1,
-
             y: 0,
             x: 0,
             transition: {
-              duration: 0.2,
+              duration: 0.1,
             },
           }}
           exit={{
@@ -54,7 +53,7 @@ const MyApp = ({ Component, pageProps, router }) => {
             x: -250,
             y: 0,
             transition: {
-              duration: 0.1,
+              duration: 0.2,
             },
           }}
           id="page-transition-container"
