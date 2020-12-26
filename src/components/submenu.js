@@ -7,7 +7,7 @@ import {
   useTransform,
   useAnimation,
 } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useScrollPosition from "@react-hook/window-scroll";
 import { useMediaQuery } from "react-responsive";
 import devices from "../helpers/devices";
@@ -35,7 +35,7 @@ const SubMenu = ({ subPages, subMenuStyling }) => {
           }}
           className="container"
         >
-          {subPages.map((page, i) => (
+          {subPages.slice(0, subPages.length - 1).map((page, i) => (
             <Link href={page.url} key={i}>
               <motion.a
                 style={{

@@ -14,8 +14,6 @@ const SubInView = ({
   });
 
   useEffect(() => {
-    console.log(rootMargin);
-    console.log(inView);
     if (inView) {
       setSubMenuStyling({
         ...subMenuStyling,

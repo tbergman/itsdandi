@@ -1,7 +1,7 @@
 import { transform, useTransform } from "framer-motion";
 import Customizable from "./src/components/product/collaborate/customizable";
 const theme = {
-  breakpoints: ["1024px"],
+  breakpoints: ["1024px", "1500px"],
   fonts: {
     body: '"Dandi Grotesk", sans-serif',
     display: '"Dandi Grotesk Display", sans-serif',
@@ -2862,14 +2862,18 @@ const theme = {
           position: "relative",
           ".image": {
             position: "absolute",
-            bottom: 0,
+
+            bottom: [
+              (t) => `calc(calc(calc(calc(100vw - 20px) * .6) * .3) / -1)`,
+              0,
+            ],
             height: [
-              (t) => `calc(calc(calc(${t.colWidthMob} * 6) + 120px) * .59)`,
+              (t) => `calc(calc(100vw - 20px) * .6)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktop} * 10) + 400px) * .45)`,
             ],
             width: [
-              (t) => `calc(calc(${t.colWidthMob} * 6) + 120px)`,
+              (t) => `calc(100vw - 20px)`,
               (t) => `calc(calc(${t.colWidthDesktop} * 10) + 400px)`,
             ],
             left: [
@@ -2878,9 +2882,10 @@ const theme = {
             ],
             img: {
               position: "absolute",
+
               width: "100%",
               height: "100%",
-              bottom: "-50%",
+              bottom: [0, "-50%"],
             },
           },
         },
@@ -2889,7 +2894,10 @@ const theme = {
           color: "black",
 
           ".textmodules": {
-            mt: [16, "390px"],
+            mt: [
+              `calc(calc(calc(calc(100vw - 20px) * .6) * .3) + 40px)`,
+              "390px",
+            ],
             mb: [5, 10],
             gridArea: ["1/1/2/-1", "1/3/2/-1"],
             display: "flex",
@@ -3457,6 +3465,7 @@ const theme = {
       height: ["40px", "unset"],
       overflow: "hidden",
       zIndex: 99,
+
       ".container": {
         ".arrow": {
           cursor: "pointer",
@@ -3538,24 +3547,6 @@ const theme = {
               transform: "translate3d(0,10px,0)",
             },
           },
-          // ":after": {
-          //   position: "absolute",
-          //   content: '""',
-          //   left: 0,
-          //   top: ["25%"],
-          //   bg: "black",
-          //   height: "2px",
-          //   width: "12px",
-          // },
-          // ":before": {
-          //   position: "absolute",
-          //   content: '""',
-          //   left: 0,
-          //   top: ["50%"],
-          //   bg: "black",
-          //   height: "2px",
-          //   width: "12px",
-          // },
         },
       },
       default: {
@@ -3893,13 +3884,13 @@ const theme = {
               borderRadius: "6px",
               bg: "rgba(242, 242, 242, 0.24)",
               ".animation": {
-                // bg: "yellow",
                 width: "100%",
                 height: "0",
                 borderRadius: "6px",
+                transition: "all 0ms linear",
               },
               ".active": {
-                transition: "height 7500ms linear",
+                transition: "all 7500ms linear",
                 height: "100%",
               },
             },

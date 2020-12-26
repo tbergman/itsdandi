@@ -7,6 +7,7 @@ import CarouselItem from "../carouselitem";
 
 const CarouselMain = () => {
   const [current, setCurrent] = useState(0);
+
   const time = 7500;
   const images = [
     "/assets/images/01.start_Get the full picture.png",

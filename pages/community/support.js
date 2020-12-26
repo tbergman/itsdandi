@@ -91,7 +91,10 @@ const Community = () => {
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{
-          mb: [21, "349px"],
+          mb: [
+            `calc(calc(calc(calc(100vw - 20px) * .6) *  .7) + 32px)`,
+            "349px",
+          ],
         }}
       >
         <TopContent />

@@ -19,7 +19,7 @@ const Graphics = () => {
               height: "100%",
             }}
             transition={{
-              duration: 0.5,
+              duration: 1,
               delay: 0.2,
             }}
             className="top"
@@ -32,7 +32,7 @@ const Graphics = () => {
               height: "40%",
             }}
             transition={{
-              duration: 0.5,
+              duration: 1,
               delay: 0.2,
             }}
             className="bottom"
@@ -47,7 +47,7 @@ const Graphics = () => {
               height: "61%",
             }}
             transition={{
-              duration: 0.5,
+              duration: 1,
               delay: 0.2,
             }}
             className="top"
@@ -60,7 +60,7 @@ const Graphics = () => {
               height: "40%",
             }}
             transition={{
-              duration: 0.5,
+              duration: 1,
               delay: 0.2,
             }}
             className="bottom"
@@ -75,7 +75,7 @@ const Graphics = () => {
               height: "40%",
             }}
             transition={{
-              duration: 0.5,
+              duration: 1,
               delay: 0.2,
             }}
             className="bottom"

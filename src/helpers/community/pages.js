@@ -11,4 +11,8 @@ export default [
     name: "Service & Support",
     url: "/community/support",
   },
+  {
+    name: "Home",
+    url: "/",
+  },
 ];
