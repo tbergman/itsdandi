@@ -117,6 +117,7 @@ const theme = {
           h1: {},
           ".button": {
             position: "relative",
+            cursor: "pointer",
             zIndex: 99,
             left: [0, "-8px"],
             gridArea: ["2/2/3/6", "2/7/3/-1"],
@@ -1256,6 +1257,7 @@ const theme = {
         ".link": {
           ml: [0, (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
           mr: [6, 0],
+          cursor: "pointer",
           textDecoration: "none",
           height: ["100%", "auto"],
           display: "flex",
@@ -1269,30 +1271,20 @@ const theme = {
             color: "black",
           },
           ".rotated": {
-            div: {
-              svg: {
-                transform: "rotate(180deg)",
-              },
-            },
+            transform: "rotate(180deg)",
           },
-          div: {
-            div: {
-              svg: {
-                height: ["30px"],
-                width: ["30px"],
-                position: "relative",
-                mb: [4, 7],
-                g: {
-                  position: "absolute",
-                  left: 0,
-                  path: {
-                    stroke: "black",
-                  },
-                  line: {
-                    stroke: "black",
-                  },
-                },
-              },
+
+          svg: {
+            height: ["30px"],
+            width: ["30px"],
+            position: "relative",
+            mb: [4, 7],
+            left: 0,
+            path: {
+              stroke: "black",
+            },
+            line: {
+              stroke: "black",
             },
           },
         },
@@ -2896,7 +2888,8 @@ const theme = {
           ".textmodules": {
             mt: [
               `calc(calc(calc(calc(100vw - 20px) * .6) * .3) + 40px)`,
-              "390px",
+              (t) =>
+                `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) + 400px) * .45) * .5) + 128px)`,
             ],
             mb: [5, 10],
             gridArea: ["1/1/2/-1", "1/3/2/-1"],
@@ -3748,6 +3741,7 @@ const theme = {
       textDecoration: "none",
       display: "flex",
       cursor: "pointer",
+      zIndex: 98,
       alignItems: "center",
       width: "fit-content",
       p: {
@@ -3951,7 +3945,11 @@ const theme = {
               (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
             ],
-            mr: [0, (t) => `calc(${t.colWidthDesktop} *.848)`],
+            mr: [
+              0,
+              (t) =>
+                `calc(calc(calc(calc(${t.colWidthDesktop} * 10) + 358px) - calc(calc(calc(${t.colWidthDesktop} * 2) + 80px) * 4)) / 3)`,
+            ],
 
             // flex: ["0 50%", "0 25%"],
             mb: [4],

@@ -93,7 +93,7 @@ const Community = () => {
         styling={{
           mb: [
             `calc(calc(calc(calc(100vw - 20px) * .6) *  .7) + 32px)`,
-            "349px",
+            `calc(calc(calc(calc(calc(${theme.colWidthDesktop} * 10) + 400px) * .45) * .5) + 92px)`,
           ],
         }}
       >

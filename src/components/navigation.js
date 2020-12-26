@@ -47,7 +47,7 @@ const Navigation = ({ current, navBarStyling, staticLogo, setStaticLogo }) => {
                 opacity: current === "values" ? 0.95 : 0.5,
               }}
             >
-              Why Dandy?
+              Why Dandi?
             </div>
           </a>
         </Link>

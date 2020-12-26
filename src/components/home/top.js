@@ -5,6 +5,7 @@ import Graphics from "./graphics";
 import Link from "next/link";
 import InView from "../inview";
 import { rootMargin } from "../../helpers/utils";
+import { motion } from "framer-motion";
 
 const Home = ({ setNavbarStyling, navBarStyling, windowHeight, isDesktop }) => {
   return (
@@ -21,19 +22,20 @@ const Home = ({ setNavbarStyling, navBarStyling, windowHeight, isDesktop }) => {
       >
         <div className="text">
           <Styled.h1>How business gets better for everyone</Styled.h1>
-          <div className="button">
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+              originX: "50%",
+              originY: "50%",
+            }}
+            className="button"
+          >
             <Link href="/">
-              <a>
-                <Styled.p
-                  sx={{
-                    fontWeight: "500",
-                  }}
-                >
-                  Request a demo
-                </Styled.p>
-              </a>
+              <motion.a>
+                <Styled.p>Request a demo</Styled.p>
+              </motion.a>
             </Link>
-          </div>
+          </motion.div>
         </div>
 
         <Graphics />
