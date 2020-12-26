@@ -36,7 +36,7 @@ const MyApp = ({ Component, pageProps, router }) => {
           key={router.pathname}
           initial={{
             opacity: 1,
-            x: 250,
+            x: 0,
             y: 0,
           }}
           animate={{
