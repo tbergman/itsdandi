@@ -3883,6 +3883,7 @@ const theme = {
                 height: "0",
                 borderRadius: "6px",
                 transition: "all 0ms linear",
+                transformOrigin: "top center",
               },
               ".active": {
                 transition: "all 7500ms linear",

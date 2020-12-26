@@ -16,7 +16,7 @@ const DeiWork = ({
   isDesktop,
 }) => {
   const [current, setCurrent] = useState(0);
-  const time = 5000;
+  const time = 7500;
 
   useEffect(() => {
     const next = (current + 1) % slides.length;
