@@ -6,11 +6,11 @@ import {
   useTransform,
   AnimatePresence,
 } from "framer-motion";
-import { useRef } from "react";
 import InView from "../inview";
 import theme from "../../../theme";
 import { rootMargin } from "../../helpers/utils";
 import { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Partners = ({
   setNavbarStyling,
@@ -18,7 +18,6 @@ const Partners = ({
   navBarStyling,
   isDesktop,
 }) => {
-  const ref = useRef();
   const { scrollYProgress } = useViewportScroll();
   const [loopIdx, setLoopIdx] = useState(0);
   const time = 500;

@@ -10,7 +10,8 @@ import {
 } from "framer-motion";
 import { rootMargin } from "../../helpers/utils";
 import useWindowScroll from "@react-hook/window-scroll";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const LearnMore = ({
   setNavbarStyling,
@@ -18,10 +19,12 @@ const LearnMore = ({
   navBarStyling,
   isDesktop,
 }) => {
-  const [isInView, setIsInView] = useState(false);
   const { scrollY } = useViewportScroll();
   const scrollY_ = useWindowScroll(60);
   const animation = useAnimation();
+  const { inView, ref, entry } = useInView({
+    triggerOnce: true,
+  });
 
   const variants = {
     hidden: {
@@ -40,7 +43,6 @@ const LearnMore = ({
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
-      setIsInView={setIsInView}
     >
       <div
         sx={{
@@ -75,7 +77,22 @@ const LearnMore = ({
         <div className="imagewrapper">
           <img src="/assets/images/01_start_computer.png" alt="" />
         </div>
-        <motion.div className="text">
+        <motion.div
+          ref={ref}
+          initial={{
+            y: 50,
+            opacity: 0,
+          }}
+          animate={{
+            opacity: inView ? 1 : 0,
+            y: inView ? 0 : 50,
+          }}
+          transition={{
+            duration: 0.35,
+            type: "tween",
+          }}
+          className="text"
+        >
           <Styled.h2>
             Dandi is your platform for diversity, equity, and inclusion
           </Styled.h2>

@@ -9,7 +9,7 @@ const InView = ({
   setNavbarStyling,
   navBarStyling,
   bg,
-  setIsInView,
+
   children,
 }) => {
   const { inView, ref, entry } = useInView({
@@ -18,7 +18,6 @@ const InView = ({
 
   useEffect(() => {
     if (inView) {
-      setIsInView(true);
       setNavbarStyling({
         ...navBarStyling,
       });

@@ -4,6 +4,7 @@ import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 import InView from "../inview";
 import { rootMargin } from "../../helpers/utils";
+import { useState } from "react";
 
 const PayEquity = ({
   setNavbarStyling,
