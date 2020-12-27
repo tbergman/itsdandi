@@ -10,7 +10,7 @@ import {
 } from "framer-motion";
 import { rootMargin } from "../../helpers/utils";
 import useWindowScroll from "@react-hook/window-scroll";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const LearnMore = ({
   setNavbarStyling,
@@ -18,6 +18,7 @@ const LearnMore = ({
   navBarStyling,
   isDesktop,
 }) => {
+  const [isInView, setIsInView] = useState(false);
   const { scrollY } = useViewportScroll();
   const scrollY_ = useWindowScroll(60);
   const animation = useAnimation();
@@ -39,6 +40,7 @@ const LearnMore = ({
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
+      setIsInView={setIsInView}
     >
       <div
         sx={{
@@ -48,6 +50,7 @@ const LearnMore = ({
         <motion.div
           style={{
             opacity: useTransform(scrollY, [0, 175, 10000], [1, 0, 0]),
+            scale: useTransform(scrollY, [0, 175, 10000], [1, 0, 0]),
           }}
           className="toptext"
         >

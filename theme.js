@@ -159,10 +159,7 @@ const theme = {
             zIndex: 99,
             position: "absolute",
             height: "100%",
-            width: [
-              (t) => `calc(${t.colWidthMob} + 10px)`,
-              (t) => `calc(${t.colWidthDesktop} + 20px)`,
-            ],
+            width: [(t) => `calc(${t.colWidthMob} + 10px)`, `95px`],
             ml: ["20px", (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
             ".top": {
               position: "absolute",
@@ -185,14 +182,10 @@ const theme = {
           },
           "#bar2": {
             zIndex: 99,
-            width: [
-              (t) => `calc(${t.colWidthMob} + 10px)`,
-              (t) => `calc(${t.colWidthDesktop} + 20px)`,
-            ],
+            width: [(t) => `calc(${t.colWidthMob} + 10px)`, "95px"],
             ml: [
               (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
-              (t) =>
-                `calc(calc(calc(calc(${t.colWidthDesktop} * 2) + 120px) + calc(${t.colWidthDesktop} + 20px)) + 74px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 289px)`,
             ],
             bottom: 0,
             height: "100%",
@@ -218,17 +211,13 @@ const theme = {
           },
           "#bar3": {
             zIndex: 99,
-            width: [
-              (t) => `calc(${t.colWidthMob} + 10px)`,
-              (t) => `calc(${t.colWidthDesktop} + 20px)`,
-            ],
+            width: [(t) => `calc(${t.colWidthMob} + 10px)`, "95px"],
             height: "100%",
             bottom: 0,
             position: "absolute",
             ml: [
               (t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`,
-              (t) =>
-                `calc(calc(calc(calc(${t.colWidthDesktop} * 2) + 120px) + calc(calc(${t.colWidthDesktop} * 2 ) + 114px)) + 74px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 458px)`,
             ],
 
             ".bottom": {
@@ -243,9 +232,9 @@ const theme = {
           },
           "#line": {
             position: "absolute",
-            bottom: ["-30%"],
+            bottom: ["-45%", "-30%"],
             height: [
-              "140%",
+              "120%",
               (t) => `calc(calc(calc(${t.colWidthDesktop} * 7) + 280px) * .38)`,
             ],
             right: [
@@ -256,6 +245,8 @@ const theme = {
               (t) => `calc(calc(${t.colWidthMob} * 5.5) + 100px)`,
               (t) => `calc(calc(${t.colWidthDesktop} * 7) + 280px)`,
             ],
+            maxWidth: "811px",
+            maxHeight: "308px",
             zIndex: 99,
             svg: {
               height: "100%",
@@ -263,6 +254,9 @@ const theme = {
               position: "absolute",
               top: 0,
               right: 0,
+              circle: {
+                transform: "scale(0)",
+              },
             },
           },
         },
@@ -384,7 +378,7 @@ const theme = {
             gridArea: ["2/1/3/-1", "1/7/3/-1"],
             mt: [4, 0],
             mb: [4, 0],
-            overflow: ["hidden", "unset"],
+            overflow: ["hidden"],
             width: ["100vw", "100%"],
             left: ["-20px", "unset"],
             position: "relative",

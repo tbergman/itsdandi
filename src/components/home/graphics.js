@@ -10,23 +10,24 @@ const Graphics = () => {
     animate: {
       pathLength: 1,
       transition: {
-        duration: 1,
+        duration: 0.7,
         delay: 0.8,
-        ease: "easeIn",
+        ease: "easeOut",
       },
     },
   };
 
   // const circleMotion = {
   //   start: {
-  //     pathLength: 0,
+  //     scale: 0,
   //   },
   //   animate: {
-  //     pathLenth: 1,
+  //     scale: 0,
   //     transition: {
   //       duration: 0.4,
-  //       delay: 1,
-  //       ease: "easeIn",
+  //       delay: 2,
+  //       type: "spring",
+  //       stiffness: 500,
   //     },
   //   },
   // };
@@ -111,8 +112,6 @@ const Graphics = () => {
         </motion.div>
         <motion.div id="line">
           <motion.svg
-            initial="start"
-            animate="animate"
             width="811"
             height="308"
             viewBox="0 0 811 308"
@@ -124,11 +123,30 @@ const Graphics = () => {
                 stroke: "white",
                 strokeWidth: 2,
               }}
+              initial="start"
+              animate="animate"
               variants={lineMotion}
               d={`M0 307 H0 C400 307  645 307 795 16`}
             />
 
-            <motion.circle cx="795" cy="16" r="10" fill="white" />
+            <motion.circle
+              initial={{
+                scale: 0,
+              }}
+              animate={{
+                scale: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 1.5,
+                type: "spring",
+                stiffness: 350,
+              }}
+              cx="795"
+              cy="16"
+              r="10"
+              fill="white"
+            />
           </motion.svg>
         </motion.div>
       </motion.div>
