@@ -35,9 +35,6 @@ const MarketPlacePartners = ({
           <div className="background">
             <div className="circles">
               <motion.svg
-                style={{
-                  scale: 0,
-                }}
                 initial={{
                   scale: 0,
                 }}
