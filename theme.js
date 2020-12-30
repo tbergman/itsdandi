@@ -104,6 +104,8 @@ const theme = {
             height: [(t) => t.colWidthMob, (t) => t.colWidthDesktop],
             width: ["125px", "367px"],
             mb: ["20px", "40px"],
+            // transform: "translateY(-60%) rotate(90deg)",
+            // transformOrigin: "0% 100%",
           },
         },
         ".text": {
@@ -737,14 +739,11 @@ const theme = {
             display: "flex",
             alignItems: "center",
             right: ["20%", "-232px"],
-            div: {
+
+            svg: {
+              transform: ["rotate(90deg)", "unset"],
               width: "inherit",
               height: "inherit",
-              svg: {
-                width: "inherit",
-                height: "inherit",
-                transform: ["rotate(90deg)", "unset"],
-              },
             },
           },
           ".background": {

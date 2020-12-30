@@ -31,13 +31,14 @@ const BigLogo = ({ navBarStyling, menuOpen, staticLogo, setStaticLogo }) => {
     >
       <motion.svg
         style={{
-          // opacity: opacityAnim,
+          opacity: opacityAnim,
           scale: staticLogo ? 0.5 : scaleAnim,
           translateY: staticLogo ? "-60%" : positionAnim,
-          rotate: 90,
           originX: "0%",
           originY: "100%",
+          rotate: 90,
         }}
+        key={1010}
         width="82"
         height="25"
         viewBox="0 0 82 25"

@@ -5,9 +5,9 @@ import LearnMoreLink from "../learnmorelink";
 import { ReactSVG } from "react-svg";
 import InView from "../inview";
 import { rootMargin } from "../../helpers/utils";
-import { useState } from "react";
+import { useStat, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const MarketPlacePartners = ({
   setNavbarStyling,
@@ -15,9 +15,23 @@ const MarketPlacePartners = ({
   navBarStyling,
   isDesktop,
 }) => {
+  const controls = useAnimation();
   const { inView, ref } = useInView({
     triggerOnce: true,
   });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        scale: 1,
+        transition: {
+          duration: 1,
+          delay: 1,
+        },
+      });
+    }
+  }, [inView]);
+
   return (
     <InView
       variant="pages.home.marketplacepartners"
@@ -35,16 +49,6 @@ const MarketPlacePartners = ({
           <div className="background">
             <div className="circles">
               <motion.svg
-                initial={{
-                  scale: 0,
-                }}
-                animate={{
-                  scale: inView ? 1 : 0,
-                }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.5,
-                }}
                 width="463"
                 height="465"
                 viewBox="0 0 463 465"
