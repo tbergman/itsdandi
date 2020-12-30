@@ -3453,23 +3453,153 @@ const theme = {
       height: ["40px", "unset"],
       overflow: "hidden",
       zIndex: 99,
-
-      ".container": {
+      ".mobilecontainer": {
         ".arrow": {
           cursor: "pointer",
-          position: "absolute",
-          bottom: "25%",
           path: {
             stroke: "#CACACE",
           },
         },
         ".left": {
-          left: ["16px"],
-          transform: "rotate(90deg)",
+          position: "absolute",
+          bg: "#FFF",
+          width: "40px",
+          height: "39px",
+          top: 0,
+          left: 0,
+          zIndex: 99,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          ".arrow": {
+            transform: "rotate(90deg)",
+          },
         },
         ".right": {
-          right: ["16px"],
-          transform: "rotate(-90deg)",
+          bg: "#FFF",
+          position: "absolute",
+          width: "40px",
+          height: "39px",
+          top: 0,
+          right: 0,
+          zIndex: 99,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          ".arrow": {
+            transform: "rotate(-90deg)",
+          },
+        },
+        ".draggable": {
+          height: "100%",
+
+          display: "flex",
+          flexFlow: ["row nowrap", "column"],
+          alignItems: ["center", "unset"],
+          ".item": {
+            cursor: "pointer",
+            flex: ["0 0 125px", "unset"],
+            display: ["flex", "unset"],
+            justifyContent: ["center", "unset"],
+            mb: [0, 2],
+            mr: [0, 0],
+            color: "inherit",
+            textDecoration: "none",
+            whiteSpace: "nowrap",
+            opacity: 0.5,
+            height: "max-content",
+            p: {
+              fontSize: "14px",
+              lineHeight: "16px",
+              color: "inherit",
+              fontFamily: "medium",
+            },
+            "&:hover": {
+              opacity: ["unset", 1],
+            },
+          },
+          ".current": {
+            opacity: 1,
+            position: "relative",
+            pl: [0, 3],
+            ".hamburger": {
+              position: "absolute",
+              left: 0,
+              height: "100%",
+              width: "12px",
+
+              "#line1": {
+                position: "absolute",
+                height: "2px",
+                display: ["none", "unset"],
+
+                width: "100%",
+                top: 0,
+                transform: "translate3d(0,8px,0)",
+                transition: "all 250ms",
+              },
+              "#line2": {
+                position: "absolute",
+                height: "2px",
+                width: "100%",
+                top: 0,
+                opacity: 0,
+                transform: "translate3d(-10px,10px,0)",
+                transition: "all 250ms",
+              },
+            },
+            ".folded": {
+              "#line1": {
+                transform: "translate3d(0, 5px,0)",
+              },
+              "#line2": {
+                opacity: 1,
+                transform: "translate3d(0,10px,0)",
+              },
+            },
+          },
+        },
+        height: ["100%", "unset"],
+        width: "100%",
+        borderBottom: ["1px solid #CACACE", "none"],
+      },
+
+      ".container": {
+        ".arrow": {
+          cursor: "pointer",
+          path: {
+            stroke: "#CACACE",
+          },
+        },
+        ".left": {
+          position: "absolute",
+          bg: "#FFF",
+          width: "40px",
+          height: "39px",
+          top: 0,
+          left: 0,
+          zIndex: 99,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          ".arrow": {
+            transform: "rotate(90deg)",
+          },
+        },
+        ".right": {
+          bg: "#FFF",
+          position: "absolute",
+          width: "40px",
+          height: "39px",
+          top: 0,
+          right: 0,
+          zIndex: 99,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          ".arrow": {
+            transform: "rotate(-90deg)",
+          },
         },
         height: ["100%", "unset"],
         width: "100%",
