@@ -800,6 +800,7 @@ const theme = {
         compensation: {
           bg: "lightGray",
           ".top": {
+            position: "relative",
             gridArea: ["1/1/2/-1", "1/3/2/-2"],
             mt: [23, "248px "],
             color: "black",
@@ -813,7 +814,11 @@ const theme = {
               display: "flex",
               flexFlow: ["column", "unset"],
               mt: [3],
-              mb: [8, 11],
+              mb: [
+                8,
+                (t) =>
+                  `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 9) + 320px) * .33) * .51) + 88px)`,
+              ],
               ".section1": {
                 width: [
                   "unset",
@@ -836,11 +841,24 @@ const theme = {
             },
 
             ".compensationTopGraphic": {
-              position: "relative",
-              height: ["60px", "164px"],
+              position: ["relative", "absolute"],
+              height: [
+                "60px",
+                (t) =>
+                  `calc(calc(calc(${t.colWidthDesktop} * 9) + 320px) * .33)`,
+              ],
+              bottom: [
+                "unset",
+                (t) =>
+                  `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 9) + 320px) * .33) * .49) / -1)`,
+              ],
+              width: [
+                "unset",
+                (t) => `calc(calc(${t.colWidthDesktop} * 9) + 320px)`,
+              ],
               img: {
                 position: "absolute",
-                height: "200%",
+                height: ["200%", "100%"],
                 width: "100%",
                 zIndex: 99,
               },
@@ -854,7 +872,11 @@ const theme = {
             display: "flex",
             flexFlow: ["column-reverse", "unset"],
             alignItems: "flex-start",
-            mt: [12, "244px"],
+            mt: [
+              12,
+              (t) =>
+                `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 9) + 320px) * .33) * .51) + 72px)`,
+            ],
             mb: [13],
             ".graph": {
               position: "relative",
