@@ -3,7 +3,7 @@ import { ReactSVG } from "react-svg";
 import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 import InView from "../inview";
-import { rootMargin } from "../../helpers/utils";
+import { lineBreaks, rootMargin } from "../../helpers/utils";
 import { useState } from "react";
 
 const PayEquity = ({
@@ -11,7 +11,9 @@ const PayEquity = ({
   windowHeight,
   navBarStyling,
   isDesktop,
+  content,
 }) => {
+  const { header, body, buttonText, desktopImage, mobileImage, url } = content;
   return (
     <InView
       variant="pages.home.payequity"
@@ -25,21 +27,14 @@ const PayEquity = ({
         }}
       >
         <div className="text">
-          <Styled.h2>Dandi makes pay equity possible</Styled.h2>
-          <Styled.p>
-            With sophisticated compensation analytics built right in, Dandi
-            helps you find the pay gaps at your company—and make them disappear.{" "}
-          </Styled.p>
+          <Styled.h2>{header}</Styled.h2>
+          <Styled.p>{lineBreaks(body)}</Styled.p>
           <div className="link">
-            <LearnMoreLink
-              href="/values/equitypay"
-              text="Learn how Dandi helps advance pay equity."
-              color="#335AFF"
-            />
+            <LearnMoreLink href={url} text={buttonText} color="#335AFF" />
           </div>
         </div>
         <div className="imagewrapper">
-          <img src="/assets/images/01_start_Pay equity.png" alt="" />
+          <img src={desktopImage} alt="" />
           {/* <ReactSVG src="/assets/svgs/crosswalk.svg" /> */}
         </div>
         {/* <div className="bottom"></div> */}

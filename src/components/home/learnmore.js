@@ -20,7 +20,7 @@ const LearnMore = ({
   isDesktop,
   content,
 }) => {
-  const { header, buttonText, body, image } = content;
+  const { header, buttonText, body, desktopImage, mobileImage, url } = content;
   const { scrollY } = useViewportScroll();
   const scrollY_ = useWindowScroll(60);
   const animation = useAnimation();
@@ -77,7 +77,7 @@ const LearnMore = ({
           </svg>
         </motion.div>
         <div className="imagewrapper">
-          <img src={image} alt="" />
+          <img src={desktopImage} alt="" />
         </div>
         <motion.div
           ref={ref}
@@ -98,33 +98,10 @@ const LearnMore = ({
           <Styled.h2>{header}</Styled.h2>
 
           <div className="link">
-            <LearnMoreLink href="/" text={buttonText} color="black" />
+            <LearnMoreLink href={url} text={buttonText} color="black" />
           </div>
 
-          {isDesktop ? (
-            <Styled.p>
-              {lineBreaks(body)}
-              {/* When DEI advances, everyone wins. But progress has been too slow
-              for too long, and employees are tired of waiting. We built Dandi
-              for the businesses that are ready to do more. <br />
-              <br />
-              With Dandi, businesses harness the power of data to advance their
-              DEI efforts, faster and smarter than ever before. So today’s DEI
-              challenges can finally take their rightful place: In the past. */}
-            </Styled.p>
-          ) : (
-            <Styled.p>
-              When DEI advances, everyone wins. But progress has been too slow
-              for too long, and employees are tired of waiting. We built Dandi
-              for the businesses that are ready to do more. <br />
-              <br />
-              With Dandi, businesses harness the power of data to advance their
-              DEI efforts, faster and smarter than ever before. So today’s DEI
-              challenges can finally take their rightful place: <br />
-              <br />
-              In the past.
-            </Styled.p>
-          )}
+          <Styled.p>{lineBreaks(body)}</Styled.p>
         </motion.div>
       </div>
     </InView>

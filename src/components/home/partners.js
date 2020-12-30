@@ -17,25 +17,27 @@ const Partners = ({
   windowHeight,
   navBarStyling,
   isDesktop,
+  content,
 }) => {
+  const { header, logosRow1 } = content;
   const { scrollYProgress } = useViewportScroll();
   const [loopIdx, setLoopIdx] = useState(0);
   const time = 500;
 
   useEffect(() => {
-    const next = (loopIdx + 1) % logos.length;
+    const next = (loopIdx + 1) % logosRow1.length;
     const id = setTimeout(() => setLoopIdx(next), time);
     return () => clearTimeout(id);
   }, [loopIdx]);
 
-  const logos = [
-    "/assets/images/logos/11.png",
-    "/assets/images/logos/21.png",
-    "/assets/images/logos/41.png",
-    "/assets/images/logos/successfactor-logo1.png",
-    "/assets/images/logos/Ultimate_Software_UltiPro_Logo_Process1.png",
-    "/assets/images/logos/Workday_Logo1.png",
-  ];
+  // const logos = [
+  //   "/assets/images/logos/11.png",
+  //   "/assets/images/logos/21.png",
+  //   "/assets/images/logos/41.png",
+  //   "/assets/images/logos/successfactor-logo1.png",
+  //   "/assets/images/logos/Ultimate_Software_UltiPro_Logo_Process1.png",
+  //   "/assets/images/logos/Workday_Logo1.png",
+  // ];
   return (
     <InView
       variant="pages.home.partners"
@@ -49,7 +51,7 @@ const Partners = ({
         }}
       >
         <div className="text">
-          <Styled.h2>Serious about change? You're in good company. </Styled.h2>
+          <Styled.h2>{header}</Styled.h2>
         </div>
         <motion.div className="carousel">
           <motion.div
@@ -63,14 +65,14 @@ const Partners = ({
             }}
             className="row1"
           >
-            {logos.map((url, i) => (
+            {logosRow1.map((url, i) => (
               <div className="imagewrapper" key={i}>
-                <img src={url} alt="" />
+                <img src={url.desktop_image} alt="" />
               </div>
             ))}
-            {logos.map((url, i) => (
+            {logosRow1.map((url, i) => (
               <div className="imagewrapper" key={i}>
-                <img src={url} alt="" />
+                <img src={url.desktop_image} alt="" />
               </div>
             ))}
           </motion.div>
@@ -86,14 +88,14 @@ const Partners = ({
             }}
             className="row2"
           >
-            {logos.map((url, i) => (
+            {logosRow1.map((url, i) => (
               <div className="imagewrapper" key={i}>
-                <img src={url} alt="" />
+                <img src={url.desktop_image} alt="" />
               </div>
             ))}
-            {logos.map((url, i) => (
+            {logosRow1.map((url, i) => (
               <div className="imagewrapper" key={i}>
-                <img src={url} alt="" />
+                <img src={url.desktop_image} alt="" />
               </div>
             ))}
           </motion.div>

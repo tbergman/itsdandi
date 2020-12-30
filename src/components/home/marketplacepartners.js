@@ -4,7 +4,7 @@ import Circles from "./circles";
 import LearnMoreLink from "../learnmorelink";
 import { ReactSVG } from "react-svg";
 import InView from "../inview";
-import { rootMargin } from "../../helpers/utils";
+import { lineBreaks, rootMargin } from "../../helpers/utils";
 import { useStat, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
@@ -14,7 +14,9 @@ const MarketPlacePartners = ({
   windowHeight,
   navBarStyling,
   isDesktop,
+  content,
 }) => {
+  const { header, body, buttonText, url } = content;
   const controls = useAnimation();
   const { inView, ref } = useInView({
     triggerOnce: true,
@@ -76,17 +78,10 @@ const MarketPlacePartners = ({
           </div>
         </motion.div>
         <div className="text">
-          <Styled.h2>Your partners in transformation</Styled.h2>
-          <Styled.p>
-            Dandi’s Marketplace Partners are here to help you navigate the
-            challenges you meet along the way.
-          </Styled.p>
+          <Styled.h2>{header}</Styled.h2>
+          <Styled.p>{lineBreaks(body)}</Styled.p>
           <div className="link">
-            <LearnMoreLink
-              href="/"
-              text="Meet the Dandi Marketplace Partners."
-              color="#335AFF"
-            />
+            <LearnMoreLink href={url} text={buttonText} color="#335AFF" />
           </div>
         </div>
       </div>

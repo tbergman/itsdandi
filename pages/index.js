@@ -92,10 +92,12 @@ const Home = (props) => {
         windowHeight={windowHeight}
         isDesktop={isDesktop}
         content={{
-          header: props.learn_more_header,
-          body: props.learn_more_body,
-          image: props.learn_more_image,
-          buttonText: props.learn_more_button,
+          header: props.learn_more[0].fields.header,
+          body: props.learn_more[0].fields.body,
+          desktopImage: props.learn_more[0].fields.desktop_image,
+          mobileImage: props.learn_more[0].fields.mobile_image,
+          buttonText: props.learn_more[0].fields.button_text,
+          url: props.learn_more[0].fields.url,
         }}
       />
       <Carousel
@@ -114,30 +116,58 @@ const Home = (props) => {
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.gray}
         isDesktop={isDesktop}
+        content={{
+          header: props.pay_equity[0].fields.header,
+          body: props.pay_equity[0].fields.body,
+          buttonText: props.pay_equity[0].fields.button_text,
+          desktopImage: props.pay_equity[0].fields.desktop_image,
+          mobileImage: props.pay_equity[0].fields.mobile_image,
+          url: props.pay_equity[0].fields.url,
+        }}
       />
       <Partners
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.white}
         isDesktop={isDesktop}
+        content={{
+          header: props.partner_header,
+          logosRow1: props.row1_logos,
+          logosRow2: props.row2_logos,
+        }}
       />
       <AdvanceDEI
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.lightTurquoise}
         isDesktop={isDesktop}
+        content={{
+          header: props.advance_dei[0].fields.header,
+          body: props.advance_dei[0].fields.body,
+          buttonText: props.advance_dei[0].fields.button_text,
+          url: props.advance_dei[0].fields.url,
+        }}
       />
       <Quotes
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.gray2}
         isDesktop={isDesktop}
+        content={{
+          quotes: props.quotes,
+        }}
       />
       <MarketPlacePartners
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.white}
         isDesktop={isDesktop}
+        content={{
+          header: props.marketplace_partners[0].fields.header,
+          body: props.marketplace_partners[0].fields.body,
+          url: props.marketplace_partners[0].fields.url,
+          buttonText: props.marketplace_partners[0].fields.button_text,
+        }}
       />
       <Footer />
     </div>

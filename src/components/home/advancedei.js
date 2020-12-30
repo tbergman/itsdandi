@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 import InView from "../inview";
-import { rootMargin } from "../../helpers/utils";
+import { lineBreaks, rootMargin } from "../../helpers/utils";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
@@ -12,7 +12,9 @@ const AdvanceDEI = ({
   windowHeight,
   navBarStyling,
   isDesktop,
+  content,
 }) => {
+  const { header, body, buttonText, url } = content;
   const { ref, inView } = useInView({
     triggerOnce: true,
   });
@@ -30,18 +32,10 @@ const AdvanceDEI = ({
         }}
       >
         <div className="text">
-          <Styled.h2>Advancing DEI, every step of the way</Styled.h2>
-          <Styled.p>
-            Whether your business is just starting its DEI initiatives or
-            already has programs underway, Dandi has the flexibility to meet you
-            where you are.
-          </Styled.p>
+          <Styled.h2>{header}</Styled.h2>
+          <Styled.p>{lineBreaks(body)}</Styled.p>
           <div className="link">
-            <LearnMoreLink
-              href="/values/deijourney"
-              text="Learn more about the DEI journey."
-              color="#1A1A1D"
-            />
+            <LearnMoreLink href={url} text={buttonText} color="#1A1A1D" />
           </div>
         </div>
         <motion.div className="graphics">

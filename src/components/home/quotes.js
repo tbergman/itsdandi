@@ -3,7 +3,7 @@ import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
 import { useState } from "react";
 import InView from "../inview";
-import { rootMargin } from "../../helpers/utils";
+import { lineBreaks, rootMargin } from "../../helpers/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { wrap } from "popmotion";
 
@@ -12,7 +12,9 @@ const Quotes = ({
   windowHeight,
   navBarStyling,
   isDesktop,
+  content,
 }) => {
+  const { quotes } = content;
   const [[page, direction], setPage] = useState([0, 0]);
 
   const variants = {
@@ -35,18 +37,18 @@ const Quotes = ({
       };
     },
   };
-  const images = [
-    {
-      desktop: "/assets/images/carol1_desktop.png",
-      mobile: "/assets/images/carol1.png",
-    },
-    {
-      desktop: "/assets/images/supportimage.png",
-      mobile: "/assets/images/supportimage.png",
-    },
-  ];
+  // const images = [
+  //   {
+  //     desktop: "/assets/images/carol1_desktop.png",
+  //     mobile: "/assets/images/carol1.png",
+  //   },
+  //   {
+  //     desktop: "/assets/images/supportimage.png",
+  //     mobile: "/assets/images/supportimage.png",
+  //   },
+  // ];
 
-  const imageIndex = wrap(0, images.length, page);
+  const index = wrap(0, quotes.length, page);
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
@@ -68,9 +70,11 @@ const Quotes = ({
             <motion.picture>
               <motion.source
                 media="(min-width: 800px)"
-                srcSet={images[imageIndex].desktop}
+                srcSet={quotes[index].fields.desktop_image}
               ></motion.source>
-              <motion.source srcSet={images[imageIndex].mobile}></motion.source>
+              <motion.source
+                srcSet={quotes[index].fields.mobile_image}
+              ></motion.source>
 
               <motion.img
                 key={page}
@@ -83,27 +87,22 @@ const Quotes = ({
                   x: { type: "spring", stiffness: 300, damping: 30 },
                   opacity: { duration: 0.2 },
                 }}
-                src={images[imageIndex].desktop}
+                src={quotes[index].fields.desktop_image}
                 alt=""
               />
             </motion.picture>
           </motion.div>
         </AnimatePresence>
 
-        <div className="text">
+        <div className="text" key={index}>
           <ReactSVG
             className="quotationmark"
             src="/assets/svgs/quotation.svg"
           />
-          <Styled.h3>
-            The right metrics drive the focus and recources for real progress.
-            Dandi delivers these metrics Quickly and easily
-          </Styled.h3>
+          <Styled.h3>{lineBreaks(quotes[index].fields.body)}</Styled.h3>
           <div className="source">
-            <Styled.p className="name">Carol Watson</Styled.p>
-            <Styled.p className="title">
-              Senior Director, Diversity Best Practices
-            </Styled.p>
+            <Styled.p className="name">{quotes[index].fields.name}</Styled.p>
+            <Styled.p className="title">{quotes[index].fields.title}</Styled.p>
           </div>
         </div>
         <div className="navigation">
