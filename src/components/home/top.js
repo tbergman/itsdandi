@@ -7,7 +7,14 @@ import InView from "../inview";
 import { rootMargin } from "../../helpers/utils";
 import { motion } from "framer-motion";
 
-const Home = ({ setNavbarStyling, navBarStyling, windowHeight, isDesktop }) => {
+const Home = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+  content,
+}) => {
+  const { header, buttonText } = content;
   return (
     <InView
       variant="pages.home.top"
@@ -21,7 +28,7 @@ const Home = ({ setNavbarStyling, navBarStyling, windowHeight, isDesktop }) => {
         }}
       >
         <div className="text">
-          <Styled.h1>How business gets better for everyone</Styled.h1>
+          <Styled.h1>{header}</Styled.h1>
           <motion.div
             whileHover={{
               scale: 1.1,
@@ -32,7 +39,7 @@ const Home = ({ setNavbarStyling, navBarStyling, windowHeight, isDesktop }) => {
           >
             <Link href="/">
               <motion.a>
-                <Styled.p>Request a demo</Styled.p>
+                <Styled.p>{buttonText}</Styled.p>
               </motion.a>
             </Link>
           </motion.div>

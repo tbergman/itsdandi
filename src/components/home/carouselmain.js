@@ -5,37 +5,39 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CarouselItem from "../carouselitem";
 
-const CarouselMain = () => {
+const CarouselMain = ({ description, items }) => {
+  const items_ = items.map((i) => i.fields);
+  console.log(items_);
   const [current, setCurrent] = useState(0);
 
   const time = 7500;
-  const images = [
-    "/assets/images/01.start_Get the full picture.png",
-    "/assets/images/01_start_measure_move_forward.png",
-    "/assets/images/01_start_put your_insights_to_work.png",
-  ];
-  const slides = [
-    {
-      header: "Get the full people picture",
-      body:
-        "Dandi aggregates all your HR data to give an unprecedented view of the employee experience.",
-      buttonText: "Learn more",
-      url: "/",
-    },
-    {
-      header: "Measure, and move forward",
-      body:
-        "Dandi aggregates all your HR data to give an unprecedented view of the employee experience.",
-      buttonText: "Learn more",
-      url: "/product/measure",
-    },
-    {
-      header: `Put your insights to work`,
-      body: `Dandi aggregates all your HR data to give an unprecedented view of the employee experience.`,
-      buttonText: `Learn more`,
-      url: "/",
-    },
-  ];
+  // const images = [
+  //   "/assets/images/01.start_Get the full picture.png",
+  //   "/assets/images/01_start_measure_move_forward.png",
+  //   "/assets/images/01_start_put your_insights_to_work.png",
+  // ];
+  // const slides = [
+  //   {
+  //     header: "Get the full people picture",
+  //     body:
+  //       "Dandi aggregates all your HR data to give an unprecedented view of the employee experience.",
+  //     buttonText: "Learn more",
+  //     url: "/",
+  //   },
+  //   {
+  //     header: "Measure, and move forward",
+  //     body:
+  //       "Dandi aggregates all your HR data to give an unprecedented view of the employee experience.",
+  //     buttonText: "Learn more",
+  //     url: "/product/measure",
+  //   },
+  //   {
+  //     header: `Put your insights to work`,
+  //     body: `Dandi aggregates all your HR data to give an unprecedented view of the employee experience.`,
+  //     buttonText: `Learn more`,
+  //     url: "/",
+  //   },
+  // ];
 
   const variants = {
     enter: {
@@ -53,7 +55,7 @@ const CarouselMain = () => {
   };
 
   useEffect(() => {
-    const next = (current + 1) % slides.length;
+    const next = (current + 1) % items_.length;
     const id = setTimeout(() => setCurrent(next), time);
     return () => clearTimeout(id);
   }, [current]);
@@ -61,19 +63,18 @@ const CarouselMain = () => {
   return (
     <div className="carousel">
       <div className="description">
-        <Styled.p>
-          On day 1 with Dandi, you’ll unlock more than 1 million new people
-          insights, along with powerful capabilities for making sense of it all.
-        </Styled.p>
+        <Styled.p>{description}</Styled.p>
       </div>
       <AnimatePresence initial={false}>
         <motion.div className="imagewrapper">
           <motion.picture>
             <motion.source
               media="(min-width: 800px)"
-              srcSet={images[current]}
+              srcSet={items_[current].desktop_image}
             ></motion.source>
-            <motion.source srcSet={images[current]}></motion.source>
+            <motion.source
+              srcSet={items_[current].mobile_image}
+            ></motion.source>
 
             <motion.img
               key={current}
@@ -85,7 +86,7 @@ const CarouselMain = () => {
                 x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.2 },
               }}
-              src={images[current]}
+              src={items_[current].desktop_image}
               alt=""
             />
           </motion.picture>
@@ -98,7 +99,7 @@ const CarouselMain = () => {
             variant: "components.shared.carousel",
           }}
         >
-          {slides.map((slide, i) => (
+          {items_.map((slide, i) => (
             <CarouselItem
               key={i}
               idx={i}
@@ -117,7 +118,7 @@ const CarouselMain = () => {
               <div className="link">
                 <LearnMoreLink
                   href={slide.url}
-                  text="Learn more"
+                  text={slide.button_text}
                   color="#F9D2FF"
                 />
               </div>

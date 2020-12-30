@@ -8,7 +8,7 @@ import {
   useTransform,
   useAnimation,
 } from "framer-motion";
-import { rootMargin } from "../../helpers/utils";
+import { rootMargin, lineBreaks } from "../../helpers/utils";
 import useWindowScroll from "@react-hook/window-scroll";
 import { useRef, useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
@@ -18,7 +18,9 @@ const LearnMore = ({
   windowHeight,
   navBarStyling,
   isDesktop,
+  content,
 }) => {
+  const { header, buttonText, body, image } = content;
   const { scrollY } = useViewportScroll();
   const scrollY_ = useWindowScroll(60);
   const animation = useAnimation();
@@ -75,7 +77,7 @@ const LearnMore = ({
           </svg>
         </motion.div>
         <div className="imagewrapper">
-          <img src="/assets/images/01_start_computer.png" alt="" />
+          <img src={image} alt="" />
         </div>
         <motion.div
           ref={ref}
@@ -93,23 +95,22 @@ const LearnMore = ({
           }}
           className="text"
         >
-          <Styled.h2>
-            Dandi is your platform for diversity, equity, and inclusion
-          </Styled.h2>
+          <Styled.h2>{header}</Styled.h2>
 
           <div className="link">
-            <LearnMoreLink href="/" text="Learn more" color="black" />
+            <LearnMoreLink href="/" text={buttonText} color="black" />
           </div>
 
           {isDesktop ? (
             <Styled.p>
-              When DEI advances, everyone wins. But progress has been too slow
+              {lineBreaks(body)}
+              {/* When DEI advances, everyone wins. But progress has been too slow
               for too long, and employees are tired of waiting. We built Dandi
               for the businesses that are ready to do more. <br />
               <br />
               With Dandi, businesses harness the power of data to advance their
               DEI efforts, faster and smarter than ever before. So today’s DEI
-              challenges can finally take their rightful place: In the past.
+              challenges can finally take their rightful place: In the past. */}
             </Styled.p>
           ) : (
             <Styled.p>

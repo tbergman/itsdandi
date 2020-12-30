@@ -2,7 +2,7 @@
 import { jsx, Styled, useThemeUI } from "theme-ui";
 import CarouselMain from "./carouselmain";
 import InView from "../inview";
-import { rootMargin } from "../../helpers/utils";
+import { lineBreaks, rootMargin } from "../../helpers/utils";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -12,7 +12,10 @@ const Carousel = ({
   windowHeight,
   navBarStyling,
   isDesktop,
+  content,
 }) => {
+  const { header, description, items } = content;
+
   const { ref, inView } = useInView({
     triggerOnce: true,
   });
@@ -44,13 +47,10 @@ const Carousel = ({
           }}
           className="toptext"
         >
-          <Styled.h2>
-            1 million insights. <br />
-            And a whole lot more.
-          </Styled.h2>
+          <Styled.h2>{lineBreaks(header)}</Styled.h2>
         </motion.div>
 
-        <CarouselMain />
+        <CarouselMain description={description} items={items} />
       </div>
     </InView>
   );

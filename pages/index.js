@@ -14,6 +14,7 @@ import MarketPlacePartners from "../src/components/home/marketplacepartners";
 import { useMediaQuery } from "react-responsive";
 import devices from "../src/helpers/devices";
 import { useState, useEffect } from "react";
+import Butter from "buttercms";
 
 import {
   motion,
@@ -23,7 +24,7 @@ import {
 } from "framer-motion";
 import MobileNav from "../src/components/mobilenav";
 
-const Home = () => {
+const Home = (props) => {
   const { theme } = useThemeUI();
   const isDesktop = useMediaQuery({ query: devices.desktop });
   const currentPage = {
@@ -43,6 +44,8 @@ const Home = () => {
       ? body.classList.add("menu-open")
       : body.classList.remove("menu-open");
   };
+
+  console.log(props);
 
   useEffect(() => {
     if (window) {
@@ -78,18 +81,33 @@ const Home = () => {
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
+        content={{
+          header: props.header,
+          buttonText: props.button_text,
+        }}
       />
       <LearnMore
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.violet}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
+        content={{
+          header: props.learn_more_header,
+          body: props.learn_more_body,
+          image: props.learn_more_image,
+          buttonText: props.learn_more_button,
+        }}
       />
       <Carousel
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
+        content={{
+          header: props.carousel_header,
+          description: props.carousel_description,
+          items: props.carousel_items,
+        }}
       />
       <PayEquity
         setNavbarStyling={setNavbarStyling}
@@ -125,5 +143,26 @@ const Home = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const butter = Butter(process.env.BUTTER_CMS);
+
+    const response = await butter.page.retrieve("*", "home");
+
+    return {
+      props: {
+        ...response.data.data.fields,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        ...err,
+      },
+    };
+  }
+}
 
 export default Home;
