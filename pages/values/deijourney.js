@@ -93,11 +93,20 @@ const Values = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation current={currentPage.main} navBarStyling={navBarStyling} />
+      <Navigation
+        current={currentPage.main}
+        navBarStyling={navBarStyling}
+        staticLogo={staticLogo}
+        setStaticLogo={setStaticLogo}
+        width={width}
+      />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         navBarStyling={navBarStyling}
+        staticLogo={staticLogo}
+        setStaticLogo={setStaticLogo}
+        width={width}
       />
       <MobileMenu
         menuOpen={menuOpen}

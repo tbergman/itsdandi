@@ -83,6 +83,7 @@ const theme = {
   colWidthMob: `calc(calc(100vw - 140px)/6)`,
   colWidthDesktop: `calc(calc(100vw - 520px)/12)`,
   desktopSectionWidth: `calc(calc(calc(calc(100vw - 520px)/12) * 4) + 160px)`,
+  desktopMaxSectionWidth: "450px",
   grid: {
     display: "grid",
     gridTemplateColumns: ["repeat(6,1fr)", "repeat(12,1fr)"],
@@ -319,19 +320,21 @@ const theme = {
           mt: [6, "290px"],
           ml: [0],
           mb: [16, 26],
-          h2: {},
+          h2: {
+            maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+          },
           ".link": {
             mt: [1],
             p: {
               mt: 0,
               fontFamily: "medium",
-              fontWeight: "500",
             },
           },
           p: {
             mt: [3, 4],
             fontSize: ["16px", "20px"],
             lineHeight: ["24px", "32px"],
+            maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
           },
         },
       },
@@ -372,6 +375,7 @@ const theme = {
             p: {
               fontSize: ["16px", "20px"],
               lineHeight: ["32px"],
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
             },
           },
           ".imagewrapper": {
@@ -396,6 +400,7 @@ const theme = {
             mt: [0, 4],
             gridArea: ["3/1/4/-1", "2/2/3/6"],
             width: "100%",
+            maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
           },
           ".texts": {
             gridArea: ["2/2/3/6"],
@@ -455,14 +460,13 @@ const theme = {
           h2: {},
           p: {
             mt: [3, 4],
-            fontSize: [""],
+            maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
           },
           ".link": {
             mt: [1],
             p: {
               mt: 0,
               fontSize: ["16px"],
-              fontWeight: "500",
               fontFamily: "medium",
             },
           },
@@ -560,7 +564,6 @@ const theme = {
           p: {
             mt: ["30px", 4],
             fontFamily: "body",
-            fontWeight: "400",
             color: "black",
           },
           ".link": {
@@ -761,6 +764,7 @@ const theme = {
           h2: {},
           p: {
             mt: ["20px", 4],
+            maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
           },
           ".link": {
             mt: [1],
@@ -805,7 +809,6 @@ const theme = {
             h2: {
               fontFamily: "display",
               fontSize: ["32px", "40px"],
-              fontWeight: "500",
               lineHeight: ["38.4px", "48px"],
             },
             ".body": {
@@ -835,6 +838,7 @@ const theme = {
                 fontFamily: "body",
                 fontSize: "16px",
                 lineHeight: "24px",
+                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               },
             },
 
@@ -940,6 +944,7 @@ const theme = {
                 "unset",
                 (t) => `calc(calc(${t.colWidthDesktop} * 4) +  160px)`,
               ],
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               fontSize: "16px",
               lineHeight: "24px",
             },
@@ -953,12 +958,15 @@ const theme = {
             flexFlow: ["column", "unset"],
             mt: [10, 16],
             mb: [8, 20],
-            h2: {
-              fontFamily: "display",
+            ".heading": {
               width: [
                 "100%",
                 (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
               ],
+              h2: {
+                fontFamily: "display",
+                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+              },
             },
             ".body": {
               mt: [3, 0],
@@ -972,6 +980,7 @@ const theme = {
               p: {
                 fontSize: "16px",
                 lineHeight: "24px",
+                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               },
               ".section1": {},
               ".section2": {
@@ -1055,7 +1064,6 @@ const theme = {
           h2: {
             mt: [10, 16],
             gridArea: ["1/1/2/-1", "1/3/2/-1"],
-            fontWeight: "500",
             fontFamily: "display",
           },
           ".text": {
@@ -1073,10 +1081,12 @@ const theme = {
                 fontFamily: "medium",
                 fontSize: ["16px"],
                 lineHeight: ["24px"],
+                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               },
               ".body": {
                 fontSize: ["16px"],
                 lineHeight: ["24px"],
+                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               },
             },
             ".section:nth-of-type(2n)": {
@@ -1130,6 +1140,7 @@ const theme = {
               mt: [3, 4],
               fontSize: ["16px"],
               lineHeight: ["24px"],
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
             },
             ".partnersLink": {
               mt: [1],
@@ -1221,8 +1232,10 @@ const theme = {
                 p: {
                   lineHeight: ["24px"],
                   fontSize: ["16px"],
+                  maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
                 },
                 ".linksection": {
+                  maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
                   p: {
                     fontFamily: "medium",
                   },
@@ -1340,7 +1353,9 @@ const theme = {
           ".section1": {
             mt: [10, 16],
             gridArea: ["1/1/2/-1", "1/3/2/7"],
-            h2: {},
+            h2: {
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+            },
           },
           ".section2": {
             mt: [3, 16],
@@ -1350,6 +1365,7 @@ const theme = {
             p: {
               lineHeight: ["24px"],
               fontSize: ["16px"],
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
             },
           },
         },
@@ -1366,7 +1382,9 @@ const theme = {
             ".section1": {
               flex: "auto",
               width: ["100%", (t) => t.desktopSectionWidth],
-              h2: {},
+              h2: {
+                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+              },
             },
 
             ".section2": {
@@ -1376,6 +1394,7 @@ const theme = {
                 mt: [3, 0],
                 fontSize: ["16px"],
                 lineHeight: ["24px"],
+                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               },
             },
           },
@@ -1440,8 +1459,17 @@ const theme = {
           color: "white",
           ".graphic": {
             mt: [10, 16],
+            mb: [0, 24],
             gridArea: ["1/1/2/-1", "1/7/2/-1"],
-            height: ["225px", "405px"],
+            width: [
+              "unset",
+              (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
+            ],
+            height: [
+              "225px",
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktop} * 5) + 200px) * .605)`,
+            ],
             position: "relative",
             img: {
               position: "absolute",
@@ -1455,6 +1483,7 @@ const theme = {
             gridArea: ["2/1/3/-1", "1/3/2/6"],
             p: {
               lineHeight: ["24px"],
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
             },
           },
         },
@@ -1576,7 +1605,11 @@ const theme = {
               display: "flex",
               alignItems: "center",
               mt: [6, 0],
-              ".text": {},
+              ".text": {
+                p: {
+                  maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+                },
+              },
             },
           },
 
@@ -1644,13 +1677,17 @@ const theme = {
             flexFlow: ["column", "unset"],
             ".section1": {
               width: ["100%", (t) => t.desktopSectionWidth],
-              h2: {},
+              h2: {
+                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+              },
             },
             ".section2": {
               mt: [3, 0],
               width: ["100%", (t) => t.desktopSectionWidth],
               ml: [0, (t) => t.colWidthDesktop],
-              p: {},
+              p: {
+                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+              },
             },
           },
         },
@@ -1712,6 +1749,7 @@ const theme = {
             h2: {},
             p: {
               mt: [3],
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
             },
           },
           ".graphic": {
@@ -1811,10 +1849,16 @@ const theme = {
               width: ["100%", (t) => t.desktopSectionWidth],
               display: "flex",
               flexFlow: "column",
+              ".text": {
+                p: {
+                  maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+                },
+              },
 
               ".carousel": {
                 mt: [8],
                 mr: [(t) => t.colWidthDesktop],
+                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               },
             },
             ".section2": {
@@ -1851,7 +1895,10 @@ const theme = {
             mt: [10, 16],
             mb: [10, 16],
             h2: {},
-            p: { mt: [3] },
+            p: {
+              mt: [3],
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+            },
           },
           ".graphic": {
             gridArea: ["2/1/3/-1", "1/9/2/-1"],
@@ -1951,6 +1998,7 @@ const theme = {
             h2: {},
             p: {
               mt: [3, 4],
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
             },
           },
           ".modules": {
@@ -1981,7 +2029,7 @@ const theme = {
                 justifyContent: ["space-between"],
                 p: {
                   width: ["100%", (t) => `calc(${t.colWidthDesktop} * 3)`],
-                  pr: ["60px", 0],
+                  pr: ["60px", 4],
                 },
               },
             },
@@ -2039,6 +2087,7 @@ const theme = {
               h2: {},
               p: {
                 mt: [3],
+                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               },
             },
           },
@@ -2098,13 +2147,20 @@ const theme = {
           },
 
           ".graphic": {
-            gridArea: ["2/1/3/-1", "1/8/2/-2"],
+            gridArea: ["2/1/3/-1", "1/7/2/-1"],
             mt: [6, 16],
             mb: [12, 16],
-            width: ["auto"],
+            width: [
+              "auto",
+              (t) => `calc(calc(${t.colWidthDesktop} * 3) + 160px)`,
+            ],
+            mr: ["unset", (t) => t.colWidthDesktop],
             ml: [0, (t) => t.colWidthDesktop],
 
-            height: ["auto"],
+            height: [
+              "auto",
+              (t) => `calc(calc(${t.colWidthDesktop} * 3) + 160px)`,
+            ],
             display: "flex",
 
             justifyContent: ["center", "flex-end"],
@@ -2202,6 +2258,7 @@ const theme = {
               width: ["100%", (t) => t.desktopSectionWidth],
               ml: [0, (t) => t.colWidthDesktop],
               mt: [3, 0],
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
             },
           },
           ".logos": {
@@ -2286,11 +2343,13 @@ const theme = {
           h1: {
             fontSize: ["36px", "52px"],
             lineHeight: ["43px", "58px"],
+            maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
           },
           h3: {
             mt: [3],
             fontSize: ["20px"],
             lineHeight: ["30px"],
+            maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
           },
         },
         ".graphic": {
@@ -2617,14 +2676,14 @@ const theme = {
 
             ".section1": {
               width: [(t) => t.desktopSectionWidth],
+              h2: {},
             },
             ".section2": {
               ml: [(t) => t.colWidthDesktop],
               width: [(t) => t.desktopSectionWidth],
-
-              h2: {},
               p: {
                 mt: [1],
+                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               },
             },
           },
@@ -2813,10 +2872,16 @@ const theme = {
           color: "black",
           ".section1": {
             width: ["100%", (t) => t.desktopSectionWidth],
+            h2: {
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+            },
           },
           ".section2": {
             width: ["100%", (t) => t.desktopSectionWidth],
             ml: [0, (t) => t.colWidthDesktop],
+            p: {
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+            },
           },
 
           ".row1": {
@@ -2936,16 +3001,24 @@ const theme = {
                 width: ["100%", (t) => t.desktopSectionWidth],
                 mt: [2],
                 mb: [3],
-                h2: {},
-                p: { mt: [1] },
+                h2: {
+                  maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+                },
+                p: {
+                  mt: [1],
+                  maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+                },
               },
               ".list": {
                 width: ["100%", (t) => t.desktopSectionWidth],
                 ml: [0, (t) => t.colWidthDesktop],
+                p: {
+                  maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+                },
                 mt: [2],
                 ".listtitle": {
                   mb: [1],
-                  fontWeight: "500",
+
                   fontFamily: "display",
                 },
                 ".listbox": {
@@ -2955,6 +3028,7 @@ const theme = {
                     mb: [2],
                     position: "relative",
                     pl: [3],
+                    p: { maxWidth: ["unset", (t) => t.desktopMaxSectionWidth] },
                     ":after": {
                       content: "''",
                       position: "absolute",
@@ -3954,11 +4028,11 @@ const theme = {
             top: [0],
           },
           h3: {
-            // mt: [4],
             ml: [5],
             fontFamily: "display",
             fontSize: ["24px", "40px"],
             lineHeight: ["31.2px", "48px"],
+            maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
           },
           p: {
             mt: [4],
@@ -3979,9 +4053,7 @@ const theme = {
         h1: {},
         h3: {
           mt: [2, 3],
-
           fontFamily: "body",
-
           lineHeight: ["30px", "36px"],
           fontSize: ["20px", "24px"],
         },
@@ -4061,14 +4133,17 @@ const theme = {
 
           ".section1": {
             width: ["100%", (t) => t.desktopSectionWidth],
+            h2: {
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+            },
           },
           ".section2": {
             ml: [0, (t) => t.colWidthDesktop],
             width: ["100%", (t) => t.desktopSectionWidth],
 
-            h2: {},
             p: {
               mt: [2, 1],
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
             },
           },
         },

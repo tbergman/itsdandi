@@ -24,10 +24,13 @@ import SubMenu from "../../src/components/submenu";
 import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
+import { useWindowSize } from "@react-hook/window-size";
 
 const Product = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
+  const [width, height] = useWindowSize();
+  const [staticLogo, setStaticLogo] = useState(true);
   const currentPage = {
     main: "product",
     sub: "security",
@@ -68,11 +71,20 @@ const Product = () => {
         bg: "#FFF",
       }}
     >
-      <Navigation current={currentPage.main} navBarStyling={navBarStyling} />
+      <Navigation
+        current={currentPage.main}
+        navBarStyling={navBarStyling}
+        staticLogo={staticLogo}
+        setStaticLogo={setStaticLogo}
+        width={width}
+      />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         navBarStyling={navBarStyling}
+        staticLogo={staticLogo}
+        setStaticLogo={setStaticLogo}
+        width={width}
       />
       <MobileMenu
         menuOpen={menuOpen}

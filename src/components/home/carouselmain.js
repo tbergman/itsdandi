@@ -7,37 +7,8 @@ import CarouselItem from "../carouselitem";
 
 const CarouselMain = ({ description, items }) => {
   const items_ = items.map((i) => i.fields);
-  console.log(items_);
   const [current, setCurrent] = useState(0);
-
   const time = 7500;
-  // const images = [
-  //   "/assets/images/01.start_Get the full picture.png",
-  //   "/assets/images/01_start_measure_move_forward.png",
-  //   "/assets/images/01_start_put your_insights_to_work.png",
-  // ];
-  // const slides = [
-  //   {
-  //     header: "Get the full people picture",
-  //     body:
-  //       "Dandi aggregates all your HR data to give an unprecedented view of the employee experience.",
-  //     buttonText: "Learn more",
-  //     url: "/",
-  //   },
-  //   {
-  //     header: "Measure, and move forward",
-  //     body:
-  //       "Dandi aggregates all your HR data to give an unprecedented view of the employee experience.",
-  //     buttonText: "Learn more",
-  //     url: "/product/measure",
-  //   },
-  //   {
-  //     header: `Put your insights to work`,
-  //     body: `Dandi aggregates all your HR data to give an unprecedented view of the employee experience.`,
-  //     buttonText: `Learn more`,
-  //     url: "/",
-  //   },
-  // ];
 
   const variants = {
     enter: {

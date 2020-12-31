@@ -25,9 +25,11 @@ import MobileNav from "../../src/components/mobilenav";
 import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
+import { useWindowSize } from "@react-hook/window-size";
 
 const Product = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [width, height] = useWindowSize();
   const currentPage = {
     main: "product",
     sub: "measure",
@@ -75,11 +77,15 @@ const Product = () => {
         navBarStyling={navBarStyling}
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
+        width={width}
       />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         navBarStyling={navBarStyling}
+        staticLogo={staticLogo}
+        setStaticLogo={setStaticLogo}
+        width={width}
       />
       <MobileMenu
         menuOpen={menuOpen}
