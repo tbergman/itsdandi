@@ -26,8 +26,6 @@ const SubMenu = ({ subPages, subMenuStyling }) => {
   const controls = useAnimation();
   const scrollYPos = useScrollPosition(60);
 
-  console.log(xPos);
-
   useEffect(() => {
     controls.start({
       x: grid[current],

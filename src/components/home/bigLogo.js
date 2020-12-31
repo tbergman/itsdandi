@@ -2,9 +2,16 @@
 import { jsx } from "theme-ui";
 import { useViewportScroll, motion, useTransform } from "framer-motion";
 import useScrollPosition from "@react-hook/window-scroll";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const BigLogo = ({ navBarStyling, menuOpen, staticLogo, setStaticLogo }) => {
+const BigLogo = ({
+  navBarStyling,
+  menuOpen,
+  staticLogo,
+  setStaticLogo,
+  scaleTo,
+  yOffset,
+}) => {
   const { scrollYProgress } = useViewportScroll();
   const scrollY = useScrollPosition(60);
 
@@ -15,12 +22,7 @@ const BigLogo = ({ navBarStyling, menuOpen, staticLogo, setStaticLogo }) => {
   }, [scrollY]);
 
   const opacityAnim = useTransform(scrollYProgress, [0.02, 0.07], [1, 0]);
-  const scaleAnim = useTransform(scrollYProgress, [0, 0.02], [1, 0.5]);
-  const positionAnim = useTransform(
-    scrollYProgress,
-    [0, 0.02],
-    ["-100%", "-60%"]
-  );
+  const scaleAnim = useTransform(scrollYProgress, [0, 0.04], [1, scaleTo]);
 
   return (
     <div
@@ -31,14 +33,21 @@ const BigLogo = ({ navBarStyling, menuOpen, staticLogo, setStaticLogo }) => {
     >
       <motion.svg
         style={{
-          opacity: opacityAnim,
-          scale: staticLogo ? 0.5 : scaleAnim,
-          translateY: staticLogo ? "-60%" : positionAnim,
+          scale: staticLogo ? scaleTo : scaleAnim,
+          translateY: yOffset,
           originX: "0%",
           originY: "100%",
           rotate: 90,
         }}
-        key={1010}
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1,
+        }}
         width="82"
         height="25"
         viewBox="0 0 82 25"

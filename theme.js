@@ -99,13 +99,11 @@ const theme = {
           svg: {
             position: "fixed",
             zIndex: 9999,
-            top: ["22px", "-25px"],
+            top: [0],
             left: ["20px", "40px"],
             height: [(t) => t.colWidthMob, (t) => t.colWidthDesktop],
-            width: ["125px", "367px"],
+            width: ["125px", (t) => `calc(${t.colWidthDesktop} * 3.4)`],
             mb: ["20px", "40px"],
-            // transform: "translateY(-60%) rotate(90deg)",
-            // transformOrigin: "0% 100%",
           },
         },
         ".text": {

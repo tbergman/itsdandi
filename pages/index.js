@@ -15,6 +15,7 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../src/helpers/devices";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
+import { useWindowSize } from "@react-hook/window-size";
 
 import {
   motion,
@@ -27,6 +28,7 @@ import MobileNav from "../src/components/mobilenav";
 const Home = (props) => {
   const { theme } = useThemeUI();
   const isDesktop = useMediaQuery({ query: devices.desktop });
+  const [width, height] = useWindowSize();
   const currentPage = {
     main: "home",
     sub: "home",
@@ -44,8 +46,6 @@ const Home = (props) => {
       ? body.classList.add("menu-open")
       : body.classList.remove("menu-open");
   };
-
-  console.log(props);
 
   useEffect(() => {
     if (window) {
@@ -65,11 +65,15 @@ const Home = (props) => {
         navBarStyling={navBarStyling}
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
+        width={width}
       />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         navBarStyling={navBarStyling}
+        width={width}
+        staticLogo={staticLogo}
+        setStaticLogo={setStaticLogo}
       />
       <MobileMenu
         menuOpen={menuOpen}
@@ -100,7 +104,7 @@ const Home = (props) => {
           url: props.learn_more[0].fields.url,
         }}
       />
-      <Carousel
+      {/* <Carousel
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
@@ -168,7 +172,7 @@ const Home = (props) => {
           url: props.marketplace_partners[0].fields.url,
           buttonText: props.marketplace_partners[0].fields.button_text,
         }}
-      />
+      /> */}
       <Footer />
     </div>
   );

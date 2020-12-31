@@ -16,6 +16,7 @@ import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/values/pages";
 import MobileMenu from "../../src/components/mobilemenu";
 import { useState, useEffect } from "react";
+import { useWindowSize } from "@react-hook/window-size";
 
 import {
   motion,
@@ -26,8 +27,10 @@ import {
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 
-const Home = () => {
+const Values = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [width, height] = useWindowSize();
+  const [staticLogo, setStaticLogo] = useState(true);
   const { theme } = useThemeUI();
   const currentPage = {
     main: "values",
@@ -75,11 +78,17 @@ const Home = () => {
         current={currentPage.main}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={navBarStyling}
+        staticLogo={staticLogo}
+        setStaticLogo={setStaticLogo}
+        width={width}
       />
       <MobileNav
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
         navBarStyling={navBarStyling}
+        staticLogo={staticLogo}
+        setStaticLogo={setStaticLogo}
+        width={width}
       />
       <MobileMenu
         menuOpen={menuOpen}
@@ -158,4 +167,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Values;

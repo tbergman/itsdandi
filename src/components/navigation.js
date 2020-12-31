@@ -5,8 +5,16 @@ import { ReactSVG } from "react-svg";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import BigLogo from "./home/bigLogo";
+import { columnWidths } from "../helpers/utils";
 
-const Navigation = ({ current, navBarStyling, staticLogo, setStaticLogo }) => {
+const Navigation = ({
+  current,
+  navBarStyling,
+  staticLogo,
+  setStaticLogo,
+  width,
+}) => {
+  const widths = columnWidths(width);
   return (
     <motion.nav
       sx={{
@@ -18,12 +26,14 @@ const Navigation = ({ current, navBarStyling, staticLogo, setStaticLogo }) => {
       <div className="logowrapper">
         <Link href="/">
           <a className="logo">
-            {/* <BigLogo
+            <BigLogo
               navBarStyling={navBarStyling}
               staticLogo={staticLogo}
               setStaticLogo={setStaticLogo}
-            /> */}
-            <ReactSVG src="/assets/svgs/smile.svg" />
+              scaleTo={32 / widths.desktop}
+              yOffset={-widths.desktop + 35}
+            />
+            {/* <ReactSVG src="/assets/svgs/smile.svg" /> */}
           </a>
         </Link>
       </div>

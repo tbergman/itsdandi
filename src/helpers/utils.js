@@ -18,3 +18,10 @@ export const lineBreaks = (text) => {
     </span>
   ));
 };
+
+export const columnWidths = (width) => {
+  return {
+    desktop: (width - 40 * 13) / 12,
+    mobile: (width - 20 * 7) / 6,
+  };
+};
