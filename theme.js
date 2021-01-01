@@ -514,41 +514,43 @@ const theme = {
         },
         ".carousel": {
           gridArea: ["2/1/3/-1"],
-          height: "250px",
+          height: ["200px", "250px"],
+          mb: ["50px", 0],
           width: "100vw",
           left: ["-20px", "-40px"],
           position: "relative",
           overflowY: "hidden",
+          overFlowX: "hidden",
           display: "flex",
           flexFlow: "column",
-          ".row1": {
+          ".rowwrapper": {
             width: "100%",
-
+            height: "100%",
+            position: "relative",
+          },
+          ".rowcontainer": {
+            width: "100%",
+            position: "absolute",
+            overflowX: "hidden",
+            top: 0,
+            left: 0,
+          },
+          ".imagewrapper": {
+            flex: "0 0 250px",
             display: "flex",
-            flexFlow: ["row nowrap"],
             alignItems: "center",
-
-            ".imagewrapper": {
-              flex: "0 200px",
-              ml: [9],
-              img: {
-                objectFit: "contain",
-              },
+            justifyContent: "center",
+            height: "100%",
+            img: {
+              objectFit: "contain",
             },
           },
-          ".row2": {
-            width: "100%",
+          ".row": {
+            width: "fit-content",
+            position: "relative",
             display: "flex",
             flexFlow: ["row nowrap"],
             alignItems: "center",
-
-            ".imagewrapper": {
-              flex: "0 200px",
-              ml: [9],
-              img: {
-                objectFit: "contain",
-              },
-            },
           },
         },
       },
