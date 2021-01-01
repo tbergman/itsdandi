@@ -697,7 +697,7 @@ const theme = {
           right: ["unset", "-40px"],
           position: "relative",
           display: "flex",
-          flexFlow: ["row nowrap", "column"],
+          flexFlow: ["row nowrap", "column-reverse"],
           ".prev": {
             bg: "rgba(58, 58, 61, 0.1)",
             cursor: "pointer",
