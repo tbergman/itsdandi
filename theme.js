@@ -2589,8 +2589,18 @@ const theme = {
                 gridAutoRows: ["auto"],
                 ".bodyItem": {
                   ".title": {
+                    display: "flex",
+                    alignItems: "center",
                     mr: [2, 0],
+                    svg: {
+                      display: ["none", "unset"],
+                      width: "20px",
+                      height: "20px",
+                      ml: [2],
+                      cursor: "pointer",
+                    },
                   },
+
                   display: "flex",
                   alignItems: "center",
                   mt: [3],

@@ -46,6 +46,7 @@ const Table = () => {
         general: false,
         inhouse: false,
         bg: "#262629",
+        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
       },
       {
         title: `Easy API integrations with all your data sources`,
@@ -53,6 +54,7 @@ const Table = () => {
         general: false,
         inhouse: false,
         bg: "transparent",
+        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
       },
       {
         title: `Deep DEI subject-matter expertise`,
@@ -60,6 +62,7 @@ const Table = () => {
         general: false,
         inhouse: false,
         bg: "#262629",
+        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
       },
       {
         title: `Full measurement of the employee lifecycle`,
@@ -67,6 +70,7 @@ const Table = () => {
         general: false,
         inhouse: false,
         bg: "transparent",
+        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
       },
       {
         title: `Adjusted wage gap analysis`,
@@ -74,6 +78,7 @@ const Table = () => {
         general: false,
         inhouse: false,
         bg: "#262629",
+        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
       },
       {
         title: `On-demand data refreshes. As often as you like`,
@@ -81,6 +86,7 @@ const Table = () => {
         general: false,
         inhouse: "circleSmall",
         bg: "transparent",
+        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
       },
       {
         title: `Lawful domestic & international data collection guidance`,
@@ -88,6 +94,7 @@ const Table = () => {
         general: "Rarely",
         inhouse: false,
         bg: "#262629",
+        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
       },
       {
         title: `Minimal investment of time and staff`,
@@ -95,6 +102,7 @@ const Table = () => {
         general: "circleSmall",
         inhouse: false,
         bg: "transparent",
+        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
       },
       {
         title: `Power to analyze over 1 million unique data sets`,
@@ -102,6 +110,7 @@ const Table = () => {
         general: false,
         inhouse: "Rarely",
         bg: "#262629",
+        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
       },
       {
         title: `Robust support and education`,
@@ -109,6 +118,7 @@ const Table = () => {
         general: false,
         inhouse: false,
         bg: "transparent",
+        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
       },
       {
         title: `Weekly product updates`,
@@ -116,6 +126,7 @@ const Table = () => {
         general: "Not for DEI",
         inhouse: false,
         bg: "#262629",
+        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
       },
     ],
   };
@@ -151,7 +162,30 @@ const Table = () => {
                 }}
                 className="bodyItem"
               >
-                <Styled.p className="title">{bodyItem.title}</Styled.p>
+                <Styled.p className="title">
+                  {bodyItem.title}
+                  <svg
+                    className="infoicon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.49 6.5V11.3H7.5V6.5H8.49ZM7.5 5.5V4.5H8.49V5.5H7.5Z"
+                      fill="#F2F2F2"
+                      fill-opacity="0.7"
+                    />
+                    <circle
+                      cx="8"
+                      cy="8"
+                      r="5.5"
+                      stroke="#F2F2F2"
+                      stroke-opacity="0.7"
+                    />
+                  </svg>
+                </Styled.p>
               </div>
               <div
                 sx={{
