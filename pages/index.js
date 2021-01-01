@@ -24,6 +24,7 @@ import {
   useViewportScroll,
 } from "framer-motion";
 import MobileNav from "../src/components/mobilenav";
+import SubNavigation from "../src/components/subnavigation";
 
 const Home = (props) => {
   const { theme } = useThemeUI();
@@ -171,6 +172,13 @@ const Home = (props) => {
           body: props.marketplace_partners[0].fields.body,
           url: props.marketplace_partners[0].fields.url,
           buttonText: props.marketplace_partners[0].fields.button_text,
+        }}
+      />
+      <SubNavigation
+        next={{
+          name: "Why Dandi?",
+          url: "values/equitypay",
+          bg: "violet",
         }}
       />
       <Footer />

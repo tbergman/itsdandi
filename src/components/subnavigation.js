@@ -22,6 +22,13 @@ const SubNavigation = ({ next, prev }) => {
   const arrowMotionRotated = {
     rest: {
       x: 0,
+      rotate: 180,
+      originX: "50%",
+      originY: "50%",
+    },
+    rotated: {
+      rotate: 180,
+      x: 0,
     },
     hover: {
       x: -10,
@@ -50,15 +57,10 @@ const SubNavigation = ({ next, prev }) => {
             <motion.a
               initial="rest"
               whileHover="hover"
-              animate="rest"
+              animate="rotated"
               className="link"
             >
               <motion.svg
-                style={{
-                  rotate: 180,
-                  originX: "50%",
-                  originY: "50%",
-                }}
                 variants={arrowMotionRotated}
                 width="15"
                 height="16"
