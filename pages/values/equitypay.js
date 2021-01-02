@@ -26,6 +26,8 @@ import {
 } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
+import SubMenuMobile from "../../src/components/navigation/submenumobile";
+import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 
 const Values = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -95,7 +97,15 @@ const Values = () => {
         navBarStyling={navBarStyling}
         currentPage={currentPage.sub}
       />
-      <SubMenu subPages={subPages_.subPages} subMenuStyling={subMenuStyling} />
+      <SubMenuMobile
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
+      <SubMenuDesktop
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
+
       <Header
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
