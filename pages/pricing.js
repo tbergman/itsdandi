@@ -92,6 +92,7 @@ const Pricing = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
+        width={width}
       />
       <SubNavigation
         next={{

@@ -9,6 +9,7 @@ const BetterInsights = ({
   navBarStyling,
   windowHeight,
   isDesktop,
+  width,
 }) => {
   return (
     <InView
@@ -16,18 +17,19 @@ const BetterInsights = ({
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
+      className="BetterInsights"
     >
       <div
         sx={{
           variant: "grid",
         }}
       >
-        <div className="toptext">
-          <Styled.h2>
+        <div className="BetterInsights__toptext">
+          <Styled.h2 className="BetterInsights__toptext-heading">
             Better insights.
             <br /> Greater value.
           </Styled.h2>
-          <Styled.p>
+          <Styled.p className="BetterInsights__toptext-body">
             Before Dandi, businesses had two main options for getting DEI
             insights—using existing software that wasn’t really built for the
             job, or building an analytics tool themselves. While the traditional
@@ -36,7 +38,7 @@ const BetterInsights = ({
             less.
           </Styled.p>
         </div>
-        <Table />
+        <Table width={width} />
       </div>
     </InView>
   );

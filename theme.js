@@ -1,5 +1,3 @@
-import { transform, useTransform } from "framer-motion";
-import Customizable from "./src/components/product/collaborate/customizable";
 const theme = {
   breakpoints: ["1024px", "1500px"],
   fonts: {
@@ -2519,50 +2517,51 @@ const theme = {
       },
       betterinsights: {
         bg: "black",
-        ".toptext": {
+        ".BetterInsights__toptext": {
           gridArea: ["1/1/2/-1", "1/2/2/-2"],
           mt: [8, 16],
           mb: [3, 10],
           display: "flex",
           flexFlow: ["column", "unset"],
-
-          h2: {
+          ".BetterInsights__toptext-header": {
             width: ["100%", (t) => t.desktopSectionWidth],
           },
-          p: {
+          ".BetterInsights__toptext-body": {
             mt: [3, 0],
             width: ["100%", (t) => t.desktopSectionWidth],
             ml: [0, (t) => t.colWidthDesktop],
           },
         },
-        ".table": {
+
+        ".Table": {
           position: "relative",
           width: "100vw",
           left: ["-20px", "-40px"],
           mb: [9, 16],
           gridArea: ["2/1/3/-1"],
-          ".head": {
+
+          ".Table__head": {
             position: "relative",
             pl: ["20px", (t) => `calc(calc(${t.colWidthDesktop}) + 80px)`],
             pr: ["20px", "40px"],
             display: "grid",
             gridAutoRows: ["200px"],
             gridTemplateColumns: ["4fr 1fr 1fr 1fr", "4fr 1fr 2fr 1fr"],
-            ".headItem": {
+            ".Table__head-item": {
               display: "flex",
               justifyContent: "center",
               alignItems: "flex-end",
               mb: [3, 2],
               position: "relative",
-              ".focusborder": {
+              ".Table__head-item-focusBorder": {
                 position: "absolute",
                 top: ["30%", "60%"],
                 zIndex: 998,
                 width: "100%",
-                height: ["610%", "450%"],
+                // height: ["610%", ""],
                 border: (t) => `solid 1px ${t.colors.yellow}`,
               },
-              ".logo": {
+              ".Table__head-item-logo": {
                 position: "absolute",
                 top: ["37%", "unset"],
                 left: ["22%"],
@@ -2570,29 +2569,29 @@ const theme = {
                 transform: ["rotate(90deg)", "rotate(0deg)"],
                 transformOrigin: ["bottom left"],
               },
-              p: {
+              ".Table__head-item-text": {
                 writingMode: ["vertical-rl", "unset"],
                 textAlign: ["right", "unset"],
                 lineHeight: ["19.2px"],
               },
             },
           },
-          ".body": {
-            ".bodyRow": {
+          ".Table__body": {
+            ".Table__body-row": {
               pl: ["20px", (t) => `calc(calc(${t.colWidthDesktop}) + 80px)`],
               pr: ["20px", "40px"],
               position: "relative",
-              ".bodyGrid": {
+              ".Table__body-row-grid": {
                 display: "grid",
                 ml: [0],
                 gridTemplateColumns: ["4fr 1fr 1fr  1fr", "4fr 1fr 2fr 1fr"],
                 gridAutoRows: ["auto"],
-                ".bodyItem": {
-                  ".title": {
+                ".Table__body-row-grid-item": {
+                  ".Table__body-row-grid-item-title": {
                     display: "flex",
                     alignItems: "center",
                     mr: [2, 0],
-                    svg: {
+                    ".Table__body-row-grid-item-title-infoIcon": {
                       display: ["none", "unset"],
                       width: "20px",
                       height: "20px",
@@ -2606,7 +2605,7 @@ const theme = {
                   mt: [3],
                   mb: [3],
 
-                  p: {
+                  ".Table__body-row-grid-item-symbol": {
                     fontSize: ["14px"],
                     lineHeight: ["16.8px"],
                   },
