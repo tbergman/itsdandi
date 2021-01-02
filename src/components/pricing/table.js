@@ -2,6 +2,7 @@
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
 import { useRef, useState, useEffect } from "react";
+import LearnMoreLink from "../learnmorelink";
 
 const ItemSymbol = ({ input_, color }) => {
   switch (input_) {
@@ -40,6 +41,7 @@ const ItemSymbol = ({ input_, color }) => {
 
 const Table = ({ width }) => {
   const tableBodyRef = useRef(null);
+  const [hoveredId, setHoveredId] = useState(null);
   const [tableBodyHeight, setTableBodyHeight] = useState(0);
 
   useEffect(() => {
@@ -56,7 +58,11 @@ const Table = ({ width }) => {
         general: false,
         inhouse: false,
         bg: "#262629",
-        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+        infoBox: {
+          body: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+          url: "/",
+          text: "Learn more about Dandi integrations",
+        },
       },
       {
         title: `Easy API integrations with all your data sources`,
@@ -64,7 +70,11 @@ const Table = ({ width }) => {
         general: false,
         inhouse: false,
         bg: "transparent",
-        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+        infoBox: {
+          body: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+          url: "/",
+          text: "Learn more about Dandi integrations",
+        },
       },
       {
         title: `Deep DEI subject-matter expertise`,
@@ -72,7 +82,11 @@ const Table = ({ width }) => {
         general: false,
         inhouse: false,
         bg: "#262629",
-        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+        infoBox: {
+          body: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+          url: "/",
+          text: "Learn more about Dandi integrations",
+        },
       },
       {
         title: `Full measurement of the employee lifecycle`,
@@ -80,7 +94,11 @@ const Table = ({ width }) => {
         general: false,
         inhouse: false,
         bg: "transparent",
-        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+        infoBox: {
+          body: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+          url: "/",
+          text: "Learn more about Dandi integrations",
+        },
       },
       {
         title: `Adjusted wage gap analysis`,
@@ -88,7 +106,11 @@ const Table = ({ width }) => {
         general: false,
         inhouse: false,
         bg: "#262629",
-        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+        infoBox: {
+          body: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+          url: "/",
+          text: "Learn more about Dandi integrations",
+        },
       },
       {
         title: `On-demand data refreshes. As often as you like`,
@@ -96,7 +118,11 @@ const Table = ({ width }) => {
         general: false,
         inhouse: "circleSmall",
         bg: "transparent",
-        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+        infoBox: {
+          body: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+          url: "/",
+          text: "Learn more about Dandi integrations",
+        },
       },
       {
         title: `Lawful domestic & international data collection guidance`,
@@ -104,7 +130,11 @@ const Table = ({ width }) => {
         general: "Rarely",
         inhouse: false,
         bg: "#262629",
-        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+        infoBox: {
+          body: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+          url: "/",
+          text: "Learn more about Dandi integrations",
+        },
       },
       {
         title: `Minimal investment of time and staff`,
@@ -112,7 +142,11 @@ const Table = ({ width }) => {
         general: "circleSmall",
         inhouse: false,
         bg: "transparent",
-        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+        infoBox: {
+          body: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+          url: "/",
+          text: "Learn more about Dandi integrations",
+        },
       },
       {
         title: `Power to analyze over 1 million unique data sets`,
@@ -120,7 +154,11 @@ const Table = ({ width }) => {
         general: false,
         inhouse: "Rarely",
         bg: "#262629",
-        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+        infoBox: {
+          body: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+          url: "/",
+          text: "Learn more about Dandi integrations",
+        },
       },
       {
         title: `Robust support and education`,
@@ -128,7 +166,11 @@ const Table = ({ width }) => {
         general: false,
         inhouse: false,
         bg: "transparent",
-        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+        infoBox: {
+          body: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+          url: "/",
+          text: "Learn more about Dandi integrations",
+        },
       },
       {
         title: `Weekly product updates`,
@@ -136,7 +178,11 @@ const Table = ({ width }) => {
         general: "Not for DEI",
         inhouse: false,
         bg: "#262629",
-        infoText: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+        infoBox: {
+          body: `Dandi connects to your HR systems' pre-built APIs, no development resources required. Have a data warehouse? We can connect to that too, but it's not required.`,
+          url: "/",
+          text: "Learn more about Dandi integrations",
+        },
       },
     ],
   };
@@ -223,6 +269,8 @@ const Table = ({ width }) => {
                 <Styled.p className="Table__body-row-grid-item-title">
                   {bodyItem.title}
                   <svg
+                    onMouseEnter={() => setHoveredId(i)}
+                    onMouseLeave={() => setHoveredId(null)}
                     className="Table__body-row-grid-item-title-infoIcon"
                     width="16"
                     height="16"
@@ -244,6 +292,21 @@ const Table = ({ width }) => {
                     />
                   </svg>
                 </Styled.p>
+                <div
+                  className={`Table__body-row-grid-item-infoBox${
+                    hoveredId === i ? "-open" : ""
+                  }`}
+                >
+                  <Styled.p className="Table__body-row-grid-item-infoBox-body">
+                    {bodyItem.infoBox.body}
+                  </Styled.p>
+                  <LearnMoreLink
+                    className="Table__body-row-grid-item-infoBox-link"
+                    href={bodyItem.infoBox.url}
+                    color="#F9D2FF"
+                    text={bodyItem.infoBox.text}
+                  />
+                </div>
               </div>
               <div
                 sx={{

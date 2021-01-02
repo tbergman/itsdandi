@@ -2556,7 +2556,7 @@ const theme = {
               ".Table__head-item-focusBorder": {
                 position: "absolute",
                 top: ["30%", "60%"],
-                zIndex: 998,
+                zIndex: 997,
                 width: "100%",
                 // height: ["610%", ""],
                 border: (t) => `solid 1px ${t.colors.yellow}`,
@@ -2587,6 +2587,11 @@ const theme = {
                 gridTemplateColumns: ["4fr 1fr 1fr  1fr", "4fr 1fr 2fr 1fr"],
                 gridAutoRows: ["auto"],
                 ".Table__body-row-grid-item": {
+                  position: "relative",
+                  display: "flex",
+                  alignItems: "center",
+                  mt: [3],
+                  mb: [3],
                   ".Table__body-row-grid-item-title": {
                     display: "flex",
                     alignItems: "center",
@@ -2600,10 +2605,28 @@ const theme = {
                     },
                   },
 
-                  display: "flex",
-                  alignItems: "center",
-                  mt: [3],
-                  mb: [3],
+                  ".Table__body-row-grid-item-infoBox": {
+                    display: "none",
+                  },
+                  ".Table__body-row-grid-item-infoBox-open": {
+                    display: "block",
+                    position: "absolute",
+                    zIndex: 998,
+                    bg: "black",
+                    boxShadow:
+                      "0px 0px 1px rgba(0, 0, 0, 0.75), 0px 8px 30px rgba(0, 0, 0, 0.45)",
+                    borderRadius: "8px",
+                    left: "75%",
+                    py: [4],
+                    px: [4],
+                  },
+                  ".Table__body-row-grid-item-infoBox-body": {
+                    width: ["272px"],
+                    mb: [2],
+                  },
+                  ".Table__body-row-grid-item-infoBox-link": {
+                    width: ["272px"],
+                  },
 
                   ".Table__body-row-grid-item-symbol": {
                     fontSize: ["14px"],
