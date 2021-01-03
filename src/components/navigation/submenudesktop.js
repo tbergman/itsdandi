@@ -10,7 +10,7 @@ import useScrollPosition from "@react-hook/window-scroll";
 import Link from "next/link";
 import { useMachine } from "@xstate/react";
 import { SubMenuDesktopMachine } from "../../machines/submenu";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const SubMenuDesktop = ({ subPages, subMenuStyling }) => {
   const { scrollY } = useViewportScroll();

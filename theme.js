@@ -3669,7 +3669,7 @@ const theme = {
         position: "fixed",
         top: [24],
         left: "40px",
-        overflow: "hidden",
+
         zIndex: 99,
         ".SubMenu__container": {
           height: ["100%", "unset"],
@@ -3687,8 +3687,6 @@ const theme = {
             whiteSpace: "nowrap",
             opacity: 0.5,
             height: "max-content",
-            transform: "translate3d(0,0,0)",
-            transition: "all 150ms ease-in",
 
             "&:hover": {
               opacity: 1,
@@ -3699,12 +3697,27 @@ const theme = {
               lineHeight: "16px",
               color: "inherit",
               fontFamily: "medium",
+              height: "auto",
+              opacity: 1,
+              transform: "translate3d(0,0,0)",
+              transition:
+                "opacity 250ms 0ms ease-in, transform 250ms 0ms ease-in",
             },
           },
           ".SubMenu__container-item-hidden": {
-            transform: "translate3d(50px,0,0)",
-            opacity: 0,
-            transition: "all 250ms ease-in",
+            mb: [2],
+            minHeight: "16px",
+            ".SubMenu__container-item-text": {
+              opacity: 0,
+              transform: "translate3d(50px,0,0)",
+              height: 0,
+              transition:
+                "height 0ms 500ms, opacity 250ms 0ms ease-in, transform 250ms 0ms ease-in",
+              fontSize: "14px",
+              lineHeight: "16px",
+              color: "inherit",
+              fontFamily: "medium",
+            },
           },
           ".SubMenu__container-item-hamburger": {
             position: "absolute",

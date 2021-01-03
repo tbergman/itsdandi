@@ -27,7 +27,7 @@ const Header = ({
     >
       <SubInView
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={{ ...subMenuStyling }}
+        subMenuStyling={subMenuStyling}
         rootMargin={rootMarginSub(windowHeight)}
       >
         <div
