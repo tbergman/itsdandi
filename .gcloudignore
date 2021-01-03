@@ -1,0 +1,6 @@
+# nextjs source code
+/pages/
+/src/
+.env.local
+/.git/
+/node_modules/

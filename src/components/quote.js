@@ -12,13 +12,11 @@ const Quote = ({
   navBarStyling,
   setSubMenuStyling,
   subMenuStyling,
-  image,
-  name,
-  title,
-  text,
+  content,
   isDesktop,
 }) => {
-  const { theme } = useThemeUI();
+  const { body, desktop_image, mobile_image, name, title } = content;
+
   return (
     <InView
       variant="components.shared.quote"
@@ -41,15 +39,15 @@ const Quote = ({
             <picture>
               <source
                 media="(min-width: 800px)"
-                srcSet={image.desktop}
+                srcSet={desktop_image}
               ></source>
-              <source srcSet={image.mobile}></source>
-              <img src={image.mobile} alt="" />
+              <source srcSet={mobile_image}></source>
+              <img src={desktop_image} alt="" />
             </picture>
           </div>
           <div className="text">
             <ReactSVG className="quotation" src="/assets/svgs/quotation.svg" />
-            <Styled.h3>{text}</Styled.h3>
+            <Styled.h3>{body}</Styled.h3>
             <Styled.p>
               {name}
               <br />

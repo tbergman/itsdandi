@@ -1966,27 +1966,37 @@ const theme = {
         },
         topcontent: {
           position: "relative",
-          ".buttonwrapper": {
+
+          ".TopContent__btnWrapper": {
             position: "absolute",
             bottom: ["-28px", "-24px"],
+            zIndex: 99,
             left: [
               "20px",
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
             ],
+            ".TopContent__btnWrapper-btn": {},
           },
-          ".graphics": {
+          ".TopContent__graphics": {
             position: "absolute",
+            zIndex: "1",
             left: [(t) => `calc(calc(${t.colWidthMob} * 4) + 80px)`, "unset"],
             width: [
               "unset",
               (t) => `calc(calc(${t.colWidthDesktop} * 4) + 120px)`,
             ],
-            height: ["126px", "28em"],
-
-            bottom: 0,
+            height: ["126px", "34em"],
+            bottom: [0, "-7em"],
             right: [0, "40px"],
             overflow: "hidden",
-            svg: {
+            ".TopContent__graphics-chainsDesktop": {
+              position: "absolute",
+              left: ["-6%", 0],
+              bottom: ["-35%", 0],
+              height: ["unset", "100%"],
+              width: ["unset", "100%"],
+            },
+            ".TopContent__graphics-chainsMobile": {
               position: "absolute",
               left: ["-6%", 0],
               bottom: ["-35%", 0],
@@ -1997,6 +2007,8 @@ const theme = {
         },
         bestinclass: {
           bg: "black",
+          position: "relative",
+          zIndex: 9,
           ".toptext": {
             gridArea: ["1/1/2/-1", "1/3/2/8"],
             mt: [10, 16],

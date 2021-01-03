@@ -16,6 +16,7 @@ import pages from "../../src/helpers/values/pages";
 import MobileMenu from "../../src/components/mobilemenu";
 import { useState, useEffect } from "react";
 import { useWindowSize } from "@react-hook/window-size";
+import Butter from "buttercms";
 
 import {
   motion,
@@ -28,7 +29,7 @@ import devices from "../../src/helpers/devices";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 
-const Values = () => {
+const Values = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [width, height] = useWindowSize();
   const [staticLogo, setStaticLogo] = useState(true);
@@ -68,6 +69,8 @@ const Values = () => {
     }
     toggleMenu(menuOpen);
   }, [menuOpen]);
+
+  console.log(props);
 
   return (
     <div
@@ -112,14 +115,21 @@ const Values = () => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
+        content={{
+          header: props.header.header,
+          body: props.header.body,
+        }}
         bg="#FFF"
         styling={{
           mb: [23, 15],
         }}
-        title={`Dandi makes pay equity possible`}
-        body={`With sophisticated compensation analytics built right in, Dandi helps you find the pay gaps at your company—and make them disappear.`}
       >
-        <TopGraphic />
+        <TopGraphic
+          images={{
+            desktop: props.header.desktop_image,
+            mobile: props.header.mobile_image,
+          }}
+        />
       </Header>
       <Compensation
         setSubMenuStyling={setSubMenuStyling}
@@ -128,6 +138,9 @@ const Values = () => {
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
+        content={{
+          ...props.compensation,
+        }}
       />
       <CompensationGraph
         setSubMenuStyling={setSubMenuStyling}
@@ -136,6 +149,10 @@ const Values = () => {
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
+        content={{
+          cities: props.cities,
+          body: props.text,
+        }}
       />
       <Reports
         setSubMenuStyling={setSubMenuStyling}
@@ -144,6 +161,9 @@ const Values = () => {
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
+        content={{
+          ...props.reports,
+        }}
       />
       <Quote
         setSubMenuStyling={setSubMenuStyling}
@@ -152,13 +172,9 @@ const Values = () => {
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.gray}
         bg="#FAFAFA"
-        image={{
-          desktop: "/assets/images/tamarcus-brown-desktop.png",
-          mobile: "/assets/images/tamarcus-brown.png",
+        content={{
+          ...props.quote,
         }}
-        name={`Name Namesson`}
-        title={`Ceo, Company`}
-        text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity.`}
         isDesktop={isDesktop}
       />
 
@@ -169,11 +185,34 @@ const Values = () => {
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.white}
         isDesktop={isDesktop}
+        content={{
+          ...props.affordable,
+        }}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const butter = Butter(process.env.BUTTER_CMS);
+    const response = await butter.page.retrieve("*", "values_payequity");
+
+    return {
+      props: {
+        ...response.data.data.fields,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        ...err,
+      },
+    };
+  }
+}
 
 export default Values;

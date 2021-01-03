@@ -5,19 +5,25 @@ import Button from "../button";
 const TopContent = ({ isDesktop }) => {
   return (
     <div
+      className="TopContent"
       sx={{
         variant: "pages.product.security.topcontent",
       }}
     >
-      <div className="buttonwrapper">
-        <Button url="/" text="Request a demo" />
+      <div className="TopContent__btnWrapper">
+        <Button
+          className="TopContent__btnWrapper-btn"
+          url="/"
+          text="Request a demo"
+        />
       </div>
-      <div className="graphics">
+      <div className="TopContent__graphics">
         {isDesktop ? (
           <svg
+            className="TopContent__graphics-chainsDesktop"
             width="427"
             height="610"
-            viewBox="0 0 427 610"
+            viewBox="0 0 100 610"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -27,7 +33,7 @@ const TopContent = ({ isDesktop }) => {
               width="113.81"
               height="247.54"
               rx="56.9049"
-              transform="matrix(0.650773 0.759272 -0.761296 0.648405 191.647 360.45)"
+              transform="matrix(0.650773 0.759272 -0.761296 0.648405 1.647 360.45)"
               stroke="#335AFF"
               stroke-width="2"
             />
@@ -37,7 +43,7 @@ const TopContent = ({ isDesktop }) => {
               width="113.704"
               height="246.375"
               rx="56.852"
-              transform="matrix(-0.999981 0.00609227 -0.00786676 -0.999969 293.632 424.39)"
+              transform="matrix(-0.999981 0.00609227 -0.00786676 -0.999969 103.632 424.39)"
               stroke="#FFD93B"
               stroke-width="2"
             />
@@ -47,13 +53,14 @@ const TopContent = ({ isDesktop }) => {
               width="113.283"
               height="247.223"
               rx="56.6415"
-              transform="matrix(0.678831 0.734294 -0.736189 0.676776 349.496 0.502115)"
+              transform="matrix(0.678831 0.734294 -0.736189 0.676776 159.496 0.502115)"
               stroke="#F9D2FF"
               stroke-width="2"
             />
           </svg>
         ) : (
           <svg
+            className="TopContent__graphics-chainsMobile"
             width="148"
             height="175"
             viewBox="0 0 148 175"

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import InView from "../../inview";
 import SubInView from "../../subinview";
 
@@ -11,7 +11,9 @@ const Reports = ({
   setSubMenuStyling,
   subMenuStyling,
   isDesktop,
+  content,
 }) => {
+  const { header, body_section1, body_section2 } = content;
   return (
     <InView
       variant="pages.values.payequity.reports"
@@ -31,25 +33,15 @@ const Reports = ({
         >
           <div className="text">
             <div className="heading">
-              <Styled.h2>Reports in minutes, not months</Styled.h2>
+              <Styled.h2>{header}</Styled.h2>
             </div>
 
             <div className="body">
               <div className="section1">
-                <Styled.p>
-                  Before Dandi, it often took a lot of time—and money—to
-                  generate new compensation reports. That made it doubly hard
-                  for businesses to track compensation with real speed or
-                  precision.
-                </Styled.p>
+                <Styled.p>{lineBreaks(body_section1)}</Styled.p>
               </div>
               <div className="section2">
-                <Styled.p>
-                  Dandi brings you up to date by providing unlimited, on-demand
-                  access to your compensation insights. Now you can run
-                  continual analyses to better understand trends, track
-                  initiatives, and create better future forecasts.
-                </Styled.p>
+                <Styled.p>{lineBreaks(body_section2)}</Styled.p>
               </div>
             </div>
           </div>

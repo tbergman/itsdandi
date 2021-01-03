@@ -11,9 +11,16 @@ const Compensation = ({
   navBarStyling,
   setSubMenuStyling,
   subMenuStyling,
-
+  content,
   isDesktop,
 }) => {
+  const {
+    header,
+    body_section1,
+    body_section2,
+    desktop_image,
+    mobile_image,
+  } = content;
   return (
     <InView
       setNavbarStyling={setNavbarStyling}
@@ -33,31 +40,25 @@ const Compensation = ({
           }}
         >
           <div className="top">
-            <Styled.h2>The right way to track compensation</Styled.h2>
+            <Styled.h2>{header}</Styled.h2>
             <div className="body">
               <div className="section1">
-                <Styled.p>
-                  Equal pay for equal work—it’s one of the core principles of
-                  DEI, but actually making it happen is harder than it sounds.
-                  That’s because many of today’s compensation platforms and
-                  models lack the speed or nuance needed to deliver the right
-                  insights.
-                </Styled.p>
+                <Styled.p>{body_section1}</Styled.p>
               </div>
               <div className="section2">
-                <Styled.p>
-                  That’s where Dandi’s different. Informed by leading academic
-                  research and industry best practices, our compensation
-                  analytics offers a complete view of how your people are paid.
-                </Styled.p>
+                <Styled.p>{body_section2}</Styled.p>
               </div>
             </div>
 
             <div className="compensationTopGraphic">
-              <img
-                src="/assets/images/equitypay/compensation.png"
-                alt="graph"
-              />
+              <picture>
+                <source
+                  media="(min-width: 800px)"
+                  srcSet={desktop_image}
+                ></source>
+                <source srcSet={mobile_image}></source>
+                <img src={desktop_image} alt="" />
+              </picture>
             </div>
           </div>
         </div>

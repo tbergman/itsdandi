@@ -10,13 +10,13 @@ const Header = ({
   setSubMenuStyling,
   subMenuStyling,
   windowHeight,
-  title,
-  body,
   styling,
+  content,
   bg,
   isDesktop,
   children,
 }) => {
+  const { header, body } = content;
   return (
     <InView
       setNavbarStyling={setNavbarStyling}
@@ -41,7 +41,7 @@ const Header = ({
             }}
             className="text"
           >
-            <Styled.h1>{title}</Styled.h1>
+            <Styled.h1>{header}</Styled.h1>
             <Styled.h3>{body}</Styled.h3>
           </div>
           <div className="graphic">{children}</div>
