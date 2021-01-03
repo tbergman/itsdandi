@@ -1976,16 +1976,22 @@ const theme = {
           },
           ".graphics": {
             position: "absolute",
-            left: [(t) => `calc(calc(${t.colWidthMob} * 4) + 80px)`],
-            height: ["126px", "unset"],
+            left: [(t) => `calc(calc(${t.colWidthMob} * 4) + 80px)`, "unset"],
+            width: [
+              "unset",
+              (t) => `calc(calc(${t.colWidthDesktop} * 4) + 120px)`,
+            ],
+            height: ["126px", "28em"],
+
             bottom: 0,
-            right: 0,
+            right: [0, "40px"],
             overflow: "hidden",
             svg: {
               position: "absolute",
-
-              left: ["-6%"],
-              bottom: ["-35%"],
+              left: ["-6%", 0],
+              bottom: ["-35%", 0],
+              height: ["unset", "100%"],
+              width: ["unset", "100%"],
             },
           },
         },
@@ -3684,6 +3690,10 @@ const theme = {
             transform: "translate3d(0,0,0)",
             transition: "all 150ms ease-in",
 
+            "&:hover": {
+              opacity: 1,
+            },
+
             ".SubMenu__container-item-text": {
               fontSize: "14px",
               lineHeight: "16px",
@@ -3736,6 +3746,9 @@ const theme = {
             position: "relative",
             pl: [3],
           },
+        },
+        ".closed": {
+          height: "16px",
         },
       },
 

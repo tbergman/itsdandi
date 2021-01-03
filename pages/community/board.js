@@ -9,7 +9,8 @@ import { subPages } from "../../src/helpers/subpages";
 import People from "../../src/components/community/people";
 import pages from "../../src/helpers/community/pages";
 import TopContent from "../../src/components/community/board/topcontent";
-import SubMenu from "../../src/components/submenu";
+import SubMenuMobile from "../../src/components/navigation/submenumobile";
+import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import { useState, useEffect } from "react";
 
 import {
@@ -157,7 +158,14 @@ const Community = () => {
         navBarStyling={navBarStyling}
         currentPage={currentPage.sub}
       />
-      <SubMenu subMenuStyling={subMenuStyling} subPages={subPages_.subPages} />
+      <SubMenuMobile
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
+      <SubMenuDesktop
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
       <Header
         isDesktop={isDesktop}
         subMenuStyling={theme.components.submenu.white}

@@ -10,7 +10,8 @@ import Curious from "../../src/components/community/partners/curious";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/community/pages";
 import TopContent from "../../src/components/community/partners/topcontent";
-import SubMenu from "../../src/components/submenu";
+import SubMenuMobile from "../../src/components/navigation/submenumobile";
+import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import { useState, useEffect } from "react";
 
 import {
@@ -137,7 +138,14 @@ const Community = () => {
         navBarStyling={navBarStyling}
         currentPage={currentPage.sub}
       />
-      <SubMenu subPages={subPages_.subPages} subMenuStyling={subMenuStyling} />
+      <SubMenuMobile
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
+      <SubMenuDesktop
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
       <Header
         isDesktop={isDesktop}
         subMenuStyling={theme.components.submenu.white}

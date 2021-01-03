@@ -20,7 +20,8 @@ import {
   useViewportScroll,
 } from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
-import SubMenu from "../../src/components/submenu";
+import SubMenuMobile from "../../src/components/navigation/submenumobile";
+import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
@@ -91,7 +92,14 @@ const Product = () => {
         navBarStyling={navBarStyling}
         currentPage={currentPage.sub}
       />
-      <SubMenu subPages={subPages_.subPages} subMenuStyling={subMenuStyling} />
+      <SubMenuMobile
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
+      <SubMenuDesktop
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
       <Header
         title={`Your people data is precious. Protecting it is our top priority.`}
         body={`Learn more about the Dandi security standard.`}
@@ -109,7 +117,7 @@ const Product = () => {
           },
         }}
       >
-        <TopContent />
+        <TopContent isDesktop={isDesktop} />
       </Header>
       <BestInClass
         setSubMenuStyling={setSubMenuStyling}

@@ -11,7 +11,6 @@ import Affordable from "../../src/components/values/payequity/affordable";
 import CompensationGraph from "../../src/components/values/payequity/compensationgraph";
 import TopGraphic from "../../src/components/values/payequity/topgraphic";
 import MobileNav from "../../src/components/mobilenav";
-import SubMenu from "../../src/components/submenu";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/values/pages";
 import MobileMenu from "../../src/components/mobilemenu";

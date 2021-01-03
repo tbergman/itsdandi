@@ -9,7 +9,8 @@ import Quote from "../../src/components/quote";
 import WhyMeasure from "../../src/components/product/measure/whymeasure";
 import Intersectional from "../../src/components/product/measure/intersectional";
 import Thoughtful from "../../src/components/product/measure/thoughtful";
-import SubMenu from "../../src/components/submenu";
+import SubMenuMobile from "../../src/components/navigation/submenumobile";
+import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
 import TopContent from "../../src/components/product/measure/topcontent";
@@ -92,7 +93,14 @@ const Product = () => {
         navBarStyling={navBarStyling}
         currentPage={currentPage.sub}
       />
-      <SubMenu subMenuStyling={subMenuStyling} subPages={subPages_.subPages} />
+      <SubMenuMobile
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
+      <SubMenuDesktop
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
       <Header
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}

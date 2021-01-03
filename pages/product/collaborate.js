@@ -18,7 +18,8 @@ import {
   useViewportScroll,
 } from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
-import SubMenu from "../../src/components/submenu";
+import SubMenuMobile from "../../src/components/navigation/submenumobile";
+import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
@@ -89,7 +90,14 @@ const Product = () => {
         navBarStyling={navBarStyling}
         currentPage={currentPage.sub}
       />
-      <SubMenu subMenuStyling={subMenuStyling} subPages={subPages_.subPages} />
+      <SubMenuMobile
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
+      <SubMenuDesktop
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
       <Header
         title={`Unlocking the power of collaboration`}
         body={`With everyone working in Dandi, conversations get more productive and progress happens faster.`}

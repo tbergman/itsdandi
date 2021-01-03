@@ -7,7 +7,8 @@ import Header from "../../src/components/header";
 import TopImage from "../../src/components/values/leadership/topimage";
 import TextModules from "../../src/components/values/leadership/textmodules";
 import Quote from "../../src/components/quote";
-import SubMenu from "../../src/components/submenu";
+import SubMenuMobile from "../../src/components/navigation/submenumobile";
+import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import pages from "../../src/helpers/values/pages";
 import { subPages } from "../../src/helpers/subpages";
 import { useState, useEffect } from "react";
@@ -122,7 +123,14 @@ lifecycle.`,
         navBarStyling={navBarStyling}
         currentPage={currentPage.sub}
       />
-      <SubMenu subPages={subPages_.subPages} subMenuStyling={subMenuStyling} />
+      <SubMenuMobile
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
+      <SubMenuDesktop
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
       <Header
         isDesktop={isDesktop}
         title={`Work’s better with Dandi`}

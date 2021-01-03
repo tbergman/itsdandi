@@ -7,7 +7,8 @@ import Header from "../../src/components/header";
 import TopGraphic from "../../src/components/values/deijourney/topgraphic";
 import TextBlock from "../../src/components/values/deijourney/textblock";
 import Partners from "../../src/components/values/deijourney/partners";
-import SubMenu from "../../src/components/submenu";
+import SubMenuMobile from "../../src/components/navigation/submenumobile";
+import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import pages from "../../src/helpers/values/pages";
 import { subPages } from "../../src/helpers/subpages";
 import { useState, useEffect } from "react";
@@ -113,7 +114,14 @@ const Values = () => {
         navBarStyling={navBarStyling}
         currentPage={currentPage.sub}
       />
-      <SubMenu subPages={subPages_.subPages} subMenuStyling={subMenuStyling} />
+      <SubMenuMobile
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
+      <SubMenuDesktop
+        subPages={subPages_.subPages}
+        subMenuStyling={subMenuStyling}
+      />
       <Header
         setNavbarStyling={setNavbarStyling}
         setSubMenuStyling={setSubMenuStyling}

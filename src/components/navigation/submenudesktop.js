@@ -16,14 +16,15 @@ const SubMenuDesktop = ({ subPages, subMenuStyling }) => {
   const { scrollY } = useViewportScroll();
   const scrollYPos = useScrollPosition(60);
   const [current, send] = useMachine(SubMenuDesktopMachine);
+  const shouldClose = scrollYPos >= 200;
 
   useEffect(() => {
-    if (scrollYPos >= 200) {
+    if (shouldClose) {
       send("CLOSE");
     } else {
       send("OPEN");
     }
-  }, [scrollYPos]);
+  }, [shouldClose]);
 
   return (
     <div
@@ -33,7 +34,13 @@ const SubMenuDesktop = ({ subPages, subMenuStyling }) => {
       }}
     >
       <div
-        className="SubMenu__container"
+        onMouseEnter={() => (current.matches("closed") ? send("OPEN") : null)}
+        onMouseLeave={() =>
+          current.matches("opened") && shouldClose ? send("CLOSE") : null
+        }
+        className={`SubMenu__container ${
+          current.matches("closed") ? "closed" : ""
+        }`}
         sx={{
           color: subMenuStyling.color,
         }}
@@ -41,16 +48,8 @@ const SubMenuDesktop = ({ subPages, subMenuStyling }) => {
         {subPages.slice(0, subPages.length - 1).map((page, i) => (
           <Link href={page.url} key={i}>
             <motion.a
-              //   style={{
-              //     opacity: page.current
-              //       ? 1
-              //       : useTransform(scrollY, [0, 200], [0.5, 0]),
-              //     x: page.current
-              //       ? 0
-              //       : useTransform(scrollY, [0, 100, 200], [0, 0, 50]),
-              //   }}
               className={`SubMenu__container-item${
-                scrollYPos >= 100 && !page.current ? "-hidden" : ""
+                current.matches("closed") && !page.current ? "-hidden" : ""
               } ${page.current ? "current" : ""}`}
             >
               {page.current && (
