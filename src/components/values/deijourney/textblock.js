@@ -5,8 +5,7 @@ import InView from "../../inview";
 import SubInView from "../../subinview";
 
 const TextBlock = ({
-  title,
-  sections,
+  content,
   styling,
   setNavbarStyling,
   subMenuStyling,
@@ -15,7 +14,7 @@ const TextBlock = ({
   windowHeight,
   isDesktop,
 }) => {
-  const { theme } = useThemeUI();
+  const { header, sections } = content;
   return (
     <InView
       variant="pages.values.deijourney.textblock"
@@ -39,7 +38,7 @@ const TextBlock = ({
               rowGap: 0,
             }}
           >
-            <Styled.h2>{title}</Styled.h2>
+            <Styled.h2>{header}</Styled.h2>
             <div className="text">
               {sections.map((section, i) => (
                 <div

@@ -12,6 +12,7 @@ import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import pages from "../../src/helpers/values/pages";
 import { subPages } from "../../src/helpers/subpages";
 import { useState, useEffect } from "react";
+import Butter from "buttercms";
 
 import {
   motion,
@@ -25,7 +26,7 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
 
-const Values = () => {
+const Values = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [width, height] = useWindowSize();
   const [staticLogo, setStaticLogo] = useState(true);
@@ -64,29 +65,6 @@ const Values = () => {
     nextBg: "violet",
     prevBg: "blue",
   });
-
-  const sections = [
-    {
-      title: "The moment",
-      body: `For many businesses, the beginning of their DEI journey can be an
-            exciting and vulnerable moment. There is the excitement of knowing
-            that the company has committed to doing more for its people. But
-            this is often mixed with the anxiety of knowing that this may be, at
-            times, an uncertain and uncomfortable process.`,
-    },
-    {
-      title: "The challenge",
-      body: `Many businesses begin their DEI journey by taking some kind of action—perhaps hosting a diversity training or unconscious bias seminar. While this work can be invaluable, people are often left with a lingering question: Where do we go from here?`,
-    },
-    {
-      title: "The opportunity: Adopt a data-driven approach",
-      body: `Adding data to your DEI efforts brings greater structure and accountability to the entire process. Data can provide greater clarity around issues that need addressing, and greater insight into the programs that actually work.`,
-    },
-    {
-      title: "How Dandi can help",
-      body: `Dandi’s designed to meet your need for DEI data. On day 1 with the platform, you’ll have over 1 million new people insights at your disposal. `,
-    },
-  ];
 
   return (
     <div
@@ -133,15 +111,18 @@ const Values = () => {
         styling={{
           mb: [12, 9],
         }}
-        title={`DEI is a journey. Dandi works with you every step of the way.`}
-        body={`Whether your business is just starting to focus on DEI or already has programs underway, Dandi has the flexibility to meet you where you are.`}
+        content={{
+          header: props.header.header,
+          body: props.header.body,
+        }}
       >
         <TopGraphic />
       </Header>
       <TextBlock
         isDesktop={isDesktop}
-        title={`01. Getting Started`}
-        sections={sections}
+        content={{
+          ...props.getting_started,
+        }}
         styling={{
           bg: "rgba(250, 250, 250, 0.96)",
         }}
@@ -153,8 +134,9 @@ const Values = () => {
       />
       <TextBlock
         isDesktop={isDesktop}
-        title={`02. Unpacking the data`}
-        sections={sections}
+        content={{
+          ...props.unpacking,
+        }}
         styling={{
           ".text": {
             mb: [21, 18],
@@ -173,11 +155,15 @@ const Values = () => {
         windowHeight={windowHeight}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.white}
+        content={{
+          ...props.transformation,
+        }}
       />
       <TextBlock
         isDesktop={isDesktop}
-        title={`03. Taking action`}
-        sections={sections}
+        content={{
+          ...props.taking_action,
+        }}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.white}
@@ -186,8 +172,9 @@ const Values = () => {
       />
       <TextBlock
         isDesktop={isDesktop}
-        title={`04. Sustaining Progress`}
-        sections={sections}
+        content={{
+          ...props.sustaining_progress,
+        }}
         styling={{
           bg: "rgba(250, 250, 250, 0.96)",
         }}
@@ -202,5 +189,25 @@ const Values = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const butter = Butter(process.env.BUTTER_CMS);
+    const response = await butter.page.retrieve("*", "values_deijourney");
+
+    return {
+      props: {
+        ...response.data.data.fields,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        ...err,
+      },
+    };
+  }
+}
 
 export default Values;
