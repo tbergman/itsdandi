@@ -2,7 +2,7 @@
 import { jsx, Styled, useThemeUI } from "theme-ui";
 import InView from "../../inview";
 import SubInView from "../../subinview";
-import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 
 const Intersectional = ({
   setNavbarStyling,
@@ -11,8 +11,9 @@ const Intersectional = ({
   setSubMenuStyling,
   windowHeight,
   isDesktop,
+  content,
 }) => {
-  const { theme } = useThemeUI();
+  const { body, desktop_image, mobile_image } = content;
   return (
     <InView
       variant="pages.product.measure.intersectional"
@@ -31,22 +32,17 @@ const Intersectional = ({
           }}
         >
           <div className="graphic">
-            <img src="/assets/images/intersectional.png" alt="" />
+            <picture>
+              <source
+                media="(min-width: 800px)"
+                srcSet={desktop_image}
+              ></source>
+              <source srcSet={mobile_image}></source>
+              <img src={desktop_image} alt="" />
+            </picture>
           </div>
           <div className="text">
-            <Styled.p>
-              Dandi metrics not only provide greater clarity—they also enable
-              intersectional measurement on the platform.
-              <br />
-              <br /> Now you can see how Black women in sales are compensated
-              relative to their White male peers. Or how the recruiting process
-              differs for veterans and non-veterans. Or how promotions impact
-              overall sentiment at the company. Or…pretty much anything else you
-              can imagine.
-              <br />
-              <br /> Because the only limit to what you can measure with Dandi
-              is your curiosity.
-            </Styled.p>
+            <Styled.p>{lineBreaks(body)}</Styled.p>
           </div>
         </div>
       </SubInView>

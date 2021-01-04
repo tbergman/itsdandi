@@ -3,7 +3,7 @@ import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
 import devices from "../../../helpers/devices";
-import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
 
 const Thoughtful = ({
@@ -13,7 +13,15 @@ const Thoughtful = ({
   setSubMenuStyling,
   windowHeight,
   isDesktop,
+  content,
 }) => {
+  const {
+    header,
+    body_section1,
+    body_section2,
+    link_description,
+    links,
+  } = content;
   return (
     <InView
       variant="pages.product.measure.thoughtful"
@@ -32,45 +40,29 @@ const Thoughtful = ({
           }}
         >
           <div className="section1">
-            <Styled.h2>Thoughtful thought leadership</Styled.h2>
-            <Styled.p>
-              Our goal in defining key DEI metrics is to help the business world
-              move forward. In doing so, we’ve committed to keeping our work
-              open and transparent.
-              <br />
-              <br /> We provide clear explanations of each definition in our
-              support portal. The “What’s the math?” feature covers how we
-              calculate each different metric. If your company wants to measure
-              things differently, you can also modify the Dandi metrics to suit
-              your specific use-cases.
-            </Styled.p>
+            <Styled.h2>{header}</Styled.h2>
+            <Styled.p>{lineBreaks(body_section1)}</Styled.p>
           </div>
           <div className="section2">
             <div className="text">
-              <Styled.p>
-                As we work toward building more metrics over time, we’re
-                partnering with a diverse panel of academics, customers,
-                industry experts, and regulatory bodies.
-              </Styled.p>
+              <Styled.p>{lineBreaks(body_section2)}</Styled.p>
             </div>
             <div className="team">
               <div className="divider">
                 <span />
               </div>
               <div className="header">
-                <Styled.p>Meet the people behind Dandi’s definitions:</Styled.p>
+                <Styled.p>{link_description}</Styled.p>
               </div>
               <div className="links">
-                <LearnMoreLink
-                  href="/"
-                  text={`DEI Advisory Board`}
-                  color="#335AFF"
-                />
-                <LearnMoreLink
-                  href="/"
-                  text={`Dandi leadership team`}
-                  color="#335AFF"
-                />
+                {links.map((link, i) => (
+                  <LearnMoreLink
+                    key={i}
+                    href={link.url}
+                    text={link.button_text}
+                    color="#335AFF"
+                  />
+                ))}
               </div>
             </div>
           </div>

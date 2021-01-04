@@ -15,6 +15,7 @@ import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
 import TopContent from "../../src/components/product/measure/topcontent";
 import { useState, useEffect } from "react";
+import Butter from "buttercms";
 
 import {
   motion,
@@ -27,8 +28,9 @@ import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
+import { prop } from "ramda";
 
-const Product = () => {
+const Product = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [width, height] = useWindowSize();
   const currentPage = {
@@ -108,14 +110,21 @@ const Product = () => {
         navBarStyling={theme.components.navigation.gray}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.white}
-        title={`DEI, made to measure`}
-        body={`Simple. Precise. Eye-opening. Dandi sets the new standard for DEI measurement.`}
+        content={{
+          header: props.header.header,
+          body: props.header.body,
+        }}
         bg="#F8F8F8"
         styling={{
           mb: [12, 22],
         }}
       >
-        <TopContent isDesktop={isDesktop} />
+        <TopContent
+          isDesktop={isDesktop}
+          content={{
+            ...props.header,
+          }}
+        />
       </Header>
       <Metrics
         isDesktop={isDesktop}
@@ -124,20 +133,18 @@ const Product = () => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
+        content={{
+          ...props.metrics,
+        }}
       />
 
       <Quote
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.white}
-        image={{
-          desktop: `/assets/images/tamarcus-brown-desktop.png`,
-          mobile: `/assets/images/tamarcus-brown.png`,
+        content={{
+          ...props.quote,
         }}
-        text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity
-`}
-        name={`Name Namesson`}
-        title={`Ceo, Company`}
         color={theme.colors.white}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray2}
@@ -151,6 +158,11 @@ const Product = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
+        content={{
+          header: props.measurement.header,
+          body: props.measurement.body,
+          categories: props.categories,
+        }}
       />
       <Intersectional
         isDesktop={isDesktop}
@@ -159,6 +171,9 @@ const Product = () => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.default}
         windowHeight={windowHeight}
+        content={{
+          ...props.intersectional,
+        }}
       />
       <Thoughtful
         isDesktop={isDesktop}
@@ -167,11 +182,34 @@ const Product = () => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
+        content={{
+          ...props.thoughtful,
+        }}
       />
       <SubNavigation next={subPages_.next} />
       <Footer />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const butter = Butter(process.env.BUTTER_CMS);
+    const response = await butter.page.retrieve("*", "product_measure");
+
+    return {
+      props: {
+        ...response.data.data.fields,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        ...err,
+      },
+    };
+  }
+}
 
 export default Product;

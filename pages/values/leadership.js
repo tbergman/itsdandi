@@ -12,6 +12,7 @@ import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import pages from "../../src/helpers/values/pages";
 import { subPages } from "../../src/helpers/subpages";
 import { useState, useEffect } from "react";
+import Butter from "buttercms";
 
 import {
   motion,
@@ -25,7 +26,7 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
 
-const Values = () => {
+const Values = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
   const currentPage = {
@@ -65,37 +66,7 @@ const Values = () => {
       : body.classList.remove("menu-open");
   };
 
-  const modules = [
-    {
-      title: `Leadership`,
-      body: `CEOs, boards, and other top-level executives are increasingly being challenged to drive real action on DEI. By providing on-demand access to rich DEI insights, Dandi helps leaders build greater awareness, accountability, and alignment throughout their organizations.`,
-      bottomText: `Dandi tracks and measures your DEI efforts.`,
-      linkText: `See how`,
-      linkUrl: "/",
-    },
-    {
-      title: `HR + Talent`,
-      body: `As the teams responsible for building their company’s workforce and culture, HR and talent are often on the front lines of DEI efforts. By providing over 1 million new insights into every aspect of the talent management cycle, Dandi makes it easier to see what’s working and improve what isn’t.`,
-      bottomText: `Dandi shows the full talent management 
-lifecycle.`,
-      linkText: `See how`,
-      linkUrl: "/",
-    },
-    {
-      title: `Compensation`,
-      body: `Equal pay for equal work. It sounds simple, but compensation teams know that it’s a tricky thing to get right. With sophisticated wage gap analysis built right in, Dandi makes it easier to find and address pay discrepancies`,
-      bottomText: `Dandi helps advance pay equity.`,
-      linkText: `See how`,
-      linkUrl: "/",
-    },
-    {
-      title: `Analytics`,
-      body: `Often one of the most in-demand teams in a business, it can be hard for analytics teams to give DEI the attention it deserves. But with Dandi analytics added to the mix, analytics teams don’t have to choose between working on DEI and other business problems. `,
-      bottomText: `Dandi delivers advanced analytics.`,
-      linkText: `See how`,
-      linkUrl: "/",
-    },
-  ];
+  console.log(props);
 
   return (
     <div
@@ -133,8 +104,10 @@ lifecycle.`,
       />
       <Header
         isDesktop={isDesktop}
-        title={`Work’s better with Dandi`}
-        body={`Whether you’re a DEI practitioner or a leader in another part of the business, our tools can also help you do more every day.`}
+        content={{
+          header: props.header.header,
+          body: props.header.body,
+        }}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         setSubMenuStyling={setSubMenuStyling}
@@ -148,11 +121,16 @@ lifecycle.`,
           ],
         }}
       >
-        <TopImage />
+        <TopImage
+          images={{
+            desktop: props.header.desktop_image,
+            mobile: props.header.mobile_image,
+          }}
+        />
       </Header>
       <TextModules
         isDesktop={isDesktop}
-        modules={modules}
+        modules={props.text_modules.modules}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         setSubMenuStyling={setSubMenuStyling}
@@ -166,20 +144,35 @@ lifecycle.`,
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
-        name={`Name Namesson`}
-        title={`Ceo, Company`}
-        bg="yellow"
-        text={`Dandi measures comp the right way. Adjusted wage gap, base, bonus & equity
-`}
-        image={{
-          desktop: "/assets/images/tamarcus-brown-desktop.png",
-          mobile: "/assets/images/tamarcus-brown.png",
+        content={{
+          ...props.quote,
         }}
+        bg="yellow"
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const butter = Butter(process.env.BUTTER_CMS);
+    const response = await butter.page.retrieve("*", "values_leadership");
+
+    return {
+      props: {
+        ...response.data.data.fields,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        ...err,
+      },
+    };
+  }
+}
 
 export default Values;

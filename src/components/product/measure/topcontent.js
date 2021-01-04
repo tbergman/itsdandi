@@ -2,8 +2,8 @@
 import { ReactSVG } from "react-svg";
 import { jsx } from "theme-ui";
 import Button from "../button";
-
-const TopContent = ({ isDesktop }) => {
+const TopContent = ({ isDesktop, content }) => {
+  const { url, button_text } = content;
   return (
     <div
       sx={{
@@ -11,7 +11,7 @@ const TopContent = ({ isDesktop }) => {
       }}
     >
       <div className="buttonwrapper">
-        <Button url="/" text={`Request a demo`} />
+        <Button url={url} text={button_text} />
       </div>
 
       <div className="graphics">

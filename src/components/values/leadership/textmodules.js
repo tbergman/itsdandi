@@ -14,7 +14,6 @@ const TextModules = ({
   navBarStyling,
   isDesktop,
 }) => {
-  const { theme } = useThemeUI();
   return (
     <InView
       variant="pages.values.leadership.textmodules"
@@ -39,16 +38,16 @@ const TextModules = ({
                   <span />
                 </div>
                 <div className="section1">
-                  <Styled.h2>{module.title}</Styled.h2>
+                  <Styled.h2>{module.header}</Styled.h2>
                 </div>
                 <div className="section2">
                   <Styled.p>{module.body}</Styled.p>
                   <div className="linksection">
-                    <Styled.p>{module.bottomText}</Styled.p>
+                    <Styled.p>{module.link_description}</Styled.p>
                     <div className="link">
                       <LearnMoreLink
-                        href={module.linkUrl}
-                        text={module.linkText}
+                        href={module.url}
+                        text={module.button_text}
                         color="#335AFF"
                       />
                     </div>
