@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
-import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
 
 const InAction = ({
@@ -12,7 +12,9 @@ const InAction = ({
   setSubMenuStyling,
   windowHeight,
   isDesktop,
+  content,
 }) => {
+  const { body, header, button_text, url } = content;
   return (
     <InView
       variant="pages.product.analyze.inaction"
@@ -37,12 +39,9 @@ const InAction = ({
             <div className="divider">
               <span></span>
             </div>
-            <Styled.p>
-              Want to see Dandi analytics in action? <br />
-              with a sample data set here:
-            </Styled.p>
+            <Styled.p>{lineBreaks(body)}</Styled.p>
             <div className="link">
-              <LearnMoreLink href="/" text={`Try Dandi out`} color="#FFD93B" />
+              <LearnMoreLink href={url} text={button_text} color="#FFD93B" />
             </div>
           </div>
         </div>

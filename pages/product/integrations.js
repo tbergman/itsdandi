@@ -10,6 +10,7 @@ import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
 import TopContent from "../../src/components/product/integrations/topcontent";
 import { useState, useEffect } from "react";
+import Butter from "buttercms";
 
 import {
   motion,
@@ -25,7 +26,7 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
 
-const Product = () => {
+const Product = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [width, height] = useWindowSize();
   const [staticLogo, setStaticLogo] = useState(true);
@@ -100,8 +101,9 @@ const Product = () => {
       />
       <Header
         isDesktop={isDesktop}
-        title={`Easy integrations for better insights`}
-        body={`Dandi ties together the data in your existing HR platforms to unlock over 1 million new DEI insights.`}
+        content={{
+          ...props.header,
+        }}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray2}
         subMenuStyling={theme.components.submenu.white}
@@ -112,7 +114,12 @@ const Product = () => {
           mb: [12, 16],
         }}
       >
-        <TopContent isDesktop={isDesktop} />
+        <TopContent
+          isDesktop={isDesktop}
+          content={{
+            ...props.header,
+          }}
+        />
       </Header>
       <Connections
         subMenuStyling={theme.components.submenu.white}
@@ -121,6 +128,9 @@ const Product = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
+        content={{
+          ...props.connections,
+        }}
       />
       <Secure
         subMenuStyling={theme.components.submenu.white}
@@ -129,11 +139,34 @@ const Product = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
+        content={{
+          ...props.secure,
+        }}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const butter = Butter(process.env.BUTTER_CMS);
+    const response = await butter.page.retrieve("*", "product_integrations");
+
+    return {
+      props: {
+        ...response.data.data.fields,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        ...err,
+      },
+    };
+  }
+}
 
 export default Product;

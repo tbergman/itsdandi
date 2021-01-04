@@ -13,7 +13,9 @@ const Connect = ({
   subMenuStyling,
   windowHeight,
   isDesktop,
+  content,
 }) => {
+  const { header, button_text, url } = content;
   return (
     <InView
       variant="pages.product.security.connect"
@@ -33,13 +35,9 @@ const Connect = ({
         >
           <div className="wrapper">
             <div className="text">
-              <Styled.h2>Connect with confidence</Styled.h2>
+              <Styled.h2>{header}</Styled.h2>
               <div className="link">
-                <LearnMoreLink
-                  href="/"
-                  text={`Learn more about Dandi privacy and security`}
-                  color="#335AFF"
-                />
+                <LearnMoreLink href={url} text={button_text} color="#335AFF" />
               </div>
             </div>
           </div>

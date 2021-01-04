@@ -3,7 +3,7 @@ import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
-import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
 
 const Secure = ({
@@ -13,7 +13,9 @@ const Secure = ({
   setSubMenuStyling,
   windowHeight,
   isDesktop,
+  content,
 }) => {
+  const { header, body, button_text, url } = content;
   return (
     <InView
       variant="pages.product.integrations.secure"
@@ -33,16 +35,10 @@ const Secure = ({
         >
           <div className="wrapper">
             <div className="text">
-              <Styled.h2>Secure by design</Styled.h2>
-              <Styled.p>
-                Protecting your people data is our top priority.
-              </Styled.p>
+              <Styled.h2>{header}</Styled.h2>
+              <Styled.p>{lineBreaks(body)}</Styled.p>
               <div className="link">
-                <LearnMoreLink
-                  href="/"
-                  text={`Learn more about Dandi privacy and security`}
-                  color="#335AFF"
-                />
+                <LearnMoreLink href={url} text={button_text} color="#335AFF" />
               </div>
             </div>
           </div>

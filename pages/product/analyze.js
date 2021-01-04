@@ -12,6 +12,7 @@ import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
 import TopContent from "../../src/components/product/analyze/topcontent";
 import { useState, useEffect } from "react";
+import Butter from "buttercms";
 
 import {
   motion,
@@ -27,7 +28,7 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
 
-const Product = () => {
+const Product = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
   const currentPage = {
@@ -102,8 +103,9 @@ const Product = () => {
         subMenuStyling={subMenuStyling}
       />
       <Header
-        title={`See what your HR data’s trying to tell you`}
-        body={`Dandi helps you understand your people data in a whole new way.`}
+        content={{
+          ...props.header,
+        }}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         setSubMenuStyling={setSubMenuStyling}
@@ -114,7 +116,12 @@ const Product = () => {
           mb: [12, 23],
         }}
       >
-        <TopContent isDesktop={isDesktop} />
+        <TopContent
+          isDesktop={isDesktop}
+          content={{
+            ...props.header,
+          }}
+        />
       </Header>
       <Insights
         isDesktop={isDesktop}
@@ -123,6 +130,9 @@ const Product = () => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.default}
         windowHeight={windowHeight}
+        content={{
+          ...props.insights,
+        }}
       />
       <NewInsights
         isDesktop={isDesktop}
@@ -131,6 +141,9 @@ const Product = () => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
+        content={{
+          ...props.new_insights,
+        }}
       />
       <InAction
         isDesktop={isDesktop}
@@ -139,6 +152,9 @@ const Product = () => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.default}
         windowHeight={windowHeight}
+        content={{
+          ...props.in_action,
+        }}
       />
       <Sharable
         isDesktop={isDesktop}
@@ -147,11 +163,34 @@ const Product = () => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
+        content={{
+          ...props.sharable,
+        }}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const butter = Butter(process.env.BUTTER_CMS);
+    const response = await butter.page.retrieve("*", "product_analyze");
+
+    return {
+      props: {
+        ...response.data.data.fields,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        ...err,
+      },
+    };
+  }
+}
 
 export default Product;

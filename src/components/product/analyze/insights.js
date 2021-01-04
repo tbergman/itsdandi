@@ -4,7 +4,7 @@ import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InsightsCircle from "./insightscircle";
 import InView from "../../inview";
-import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
 
 const Insights = ({
@@ -14,7 +14,9 @@ const Insights = ({
   setSubMenuStyling,
   windowHeight,
   isDesktop,
+  content,
 }) => {
+  const { header, body, lock_title, lock_body, button_text, url } = content;
   return (
     <InView
       variant="pages.product.analyze.insights"
@@ -33,9 +35,7 @@ const Insights = ({
           }}
         >
           <div className="top">
-            <Styled.h2>
-              The insights you’ve needed—and the ones you didn’t know you needed
-            </Styled.h2>
+            <Styled.h2>{header}</Styled.h2>
           </div>
 
           <div className="middle">
@@ -44,20 +44,7 @@ const Insights = ({
             </div>
             <div className="section2">
               <div className="text">
-                <Styled.p>
-                  Compensation data here. Recruitment data there. Retention and
-                  advancement data...somewhere else. With all your HR data in
-                  different places, it’s tough to see how it all connects.{" "}
-                  <br />
-                  <br />
-                  Dandi ties it all together, giving you a clearer picture of
-                  what people in your company actually experience.
-                  <br />
-                  <br /> Compensation data can connect with diversity data.
-                  Recruitment data can connect with attrition data. And as each
-                  piece of the puzzle comes together, a whole world of new
-                  insights opens up—over 1 million in total.
-                </Styled.p>
+                <Styled.p>{lineBreaks(body)}</Styled.p>
               </div>
             </div>
           </div>
@@ -67,17 +54,10 @@ const Insights = ({
               <ReactSVG src="/assets/svgs/lock.svg" />
             </div>
             <div className="text">
-              <Styled.h3>Connect with confidence</Styled.h3>
-              <Styled.p>
-                With Dandi, your people’s data is protected by best-in-class
-                security
-              </Styled.p>
+              <Styled.h3>{lock_title}</Styled.h3>
+              <Styled.p>{lock_body}</Styled.p>
               <div className="link">
-                <LearnMoreLink
-                  href="/"
-                  text={`Learn more about Dandi security.`}
-                  color="#A4F0F4"
-                />
+                <LearnMoreLink href={url} text={button_text} color="#A4F0F4" />
               </div>
             </div>
           </div>

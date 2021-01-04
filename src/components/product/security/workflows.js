@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
-import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import InView from "../../inview";
 import SubInView from "../../subinview";
 
@@ -12,21 +12,10 @@ const Workflows = ({
   subMenuStyling,
   setSubMenuStyling,
   isDesktop,
+  content,
 }) => {
-  const categories = [
-    {
-      title: `Role-based access`,
-      body: `Ensure that only the right people have access to the right information.`,
-    },
-    {
-      title: `Anonymous data`,
-      body: `Dandi doesn’t collect any personally identifiable information (PII).`,
-    },
-    {
-      title: `Granular sharing controls`,
-      body: `Manage sharing and communication as needed.`,
-    },
-  ];
+  const { header, body, items } = content;
+
   return (
     <InView
       variant="pages.product.security.workflows"
@@ -46,16 +35,13 @@ const Workflows = ({
         >
           <div className="section1">
             <div className="toptext">
-              <Styled.h2>Keeping workflows secure</Styled.h2>
-              <Styled.p>
-                With Dandi, you can be sure that sensitive information never
-                travels further than it should.
-              </Styled.p>
+              <Styled.h2>{header}</Styled.h2>
+              <Styled.p>{lineBreaks(body)}</Styled.p>
             </div>
           </div>
           <div className="section2">
             <div className="categories">
-              {categories.map((category, i) => (
+              {items.map((category, i) => (
                 <div className="category" key={i}>
                   <Styled.p className="title">{category.title}</Styled.p>
                   <Styled.p className="body">{category.body}</Styled.p>

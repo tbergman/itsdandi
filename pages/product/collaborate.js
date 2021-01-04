@@ -10,6 +10,7 @@ import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
 import TopContent from "../../src/components/product/collaborate/topcontent";
 import { useState, useEffect } from "react";
+import Butter from "buttercms";
 
 import {
   motion,
@@ -25,7 +26,7 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
 
-const Product = () => {
+const Product = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
   const [width, height] = useWindowSize();
@@ -99,8 +100,9 @@ const Product = () => {
         subMenuStyling={subMenuStyling}
       />
       <Header
-        title={`Unlocking the power of collaboration`}
-        body={`With everyone working in Dandi, conversations get more productive and progress happens faster.`}
+        content={{
+          ...props.header,
+        }}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         subMenuStyling={theme.components.submenu.white}
@@ -111,7 +113,12 @@ const Product = () => {
           mb: [13, 23],
         }}
       >
-        <TopContent isDesktop={isDesktop} />
+        <TopContent
+          isDesktop={isDesktop}
+          content={{
+            ...props.header,
+          }}
+        />
       </Header>
       <DeiWork
         isDesktop={isDesktop}
@@ -120,6 +127,9 @@ const Product = () => {
         subMenuStyling={theme.components.submenu.default}
         setSubMenuStyling={setSubMenuStyling}
         windowHeight={windowHeight}
+        content={{
+          ...props.dei_work,
+        }}
       />
       <Customizable
         isDesktop={isDesktop}
@@ -128,11 +138,34 @@ const Product = () => {
         subMenuStyling={theme.components.submenu.white}
         setSubMenuStyling={setSubMenuStyling}
         windowHeight={windowHeight}
+        content={{
+          ...props.customizable,
+        }}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const butter = Butter(process.env.BUTTER_CMS);
+    const response = await butter.page.retrieve("*", "product_collaborate");
+
+    return {
+      props: {
+        ...response.data.data.fields,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        ...err,
+      },
+    };
+  }
+}
 
 export default Product;

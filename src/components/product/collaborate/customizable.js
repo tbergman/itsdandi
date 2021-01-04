@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
-import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import { rootMargin, rootMarginSub, lineBreaks } from "../../../helpers/utils";
 import InView from "../../inview";
 import SubInView from "../../subinview";
 
@@ -12,7 +12,9 @@ const Customizable = ({
   subMenuStyling,
   setSubMenuStyling,
   isDesktop,
+  content,
 }) => {
+  const { header, body } = content;
   return (
     <InView
       variant="pages.product.collaborate.customizable"
@@ -31,12 +33,8 @@ const Customizable = ({
           }}
         >
           <div className="text">
-            <Styled.h2>Customizable sharing controls</Styled.h2>
-            <Styled.p>
-              DEI data is some of the most sensitive information a company
-              holds. Flexible privacy and sharing controls make sure only the
-              right people have access to the right information.
-            </Styled.p>
+            <Styled.h2>{header}</Styled.h2>
+            <Styled.p>{lineBreaks(body)}</Styled.p>
           </div>
           <div className="graphic">
             <ReactSVG src="/assets/svgs/customizable.svg" />

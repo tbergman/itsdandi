@@ -12,6 +12,7 @@ import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
 import TopContent from "../../src/components/product/security/topcontent";
 import { useState, useEffect } from "react";
+import Butter from "buttercms";
 
 import {
   motion,
@@ -27,7 +28,7 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
 
-const Product = () => {
+const Product = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
   const [width, height] = useWindowSize();
@@ -66,6 +67,8 @@ const Product = () => {
       : body.classList.remove("menu-open");
   };
 
+  console.log(props);
+
   return (
     <div
       sx={{
@@ -101,8 +104,9 @@ const Product = () => {
         subMenuStyling={subMenuStyling}
       />
       <Header
-        title={`Your people data is precious. Protecting it is our top priority.`}
-        body={`Learn more about the Dandi security standard.`}
+        content={{
+          ...props.header,
+        }}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         setSubMenuStyling={setSubMenuStyling}
@@ -117,7 +121,12 @@ const Product = () => {
           },
         }}
       >
-        <TopContent isDesktop={isDesktop} />
+        <TopContent
+          isDesktop={isDesktop}
+          content={{
+            ...props.header,
+          }}
+        />
       </Header>
       <BestInClass
         setSubMenuStyling={setSubMenuStyling}
@@ -126,16 +135,15 @@ const Product = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
+        content={{
+          ...props.best_in_class,
+        }}
       />
       <Quote
         isDesktop={isDesktop}
-        image={{
-          desktop: "/assets/images/tamarcus-brown-desktop.png",
-          mobile: "/assets/images/tamarcus-brown.png",
+        content={{
+          ...props.quote,
         }}
-        text={`I trust Dandi with our most sensitive info`}
-        name={`Name Namesson`}
-        title={`Ceo,Company`}
         bg="white"
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray2}
@@ -150,6 +158,9 @@ const Product = () => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
+        content={{
+          ...props.workflows,
+        }}
       />
       <Connect
         isDesktop={isDesktop}
@@ -158,11 +169,34 @@ const Product = () => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.white}
         windowHeight={windowHeight}
+        content={{
+          ...props.connect,
+        }}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const butter = Butter(process.env.BUTTER_CMS);
+    const response = await butter.page.retrieve("*", "product_security");
+
+    return {
+      props: {
+        ...response.data.data.fields,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        ...err,
+      },
+    };
+  }
+}
 
 export default Product;

@@ -2,7 +2,8 @@
 import { jsx } from "theme-ui";
 import Button from "../button";
 
-const TopContent = ({ isDesktop }) => {
+const TopContent = ({ isDesktop, content }) => {
+  const { button_text, url } = content;
   return (
     <div
       sx={{
@@ -10,7 +11,7 @@ const TopContent = ({ isDesktop }) => {
       }}
     >
       <div className="buttonwrapper">
-        <Button url="/" text="Request a demo" />
+        <Button url={url} text={button_text} />
       </div>
       <div className="graphics">
         {isDesktop ? (

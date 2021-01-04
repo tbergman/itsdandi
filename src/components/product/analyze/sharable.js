@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
-import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import InView from "../../inview";
 import SubInView from "../../subinview";
 
@@ -12,7 +12,9 @@ const Sharable = ({
   setSubMenuStyling,
   windowHeight,
   isDesktop,
+  content,
 }) => {
+  const { header, body } = content;
   return (
     <InView
       variant="pages.product.analyze.sharable"
@@ -31,16 +33,8 @@ const Sharable = ({
           }}
         >
           <div className="text">
-            <Styled.h2>Shareable by design</Styled.h2>
-            <Styled.p>
-              Insights only make an impact if the right people see them. That’s
-              why Dandi makes it easy to share beautifully designed charts and
-              visualizations.
-              <br />
-              <br /> Add your findings to reports and presentations in a snap.
-              In the future, you’ll be able to schedule publication of key
-              visuals so the right people can always stay in the loop.
-            </Styled.p>
+            <Styled.h2>{header}</Styled.h2>
+            <Styled.p>{lineBreaks(body)}</Styled.p>
           </div>
           <div className="graphic">
             <ReactSVG src="/assets/svgs/sharable.svg" />

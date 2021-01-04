@@ -12,27 +12,10 @@ const BestInClass = ({
   setSubMenuStyling,
   windowHeight,
   isDesktop,
+  content,
 }) => {
-  const modules = [
-    {
-      length: "65%",
-      title: `GDPR compliant`,
-      body: `No matter where your people are, their data is secure. `,
-      color: "#A4F0F4",
-    },
-    {
-      length: "80%",
-      title: `Full encryption`,
-      body: `All data is encrypted at rest and in transit.`,
-      color: "#FFD93B",
-    },
-    {
-      length: "95%",
-      title: `SOC 2 compliant`,
-      body: `A full suite of features that meet AICPA SOC 2 trust service protocols.`,
-      color: "#F9D2FF",
-    },
-  ];
+  const { header, body, categories } = content;
+
   return (
     <InView
       variant="pages.product.security.bestinclass"
@@ -51,17 +34,14 @@ const BestInClass = ({
           }}
         >
           <div className="toptext">
-            <Styled.h2>Best-in-class data protection</Styled.h2>
-            <Styled.p>
-              We’ve built industry-accepted best practices into every layer of
-              Dandi, and continue to evolve as rules and regulations change.
-            </Styled.p>
+            <Styled.h2>{header}</Styled.h2>
+            <Styled.p>{body}</Styled.p>
           </div>
           <div className="modules">
-            {modules.map((module, i) => (
+            {categories.map((module, i) => (
               <div
                 sx={{
-                  width: module.length,
+                  width: `${module.length}%`,
                 }}
                 className="module"
                 key={i}
@@ -73,21 +53,21 @@ const BestInClass = ({
                       y1="50%"
                       x2="97%"
                       y2="50%"
-                      stroke={module.color}
+                      stroke={module.hexcode}
                       strokeWidth="2"
                     />
                     <motion.circle
                       cx="97%"
                       cy="50%"
                       r="5"
-                      fill={module.color}
+                      fill={module.hexcode}
                     />
                   </svg>
                 </div>
                 <div className="text">
                   <Styled.p
                     sx={{
-                      color: module.color,
+                      color: module.hexcode,
                     }}
                   >
                     {module.title}

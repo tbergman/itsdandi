@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import InView from "../../inview";
 import SubInView from "../../subinview";
 
@@ -11,51 +11,10 @@ const Connections = ({
   subMenuStyling,
   setSubMenuStyling,
   isDesktop,
+  content,
 }) => {
-  const logos = [
-    {
-      url: "/assets/images/product/integrations/workday.png",
-      flex: ["0 30%", "0 15%"],
-    },
-    {
-      url: "/assets/images/product/integrations/adp.png",
-      flex: ["0 30%", "0 10%"],
-    },
-    {
-      url: "/assets/images/product/integrations/oracle.png",
-      flex: ["0 30%", "0 12%"],
-    },
-    {
-      url: "/assets/images/product/integrations/successfactor.png",
-      flex: ["0 70%", "0 30%"],
-    },
-    {
-      url: "/assets/images/product/integrations/cims.png",
-      flex: ["0 20%", "0 10%"],
-    },
-    {
-      url: "/assets/images/product/integrations/lever.png",
-      flex: ["0 40%", "0 20%"],
-    },
-    {
-      url: "/assets/images/product/integrations/namely.png",
-      flex: ["0 25%", "0 10%"],
-    },
-    {
-      url: "/assets/images/product/integrations/ultipro.png",
-      flex: ["0 20%", "0 10%"],
-    },
+  const { header, body, logos } = content;
 
-    {
-      url: "/assets/images/product/integrations/bamboohr.png",
-      flex: ["0 45%", "0 20%"],
-    },
-
-    {
-      url: "/assets/images/product/integrations/greenhouse.png",
-      flex: ["0 45%", "0 20%"],
-    },
-  ];
   return (
     <InView
       variant="pages.product.integrations.connections"
@@ -74,23 +33,29 @@ const Connections = ({
           }}
         >
           <div className="text">
-            <Styled.h2>All the right connections</Styled.h2>
-            <Styled.p>
-              Dandi integrates simply and securely through the API’s of most
-              leading HR platforms. There’s no coding or data warehousing
-              required, so setup is a snap.
-            </Styled.p>
+            <Styled.h2>{header}</Styled.h2>
+            <Styled.p>{lineBreaks(body)}</Styled.p>
           </div>
           <div className="logos">
             {logos.map((logo, i) => (
               <div
                 sx={{
-                  flex: logo.flex,
+                  flex: [
+                    `0 1 ${logo.mobile_size}%`,
+                    `0 1 ${logo.desktop_size}%`,
+                  ],
                 }}
                 className="logo"
                 key={i}
               >
-                <img src={logo.url} alt="" />
+                <picture>
+                  <source
+                    media="(min-width: 800px)"
+                    srcSet={logo.desktop_image}
+                  ></source>
+                  <source srcSet={logo.mobile_image}></source>
+                  <img src={logo.desktop_image} alt="" />
+                </picture>
               </div>
             ))}
           </div>

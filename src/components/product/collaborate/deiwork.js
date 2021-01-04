@@ -14,9 +14,11 @@ const DeiWork = ({
   setSubMenuStyling,
   windowHeight,
   isDesktop,
+  content,
 }) => {
   const [current, setCurrent] = useState(0);
   const time = 7500;
+  const { header, body, carousel_item } = content;
 
   useEffect(() => {
     const next = (current + 1) % slides.length;
@@ -107,7 +109,7 @@ const DeiWork = ({
                     variant: "components.shared.carousel",
                   }}
                 >
-                  {slides.map((slide, i) => (
+                  {carousel_item.map((slide, i) => (
                     <CarouselItem
                       key={i}
                       idx={i}
@@ -133,9 +135,9 @@ const DeiWork = ({
                 <motion.picture>
                   <source
                     media="(min-width: 800px)"
-                    srcSet={slides[current].imageUrl}
+                    srcSet={carousel_item[current].desktop_image}
                   ></source>
-                  <source srcSet={slides[current].imageUrl}></source>
+                  <source srcSet={carousel_item[current].mobile_image}></source>
 
                   <motion.img
                     key={current}
@@ -147,7 +149,7 @@ const DeiWork = ({
                       x: { type: "spring", stiffness: 300, damping: 30 },
                       opacity: { duration: 0.2 },
                     }}
-                    src={slides[current].imageUrl}
+                    src={carousel_item[current].desktop_image}
                     alt=""
                   />
                 </motion.picture>
