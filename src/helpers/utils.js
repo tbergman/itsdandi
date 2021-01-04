@@ -21,7 +21,7 @@ export const lineBreaks = (text) => {
 
 export const columnWidths = (width) => {
   return {
-    desktop: (width - 40 * 13) / 12,
-    mobile: (width - 20 * 7) / 6,
+    desktop: Number(((width - 40 * 13) / 12).toFixed(1)),
+    mobile: Number(((width - 20 * 7) / 6).toFixed(1)),
   };
 };
