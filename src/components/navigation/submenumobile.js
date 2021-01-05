@@ -3,19 +3,25 @@ import { jsx, Styled } from "theme-ui";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation } from "swiper";
+import "swiper/swiper-bundle.min.css";
+import "swiper/components/navigation/navigation.min.css";
+
+SwiperCore.use([Navigation]);
 
 const SubMenuMobile = ({ subPages, subMenuStyling }) => {
-  const controls = useAnimation();
+  // const controls = useAnimation();
   const [current, setCurrent] = useState(0);
-  const [xPos, setXPos] = useState(null);
+  // const [xPos, setXPos] = useState(null);
 
-  const grid = [0, -50, -150, -220];
+  // const grid = [0, -50, -150, -220];
 
-  useEffect(() => {
-    controls.start({
-      x: grid[current],
-    });
-  }, [current]);
+  // useEffect(() => {
+  //   controls.start({
+  //     x: grid[current],
+  //   });
+  // }, [current]);
   return (
     <div
       className="SubMenu"
@@ -29,7 +35,71 @@ const SubMenuMobile = ({ subPages, subMenuStyling }) => {
         }}
         className="SubMenu__mobileContainer"
       >
-        {current > 0 && (
+        <Swiper
+          navigation={{
+            nextEl: ".SubMenu__mobileContainer-right",
+            prevEl: ".SubMenu__mobileContainer-left",
+          }}
+          spaceBetween={0}
+          slidesPerView={"auto"}
+          onSlideChange={() => console.log(`slide change`)}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          {subPages.map((page, i) => (
+            <SwiperSlide key={i}>
+              <Link href={page.url}>
+                <motion.a
+                  className={
+                    page.current
+                      ? "SubMenu__mobileContainer-draggable-item current"
+                      : "SubMenu__mobileContainer-draggable-item"
+                  }
+                >
+                  <Styled.p className="SubMenu__mobileContainer-draggable-text">
+                    {page.name}
+                  </Styled.p>
+                </motion.a>
+              </Link>
+            </SwiperSlide>
+          ))}
+
+          <div className="SubMenu__mobileContainer-right">
+            <svg
+              className="SubMenu__mobileContainer-arrow"
+              width="20"
+              height="13"
+              viewBox="0 0 20 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.51472 1.51472L10 10L18.4853 1.51472"
+                stroke="#F2F2F2"
+                stroke-opacity="0.95"
+                stroke-width="3"
+              />
+            </svg>
+          </div>
+          <div className="SubMenu__mobileContainer-left">
+            <svg
+              className="SubMenu__mobileContainer-arrow"
+              width="20"
+              height="13"
+              viewBox="0 0 20 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.51472 1.51472L10 10L18.4853 1.51472"
+                stroke="#F2F2F2"
+                stroke-opacity="0.95"
+                stroke-width="3"
+              />
+            </svg>
+          </div>
+        </Swiper>
+
+        {/* {current > 0 && (
           <div
             onClick={() => (current > 0 ? setCurrent(current - 1) : null)}
             className="SubMenu__mobileContainer-left"
@@ -113,8 +183,8 @@ const SubMenuMobile = ({ subPages, subMenuStyling }) => {
                 </Styled.p>
               </motion.a>
             </Link>
-          ))}
-        </motion.div>
+          ))} */}
+        {/* </motion.div> */}
       </motion.div>
     </div>
   );

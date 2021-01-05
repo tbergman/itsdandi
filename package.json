@@ -1,9 +1,12 @@
 {
   "name": "dandi",
-  "jest":{
-    "verbose":true,
-    "collectCoverage":true,
-    "coverageReporters":["json","html"]
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
   },
   "version": "0.1.0",
   "private": true,
@@ -13,7 +16,7 @@
     "deploy": "npm run build && gcloud app deploy",
     "start": "next start -p 8080",
     "test": "jest --watch",
-    "coverage":"jest --coverage"
+    "coverage": "jest --coverage"
   },
   "dependencies": {
     "@babel/core": "^7.12.3",
@@ -33,7 +36,9 @@
     "react-responsive": "^8.2.0",
     "react-svg": "^11.1.2",
     "react-use-hover": "^2.0.0",
+    "swiper": "^6.4.5",
     "theme-ui": "^0.4.0-rc.12",
+    "tiny-slider": "^2.9.3",
     "xstate": "^4.15.3"
   },
   "devDependencies": {

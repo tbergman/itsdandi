@@ -39,7 +39,7 @@ describe("lineBreaks", () => {
 
 describe("columnWidths", () => {
   it("calculates widths correctly", () => {
-    expect(columnWidths(1000)).toBe({
+    expect(columnWidths(1000)).toStrictEqual({
       desktop: 40,
       mobile: 143.3,
     });

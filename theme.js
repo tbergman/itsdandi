@@ -95,6 +95,7 @@ const theme = {
       top: {
         bg: "transparent",
         bigLogo: {
+          display: "none",
           svg: {
             position: "fixed",
             zIndex: 9999,
@@ -3602,6 +3603,10 @@ const theme = {
         zIndex: 99,
 
         ".SubMenu__mobileContainer": {
+          ".swiper-container": {
+            height: "100%",
+          },
+
           ".SubMenu__mobileContainer-arrow": {
             cursor: "pointer",
             path: {
@@ -3610,7 +3615,8 @@ const theme = {
           },
           ".SubMenu__mobileContainer-left": {
             position: "absolute",
-            bg: "#FFF",
+            visibility: "visible",
+            bg: "#F8F8F8",
             width: "40px",
             height: "39px",
             top: 0,
@@ -3619,12 +3625,12 @@ const theme = {
             display: "flex",
             alignItems: "center",
             justifyContent: "flex-end",
-            ".arrow": {
+            ".SubMenu__mobileContainer-arrow": {
               transform: "rotate(90deg)",
             },
           },
           ".SubMenu__mobileContainer-right": {
-            bg: "#FFF",
+            bg: "#F8F8F8",
             position: "absolute",
             width: "40px",
             height: "39px",
@@ -3634,43 +3640,50 @@ const theme = {
             display: "flex",
             alignItems: "center",
             justifyContent: "flex-start",
-            ".arrow": {
+
+            ".SubMenu__mobileContainer-arrow": {
               transform: "rotate(-90deg)",
             },
           },
-          ".SubMenu__mobileContainer-draggable": {
+          ".swiper-button-disabled": {
+            visibility: "hidden",
+          },
+          ".SubMenu__mobileContainer-draggable-item": {
             height: "100%",
-            display: "flex",
-            flexFlow: ["row nowrap", "column"],
-            alignItems: ["center", "unset"],
-            ".SubMenu__mobileContainer-draggable-item": {
-              cursor: "pointer",
-              flex: ["0 0 125px", "unset"],
-              display: ["flex", "unset"],
-              justifyContent: ["center", "unset"],
-              mb: [0, 2],
-              mr: [0, 0],
+            cursor: "pointer",
+            // flex: ["0 0 125px", "unset"],
+            display: ["flex", "unset"],
+            justifyContent: ["center", "unset"],
+            alignItems: "center",
+            mb: [0, 2],
+            mr: [0, 0],
+            color: "inherit",
+            textDecoration: "none",
+            whiteSpace: "nowrap",
+            opacity: 0.5,
+
+            ".SubMenu__mobileContainer-draggable-item-text": {
+              fontSize: "14px",
+              lineHeight: "16px",
               color: "inherit",
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-              opacity: 0.5,
-              height: "max-content",
-              p: {
-                fontSize: "14px",
-                lineHeight: "16px",
-                color: "inherit",
-                fontFamily: "medium",
-              },
-              "&:hover": {
-                opacity: ["unset", 1],
-              },
+              fontFamily: "medium",
             },
-            ".current": {
-              opacity: 1,
-              position: "relative",
-              pl: [0, 3],
+            "&:hover": {
+              opacity: ["unset", 1],
             },
           },
+          ".current": {
+            opacity: 1,
+            position: "relative",
+            pl: [0, 3],
+          },
+          // ".SubMenu__mobileContainer-draggable": {
+          //   height: "100%",
+          //   display: "flex",
+          //   flexFlow: ["row nowrap", "column"],
+          //   alignItems: ["center", "unset"],
+
+          // },
           height: ["100%", "unset"],
           width: "100%",
           borderBottom: ["1px solid #CACACE", "none"],

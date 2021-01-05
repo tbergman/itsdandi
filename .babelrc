@@ -4,9 +4,9 @@
             "@babel/plugin-transform-react-jsx",
 {
     "throwIfNamespace": false,
-    "runtime": "classic",
+    "runtime": "classic"
 }
         ]
     ],
-    "presets": ["next/babel"]
+    // "presets": ["next/babel"]
 }
