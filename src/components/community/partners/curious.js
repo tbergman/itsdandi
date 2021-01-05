@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
-import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
 
 const Curious = ({
@@ -12,7 +12,9 @@ const Curious = ({
   setSubMenuStyling,
   windowHeight,
   isDesktop,
+  content,
 }) => {
+  const { header1, body1, header2, body2, button_text, url } = content;
   return (
     <InView
       variant="pages.community.partners.curious"
@@ -32,30 +34,21 @@ const Curious = ({
         >
           <div className="row1">
             <div className="section1">
-              <Styled.h2>Make our Partners yours</Styled.h2>
+              <Styled.h2>{header1}</Styled.h2>
             </div>
             <div className="section2">
-              <Styled.p>
-                Curious about working with a Dandi Marketplace Partner? Contact
-                us at marketplace@itsdandi.com.
-                <br />
-                <br /> We’re happy to connect you to our partners, even if
-                you’re not a Dandi client.
-              </Styled.p>
+              <Styled.p>{lineBreaks(body1)}</Styled.p>
             </div>
           </div>
 
           <div className="row2">
             <div className="section1">
-              <Styled.h2>The Dandi DEI Advisory Board</Styled.h2>
+              <Styled.h2>{header2}</Styled.h2>
             </div>
             <div className="section2">
-              <Styled.p>
-                A collective of leading thinkers and change-makers, Dandi’s DEI
-                Advisory Board plays a critical role in shaping our platform.
-              </Styled.p>
+              <Styled.p>{lineBreaks(body2)}</Styled.p>
               <div className="link">
-                <LearnMoreLink href="/" text={`Learn more`} color="#335AFF" />
+                <LearnMoreLink href={url} text={button_text} color="#335AFF" />
               </div>
             </div>
           </div>

@@ -11,11 +11,10 @@ const People = ({
   windowHeight,
   subMenuStyling,
   setSubMenuStyling,
-  title,
-  body,
+  content,
   isDesktop,
-  people,
 }) => {
+  const { header, body, people } = content;
   return (
     <InView
       variant="components.shared.people"
@@ -35,7 +34,7 @@ const People = ({
         >
           <div className="toptext">
             <div className="section1">
-              <Styled.h2>{title}</Styled.h2>
+              <Styled.h2>{header}</Styled.h2>
             </div>
             <div className="section2">
               <Styled.p>{body}</Styled.p>
@@ -45,7 +44,10 @@ const People = ({
           <div className="people">
             {people.map((person, i) => (
               <Person
-                url={person.url}
+                images={{
+                  desktop: person.desktop_image,
+                  mobile: person.mobile_image,
+                }}
                 name={person.name}
                 title={person.title}
               />

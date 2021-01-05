@@ -44,7 +44,7 @@ const Product = (props) => {
   const [windowHeight, setWindowHeight] = useState(500);
   const [staticLogo, setStaticLogo] = useState(true);
   const [subMenuStyling, setSubMenuStyling] = useState({
-    ...theme.components.submenu.white,
+    ...theme.components.submenu.gray,
   });
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.gray,
@@ -109,7 +109,7 @@ const Product = (props) => {
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.gray}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.gray}
         content={{
           header: props.header.header,
           body: props.header.body,

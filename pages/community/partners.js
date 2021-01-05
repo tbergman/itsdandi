@@ -13,6 +13,7 @@ import TopContent from "../../src/components/community/partners/topcontent";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import { useState, useEffect } from "react";
+import Butter from "buttercms";
 
 import {
   motion,
@@ -26,7 +27,7 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
 
-const Community = () => {
+const Community = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
   const currentPage = {
@@ -63,54 +64,6 @@ const Community = () => {
       ? body.classList.add("menu-open")
       : body.classList.remove("menu-open");
   };
-
-  const people = [
-    {
-      url: `/assets/images/carol.png`,
-      name: `Carol Watson`,
-      title: `Chief Inclusion Officer, BCW Global`,
-    },
-    {
-      url: `/assets/images/jamie.png`,
-      name: `Jaime Klein`,
-      title: `Founder & CEO, Inspire Human Resources`,
-    },
-    {
-      url: `/assets/images/dave.png`,
-      name: `Dave Cilberto`,
-      title: `Principal, Dave Ciliberto Enterprises, Inc.`,
-    },
-    {
-      url: `/assets/images/elisa.png`,
-      name: `Elisa Leary`,
-      title: `Managing Director, Head of DEI, Glocap`,
-    },
-    {
-      url: `/assets/images/lily.png`,
-      name: `Lily`,
-      title: `-`,
-    },
-    {
-      url: `/assets/images/robert.png`,
-      name: `Robert Beaven`,
-      title: `COO & CRO, Jennifer Brown Consulting`,
-    },
-    {
-      url: `/assets/images/tayo.png`,
-      name: `Tayo Rockson`,
-      title: `President & CEO, UYD Management`,
-    },
-    {
-      url: `/assets/images/natania.png`,
-      name: `Natania Gazek`,
-      title: `-`,
-    },
-    {
-      url: `/assets/images/nathan.png`,
-      name: `Nathan Knight`,
-      title: `-`,
-    },
-  ];
 
   return (
     <div
@@ -150,8 +103,9 @@ const Community = () => {
         isDesktop={isDesktop}
         subMenuStyling={theme.components.submenu.white}
         setSubMenuStyling={setSubMenuStyling}
-        title={`Your partners in change`}
-        body={`Dandi's Marketplace Partners are here to help you navigate the challenges you meet along the way.`}
+        content={{
+          ...props.header,
+        }}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
@@ -166,12 +120,12 @@ const Community = () => {
         subMenuStyling={theme.components.submenu.white}
         setSubMenuStyling={setSubMenuStyling}
         isDesktop={isDesktop}
-        title={`Do more with your data`}
-        body={`Composed of leading consultants and practitioners, Dandi’s Marketplace Partners are experts at leveraging data to advance DEI initiatives. Whether it’s helping make sense of your numbers, implementing new programs, or managing through organizational change, Partners can provide the extra know-how needed to make good things happen.`}
+        content={{
+          ...props.do_more,
+        }}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
-        people={people}
       />
 
       <Curious
@@ -181,11 +135,34 @@ const Community = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
+        content={{
+          ...props.curious,
+        }}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const butter = Butter(process.env.BUTTER_CMS);
+    const response = await butter.page.retrieve("*", "community_partners");
+
+    return {
+      props: {
+        ...response.data.data.fields,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        ...err,
+      },
+    };
+  }
+}
 
 export default Community;

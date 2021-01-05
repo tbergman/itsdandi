@@ -12,6 +12,7 @@ import TopContent from "../../src/components/community/board/topcontent";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import { useState, useEffect } from "react";
+import Butter from "buttercms";
 
 import {
   motion,
@@ -25,7 +26,7 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
 
-const Community = () => {
+const Community = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
   const [width, height] = useWindowSize();
@@ -58,79 +59,6 @@ const Community = () => {
       ? body.classList.add("menu-open")
       : body.classList.remove("menu-open");
   };
-
-  const people = [
-    {
-      url: `/assets/images/elisa.png`,
-      name: `Elisa Leary`,
-      title: `Managing Director, Head of DEI, Glocap`,
-    },
-    {
-      url: `/assets/images/emily.png`,
-      name: `Emily Miethner`,
-      title: `Founder & CEO, FindSpark`,
-    },
-    {
-      url: `/assets/images/carol.png`,
-      name: `Carol Watson`,
-      title: `Chief Inclusion Officer, BCW Global`,
-    },
-    {
-      url: `/assets/images/lakuan.png`,
-      name: `Lakuan Terry Smith`,
-      title: `DEI Manager, Justworks`,
-    },
-    {
-      url: `/assets/images/kerel.png`,
-      name: `Kerel Cooper`,
-      title: `SVP, Global Marketing, LiveIntent`,
-    },
-    {
-      url: `/assets/images/michael.png`,
-      name: `Michael Texidor`,
-      title: `VP, Member Operations, IAB`,
-    },
-    {
-      url: `/assets/images/henry.png`,
-      name: `Herry Pierre Louis`,
-      title: `Product Manager, Oscar Health`,
-    },
-    {
-      url: `/assets/images/antoinette.png`,
-      name: `Antoinette Hamilton`,
-      title: `Global Head of I&D, Lam Researchal`,
-    },
-    {
-      url: `/assets/images/darren.png`,
-      name: `Darren Wesley Martin Jr.`,
-      title: `Founder & CEO, Streamlined Media`,
-    },
-    {
-      url: `/assets/images/damien.png`,
-      name: `Damien Wint`,
-      title: `Associate General Counsel, Advertising & Privacy, Facebook`,
-    },
-    {
-      url: `/assets/images/jill.png`,
-      name: `Jill Katz`,
-      title: `CHRO, Assemble HR Consulting`,
-    },
-    {
-      url: `/assets/images/peter.png`,
-      name: `Peter Phelan`,
-      title: `Founder & CEO, ValuesCulture`,
-    },
-    {
-      url: `/assets/images/netta.png`,
-      name: `Netta Conyers-Haynes`,
-      title: `VP, Communications, Sequoia Consulting Group`,
-    },
-    {
-      url: `/assets/images/stephen.png`,
-      name: `Stephen Kim`,
-      title: `Associate Director, Communication & Information, Princeton University Art Museum`,
-    },
-  ];
 
   return (
     <div
@@ -170,8 +98,9 @@ const Community = () => {
         isDesktop={isDesktop}
         subMenuStyling={theme.components.submenu.white}
         setSubMenuStyling={setSubMenuStyling}
-        title={`Working together to advance DEI`}
-        body={`A collective of leading thinkers and change-makers, Dandi’s DEI Advisory Board plays a crucial role in shaping our platform.`}
+        content={{
+          ...props.header,
+        }}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
@@ -189,11 +118,9 @@ const Community = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
-        title={`Making Dandi better for everyone`}
-        body={`We’ve got a huge mission at Dandi—to make business better for everyone. We know we can’t do it alone. And that’s where our DEI Advisory Board comes in.
-
-The Advisory Board, along with our Marketplace Partners, provides an important point of contact with other DEI leaders. Conceived as a working group of diverse talents and brilliant minds, the Board offers ongoing input regarding our products and the practice of DEI as a whole. They’re a vital complement to our team, and we’re very lucky to have them working with us.`}
-        people={people}
+        content={{
+          ...props.better,
+        }}
       />
 
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
@@ -201,5 +128,25 @@ The Advisory Board, along with our Marketplace Partners, provides an important p
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const butter = Butter(process.env.BUTTER_CMS);
+    const response = await butter.page.retrieve("*", "community_board");
+
+    return {
+      props: {
+        ...response.data.data.fields,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        ...err,
+      },
+    };
+  }
+}
 
 export default Community;

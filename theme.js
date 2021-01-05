@@ -3606,6 +3606,9 @@ const theme = {
           ".swiper-container": {
             height: "100%",
           },
+          ".swiper-wrapper": {
+            px: ["20px"],
+          },
 
           ".SubMenu__mobileContainer-arrow": {
             cursor: "pointer",
@@ -3616,7 +3619,6 @@ const theme = {
           ".SubMenu__mobileContainer-left": {
             position: "absolute",
             visibility: "visible",
-            bg: "#F8F8F8",
             width: "40px",
             height: "39px",
             top: 0,
@@ -3630,7 +3632,6 @@ const theme = {
             },
           },
           ".SubMenu__mobileContainer-right": {
-            bg: "#F8F8F8",
             position: "absolute",
             width: "40px",
             height: "39px",
@@ -3653,10 +3654,9 @@ const theme = {
             cursor: "pointer",
             // flex: ["0 0 125px", "unset"],
             display: ["flex", "unset"],
-            justifyContent: ["center", "unset"],
+            justifyContent: ["space-between", "unset"],
             alignItems: "center",
-            mb: [0, 2],
-            mr: [0, 0],
+
             color: "inherit",
             textDecoration: "none",
             whiteSpace: "nowrap",
@@ -3792,10 +3792,16 @@ const theme = {
 
       default: {
         color: "white",
+        bg: "black",
       },
 
       white: {
         color: "black",
+        bg: "#FFF",
+      },
+      gray: {
+        color: "black",
+        bg: "#F8F8F8",
       },
     },
     mobilemenu: {

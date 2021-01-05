@@ -8,20 +8,9 @@ import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper-bundle.min.css";
 import "swiper/components/navigation/navigation.min.css";
 
-SwiperCore.use([Navigation]);
-
 const SubMenuMobile = ({ subPages, subMenuStyling }) => {
-  // const controls = useAnimation();
-  const [current, setCurrent] = useState(0);
-  // const [xPos, setXPos] = useState(null);
+  SwiperCore.use([Navigation]);
 
-  // const grid = [0, -50, -150, -220];
-
-  // useEffect(() => {
-  //   controls.start({
-  //     x: grid[current],
-  //   });
-  // }, [current]);
   return (
     <div
       className="SubMenu"
@@ -41,9 +30,8 @@ const SubMenuMobile = ({ subPages, subMenuStyling }) => {
             prevEl: ".SubMenu__mobileContainer-left",
           }}
           spaceBetween={0}
-          slidesPerView={"auto"}
-          onSlideChange={() => console.log(`slide change`)}
-          onSwiper={(swiper) => console.log(swiper)}
+          slidesPerView={3}
+          speed="2000"
         >
           {subPages.map((page, i) => (
             <SwiperSlide key={i}>
@@ -63,7 +51,12 @@ const SubMenuMobile = ({ subPages, subMenuStyling }) => {
             </SwiperSlide>
           ))}
 
-          <div className="SubMenu__mobileContainer-right">
+          <div
+            sx={{
+              bg: subMenuStyling.bg,
+            }}
+            className="SubMenu__mobileContainer-right"
+          >
             <svg
               className="SubMenu__mobileContainer-arrow"
               width="20"
@@ -80,7 +73,12 @@ const SubMenuMobile = ({ subPages, subMenuStyling }) => {
               />
             </svg>
           </div>
-          <div className="SubMenu__mobileContainer-left">
+          <div
+            sx={{
+              bg: subMenuStyling.bg,
+            }}
+            className="SubMenu__mobileContainer-left"
+          >
             <svg
               className="SubMenu__mobileContainer-arrow"
               width="20"

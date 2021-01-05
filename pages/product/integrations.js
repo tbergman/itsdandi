@@ -40,7 +40,7 @@ const Product = (props) => {
   });
   const [windowHeight, setWindowHeight] = useState(500);
   const [subMenuStyling, setSubMenuStyling] = useState({
-    ...theme.components.submenu.white,
+    ...theme.components.submenu.gray,
   });
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navigation.gray2,
@@ -106,7 +106,7 @@ const Product = (props) => {
         }}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray2}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.gray}
         setSubMenuStyling={setSubMenuStyling}
         windowHeight={windowHeight}
         bg="#F8F8F8"

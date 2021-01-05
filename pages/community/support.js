@@ -27,7 +27,7 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
 
-const Community = () => {
+const Community = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
   const currentPage = {
@@ -104,8 +104,9 @@ const Community = () => {
         isDesktop={isDesktop}
         subMenuStyling={theme.components.submenu.white}
         setSubMenuStyling={setSubMenuStyling}
-        title={`The support you need to advance DEI`}
-        body={`Some software companies are hands-off. But that’s not Dandi.`}
+        content={{
+          ...props.header,
+        }}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
@@ -126,6 +127,9 @@ const Community = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
+        content={{
+          ...props.onboarding,
+        }}
       />
       <LearnMore
         isDesktop={isDesktop}
@@ -134,6 +138,9 @@ const Community = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.yellow}
         windowHeight={windowHeight}
+        content={{
+          ...props.learnmore,
+        }}
       />
       <GetCreative
         isDesktop={isDesktop}
@@ -142,11 +149,34 @@ const Community = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
+        content={{
+          ...props.get_creative,
+        }}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const butter = Butter(process.env.BUTTER_CMS);
+    const response = await butter.page.retrieve("*", "community_support");
+
+    return {
+      props: {
+        ...response.data.data.fields,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        ...err,
+      },
+    };
+  }
+}
 
 export default Community;
