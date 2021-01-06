@@ -15,6 +15,18 @@ const Navigation = ({
   width,
 }) => {
   const widths = columnWidths(width);
+
+  const arrowMotion = {
+    hover: {
+      x: 10,
+      transition: {
+        type: "ease",
+
+        duration: 0.175,
+      },
+    },
+  };
+
   return (
     <motion.nav
       sx={{
@@ -33,7 +45,6 @@ const Navigation = ({
               scaleTo={32 / widths.desktop}
               yOffset={-widths.desktop + 35}
             />
-            {/* <ReactSVG src="/assets/svgs/smile.svg" /> */}
           </a>
         </Link>
       </div>
@@ -96,10 +107,38 @@ const Navigation = ({
         </Link>
 
         <a href="www.google.com" target="_blank" className="item">
-          <div className="login">
+          <motion.div
+            className="login"
+            whileHover={{
+              x: 0,
+            }}
+            variants={arrowMotion}
+          >
             <div>Log in</div>
-            <ReactSVG className="arrow" src="/assets/svgs/arrow.svg" />
-          </div>
+            <motion.div className="arrow" variants={arrowMotion}>
+              <svg
+                width="15"
+                height="16"
+                viewBox="0 0 15 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 3.00464L14 8.00464L9 13.0046"
+                  stroke={"#335AFF"}
+                  stroke-width="1.6"
+                />
+                <line
+                  x1="14"
+                  y1="8.00425"
+                  x2="1"
+                  y2="8.00425"
+                  stroke={"#335AFF"}
+                  stroke-width="1.8"
+                />
+              </svg>
+            </motion.div>
+          </motion.div>
         </a>
       </div>
     </motion.nav>

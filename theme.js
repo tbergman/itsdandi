@@ -273,7 +273,7 @@ const theme = {
         bg: "violet",
         color: "black",
         position: "relative",
-        ".toptext": {
+        ".LearnMore__toptext": {
           position: "fixed",
           bottom: 0,
           zIndex: 99,
@@ -288,19 +288,19 @@ const theme = {
           display: ["none", "flex"],
           alignItems: "flex-start",
           justifyContent: ["flex-end", "flex-start"],
-          p: {
+          ".LearnMore__toptext-text": {
             fontFamily: "display",
             fontWeight: "500",
             fontSize: ["16px"],
             lineHeight: ["20px"],
           },
-          svg: {
+          ".LearnMore__toptext-arrow": {
             ml: "10px",
             width: ["55px"],
             pt: ["4%", "1.6%"],
           },
         },
-        ".imagewrapper": {
+        ".LearnMore__imageWrapper": {
           gridArea: ["2/1/3/-1", "1/6/2/-1"],
           mt: ["213px", "290px"],
           mb: [0, "333px"],
@@ -311,29 +311,29 @@ const theme = {
             (t) => `calc(calc(${t.colWidthDesktop} * 6) + 280px)`,
           ],
           left: ["-20px", (t) => `calc(${t.colWidthDesktop})`],
-          img: {
+          ".LearnMore__imageWrapper-image": {
             position: "absolute",
             height: "100%",
             width: ["unset", "100%"],
             right: 0,
           },
         },
-        ".text": {
+        ".LearnMore__text": {
           gridArea: ["3/1/4/-1", "1/2/2/6"],
           mt: [6, "290px"],
           ml: [0],
           mb: [16, 26],
-          h2: {
+          ".LearnMore__text-header": {
             maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
           },
-          ".link": {
+          ".LearnMore__text-link": {
             mt: [1],
             p: {
               mt: 0,
               fontFamily: "medium",
             },
           },
-          p: {
+          ".LearnMore__text-body": {
             mt: [3, 4],
             fontSize: ["16px", "20px"],
             lineHeight: ["24px", "32px"],

@@ -50,16 +50,20 @@ const LearnMore = ({
         sx={{
           variant: "grid",
         }}
+        className="LearnMore"
       >
         <motion.div
           style={{
             opacity: useTransform(scrollY, [0, 175, 10000], [1, 0, 0]),
             scale: useTransform(scrollY, [0, 175, 10000], [1, 0, 0]),
           }}
-          className="toptext"
+          className="LearnMore__toptext"
         >
-          <Styled.p>Learn more about Dandi</Styled.p>
+          <Styled.p className="LearnMore__toptext-text">
+            Learn more about Dandi
+          </Styled.p>
           <svg
+            className="LearnMore__toptext-arrow"
             width="51"
             height="105"
             viewBox="0 0 51 105"
@@ -76,8 +80,16 @@ const LearnMore = ({
             />
           </svg>
         </motion.div>
-        <div className="imagewrapper">
-          <img src={desktopImage} alt="" />
+        <div className="LearnMore__imageWrapper">
+          <picture>
+            <source media="(min-width: 800px)" srcSet={desktopImage}></source>
+            <source srcSet={mobileImage}></source>
+            <img
+              className="LearnMore__imageWrapper-image"
+              src={desktopImage}
+              alt=""
+            />
+          </picture>
         </div>
         <motion.div
           ref={ref}
@@ -93,15 +105,17 @@ const LearnMore = ({
             duration: 0.35,
             type: "tween",
           }}
-          className="text"
+          className="LearnMore__text"
         >
-          <Styled.h2>{header}</Styled.h2>
+          <Styled.h2 className="LearnMore__text-header">{header}</Styled.h2>
 
-          <div className="link">
+          <div className="LearnMore__text-link">
             <LearnMoreLink href={url} text={buttonText} color="black" />
           </div>
 
-          <Styled.p>{lineBreaks(body)}</Styled.p>
+          <Styled.p className="LearnMore__text-body">
+            {lineBreaks(body)}
+          </Styled.p>
         </motion.div>
       </div>
     </InView>

@@ -8,6 +8,11 @@ const LearnMoreLink = ({ href, text, color }) => {
   const arrowMotion = {
     hover: {
       x: 10,
+      transition: {
+        type: "ease",
+
+        duration: 0.175,
+      },
     },
   };
 
@@ -49,27 +54,6 @@ const LearnMoreLink = ({ href, text, color }) => {
               stroke-width="1.8"
             />
           </svg>
-
-          {/* <ReactSVG
-            sx={{
-              div: {
-                display: "flex",
-                alignItems: "center",
-                svg: {
-                  opacity: "1 !important",
-                  g: {
-                    path: {
-                      stroke: color,
-                    },
-                    line: {
-                      stroke: color,
-                    },
-                  },
-                },
-              },
-            }}
-            src="/assets/svgs/arrow.svg"
-          /> */}
         </motion.div>
       </motion.a>
     </Link>

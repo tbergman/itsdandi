@@ -34,9 +34,8 @@ const SubNavigation = ({ next, prev }) => {
       x: -10,
 
       transition: {
-        type: "spring",
-        stiffness: 250,
-        duration: 0.3,
+        type: "ease",
+        duration: 0.175,
       },
     },
   };
