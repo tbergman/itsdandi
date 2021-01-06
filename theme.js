@@ -4357,7 +4357,7 @@ const theme = {
   },
   styles: {
     root: {
-      bg: "black",
+      bg: "#fff",
       color: "white",
 
       "&.menu-open": {
