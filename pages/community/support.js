@@ -10,8 +10,8 @@ import GetCreative from "../../src/components/community/support/getcreative";
 import TopContent from "../../src/components/community/support/topcontent";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/community/pages";
-
 import { useState, useEffect } from "react";
+import Butter from "buttercms";
 
 import {
   motion,
@@ -127,9 +127,7 @@ const Community = (props) => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
-        content={{
-          ...props.onboarding,
-        }}
+        content={props.onboarding}
       />
       <LearnMore
         isDesktop={isDesktop}
@@ -149,9 +147,7 @@ const Community = (props) => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
-        content={{
-          ...props.get_creative,
-        }}
+        content={props.get_creative}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />

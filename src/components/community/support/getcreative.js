@@ -12,6 +12,7 @@ const GetCreative = ({
   navBarStyling,
   windowHeight,
   isDesktop,
+  content,
 }) => {
   return (
     <InView
@@ -30,17 +31,15 @@ const GetCreative = ({
             variant: "grid",
           }}
         >
-          <TextBlock
-            title={`Let’s get creative`}
-            description={`Have a question about DEI? Our team is happy to help. Here are some of the areas in which we’ve recently helped clients:`}
-            listTitle={``}
-            listItems={[
-              "How to message Dandi to your people",
-              "DEI reporting best practices",
-              "Lawful data collection and remediation",
-              "Establishing a philosophy around pay equity",
-            ]}
-          />
+          {content.map((module, i) => (
+            <TextBlock
+              key={i}
+              title={module.fields.header}
+              description={module.fields.body}
+              listTitle={""}
+              listItems={module.fields.list_items}
+            />
+          ))}
         </div>
       </SubInView>
     </InView>

@@ -16,7 +16,7 @@ const TextBlock = ({ title, description, listTitle, listItems }) => {
         <div className="listbox">
           {listItems.map((item, i) => (
             <div className="listitem" key={i}>
-              <Styled.p>{item}</Styled.p>
+              <Styled.p>{item.text}</Styled.p>
             </div>
           ))}
         </div>
