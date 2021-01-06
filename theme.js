@@ -499,15 +499,15 @@ const theme = {
       partners: {
         bg: "clearWhite",
         color: "black",
-        ".text": {
+        ".Partners__text": {
           mt: [10],
           mb: [9],
           gridArea: ["1/1/2/-1", "1/2/2/6"],
-          h2: {
+          ".Partners__text-header": {
             lineHeight: ["48px"],
           },
         },
-        ".carousel": {
+        ".Partners__logoCarousel": {
           gridArea: ["2/1/3/-1"],
           height: ["200px", "250px"],
           mb: ["50px", 0],
@@ -518,19 +518,27 @@ const theme = {
           overFlowX: "hidden",
           display: "flex",
           flexFlow: "column",
-          ".rowwrapper": {
+          ".Partners__logoCarousel-rowWrapper": {
             width: "100%",
             height: "100%",
             position: "relative",
           },
-          ".rowcontainer": {
+          ".Partners__logoCarousel-rowWrapper-container": {
             width: "100%",
             position: "absolute",
             overflowX: "hidden",
             top: 0,
             left: 0,
           },
-          ".imagewrapper": {
+
+          ".Partners__logoCarousel-rowWrapper-container-row": {
+            width: "fit-content",
+            position: "relative",
+            display: "flex",
+            flexFlow: ["row nowrap"],
+            alignItems: "center",
+          },
+          ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper": {
             flex: "0 0 250px",
             display: "flex",
             alignItems: "center",
@@ -540,30 +548,26 @@ const theme = {
               objectFit: "contain",
             },
           },
-          ".row": {
-            width: "fit-content",
-            position: "relative",
-            display: "flex",
-            flexFlow: ["row nowrap"],
-            alignItems: "center",
-          },
         },
       },
       advancedei: {
         bg: "lightTurquoise",
         color: "black",
-        ".text": {
+        ".AdvanceDEI__text": {
           mt: [10, 22],
           mb: [0, 30],
           gridArea: ["1/1/2/-1", "1/7/2/-2"],
           ml: [0, (t) => `calc(${t.colWidthDesktop})`],
-          h2: {},
-          p: {
+          ".AdvanceDEI__text-header": {
+            ".AdvanceDEI__text-header-text": {},
+          },
+          ".AdvanceDEI__text-body": {
             mt: ["30px", 4],
             fontFamily: "body",
             color: "black",
+            ".AdvanceDEI__text-body-text": {},
           },
-          ".link": {
+          ".AdvanceDEI__link": {
             mt: [1, 3],
             p: {
               fontFamily: "medium",
@@ -572,7 +576,7 @@ const theme = {
             },
           },
         },
-        ".graphics": {
+        ".AdvanceDEI__graphics": {
           gridArea: ["2/1/3/-1", "1/1/2/6"],
           height: ["120px", "100%"],
           position: "relative",
@@ -581,7 +585,7 @@ const theme = {
             (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
           ],
           left: ["-20px", "-40px"],
-          ".box1": {
+          ".AdvanceDEI__graphics-box1": {
             position: "absolute",
             left: 0,
             bottom: 0,
@@ -593,7 +597,7 @@ const theme = {
             bg: "#02C3CF",
             zIndex: 99,
           },
-          ".box2": {
+          ".AdvanceDEI__graphics-box2": {
             position: "absolute",
             left: ["42px", (t) => `calc(${t.colWidthDesktop} + 40px)`],
             bottom: "0",
@@ -605,7 +609,7 @@ const theme = {
             bg: "#A4F0F4",
             zIndex: 89,
           },
-          ".box3": {
+          ".AdvanceDEI__graphics-box3": {
             position: "absolute",
             display: ["none", "block"],
             left: 0,
