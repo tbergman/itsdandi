@@ -2,28 +2,15 @@
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import CarouselItem from "../carouselitem";
+import { globalSlideUp, imageCarousel } from "../../helpers/animations";
 
-const CarouselMain = ({ description, items }) => {
+const CarouselMain = ({ description, items, inView }) => {
   const items_ = items.map((i) => i.fields);
   const [current, setCurrent] = useState(0);
+  const animationControls = useAnimation();
   const time = 7500;
-
-  const variants = {
-    enter: {
-      opacity: 0,
-      x: 1000,
-    },
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: {
-      x: -1000,
-      opacity: 0,
-    },
-  };
 
   useEffect(() => {
     const next = (current + 1) % items_.length;
@@ -31,13 +18,27 @@ const CarouselMain = ({ description, items }) => {
     return () => clearTimeout(id);
   }, [current]);
 
+  useEffect(() => {
+    if (inView) {
+      animationControls.start((i) => globalSlideUp.visible(i));
+    }
+  }, [inView]);
+
   return (
-    <div className="carousel">
-      <div className="description">
-        <Styled.p>{description}</Styled.p>
-      </div>
+    <div className="Carousel__carouselWrapper">
+      <motion.div
+        variants={globalSlideUp}
+        initial="hidden"
+        animate={animationControls}
+        custom={2}
+        className="Carousel__carouselWrapper-description"
+      >
+        <Styled.p className="Carousel__carouselWrapper-description-text">
+          {description}
+        </Styled.p>
+      </motion.div>
       <AnimatePresence initial={false}>
-        <motion.div className="imagewrapper">
+        <motion.div className="Carousel__carouselWrapper-imageWrapper">
           <motion.picture>
             <motion.source
               media="(min-width: 800px)"
@@ -49,7 +50,7 @@ const CarouselMain = ({ description, items }) => {
 
             <motion.img
               key={current}
-              variants={variants}
+              variants={imageCarousel}
               initial="enter"
               animate="center"
               exit="exit"
@@ -59,12 +60,13 @@ const CarouselMain = ({ description, items }) => {
               }}
               src={items_[current].desktop_image}
               alt=""
+              className="Carousel__carouselWrapper-imageWrapper-image"
             />
           </motion.picture>
         </motion.div>
       </AnimatePresence>
 
-      <div className="carouselwrapper">
+      <div className="Carousel__carouselWrapper-textWrapper">
         <div
           sx={{
             variant: "components.shared.carousel",

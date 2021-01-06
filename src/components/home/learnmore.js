@@ -12,6 +12,7 @@ import { rootMargin, lineBreaks } from "../../helpers/utils";
 import useWindowScroll from "@react-hook/window-scroll";
 import { useRef, useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { globalSlideUp } from "../../helpers/animations";
 
 const LearnMore = ({
   setNavbarStyling,
@@ -22,22 +23,18 @@ const LearnMore = ({
 }) => {
   const { header, buttonText, body, desktopImage, mobileImage, url } = content;
   const { scrollY } = useViewportScroll();
-  const scrollY_ = useWindowScroll(60);
   const animation = useAnimation();
   const { inView, ref, entry } = useInView({
     triggerOnce: true,
   });
 
-  const variants = {
-    hidden: {
-      opacity: 0,
-      y: 100,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  };
+  useEffect(() => {
+    if (inView) {
+      animation.start((i) => {
+        return globalSlideUp.visible(i);
+      });
+    }
+  }, [inView]);
 
   return (
     <InView
@@ -91,31 +88,36 @@ const LearnMore = ({
             />
           </picture>
         </div>
-        <motion.div
-          ref={ref}
-          initial={{
-            y: 50,
-            opacity: 0,
-          }}
-          animate={{
-            opacity: inView ? 1 : 0,
-            y: inView ? 0 : 50,
-          }}
-          transition={{
-            duration: 0.35,
-            type: "tween",
-          }}
-          className="LearnMore__text"
-        >
-          <Styled.h2 className="LearnMore__text-header">{header}</Styled.h2>
+        <motion.div ref={ref} className="LearnMore__text">
+          <motion.div
+            initial="hidden"
+            custom={1}
+            animate={animation}
+            variants={globalSlideUp}
+            className="LearnMore__text-header"
+          >
+            <Styled.h2>{header}</Styled.h2>
+          </motion.div>
 
-          <div className="LearnMore__text-link">
+          <motion.div
+            initial="hidden"
+            custom={2}
+            animate={animation}
+            variants={globalSlideUp}
+            className="LearnMore__text-link"
+          >
             <LearnMoreLink href={url} text={buttonText} color="black" />
-          </div>
+          </motion.div>
 
-          <Styled.p className="LearnMore__text-body">
-            {lineBreaks(body)}
-          </Styled.p>
+          <motion.div
+            initial="hidden"
+            custom={3}
+            animate={animation}
+            variants={globalSlideUp}
+            className="LearnMore__text-body"
+          >
+            <Styled.p>{lineBreaks(body)}</Styled.p>
+          </motion.div>
         </motion.div>
       </div>
     </InView>

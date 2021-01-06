@@ -44,7 +44,7 @@ const Partners = ({
                   x: ["0px", `-${logosRow1.length * 250}px`],
                 }}
                 transition={{
-                  duration: 15,
+                  duration: 30,
                   loop: Infinity,
                   ease: "linear",
                 }}

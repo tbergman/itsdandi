@@ -4,7 +4,10 @@ import { jsx, Styled, useThemeUI } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 import InView from "../inview";
 import { lineBreaks, rootMargin } from "../../helpers/utils";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { globalSlideUp } from "../../helpers/animations";
+import { useInView } from "react-intersection-observer";
 
 const PayEquity = ({
   setNavbarStyling,
@@ -14,6 +17,18 @@ const PayEquity = ({
   content,
 }) => {
   const { header, body, buttonText, desktopImage, mobileImage, url } = content;
+  const animationControls = useAnimation();
+  const { inView, ref } = useInView({
+    triggerOnce: false,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      console.log("run animation");
+      animationControls.start((i) => globalSlideUp.visible(i));
+    }
+  }, [inView]);
+
   return (
     <InView
       variant="pages.home.payequity"
@@ -25,19 +40,54 @@ const PayEquity = ({
         sx={{
           variant: "grid",
         }}
+        className="PayEquity"
       >
-        <div className="text">
-          <Styled.h2>{header}</Styled.h2>
-          <Styled.p>{lineBreaks(body)}</Styled.p>
-          <div className="link">
+        <motion.div ref={ref} className="PayEquity__text">
+          <motion.div
+            variants={globalSlideUp}
+            initial="hidden"
+            animate={animationControls}
+            custom={1}
+            className="PayEquity__text-header"
+          >
+            <Styled.h2 className="PayEquity__text-header-text">
+              {header}
+            </Styled.h2>
+          </motion.div>
+
+          <motion.div
+            variants={globalSlideUp}
+            initial="hidden"
+            animate={animationControls}
+            custom={2}
+            className="PayEquity__text-body"
+          >
+            <Styled.p className="PayEquity__text-body-text">
+              {lineBreaks(body)}
+            </Styled.p>
+          </motion.div>
+
+          <motion.div
+            variants={globalSlideUp}
+            initial="hidden"
+            animate={animationControls}
+            custom={3}
+            className="PayEquity__text-link"
+          >
             <LearnMoreLink href={url} text={buttonText} color="#335AFF" />
-          </div>
+          </motion.div>
+        </motion.div>
+        <div className="PayEquity__imageWrapper">
+          <picture>
+            <source media="(min-width: 800px)" srcSet={desktopImage}></source>
+            <source srcSet={mobileImage}></source>
+            <img
+              className="PayEquity__imageWrapper-image"
+              src={desktopImage}
+              alt=""
+            />
+          </picture>
         </div>
-        <div className="imagewrapper">
-          <img src={desktopImage} alt="" />
-          {/* <ReactSVG src="/assets/svgs/crosswalk.svg" /> */}
-        </div>
-        {/* <div className="bottom"></div> */}
       </div>
     </InView>
   );

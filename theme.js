@@ -343,10 +343,10 @@ const theme = {
       },
       carousel: {
         bg: "transparent",
-        ".toptext": {
+        ".Carousel__toptext": {
           gridArea: ["1/1/2/-1", "1/2/2/6"],
           mt: [10, 16],
-          h2: {
+          ".Carousel__toptext-header": {
             fontFamily: "display",
             fontWeight: "500",
           },
@@ -358,7 +358,7 @@ const theme = {
           },
         },
 
-        ".carousel": {
+        ".Carousel__carouselWrapper": {
           mt: ["30px"],
           mb: [6, 24],
           position: "relative",
@@ -372,16 +372,16 @@ const theme = {
           columnGap: ["40px"],
           rowGap: ["0"],
           flexFlow: "column wrap",
-          ".description": {
+          ".Carousel__carouselWrapper-description": {
             gridArea: ["1/2/2/6"],
             width: ["100%", "unset"],
-            p: {
+            ".Carousel__carouselWrapper-description-text": {
               fontSize: ["16px", "20px"],
               lineHeight: ["32px"],
               maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
             },
           },
-          ".imagewrapper": {
+          ".Carousel__carouselWrapper-imageWrapper": {
             gridArea: ["2/1/3/-1", "1/7/3/-1"],
             mt: [4, 0],
             mb: [4, 0],
@@ -390,16 +390,14 @@ const theme = {
             left: ["-20px", "unset"],
             position: "relative",
             height: ["calc(100vw * .75)", "400px"],
-            picture: {
-              img: {
-                position: ["relative", "absolute"],
-                height: ["100%"],
-                width: ["unset", "100%"],
-                left: ["20px", "unset"],
-              },
+            ".Carousel__carouselWrapper-imageWrapper-image": {
+              position: ["relative", "absolute"],
+              height: ["100%"],
+              width: ["unset", "100%"],
+              left: ["20px", "unset"],
             },
           },
-          ".carouselwrapper": {
+          ".Carousel__carouselWrapper-textWrapper": {
             mt: [0, 4],
             gridArea: ["3/1/4/-1", "2/2/3/6"],
             width: "100%",
@@ -456,16 +454,19 @@ const theme = {
       payequity: {
         bg: "#F8F8F8",
         color: "black",
-        ".text": {
+        ".PayEquity__text": {
           gridArea: ["1/1/2/-1", "1/2/2/6"],
           mt: [10, 21],
           mb: [3, 0],
-          h2: {},
-          p: {
+          ".PayEquity__text-header": {
+            ".PayEquity__text-header-text": {},
+          },
+          ".PayEquity__text-body": {
             mt: [3, 4],
             maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+            ".PayEquity__text-body-text": {},
           },
-          ".link": {
+          ".PayEquity__text-link": {
             mt: [1],
             p: {
               mt: 0,
@@ -474,7 +475,7 @@ const theme = {
             },
           },
         },
-        ".imagewrapper": {
+        ".PayEquity__imageWrapper": {
           position: "relative",
           width: ["100vw", "50vw"],
           left: [
@@ -483,7 +484,7 @@ const theme = {
           ],
           height: ["320px", "calc(50vw * .82)"],
           gridArea: ["2/1/3/-1", "1/1/2/-1"],
-          img: {
+          ".PayEquity__imageWrapper-image": {
             zIndex: 99,
             position: "absolute",
             height: ["100%", "100%"],
@@ -493,15 +494,6 @@ const theme = {
             display: "flex",
             justifyContent: "center",
           },
-        },
-        ".bottom": {
-          gridArea: ["3/1/4/-1"],
-          display: ["block", "none"],
-          height: ["227px"],
-          width: ["100vw"],
-          left: ["-20px"],
-          position: "relative",
-          bg: "#F2F2F2",
         },
       },
       partners: {

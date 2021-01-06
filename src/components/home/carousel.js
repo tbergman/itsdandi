@@ -3,9 +3,10 @@ import { jsx, Styled, useThemeUI } from "theme-ui";
 import CarouselMain from "./carouselmain";
 import InView from "../inview";
 import { lineBreaks, rootMargin } from "../../helpers/utils";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { globalSlideUp } from "../../helpers/animations";
 
 const Carousel = ({
   setNavbarStyling,
@@ -15,10 +16,17 @@ const Carousel = ({
   content,
 }) => {
   const { header, description, items } = content;
-
+  const animationControls = useAnimation();
   const { ref, inView } = useInView({
     triggerOnce: true,
   });
+
+  useEffect(() => {
+    if (inView) {
+      animationControls.start((i) => globalSlideUp.visible(i));
+    }
+  }, [inView]);
+
   return (
     <InView
       setNavbarStyling={setNavbarStyling}
@@ -31,26 +39,21 @@ const Carousel = ({
         sx={{
           variant: "grid",
         }}
+        className="Carousel"
       >
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 50,
-          }}
-          animate={{
-            opacity: inView ? 1 : 0,
-            y: inView ? 0 : 50,
-          }}
-          transition={{
-            duration: 0.35,
-            type: "tween",
-          }}
-          className="toptext"
+          variants={globalSlideUp}
+          initial="hidden"
+          animate={animationControls}
+          custom={1}
+          className="Carousel__toptext"
         >
-          <Styled.h2>{lineBreaks(header)}</Styled.h2>
+          <Styled.h2 className="Carousel__toptext-header">
+            {lineBreaks(header)}
+          </Styled.h2>
         </motion.div>
 
-        <CarouselMain description={description} items={items} />
+        <CarouselMain description={description} items={items} inView={inView} />
       </div>
     </InView>
   );
