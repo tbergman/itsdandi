@@ -7,7 +7,8 @@ import InView from "../inview";
 import { lineBreaks, rootMargin } from "../../helpers/utils";
 import { useStat, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, animationControls } from "framer-motion";
+import { globalSlideUp } from "../../helpers/animations";
 
 const MarketPlacePartners = ({
   setNavbarStyling,
@@ -17,20 +18,14 @@ const MarketPlacePartners = ({
   content,
 }) => {
   const { header, body, buttonText, url } = content;
-  const controls = useAnimation();
+  const animationControls = useAnimation();
   const { inView, ref } = useInView({
     triggerOnce: true,
   });
 
   useEffect(() => {
     if (inView) {
-      controls.start({
-        scale: 1,
-        transition: {
-          duration: 1,
-          delay: 1,
-        },
-      });
+      animationControls.start((i) => globalSlideUp.visible(i));
     }
   }, [inView]);
 
@@ -42,15 +37,16 @@ const MarketPlacePartners = ({
       rootMargin={rootMargin(isDesktop, windowHeight)}
     >
       <div
-        ref={ref}
         sx={{
           variant: "grid",
         }}
+        className="MPP"
       >
-        <motion.div className="graphics">
-          <div className="background">
-            <div className="circles">
+        <motion.div className="MPP__graphics">
+          <div className="MPP__graphics-background">
+            <div className="MPP__graphics-background-circles">
               <motion.svg
+                className="MPP__graphics-background-circles-circle"
                 width="463"
                 height="465"
                 viewBox="0 0 463 465"
@@ -77,12 +73,37 @@ const MarketPlacePartners = ({
             </div>
           </div>
         </motion.div>
-        <div className="text">
-          <Styled.h2>{header}</Styled.h2>
-          <Styled.p>{lineBreaks(body)}</Styled.p>
-          <div className="link">
+        <div ref={ref} className="MPP__text">
+          <motion.div
+            initial="hidden"
+            animate={animationControls}
+            variants={globalSlideUp}
+            custom={1}
+            className="MPP__text-header"
+          >
+            <Styled.h2 className="MPP__text-header-text">{header}</Styled.h2>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            animate={animationControls}
+            variants={globalSlideUp}
+            custom={2}
+            className="MPP__text-body"
+          >
+            <Styled.p className="MPP__text-body-text">
+              {lineBreaks(body)}
+            </Styled.p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate={animationControls}
+            variants={globalSlideUp}
+            custom={3}
+            className="MPP__link"
+          >
             <LearnMoreLink href={url} text={buttonText} color="#335AFF" />
-          </div>
+          </motion.div>
         </div>
       </div>
     </InView>

@@ -724,7 +724,7 @@ const theme = {
         color: "black",
         position: "relative",
         bg: "#FFF",
-        ".graphics": {
+        ".MPP__graphics": {
           gridArea: ["1/1/2/-1", "1/1/2/6"],
           height: ["184px", "100%"],
           width: [
@@ -733,22 +733,7 @@ const theme = {
           ],
           left: ["-20px", "-40px"],
           position: "relative",
-          ".circles": {
-            position: "absolute",
-            width: ["215px", "464px"],
-            bottom: ["-107.5px", "unset"],
-            height: ["215px", "100%"],
-            display: "flex",
-            alignItems: "center",
-            right: ["20%", "-232px"],
-
-            svg: {
-              transform: ["rotate(90deg)", "unset"],
-              width: "inherit",
-              height: "inherit",
-            },
-          },
-          ".background": {
+          ".MPP__graphics-background": {
             position: "absolute",
             height: "100%",
             width: [
@@ -757,17 +742,36 @@ const theme = {
             ],
             bg: "lightViolet",
           },
+          ".MPP__graphics-background-circles": {
+            position: "absolute",
+            width: ["215px", "464px"],
+            bottom: ["-107.5px", "unset"],
+            height: ["215px", "100%"],
+            display: "flex",
+            alignItems: "center",
+            right: ["20%", "-232px"],
+
+            ".MPP__graphics-background-circles-circle": {
+              transform: ["rotate(90deg)", "unset"],
+              width: "inherit",
+              height: "inherit",
+            },
+          },
         },
-        ".text": {
+        ".MPP__text": {
           gridArea: ["2/1/3/-1", "1/7/2/-1"],
           mt: ["149px", "275px"],
           mb: [10, "303px"],
-          h2: {},
-          p: {
+          ".MPP__text-header": {
+            ".MPP__text-header-text": {},
+          },
+
+          ".MPP__text-body": {
             mt: ["20px", 4],
             maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+            ".MPP__text-body-text": {},
           },
-          ".link": {
+          ".MPP__link": {
             mt: [1],
             mb: [0],
             p: {
