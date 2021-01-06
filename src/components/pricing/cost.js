@@ -2,9 +2,22 @@
 import { jsx, Styled } from "theme-ui";
 import Calculator from "./calculator";
 import InView from "../inview";
-import { rootMargin } from "../../helpers/utils";
+import { lineBreaks, rootMargin } from "../../helpers/utils";
 
-const Cost = ({ setNavbarStyling, navBarStyling, windowHeight, isDesktop }) => {
+const Cost = ({
+  setNavbarStyling,
+  navBarStyling,
+  windowHeight,
+  isDesktop,
+  content,
+}) => {
+  const {
+    body,
+    list_title,
+    list_items,
+    calculator_description,
+    calculator_label,
+  } = content;
   const bullets = [
     `Our customers are billed annually. We charge $10 per employee, per year.`,
     `There is also a one-time implementation fee, and a monthly data processing charge`,
@@ -23,26 +36,24 @@ const Cost = ({ setNavbarStyling, navBarStyling, windowHeight, isDesktop }) => {
       >
         <div className="section1">
           <div className="toptext">
-            <Styled.p>
-              Cost can stop you from doing the things you want to do. And in the
-              case of DEI, it’s often cited as one of the main barriers to
-              success. But it needn’t be the case. That’s why we’ve priced Dandi
-              to be affordable for businesses of every size.
-            </Styled.p>
+            <Styled.p>{lineBreaks(body)}</Styled.p>
           </div>
           <div className="list">
-            <Styled.p className="title">How our pricing works:</Styled.p>
+            <Styled.p className="title">{list_title}</Styled.p>
             <ul>
-              {bullets.map((item, i) => (
+              {list_items.map((item, i) => (
                 <li className="item" key={i}>
-                  <Styled.p>{item}</Styled.p>
+                  <Styled.p>{item.text}</Styled.p>
                 </li>
               ))}
             </ul>
           </div>
         </div>
         <div className="section2">
-          <Calculator />
+          <Calculator
+            description={calculator_description}
+            label={calculator_label}
+          />
         </div>
       </div>
     </InView>

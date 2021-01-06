@@ -1062,35 +1062,49 @@ const theme = {
         },
         textblock: {
           color: "black",
-          h2: {
+          ".TextBlock__header": {
             mt: [10, 16],
             gridArea: ["1/1/2/-1", "1/3/2/-1"],
             fontFamily: "display",
           },
-          ".text": {
+          ".TextBlock__textWrapper": {
             gridArea: ["2/1/3/-1", "2/3/3/-1"],
             mt: [3, 5],
             mb: [7, 18],
             display: "flex",
             flexFlow: ["column", "row wrap"],
-            ".section": {
+            ".TextBlock__textWrapper-section": {
               width: [
                 "100%",
                 (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
               ],
-              ".title": {
+              ".TextBlock__textWrapper-section-title": {
                 fontFamily: "medium",
                 fontSize: ["16px"],
                 lineHeight: ["24px"],
                 maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               },
-              ".body": {
+              ".TextBlock__textWrapper-section-body": {
                 fontSize: ["16px"],
                 lineHeight: ["24px"],
                 maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               },
             },
-            ".section:nth-of-type(2n)": {
+            ".TextBlock__textWrapper-section:nth-of-type(2n)": {
+              // ml: [0, (t) => `calc(${t.colWidthDesktop})`],
+            },
+            ".TextBlock__textWrapper-section:nth-of-type(1)": {
+              order: ["unset", 1],
+            },
+            ".TextBlock__textWrapper-section:nth-of-type(3)": {
+              order: ["unset", 2],
+              ml: [0, (t) => `calc(${t.colWidthDesktop})`],
+            },
+            ".TextBlock__textWrapper-section:nth-of-type(2)": {
+              order: ["unset", 3],
+            },
+            ".TextBlock__textWrapper-section:nth-of-type(4)": {
+              order: ["unset", 4],
               ml: [0, (t) => `calc(${t.colWidthDesktop})`],
             },
           },
@@ -2542,13 +2556,13 @@ const theme = {
           mb: [3, 10],
           display: "flex",
           flexFlow: ["column", "unset"],
-          ".BetterInsights__toptext-header": {
+          ".BetterInsights__toptext-heading": {
             width: ["100%", (t) => t.desktopSectionWidth],
           },
           ".BetterInsights__toptext-body": {
             mt: [3, 0],
             width: ["100%", (t) => t.desktopSectionWidth],
-            ml: [0, (t) => t.colWidthDesktop],
+            ml: [0, (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`],
           },
         },
 
@@ -2657,6 +2671,9 @@ const theme = {
                   },
                 },
               },
+            },
+            ".Table__body-row:nth-of-type(2n-1)": {
+              bg: "#262629",
             },
           },
         },
@@ -3023,12 +3040,12 @@ const theme = {
               (t) =>
                 `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) + 400px) * .45) * .5) + 128px)`,
             ],
-            mb: [5, 10],
+            mb: [5, 7],
             gridArea: ["1/1/2/-1", "1/3/2/-1"],
             display: "flex",
             flexFlow: ["column"],
             ".textblock": {
-              mb: [7],
+              mb: [7, 11],
               display: "flex",
               flexFlow: ["column", "unset"],
               position: "relative",

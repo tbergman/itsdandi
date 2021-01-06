@@ -9,6 +9,7 @@ import MobileMenu from "../src/components/mobilemenu";
 import devices from "../src/helpers/devices";
 import { useState, useEffect } from "react";
 import SubNavigation from "../src/components/subnavigation";
+import Butter from "buttercms";
 
 import {
   motion,
@@ -20,7 +21,7 @@ import MobileNav from "../src/components/mobilenav";
 import { useMediaQuery } from "react-responsive";
 import { useWindowSize } from "@react-hook/window-size";
 
-const Pricing = () => {
+const Pricing = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
   const [width, height] = useWindowSize();
@@ -53,6 +54,7 @@ const Pricing = () => {
       color: theme.colors.black,
     },
   ];
+
   return (
     <div
       sx={{
@@ -80,12 +82,18 @@ const Pricing = () => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
+        content={{
+          ...props.header,
+        }}
       />
       <Cost
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
+        content={{
+          ...props.cost,
+        }}
       />
       <BetterInsights
         isDesktop={isDesktop}
@@ -93,6 +101,9 @@ const Pricing = () => {
         navBarStyling={theme.components.navigation.default}
         windowHeight={windowHeight}
         width={width}
+        content={{
+          ...props.better_insights,
+        }}
       />
       <SubNavigation
         next={{
@@ -105,5 +116,25 @@ const Pricing = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  try {
+    const butter = Butter(process.env.BUTTER_CMS);
+    const response = await butter.page.retrieve("*", "pricing");
+
+    return {
+      props: {
+        ...response.data.data.fields,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        ...err,
+      },
+    };
+  }
+}
 
 export default Pricing;

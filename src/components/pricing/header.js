@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
-import { rootMargin } from "../../helpers/utils";
+import { lineBreaks, rootMargin } from "../../helpers/utils";
 import InView from "../inview";
 
 const Header = ({
@@ -9,7 +9,9 @@ const Header = ({
   navBarStyling,
   windowHeight,
   isDesktop,
+  content,
 }) => {
+  const { header, body } = content;
   return (
     <InView
       variant="pages.pricing.header"
@@ -23,13 +25,8 @@ const Header = ({
         }}
       >
         <div className="text">
-          <Styled.h1>
-            Dandi is priced to work for businesses of every size
-          </Styled.h1>
-          <Styled.h3>
-            We keep Dandi affordable so you can invest more in your people—and
-            less in pricey software.
-          </Styled.h3>
+          <Styled.h1>{header}</Styled.h1>
+          <Styled.h3>{lineBreaks(body)}</Styled.h3>
         </div>
         <div className="graphic">
           <div className="box1"></div>

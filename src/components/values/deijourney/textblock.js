@@ -33,23 +33,27 @@ const TextBlock = ({
           }}
         >
           <div
+            className="TextBlock"
             sx={{
               variant: "grid",
-              rowGap: 0,
             }}
           >
-            <Styled.h2>{header}</Styled.h2>
-            <div className="text">
+            <Styled.h2 className="TextBlock__header">{header}</Styled.h2>
+            <div className="TextBlock__textWrapper">
               {sections.map((section, i) => (
                 <div
                   sx={{
                     mb: [3],
                   }}
-                  className="section"
+                  className="TextBlock__textWrapper-section"
                   key={i}
                 >
-                  <Styled.p className="title">{section.title}</Styled.p>
-                  <Styled.p className="body">{section.body}</Styled.p>
+                  <Styled.p className="TextBlock__textWrapper-section-title">
+                    {section.title}
+                  </Styled.p>
+                  <Styled.p className="TextBlock__textWrapper-section-body">
+                    {section.body}
+                  </Styled.p>
                 </div>
               ))}
             </div>

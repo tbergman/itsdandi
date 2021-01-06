@@ -2,17 +2,15 @@
 import { jsx, Styled } from "theme-ui";
 import { useState } from "react";
 
-const Calculator = () => {
+const Calculator = ({ description, label }) => {
   const [employees, setEmployees] = useState(0);
   return (
     <div className="calculator">
       <div className="description">
-        <Styled.p>
-          Try our calculator to get an estimate for your organization:
-        </Styled.p>
+        <Styled.p>{description}</Styled.p>
       </div>
       <div className="label">
-        <Styled.p>Number of employees:</Styled.p>
+        <Styled.p>{label}</Styled.p>
         <Styled.p>{employees}</Styled.p>
       </div>
       <div className="slider">
