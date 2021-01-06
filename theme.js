@@ -95,7 +95,6 @@ const theme = {
       top: {
         bg: "transparent",
         bigLogo: {
-          display: "none",
           svg: {
             position: "fixed",
             zIndex: 9999,
@@ -125,12 +124,17 @@ const theme = {
             height: ["56px", "56px"],
             mt: ["24px", "48px"],
             bg: "yellow",
-
             borderRadius: "200px",
             display: "flex",
             flexFlow: "row",
             justifyContent: "center",
             alignItems: "center",
+
+            "&:hover": {
+              bg: "#FF9133",
+              transition: "all 150ms ease-out",
+            },
+
             a: {
               textDecoration: "none",
               color: "black",
@@ -4032,6 +4036,10 @@ const theme = {
         bg: "blue",
         borderRadius: ["168px", "180px"],
         height: ["56px", "48px"],
+        "&:hover": {
+          bg: "#5200FF",
+          transition: "all 150ms ease-out",
+        },
         ".button": {
           display: "flex",
           alignItems: "center",
@@ -4049,7 +4057,7 @@ const theme = {
         },
       },
       quote: {
-        ".imagewrapper": {
+        ".Quote__imageWrapper": {
           position: "relative",
           gridArea: ["1/1/2/-1", "1/8/2/-1"],
           height: [
@@ -4061,7 +4069,7 @@ const theme = {
             (t) => `calc(calc(${t.colWidthDesktop} * 5) + 240px)`,
           ],
           left: ["-20px", "-40px"],
-          picture: {
+          ".Quote__imageWrapper-image": {
             position: "absolute",
             height: "100%",
             width: "100%",
@@ -4071,29 +4079,33 @@ const theme = {
             },
           },
         },
-        ".text": {
-          color: "black",
+        ".Quote__textWrapper": {
           gridArea: ["2/1/3/-1", "1/3/2/7"],
-          mt: [4, 14],
-          position: "relative",
-          ".quotation": {
-            position: "absolute",
-            top: [0],
-          },
-          h3: {
-            ml: [5],
-            fontFamily: "display",
-            fontSize: ["24px", "40px"],
-            lineHeight: ["31.2px", "48px"],
-            maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-          },
-          p: {
-            mt: [4],
-            ml: [5],
-            mb: [8],
-            lineHeight: ["20px"],
-            fontSize: ["14px"],
-            fontFamily: "body",
+          display: "flex",
+          alignItems: "center",
+          mt: [4, 0],
+          ".Quote__textWrapper-text": {
+            color: "black",
+            position: "relative",
+            ".Quote__textWrapper-text-quotation": {
+              position: "absolute",
+              top: [0],
+            },
+            ".Quote__textWrapper-text-body": {
+              ml: [5],
+              fontFamily: "display",
+              fontSize: ["24px", "40px"],
+              lineHeight: ["31.2px", "48px"],
+              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+            },
+            ".Quote__textWrapper-text-name": {
+              mt: [4],
+              ml: [5],
+              mb: [8, 0],
+              lineHeight: ["20px"],
+              fontSize: ["14px"],
+              fontFamily: "body",
+            },
           },
         },
       },

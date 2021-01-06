@@ -34,9 +34,10 @@ const Quote = ({
           sx={{
             variant: "grid",
           }}
+          className="Quote"
         >
-          <div className="imagewrapper">
-            <picture>
+          <div className="Quote__imageWrapper">
+            <picture className="Quote__imageWrapper-image">
               <source
                 media="(min-width: 800px)"
                 srcSet={desktop_image}
@@ -45,14 +46,21 @@ const Quote = ({
               <img src={desktop_image} alt="" />
             </picture>
           </div>
-          <div className="text">
-            <ReactSVG className="quotation" src="/assets/svgs/quotation.svg" />
-            <Styled.h3>{body}</Styled.h3>
-            <Styled.p>
-              {name}
-              <br />
-              {title}
-            </Styled.p>
+          <div className="Quote__textWrapper">
+            <div className="Quote__textWrapper-text">
+              <ReactSVG
+                className="Quote__textWrapper-text-quotation"
+                src="/assets/svgs/quotation.svg"
+              />
+              <Styled.h3 className="Quote__textWrapper-text-body">
+                {body}
+              </Styled.h3>
+              <Styled.p className="Quote__textWrapper-text-name">
+                {name}
+                <br />
+                {title}
+              </Styled.p>
+            </div>
           </div>
         </div>
       </SubInView>

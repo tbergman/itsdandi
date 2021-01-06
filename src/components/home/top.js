@@ -29,14 +29,7 @@ const Home = ({
       >
         <div className="text">
           <Styled.h1>{header}</Styled.h1>
-          <motion.div
-            whileHover={{
-              scale: 1.1,
-              originX: "50%",
-              originY: "50%",
-            }}
-            className="button"
-          >
+          <motion.div className="button">
             <Link href="/">
               <motion.a>
                 <Styled.p>{buttonText}</Styled.p>
