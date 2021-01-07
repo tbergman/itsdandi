@@ -510,7 +510,7 @@ const theme = {
         ".Partners__logoCarousel": {
           gridArea: ["2/1/3/-1"],
           height: ["200px", "250px"],
-          mb: ["50px", 0],
+          mb: ["50px", 14],
           width: "100vw",
           left: ["-20px", "-40px"],
           position: "relative",
