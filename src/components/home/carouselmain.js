@@ -55,8 +55,12 @@ const CarouselMain = ({ description, items, inView }) => {
               animate="center"
               exit="exit"
               transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 },
+                x: {
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 30,
+                },
+                opacity: { duration: 0.5 },
               }}
               src={items_[current].desktop_image}
               alt=""
@@ -71,6 +75,7 @@ const CarouselMain = ({ description, items, inView }) => {
           sx={{
             variant: "components.shared.carousel",
           }}
+          className="SharedCarousel"
         >
           {items_.map((slide, i) => (
             <CarouselItem
@@ -85,10 +90,11 @@ const CarouselMain = ({ description, items, inView }) => {
                 sx={{
                   color: "rgba(242, 242, 242, 0.7)",
                 }}
+                className="SharedCarousel__item-body-text"
               >
                 {slide.body}
               </Styled.p>
-              <div className="link">
+              <div className="SharedCarousel__item-body-link">
                 <LearnMoreLink
                   href={slide.url}
                   text={slide.button_text}
