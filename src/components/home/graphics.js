@@ -6,9 +6,11 @@ const Graphics = () => {
   const lineMotion = {
     start: {
       pathLength: 0,
+      opacity: 0,
     },
     animate: {
       pathLength: 1,
+      opacity: 1,
       transition: {
         duration: 0.7,
         delay: 0.8,
@@ -139,8 +141,8 @@ const Graphics = () => {
               transition={{
                 duration: 0.5,
                 delay: 1.5,
-                type: "spring",
-                stiffness: 350,
+                ease: "easeOut",
+                type: "tween",
               }}
               cx="795"
               cy="16"

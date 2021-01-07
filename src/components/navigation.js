@@ -16,12 +16,24 @@ const Navigation = ({
 }) => {
   const widths = columnWidths(width);
 
+  const loginMotion = {
+    rest: {
+      x: 0,
+    },
+    hover: {
+      x: 0,
+    },
+  };
+
   const arrowMotion = {
+    rest: {
+      x: 0,
+    },
     hover: {
       x: 10,
       transition: {
-        type: "ease",
-
+        type: "tween",
+        ease: "easeOut",
         duration: 0.175,
       },
     },
@@ -108,14 +120,14 @@ const Navigation = ({
 
         <a href="www.google.com" target="_blank" className="item">
           <motion.div
+            initial="rest"
+            whileHover="hover"
+            animate="rest"
+            variants={loginMotion}
             className="login"
-            whileHover={{
-              x: 0,
-            }}
-            variants={arrowMotion}
           >
-            <div>Log in</div>
-            <motion.div className="arrow" variants={arrowMotion}>
+            <motion.div>Log in</motion.div>
+            <motion.div variants={arrowMotion} className="arrow">
               <svg
                 width="15"
                 height="16"

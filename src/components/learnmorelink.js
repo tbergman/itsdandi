@@ -9,9 +9,9 @@ const LearnMoreLink = ({ href, text, color }) => {
     hover: {
       x: 10,
       transition: {
-        type: "ease",
-
+        ease: "easeOut",
         duration: 0.175,
+        type: "tween",
       },
     },
   };
