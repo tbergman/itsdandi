@@ -70,8 +70,6 @@ const Values = (props) => {
     toggleMenu(menuOpen);
   }, [menuOpen]);
 
-  console.log(props);
-
   return (
     <div
       sx={{

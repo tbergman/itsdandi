@@ -34,17 +34,18 @@ const Header = ({
           sx={{
             variant: "grid",
           }}
+          className="Header"
         >
           <div
             sx={{
               ...styling,
             }}
-            className="text"
+            className="Header__text"
           >
-            <Styled.h1>{header}</Styled.h1>
-            <Styled.h3>{body}</Styled.h3>
+            <Styled.h1 className="Header__text-header">{header}</Styled.h1>
+            <Styled.h3 className="Header__text-body">{body}</Styled.h3>
           </div>
-          <div className="graphic">{children}</div>
+          <div className="Header__graphic">{children}</div>
         </div>
       </SubInView>
     </InView>

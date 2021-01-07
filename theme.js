@@ -4111,18 +4111,21 @@ const theme = {
       },
       header: {
         color: "black",
-        ".text": {
+        ".Header__text": {
           mt: [18, 22],
           gridArea: ["1/1/2/-1", "1/3/2/9"],
         },
-        h1: {},
-        h3: {
+        ".Header__text-header": {
+          fontSize: ["36px", "52px"],
+          lineHeight: ["43px", "60px"],
+        },
+        ".Header__text-body": {
           mt: [2, 3],
           fontFamily: "body",
           lineHeight: ["30px", "36px"],
           fontSize: ["20px", "24px"],
         },
-        ".graphic": {
+        ".Header__graphic": {
           gridArea: ["2/1/3/-1", "2/1/3/-1"],
           position: "relative",
           width: ["100vw"],
