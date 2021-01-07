@@ -3747,7 +3747,7 @@ const theme = {
               opacity: 1,
               transform: "translate3d(0,0,0)",
               transition:
-                "opacity 250ms 0ms ease-in, transform 250ms 0ms ease-in",
+                "opacity 350ms 0ms ease-out, transform 500ms 0ms ease-out",
             },
           },
           ".SubMenu__container-item-hidden": {
@@ -3758,7 +3758,7 @@ const theme = {
               transform: "translate3d(50px,0,0)",
               height: 0,
               transition:
-                "height 0ms 500ms, opacity 250ms 0ms ease-in, transform 250ms 0ms ease-in",
+                "height 0ms 500ms, opacity 350ms 0ms ease-in, transform 350ms 0ms ease-in",
               fontSize: "14px",
               lineHeight: "16px",
               color: "inherit",
