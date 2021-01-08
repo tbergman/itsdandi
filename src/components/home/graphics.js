@@ -19,29 +19,15 @@ const Graphics = () => {
     },
   };
 
-  // const circleMotion = {
-  //   start: {
-  //     scale: 0,
-  //   },
-  //   animate: {
-  //     scale: 0,
-  //     transition: {
-  //       duration: 0.4,
-  //       delay: 2,
-  //       type: "spring",
-  //       stiffness: 500,
-  //     },
-  //   },
-  // };
-
   return (
     <div
       sx={{
         variant: "pages.home.top.bars",
       }}
+      className="Bars"
     >
-      <motion.div className="barWrapper">
-        <motion.div id="bar1">
+      <motion.div className="Bars__barWrapper">
+        <motion.div className="Bars__barWrapper-bar1">
           <motion.div
             initial={{
               height: 0,
@@ -53,7 +39,7 @@ const Graphics = () => {
               duration: 1,
               delay: 0.2,
             }}
-            className="top"
+            className="Bars__barWrapper-bar1-top"
           ></motion.div>
           <motion.div
             initial={{
@@ -66,10 +52,10 @@ const Graphics = () => {
               duration: 1,
               delay: 0.2,
             }}
-            className="bottom"
+            className="Bars__barWrapper-bar1-bottom"
           ></motion.div>
         </motion.div>
-        <motion.div id="bar2">
+        <motion.div className="Bars__barWrapper-bar2">
           <motion.div
             initial={{
               height: 0,
@@ -81,7 +67,7 @@ const Graphics = () => {
               duration: 1,
               delay: 0.2,
             }}
-            className="top"
+            className="Bars__barWrapper-bar2-top"
           ></motion.div>
           <motion.div
             initial={{
@@ -94,10 +80,10 @@ const Graphics = () => {
               duration: 1,
               delay: 0.2,
             }}
-            className="bottom"
+            className="Bars__barWrapper-bar2-bottom"
           ></motion.div>
         </motion.div>
-        <motion.div id="bar3">
+        <motion.div className="Bars__barWrapper-bar3">
           <motion.div
             initial={{
               height: 0,
@@ -109,10 +95,10 @@ const Graphics = () => {
               duration: 1,
               delay: 0.2,
             }}
-            className="bottom"
+            className="Bars__barWrapper-bar3-bottom"
           ></motion.div>
         </motion.div>
-        <motion.div id="line">
+        <motion.div className="Bars__barWrapper-line">
           <motion.svg
             width="811"
             height="308"
@@ -141,8 +127,9 @@ const Graphics = () => {
               transition={{
                 duration: 0.5,
                 delay: 1.5,
-                ease: "easeOut",
-                type: "tween",
+                // ease: "easeOut",
+                type: "spring",
+                stiffness: 175,
               }}
               cx="795"
               cy="16"

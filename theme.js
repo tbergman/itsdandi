@@ -95,6 +95,15 @@ const theme = {
       top: {
         bg: "transparent",
         bigLogo: {
+          height: "100%",
+          width: "100%",
+
+          pointerEvents: "none",
+          ".BigLogo__logoSvg": {},
+          ".BigLogo__logoSvg-letter": {},
+          ".BigLogo__logoSvg-svg": {},
+          ".static": {},
+
           svg: {
             position: "fixed",
             zIndex: 9999,
@@ -105,7 +114,7 @@ const theme = {
             mb: ["20px", "40px"],
           },
         },
-        ".text": {
+        ".Top__text": {
           gridArea: ["1/2/2/-1", "1/7/2/-1"],
           ml: [
             (t) => `calc(${t.colWidthMob} + 10px)`,
@@ -113,8 +122,10 @@ const theme = {
           ],
           mt: [24, 28],
           mb: [2, 0],
-          h1: {},
-          ".button": {
+          ".Top__text-header": {
+            mr: ["unset", (t) => t.colWidthDesktop],
+          },
+          ".Top__text-button": {
             position: "relative",
             cursor: "pointer",
             zIndex: 99,
@@ -150,22 +161,26 @@ const theme = {
           position: "relative",
           width: "100vw",
           left: ["-20px", "-40px"],
-          height: ["191px", "232px"],
+          height: ["191px", "168px", "232px"],
 
-          ".barWrapper": {
+          ".Bars__barWrapper": {
             position: "absolute",
             width: "100%",
             bottom: 0,
             left: 0,
-            height: ["178px", "310px"],
+            height: ["178px", "246px"],
           },
-          "#bar1": {
+          ".Bars__barWrapper-bar1": {
             zIndex: 99,
             position: "absolute",
             height: "100%",
             width: [(t) => `calc(${t.colWidthMob} + 10px)`, `95px`],
-            ml: ["20px", (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
-            ".top": {
+            ml: [
+              "20px",
+              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 56px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,
+            ],
+            ".Bars__barWrapper-bar1-top": {
               position: "absolute",
               bg: "turquoise",
               left: 0,
@@ -174,7 +189,7 @@ const theme = {
               height: "100%",
               borderRadius: "7px 7px 0px 0px",
             },
-            ".bottom": {
+            ".Bars__barWrapper-bar1-bottom": {
               position: "absolute",
               bg: "blue",
               width: "100%",
@@ -184,17 +199,18 @@ const theme = {
               left: 0,
             },
           },
-          "#bar2": {
+          ".Bars__barWrapper-bar2": {
             zIndex: 99,
             width: [(t) => `calc(${t.colWidthMob} + 10px)`, "95px"],
             ml: [
               (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 225px)`,
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 289px)`,
             ],
             bottom: 0,
             height: "100%",
             position: "absolute",
-            ".top": {
+            ".Bars__barWrapper-bar2-top": {
               position: "absolute",
               width: "100%",
               height: ["61%"],
@@ -203,7 +219,7 @@ const theme = {
               left: 0,
               borderRadius: "7px 7px 0px 0px",
             },
-            ".bottom": {
+            ".Bars__barWrapper-bar2-bottom": {
               position: "absolute",
               width: "100%",
               height: "40%",
@@ -213,7 +229,7 @@ const theme = {
               borderRadius: "0px 0px 7px 7px",
             },
           },
-          "#bar3": {
+          ".Bars__barWrapper-bar3": {
             zIndex: 99,
             width: [(t) => `calc(${t.colWidthMob} + 10px)`, "95px"],
             height: "100%",
@@ -221,10 +237,11 @@ const theme = {
             position: "absolute",
             ml: [
               (t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 394px)`,
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 458px)`,
             ],
 
-            ".bottom": {
+            ".Bars__barWrapper-bar3-bottom": {
               position: "absolute",
               width: "100%",
               height: "40%",
@@ -234,12 +251,13 @@ const theme = {
               borderRadius: "0px 0px 7px 7px",
             },
           },
-          "#line": {
+          ".Bars__barWrapper-line": {
             position: "absolute",
-            bottom: ["-45%", "-30%"],
+            bottom: ["-45%", "-37%", "-30%"],
             height: [
               "120%",
-              (t) => `calc(calc(calc(${t.colWidthDesktop} * 7) + 280px) * .38)`,
+              // (t) => `calc(calc(calc(${t.colWidthDesktop} * 7) + 489px) * .38)`,
+              (t) => `calc(calc(calc(${t.colWidthDesktop} * 6) + 240px) * .38)`,
             ],
             right: [
               (t) => `calc(calc(${t.colWidthMob} * 1.5) + 40px)`,
@@ -247,7 +265,8 @@ const theme = {
             ],
             width: [
               (t) => `calc(calc(${t.colWidthMob} * 5.5) + 100px)`,
-              (t) => `calc(calc(${t.colWidthDesktop} * 7) + 280px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 6) + 240px)`,
+              // (t) => `calc(calc(${t.colWidthDesktop} * 7) + 216px)`,
             ],
             maxWidth: "811px",
             maxHeight: "308px",
@@ -263,10 +282,6 @@ const theme = {
               },
             },
           },
-        },
-        ".spacer": {
-          gridArea: ["2/1/3/-1", "2/1/3/-1"],
-          height: ["191px", "232px"],
         },
       },
       learnmore: {
@@ -303,7 +318,7 @@ const theme = {
         ".LearnMore__imageWrapper": {
           gridArea: ["2/1/3/-1", "1/6/2/-1"],
           mt: ["213px", "290px"],
-          mb: [0, "333px"],
+          mb: [0, "224px"],
           height: ["277px", "495px"],
           position: "relative",
           width: [
@@ -1280,10 +1295,18 @@ const theme = {
         height: ["auto", "356px"],
         flexFlow: ["column-reverse", "unset"],
 
-        ".next": {
+        ".SubNavigation__next": {
           height: ["224px", "100%"],
           pl: [(t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`, 0],
           flex: [1, "0 50%"],
+          display: "flex",
+          alignItems: "center",
+        },
+
+        ".SubNavigation__prev": {
+          height: ["224px", "100%"],
+          flex: [1, "0 50%"],
+          pl: [(t) => `calc(${t.colWidthMob} + 40px)`, 0],
           display: "flex",
           alignItems: "center",
         },
@@ -1292,45 +1315,44 @@ const theme = {
           pl: ["50vw"],
         },
 
-        ".prev": {
-          height: ["224px", "100%"],
-          flex: [1, "0 50%"],
-          pl: [(t) => `calc(${t.colWidthMob} + 40px)`, 0],
+        ".SubNavigation__link": {
+          height: "100%",
+          width: "100%",
+          cursor: "pointer",
           display: "flex",
           alignItems: "center",
-        },
-
-        ".link": {
-          ml: [0, (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
-          mr: [6, 0],
-          cursor: "pointer",
-          textDecoration: "none",
-          height: ["100%", "auto"],
-          display: "flex",
-          flexFlow: "column nowrap",
-          justifyContent: ["center", "flex-end"],
-          h3: {
-            fontFamily: "display",
-            fontSize: ["24px", "40px"],
-            lineHeight: ["24px", "40px"],
-            // mb: [8],
-            color: "black",
-          },
-          ".rotated": {
-            transform: "rotate(180deg)",
-          },
-
-          svg: {
-            height: ["30px"],
-            width: ["30px"],
-            position: "relative",
-            mb: [4, 7],
-            left: 0,
-            path: {
-              stroke: "black",
+          ".SubNavigation__link-content": {
+            ml: [0, (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
+            mr: [6, 0],
+            cursor: "pointer",
+            textDecoration: "none",
+            height: ["100%", "auto"],
+            display: "flex",
+            flexFlow: "column nowrap",
+            justifyContent: ["center", "flex-end"],
+            ".SubNavigation__link-content-text": {
+              fontFamily: "display",
+              fontSize: ["24px", "40px"],
+              lineHeight: ["24px", "40px"],
+              // mb: [8],
+              color: "black",
             },
-            line: {
-              stroke: "black",
+            ".rotated": {
+              transform: "rotate(180deg)",
+            },
+
+            ".SubNavigation__link-content-arrow": {
+              height: ["30px"],
+              width: ["30px"],
+              position: "relative",
+              mb: [4, 7],
+              left: 0,
+              path: {
+                stroke: "black",
+              },
+              line: {
+                stroke: "black",
+              },
             },
           },
         },
@@ -3243,7 +3265,7 @@ const theme = {
       width: ["100vw"],
       display: ["none", "block"],
       fontFamily: "body",
-      ".logowrapper": {
+      ".logoWrapper": {
         position: "relative",
         width: "0",
         height: "0",
@@ -3252,6 +3274,10 @@ const theme = {
           position: "absolute",
           left: ["40px"],
           top: ["40px"],
+          width: "32px",
+          height: "32px",
+          top: "35px",
+          bg: "transparent",
           div: {
             div: {
               svg: {
@@ -3314,6 +3340,7 @@ const theme = {
           color: "white",
         },
         ".login": {
+          bg: "transparent",
           color: "yellow",
           path: {
             stroke: "yellow",
@@ -3326,6 +3353,9 @@ const theme = {
           path: {
             fill: "white",
           },
+        },
+        ".BigLogo": {
+          bg: "transparent",
         },
         ".hamburger": {
           span: {
@@ -3367,6 +3397,9 @@ const theme = {
         ".logo": {
           path: { fill: (t) => `${t.colors.black} !important` },
         },
+        ".BigLogo": {
+          bg: "transparent",
+        },
         ".hamburger": {
           span: {
             bg: (t) => `${t.colors.black} !important`,
@@ -3406,6 +3439,9 @@ const theme = {
         },
         ".logo": {
           path: { fill: (t) => `${t.colors.black} !important` },
+        },
+        ".BigLogo": {
+          bg: "transparent",
         },
         ".hamburger": {
           span: {
@@ -3488,6 +3524,9 @@ const theme = {
         ".logo": {
           path: { fill: (t) => `${t.colors.black} !important` },
         },
+        ".BigLogo": {
+          bg: "transparent",
+        },
         ".hamburger": {
           span: {
             bg: (t) => `${t.colors.black} !important`,
@@ -3528,6 +3567,9 @@ const theme = {
         ".logo": {
           path: { fill: (t) => `${t.colors.black} !important` },
         },
+        ".BigLogo": {
+          bg: "transparent",
+        },
         ".hamburger": {
           span: {
             bg: (t) => `${t.colors.black} !important`,
@@ -3567,6 +3609,9 @@ const theme = {
         },
         ".logo": {
           path: { fill: (t) => `${t.colors.black} !important` },
+        },
+        ".BigLogo": {
+          bg: "transparent",
         },
         ".hamburger": {
           span: {

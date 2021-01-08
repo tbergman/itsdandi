@@ -46,8 +46,9 @@ const Navigation = ({
         ...navBarStyling,
         transition: "all 100ms cubic-bezier(.01,.66,.83,.67)",
       }}
+      className="Navigation"
     >
-      <div className="logowrapper">
+      <div className="logoWrapper">
         <Link href="/">
           <a className="logo">
             <BigLogo
@@ -126,7 +127,7 @@ const Navigation = ({
             variants={loginMotion}
             className="login"
           >
-            <motion.div>Log in</motion.div>
+            <motion.div className="text">Log in</motion.div>
             <motion.div variants={arrowMotion} className="arrow">
               <svg
                 width="15"

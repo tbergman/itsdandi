@@ -26,10 +26,11 @@ const Home = ({
         sx={{
           variant: "grid",
         }}
+        className="Top"
       >
-        <div className="text">
-          <Styled.h1>{header}</Styled.h1>
-          <motion.div className="button">
+        <div className="Top__text">
+          <Styled.h1 className="Top__text-header">{header}</Styled.h1>
+          <motion.div className="Top__text-button">
             <Link href="/">
               <motion.a>
                 <Styled.p>{buttonText}</Styled.p>
