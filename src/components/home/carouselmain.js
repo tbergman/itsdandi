@@ -54,14 +54,6 @@ const CarouselMain = ({ description, items, inView }) => {
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{
-                x: {
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 30,
-                },
-                opacity: { duration: 0.5 },
-              }}
               src={items_[current].desktop_image}
               alt=""
               className="Carousel__carouselWrapper-imageWrapper-image"

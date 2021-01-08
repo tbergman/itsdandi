@@ -40,27 +40,31 @@ const CarouselItem = ({
 
   return (
     <div onClick={() => setCurrent(idx)} className="SharedCarousel__item">
-      <motion.div layout className="SharedCarousel__item-header">
+      <motion.div
+        sx={{
+          color: current
+            ? "rgba(242, 242, 242, 1)"
+            : "rgba(242, 242, 242, 0.35)",
+          left: current ? 0 : "3px",
+        }}
+        className={
+          current
+            ? "SharedCarousel__item-header-progressBar active"
+            : "SharedCarousel__item-header-progressBar"
+        }
+      >
         <motion.div
           sx={{
-            color: current
-              ? "rgba(242, 242, 242, 1)"
-              : "rgba(242, 242, 242, 0.35)",
-            left: current ? 0 : "3px",
+            bg: progressBarBg,
           }}
-          className="SharedCarousel__item-header-progressBar"
-        >
-          <motion.div
-            sx={{
-              bg: progressBarBg,
-            }}
-            className={
-              current
-                ? "SharedCarousel__item-header-progressBar-animation active"
-                : "SharedCarousel__item-header-progressBar-animation"
-            }
-          ></motion.div>
-        </motion.div>
+          className={
+            current
+              ? "SharedCarousel__item-header-progressBar-animation active"
+              : "SharedCarousel__item-header-progressBar-animation"
+          }
+        ></motion.div>
+      </motion.div>
+      <motion.div layout className="SharedCarousel__item-header">
         <Styled.p
           className="SharedCarousel__item-header-text"
           sx={{

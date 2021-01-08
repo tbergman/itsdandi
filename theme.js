@@ -4180,9 +4180,12 @@ const theme = {
       },
       carousel: {
         position: "relative",
+        height: ["350px"],
+        overflow: "hidden",
         width: ["100%"],
         flexFlow: ["column wrap"],
         ".SharedCarousel__item": {
+          position: "relative",
           "&:hover": {
             ".SharedCarousel__item-header": {
               ".SharedCarousel__item-header-text": {
@@ -4190,7 +4193,35 @@ const theme = {
               },
             },
           },
+
           mb: [2],
+
+          ".SharedCarousel__item-header-progressBar": {
+            position: "absolute",
+            left: 0,
+            height: "100%",
+            width: "2px",
+            borderRadius: "6px",
+            bg: "rgba(242, 242, 242, 0.24)",
+            ".SharedCarousel__item-header-progressBar-animation": {
+              width: "100%",
+              height: "0",
+              borderRadius: "6px",
+              transition: "all 0ms linear",
+              transformOrigin: "top center",
+            },
+          },
+
+          ".active": {
+            ".SharedCarousel__item-header-progressBar-animation": {
+              transition: "all 7500ms 1000ms linear",
+              height: "100%",
+            },
+            ".SharedCarousel__item-header-progressBar": {
+              height: "80%",
+            },
+          },
+
           ".SharedCarousel__item-header": {
             position: "relative",
             cursor: "pointer",
@@ -4198,25 +4229,6 @@ const theme = {
             ".SharedCarousel__item-header-text": {
               fontSize: ["16px"],
               lineHeight: "18.8px",
-            },
-            ".SharedCarousel__item-header-progressBar": {
-              position: "absolute",
-              left: 0,
-              height: "100%",
-              width: "2px",
-              borderRadius: "6px",
-              bg: "rgba(242, 242, 242, 0.24)",
-              ".SharedCarousel__item-header-progressBar-animation": {
-                width: "100%",
-                height: "0",
-                borderRadius: "6px",
-                transition: "all 0ms linear",
-                transformOrigin: "top center",
-              },
-              ".active": {
-                transition: "all 7500ms 1000ms linear",
-                height: "100%",
-              },
             },
           },
 

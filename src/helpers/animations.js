@@ -23,6 +23,16 @@ export const imageCarousel = {
   center: {
     x: 0,
     opacity: 1,
+    transition: {
+      x: {
+        type: "spring",
+        stiffness: 200,
+        damping: 30,
+      },
+      opacity: {
+        duration: 0.5,
+      },
+    },
   },
   exit: {
     x: -1000,
