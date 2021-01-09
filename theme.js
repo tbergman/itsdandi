@@ -4199,7 +4199,8 @@ const theme = {
           ".SharedCarousel__item-header-progressBar": {
             position: "absolute",
             left: 0,
-            height: "100%",
+            top: "-5px",
+            height: ["32px"],
             width: "2px",
             borderRadius: "6px",
             bg: "rgba(242, 242, 242, 0.24)",
@@ -4210,16 +4211,16 @@ const theme = {
               transition: "all 0ms linear",
               transformOrigin: "top center",
             },
+            ".active": {
+              transition: "all 7500ms 1000ms linear",
+              height: "100%",
+              minHeight: "unset",
+            },
           },
 
           ".active": {
-            ".SharedCarousel__item-header-progressBar-animation": {
-              transition: "all 7500ms 1000ms linear",
-              height: "100%",
-            },
-            ".SharedCarousel__item-header-progressBar": {
-              height: "80%",
-            },
+            height: "80%",
+            minHeight: "32px",
           },
 
           ".SharedCarousel__item-header": {

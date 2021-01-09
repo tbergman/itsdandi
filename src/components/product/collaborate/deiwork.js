@@ -121,6 +121,8 @@ const DeiWork = ({
                       <Styled.p
                         sx={{
                           color: "rgba(242, 242, 242, 0.7)",
+                          mb: [4],
+                          mr: [3],
                         }}
                       >
                         {slide.body}

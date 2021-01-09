@@ -41,12 +41,13 @@ const CarouselItem = ({
   return (
     <div onClick={() => setCurrent(idx)} className="SharedCarousel__item">
       <motion.div
-        sx={{
-          color: current
-            ? "rgba(242, 242, 242, 1)"
-            : "rgba(242, 242, 242, 0.35)",
-          left: current ? 0 : "3px",
-        }}
+        // sx={{
+        //   color: current
+        //     ? "rgba(242, 242, 242, 1)"
+        //     : "rgba(242, 242, 242, 0.35)",
+        //   left: current ? 0 : "3px",
+        //   height: current ? "10%" : "100%",
+        // }}
         className={
           current
             ? "SharedCarousel__item-header-progressBar active"
@@ -71,6 +72,7 @@ const CarouselItem = ({
             color: current
               ? "rgba(242, 242, 242, 1)"
               : "rgba(242, 242, 242, 0.35)",
+            transition: "color 100ms 250ms linear",
           }}
         >
           {header}
