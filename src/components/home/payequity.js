@@ -24,7 +24,6 @@ const PayEquity = ({
 
   useEffect(() => {
     if (inView) {
-      console.log("run animation");
       animationControls.start((i) => globalSlideUp.visible(i));
     }
   }, [inView]);
