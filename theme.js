@@ -172,7 +172,7 @@ const theme = {
           gridArea: ["2/1/3/-1"],
           position: "relative",
           width: "100vw",
-          left: ["-20px", "-40px"],
+          left: ["-20px", "-40px", (t) => `-${t.desktopBigGutters}px`],
           height: ["191px", "168px", "232px"],
 
           ".Bars__barWrapper": {
@@ -190,7 +190,8 @@ const theme = {
             ml: [
               "20px",
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 56px)`,
-              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 80px) + ${t.desktopBigGutters}px)`,
             ],
             ".Bars__barWrapper-bar1-top": {
               position: "absolute",
@@ -217,7 +218,8 @@ const theme = {
             ml: [
               (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 225px)`,
-              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 289px)`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 249px) + ${t.desktopBigGutters}px)`,
             ],
             bottom: 0,
             height: "100%",
@@ -250,7 +252,8 @@ const theme = {
             ml: [
               (t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`,
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 394px)`,
-              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 458px)`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 418px) + ${t.desktopBigGutters}px)`,
             ],
 
             ".Bars__barWrapper-bar3-bottom": {
@@ -270,6 +273,8 @@ const theme = {
               "120%",
               // (t) => `calc(calc(calc(${t.colWidthDesktop} * 7) + 489px) * .38)`,
               (t) => `calc(calc(calc(${t.colWidthDesktop} * 6) + 240px) * .38)`,
+              (t) =>
+                `calc(calc(calc(calc(${t.colWidthDesktopBig} * 6) + 200px) + ${t.desktopBigGutters}px) * .38)`,
             ],
             right: [
               (t) => `calc(calc(${t.colWidthMob} * 1.5) + 40px)`,
@@ -278,6 +283,8 @@ const theme = {
             width: [
               (t) => `calc(calc(${t.colWidthMob} * 5.5) + 100px)`,
               (t) => `calc(calc(${t.colWidthDesktop} * 6) + 240px)`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopBig} * 6) + 200px) + ${t.desktopBigGutters}px)`,
               // (t) => `calc(calc(${t.colWidthDesktop} * 7) + 216px)`,
             ],
             maxWidth: "811px",
@@ -309,6 +316,8 @@ const theme = {
           ml: [
             (t) => `calc(calc(${t.colWidthMob} * 2) + 30px)`,
             (t) => `calc(calc(${t.colWidthDesktop} * 7) + 280px)`,
+            (t) =>
+              `calc(calc(calc(${t.colWidthDesktopBig} * 7) + 240px) + ${t.desktopBigGutters}px)`,
           ],
           // mt: [13, 0],
           mb: [1],
@@ -336,8 +345,14 @@ const theme = {
           width: [
             "100vw",
             (t) => `calc(calc(${t.colWidthDesktop} * 6) + 280px)`,
+            (t) =>
+              `calc(calc(calc(${t.colWidthDesktopBig} * 6) + 240px) + ${t.desktopBigGutters}px)`,
           ],
-          left: ["-20px", (t) => `calc(${t.colWidthDesktop})`],
+          left: [
+            "-20px",
+            (t) => `calc(${t.colWidthDesktop})`,
+            (t) => `calc(${t.colWidthDesktopBig})`,
+          ],
           ".LearnMore__imageWrapper-image": {
             position: "absolute",
             height: "100%",
@@ -615,7 +630,8 @@ const theme = {
           width: [
             "100vw",
             (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
-            (t) => `calc(calc(${t.colWidthDesktopBig} * 5) + 200px)`,
+            (t) =>
+              `calc(calc(calc(${t.colWidthDesktopBig} * 5) + 160px) + ${t.desktopBigGutters}px)`,
           ],
           left: ["-20px", "-40px", (t) => `-${t.desktopBigGutters}px`],
           ".AdvanceDEI__graphics-box1": {
@@ -626,7 +642,8 @@ const theme = {
             width: [
               "115px",
               (t) => `calc(calc(${t.colWidthDesktop} * 2.5) + 120px)`,
-              (t) => `calc(calc(${t.colWidthDesktopBig} * 2.5) + 120px)`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopBig} * 2.5) + 80px) + ${t.desktopBigGutters}px)`,
             ],
             bg: "#02C3CF",
             zIndex: 99,
@@ -642,7 +659,8 @@ const theme = {
             width: [
               "134px",
               (t) => `calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
-              (t) => `calc(calc(${t.colWidthDesktopBig} * 3) + 120px)`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopBig} * 3) + 80px) + ${t.desktopBigGutters}px)`,
             ],
             height: ["120px", "64%"],
             bg: "#A4F0F4",
@@ -655,7 +673,8 @@ const theme = {
             bottom: "0",
             width: [
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,
-              (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 120px)`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 80px) + ${t.desktopBigGutters}px)`,
             ],
             height: ["120px", "100%"],
             bg: "#000",
@@ -675,7 +694,8 @@ const theme = {
           width: [
             "100vw",
             (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
-            (t) => `calc(calc(${t.colWidthDesktopBig} * 5) + 200px)`,
+            (t) =>
+              `calc(calc(calc(${t.colWidthDesktopBig} * 5) + 160px) + ${t.desktopBigGutters}px)`,
           ],
           left: ["-20px", "-40px", (t) => `-${t.desktopBigGutters}px`],
           picture: {
@@ -699,6 +719,7 @@ const theme = {
           ml: [
             (t) => `calc(${t.colWidthMob} + 5px)`,
             (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`,
+            (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 40px)`,
           ],
 
           h3: {
@@ -736,7 +757,7 @@ const theme = {
           height: ["64px", "100%"],
           width: ["100vw", "auto"],
           left: ["-20px", "unset"],
-          right: ["unset", "-40px"],
+          right: ["unset", "-40px", (t) => `-${t.desktopBigGutters}px`],
           position: "relative",
           display: "flex",
           flexFlow: ["row nowrap", "column-reverse"],
@@ -773,8 +794,10 @@ const theme = {
           width: [
             "100vw",
             (t) => `calc(calc(${t.colWidthDesktop} * 5) + 240px)`,
+            (t) =>
+              `calc(calc(calc(${t.colWidthDesktopBig} * 5) + 200px) + ${t.desktopBigGutters}px)`,
           ],
-          left: ["-20px", "-40px"],
+          left: ["-20px", "-40px", (t) => `-${t.desktopBigGutters}px`],
           position: "relative",
           ".MPP__graphics-background": {
             position: "absolute",
@@ -782,6 +805,8 @@ const theme = {
             width: [
               "100%",
               (t) => `calc(calc(${t.colWidthDesktop} * 3) + 160px)`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopBig} * 3) + 120px) + ${t.desktopBigGutters}px)`,
             ],
             bg: "lightViolet",
           },
