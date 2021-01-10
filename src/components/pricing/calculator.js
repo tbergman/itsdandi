@@ -3,7 +3,7 @@ import { jsx, Styled } from "theme-ui";
 import { useState } from "react";
 
 const Calculator = ({ description, label }) => {
-  const [employees, setEmployees] = useState(0);
+  const [employees, setEmployees] = useState(500);
   return (
     <div className="calculator">
       <div className="description">

@@ -8,7 +8,7 @@ export const globalSlideUp = {
     y: 0,
     transition: {
       duration: 0.8,
-      delay: 0.4 + i * 0.3,
+      delay: 0.2 + i * 0.3,
       ease: "easeOut",
       type: "tween",
     },
