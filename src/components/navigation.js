@@ -139,7 +139,7 @@ const Navigation = ({
                 <path
                   d="M9 3.00464L14 8.00464L9 13.0046"
                   stroke={"#335AFF"}
-                  stroke-width="1.6"
+                  strokeWidth="1.6"
                 />
                 <line
                   x1="14"
@@ -147,7 +147,7 @@ const Navigation = ({
                   x2="1"
                   y2="8.00425"
                   stroke={"#335AFF"}
-                  stroke-width="1.8"
+                  strokeWidth="1.8"
                 />
               </svg>
             </motion.div>

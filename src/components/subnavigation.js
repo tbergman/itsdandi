@@ -73,14 +73,14 @@ const SubNavigation = ({ next, prev }) => {
                   <path
                     d="M9 3.00464L14 8.00464L9 13.0046"
                     // stroke="#FFD93B"
-                    stroke-width="1.6"
+                    strokeWidth="1.6"
                   />
                   <line
                     x1="14"
                     y1="8.00425"
                     x2="1"
                     y2="8.00425"
-                    stroke-width="1.8"
+                    strokeWidth="1.8"
                   />
                 </motion.svg>
                 <Styled.h3 className="SubNavigation__link-content-text">
@@ -118,14 +118,14 @@ const SubNavigation = ({ next, prev }) => {
                 <path
                   d="M9 3.00464L14 8.00464L9 13.0046"
                   // stroke="#FFD93B"
-                  stroke-width="1.6"
+                  strokeWidth="1.6"
                 />
                 <line
                   x1="14"
                   y1="8.00425"
                   x2="1"
                   y2="8.00425"
-                  stroke-width="1.8"
+                  strokeWidth="1.8"
                 />
               </motion.svg>
               <Styled.h3 className="SubNavigation__link-content-text">

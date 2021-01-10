@@ -25,6 +25,7 @@ import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
+import { isServer } from "../../src/helpers/utils";
 
 const Product = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -113,12 +114,14 @@ const Product = (props) => {
           mb: [13, 23],
         }}
       >
-        <TopContent
-          isDesktop={isDesktop}
-          content={{
-            ...props.header,
-          }}
-        />
+        {!isServer() && (
+          <TopContent
+            isDesktop={isDesktop}
+            content={{
+              ...props.header,
+            }}
+          />
+        )}
       </Header>
       <DeiWork
         isDesktop={isDesktop}

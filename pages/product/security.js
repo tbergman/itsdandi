@@ -13,6 +13,7 @@ import pages from "../../src/helpers/product/pages";
 import TopContent from "../../src/components/product/security/topcontent";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
+import { isServer } from "../../src/helpers/utils";
 
 import {
   motion,
@@ -67,8 +68,6 @@ const Product = (props) => {
       : body.classList.remove("menu-open");
   };
 
-  console.log(props);
-
   return (
     <div
       sx={{
@@ -121,12 +120,14 @@ const Product = (props) => {
           },
         }}
       >
-        <TopContent
-          isDesktop={isDesktop}
-          content={{
-            ...props.header,
-          }}
-        />
+        {!isServer() && (
+          <TopContent
+            isDesktop={isDesktop}
+            content={{
+              ...props.header,
+            }}
+          />
+        )}
       </Header>
       <BestInClass
         setSubMenuStyling={setSubMenuStyling}

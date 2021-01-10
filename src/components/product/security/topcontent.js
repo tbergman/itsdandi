@@ -35,7 +35,7 @@ const TopContent = ({ isDesktop }) => {
               rx="56.9049"
               transform="matrix(0.650773 0.759272 -0.761296 0.648405 1.647 360.45)"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <rect
               x="-1.00785"
@@ -45,7 +45,7 @@ const TopContent = ({ isDesktop }) => {
               rx="56.852"
               transform="matrix(-0.999981 0.00609227 -0.00786676 -0.999969 103.632 424.39)"
               stroke="#FFD93B"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <rect
               x="-0.0573572"
@@ -55,7 +55,7 @@ const TopContent = ({ isDesktop }) => {
               rx="56.6415"
               transform="matrix(0.678831 0.734294 -0.736189 0.676776 159.496 0.502115)"
               stroke="#F9D2FF"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </svg>
         ) : (
@@ -75,7 +75,7 @@ const TopContent = ({ isDesktop }) => {
               rx="18.3294"
               transform="matrix(0.413597 0.91046 -0.911744 0.41076 77.85 106.816)"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <rect
               x="-1.19601"
@@ -85,7 +85,7 @@ const TopContent = ({ isDesktop }) => {
               rx="18.3118"
               transform="matrix(-0.975855 0.218419 -0.220151 -0.975466 107.772 125.094)"
               stroke="#FFD93B"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <rect
               x="-0.570172"
@@ -95,17 +95,17 @@ const TopContent = ({ isDesktop }) => {
               rx="18.2415"
               transform="matrix(0.362731 0.931894 -0.932904 0.360125 134.883 1.36979)"
               stroke="#F9D2FF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <path
               d="M70.043 112.859L67.2272 112.86"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <path
               d="M92.1152 56.4688L92.95 57.5079"
               stroke="#FFD93B"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </svg>
         )}

@@ -13,6 +13,7 @@ import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
+import { isServer } from "../../src/helpers/utils";
 
 import {
   motion,
@@ -109,7 +110,7 @@ const Community = (props) => {
           mb: [17, 16],
         }}
       >
-        <TopContent />
+        {!isServer() && <TopContent />}
       </Header>
       <People
         subMenuStyling={theme.components.submenu.white}

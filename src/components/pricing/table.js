@@ -143,7 +143,7 @@ const Table = ({ width, content }) => {
                       cy="8"
                       r="5.5"
                       stroke="#F2F2F2"
-                      stroke-opacity="0.7"
+                      strokeOpacity="0.7"
                     />
                   </svg>
                 </Styled.p>

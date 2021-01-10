@@ -13,6 +13,7 @@ import pages from "../../src/helpers/product/pages";
 import TopContent from "../../src/components/product/analyze/topcontent";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
+import { isServer } from "../../src/helpers/utils";
 
 import {
   motion,
@@ -116,12 +117,14 @@ const Product = (props) => {
           mb: [12, 23],
         }}
       >
-        <TopContent
-          isDesktop={isDesktop}
-          content={{
-            ...props.header,
-          }}
-        />
+        {!isServer() && (
+          <TopContent
+            isDesktop={isDesktop}
+            content={{
+              ...props.header,
+            }}
+          />
+        )}
       </Header>
       <Insights
         isDesktop={isDesktop}

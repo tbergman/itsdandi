@@ -16,6 +16,7 @@ import pages from "../../src/helpers/product/pages";
 import TopContent from "../../src/components/product/measure/topcontent";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
+import { isServer } from "../../src/helpers/utils";
 
 import {
   motion,
@@ -119,12 +120,15 @@ const Product = (props) => {
           mb: [12, 22],
         }}
       >
-        <TopContent
-          isDesktop={isDesktop}
-          content={{
-            ...props.header,
-          }}
-        />
+        {!isServer() && (
+          <TopContent
+            isDesktop={isDesktop}
+            width={width}
+            content={{
+              ...props.header,
+            }}
+          />
+        )}
       </Header>
       <Metrics
         isDesktop={isDesktop}

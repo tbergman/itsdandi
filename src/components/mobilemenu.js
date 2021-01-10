@@ -174,8 +174,8 @@ const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
                         <motion.path
                           d="M1.51472 1.51472L10 10L18.4853 1.51472"
                           stroke="#F2F2F2"
-                          stroke-opacity="0.95"
-                          stroke-width="3"
+                          strokeOpacity="0.95"
+                          strokeWidth="3"
                         />
                       </motion.svg>
                     </div>

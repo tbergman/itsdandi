@@ -25,3 +25,5 @@ export const columnWidths = (width) => {
     mobile: Number(((width - 20 * 7) / 6).toFixed(1)),
   };
 };
+
+export const isServer = () => typeof window === "undefined";

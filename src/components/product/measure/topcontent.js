@@ -2,8 +2,9 @@
 import { ReactSVG } from "react-svg";
 import { jsx } from "theme-ui";
 import Button from "../button";
-const TopContent = ({ isDesktop, content }) => {
+const TopContent = ({ isDesktop, content, width }) => {
   const { url, button_text } = content;
+
   return (
     <div
       sx={{
@@ -17,6 +18,7 @@ const TopContent = ({ isDesktop, content }) => {
       <div className="graphics">
         {isDesktop ? (
           <svg
+            className="graphics__desktop-svg"
             width="624"
             height="49"
             viewBox="0 0 624 49"
@@ -29,7 +31,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="1.99803"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="27.3353"
@@ -37,7 +39,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="27.3353"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="51.3353"
@@ -45,7 +47,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="51.3353"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="75.3353"
@@ -53,7 +55,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="75.3353"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="99.3314"
@@ -61,7 +63,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="97.998"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="123.335"
@@ -69,7 +71,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="123.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="147.335"
@@ -77,7 +79,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="147.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="171.335"
@@ -85,7 +87,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="171.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="195.335"
@@ -93,7 +95,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="195.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="219.331"
@@ -101,7 +103,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="217.998"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="243.335"
@@ -109,7 +111,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="243.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="267.335"
@@ -117,7 +119,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="267.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="291.335"
@@ -125,7 +127,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="291.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="315.335"
@@ -133,7 +135,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="315.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="339.331"
@@ -141,7 +143,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="337.998"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="363.335"
@@ -149,7 +151,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="363.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="387.335"
@@ -157,7 +159,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="387.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="411.335"
@@ -165,7 +167,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="411.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="435.335"
@@ -173,7 +175,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="435.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="459.331"
@@ -181,7 +183,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="457.998"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="581.331"
@@ -189,7 +191,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="579.998"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="483.335"
@@ -197,7 +199,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="483.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="605.335"
@@ -205,7 +207,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="605.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="507.335"
@@ -213,7 +215,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="507.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="531.335"
@@ -221,7 +223,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="531.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="555.335"
@@ -229,11 +231,12 @@ const TopContent = ({ isDesktop, content }) => {
               x2="555.335"
               y2="48.0039"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </svg>
         ) : (
           <svg
+            className="graphics__mobile-svg"
             width="150"
             height="50"
             viewBox="0 0 150 50"
@@ -246,7 +249,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="1"
               y2="0"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="21"
@@ -254,7 +257,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="21"
               y2="25"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="41"
@@ -262,7 +265,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="41"
               y2="25"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="60"
@@ -270,7 +273,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="60"
               y2="25"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="80"
@@ -278,7 +281,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="80"
               y2="0"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="100"
@@ -286,7 +289,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="100"
               y2="25"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="120"
@@ -294,7 +297,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="120"
               y2="25"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <line
               x1="140"
@@ -302,7 +305,7 @@ const TopContent = ({ isDesktop, content }) => {
               x2="140"
               y2="25"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </svg>
         )}

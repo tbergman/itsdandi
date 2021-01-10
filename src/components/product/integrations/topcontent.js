@@ -39,14 +39,14 @@ const TopContent = ({ isDesktop, content }) => {
               cy="35.0039"
               r="25"
               stroke="#00FCFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <circle
               cx="89"
               cy="98.0039"
               r="79"
               stroke="#335AFF"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </g>
         </svg>
