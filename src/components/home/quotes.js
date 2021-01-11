@@ -117,12 +117,58 @@ const Quotes = ({
         </div>
 
         <div className="Quotes__navigation">
-          <div onClick={() => paginate(-1)} className="Quotes__navigation-prev">
-            <ReactSVG src="assets/svgs/prev.svg" />
+          <div className="Quotes__navigation-prev">
+            <svg
+              onClick={() => paginate(-1)}
+              className="Quotes__navigation-arrow"
+              width="15"
+              height="26"
+              viewBox="0 0 15 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.3137 1.68629L2 13L13.3137 24.3137"
+                stroke="#1A1A1D"
+                strokeWidth="3"
+                strokeLinejoin="round"
+              />
+            </svg>
           </div>
           <div onClick={() => paginate(1)} className="Quotes__navigation-next">
-            <ReactSVG src="assets/svgs/prev.svg" />
+            <svg
+              onClick={() => paginate(1)}
+              className="Quotes__navigation-arrow"
+              width="15"
+              height="26"
+              viewBox="0 0 15 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.3137 1.68629L2 13L13.3137 24.3137"
+                stroke="#1A1A1D"
+                strokeWidth="3"
+                strokeLinejoin="round"
+              />
+            </svg>
           </div>
+        </div>
+        <div className="Quotes__navigation-timerWrapper">
+          <motion.div
+            initial={{
+              height: "0%",
+            }}
+            animate={{
+              height: "100%",
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="Quotes__navigation-timerWrapper-timer"
+          ></motion.div>
         </div>
       </div>
     </InView>

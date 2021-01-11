@@ -686,6 +686,7 @@ const theme = {
       quotes: {
         bg: "white",
         color: "black",
+        position: "relative",
         ".Quotes__imageWrapper": {
           gridArea: ["1/1/2/-1", "1/1/2/6"],
           position: "relative",
@@ -764,35 +765,42 @@ const theme = {
           },
         },
         ".Quotes__navigation": {
-          mt: ["20px", 0],
-          gridArea: ["3/1/4/-1", "1/12/2/-1"],
-          height: ["64px", "100%"],
-          width: ["100vw", "auto"],
-          left: ["-20px", "unset"],
-          right: ["unset", "-40px", (t) => `-${t.desktopBigGutters}px`],
-          position: "relative",
+          width: ["100vw"],
+          height: "100%",
+          position: "absolute",
+          left: [0],
           display: "flex",
-          flexFlow: ["row nowrap", "column-reverse"],
-          ".Quotes__navigation-prev": {
-            bg: "rgba(58, 58, 61, 0.1)",
+          alignItems: ["flex-end", "center"],
+          px: [3],
+          zIndex: 1,
+          pointerEvents: "none",
+          ".Quotes__navigation-arrow": {
+            pointerEvents: "auto",
             cursor: "pointer",
-            height: "100%",
+          },
+          ".Quotes__navigation-prev": {
             flex: 1,
             display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            justifyContent: "flex-start",
           },
           ".Quotes__navigation-next": {
-            bg: "rgba(255, 255, 255, 0.24)",
-            cursor: "pointer",
-            height: "100%",
             flex: 1,
             display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            svg: {
+            justifyContent: "flex-end",
+
+            ".Quotes__navigation-arrow": {
               transform: "rotate(180deg)",
             },
+          },
+        },
+        ".Quotes__navigation-timerWrapper": {
+          position: "absolute",
+          right: 0,
+          height: "100%",
+          width: ["72px"],
+          bg: "rgba(255,255,255,0.24)",
+          ".Quotes__navigation-timerWrapper-timer": {
+            bg: "rgba(58,58,61,0.1)",
           },
         },
       },
