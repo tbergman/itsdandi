@@ -78,7 +78,7 @@ const Quotes = ({
                 left: 0,
                 right: 0,
               }}
-              dragElastic={0.5}
+              dragElastic={0}
               onDragEnd={(e, { offset, velocity }) => {
                 const swipe = swipePower(offset.x, velocity.y);
 
