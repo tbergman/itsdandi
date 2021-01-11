@@ -41,7 +41,7 @@ const Quotes = ({
       },
     ]);
   };
-  const swipeConfidenceThreshold = 10000;
+  const swipeConfidenceThreshold = 100;
   const swipePower = (offset, velocity) => {
     return Math.abs(offset) * velocity;
   };
@@ -78,13 +78,13 @@ const Quotes = ({
                 left: 0,
                 right: 0,
               }}
-              dragElastic={1}
+              dragElastic={0.5}
               onDragEnd={(e, { offset, velocity }) => {
                 const swipe = swipePower(offset.x, velocity.y);
 
-                if (swipe < -swipeConfidenceThreshold) {
+                if (offset.x < 0) {
                   paginate(1);
-                } else if (swipe > swipeConfidenceThreshold) {
+                } else if (offset.x > 0) {
                   paginate(-1);
                 }
               }}
