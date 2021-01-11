@@ -39,3 +39,66 @@ export const imageCarousel = {
     opacity: 0,
   },
 };
+
+export const quotesCarousel = {
+  enter: (settings) => {
+    return {
+      x: settings.direction > 0 ? settings.width : settings.width * -1,
+      opacity: 1,
+    };
+  },
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      ease: [0.25, 0.1, 0.18, 1],
+    },
+  },
+  exit: (settings) => {
+    return {
+      zIndex: 0,
+      x: settings.direction < 0 ? settings.width : settings.width * -1,
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+        ease: [0.25, 0.1, 0.18, 1],
+      },
+    };
+  },
+};
+
+export const quotesCarouselText = {
+  enter: {
+    y: 50,
+
+    opacity: 0,
+  },
+  center: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: {
+        ease: "easeOut",
+        duration: 0.3,
+      },
+      opacity: {
+        duration: 0.4,
+      },
+    },
+  },
+  exit: {
+    y: -50,
+    opacity: 0,
+    transition: {
+      y: {
+        ease: "easeIn",
+        duration: 0.2,
+      },
+      opacity: {
+        duration: 0.1,
+      },
+    },
+  },
+};

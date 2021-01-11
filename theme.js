@@ -690,7 +690,7 @@ const theme = {
         ".Quotes__imageWrapper": {
           gridArea: ["1/1/2/-1", "1/1/2/6"],
           position: "relative",
-          overflow: ["hidden", "unset"],
+          overflow: ["hidden"],
           width: [
             "100vw",
             (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
@@ -724,6 +724,7 @@ const theme = {
           display: "flex",
           alignItems: ["unset", "center"],
           ".Quotes__textWrapper-text": {
+            position: "relative",
             mt: [4, 0],
             ml: [
               (t) => `calc(${t.colWidthMob} + 5px)`,
@@ -758,8 +759,8 @@ const theme = {
               position: "absolute",
               left: [
                 0,
-                (t) => `calc(${t.colWidthDesktop} + 40px)`,
-                (t) => `calc(${t.colWidthDesktopBig} + 40px)`,
+                (t) => `calc(${t.colWidthDesktop} / -1)`,
+                (t) => `calc(${t.colWidthDesktopBig} / -1)`,
               ],
             },
           },

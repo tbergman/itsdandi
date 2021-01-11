@@ -1,11 +1,12 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import InView from "../inview";
 import { lineBreaks, rootMargin } from "../../helpers/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { wrap } from "popmotion";
+import { quotesCarousel, quotesCarouselText } from "../../helpers/animations";
 
 const Quotes = ({
   setNavbarStyling,
@@ -15,42 +16,23 @@ const Quotes = ({
   content,
 }) => {
   const { quotes } = content;
-  const [[page, direction], setPage] = useState([0, 0]);
-
-  const variants = {
-    enter: (direction) => {
-      return {
-        x: direction > 0 ? 1000 : -1000,
-        opacity: 0,
-      };
+  const [[page, settings], setPage] = useState([
+    0,
+    {
+      direction: 0,
+      width: 0,
     },
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-    },
-    exit: (direction) => {
-      return {
-        zIndex: 0,
-        x: direction < 0 ? 1000 : -1000,
-        opacity: 0,
-      };
-    },
-  };
-  // const images = [
-  //   {
-  //     desktop: "/assets/images/carol1_desktop.png",
-  //     mobile: "/assets/images/carol1.png",
-  //   },
-  //   {
-  //     desktop: "/assets/images/supportimage.png",
-  //     mobile: "/assets/images/supportimage.png",
-  //   },
-  // ];
-
+  ]);
+  const imageRef = useRef(null);
   const index = wrap(0, quotes.length, page);
   const paginate = (newDirection) => {
-    setPage([page + newDirection, newDirection]);
+    setPage([
+      page + newDirection,
+      {
+        direction: newDirection,
+        width: imageRef.current ? imageRef.current.offsetWidth : 0,
+      },
+    ]);
   };
 
   return (
@@ -66,9 +48,16 @@ const Quotes = ({
         }}
         className="Quotes"
       >
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.div className="Quotes__imageWrapper">
-            <motion.picture>
+        <motion.div ref={imageRef} className="Quotes__imageWrapper">
+          <AnimatePresence initial={false} custom={settings}>
+            <motion.picture
+              key={page}
+              custom={settings}
+              variants={quotesCarousel}
+              initial="enter"
+              animate="center"
+              exit="exit"
+            >
               <motion.source
                 media="(min-width: 800px)"
                 srcSet={quotes[index].fields.desktop_image}
@@ -78,43 +67,52 @@ const Quotes = ({
               ></motion.source>
 
               <motion.img
-                key={page}
                 className="Quotes__imageWrapper-image"
-                custom={direction}
-                variants={variants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 },
-                }}
                 src={quotes[index].fields.desktop_image}
                 alt=""
               />
             </motion.picture>
-          </motion.div>
-        </AnimatePresence>
+          </AnimatePresence>
+        </motion.div>
 
-        <div className="Quotes__textWrapper">
-          <div className="Quotes__textWrapper-text" key={index}>
-            <ReactSVG
-              className="Quotes__textWrapper-text-quotationmark"
-              src="/assets/svgs/quotation.svg"
-            />
-            <Styled.h3 className="Quotes__textWrapper-text-body">
-              {lineBreaks(quotes[index].fields.body)}
-            </Styled.h3>
-            <div className="Quotes__textWrapper-text-source">
-              <Styled.p className="Quotes_textWrapper-text-source-name">
-                {quotes[index].fields.name}
-              </Styled.p>
-              <Styled.p className="Quotes__textWrapper-text-source-title">
-                {quotes[index].fields.title}
-              </Styled.p>
-            </div>
-          </div>
-        </div>
+        <motion.div className="Quotes__textWrapper">
+          <AnimatePresence initial={false} exitBeforeEnter>
+            <motion.div
+              key={index}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              variants={quotesCarouselText}
+              className="Quotes__textWrapper-text"
+            >
+              <motion.svg
+                className="Quotes__textWrapper-text-quotationmark"
+                width="17"
+                height="17"
+                viewBox="0 0 17 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 8.86538C0 6.07829 0.646281 3.99807 1.93884 2.62473C3.2718 1.25138 4.98848 0.443527 7.0889 0.201172V3.41238C6.11947 3.69513 5.33182 4.24043 4.72593 5.04828C4.12004 5.81574 3.8171 6.98712 3.8171 8.56243V8.86538H7.14949V16.0149H0V8.86538ZM9.8154 16.0149V8.86538C9.8154 6.07829 10.4617 3.99807 11.7542 2.62473C13.0872 1.25138 14.8039 0.443527 16.9043 0.201172V3.41238C15.9349 3.69513 15.1472 4.24043 14.5413 5.04828C13.9354 5.81574 13.6325 6.98712 13.6325 8.56243V8.86538H16.9649V16.0149H9.8154Z"
+                  fill="#1A1A1D"
+                />
+              </motion.svg>
+
+              <Styled.h3 className="Quotes__textWrapper-text-body">
+                {lineBreaks(quotes[index].fields.body)}
+              </Styled.h3>
+              <div className="Quotes__textWrapper-text-source">
+                <Styled.p className="Quotes_textWrapper-text-source-name">
+                  {quotes[index].fields.name}
+                </Styled.p>
+                <Styled.p className="Quotes__textWrapper-text-source-title">
+                  {quotes[index].fields.title}
+                </Styled.p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
 
         <div className="Quotes__navigation">
           <div className="Quotes__navigation-prev">
@@ -135,7 +133,7 @@ const Quotes = ({
               />
             </svg>
           </div>
-          <div onClick={() => paginate(1)} className="Quotes__navigation-next">
+          <div className="Quotes__navigation-next">
             <svg
               onClick={() => paginate(1)}
               className="Quotes__navigation-arrow"
