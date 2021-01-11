@@ -102,3 +102,31 @@ export const quotesCarouselText = {
     },
   },
 };
+
+export const quotesCarouselTimerDesktop = {
+  initial: {
+    height: "0%",
+  },
+  animate: {
+    height: "100%",
+    transition: {
+      duration: 10,
+      repeat: Infinity,
+      ease: "linear",
+    },
+  },
+};
+
+export const quotesCarouselTimerMobile = {
+  initial: {
+    width: "0%",
+  },
+  animate: {
+    width: "100%",
+    transition: {
+      duration: 10,
+      repeat: Infinity,
+      ease: "linear",
+    },
+  },
+};

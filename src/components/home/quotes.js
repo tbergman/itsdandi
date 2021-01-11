@@ -1,12 +1,17 @@
 /** @jsx jsx */
 import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import InView from "../inview";
 import { lineBreaks, rootMargin } from "../../helpers/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { wrap } from "popmotion";
-import { quotesCarousel, quotesCarouselText } from "../../helpers/animations";
+import {
+  quotesCarousel,
+  quotesCarouselText,
+  quotesCarouselTimerMobile,
+  quotesCarouselTimerDesktop,
+} from "../../helpers/animations";
 
 const Quotes = ({
   setNavbarStyling,
@@ -25,6 +30,7 @@ const Quotes = ({
   ]);
   const imageRef = useRef(null);
   const index = wrap(0, quotes.length, page);
+  const time = 10000;
   const paginate = (newDirection) => {
     setPage([
       page + newDirection,
@@ -34,6 +40,11 @@ const Quotes = ({
       },
     ]);
   };
+
+  useEffect(() => {
+    const id = setTimeout(() => paginate(1), time);
+    return () => clearTimeout(id);
+  }, [page]);
 
   return (
     <InView
@@ -153,20 +164,23 @@ const Quotes = ({
           </div>
         </div>
         <div className="Quotes__navigation-timerWrapper">
-          <motion.div
-            initial={{
-              height: "0%",
-            }}
-            animate={{
-              height: "100%",
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="Quotes__navigation-timerWrapper-timer"
-          ></motion.div>
+          {isDesktop ? (
+            <motion.div
+              key={page}
+              initial="initial"
+              animate="animate"
+              variants={quotesCarouselTimerDesktop}
+              className="Quotes__navigation-timerWrapper-timer"
+            ></motion.div>
+          ) : (
+            <motion.div
+              key={page}
+              initial="initial"
+              animate="animate"
+              variants={quotesCarouselTimerMobile}
+              className="Quotes__navigation-timerWrapper-timer"
+            ></motion.div>
+          )}
         </div>
       </div>
     </InView>

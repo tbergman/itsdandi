@@ -722,6 +722,8 @@ const theme = {
           gridArea: ["2/1/3/-1", "1/6/2/-2"],
           position: "relative",
           display: "flex",
+          overflow: "hidden",
+          height: ["280px", "unset"],
           alignItems: ["unset", "center"],
           ".Quotes__textWrapper-text": {
             position: "relative",
@@ -772,7 +774,8 @@ const theme = {
           left: [0],
           display: "flex",
           alignItems: ["flex-end", "center"],
-          px: [3],
+          pb: [2, 0],
+          px: [9, 3],
           zIndex: 1,
           pointerEvents: "none",
           ".Quotes__navigation-arrow": {
@@ -795,13 +798,16 @@ const theme = {
           },
         },
         ".Quotes__navigation-timerWrapper": {
-          position: "absolute",
+          position: ["relative", "absolute"],
           right: 0,
-          height: "100%",
-          width: ["72px"],
+          gridArea: ["3/1/4/-1", "unset"],
+          height: ["64px", "100%"],
+          width: ["100vw", "72px"],
+          left: ["-20px", "unset"],
           bg: "rgba(255,255,255,0.24)",
           ".Quotes__navigation-timerWrapper-timer": {
             bg: "rgba(58,58,61,0.1)",
+            height: ["100%", "unset"],
           },
         },
       },
