@@ -1446,7 +1446,7 @@ const theme = {
         },
         ".full": {
           flex: "0 100%",
-          pl: ["50vw"],
+          // pl: ["50vw"],
         },
 
         ".SubNavigation__link": {
@@ -1455,8 +1455,13 @@ const theme = {
           cursor: "pointer",
           display: "flex",
           alignItems: "center",
+
           ".SubNavigation__link-content": {
-            ml: [0, (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`],
+            // ml: [
+            //   0,
+            //   (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,
+            //   (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 120px)`,
+            // ],
             mr: [6, 0],
             cursor: "pointer",
             textDecoration: "none",

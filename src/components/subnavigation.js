@@ -60,7 +60,16 @@ const SubNavigation = ({ next, prev }) => {
               animate="rotated"
               className="SubNavigation__link"
             >
-              <motion.div className="SubNavigation__link-content">
+              <motion.div
+                sx={{
+                  ml: [
+                    0,
+                    (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,
+                    (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 120px)`,
+                  ],
+                }}
+                className="SubNavigation__link-content"
+              >
                 <motion.svg
                   className="SubNavigation__link-content-arrow"
                   variants={arrowMotionRotated}
@@ -105,7 +114,24 @@ const SubNavigation = ({ next, prev }) => {
             animate="rest"
             className={"SubNavigation__link"}
           >
-            <motion.div className="SubNavigation__link-content">
+            <motion.div
+              sx={{
+                ml: prev
+                  ? [
+                      0,
+                      (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,
+                      (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 120px)`,
+                    ]
+                  : [
+                      0,
+                      (t) =>
+                        `calc(calc(calc(${t.colWidthDesktop} * 2) + 120px) + 50vw)`,
+                      (t) =>
+                        `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 120px) + 50vw)`,
+                    ],
+              }}
+              className={"SubNavigation__link-content"}
+            >
               <motion.svg
                 variants={arrowMotion}
                 className="SubNavigation__link-content-arrow"
