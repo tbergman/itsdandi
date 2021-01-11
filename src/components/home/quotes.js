@@ -18,6 +18,7 @@ const Quotes = ({
   windowHeight,
   navBarStyling,
   isDesktop,
+  isServer,
   content,
 }) => {
   const { quotes } = content;
@@ -163,25 +164,27 @@ const Quotes = ({
             </svg>
           </div>
         </div>
-        <div className="Quotes__navigation-timerWrapper">
-          {isDesktop ? (
-            <motion.div
-              key={page}
-              initial="initial"
-              animate="animate"
-              variants={quotesCarouselTimerDesktop}
-              className="Quotes__navigation-timerWrapper-timer"
-            ></motion.div>
-          ) : (
-            <motion.div
-              key={page}
-              initial="initial"
-              animate="animate"
-              variants={quotesCarouselTimerMobile}
-              className="Quotes__navigation-timerWrapper-timer"
-            ></motion.div>
-          )}
-        </div>
+        {!isServer && (
+          <div className="Quotes__navigation-timerWrapper">
+            {isDesktop ? (
+              <motion.div
+                key={page}
+                initial="initial"
+                animate="animate"
+                variants={quotesCarouselTimerDesktop}
+                className="Quotes__navigation-timerWrapper-timer"
+              />
+            ) : (
+              <motion.div
+                key={page}
+                initial="initial"
+                animate="animate"
+                variants={quotesCarouselTimerMobile}
+                className="Quotes__navigation-timerWrapper-timer"
+              />
+            )}
+          </div>
+        )}
       </div>
     </InView>
   );

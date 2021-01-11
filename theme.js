@@ -808,6 +808,7 @@ const theme = {
           ".Quotes__navigation-timerWrapper-timer": {
             bg: "rgba(58,58,61,0.1)",
             height: ["100%", "unset"],
+            width: ["unset", "100%"],
           },
         },
       },

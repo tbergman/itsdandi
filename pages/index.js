@@ -16,6 +16,7 @@ import devices from "../src/helpers/devices";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
 import { useWindowSize } from "@react-hook/window-size";
+import { isServer } from "../src/helpers/utils";
 
 import {
   motion,
@@ -153,15 +154,18 @@ const Home = (props) => {
           url: props.advance_dei[0].fields.url,
         }}
       />
+
       <Quotes
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
         navBarStyling={theme.components.navigation.gray2}
         isDesktop={isDesktop}
+        isServer={isServer()}
         content={{
           quotes: props.quotes,
         }}
       />
+
       <MarketPlacePartners
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
