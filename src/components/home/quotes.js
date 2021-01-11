@@ -64,9 +64,10 @@ const Quotes = ({
         sx={{
           variant: "grid",
         }}
+        className="Quotes"
       >
         <AnimatePresence initial={false} custom={direction}>
-          <motion.div className="imagewrapper">
+          <motion.div className="Quotes__imageWrapper">
             <motion.picture>
               <motion.source
                 media="(min-width: 800px)"
@@ -78,6 +79,7 @@ const Quotes = ({
 
               <motion.img
                 key={page}
+                className="Quotes__imageWrapper-image"
                 custom={direction}
                 variants={variants}
                 initial="enter"
@@ -94,22 +96,31 @@ const Quotes = ({
           </motion.div>
         </AnimatePresence>
 
-        <div className="text" key={index}>
-          <ReactSVG
-            className="quotationmark"
-            src="/assets/svgs/quotation.svg"
-          />
-          <Styled.h3>{lineBreaks(quotes[index].fields.body)}</Styled.h3>
-          <div className="source">
-            <Styled.p className="name">{quotes[index].fields.name}</Styled.p>
-            <Styled.p className="title">{quotes[index].fields.title}</Styled.p>
+        <div className="Quotes__textWrapper">
+          <div className="Quotes__textWrapper-text" key={index}>
+            <ReactSVG
+              className="Quotes__textWrapper-text-quotationmark"
+              src="/assets/svgs/quotation.svg"
+            />
+            <Styled.h3 className="Quotes__textWrapper-text-body">
+              {lineBreaks(quotes[index].fields.body)}
+            </Styled.h3>
+            <div className="Quotes__textWrapper-text-source">
+              <Styled.p className="Quotes_textWrapper-text-source-name">
+                {quotes[index].fields.name}
+              </Styled.p>
+              <Styled.p className="Quotes__textWrapper-text-source-title">
+                {quotes[index].fields.title}
+              </Styled.p>
+            </div>
           </div>
         </div>
-        <div className="navigation">
-          <div onClick={() => paginate(-1)} className="prev">
+
+        <div className="Quotes__navigation">
+          <div onClick={() => paginate(-1)} className="Quotes__navigation-prev">
             <ReactSVG src="assets/svgs/prev.svg" />
           </div>
-          <div onClick={() => paginate(1)} className="next">
+          <div onClick={() => paginate(1)} className="Quotes__navigation-next">
             <ReactSVG src="assets/svgs/prev.svg" />
           </div>
         </div>

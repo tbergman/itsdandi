@@ -524,8 +524,7 @@ const theme = {
           left: [
             "-20px",
             (t) => `calc(calc(${t.colWidthDesktop} * 6)  + 220px  )`,
-            (t) =>
-              `calc(calc(calc(${t.colWidthDesktopBig} * 6)  + 180px) + ${t.desktopBigGutters}px)`,
+            (t) => `calc(calc(${t.colWidthDesktopBig} * 6)  + 220px)`,
           ],
           height: ["320px", "calc(50vw * .82)"],
           gridArea: ["2/1/3/-1", "1/1/2/-1"],
@@ -687,11 +686,9 @@ const theme = {
       quotes: {
         bg: "white",
         color: "black",
-        ".imagewrapper": {
+        ".Quotes__imageWrapper": {
           gridArea: ["1/1/2/-1", "1/1/2/6"],
           position: "relative",
-          height: ["0", "760px"],
-          pt: ["70%", 0],
           overflow: ["hidden", "unset"],
           width: [
             "100vw",
@@ -699,11 +696,17 @@ const theme = {
             (t) =>
               `calc(calc(calc(${t.colWidthDesktopBig} * 5) + 160px) + ${t.desktopBigGutters}px)`,
           ],
+          height: [
+            "calc(100vw * .64)",
+            (t) => `calc(calc(calc(${t.colWidthDesktop} * 5) + 200px) * 1.3)`,
+            (t) =>
+              `calc(calc(calc(calc(${t.colWidthDesktopBig} * 5) + 160px) + ${t.desktopBigGutters}px) * 1.3)`,
+          ],
           left: ["-20px", "-40px", (t) => `-${t.desktopBigGutters}px`],
           picture: {
             position: "absolute",
             width: "100%",
-            height: ["unset", "100%"],
+            height: ["100%"],
             top: [0],
             left: 0,
             bottom: 0,
@@ -714,46 +717,53 @@ const theme = {
             },
           },
         },
-        ".text": {
+        ".Quotes__textWrapper": {
           gridArea: ["2/1/3/-1", "1/6/2/-2"],
           position: "relative",
-          mt: [3, 25],
-          ml: [
-            (t) => `calc(${t.colWidthMob} + 5px)`,
-            (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`,
-            (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 40px)`,
-          ],
+          display: "flex",
+          alignItems: ["unset", "center"],
+          ".Quotes__textWrapper-text": {
+            mt: [4, 0],
+            ml: [
+              (t) => `calc(${t.colWidthMob} + 5px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`,
+              (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 40px)`,
+            ],
 
-          h3: {
-            fontFamily: "display",
-            fontWeight: "500",
-            fontSize: ["24px", "40px"],
-            lineHeight: ["31.2px", "48px"],
-          },
-          ".source": {
-            // ml: [(t) => `calc(${t.colWidthMob} + 5px)`],
-            mt: [3, 7],
-            mb: [5],
-            ".name": {
-              fontFamily: "medium",
-              fontWeight: "500",
-              lineHeight: ["24px", "32px"],
-              fontSize: ["16px"],
+            ".Quotes__textWrapper-text-body": {
+              fontFamily: "display",
+
+              fontSize: ["24px", "40px"],
+              lineHeight: ["31.2px", "48px"],
             },
-            ".title": {
-              fontFamily: "body",
-              fontWeight: "400",
-              fontSize: ["16px"],
-              lineHeight: "24px",
+            ".Quotes__textWrapper-text-source": {
+              mt: [3, 7],
+              mb: [5],
+              ".Quotes__textWrapper-text-source-name": {
+                fontFamily: "medium",
+
+                lineHeight: ["24px", "32px"],
+                fontSize: ["16px"],
+              },
+              ".Quotes__textWrapper-text-source-title": {
+                fontFamily: "body",
+
+                fontSize: ["16px"],
+                lineHeight: "24px",
+              },
             },
-          },
-          ".quotationmark": {
-            display: ["none", "unset"],
-            position: "absolute",
-            left: [0, (t) => `calc(${t.colWidthDesktop} * -1)`],
+            ".Quotes__textWrapper-text-quotationmark": {
+              display: ["none", "unset"],
+              position: "absolute",
+              left: [
+                0,
+                (t) => `calc(${t.colWidthDesktop} + 40px)`,
+                (t) => `calc(${t.colWidthDesktopBig} + 40px)`,
+              ],
+            },
           },
         },
-        ".navigation": {
+        ".Quotes__navigation": {
           mt: ["20px", 0],
           gridArea: ["3/1/4/-1", "1/12/2/-1"],
           height: ["64px", "100%"],
@@ -763,7 +773,7 @@ const theme = {
           position: "relative",
           display: "flex",
           flexFlow: ["row nowrap", "column-reverse"],
-          ".prev": {
+          ".Quotes__navigation-prev": {
             bg: "rgba(58, 58, 61, 0.1)",
             cursor: "pointer",
             height: "100%",
@@ -772,7 +782,7 @@ const theme = {
             justifyContent: "center",
             alignItems: "center",
           },
-          ".next": {
+          ".Quotes__navigation-next": {
             bg: "rgba(255, 255, 255, 0.24)",
             cursor: "pointer",
             height: "100%",
@@ -2857,8 +2867,8 @@ const theme = {
                   position: "relative",
                   display: "flex",
                   alignItems: "center",
-                  mt: [3, "20px"],
-                  mb: [3, "20px"],
+                  mt: [3, "18px"],
+                  mb: [3, "18px"],
                   ".Table__body-row-grid-item-title": {
                     display: "flex",
                     alignItems: "center",
