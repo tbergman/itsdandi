@@ -34,4 +34,12 @@ export const scrollToBottom = (window, height) => {
     left: 0,
     behavior: "smooth",
   });
+
+  setTimeout(() => {
+    // click on input field
+    const nameField = window.document.getElementById("namefield");
+    nameField.focus();
+  }, 2000);
+
+  return;
 };

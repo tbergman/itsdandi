@@ -4,7 +4,7 @@ import { jsx, Styled, Input, Select, Button } from "theme-ui";
 const FooterForm = () => {
   return (
     <div className="form">
-      <Input placeholder="First Name *" />
+      <Input id="namefield" placeholder="First Name *" />
       <Input placeholder="Last Name *" />
       <Input placeholder="Email *" />
       <Input placeholder="Phone Number" />
