@@ -138,7 +138,7 @@ const Values = (props) => {
           ...props.unpacking,
         }}
         styling={{
-          ".text": {
+          ".TextBlock__textWrapper": {
             mb: [21, 18],
           },
         }}

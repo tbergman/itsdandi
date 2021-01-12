@@ -1439,18 +1439,24 @@ const theme = {
 
         ".SubNavigation__next": {
           height: ["224px", "100%"],
-          pl: [(t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`, 0],
+          pl: [0],
           flex: [1, "0 50%"],
           display: "flex",
           alignItems: "center",
+          ".SubNavigation__link": {
+            pl: [(t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`, 0],
+          },
         },
 
         ".SubNavigation__prev": {
           height: ["224px", "100%"],
           flex: [1, "0 50%"],
-          pl: [(t) => `calc(${t.colWidthMob} + 40px)`, 0],
+          pl: [0],
           display: "flex",
           alignItems: "center",
+          ".SubNavigation__link": {
+            pl: [(t) => `calc(${t.colWidthMob} + 40px)`, 0],
+          },
         },
         ".full": {
           flex: "0 100%",
@@ -3586,7 +3592,7 @@ const theme = {
           color: "blue",
           fontSize: "14px",
           fontFamily: "medium",
-          cursor:'pointer',
+          cursor: "pointer",
         },
       },
 
