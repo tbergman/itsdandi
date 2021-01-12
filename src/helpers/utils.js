@@ -39,7 +39,7 @@ export const scrollToBottom = (window, height) => {
     // click on input field
     const nameField = window.document.getElementById("namefield");
     nameField.focus();
-  }, 2000);
+  }, 1500);
 
   return;
 };
