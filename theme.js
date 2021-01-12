@@ -3566,6 +3566,30 @@ const theme = {
       width: ["100vw"],
       display: ["none", "block"],
       fontFamily: "body",
+      ".demobtn": {
+        position: "absolute",
+        top: "44px",
+        width: [
+          (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
+          (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
+          (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 80px)`,
+        ],
+        left: [
+          "20px",
+          (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
+          (t) =>
+            `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters}px)`,
+        ],
+        display: "flex",
+        justifyContent: "center",
+        ".demobtn-text": {
+          color: "blue",
+          fontSize: "14px",
+          fontFamily: "medium",
+          cursor:'pointer',
+        },
+      },
+
       ".logoWrapper": {
         position: "relative",
         width: "0",
@@ -4378,6 +4402,7 @@ const theme = {
         width: [
           (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
           (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
+          (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 80px)`,
         ],
         bg: "blue",
         borderRadius: ["168px", "180px"],

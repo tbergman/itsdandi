@@ -27,3 +27,11 @@ export const columnWidths = (width) => {
 };
 
 export const isServer = () => typeof window === "undefined";
+
+export const scrollToBottom = (window, height) => {
+  window.scrollTo({
+    top: height,
+    left: 0,
+    behavior: "smooth",
+  });
+};

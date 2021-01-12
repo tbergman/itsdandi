@@ -11,6 +11,10 @@ const MyApp = ({ Component, pageProps, router }) => {
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
+        <script
+          defer
+          src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+        ></script>
         <link
           href="/fonts/DandiGroteskDisplay.ttf"
           rel="preload"

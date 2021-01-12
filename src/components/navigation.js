@@ -3,9 +3,11 @@ import { jsx, Styled } from "theme-ui";
 import Link from "next/link";
 import { ReactSVG } from "react-svg";
 import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
+import { motion, useAnimation, animationControls } from "framer-motion";
 import BigLogo from "./home/bigLogo";
-import { columnWidths } from "../helpers/utils";
+import { columnWidths, scrollToBottom } from "../helpers/utils";
+import useScrollPosition from "@react-hook/window-scroll";
+import { useEffect } from "react";
 
 const Navigation = ({
   current,
@@ -14,7 +16,10 @@ const Navigation = ({
   setStaticLogo,
   width,
 }) => {
+  const animationControls = useAnimation();
+  const scrollY = useScrollPosition(60);
   const widths = columnWidths(width);
+  const scrollThreshold = 400;
 
   const loginMotion = {
     rest: {
@@ -39,6 +44,30 @@ const Navigation = ({
     },
   };
 
+  const demoButton = {
+    initial: {
+      opacity: 0,
+      visibility: "hidden",
+    },
+    animate: {
+      opacity: 1,
+      visibility: "visible",
+      transition: {
+        opacity: {
+          duration: 0.2,
+        },
+      },
+    },
+  };
+
+  useEffect(() => {
+    if (scrollY >= scrollThreshold) {
+      animationControls.start("animate");
+    } else {
+      animationControls.start("initial");
+    }
+  }, [scrollY]);
+
   return (
     <motion.nav
       sx={{
@@ -61,7 +90,19 @@ const Navigation = ({
           </a>
         </Link>
       </div>
-
+      <motion.div
+        variants={demoButton}
+        initial="initial"
+        animate={animationControls}
+        className={"demobtn"}
+      >
+        <Styled.p
+          className="demobtn-text"
+          onClick={() => scrollToBottom(window, document.body.scrollHeight)}
+        >
+          Request a demo
+        </Styled.p>
+      </motion.div>
       <div className="links">
         <Link href="/">
           <a className="item">

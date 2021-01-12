@@ -1,19 +1,20 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import Link from "next/link";
+import { scrollToBottom } from "../../helpers/utils";
 
-const Button = ({ url, text }) => {
+const Button = ({ text }) => {
   return (
     <div
       sx={{
         variant: "components.shared.button",
       }}
     >
-      <Link href={url}>
-        <a className="button">
-          <Styled.p>{text}</Styled.p>
-        </a>
-      </Link>
+      <div
+        className="button"
+        onClick={() => scrollToBottom(window, document.body.scrollHeight)}
+      >
+        <Styled.p>{text}</Styled.p>
+      </div>
     </div>
   );
 };
