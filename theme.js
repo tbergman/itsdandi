@@ -569,6 +569,7 @@ const theme = {
           },
           ".Partners__logoCarousel-rowWrapper-container": {
             width: "100%",
+            height: "100%",
             position: "absolute",
             overflowX: "hidden",
             top: 0,
@@ -579,6 +580,7 @@ const theme = {
             width: "fit-content",
             position: "relative",
             display: "flex",
+            height: "100%",
             flexFlow: ["row nowrap"],
             alignItems: "center",
           },
@@ -590,6 +592,8 @@ const theme = {
             height: "100%",
             img: {
               objectFit: "contain",
+              width: "100%",
+              height: "100%",
             },
           },
         },
