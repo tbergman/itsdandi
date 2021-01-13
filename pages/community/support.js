@@ -155,7 +155,7 @@ const Community = (props) => {
   );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const butter = Butter(process.env.BUTTER_CMS);
     const response = await butter.page.retrieve("*", "community_support");
