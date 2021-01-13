@@ -4,7 +4,7 @@ import BigLogo from "./bigLogo";
 import Graphics from "./graphics";
 import Link from "next/link";
 import InView from "../inview";
-import { rootMargin } from "../../helpers/utils";
+import { rootMargin, scrollToBottom } from "../../helpers/utils";
 import { motion } from "framer-motion";
 
 const Home = ({
@@ -30,12 +30,11 @@ const Home = ({
       >
         <div className="Top__text">
           <Styled.h1 className="Top__text-header">{header}</Styled.h1>
-          <motion.div className="Top__text-button">
-            <Link href="/">
-              <motion.a>
-                <Styled.p>{buttonText}</Styled.p>
-              </motion.a>
-            </Link>
+          <motion.div
+            className="Top__text-button"
+            onClick={() => scrollToBottom(window, document.body.scrollHeight)}
+          >
+            <Styled.p className="Top__text-button-text">{buttonText}</Styled.p>
           </motion.div>
         </div>
 

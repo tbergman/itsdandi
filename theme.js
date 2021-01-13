@@ -154,18 +154,15 @@ const theme = {
             justifyContent: "center",
             alignItems: "center",
 
+            ".Top__text-button-text": {
+              color: "black",
+              fontSize: "16px",
+              fontFamily: "medium",
+            },
+
             "&:hover": {
               bg: "#FF9133",
               transition: "all 150ms ease-out",
-            },
-
-            a: {
-              textDecoration: "none",
-              color: "black",
-            },
-            p: {
-              fontSize: "16px",
-              fontFamily: "medium",
             },
           },
         },
