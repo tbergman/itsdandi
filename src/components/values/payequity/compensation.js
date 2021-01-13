@@ -4,6 +4,7 @@ import CompensationGraph from "./compensationgraph";
 import InView from "../../inview";
 import { rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
+import CompensationSvg from "./compensationsvg";
 
 const Compensation = ({
   setNavbarStyling,
@@ -50,16 +51,7 @@ const Compensation = ({
               </div>
             </div>
 
-            <div className="compensationTopGraphic">
-              <picture>
-                <source
-                  media="(min-width: 800px)"
-                  srcSet={desktop_image}
-                ></source>
-                <source srcSet={mobile_image}></source>
-                <img src={desktop_image} alt="" />
-              </picture>
-            </div>
+            <CompensationSvg isDesktop={isDesktop} />
           </div>
         </div>
       </SubInView>

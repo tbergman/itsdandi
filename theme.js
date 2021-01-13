@@ -432,7 +432,13 @@ const theme = {
             width: ["100vw", "100%"],
             left: ["-20px", "unset"],
             position: "relative",
-            height: ["calc(100vw * .75)", "400px"],
+            height: [
+              "calc(100vw * .623)",
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktop} * 6) + 200px) * .623)`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopBig} * 6) + 200px) * .623)`,
+            ],
             ".Carousel__carouselWrapper-imageWrapper-image": {
               position: ["relative", "absolute"],
               height: ["100%"],
@@ -989,7 +995,7 @@ const theme = {
                 (t) => `calc(calc(${t.colWidthDesktop} * 9) + 320px)`,
                 (t) => `calc(calc(${t.colWidthDesktopBig} * 9) + 320px)`,
               ],
-              img: {
+              ".compensationTopGraphic__svg": {
                 position: "absolute",
                 height: ["200%", "100%"],
                 width: "100%",
@@ -2114,16 +2120,16 @@ const theme = {
                 (t) => `calc(calc(${t.colWidthDesktop} * 6) + 200px)`,
                 (t) => `calc(calc(${t.colWidthDesktopBig} * 6) + 200px)`,
               ],
-              pt: ["83%", 0],
+              pt: ["87%", 0],
               ml: [0],
               mt: [6, 0],
               position: "relative",
               height: [
                 0,
                 (t) =>
-                  `calc(calc(calc(${t.colWidthDesktop} * 6) + 200px) * .67)`,
+                  `calc(calc(calc(${t.colWidthDesktop} * 6) + 200px) * .60)`,
                 (t) =>
-                  `calc(calc(calc(${t.colWidthDesktopBig} * 6) + 200px) * .67)`,
+                  `calc(calc(calc(${t.colWidthDesktopBig} * 6) + 200px) * .60)`,
               ],
               img: {
                 position: "absolute",
