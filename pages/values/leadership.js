@@ -25,7 +25,6 @@ import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
-import { getServerSideProps } from "../index";
 
 const Values = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);

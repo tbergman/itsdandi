@@ -20,7 +20,6 @@ import {
 import MobileNav from "../src/components/mobilenav";
 import { useMediaQuery } from "react-responsive";
 import { useWindowSize } from "@react-hook/window-size";
-import { getServerSideProps } from "./index";
 
 const Pricing = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);

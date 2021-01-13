@@ -28,7 +28,6 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
-import { getServerSideProps } from "../index";
 
 const Values = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);

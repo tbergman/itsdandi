@@ -26,7 +26,6 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
 import { isServer } from "../../src/helpers/utils";
-import { getServerSideProps } from "../index";
 
 const Product = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
