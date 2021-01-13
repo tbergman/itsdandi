@@ -20,6 +20,7 @@ import {
 import MobileNav from "../src/components/mobilenav";
 import { useMediaQuery } from "react-responsive";
 import { useWindowSize } from "@react-hook/window-size";
+import { getServerSideProps } from "./index";
 
 const Pricing = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -117,7 +118,7 @@ const Pricing = (props) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const butter = Butter(process.env.BUTTER_CMS);
     const response = await butter.page.retrieve("*", "pricing");

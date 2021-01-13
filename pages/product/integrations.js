@@ -26,6 +26,7 @@ import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
+import { getServerSideProps } from "../index";
 
 const Product = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -152,7 +153,7 @@ const Product = (props) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const butter = Butter(process.env.BUTTER_CMS);
     const response = await butter.page.retrieve("*", "product_integrations");

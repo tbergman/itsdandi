@@ -190,7 +190,7 @@ const Home = (props) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const butter = Butter(process.env.BUTTER_CMS);
 

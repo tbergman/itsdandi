@@ -180,7 +180,7 @@ const Product = (props) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const butter = Butter(process.env.BUTTER_CMS);
     const response = await butter.page.retrieve("*", "product_security");
