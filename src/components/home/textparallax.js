@@ -4,8 +4,8 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 const TextParallax = () => {
   const { scrollY } = useViewportScroll();
-  const parallaxY = useTransform(scrollY, [0, 500], [0, -200]);
-  const fadeOut = useTransform(scrollY, [0, 200], [1, 0]);
+  const parallaxY = useTransform(scrollY, [0, 500], [0, -750]);
+  const fadeOut = useTransform(scrollY, [0, 400], [1, 0]);
 
   return (
     <motion.div

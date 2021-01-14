@@ -36,23 +36,27 @@ const MyApp = ({ Component, pageProps, router }) => {
       </Head>
       <AnimatePresence exitBeforeEnter>
         <motion.div
-          exit
-          key={router.pathname}
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-            transition: {
-              duration: 0.1,
-            },
-          }}
-          exit={{
-            opacity: 0,
-            transition: {
-              duration: 0.1,
-            },
-          }}
+          // exit
+          // key={router.pathname}
+          // initial={{
+          //   opacity: 0,
+          // }}
+          animate={
+            {
+              // opacity: 1,
+              // transition: {
+              //   duration: 0.1,
+              // },
+            }
+          }
+          exit={
+            {
+              // opacity: 0,
+              // transition: {
+              //   duration: 0.1,
+              // },
+            }
+          }
           id="page-transition-container"
         >
           <Component {...pageProps} />
