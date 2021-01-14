@@ -943,7 +943,8 @@ const theme = {
               flexFlow: ["column", "unset"],
               mt: [3],
               mb: [
-                8,
+                (t) =>
+                  `calc(calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .25) + 64px)`,
                 (t) =>
                   `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 9) + 320px) * .33) * .51) + 88px)`,
                 (t) =>
@@ -977,7 +978,7 @@ const theme = {
             },
 
             ".compensationTopGraphic": {
-              position: ["relative", "absolute"],
+              position: ["absolute"],
               height: [
                 (t) => `calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .87)`,
                 (t) =>
@@ -986,7 +987,8 @@ const theme = {
                   `calc(calc(calc(${t.colWidthDesktopBig} * 9) + 320px) * .33)`,
               ],
               bottom: [
-                "unset",
+                (t) =>
+                  `calc(calc(calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .87) * .85) / -1)`,
                 (t) =>
                   `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 9) + 320px) * .33) * .49) / -1)`,
                 (t) =>
@@ -1019,7 +1021,8 @@ const theme = {
             flexFlow: ["column-reverse", "unset"],
             alignItems: "flex-start",
             mt: [
-              12,
+              (t) =>
+                `calc(calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .85) + 48px)`,
               (t) =>
                 `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 9) + 320px) * .33) * .51) + 72px)`,
               (t) =>

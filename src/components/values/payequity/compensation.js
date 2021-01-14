@@ -51,7 +51,6 @@ const Compensation = ({
                 <Styled.p>{body_section2}</Styled.p>
               </div>
             </div>
-
             {!isServer && <CompensationSvg isDesktop={isDesktop} />}
           </div>
         </div>
