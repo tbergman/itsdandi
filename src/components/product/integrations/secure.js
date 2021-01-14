@@ -21,6 +21,22 @@ const Secure = ({
 }) => {
   const { header, body, button_text, url } = content;
   const animationControls = useAnimation();
+  const lockAnimation = useAnimation();
+  const lockVariant = {
+    initial: {
+      scale: 0,
+      originX: "50%",
+      originY: "75%",
+    },
+    animate: {
+      scale: 0.5,
+      originX: "50%",
+      originY: "75%",
+      transition: {
+        duration: 1,
+      },
+    },
+  };
 
   const { inView, ref, entry } = useInView({
     triggerOnce: true,
@@ -30,6 +46,9 @@ const Secure = ({
     if (inView) {
       animationControls.start((i) => {
         return globalSlideUp.visible(i);
+      });
+      lockAnimation.start(() => {
+        return lockVariant.animate;
       });
     }
   }, [inView]);
@@ -91,7 +110,31 @@ const Secure = ({
           </div>
 
           <div className="Secure__graphic">
-            <ReactSVG src="/assets/svgs/biglock.svg" />
+            <motion.svg
+              width="150"
+              height="236"
+              viewBox="0 0 150 236"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M124 184.004H25V50.5039C25 23.1658 47.1619 1.00391 74.5 1.00391V1.00391C101.838 1.00391 124 23.1658 124 50.5039V105.504"
+                stroke="#335AFF"
+                stroke-width="2"
+              />
+              <circle cx="75" cy="160.004" r="75" fill="#FFD93B" />
+              <motion.rect
+                initial="initial"
+                animate={lockAnimation}
+                variants={lockVariant}
+                x="67"
+                y="140.004"
+                width="16"
+                height="40"
+                rx="8"
+                fill="white"
+              />
+            </motion.svg>
           </div>
         </div>
       </SubInView>
