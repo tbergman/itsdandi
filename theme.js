@@ -4439,6 +4439,7 @@ const theme = {
         },
         ".button": {
           display: "flex",
+          cursor: "pointer",
           alignItems: "center",
           justifyContent: "center",
           p: {
