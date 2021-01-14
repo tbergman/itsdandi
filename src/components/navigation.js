@@ -15,6 +15,7 @@ const Navigation = ({
   staticLogo,
   setStaticLogo,
   width,
+  demoButtonStatic,
 }) => {
   const animationControls = useAnimation();
   const scrollY = useScrollPosition(60);
@@ -61,12 +62,14 @@ const Navigation = ({
   };
 
   useEffect(() => {
-    if (scrollY >= scrollThreshold) {
+    if (demoButtonStatic) {
+      animationControls.start("animate");
+    } else if (scrollY >= scrollThreshold) {
       animationControls.start("animate");
     } else {
       animationControls.start("initial");
     }
-  }, [scrollY]);
+  }, [scrollY, demoButtonStatic]);
 
   return (
     <motion.nav
