@@ -130,3 +130,30 @@ export const quotesCarouselTimerMobile = {
     },
   },
 };
+
+export const compensationLines = {
+  initial: {
+    pathLength: 0,
+  },
+  animate: (i) => ({
+    pathLength: 1,
+    transition: {
+      duration: 3,
+      delay: i * 0.2,
+      ease: "easeOut",
+    },
+  }),
+};
+
+export const compensationCircles = {
+  initial: {
+    scale: 0,
+  },
+  animate: (i) => ({
+    scale: 1,
+    transition: {
+      delay: 3 + i * 0.2,
+      duration: 0.3,
+    },
+  }),
+};

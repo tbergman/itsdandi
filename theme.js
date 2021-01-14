@@ -318,7 +318,7 @@ const theme = {
               `calc(calc(calc(${t.colWidthDesktopBig} * 7) + 240px) + ${t.desktopBigGutters}px)`,
           ],
           // mt: [13, 0],
-          mb: [1],
+          mb: [1, 2],
           display: ["none", "flex"],
           alignItems: "flex-start",
           justifyContent: ["flex-end", "flex-start"],
@@ -338,7 +338,12 @@ const theme = {
           gridArea: ["2/1/3/-1", "1/6/2/-1"],
           mt: ["213px", "290px"],
           mb: [0, "224px"],
-          height: ["277px", "495px"],
+          height: [
+            "277px",
+            (t) => `calc(calc(calc(${t.colWidthDesktop} * 6) + 280px) * .6)`,
+            (t) =>
+              `calc(calc(calc(calc(${t.colWidthDesktopBig} * 6) + 240px) + ${t.desktopBigGutters}px) * .6)`,
+          ],
           position: "relative",
           width: [
             "100vw",
@@ -974,7 +979,7 @@ const theme = {
             ".compensationTopGraphic": {
               position: ["relative", "absolute"],
               height: [
-                "60px",
+                (t) => `calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .87)`,
                 (t) =>
                   `calc(calc(calc(${t.colWidthDesktop} * 9) + 320px) * .33)`,
                 (t) =>
@@ -988,15 +993,20 @@ const theme = {
                   `calc(calc(calc(calc(calc(${t.colWidthDesktopBig} * 9) + 320px) * .33) * .49) / -1)`,
               ],
               width: [
-                "unset",
+                "100%",
                 (t) => `calc(calc(${t.colWidthDesktop} * 9) + 320px)`,
                 (t) => `calc(calc(${t.colWidthDesktopBig} * 9) + 320px)`,
               ],
               ".compensationTopGraphic__svg": {
                 position: "absolute",
-                height: ["200%", "100%"],
+                height: "100%",
                 width: "100%",
                 zIndex: 99,
+                ".compensationTopGraphic__svg-group": {
+                  ".compensationTopGraphic__svg-group-circle": {
+                    transform: "scale(0)",
+                  },
+                },
               },
             },
           },

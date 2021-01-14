@@ -14,6 +14,7 @@ const Compensation = ({
   subMenuStyling,
   content,
   isDesktop,
+  isServer,
 }) => {
   const {
     header,
@@ -51,7 +52,7 @@ const Compensation = ({
               </div>
             </div>
 
-            <CompensationSvg isDesktop={isDesktop} />
+            {!isServer && <CompensationSvg isDesktop={isDesktop} />}
           </div>
         </div>
       </SubInView>

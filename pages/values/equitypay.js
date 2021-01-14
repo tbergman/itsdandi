@@ -28,6 +28,7 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
+import { isServer } from "../../src/helpers/utils";
 
 const Values = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -136,6 +137,7 @@ const Values = (props) => {
         navBarStyling={theme.components.navigation.gray}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
+        isServer={isServer()}
         content={{
           ...props.compensation,
         }}

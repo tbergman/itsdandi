@@ -4,12 +4,14 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 const TextParallax = () => {
   const { scrollY } = useViewportScroll();
-  const parallaxY = useTransform(scrollY, [0, 200], [0, -250]);
+  const parallaxY = useTransform(scrollY, [0, 500], [0, -200]);
+  const fadeOut = useTransform(scrollY, [0, 200], [1, 0]);
 
   return (
     <motion.div
       style={{
         y: parallaxY,
+        opacity: fadeOut,
       }}
       className="LearnMore__toptext"
     >

@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import {
-  useViewportScroll,
   motion,
   useTransform,
   useAnimation,
+  animationControls,
 } from "framer-motion";
-import useScrollPosition from "@react-hook/window-scroll";
-import { useEffect, useRef, useState } from "react";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import { useEffect, useRef, useState, memo } from "react";
 
 const BigLogo = ({
   navBarStyling,
@@ -17,18 +17,28 @@ const BigLogo = ({
   scaleTo,
   yOffset,
 }) => {
-  const { scrollYProgress } = useViewportScroll();
-  const scrollY = useScrollPosition(60);
   const animationControls = useAnimation();
   const [scrollTriggered, setScrollTriggered] = useState(false);
   const scrollThreshold = 150;
+
   const ref = useRef(null);
 
-  useEffect(() => {
-    if (scrollY >= scrollThreshold && !staticLogo) {
-      setScrollTriggered(true);
-    }
-  }, [scrollY]);
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      if (
+        !scrollTriggered &&
+        Math.abs(currPos.y) >= scrollThreshold &&
+        !staticLogo
+      ) {
+        setScrollTriggered(true);
+      }
+    },
+    [],
+    null,
+    true,
+    500,
+    null
+  );
 
   // scale down animation
   useEffect(() => {
@@ -43,18 +53,14 @@ const BigLogo = ({
     }
   }, [scrollTriggered]);
 
-  //initial load
   useEffect(() => {
     animationControls.start({
       opacity: 1,
       transition: {
-        duration: 1,
+        duration: 0.8,
       },
     });
   }, []);
-
-  const opacityAnim = useTransform(scrollYProgress, [0.02, 0.07], [1, 0]);
-  const scaleAnim = useTransform(scrollYProgress, [0, 0.04], [1, scaleTo]);
 
   return (
     <div
@@ -148,4 +154,4 @@ const BigLogo = ({
   );
 };
 
-export default BigLogo;
+export default memo(BigLogo);
