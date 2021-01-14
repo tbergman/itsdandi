@@ -36,7 +36,7 @@ const BigLogo = ({
     [],
     null,
     true,
-    500,
+    250,
     null
   );
 
