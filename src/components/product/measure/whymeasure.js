@@ -3,6 +3,10 @@ import { jsx, Styled } from "theme-ui";
 import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import InView from "../../inview";
 import SubInView from "../../subinview";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { globalSlideUp } from "../../../helpers/animations";
 
 const WhyMeasure = ({
   windowHeight,
@@ -14,6 +18,20 @@ const WhyMeasure = ({
   content,
 }) => {
   const { categories, header, body } = content;
+
+  const animationControls = useAnimation();
+
+  const { inView, ref, entry } = useInView({
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      animationControls.start((i) => {
+        return globalSlideUp.visible(i);
+      });
+    }
+  }, [inView]);
 
   return (
     <InView
@@ -31,31 +49,55 @@ const WhyMeasure = ({
           sx={{
             variant: "grid",
           }}
+          className="WhyMeasure"
         >
-          <div className="top">
-            <div className="section1">
-              <Styled.h2>{header}</Styled.h2>
-            </div>
-            <div className="section2">
-              <Styled.p>{lineBreaks(body)}</Styled.p>
-            </div>
+          <div ref={ref} className="WhyMeasure__top">
+            <motion.div
+              initial="hidden"
+              animate={animationControls}
+              variants={globalSlideUp}
+              custom={0}
+              className="WhyMeasure__top-section1"
+            >
+              <Styled.h2 className="WhyMeasure__top-section1-header">
+                {header}
+              </Styled.h2>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              animate={animationControls}
+              variants={globalSlideUp}
+              custom={1}
+              className="WhyMeasure__top-section2"
+            >
+              <Styled.p className="WhyMeasure__top-section2-body">
+                {lineBreaks(body)}
+              </Styled.p>
+            </motion.div>
           </div>
-          <div className="categories">
+          <div className="WhyMeasure__categories">
             {categories.map((category, i) => (
-              <div className="category" key={i}>
-                <div className="divider">
+              <div className="WhyMeasure__categories-category" key={i}>
+                <div className="WhyMeasure__categories-category-divider">
                   <span
                     sx={{
                       bg: category.fields.hexcode,
                     }}
                   ></span>
                 </div>
-                <div className="title">
+                <div className="WhyMeasure__categories-category-title">
                   <Styled.p>{category.fields.title}</Styled.p>
                 </div>
-                <div className="items">
+                <div className="WhyMeasure__categories-category-items">
                   {category.fields.item.map((item, i) => (
-                    <Styled.p key={i}>{item.text}</Styled.p>
+                    <div
+                      className="WhyMeasure__categories-category-items-item"
+                      key={i}
+                    >
+                      <Styled.p className="WhyMeasure__categories-category-items-item-text">
+                        {item.text}
+                      </Styled.p>
+                    </div>
                   ))}
                 </div>
               </div>

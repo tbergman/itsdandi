@@ -4,6 +4,10 @@ import { jsx, Styled } from "theme-ui";
 import { rootMargin, rootMarginSub, lineBreaks } from "../../../helpers/utils";
 import InView from "../../inview";
 import SubInView from "../../subinview";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { globalSlideUp } from "../../../helpers/animations";
 
 const Customizable = ({
   setNavbarStyling,
@@ -15,6 +19,21 @@ const Customizable = ({
   content,
 }) => {
   const { header, body } = content;
+
+  const animationControls = useAnimation();
+
+  const { inView, ref, entry } = useInView({
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      animationControls.start((i) => {
+        return globalSlideUp.visible(i);
+      });
+    }
+  }, [inView]);
+
   return (
     <InView
       variant="pages.product.collaborate.customizable"
@@ -31,12 +50,34 @@ const Customizable = ({
           sx={{
             variant: "grid",
           }}
+          className="Customizable"
         >
-          <div className="text">
-            <Styled.h2>{header}</Styled.h2>
-            <Styled.p>{lineBreaks(body)}</Styled.p>
+          <div ref={ref} className="Customizable__text">
+            <motion.div
+              initial="hidden"
+              animate={animationControls}
+              variants={globalSlideUp}
+              custom={0}
+              className="Customizable__text-header"
+            >
+              <Styled.h2 className="Customizable__text-header-text">
+                {header}
+              </Styled.h2>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              animate={animationControls}
+              variants={globalSlideUp}
+              custom={1}
+              className="Customizable__text-body"
+            >
+              <Styled.p className="Customizable__text-body-text">
+                {lineBreaks(body)}
+              </Styled.p>
+            </motion.div>
           </div>
-          <div className="graphic">
+          <div className="Customizable__graphic">
             <ReactSVG src="/assets/svgs/customizable.svg" />
           </div>
         </div>

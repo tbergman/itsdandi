@@ -23,6 +23,7 @@ const Compensation = ({
     desktop_image,
     mobile_image,
   } = content;
+
   return (
     <InView
       setNavbarStyling={setNavbarStyling}

@@ -6,6 +6,10 @@ import InsightsCircle from "./insightscircle";
 import InView from "../../inview";
 import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { globalSlideUp } from "../../../helpers/animations";
 
 const Insights = ({
   setNavbarStyling,
@@ -17,6 +21,21 @@ const Insights = ({
   content,
 }) => {
   const { header, body, lock_title, lock_body, button_text, url } = content;
+
+  const animationControls = useAnimation();
+
+  const { inView, ref, entry } = useInView({
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      animationControls.start((i) => {
+        return globalSlideUp.visible(i);
+      });
+    }
+  }, [inView]);
+
   return (
     <InView
       variant="pages.product.analyze.insights"
@@ -30,22 +49,35 @@ const Insights = ({
         rootMargin={rootMarginSub(windowHeight)}
       >
         <div
+          ref={ref}
           sx={{
             variant: "grid",
           }}
         >
-          <div className="top">
+          <motion.div
+            initial="hidden"
+            animate={animationControls}
+            variants={globalSlideUp}
+            custom={0}
+            className="top"
+          >
             <Styled.h2>{header}</Styled.h2>
-          </div>
+          </motion.div>
 
           <div className="middle">
             <div className="section1">
               <InsightsCircle />
             </div>
             <div className="section2">
-              <div className="text">
+              <motion.div
+                initial="hidden"
+                animate={animationControls}
+                variants={globalSlideUp}
+                custom={1}
+                className="text"
+              >
                 <Styled.p>{lineBreaks(body)}</Styled.p>
-              </div>
+              </motion.div>
             </div>
           </div>
 

@@ -1150,20 +1150,25 @@ const theme = {
         affordable: {
           bg: "transparent",
           color: "black",
-          ".header": {
+          ".Affordable__text": {
             mt: [8, "268px"],
             mb: [0, "307px"],
             gridArea: ["1/1/2/-1", "1/7/2/-1"],
             ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig],
 
-            h2: {
-              fontFamily: "display",
+            ".Affordable__text-header": {
+              ".Affordable__text-header-text": {
+                fontFamily: "display",
+              },
             },
-            p: {
+            ".Affordable__text-body": {
               mt: [3, 4],
-              fontSize: "16px",
+              ".Affordable__text-body-text": {
+                fontSize: "16px",
+              },
             },
-            ".link": {
+
+            ".Affordable__text-link": {
               p: {
                 mt: [0],
                 fontFamily: "medium",
@@ -1171,7 +1176,7 @@ const theme = {
               },
             },
           },
-          ".graphic": {
+          ".Affordable__graphic": {
             gridArea: ["2/1/3/-1", "1/2/2/7"],
             position: "relative",
             mb: [10, 0],
@@ -1188,7 +1193,7 @@ const theme = {
             ],
             display: ["unset", "flex"],
             alignItems: "center",
-            img: {
+            ".Affordable__graphic-image": {
               position: ["absolute", "relative"],
               top: [0, "unset"],
               left: [0, "unset"],
@@ -1279,7 +1284,7 @@ const theme = {
         partners: {
           bg: "rgba(250, 250, 250, 0.96)",
           color: "black",
-          ".graphic": {
+          ".Partners__graphic": {
             gridArea: ["1/1/2/-1", "1/8/2/-1"],
             position: "relative",
 
@@ -1311,20 +1316,25 @@ const theme = {
               },
             },
           },
-          ".text": {
+          ".Partners__text": {
             gridArea: ["2/1/3/-1", "1/3/2/8"],
             mt: [18],
             mb: [10, 19],
-            h2: {
-              fontFamily: "display",
+            ".Partners__text-header": {
+              ".Partners__text-header-text": {
+                fontFamily: "display",
+              },
             },
-            p: {
-              mt: [3, 4],
-              fontSize: ["16px"],
-              lineHeight: ["24px"],
+            ".Partners__text-body": {
               maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+              mt: [3, 4],
+              ".Partners__text-body-text": {
+                fontSize: ["16px"],
+                lineHeight: ["24px"],
+              },
             },
-            ".partnersLink": {
+
+            ".Partners__link": {
               mt: [1],
 
               p: {
@@ -1374,17 +1384,18 @@ const theme = {
             "388px",
           ],
           bg: "lightGray",
-          ".wrapper": {
+
+          ".TextModules__wrapper": {
             gridArea: ["1/1/2/-1", "1/3/2/-1"],
             ml: [0],
-            ".module": {
+            ".TextModules__wrapper-module": {
               color: "black",
               position: "relative",
               display: "flex",
               flexFlow: ["column", "unset"],
               pt: [2],
               mb: [6, 11],
-              ".divider": {
+              ".TextModules__wrapper-module-divider": {
                 position: "absolute",
                 top: 0,
                 width: [
@@ -1402,18 +1413,20 @@ const theme = {
                   bg: "black",
                 },
               },
-              ".section1": {
+              ".TextModules__wrapper-module-section1": {
                 width: [
                   "100%",
                   (t) => `calc(calc(${t.colWidthDesktop} * 5) + 160px)`,
                   (t) => `calc(calc(${t.colWidthDesktopBig} * 5) + 160px)`,
                 ],
 
-                h2: {
-                  fontFamily: "display",
+                ".TextModules__wrapper-module-section1-header": {
+                  ".TextModules__wrapper-module-section1-header-text": {
+                    fontFamily: "display",
+                  },
                 },
               },
-              ".section2": {
+              ".TextModules__wrapper-module-section2": {
                 width: [
                   "100%",
                   (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
@@ -1425,22 +1438,23 @@ const theme = {
                   (t) => `calc(calc(${t.colWidthDesktop}) + 40px)`,
                   (t) => `calc(calc(${t.colWidthDesktopBig}) + 40px)`,
                 ],
-                p: {
-                  lineHeight: ["24px"],
-                  fontSize: ["16px"],
+                ".TextModules__wrapper-module-section2-body": {
                   maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+                  ".TextModules__wrapper-module-section2-body-text": {
+                    lineHeight: ["24px"],
+                    fontSize: ["16px"],
+                  },
                 },
-                ".linksection": {
+                ".TextModules__wrapper-module-section2-linkSection": {
                   maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-                  p: {
+                  ".TextModules__wrapper-module-section2-linkSection-description": {
                     fontFamily: "medium",
                   },
                   mt: [1],
-                  ".link": {
+                  ".TextModules__wrapper-module-section2-linkSection-link": {
                     mt: [0, 1],
                     p: {
                       p: 0,
-
                       fontFamily: "medium",
                       lineHeight: "18.88px",
                     },
@@ -1591,32 +1605,32 @@ const theme = {
           bg: "transparent",
           color: "black",
 
-          ".top": {
+          ".WhyMeasure__top": {
             gridArea: ["1/1/2/-1", "1/3/2/-2"],
             display: "flex",
             flexFlow: ["column", "unset"],
             mt: [8, 16],
             mb: [6, 13],
-            ".section1": {
+            ".WhyMeasure__top-section1": {
               flex: "auto",
               width: [
                 "100%",
                 (t) => t.desktopSectionWidth,
                 (t) => t.desktopSectionWidthBig,
               ],
-              h2: {
+              ".WhyMeasure__top-section1-header": {
                 maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               },
             },
 
-            ".section2": {
+            ".WhyMeasure__top-section2": {
               width: [
                 "100%",
                 (t) => t.desktopSectionWidth,
                 (t) => t.desktopSectionWidthBig,
               ],
               ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig],
-              p: {
+              ".WhyMeasure__top-section2-body": {
                 mt: [3, 0],
                 fontSize: ["16px"],
                 lineHeight: ["24px"],
@@ -1625,12 +1639,12 @@ const theme = {
             },
           },
 
-          ".categories": {
+          ".WhyMeasure__categories": {
             mb: [7],
             gridArea: ["2/1/3/-1", "2/3/3/-1"],
             display: "flex",
             flexFlow: ["column", "row"],
-            ".category": {
+            ".WhyMeasure__categories-category": {
               display: ["flex", "unset"],
               width: [
                 "auto",
@@ -1639,7 +1653,7 @@ const theme = {
               ],
               mr: [0, "40px"],
               position: "relative",
-              ".divider": {
+              ".WhyMeasure__categories-category-divider": {
                 mb: [1, 0],
                 mt: [1, 0],
                 top: ["unset", 4],
@@ -1652,7 +1666,7 @@ const theme = {
                   height: "100%",
                 },
               },
-              ".title": {
+              ".WhyMeasure__categories-category-title": {
                 width: [
                   (t) => `calc(calc(${t.colWidthMob} * 3) + 60px)`,
                   "unset",
@@ -1665,7 +1679,7 @@ const theme = {
                   lineHeight: "21px",
                 },
               },
-              ".items": {
+              ".WhyMeasure__categories-category-items": {
                 width: [
                   (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
                   "unset",
@@ -1673,9 +1687,11 @@ const theme = {
                 mt: [2, 0],
                 display: "flex",
                 flexFlow: "column",
-                p: {
-                  fontSize: ["14px"],
-                  lineHeight: ["21px"],
+                ".WhyMeasure__categories-category-items-item": {
+                  ".WhyMeasure__categories-category-items-item-text": {
+                    fontSize: ["14px"],
+                    lineHeight: ["21px"],
+                  },
                 },
               },
             },
@@ -1684,7 +1700,7 @@ const theme = {
         intersectional: {
           bg: "black",
           color: "white",
-          ".graphic": {
+          ".Intersectional__graphic": {
             mt: [10, 16],
             mb: [0, 24],
             gridArea: ["1/1/2/-1", "1/7/2/-1"],
@@ -1701,17 +1717,17 @@ const theme = {
                 `calc(calc(calc(${t.colWidthDesktopBig} * 5) + 200px) * .605)`,
             ],
             position: "relative",
-            img: {
+            ".Intersectional__graphic-image": {
               position: "absolute",
               width: "100%",
               height: "100%",
             },
           },
-          ".text": {
+          ".Intersectional__text": {
             mt: [10, 16],
             mb: [12, 27],
             gridArea: ["2/1/3/-1", "1/3/2/6"],
-            p: {
+            ".Intersectional__text-text": {
               lineHeight: ["24px"],
               maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
             },
@@ -1720,33 +1736,35 @@ const theme = {
         thoughtful: {
           bg: "transparent",
           color: "black",
-          ".section1": {
+          ".Thoughtful__section1": {
             gridArea: ["1/1/2/-1", "1/3/2/8"],
             mt: [12, 16],
             mb: [5, 19],
-            h2: {},
-            p: {
+            ".Thoughtful__section1-header": {
+              ".Thoughtful__section1-header-text": {},
+            },
+            ".Thoughtful__section1-body": {
               mt: [3, 4],
               pr: [
                 "unset",
                 (t) => t.colWidthDesktop,
                 (t) => t.colWidthDesktopBig,
               ],
+              ".Thoughtful__section1-body-text": {},
             },
           },
-          ".section2": {
+          ".Thoughtful__section2": {
             gridArea: ["2/1/3/-1", "1/7/2/-2"],
             ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig],
             mt: [0, 26],
-            ".text": {
-              p: {
-                mt: 0,
-                pr: 0,
-              },
+            ".Thoughtful__section2-body": {
+              mt: 0,
+              pr: 0,
+              ".Thoughtful__section2-body-text": {},
             },
-            ".team": {
+            ".Thoughtful__section2-team": {
               mt: [3],
-              ".divider": {
+              ".Thoughtful__section2-team-divider": {
                 position: "relative",
                 height: "1px",
                 width: "100%",
@@ -1757,14 +1775,13 @@ const theme = {
                   bg: "#CACACE",
                 },
               },
-              ".header": {
+              ".Thoughtful__section2-team-header": {
                 mt: [1],
-                p: {
-                  fontWeight: "500",
+                ".Thoughtful__section2-team-header-text": {
                   fontFamily: "medium",
                 },
               },
-              ".links": {
+              ".Thoughtful__section2-team-links": {
                 mt: [0, 1],
                 mb: [12],
                 a: {
@@ -1773,7 +1790,6 @@ const theme = {
                 display: "flex",
                 flexFlow: ["column"],
                 p: {
-                  fontWeight: "500",
                   mt: 0,
                   fontFamily: "display",
                 },
@@ -1994,20 +2010,23 @@ const theme = {
         sharable: {
           bg: "transparent",
           color: "black",
-          ".text": {
+          ".Sharable__text": {
             display: "flex",
             flexFlow: "column",
             justifyContent: "center",
             mt: [12],
             mb: [5],
             gridArea: ["1/1/2/-1", "1/3/2/7"],
-            h2: {},
-            p: {
+            ".Sharable__text-header": {
+              ".Sharable__text-header-text": {},
+            },
+            ".Sharable__text-body": {
               mt: [3],
               maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+              ".Sharable__text-body-text": {},
             },
           },
-          ".graphic": {
+          ".Sharable__graphic": {
             gridArea: ["2/1/3/-1", "1/7/2/-1"],
             mt: [0, 16],
             mb: [13, 16],
@@ -2156,17 +2175,20 @@ const theme = {
         customizable: {
           bg: "transparent",
           color: "black",
-          ".text": {
+          ".Customizable__text": {
             gridArea: ["1/1/2/-1", "1/3/2/8"],
             mt: [10, 16],
             mb: [10, 16],
-            h2: {},
-            p: {
+            ".Customizable__text-header": {
+              ".Customizable__text-header-text": {},
+            },
+            ".Customizable__text-body": {
               mt: [3],
               maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+              ".Customizable__text-body-text": {},
             },
           },
-          ".graphic": {
+          ".Customizable__graphic": {
             gridArea: ["2/1/3/-1", "1/9/2/-1"],
             mt: [0, 16],
             mb: [9],
@@ -2333,11 +2355,12 @@ const theme = {
           bg: "transparent",
           position: "relative",
           color: "black",
-          ".graphic": {
+          ".Workflows__graphic": {
             mb: [10, 0],
             position: ["relative", "absolute"],
             gridArea: ["2/1/3/-1", "2/2/3/7"],
             ml: [0],
+            zIndex: 1,
             overflow: "hidden",
             height: ["unset", "100%"],
             width: [
@@ -2374,29 +2397,33 @@ const theme = {
               },
             },
           },
-          ".section1": {
+          ".Workflows__section1": {
             gridArea: ["1/1/2/-1", "1/6/2/-1"],
             zIndex: 99,
             mt: [6, 26],
             mb: [8, 5],
-            ".toptext": {
+            ".Workflows__section1-toptext": {
               mr: [
                 0,
                 (t) => `calc(calc(${t.colWidthDesktop} * 3) + 80px)`,
                 (t) => `calc(calc(${t.colWidthDesktopBig} * 3) + 80px)`,
               ],
-              h2: {},
-              p: {
+              ".Workflows__section1-toptext-header": {
+                ".Workflows__section1-toptext-header-text": {},
+              },
+              ".Workflows__section1-toptext-body": {
                 mt: [3],
                 maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+                ".Workflows__section1-toptext-body-text": {},
               },
             },
           },
-          ".section2": {
+          ".Workflows__section2": {
             gridArea: ["2/1/3/5", "2/6/3/-1"],
             mb: [10, 26],
-            ".categories": {
+            ".Workflows__section2-categories": {
               // mt: [8, 10],
+              zIndex: 99,
 
               pt: [1, 0],
               pb: [1, 0],
@@ -2405,7 +2432,7 @@ const theme = {
               flexFlow: ["column", "row"],
               justifyContent: ["space-between", "unset"],
 
-              ".category": {
+              ".Workflows__section2-categories-category": {
                 zIndex: 99,
                 width: [
                   "100%",
@@ -2414,12 +2441,16 @@ const theme = {
                 ],
                 mr: ["40px"],
 
-                ".title": {
-                  fontFamily: "display",
+                ".Workflows__section2-categories-category-header": {
+                  ".Workflows__section2-categories-category-header-text": {
+                    fontFamily: "display",
+                  },
                 },
-                ".body": {
+                ".Workflows__section2-categories-category-body": {
                   mt: [0, 2],
-                  fontFamily: "body",
+                  ".Workflows__section2-categories-category-body-text": {
+                    fontFamily: "body",
+                  },
                 },
               },
             },
@@ -2523,7 +2554,7 @@ const theme = {
         // },
         topcontent: {
           position: "relative",
-          ".buttonwrapper": {
+          ".TopContent__buttonWrapper": {
             position: "absolute",
             bottom: ["-28px", "-24px"],
             left: [
@@ -2533,18 +2564,55 @@ const theme = {
                 `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters}px)`,
             ],
           },
-          ".graphics": {
+          ".TopContent__graphics": {
             position: "absolute",
-            left: [(t) => `calc(calc(${t.colWidthMob} * 4) + 70px)`, "unset"],
+            left: [(t) => `calc(calc(${t.colWidthMob} * 4) + 80px)`, "unset"],
 
-            bottom: 0,
-            display: ["flex", "none"],
+            right: [
+              "unset",
+              (t) => t.desktopGutters,
+              (t) => t.desktopBigGutters,
+            ],
+            bottom: [0],
+            overflow: "hidden",
+            display: ["flex", "unset"],
             alignItems: "flex-end",
-            svg: {
-              width: "100%",
-              height: "100%",
+            ".TopContent__graphicsWrapper": {
+              width: [
+                (t) => `calc(calc(${t.colWidthMob} * 2) + 60px)`,
+                (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+                (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 160px)`,
+              ],
+              position: "relative",
+            },
+            ".TopContent__graphics-svg": {
+              position: "absolute",
+              width: [
+                (t) => `calc(calc(${t.colWidthMob} * 2) + 80px)`,
+                (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+                (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 160px)`,
+              ],
+              height: [
+                (t) => `calc(calc(calc(${t.colWidthMob} * 2) + 80px) * .85)`,
+                (t) =>
+                  `calc(calc(calc(${t.colWidthDesktop} * 4) + 160px) * .85)`,
+                (t) =>
+                  `calc(calc(calc(${t.colWidthDesktopBig} * 4) + 160px) * .85)`,
+              ],
               left: 0,
-              top: 0,
+              bottom: ["-20px", 0],
+              position: "relative",
+              svg: {
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                bottom: 0,
+                g: {
+                  circle: {
+                    strokeWidth: [4, 2],
+                  },
+                },
+              },
             },
           },
         },
@@ -2594,29 +2662,32 @@ const theme = {
         secure: {
           bg: "transparent",
           color: "black",
-          ".wrapper": {
+          ".Secure__wrapper": {
             gridArea: ["1/1/2/-1", "1/3/2/7"],
             mt: [4, 7],
             mb: [4],
             display: "flex",
             alignItems: "center",
-            ".text": {
-              h2: {},
-              p: {
-                mt: [3, 4],
+            ".Secure__wrapper-text": {
+              ".Secure__wrapper-text-header": {
+                ".Secure__wrapper-text-header-text": {},
               },
-              ".link": {
+              ".Secure__wrapper-text-body": {
+                mt: [3, 4],
+                ".Secure__wrapper-text-body-text": {},
+              },
+
+              ".Secure__wrapper-link": {
                 mt: [1],
                 p: {
                   mt: 0,
-
                   fontFamily: "medium",
                 },
               },
             },
           },
 
-          ".graphic": {
+          ".Secure__graphic": {
             mt: [0, 7],
             gridArea: ["2/1/3/-1", "1/7/2/-1"],
             ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig],
@@ -2827,25 +2898,29 @@ const theme = {
           mb: [3, 10],
           display: "flex",
           flexFlow: ["column", "unset"],
-          ".BetterInsights__toptext-heading": {
-            width: [
-              "100%",
-              (t) => t.desktopSectionWidth,
-              (t) => t.desktopSectionWidthBig,
-            ],
+          ".BetterInsights__toptext-header": {
+            ".BetterInsights__toptext-header-text": {
+              width: [
+                "100%",
+                (t) => t.desktopSectionWidth,
+                (t) => t.desktopSectionWidthBig,
+              ],
+            },
           },
           ".BetterInsights__toptext-body": {
-            mt: [3, 0],
-            width: [
-              "100%",
-              (t) => t.desktopSectionWidth,
-              (t) => t.desktopSectionWidthBig,
-            ],
-            ml: [
-              0,
-              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`,
-              (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 40px)`,
-            ],
+            ".BetterInsights__toptext-body-text": {
+              mt: [3, 0],
+              width: [
+                "100%",
+                (t) => t.desktopSectionWidth,
+                (t) => t.desktopSectionWidthBig,
+              ],
+              ml: [
+                0,
+                (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`,
+                (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 40px)`,
+              ],
+            },
           },
         },
 
@@ -4443,7 +4518,6 @@ const theme = {
           alignItems: "center",
           justifyContent: "center",
           p: {
-            // py: [2],
             m: 0,
             lineHeight: "18.88px",
             fontFamily: "medium",
@@ -4496,18 +4570,24 @@ const theme = {
             },
             ".Quote__textWrapper-text-body": {
               ml: [5],
-              fontFamily: "display",
-              fontSize: ["24px", "40px"],
-              lineHeight: ["31.2px", "48px"],
+
               maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+              ".Quote__textWrapper-text-body-text": {
+                fontFamily: "display",
+                fontSize: ["24px", "40px"],
+                lineHeight: ["31.2px", "48px"],
+              },
             },
             ".Quote__textWrapper-text-name": {
               mt: [4],
               ml: [5],
               mb: [8, 0],
-              lineHeight: ["20px"],
-              fontSize: ["14px"],
-              fontFamily: "body",
+
+              ".Quote__textWrapper-text-name-text": {
+                lineHeight: ["20px"],
+                fontSize: ["14px"],
+                fontFamily: "body",
+              },
             },
           },
         },

@@ -148,12 +148,41 @@ export const compensationLines = {
 export const compensationCircles = {
   initial: {
     scale: 0,
+    zIndex: 10,
   },
   animate: (i) => ({
     scale: 1,
+    zIndex: 10,
     transition: {
       delay: 3 + i * 0.2,
       duration: 0.3,
+    },
+  }),
+};
+
+export const personAnimation = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: (i) => ({
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      // delay: i * 0.2,
+    },
+  }),
+};
+
+export const personImageAnimation = {
+  hidden: {
+    opacity: 0,
+    scale: 0.5,
+  },
+  visible: (i) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      // delay: i * 0.2,
     },
   }),
 };

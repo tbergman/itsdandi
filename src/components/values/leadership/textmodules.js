@@ -4,6 +4,10 @@ import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
 import { rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import TextModule from "./textmodule";
 
 const TextModules = ({
   modules,
@@ -30,30 +34,20 @@ const TextModules = ({
           sx={{
             variant: "grid",
           }}
+          className="TextModules"
         >
-          <div className="wrapper">
+          <div className="TextModules__wrapper">
             {modules.map((module, i) => (
-              <div className="module" key={i}>
-                <div className="divider">
-                  <span />
-                </div>
-                <div className="section1">
-                  <Styled.h2>{module.header}</Styled.h2>
-                </div>
-                <div className="section2">
-                  <Styled.p>{module.body}</Styled.p>
-                  <div className="linksection">
-                    <Styled.p>{module.link_description}</Styled.p>
-                    <div className="link">
-                      <LearnMoreLink
-                        href={module.url}
-                        text={module.button_text}
-                        color="#335AFF"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <TextModule
+                key={i}
+                header={module.header}
+                body={module.body}
+                link={{
+                  description: module.link_description,
+                  url: module.url,
+                  text: module.button_text,
+                }}
+              />
             ))}
           </div>
         </div>

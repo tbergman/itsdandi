@@ -5,6 +5,10 @@ import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
 import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { globalSlideUp } from "../../../helpers/animations";
 
 const Secure = ({
   setNavbarStyling,
@@ -16,6 +20,20 @@ const Secure = ({
   content,
 }) => {
   const { header, body, button_text, url } = content;
+  const animationControls = useAnimation();
+
+  const { inView, ref, entry } = useInView({
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      animationControls.start((i) => {
+        return globalSlideUp.visible(i);
+      });
+    }
+  }, [inView]);
+
   return (
     <InView
       variant="pages.product.integrations.secure"
@@ -32,18 +50,47 @@ const Secure = ({
           sx={{
             variant: "grid",
           }}
+          className="Secure"
         >
-          <div className="wrapper">
-            <div className="text">
-              <Styled.h2>{header}</Styled.h2>
-              <Styled.p>{lineBreaks(body)}</Styled.p>
-              <div className="link">
+          <div className="Secure__wrapper">
+            <div ref={ref} className="Secure__wrapper-text">
+              <motion.div
+                initial="hidden"
+                animate={animationControls}
+                variants={globalSlideUp}
+                custom={0}
+                className="Secure__wrapper-text-header"
+              >
+                <Styled.h2 className="Secure__wrapper-text-header-text">
+                  {header}
+                </Styled.h2>
+              </motion.div>
+
+              <motion.div
+                initial="hidden"
+                animate={animationControls}
+                variants={globalSlideUp}
+                custom={1}
+                className="Secure__wrapper-text-body"
+              >
+                <Styled.p className="Secure__wrapper-text-body-text">
+                  {lineBreaks(body)}
+                </Styled.p>
+              </motion.div>
+
+              <motion.div
+                initial="hidden"
+                animate={animationControls}
+                variants={globalSlideUp}
+                custom={2}
+                className="Secure__wrapper-link"
+              >
                 <LearnMoreLink href={url} text={button_text} color="#335AFF" />
-              </div>
+              </motion.div>
             </div>
           </div>
 
-          <div className="graphic">
+          <div className="Secure__graphic">
             <ReactSVG src="/assets/svgs/biglock.svg" />
           </div>
         </div>

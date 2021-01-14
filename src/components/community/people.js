@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { motion } from "framer-motion";
 import { jsx, Styled } from "theme-ui";
 import { rootMargin, rootMarginSub } from "../../helpers/utils";
 import InView from "../inview";
@@ -41,18 +42,20 @@ const People = ({
             </div>
           </div>
 
-          <div className="people">
+          <motion.div className="people">
             {people.map((person, i) => (
               <Person
+                key={i}
                 images={{
                   desktop: person.desktop_image,
                   mobile: person.mobile_image,
                 }}
                 name={person.name}
                 title={person.title}
+                idx={i}
               />
             ))}
-          </div>
+          </motion.div>
         </div>
       </SubInView>
     </InView>

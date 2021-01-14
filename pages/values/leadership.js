@@ -66,8 +66,6 @@ const Values = (props) => {
       : body.classList.remove("menu-open");
   };
 
-  console.log(props);
-
   return (
     <div
       sx={{

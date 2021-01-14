@@ -3,6 +3,10 @@ import { jsx, Styled, useThemeUI } from "theme-ui";
 import { rootMargin, rootMarginSub } from "../../../helpers/utils";
 import InView from "../../inview";
 import SubInView from "../../subinview";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { globalSlideUp } from "../../../helpers/animations";
 
 const TextBlock = ({
   content,
@@ -15,6 +19,21 @@ const TextBlock = ({
   isDesktop,
 }) => {
   const { header, sections } = content;
+
+  const animationControls = useAnimation();
+
+  const { inView, ref, entry } = useInView({
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      animationControls.start((i) => {
+        return globalSlideUp.visible(i);
+      });
+    }
+  }, [inView]);
+
   return (
     <InView
       variant="pages.values.deijourney.textblock"
@@ -33,15 +52,29 @@ const TextBlock = ({
           }}
         >
           <div
+            ref={ref}
             className="TextBlock"
             sx={{
               variant: "grid",
             }}
           >
-            <Styled.h2 className="TextBlock__header">{header}</Styled.h2>
+            <motion.div
+              initial="hidden"
+              animate={animationControls}
+              variants={globalSlideUp}
+              custom={0}
+              className="TextBlock__header"
+            >
+              <Styled.h2 className="TextBlock__header-text">{header}</Styled.h2>
+            </motion.div>
+
             <div className="TextBlock__textWrapper">
               {sections.map((section, i) => (
-                <div
+                <motion.div
+                  initial="hidden"
+                  animate={animationControls}
+                  variants={globalSlideUp}
+                  custom={i + 1}
                   sx={{
                     mb: [3],
                   }}
@@ -54,7 +87,7 @@ const TextBlock = ({
                   <Styled.p className="TextBlock__textWrapper-section-body">
                     {section.body}
                   </Styled.p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

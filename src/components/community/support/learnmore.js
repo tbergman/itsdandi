@@ -4,6 +4,10 @@ import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
 import { rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { globalSlideUp } from "../../../helpers/animations";
+import { motion, useAnimation } from "framer-motion";
 
 const LearnMore = ({
   setNavbarStyling,
@@ -13,6 +17,20 @@ const LearnMore = ({
   setSubMenuStyling,
   isDesktop,
 }) => {
+  const animationControls = useAnimation();
+
+  const { inView, ref, entry } = useInView({
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      animationControls.start((i) => {
+        return globalSlideUp.visible(i);
+      });
+    }
+  }, [inView]);
+
   return (
     <InView
       variant="pages.community.support.learnmore"
@@ -26,6 +44,7 @@ const LearnMore = ({
         rootMargin={rootMarginSub(windowHeight)}
       >
         <div
+          ref={ref}
           sx={{
             variant: "grid",
           }}
@@ -41,7 +60,13 @@ const LearnMore = ({
             </picture>
           </div>
 
-          <div className="text">
+          <motion.div
+            initial="hidden"
+            animate={animationControls}
+            variants={globalSlideUp}
+            custom={0}
+            className="text"
+          >
             <Styled.h2>Your partners in change</Styled.h2>
             <Styled.p>
               DEI is a journey. Dandi’s Marketplace Partners are here to help
@@ -50,7 +75,7 @@ const LearnMore = ({
             <div className="link">
               <LearnMoreLink href="/" text={`Learn more`} color="#1A1A1D" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </SubInView>
     </InView>

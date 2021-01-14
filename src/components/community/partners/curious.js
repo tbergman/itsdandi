@@ -4,6 +4,10 @@ import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
 import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { globalSlideUp } from "../../../helpers/animations";
 
 const Curious = ({
   setNavbarStyling,
@@ -15,6 +19,20 @@ const Curious = ({
   content,
 }) => {
   const { header1, body1, header2, body2, button_text, url } = content;
+  const animationControls = useAnimation();
+
+  const { inView, ref, entry } = useInView({
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      animationControls.start((i) => {
+        return globalSlideUp.visible(i);
+      });
+    }
+  }, [inView]);
+
   return (
     <InView
       variant="pages.community.partners.curious"
@@ -31,26 +49,51 @@ const Curious = ({
           sx={{
             variant: "grid",
           }}
+          ref={ref}
         >
           <div className="row1">
-            <div className="section1">
+            <motion.div
+              initial="hidden"
+              animate={animationControls}
+              variants={globalSlideUp}
+              custom={0}
+              className="section1"
+            >
               <Styled.h2>{header1}</Styled.h2>
-            </div>
-            <div className="section2">
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              animate={animationControls}
+              variants={globalSlideUp}
+              custom={1}
+              className="section2"
+            >
               <Styled.p>{lineBreaks(body1)}</Styled.p>
-            </div>
+            </motion.div>
           </div>
 
           <div className="row2">
-            <div className="section1">
+            <motion.div
+              initial="hidden"
+              animate={animationControls}
+              variants={globalSlideUp}
+              custom={3}
+              className="section1"
+            >
               <Styled.h2>{header2}</Styled.h2>
-            </div>
-            <div className="section2">
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              animate={animationControls}
+              variants={globalSlideUp}
+              custom={4}
+              className="section2"
+            >
               <Styled.p>{lineBreaks(body2)}</Styled.p>
               <div className="link">
                 <LearnMoreLink href={url} text={button_text} color="#335AFF" />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </SubInView>
