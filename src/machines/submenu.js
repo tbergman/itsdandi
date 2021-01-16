@@ -1,6 +1,6 @@
-import { Machine } from "xstate";
+import { createMachine } from "xstate";
 
-export const SubMenuDesktopMachine = Machine({
+export const SubMenuDesktopMachine = createMachine({
   id: "SubMenuDesktopMachine",
   initial: "opened",
   states: {

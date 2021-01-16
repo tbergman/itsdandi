@@ -32,6 +32,7 @@ export const imageCarousel = {
       opacity: {
         duration: 0.5,
       },
+      delay: 0.45,
     },
   },
   exit: {

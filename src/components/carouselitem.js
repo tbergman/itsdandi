@@ -2,6 +2,7 @@
 import { jsx, Styled } from "theme-ui";
 import { motion, useAnimation, animationControls } from "framer-motion";
 import { useEffect } from "react";
+import ProgressBar from "./progressbar";
 
 const CarouselItem = ({
   header,
@@ -12,6 +13,8 @@ const CarouselItem = ({
   children,
 }) => {
   const animationControls = useAnimation();
+  const duration = 2;
+  const delay = 0.3;
 
   useEffect(() => {
     if (current) {
@@ -19,10 +22,10 @@ const CarouselItem = ({
         opacity: [0, 0, 1],
         maxHeight: [0, 1000, 1000],
         transition: {
-          duration: 2,
+          duration: duration,
           ease: "easeInOut",
-          times: [0, 0.25, 1],
-          delay: 0.8,
+          times: [0, 0.25, 0.2],
+          delay: delay,
         },
       });
     } else {
@@ -30,9 +33,9 @@ const CarouselItem = ({
         opacity: [1, 0, 0],
         maxHeight: [1000, 1000, 0],
         transition: {
-          duration: 2,
+          duration: duration,
           ease: "easeInOut",
-          times: [0, 0.2, 0.5],
+          times: [0, 0.1, 0.25],
         },
       });
     }
@@ -40,31 +43,14 @@ const CarouselItem = ({
 
   return (
     <div onClick={() => setCurrent(idx)} className="SharedCarousel__item">
-      <motion.div
-        // sx={{
-        //   color: current
-        //     ? "rgba(242, 242, 242, 1)"
-        //     : "rgba(242, 242, 242, 0.35)",
-        //   left: current ? 0 : "3px",
-        //   height: current ? "10%" : "100%",
-        // }}
-        className={
-          current
-            ? "SharedCarousel__item-header-progressBar active"
-            : "SharedCarousel__item-header-progressBar"
-        }
-      >
-        <motion.div
-          sx={{
-            bg: progressBarBg,
-          }}
-          className={
-            current
-              ? "SharedCarousel__item-header-progressBar-animation active"
-              : "SharedCarousel__item-header-progressBar-animation"
-          }
-        ></motion.div>
-      </motion.div>
+      <ProgressBar
+        current={current}
+        progressBarBg={progressBarBg}
+        animationSettings={{
+          duration,
+          delay,
+        }}
+      />
       <motion.div layout className="SharedCarousel__item-header">
         <Styled.p
           className="SharedCarousel__item-header-text"
