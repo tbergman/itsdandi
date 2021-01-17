@@ -81,6 +81,7 @@ const CompensationSvg = ({ isDesktop }) => {
               initial="initial"
               animate={circleControls}
               variants={compensationCircles}
+              custom={0}
               cx="990"
               cy="210.009"
               r="4"
@@ -103,6 +104,7 @@ const CompensationSvg = ({ isDesktop }) => {
               initial="initial"
               animate={circleControls}
               variants={compensationCircles}
+              custom={0}
               cx="990"
               cy="229.005"
               r="4"
@@ -125,6 +127,7 @@ const CompensationSvg = ({ isDesktop }) => {
               initial="initial"
               animate={circleControls}
               variants={compensationCircles}
+              custom={0}
               cx="990"
               cy="131.005"
               r="4"
@@ -147,6 +150,7 @@ const CompensationSvg = ({ isDesktop }) => {
               initial="initial"
               animate={circleControls}
               variants={compensationCircles}
+              custom={0}
               cx="990"
               cy="106.005"
               r="4"
