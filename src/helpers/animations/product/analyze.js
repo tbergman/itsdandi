@@ -38,7 +38,7 @@ export const InsightsCircle__parent = {
 
 export const InsightsCircle__fadeIn = {
   initial: {
-    opacity: 0.2,
+    opacity: 0.5,
   },
   animate: {
     opacity: 1,
