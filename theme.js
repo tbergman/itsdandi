@@ -4623,21 +4623,14 @@ const theme = {
         flexFlow: ["column wrap"],
         ".SharedCarousel__item": {
           position: "relative",
-          "&:hover": {
-            ".SharedCarousel__item-header": {
-              ".SharedCarousel__item-header-text": {
-                color: "rgba(242, 242, 242, 1)",
-              },
-            },
-          },
-
           mb: [2],
 
           ".SharedCarousel__item-header-progressBar": {
             position: "absolute",
             left: 0,
             top: "-5px",
-            height: ["32px"],
+            minHeight: "32px",
+            height: "80%",
             width: "2px",
             borderRadius: "6px",
             bg: "rgba(242, 242, 242, 0.24)",
@@ -4645,20 +4638,20 @@ const theme = {
               width: "100%",
               height: "0",
               borderRadius: "6px",
-              transition: "all 0ms linear",
+              // transition: "all 0ms linear",
               transformOrigin: "top center",
             },
-            ".active": {
-              transition: "all 7500ms 1000ms linear",
-              height: "100%",
-              minHeight: "unset",
-            },
+            // ".active": {
+            //   transition: "all 7500ms 1000ms linear",
+            //   height: "100%",
+            //   minHeight: "unset",
+            // },
           },
 
-          ".active": {
-            height: "80%",
-            minHeight: "32px",
-          },
+          // ".active": {
+          //   height: "80%",
+          //   minHeight: "32px",
+          // },
 
           ".SharedCarousel__item-header": {
             position: "relative",

@@ -10,6 +10,7 @@ const CarouselItem = ({
   setCurrent,
   progressBarBg,
   idx,
+  time,
   children,
 }) => {
   const animationControls = useAnimation();
@@ -49,6 +50,7 @@ const CarouselItem = ({
         animationSettings={{
           duration,
           delay,
+          time,
         }}
       />
       <motion.div layout className="SharedCarousel__item-header">
@@ -58,7 +60,11 @@ const CarouselItem = ({
             color: current
               ? "rgba(242, 242, 242, 1)"
               : "rgba(242, 242, 242, 0.35)",
-            transition: "color 100ms 250ms linear",
+            "&:hover": {
+              color: "rgba(242, 242, 242, 1)",
+              transition: "color 100ms linear",
+            },
+            transition: "color 100ms linear",
           }}
         >
           {header}

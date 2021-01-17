@@ -77,6 +77,7 @@ const CarouselMain = ({ description, items, inView }) => {
               header={slide.header}
               progressBarBg="turquoise"
               current={current === i}
+              time={time}
             >
               <Styled.p
                 sx={{
