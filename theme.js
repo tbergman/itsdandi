@@ -4666,6 +4666,7 @@ const theme = {
           ".SharedCarousel__item-body": {
             mt: [2],
             ml: [2],
+            maxHeight: 0,
             overflow: "hidden",
             ".SharedCarousel__item-body-text": {
               fontSize: ["16px"],

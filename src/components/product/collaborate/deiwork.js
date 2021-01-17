@@ -6,6 +6,7 @@ import { rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
 import { motion, AnimatePresence } from "framer-motion";
 import CarouselItem from "../../carouselitem";
+import { imageCarousel } from "../../../helpers/animations";
 
 const DeiWork = ({
   setNavbarStyling,
@@ -21,48 +22,10 @@ const DeiWork = ({
   const { header, body, carousel_item } = content;
 
   useEffect(() => {
-    const next = (current + 1) % slides.length;
+    const next = (current + 1) % carousel_item.length;
     const id = setTimeout(() => setCurrent(next), time);
     return () => clearTimeout(id);
   }, [current]);
-
-  const slides = [
-    {
-      header: "Dashboard templates",
-      body: `Inspired by the best dashboards we’ve seen on the platform, Dandi templates make it easy to start tracking the right things, right away.`,
-      imageUrl: ["/assets/images/03.3_dashboard_templats.png"],
-    },
-    {
-      header: "Visualizations",
-      body: `Export beautifully designed charts and graphs for readouts and presentations.`,
-      imageUrl: "/assets/images/03.2_visualisations.png",
-    },
-    {
-      header: "Assignments",
-      body: `Want to make sure someone follows up on a key piece of information? Assignments help keep everyone on track.`,
-      imageUrl: "/assets/images/03.2_assignments.png",
-    },
-    {
-      header: "Goals",
-      body: `Make sure you’re hitting all the little milestones along the way to the big ones.`,
-      imageUrl: "/assets/images/03.2_goals.png",
-    },
-  ];
-
-  const variants = {
-    enter: {
-      opacity: 0,
-      x: 1000,
-    },
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: {
-      x: -1000,
-      opacity: 0,
-    },
-  };
 
   return (
     <InView
@@ -117,6 +80,7 @@ const DeiWork = ({
                       header={slide.header}
                       progressBarBg="yellow"
                       current={current === i}
+                      time={time}
                     >
                       <Styled.p
                         sx={{
@@ -143,14 +107,10 @@ const DeiWork = ({
 
                   <motion.img
                     key={current}
-                    variants={variants}
+                    variants={imageCarousel}
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    transition={{
-                      x: { type: "spring", stiffness: 300, damping: 30 },
-                      opacity: { duration: 0.2 },
-                    }}
                     src={carousel_item[current].desktop_image}
                     alt=""
                   />

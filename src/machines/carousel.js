@@ -2,67 +2,40 @@ import { createMachine, assign } from "xstate";
 
 export const CarouselItemMachine = createMachine(
   {
-    id: "carousel",
-    initial: "inactive",
-    context: {
-      timer: 1,
-    },
+    id: "CarouselItem",
+    initial: "idle",
+
     states: {
+      idle: {
+        on: {
+          TOGGLE: {
+            target: "active",
+            cond: "isActive",
+          },
+        },
+      },
       inactive: {
         on: {
-          ACTIVATE: {
+          TOGGLE: {
             target: "active",
-            actions: "open",
+            cond: "isActive",
           },
         },
       },
       active: {
         on: {
-          DISABLE: {
+          TOGGLE: {
             target: "inactive",
-            actions: "close",
+            cond: "isNotActive",
           },
-          PAUSE: "paused",
-        },
-      },
-      paused: {
-        on: {
-          ACTIVATE: "active",
         },
       },
     },
   },
   {
-    actions: {
-      open: (ctx, event) => {
-        const { animationControls } = event.payload;
-
-        // run open animation
-        animationControls.start({
-          opacity: [0, 0, 1],
-          maxHeight: [0, 1000, 1000],
-          transition: {
-            duration: 2,
-            ease: "easeInOut",
-            times: [0, 0.25, 1],
-            delay: 0.8,
-          },
-        });
-      },
-      close: (ctx, event) => {
-        const { animationControls } = event.payload;
-
-        // run close animation
-        animationControls.start({
-          opacity: [1, 0, 0],
-          maxHeight: [1000, 1000, 0],
-          transition: {
-            duration: 2,
-            ease: "easeInOut",
-            times: [0, 0.2, 0.5],
-          },
-        });
-      },
+    guards: {
+      isActive: (_, event) => event.payload.current,
+      isNotActive: (_, event) => !event.payload.current,
     },
   }
 );

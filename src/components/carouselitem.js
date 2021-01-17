@@ -3,6 +3,8 @@ import { jsx, Styled } from "theme-ui";
 import { motion, useAnimation, animationControls } from "framer-motion";
 import { useEffect } from "react";
 import ProgressBar from "./progressbar";
+import { useMachine } from "@xstate/react";
+import { CarouselItemMachine } from "../machines/carousel";
 
 const CarouselItem = ({
   header,
@@ -14,11 +16,21 @@ const CarouselItem = ({
   children,
 }) => {
   const animationControls = useAnimation();
+  const [state, send] = useMachine(CarouselItemMachine);
   const duration = 2;
   const delay = 0.3;
 
   useEffect(() => {
-    if (current) {
+    send({
+      type: "TOGGLE",
+      payload: {
+        current,
+      },
+    });
+  }, [current]);
+
+  useEffect(() => {
+    if (state.matches("active")) {
       animationControls.start({
         opacity: [0, 0, 1],
         maxHeight: [0, 1000, 1000],
@@ -29,7 +41,7 @@ const CarouselItem = ({
           delay: delay,
         },
       });
-    } else {
+    } else if (state.matches("inactive")) {
       animationControls.start({
         opacity: [1, 0, 0],
         maxHeight: [1000, 1000, 0],
@@ -40,7 +52,7 @@ const CarouselItem = ({
         },
       });
     }
-  }, [current]);
+  }, [state]);
 
   return (
     <div onClick={() => setCurrent(idx)} className="SharedCarousel__item">
