@@ -256,7 +256,7 @@ const TopContent = ({ isDesktop, content, width }) => {
             />
           </motion.svg>
         ) : (
-          <svg
+          <motion.svg
             className="graphics__mobile-svg"
             width="150"
             height="50"
@@ -264,11 +264,15 @@ const TopContent = ({ isDesktop, content, width }) => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <line
-              x1="1"
-              y1="50"
-              x2="1"
-              y2="0"
+            <motion.path
+              initial="initial"
+              animate="animate"
+              variants={lineUp}
+              d="M1 50 L1 0"
+              // x1="1"
+              // y1="50"
+              // x2="1"
+              // y2="0"
               stroke="#335AFF"
               strokeWidth="2"
             />
@@ -296,11 +300,15 @@ const TopContent = ({ isDesktop, content, width }) => {
               stroke="#335AFF"
               strokeWidth="2"
             />
-            <line
-              x1="80"
-              y1="50"
-              x2="80"
-              y2="0"
+            <motion.path
+              initial="initial"
+              animate="animate"
+              variants={lineUp}
+              d="M80 50 L80 0"
+              // x1="80"
+              // y1="50"
+              // x2="80"
+              // y2="0"
               stroke="#335AFF"
               strokeWidth="2"
             />
@@ -328,7 +336,7 @@ const TopContent = ({ isDesktop, content, width }) => {
               stroke="#335AFF"
               strokeWidth="2"
             />
-          </svg>
+          </motion.svg>
         )}
       </div>
     </div>

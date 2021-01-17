@@ -196,6 +196,7 @@ export const lineUp = {
     pathLength: 1,
     transition: {
       duration: 1,
+      delay: 0.5,
     },
   },
 };
