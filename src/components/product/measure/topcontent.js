@@ -2,6 +2,9 @@
 import { ReactSVG } from "react-svg";
 import { jsx } from "theme-ui";
 import Button from "../button";
+import { motion } from "framer-motion";
+import { lineUp } from "../../../helpers/animations";
+
 const TopContent = ({ isDesktop, content, width }) => {
   const { url, button_text } = content;
 
@@ -17,7 +20,7 @@ const TopContent = ({ isDesktop, content, width }) => {
 
       <div className="graphics">
         {isDesktop ? (
-          <svg
+          <motion.svg
             className="graphics__desktop-svg"
             width="624"
             height="49"
@@ -25,11 +28,11 @@ const TopContent = ({ isDesktop, content, width }) => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <line
-              x1="3.33136"
-              y1="0.00390632"
-              x2="1.99803"
-              y2="48.0039"
+            <motion.path
+              initial="initial"
+              animate="animate"
+              variants={lineUp}
+              d="M1.99803 48.0039L1.99803 0.00390632"
               stroke="#335AFF"
               strokeWidth="2"
             />
@@ -57,11 +60,11 @@ const TopContent = ({ isDesktop, content, width }) => {
               stroke="#335AFF"
               strokeWidth="2"
             />
-            <line
-              x1="99.3314"
-              y1="0.00390632"
-              x2="97.998"
-              y2="48.0039"
+            <motion.path
+              initial="initial"
+              animate="animate"
+              variants={lineUp}
+              d="M97.998 48.0039L97.998 0.00390632"
               stroke="#335AFF"
               strokeWidth="2"
             />
@@ -97,11 +100,15 @@ const TopContent = ({ isDesktop, content, width }) => {
               stroke="#335AFF"
               strokeWidth="2"
             />
-            <line
-              x1="219.331"
-              y1="0.00390632"
-              x2="217.998"
-              y2="48.0039"
+            <motion.path
+              initial="initial"
+              animate="animate"
+              variants={lineUp}
+              d="M219.331 48.0039 L219.331 0.00390632"
+              // x1="219.331"
+              // y1="0.00390632"
+              // x2="217.998"
+              // y2="48.0039"
               stroke="#335AFF"
               strokeWidth="2"
             />
@@ -137,11 +144,15 @@ const TopContent = ({ isDesktop, content, width }) => {
               stroke="#335AFF"
               strokeWidth="2"
             />
-            <line
-              x1="339.331"
-              y1="0.00390632"
-              x2="337.998"
-              y2="48.0039"
+            <motion.path
+              initial="initial"
+              animate="animate"
+              variants={lineUp}
+              d="M339.331 48.0039 L339.331 0.00390632"
+              // x1="339.331"
+              // y1="0.00390632"
+              // x2="337.998"
+              // y2="48.0039"
               stroke="#335AFF"
               strokeWidth="2"
             />
@@ -177,22 +188,19 @@ const TopContent = ({ isDesktop, content, width }) => {
               stroke="#335AFF"
               strokeWidth="2"
             />
-            <line
-              x1="459.331"
-              y1="0.00390632"
-              x2="457.998"
-              y2="48.0039"
+            <motion.path
+              initial="initial"
+              animate="animate"
+              variants={lineUp}
+              d="M459.331 48.0039 L459.331 0.00390632"
+              // x1="459.331"
+              // y1="0.00390632"
+              // x2="457.998"
+              // y2="48.0039"
               stroke="#335AFF"
               strokeWidth="2"
             />
-            <line
-              x1="581.331"
-              y1="0.00390632"
-              x2="579.998"
-              y2="48.0039"
-              stroke="#335AFF"
-              strokeWidth="2"
-            />
+
             <line
               x1="483.335"
               y1="24.0039"
@@ -201,14 +209,7 @@ const TopContent = ({ isDesktop, content, width }) => {
               stroke="#335AFF"
               strokeWidth="2"
             />
-            <line
-              x1="605.335"
-              y1="24.0039"
-              x2="605.335"
-              y2="48.0039"
-              stroke="#335AFF"
-              strokeWidth="2"
-            />
+
             <line
               x1="507.335"
               y1="24.0039"
@@ -233,7 +234,27 @@ const TopContent = ({ isDesktop, content, width }) => {
               stroke="#335AFF"
               strokeWidth="2"
             />
-          </svg>
+            <motion.path
+              initial="initial"
+              animate="animate"
+              variants={lineUp}
+              d="M581.331 48.0039 L581.331 0.00390632"
+              // x1="581.331"
+              // y1="0.00390632"
+              // x2="579.998"
+              // y2="48.0039"
+              stroke="#335AFF"
+              strokeWidth="2"
+            />
+            <line
+              x1="605.335"
+              y1="24.0039"
+              x2="605.335"
+              y2="48.0039"
+              stroke="#335AFF"
+              strokeWidth="2"
+            />
+          </motion.svg>
         ) : (
           <svg
             className="graphics__mobile-svg"
