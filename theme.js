@@ -2153,6 +2153,7 @@ const theme = {
               ml: [0],
               mt: [6, 0],
               position: "relative",
+              overflow: "hidden",
               height: [
                 0,
                 (t) =>
