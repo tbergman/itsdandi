@@ -5,7 +5,7 @@ import ItemSymbol from "./itemsymbol";
 import { useMachine } from "@xstate/react";
 import { infoBoxMachine } from "../../machines/pricing";
 
-const TableRow = ({ row, idx }) => {
+const TableRow = ({ row, idx, isDesktop }) => {
   const [state, send] = useMachine(infoBoxMachine);
 
   return (
@@ -16,39 +16,47 @@ const TableRow = ({ row, idx }) => {
             justifyContent: "flex-start",
           }}
           className="Table__body-row-grid-item"
-          onMouseLeave={() => send("CLOSE")}
+          onMouseLeave={() => (isDesktop ? send("CLOSE") : null)}
         >
-          <Styled.p className="Table__body-row-grid-item-title">
-            {row.row_header}
-            <svg
-              onMouseEnter={() => send("OPEN")}
-              className="Table__body-row-grid-item-title-infoIcon"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8.49 6.5V11.3H7.5V6.5H8.49ZM7.5 5.5V4.5H8.49V5.5H7.5Z"
-                fill="#F2F2F2"
-                fillOpacity="0.7"
-              />
-              <circle
-                cx="8"
-                cy="8"
-                r="5.5"
-                stroke="#F2F2F2"
-                strokeOpacity="0.7"
-              />
-            </svg>
+          <div className="Table__body-row-grid-item-title">
+            <Styled.p className="Table__body-row-grid-item-title-text">
+              {row.row_header}
+              <svg
+                onMouseEnter={() => (isDesktop ? send("OPEN") : null)}
+                onClick={() => {
+                  return !isDesktop ? send("OPEN") : null;
+                }}
+                className="Table__body-row-grid-item-title-infoIcon"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.49 6.5V11.3H7.5V6.5H8.49ZM7.5 5.5V4.5H8.49V5.5H7.5Z"
+                  fill="#F2F2F2"
+                  fillOpacity="0.7"
+                />
+                <circle
+                  cx="8"
+                  cy="8"
+                  r="5.5"
+                  stroke="#F2F2F2"
+                  strokeOpacity="0.7"
+                />
+              </svg>
+            </Styled.p>
             <InfoBox
               open={state.matches("opened")}
               body={row.infobox_body}
               url={row.infobox_url}
               buttonText={row.infobox_button_text}
+              state={state}
+              send={send}
+              isDesktop={isDesktop}
             />
-          </Styled.p>
+          </div>
         </div>
         <div
           sx={{

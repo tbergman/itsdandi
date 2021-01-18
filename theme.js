@@ -2993,50 +2993,53 @@ const theme = {
                   mt: [3, "18px"],
                   mb: [3, "18px"],
                   ".Table__body-row-grid-item-title": {
+                    mr: [3, 0],
                     position: "relative",
-                    display: "flex",
-                    alignItems: "center",
-                    mr: [2, 0],
+                    ".Table__body-row-grid-item-title-text": {
+                      display: "inline",
+                      // display: "flex",
+                      // alignItems: "center",
+                      mr: [0],
+                    },
+
                     ".Table__body-row-grid-item-title-infoIcon": {
-                      display: ["none", "unset"],
                       width: "20px",
                       height: "20px",
-                      ml: [2],
+                      ml: [1],
                       cursor: "pointer",
+                      transform: "translateY(4px)",
+                      // position: ["absolute", "unset"],
+                      // bottom: ["5%"],
                     },
                   },
 
                   ".Table__body-row-grid-item-infoBox": {
-                    display: "none",
-                  },
-                  ".Table__body-row-grid-item-infoBox-open": {
-                    display: "block",
-
                     position: "absolute",
                     zIndex: 998,
                     bg: "black",
                     boxShadow:
                       "0px 0px 1px rgba(0, 0, 0, 0.75), 0px 8px 30px rgba(0, 0, 0, 0.45)",
                     borderRadius: "8px",
-                    left: "110%",
+                    left: ["20px", "110%"],
+                    bottom: "-200%",
                     py: [4],
                     px: [4],
-                    ".LearnMoreLink": {
-                      width: ["272px"],
-                      p: {
-                        fontFamily: "display",
-                      },
-                      ".arrow": {
-                        svg: {
-                          width: "15px !important",
-                          height: "16px !important",
-                        },
-                      },
-                    },
                   },
                   ".Table__body-row-grid-item-infoBox-body": {
                     width: ["272px"],
                     mb: [2],
+                  },
+                  ".Table__body-row-grid-item-infoBox-link": {
+                    width: ["272px"],
+                    p: {
+                      fontFamily: "display",
+                    },
+                    ".arrow": {
+                      svg: {
+                        width: "unset",
+                        height: "unset",
+                      },
+                    },
                   },
 
                   ".Table__body-row-grid-item-symbol": {

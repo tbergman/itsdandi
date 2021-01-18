@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Table__circle } from "../../helpers/animations/pricing";
 import TableRow from "./tablerow";
 
-const Table = ({ width, content }) => {
+const Table = ({ width, content, isDesktop }) => {
   const tableBodyRef = useRef(null);
   const [tableBodyHeight, setTableBodyHeight] = useState(0);
 
@@ -80,7 +80,7 @@ const Table = ({ width, content }) => {
       </div>
       <motion.div ref={tableBodyRef} className="Table__body">
         {row_data.map((row, i) => (
-          <TableRow key={i} row={row} idx={i} />
+          <TableRow key={i} row={row} idx={i} isDesktop={isDesktop} />
         ))}
       </motion.div>
     </div>

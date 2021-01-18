@@ -26,3 +26,15 @@ export const Table__circle = {
     },
   }),
 };
+
+export const InfoBox__fadeIn = {
+  initial: { opacity: 0, visibility: "hidden" },
+  animate: {
+    opacity: 1,
+    visibility: "visible",
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+};

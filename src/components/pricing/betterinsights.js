@@ -69,7 +69,7 @@ const BetterInsights = ({
             </Styled.p>
           </motion.div>
         </div>
-        <Table width={width} content={content} />
+        <Table width={width} content={content} isDesktop={isDesktop} />
       </div>
     </InView>
   );
