@@ -3,45 +3,12 @@ import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
 import { useRef, useState, useEffect } from "react";
 import LearnMoreLink from "../learnmorelink";
-
-const ItemSymbol = ({ input_, color }) => {
-  switch (input_) {
-    case "circle": {
-      return (
-        <svg viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="50" fill={color} />
-        </svg>
-      );
-    }
-    case "circlesmall": {
-      return (
-        <svg viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" fill={color} />
-        </svg>
-      );
-    }
-    case "empty": {
-      return null;
-    }
-    default: {
-      return (
-        <Styled.p
-          sx={{
-            color: color,
-            writingMode: ["vertical-rl", "unset"],
-            textAlign: ["right", "unset"],
-          }}
-        >
-          {input_}
-        </Styled.p>
-      );
-    }
-  }
-};
+import { motion } from "framer-motion";
+import { Table__circle } from "../../helpers/animations/pricing";
+import TableRow from "./tablerow";
 
 const Table = ({ width, content }) => {
   const tableBodyRef = useRef(null);
-  const [hoveredId, setHoveredId] = useState(null);
   const [tableBodyHeight, setTableBodyHeight] = useState(0);
 
   useEffect(() => {
@@ -111,106 +78,11 @@ const Table = ({ width, content }) => {
           <Styled.p className="Table__head-item-text">{head_item2}</Styled.p>
         </div>
       </div>
-      <div ref={tableBodyRef} className="Table__body">
+      <motion.div ref={tableBodyRef} className="Table__body">
         {row_data.map((row, i) => (
-          <div className="Table__body-row" key={i}>
-            <div className="Table__body-row-grid">
-              <div
-                sx={{
-                  justifyContent: "flex-start",
-                }}
-                className="Table__body-row-grid-item"
-              >
-                <Styled.p className="Table__body-row-grid-item-title">
-                  {row.row_header}
-                  <svg
-                    onMouseEnter={() => setHoveredId(i)}
-                    onMouseLeave={() => setHoveredId(null)}
-                    className="Table__body-row-grid-item-title-infoIcon"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8.49 6.5V11.3H7.5V6.5H8.49ZM7.5 5.5V4.5H8.49V5.5H7.5Z"
-                      fill="#F2F2F2"
-                      fillOpacity="0.7"
-                    />
-                    <circle
-                      cx="8"
-                      cy="8"
-                      r="5.5"
-                      stroke="#F2F2F2"
-                      strokeOpacity="0.7"
-                    />
-                  </svg>
-                </Styled.p>
-                <div
-                  className={`Table__body-row-grid-item-infoBox${
-                    hoveredId === i ? "-open" : ""
-                  }`}
-                >
-                  <Styled.p className="Table__body-row-grid-item-infoBox-body">
-                    {row.infobox_body}
-                  </Styled.p>
-                  <LearnMoreLink
-                    className="Table__body-row-grid-item-infoBox-link"
-                    href={row.infobox_url}
-                    color="#F9D2FF"
-                    text={row.infobox_button_text}
-                  />
-                </div>
-              </div>
-              <div
-                sx={{
-                  justifyContent: "center",
-                }}
-                className="Table__body-row-grid-item"
-              >
-                <ItemSymbol
-                  className="Table__body-row-grid-item-symbol"
-                  input_={row.dandi_column}
-                  color="#FFD93B"
-                />
-              </div>
-              <div
-                sx={{
-                  justifyContent: "center",
-                }}
-                className="Table__body-row-grid-item"
-              >
-                <ItemSymbol
-                  className="Table__body-row-grid-item-symbol"
-                  input_={
-                    row.general_column === "freetext"
-                      ? row.general_freetext
-                      : row.general_column
-                  }
-                  color="#CACACE"
-                />
-              </div>
-              <div
-                sx={{
-                  justifyContent: "center",
-                }}
-                className="Table__body-row-grid-item"
-              >
-                <ItemSymbol
-                  className="Table__body-row-grid-item-symbol"
-                  input_={
-                    row.inhouse_column === "freetext"
-                      ? row.inhouse_freetext
-                      : row.inhouse_column
-                  }
-                  color="#CACACE"
-                />
-              </div>
-            </div>
-          </div>
+          <TableRow key={i} row={row} idx={i} />
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
