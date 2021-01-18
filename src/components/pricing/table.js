@@ -136,7 +136,7 @@ const Table = ({ width, content }) => {
                     <path
                       d="M8.49 6.5V11.3H7.5V6.5H8.49ZM7.5 5.5V4.5H8.49V5.5H7.5Z"
                       fill="#F2F2F2"
-                      fill-opacity="0.7"
+                      fillOpacity="0.7"
                     />
                     <circle
                       cx="8"

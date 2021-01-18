@@ -10,6 +10,7 @@ import devices from "../src/helpers/devices";
 import { useState, useEffect } from "react";
 import SubNavigation from "../src/components/subnavigation";
 import Butter from "buttercms";
+import { isServer } from "../src/helpers/utils";
 
 import {
   motion,
@@ -83,6 +84,7 @@ const Pricing = (props) => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navigation.white}
         windowHeight={windowHeight}
+        isServer={isServer()}
         content={{
           ...props.header,
         }}
