@@ -8,8 +8,6 @@ import { infoBoxMachine } from "../../machines/pricing";
 const TableRow = ({ row, idx }) => {
   const [state, send] = useMachine(infoBoxMachine);
 
-  console.log(state.value);
-
   return (
     <div className="Table__body-row">
       <div className="Table__body-row-grid">
