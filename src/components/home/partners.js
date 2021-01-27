@@ -27,11 +27,13 @@ const Partners = ({
 
   useEffect(() => {
     if (refRowOne.current && refRowTwo.current) {
-      setAnimationWidthRow1(`-${refRowOne.current.offsetWidth}px`)
-      setAnimationWidthRow2(`-${refRowTwo.current.offsetWidth}px`)
+      setAnimationWidthRow1(`-${refRowOne.current.offsetWidth/2}px`)
+      setAnimationWidthRow2(`-${refRowTwo.current.offsetWidth/2}px`)
     
     }
   }, [refRowOne,refRowTwo])
+
+  console.log(animationWidthRow1);
 
   return (
     <InView
@@ -58,7 +60,7 @@ const Partners = ({
                   x: ["0px", animationWidthRow1],
                 }}
                 transition={{
-                  duration: 30,
+                  duration: 60,
                   loop: Infinity,
                   ease: "linear",
                 }}
