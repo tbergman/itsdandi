@@ -713,7 +713,7 @@ const theme = {
         ".Quotes__imageWrapper": {
           gridArea: ["1/1/2/-1", "1/1/2/6"],
           position: "relative",
-          overflow: ["hidden"],
+          overflow: "hidden",
           width: [
             "100vw",
             (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
@@ -722,9 +722,9 @@ const theme = {
           ],
           height: [
             "calc(100vw * .64)",
-            (t) => `calc(calc(calc(${t.colWidthDesktop} * 5) + 200px) * 1.3)`,
+            (t) => `calc(calc(calc(${t.colWidthDesktop} * 5) + 200px) )`,
             (t) =>
-              `calc(calc(calc(calc(${t.colWidthDesktopBig} * 5) + 160px) + ${t.desktopBigGutters}) * 1.3)`,
+              `calc(calc(calc(calc(${t.colWidthDesktopBig} * 5) + 160px) + ${t.desktopBigGutters}) )`,
           ],
           left: ["-20px", "-40px", (t) => `calc(${t.desktopBigGutters} / -1)`],
           picture: {
@@ -733,11 +733,12 @@ const theme = {
             height: ["100%"],
             top: [0],
             left: 0,
-            bottom: 0,
-            right: 0,
+  
             img: {
+              // objectFit:'contain',
               width: "100%",
               height: "100%",
+      
             },
           },
         },
