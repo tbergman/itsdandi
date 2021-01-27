@@ -5,8 +5,8 @@ export const TopContentLines = {
   animate: {
     pathLength: 1,
     transition: {
-      duration: 1,
-      delay: 0.5,
+      duration: .5,
+      delay: 0.25,
     },
   },
 };
@@ -18,8 +18,8 @@ export const TopContentCircles = {
   animate: {
     scale: 1,
     transition: {
-      duration: 0.5,
-      delay: 1.5,
+      duration: 0.25,
+      delay: .75,
     },
   },
 };

@@ -5,8 +5,8 @@ export const TopContent__circle = {
   animate: {
     pathLength: 1,
     transition: {
-      duration: 1,
-      delay: 0.5,
+      duration: .5,
+      delay: 0.25,
     },
   },
 };

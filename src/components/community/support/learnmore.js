@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
-import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
@@ -16,7 +16,9 @@ const LearnMore = ({
   subMenuStyling,
   setSubMenuStyling,
   isDesktop,
+  content
 }) => {
+  const  {header,body,button_text,url} = content;
   const animationControls = useAnimation();
 
   const { inView, ref, entry } = useInView({
@@ -67,13 +69,12 @@ const LearnMore = ({
             custom={0}
             className="text"
           >
-            <Styled.h2>Your partners in change</Styled.h2>
+            <Styled.h2>{header}</Styled.h2>
             <Styled.p>
-              DEI is a journey. Dandi’s Marketplace Partners are here to help
-              you navigate the challenges you meet along the way.
+              {lineBreaks(body)}
             </Styled.p>
             <div className="link">
-              <LearnMoreLink href="/" text={`Learn more`} color="#1A1A1D" />
+              <LearnMoreLink href={url} text={button_text} color="#1A1A1D" />
             </div>
           </motion.div>
         </div>

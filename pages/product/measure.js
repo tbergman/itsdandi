@@ -202,6 +202,7 @@ export async function getStaticProps() {
     const butter = Butter(process.env.BUTTER_CMS);
     const response = await butter.page.retrieve("*", "product_measure");
 
+
     return {
       props: {
         ...response.data.data.fields,

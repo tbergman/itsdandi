@@ -3,7 +3,7 @@ import { ReactSVG } from "react-svg";
 import { jsx } from "theme-ui";
 import Button from "../button";
 import { motion } from "framer-motion";
-import { lineUp } from "../../../helpers/animations";
+import { lineUp } from "../../../helpers/animations/product/measure";
 
 const TopContent = ({ isDesktop, content, width }) => {
   const { url, button_text } = content;

@@ -49,9 +49,10 @@ const Footer = () => {
         </div>
         <div className="newsletter">
           <LearnMoreLink
-            href="/"
+            href="https://www.dandiweekly.com"
             text="Sign up for newsletter"
             color="#FFD93B"
+            external={true}
           />
         </div>
         <div className="logo">

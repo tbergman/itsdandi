@@ -3,7 +3,7 @@ import { ReactSVG } from "react-svg";
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../../learnmorelink";
 import InView from "../../inview";
-import { rootMargin, rootMarginSub } from "../../../helpers/utils";
+import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
@@ -17,7 +17,9 @@ const Partners = ({
   setSubMenuStyling,
   navBarStyling,
   isDesktop,
+  content
 }) => {
+  const {header,body,button_text, url } = content;
   const animationControls = useAnimation();
 
   const { inView, ref, entry } = useInView({
@@ -62,7 +64,7 @@ const Partners = ({
               className="Partners__text-header"
             >
               <Styled.h2 className="Partners__text-header-text">
-                Partners in transformation
+               {header}
               </Styled.h2>
             </motion.div>
 
@@ -74,8 +76,7 @@ const Partners = ({
               className="Partners__text-body"
             >
               <Styled.p className="Partners__text-body-text">
-                Dandi’s Marketplace Partners are here to help you navigate the
-                challenges you meet along the way.
+                {lineBreaks(body)}
               </Styled.p>
             </motion.div>
 
@@ -86,7 +87,7 @@ const Partners = ({
               custom={1}
               className="Partners__link"
             >
-              <LearnMoreLink href="/" text="Learn more" color="#335AFF" />
+              <LearnMoreLink href={url} text={button_text} color="#335AFF" />
             </motion.div>
           </motion.div>
         </div>
