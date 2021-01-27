@@ -9,7 +9,7 @@ import {
 import InView from "../inview";
 import theme from "../../../theme";
 import { rootMargin } from "../../helpers/utils";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 const Partners = ({
@@ -20,6 +20,18 @@ const Partners = ({
   content,
 }) => {
   const { header, logosRow1, logosRow2 } = content;
+  const refRowOne = useRef(null);
+  const refRowTwo = useRef(null);
+  const [animationWidthRow1, setAnimationWidthRow1] = useState("0px");
+  const [animationWidthRow2, setAnimationWidthRow2] = useState("0px");
+
+  useEffect(() => {
+    if (refRowOne.current && refRowTwo.current) {
+      setAnimationWidthRow1(`-${refRowOne.current.offsetWidth}px`)
+      setAnimationWidthRow2(`-${refRowTwo.current.offsetWidth}px`)
+    
+    }
+  }, [refRowOne,refRowTwo])
 
   return (
     <InView
@@ -41,8 +53,9 @@ const Partners = ({
           <div className="Partners__logoCarousel-rowWrapper">
             <div className="Partners__logoCarousel-rowWrapper-container">
               <motion.div
+              ref={refRowOne}
                 animate={{
-                  x: ["0px", `-${logosRow1.length * 250}px`],
+                  x: ["0px", animationWidthRow1],
                 }}
                 transition={{
                   duration: 30,
@@ -114,14 +127,15 @@ const Partners = ({
           <div className="Partners__logoCarousel-rowWrapper">
             <div className="Partners__logoCarousel-rowWrapper-container">
               <motion.div
-                animate={{
-                  x: ["0px", `-${logosRow2.length * 250}px`],
-                }}
-                transition={{
-                  duration: 9,
-                  loop: Infinity,
-                  ease: "linear",
-                }}
+              ref={refRowTwo}
+                // animate={{
+                //   x: ["0px", animationWidthRow2],
+                // }}
+                // transition={{
+                //   duration: 15,
+                //   loop: Infinity,
+                //   ease: "linear",
+                // }}
                 className="Partners__logoCarousel-rowWrapper-container-row"
               >
                 {logosRow2.map((url, i) => (
