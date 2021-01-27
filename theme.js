@@ -80,14 +80,14 @@ const theme = {
   },
 
   desktopMaxSectionWidth: "475px",
-  desktopBigGutters: `calc(100vw * .1)`,
+  desktopBigGutters: `calc(100vw * .12)`,
   desktopGutters: `40px`,
   mobileGutters: `20px`,
   colWidthMob: `calc(calc(100vw - 140px)/6)`,
   colWidthDesktop: `calc(calc(calc(100vw - 440px) - 80px)/12)`,
-  colWidthDesktopBig: `calc(calc(100vw - calc(calc(calc(100vw * .1) * 2) + 440px)) / 12)`,
+  colWidthDesktopBig: `calc(calc(100vw - calc(calc(calc(100vw * .12) * 2) + 440px)) / 12)`,
   desktopSectionWidth: `calc(calc(calc(calc(calc(100vw - 440px) - 80px) /12) * 4) + 160px)`,
-  desktopSectionWidthBig: `calc(calc(calc(calc(calc(100vw - 440px) - 400px) /12) * 4) + 160px)`,
+  desktopSectionWidthBig: `calc(calc(calc(calc(calc(100vw - 440px) - calc(calc(100vw * .12) * 2)) / 12) * 4) + 160px)`,
   grid: {
     display: "grid",
     gridTemplateColumns: ["repeat(6,1fr)", "repeat(12,1fr)"],
@@ -2115,6 +2115,7 @@ const theme = {
             svg: {
               width: "100%",
               height: "100%",
+              maxHeight:'375px'
             },
           },
         },
@@ -2293,7 +2294,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 120px)`,
             ],
             height: ["126px", "34em"],
-            bottom: [0, "-7em"],
+            bottom: [0, "-5em"],
             right: [0, "40px", (t) => t.desktopBigGutters],
             overflow: "hidden",
             ".TopContent__graphics-chainsDesktop": {
@@ -2302,6 +2303,7 @@ const theme = {
               bottom: ["-35%", 0],
               height: ["unset", "100%"],
               width: ["unset", "100%"],
+              maxHeight:'400px'
             },
             ".TopContent__graphics-chainsMobile": {
               position: "absolute",
@@ -2619,6 +2621,7 @@ const theme = {
                 position: "absolute",
                 height: "100%",
                 width: "100%",
+                maxHeight:['unset','375px'],
                 bottom: 0,
                 g: {
                   circle: {

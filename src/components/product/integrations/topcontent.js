@@ -2,6 +2,7 @@
 import { ReactSVG } from "react-svg";
 import { jsx } from "theme-ui";
 import Button from "../button";
+import {motion } from 'framer-motion';
 
 const TopContent = ({ isDesktop, content }) => {
   const { button_text, url } = content;
@@ -18,14 +19,14 @@ const TopContent = ({ isDesktop, content }) => {
       <div className="TopContent__graphics">
         <div className="TopContent__graphicsWrapper">
           <div className="TopContent__graphics-svg">
-            <svg
+            <motion.svg
               width="465"
               height="395"
               viewBox="0 0 465 395"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <mask
+              {/* <mask
                 id="mask0"
                 mask-type="alpha"
                 maskUnits="userSpaceOnUse"
@@ -35,24 +36,63 @@ const TopContent = ({ isDesktop, content }) => {
                 height="395"
               >
                 <rect y="0.00390625" width="465" height="394" fill="#C4C4C4" />
-              </mask>
-              <g mask="url(#mask0)">
-                <circle
+              </mask> */}
+              {/* <g mask="url(#mask0)"> */}
+                <motion.circle
+                style={{
+                  x:10,y:-10
+                }}
+                initial={{
+                  scale:.8,
+                  x:10,
+                  y:-10
+                }}
+                animate={{
+                  scale:1,
+                  x:0,
+                  y:0
+            
+                }}
+                transition={{
+            
+                  scale:{ duration:.2,},
+                 
+                  
+
+                }}
                   cx="390.5"
                   cy="152.504"
                   r="65.5"
                   stroke="#00FCFF"
-                  strokeWidth="4"
+                  strokeWidth="2"
                 />
-                <circle
+                <motion.circle
+                style={{
+                  x:-20,
+                  y:10
+                }}
+                initial={{
+                  scale:.8,
+                  x:-20,
+                  y:10
+                }}
+                animate={{
+                  scale:1,
+                  x:0,y:0
+                }}
+                transition={{
+         
+                  scale:{duration:.2,},
+
+                }}
                   cx="233"
                   cy="315.004"
                   r="203"
                   stroke="#335AFF"
-                  strokeWidth="4"
+                  strokeWidth="2"
                 />
-              </g>
-            </svg>
+              {/* </g> */}
+            </motion.svg>
           </div>
         </div>
       </div>
