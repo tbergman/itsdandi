@@ -43,3 +43,14 @@ export const scrollToBottom = (window, height) => {
 
   return;
 };
+
+export const pricingCalulation = (employees) => {
+  if (employees <=500) {
+    return 5000
+  }
+
+  const adjustedEmployees = employees - 500;
+
+  return 5000 + (adjustedEmployees * 10)
+
+}
