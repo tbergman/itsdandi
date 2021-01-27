@@ -38,23 +38,23 @@ const Header = ({
         {!isServer && (
           <motion.div className="graphic">
             <motion.div
-              initial="initial"
-              animate="animate"
-              variants={Header__scaleUp}
+              // initial="initial"
+              // animate="animate"
+              // variants={Header__scaleUp}
               custom={isDesktop}
               className="box1"
             />
             <motion.div
-              initial="initial"
-              animate="animate"
-              variants={Header__scaleUp}
+              // initial="initial"
+              // animate="animate"
+              // variants={Header__scaleUp}
               custom={isDesktop}
               className="box2"
             />
             <motion.div
-              initial="initial"
-              animate="animate"
-              variants={Header__scaleUp}
+              // initial="initial"
+              // animate="animate"
+              // variants={Header__scaleUp}
               custom={isDesktop}
               className="box3"
             />

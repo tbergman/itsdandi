@@ -23,7 +23,7 @@ const Calculator = ({ description, label }) => {
         />
       </div>
       <div className="result">
-        <Styled.h1>{`$${employees * 25}/y`}</Styled.h1>
+        <Styled.h1>{`$${(employees * 25).toLocaleString()}/y`}</Styled.h1>
       </div>
     </div>
   );

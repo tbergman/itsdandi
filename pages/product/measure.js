@@ -99,6 +99,7 @@ const Product = (props) => {
       <SubMenuMobile
         subPages={subPages_.subPages}
         subMenuStyling={subMenuStyling}
+        slidesPerView={3}
       />
       <SubMenuDesktop
         subPages={subPages_.subPages}

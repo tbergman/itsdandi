@@ -46,7 +46,7 @@ const BigLogo = ({
       animationControls.start({
         scale: scaleTo,
         transition: {
-          duration: 1,
+          duration: .5,
           ease: "easeOut",
         },
       });

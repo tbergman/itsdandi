@@ -8,7 +8,7 @@ import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper-bundle.min.css";
 import "swiper/components/navigation/navigation.min.css";
 
-const SubMenuMobile = ({ subPages, subMenuStyling }) => {
+const SubMenuMobile = ({ subPages, subMenuStyling,slidesPerView }) => {
   SwiperCore.use([Navigation]);
 
   return (
@@ -29,9 +29,12 @@ const SubMenuMobile = ({ subPages, subMenuStyling }) => {
             nextEl: ".SubMenu__mobileContainer-right",
             prevEl: ".SubMenu__mobileContainer-left",
           }}
-          spaceBetween={0}
-          slidesPerView={3}
-          speed="2000"
+          spaceBetween={24}
+          slidesPerView={slidesPerView}
+          speed={800}
+       
+    
+        
         >
           {subPages.map((page, i) => (
             <SwiperSlide key={i}>

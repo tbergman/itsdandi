@@ -47,6 +47,7 @@ const LearnMore = ({
         sx={{
           variant: "grid",
         }}
+        id="learnmore"
         className="LearnMore"
       >
         <TextParallax />
@@ -61,7 +62,7 @@ const LearnMore = ({
             />
           </picture>
         </div>
-        <motion.div ref={ref} className="LearnMore__text">
+        <motion.div ref={ref}   className="LearnMore__text">
           <motion.div
             initial="hidden"
             custom={1}

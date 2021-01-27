@@ -78,15 +78,17 @@ const theme = {
     violet: "#F9D2FF",
     lightViolet: "#FDF1FF",
   },
-  colWidthMob: `calc(calc(100vw - 140px)/6)`,
-  colWidthDesktop: `calc(calc(100vw - 520px)/12)`,
-  colWidthDesktopBig: `calc(calc(100vw - 680px)/12)`,
-  desktopSectionWidth: `calc(calc(calc(calc(100vw - 520px)/12) * 4) + 160px)`,
-  desktopSectionWidthBig: `calc(calc(calc(calc(100vw - 680px)/12) * 4) + 160px)`,
+
   desktopMaxSectionWidth: "475px",
-  desktopBigGutters: 120,
+  desktopBigGutters: 200,
   desktopGutters: 40,
   mobileGutters: 20,
+
+  colWidthMob: `calc(calc(100vw - 140px)/6)`,
+  colWidthDesktop: `calc(calc(calc(100vw - 440px) - 80px)/12)`,
+  colWidthDesktopBig: `calc(calc(calc(100vw - 440px) - 400px) /12)`,
+  desktopSectionWidth: `calc(calc(calc(calc(calc(100vw - 440px) - 80px) /12) * 4) + 160px)`,
+  desktopSectionWidthBig: `calc(calc(calc(calc(calc(100vw - 440px) - 400px) /12) * 4) + 160px)`,
   grid: {
     display: "grid",
     gridTemplateColumns: ["repeat(6,1fr)", "repeat(12,1fr)"],
@@ -307,15 +309,17 @@ const theme = {
         position: "relative",
         ".LearnMore__toptext": {
           position: "fixed",
+          cursor:'pointer',
           bottom: 0,
           zIndex: 99,
+          opacity:1,
+          transition:'opacity 400ms ease-in',
 
           // gridArea: ["1/2/2/-1", "1/7/2/-1"],
           ml: [
             (t) => `calc(calc(${t.colWidthMob} * 2) + 30px)`,
-            (t) => `calc(calc(${t.colWidthDesktop} * 7) + 280px)`,
-            (t) =>
-              `calc(calc(calc(${t.colWidthDesktopBig} * 7) + 240px) + ${t.desktopBigGutters}px)`,
+            (t) => `calc(calc(${t.colWidthDesktop} * 7) + 240px)`,
+            (t) => `calc(calc(${t.colWidthDesktopBig} * 7) + 240px)`,
           ],
           // mt: [13, 0],
           mb: [1, 2],
@@ -333,6 +337,10 @@ const theme = {
             width: ["55px"],
             pt: ["4%", "1.6%"],
           },
+        },
+        '.hidden':{
+          opacity:0,
+          transition:'opacity 200ms ease-in',
         },
         ".LearnMore__imageWrapper": {
           gridArea: ["2/1/3/-1", "1/6/2/-1"],
@@ -4112,10 +4120,17 @@ const theme = {
         ".SubMenu__mobileContainer": {
           ".swiper-container": {
             height: "100%",
+         
           },
           ".swiper-wrapper": {
             px: ["20px"],
+
+            '.swiper-slide':{
+              // width:'auto !important'
+            },
           },
+
+       
 
           ".SubMenu__mobileContainer-arrow": {
             cursor: "pointer",

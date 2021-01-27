@@ -1,6 +1,6 @@
 export const Header__scaleUp = {
   initial: (isDesktop) => ({
-    scale: 0,
+    scale: .8,
     originX: isDesktop ? "50%" : "100%",
     originY: "100%",
   }),

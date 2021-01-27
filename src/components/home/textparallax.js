@@ -1,19 +1,45 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import {useState} from 'react';
 
 const TextParallax = () => {
   const { scrollY } = useViewportScroll();
   const parallaxY = useTransform(scrollY, [0, 500], [0, -750]);
-  const fadeOut = useTransform(scrollY, [0, 400], [1, 0]);
+  const [visible, setVisible] = useState(true);
+
+
+  const scrollToText = () => {
+    const el = document.getElementById("learnmore")
+    if (el) {
+      el.scrollIntoView({
+        behavior:'smooth',
+      });
+    }
+
+return;
+
+  }
+
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      setVisible(currPos.y < 100);
+    },
+    [],
+    null,
+    true,
+    250,
+    null
+  );
 
   return (
     <motion.div
+    onClick={()=>scrollToText()}
       style={{
         y: parallaxY,
-        opacity: fadeOut,
       }}
-      className="LearnMore__toptext"
+      className={visible ? "LearnMore__toptext" : "LearnMore__toptext hidden"}
     >
       <motion.svg
         className="LearnMore__toptext-text-arrow"
