@@ -9,7 +9,7 @@ import {
   personImageAnimation,
 } from "../../helpers/animations";
 
-const Person = ({ images, name, title, idx }) => {
+const Person = ({ images, name, title,company,linkedin, idx }) => {
   const textAnimation = useAnimation();
   const imageAnimation = useAnimation();
 
@@ -50,7 +50,7 @@ const Person = ({ images, name, title, idx }) => {
         className="text"
       >
         <Styled.p className="name">{name}</Styled.p>
-        <Styled.p className="title">{title}</Styled.p>
+        <Styled.p className="title">{`${title},  ${company}`}</Styled.p>
       </motion.div>
     </div>
   );

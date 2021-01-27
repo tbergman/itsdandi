@@ -52,6 +52,8 @@ const People = ({
                 }}
                 name={person.name}
                 title={person.title}
+                company={person.company}
+                linkedin={person.linkedin}
                 idx={i}
               />
             ))}
