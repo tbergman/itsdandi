@@ -56,14 +56,14 @@ const Partners = ({
             <div className="Partners__logoCarousel-rowWrapper-container">
               <motion.div
               ref={refRowOne}
-                animate={{
-                  x: ["0px", animationWidthRow1],
-                }}
-                transition={{
-                  duration: 60,
-                  loop: Infinity,
-                  ease: "linear",
-                }}
+                // animate={{
+                //   x: ["0px", animationWidthRow1],
+                // }}
+                // transition={{
+                //   duration: 60,
+                //   loop: Infinity,
+                //   ease: "linear",
+                // }}
                 className="Partners__logoCarousel-rowWrapper-container-row"
               >
                 {logosRow1.map((url, i) => (
