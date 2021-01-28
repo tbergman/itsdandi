@@ -4787,10 +4787,12 @@ const theme = {
               width: [
                 "160px",
                 (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
+                (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 80px)`,
               ],
               height: [
                 "160px",
                 (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
+                (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 80px)`,
               ],
               img: {
                 position: "absolute",
