@@ -7,6 +7,8 @@ import { useRef, useEffect} from 'react';
 const TopContent = ({ isDesktop }) => {
   const chainGroup = useRef(null)
   const topChain = useRef(null)
+  const topChainMobile = useRef(null)
+  const chainGroupMobile = useRef(null)
 
   useEffect(() => {
     if(isDesktop) {
@@ -26,6 +28,26 @@ const TopContent = ({ isDesktop }) => {
         delay:.1,
         duration:.5,ease:"back.out(2)"
       })
+    } else {
+      // fix mobile
+      // gsap.fromTo([topChainMobile.current],{
+      //   rotate:50
+      // },{
+      //   rotate:0,
+      //   delay:.1,
+      //   duration:.5,
+      //   ease:"back.out(2)",
+      //   transformOrigin:'10% 90%'
+      // })
+      // gsap.fromTo([chainGroupMobile.current],{
+      //   rotate:-10,
+      // },{
+      //   rotate:0,
+      //   delay:.1,
+      //   duration:.5,
+      //   ease:'back.out(2)',
+      //   transformOrigin:'50% 50%'
+      // })
     }
    
   }, [])
@@ -110,6 +132,7 @@ const TopContent = ({ isDesktop }) => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <rect
+          
               x="-0.498146"
               y="1.32122"
               width="36.6589"
@@ -119,6 +142,9 @@ const TopContent = ({ isDesktop }) => {
               stroke="#335AFF"
               strokeWidth="2"
             />
+            <g
+              ref={chainGroupMobile}
+            >
             <rect
               x="-1.19601"
               y="-0.757047"
@@ -129,7 +155,11 @@ const TopContent = ({ isDesktop }) => {
               stroke="#FFD93B"
               strokeWidth="2"
             />
-            <rect
+            <g
+       
+              ref={topChainMobile}
+            >      
+              <rect
               x="-0.570172"
               y="1.29202"
               width="36.483"
@@ -138,7 +168,11 @@ const TopContent = ({ isDesktop }) => {
               transform="matrix(0.362731 0.931894 -0.932904 0.360125 134.883 1.36979)"
               stroke="#F9D2FF"
               strokeWidth="2"
-            />
+            /></g>
+
+            </g>
+          
+      
             <path
               d="M70.043 112.859L67.2272 112.86"
               stroke="#335AFF"

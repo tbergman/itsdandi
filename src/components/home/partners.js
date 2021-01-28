@@ -11,6 +11,8 @@ import theme from "../../../theme";
 import { rootMargin } from "../../helpers/utils";
 import { useState, useEffect,useRef } from "react";
 import { useInView } from "react-intersection-observer";
+import {gsap} from 'gsap';
+
 
 const Partners = ({
   setNavbarStyling,
@@ -20,20 +22,23 @@ const Partners = ({
   content,
 }) => {
   const { header, logosRow1, logosRow2 } = content;
-  const refRowOne = useRef(null);
-  const refRowTwo = useRef(null);
-  const [animationWidthRow1, setAnimationWidthRow1] = useState("0px");
-  const [animationWidthRow2, setAnimationWidthRow2] = useState("0px");
+  const rowWrapper1 = useRef(null)
+  const cards = ["card 1","card 2","card 3","card 4","card 5","card 6","card 7","card 8","card 9", "card 10"]
 
   useEffect(() => {
-    if (refRowOne.current && refRowTwo.current) {
-      setAnimationWidthRow1(`-${refRowOne.current.offsetWidth/2}px`)
-      setAnimationWidthRow2(`-${refRowTwo.current.offsetWidth/2}px`)
-    
-    }
-  }, [refRowOne,refRowTwo])
 
-  console.log(animationWidthRow1);
+
+
+    gsap.to('.Partners__logoCarousel-rowWrapper-container-row-imageWrapper',{
+      duration:10,
+      ease:'none',
+      x:"+=3000",
+      modifiers:{
+        x: gsap.utils.unitize(x=>parseFloat(x) % 200)
+      },
+      // repeat:-1
+    })
+  }, [])
 
   return (
     <InView
@@ -51,22 +56,24 @@ const Partners = ({
         <div className="Partners__text">
           <Styled.h2 className="Partners__text-header">{header}</Styled.h2>
         </div>
-        <motion.div className="Partners__logoCarousel">
-          <div className="Partners__logoCarousel-rowWrapper">
+        <div className="Partners__logoCarousel">
+          <div className="Partners__logoCarousel-rowWrapper"
+          
+          ref={rowWrapper1}  >
             <div className="Partners__logoCarousel-rowWrapper-container">
-              <motion.div
-              ref={refRowOne}
-                // animate={{
-                //   x: ["0px", animationWidthRow1],
-                // }}
-                // transition={{
-                //   duration: 60,
-                //   loop: Infinity,
-                //   ease: "linear",
-                // }}
+              <div
+     
                 className="Partners__logoCarousel-rowWrapper-container-row"
               >
-                {logosRow1.map((url, i) => (
+                {cards.map((card,i)=><div className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper" style={{
+                  width:'300px',
+                  height:'100%',
+                  backgroundColor:'salmon',
+                  display:'flex',
+                  justifyContent:'center',
+                  alignItems:'center'
+                }} key={i}>{card}</div>)}
+                {/* {logosRow1.map((url, i) => (
                   <div
                     className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
                     key={i}
@@ -84,60 +91,16 @@ const Partners = ({
                       />
                     </picture>
                   </div>
-                ))}
-                {logosRow1.map((url, i) => (
-                  <div
-                    className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
-                    key={i}
-                  >
-                    <picture>
-                      <source
-                        media="(min-width: 800px)"
-                        srcSet={url.desktop_image}
-                      ></source>
-                      <source srcSet={url.mobile_image}></source>
-                      <img
-                        className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper-image"
-                        src={url.desktop_image}
-                        alt=""
-                      />
-                    </picture>
-                  </div>
-                ))}
-                {logosRow1.map((url, i) => (
-                  <div
-                    className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
-                    key={i}
-                  >
-                    <picture>
-                      <source
-                        media="(min-width: 800px)"
-                        srcSet={url.desktop_image}
-                      ></source>
-                      <source srcSet={url.mobile_image}></source>
-                      <img
-                        className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper-image"
-                        src={url.desktop_image}
-                        alt=""
-                      />
-                    </picture>
-                  </div>
-                ))}
-              </motion.div>
+                ))} */}
+             
+              </div>
             </div>
           </div>
           <div className="Partners__logoCarousel-rowWrapper">
-            <div className="Partners__logoCarousel-rowWrapper-container">
-              <motion.div
-              ref={refRowTwo}
-                // animate={{
-                //   x: ["0px", animationWidthRow2],
-                // }}
-                // transition={{
-                //   duration: 15,
-                //   loop: Infinity,
-                //   ease: "linear",
-                // }}
+            {/* <div className="Partners__logoCarousel-rowWrapper-container">
+              <div
+          
+    
                 className="Partners__logoCarousel-rowWrapper-container-row"
               >
                 {logosRow2.map((url, i) => (
@@ -159,29 +122,11 @@ const Partners = ({
                     </picture>
                   </div>
                 ))}
-                {logosRow2.map((url, i) => (
-                  <div
-                    className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
-                    key={i}
-                  >
-                    <picture>
-                      <source
-                        media="(min-width: 800px)"
-                        srcSet={url.desktop_image}
-                      ></source>
-                      <source srcSet={url.mobile_image}></source>
-                      <img
-                        className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
-                        src={url.desktop_image}
-                        alt=""
-                      />
-                    </picture>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
+              
+              </div>
+            </div> */}
           </div>
-        </motion.div>
+        </div>
       </div>
     </InView>
   );
