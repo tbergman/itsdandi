@@ -2,10 +2,39 @@
 import { ReactSVG } from "react-svg";
 import { jsx } from "theme-ui";
 import Button from "../button";
-import {motion } from 'framer-motion';
+import {gsap} from 'gsap';
+import {useRef, useEffect} from 'react';
 
 const TopContent = ({ isDesktop, content }) => {
   const { button_text, url } = content;
+  const smallCircle = useRef(null);
+  const bigCircle = useRef(null)
+
+  useEffect(() => {
+    gsap.fromTo([smallCircle.current],{
+      x:10,
+      y:-50,
+      scale:.8
+    },{
+      y:0,
+      x:0,
+      scale:1,
+      delay:.1,
+      duration:.5,
+      ease:"back.out(2)"
+
+    })
+    gsap.fromTo([bigCircle.current],{
+      x:-10,
+      scale:.8
+    },{
+      x:0,
+      scale:1,
+      delay:.1,
+      duration:.5,
+      ease:"back.out(2)"
+    })
+  }, [])
   return (
     <div
       sx={{
@@ -19,7 +48,7 @@ const TopContent = ({ isDesktop, content }) => {
       <div className="TopContent__graphics">
         <div className="TopContent__graphicsWrapper">
           <div className="TopContent__graphics-svg">
-            <motion.svg
+            <svg
               width="465"
               height="395"
               viewBox="0 0 465 395"
@@ -38,53 +67,18 @@ const TopContent = ({ isDesktop, content }) => {
                 <rect y="0.00390625" width="465" height="394" fill="#C4C4C4" />
               </mask> */}
               {/* <g mask="url(#mask0)"> */}
-                <motion.circle
-                style={{
-                  x:10,y:-10
-                }}
-                initial={{
-                  scale:.8,
-                  x:10,
-                  y:-10
-                }}
-                animate={{
-                  scale:1,
-                  x:0,
-                  y:0
-            
-                }}
-                transition={{
-            
-                  scale:{ duration:.2,},
-                 
-                  
-
-                }}
+                <circle
+                  ref={smallCircle}
+              
+               
                   cx="390.5"
                   cy="152.504"
                   r="65.5"
                   stroke="#00FCFF"
                   strokeWidth="2"
                 />
-                <motion.circle
-                style={{
-                  x:-20,
-                  y:10
-                }}
-                initial={{
-                  scale:.8,
-                  x:-20,
-                  y:10
-                }}
-                animate={{
-                  scale:1,
-                  x:0,y:0
-                }}
-                transition={{
-         
-                  scale:{duration:.2,},
-
-                }}
+                <circle
+                  ref={bigCircle}
                   cx="233"
                   cy="315.004"
                   r="203"
@@ -92,7 +86,7 @@ const TopContent = ({ isDesktop, content }) => {
                   strokeWidth="2"
                 />
               {/* </g> */}
-            </motion.svg>
+            </svg>
           </div>
         </div>
       </div>
