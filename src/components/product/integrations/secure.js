@@ -7,8 +7,10 @@ import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect,useRef } from "react";
 import { globalSlideUp } from "../../../helpers/animations";
+import {gsap} from 'gsap';
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 
 const Secure = ({
   setNavbarStyling,
@@ -21,35 +23,27 @@ const Secure = ({
 }) => {
   const { header, body, button_text, url } = content;
   const animationControls = useAnimation();
-  const lockAnimation = useAnimation();
-  const lockVariant = {
-    initial: {
-      scale: 0,
-      originX: "50%",
-      originY: "75%",
-    },
-    animate: {
-      scale: 0.5,
-      originX: "50%",
-      originY: "75%",
-      transition: {
-        duration: 1,
-      },
-    },
-  };
+const lockHandle = useRef(null)
+const keyHole = useRef(null)
 
   const { inView, ref, entry } = useInView({
     triggerOnce: true,
   });
 
+
   useEffect(() => {
     if (inView) {
+      console.log('hello')
       animationControls.start((i) => {
         return globalSlideUp.visible(i);
       });
-      lockAnimation.start(() => {
-        return lockVariant.animate;
-      });
+      gsap.registerPlugin(DrawSVGPlugin);
+      gsap.to([lockHandle.current],{
+  
+        drawSVG:0,
+        duration:3
+      })
+
     }
   }, [inView]);
 
@@ -110,7 +104,7 @@ const Secure = ({
           </div>
 
           <div className="Secure__graphic">
-            <motion.svg
+            <svg
               width="150"
               height="236"
               viewBox="0 0 150 236"
@@ -118,15 +112,13 @@ const Secure = ({
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
+              ref={lockHandle}
                 d="M124 184.004H25V50.5039C25 23.1658 47.1619 1.00391 74.5 1.00391V1.00391C101.838 1.00391 124 23.1658 124 50.5039V105.504"
                 stroke="#335AFF"
-                stroke-width="2"
+                strokeWidth="2"
               />
               <circle cx="75" cy="160.004" r="75" fill="#FFD93B" />
-              <motion.rect
-                initial="initial"
-                animate={lockAnimation}
-                variants={lockVariant}
+              <rect
                 x="67"
                 y="140.004"
                 width="16"
@@ -134,7 +126,7 @@ const Secure = ({
                 rx="8"
                 fill="white"
               />
-            </motion.svg>
+            </svg>
           </div>
         </div>
       </SubInView>

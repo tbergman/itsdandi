@@ -9,22 +9,25 @@ const TopContent = ({ isDesktop }) => {
   const topChain = useRef(null)
 
   useEffect(() => {
-    gsap.fromTo([chainGroup.current],{
-      rotate:-30,
-    },{
-      rotate:0,
-      delay:.1,
-      duration:.5,
-      ease:"back.out(2)"
-    })
-
-    gsap.fromTo([topChain.current],{
-      rotate:50
-    },{
-      rotate:0,
-      delay:.1,
-      duration:.5,ease:"back.out(2)"
-    })
+    if(isDesktop) {
+      gsap.fromTo([chainGroup.current],{
+        rotate:-30,
+      },{
+        rotate:0,
+        delay:.1,
+        duration:.5,
+        ease:"back.out(2)"
+      })
+  
+      gsap.fromTo([topChain.current],{
+        rotate:50
+      },{
+        rotate:0,
+        delay:.1,
+        duration:.5,ease:"back.out(2)"
+      })
+    }
+   
   }, [])
   return (
     <div
