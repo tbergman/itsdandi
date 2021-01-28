@@ -35,6 +35,7 @@ const TopContent = ({ isDesktop, content }) => {
       ease:"back.out(2)"
     })
   }, [])
+  
   return (
     <div
       sx={{

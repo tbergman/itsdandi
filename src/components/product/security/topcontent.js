@@ -1,8 +1,31 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import Button from "../button";
+import {gsap} from 'gsap';
+import { useRef, useEffect} from 'react';
 
 const TopContent = ({ isDesktop }) => {
+  const chainGroup = useRef(null)
+  const topChain = useRef(null)
+
+  useEffect(() => {
+    gsap.fromTo([chainGroup.current],{
+      rotate:-30,
+    },{
+      rotate:0,
+      delay:.1,
+      duration:.5,
+      ease:"back.out(2)"
+    })
+
+    gsap.fromTo([topChain.current],{
+      rotate:50
+    },{
+      rotate:0,
+      delay:.1,
+      duration:.5,ease:"back.out(2)"
+    })
+  }, [])
   return (
     <div
       className="TopContent"
@@ -37,6 +60,12 @@ const TopContent = ({ isDesktop }) => {
               stroke="#335AFF"
               strokeWidth="2"
             />
+            <g
+              ref={chainGroup}
+              style={{
+                transformOrigin:'0% 80%'
+              }}
+            >
             <rect
               x="-1.00785"
               y="-0.993877"
@@ -47,6 +76,12 @@ const TopContent = ({ isDesktop }) => {
               stroke="#FFD93B"
               strokeWidth="2"
             />
+            <g
+              ref={topChain}
+              style={{
+                transformOrigin:'10% 30%'
+              }}
+            >
             <rect
               x="-0.0573572"
               y="1.41107"
@@ -57,6 +92,10 @@ const TopContent = ({ isDesktop }) => {
               stroke="#F9D2FF"
               strokeWidth="2"
             />
+            </g>
+            
+            </g>
+        
           </svg>
         ) : (
           <svg
