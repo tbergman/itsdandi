@@ -10,7 +10,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useEffect,useRef } from "react";
 import { globalSlideUp } from "../../../helpers/animations";
 import {gsap} from 'gsap';
-import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+
 
 const Secure = ({
   setNavbarStyling,
@@ -37,12 +37,7 @@ const keyHole = useRef(null)
       animationControls.start((i) => {
         return globalSlideUp.visible(i);
       });
-      gsap.registerPlugin(DrawSVGPlugin);
-      gsap.to([lockHandle.current],{
-  
-        drawSVG:0,
-        duration:3
-      })
+
 
     }
   }, [inView]);
