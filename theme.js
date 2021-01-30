@@ -574,8 +574,8 @@ const theme = {
           width: "100vw",
           left: ["-20px", "-40px", (t) => `calc(${t.desktopBigGutters} / -1)`],
           position: "relative",
-          overflowY: "hidden",
-          overFlowX: "hidden",
+          // overflowY: "hidden",
+          // overFlowX: "hidden",
           display: "flex",
           flexFlow: "column",
           ".Partners__logoCarousel-rowWrapper": {
@@ -589,20 +589,23 @@ const theme = {
             position: "absolute",
             overflowX: "hidden",
             overflowY:'hidden',
-            top: 0,
-            left: 0,
+            // top: 0,
+            // left: 0,
           },
 
           ".Partners__logoCarousel-rowWrapper-container-row": {
-            width: "fit-content",
+            // width: "fit-content",
             position: "relative",
-            display: "flex",
+            // display: "flex",
+
             height: "100%",
-            flexFlow: ["row nowrap"],
-            alignItems: "center",
+
+            // flexFlow: ["row nowrap"],
+            // alignItems: "center",
           },
           ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper": {
-            flex: "0 0 auto",
+            // flex: "0 0 auto",
+            position:'absolute',
             // display: "flex",
             // alignItems: "center",
             // justifyContent: "center",

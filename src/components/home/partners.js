@@ -20,25 +20,48 @@ const Partners = ({
   navBarStyling,
   isDesktop,
   content,
+  isServer
 }) => {
   const { header, logosRow1, logosRow2 } = content;
   const rowWrapper1 = useRef(null)
-  const cards = ["card 1","card 2","card 3","card 4","card 5","card 6","card 7","card 8","card 9", "card 10"]
-
+  const containerRow1 = useRef(null)
+ 
   useEffect(() => {
+    if (!isServer) {
+   // offset row container
+   const offsetAmount = `-${rowWrapper1.current.clientWidth * 2}px`
+
+   containerRow1.current.style.right =  offsetAmount
+
+   let totalWidth = 0;
+   const elements = Array.from(rowWrapper1.current.querySelectorAll('.Partners__logoCarousel-rowWrapper-container-row-imageWrapper'))
+   elements.reverse().map((val,key,arr)=>{
+     if (key===0){
+       totalWidth = -(val.clientWidth +elements[0].clientWidth)
+     } else {
+       totalWidth = totalWidth - val.clientWidth
+     }
+     gsap.set(val,{
+       x: totalWidth
+     })
+   })
+
+   const animateWidth = totalWidth + elements[0].clientWidth;
+
+   gsap.to(elements,{
+     duration:45,
+     ease:'none',
+     x:`+=${animateWidth}`,
+     modifiers:{
+       x:gsap.utils.unitize(x=>parseFloat(x) % animateWidth)
+     },
+     repeat:-1
+   })
+    }
+ 
 
 
-
-    gsap.to('.Partners__logoCarousel-rowWrapper-container-row-imageWrapper',{
-      duration:10,
-      ease:'none',
-      x:"+=3000",
-      modifiers:{
-        x: gsap.utils.unitize(x=>parseFloat(x) % 200)
-      },
-      // repeat:-1
-    })
-  }, [])
+  }, [isServer])
 
   return (
     <InView
@@ -60,20 +83,15 @@ const Partners = ({
           <div className="Partners__logoCarousel-rowWrapper"
           
           ref={rowWrapper1}  >
-            <div className="Partners__logoCarousel-rowWrapper-container">
+            <div
+            
+            className="Partners__logoCarousel-rowWrapper-container">
               <div
-     
+                ref={containerRow1}
                 className="Partners__logoCarousel-rowWrapper-container-row"
               >
-                {cards.map((card,i)=><div className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper" style={{
-                  width:'300px',
-                  height:'100%',
-                  backgroundColor:'salmon',
-                  display:'flex',
-                  justifyContent:'center',
-                  alignItems:'center'
-                }} key={i}>{card}</div>)}
-                {/* {logosRow1.map((url, i) => (
+           
+                 {logosRow1.map((url, i) => (
                   <div
                     className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
                     key={i}
@@ -91,7 +109,7 @@ const Partners = ({
                       />
                     </picture>
                   </div>
-                ))} */}
+                ))} 
              
               </div>
             </div>
