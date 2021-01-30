@@ -11,7 +11,6 @@ import { useEffect,useRef } from "react";
 import { globalSlideUp } from "../../../helpers/animations";
 import {gsap} from 'gsap';
 
-
 const Secure = ({
   setNavbarStyling,
   navBarStyling,
