@@ -4126,20 +4126,14 @@ const theme = {
         height: "40px",
         overflow: "hidden",
         zIndex: 99,
+        borderBottom: ["1px solid #CACACE", "none"],
 
         ".SubMenu__mobileContainer": {
-          ".swiper-container": {
-            height: "100%",
-         
-          },
-          ".swiper-wrapper": {
-            px: ["20px"],
-
-            '.swiper-slide':{
-              // width:'auto !important'
-            },
-          },
-
+          px:['20px'],
+          display:'flex',
+          height: ["100%"],
+          width: "fit-content",
+  
        
 
           ".SubMenu__mobileContainer-arrow": {
@@ -4178,13 +4172,11 @@ const theme = {
               transform: "rotate(-90deg)",
             },
           },
-          ".swiper-button-disabled": {
-            visibility: "hidden",
-          },
+    
           ".SubMenu__mobileContainer-draggable-item": {
             height: "100%",
             cursor: "pointer",
-            // flex: ["0 0 125px", "unset"],
+            pr:[3],
             display: ["flex", "unset"],
             justifyContent: ["space-between", "unset"],
             alignItems: "center",
@@ -4200,9 +4192,7 @@ const theme = {
               color: "inherit",
               fontFamily: "medium",
             },
-            "&:hover": {
-              opacity: ["unset", 1],
-            },
+    
           },
           ".current": {
             opacity: 1,
@@ -4216,9 +4206,7 @@ const theme = {
           //   alignItems: ["center", "unset"],
 
           // },
-          height: ["100%", "unset"],
-          width: "100%",
-          borderBottom: ["1px solid #CACACE", "none"],
+
         },
       },
       desktop: {

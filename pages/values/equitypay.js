@@ -132,7 +132,7 @@ const Values = (props) => {
           }}
         />
       </Header>
-      <Compensation
+      {/* <Compensation
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.white}
         setNavbarStyling={setNavbarStyling}
@@ -190,7 +190,7 @@ const Values = (props) => {
         content={{
           ...props.affordable,
         }}
-      />
+      /> */}
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
