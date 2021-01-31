@@ -11,13 +11,26 @@ const SubMenuMobile = ({ subPages, subMenuStyling,slidesPerView }) => {
   const swipeWrapper = useRef(null)
   useEffect(() => {
     gsap.registerPlugin(Draggable);
+
+    // element positions
+    const elements = gsap.utils.toArray(swiper.current.querySelectorAll(".SubMenu__mobileContainer-draggable-item"));
+
+    const snapGrid = elements.map((val,i,arr)=>val.clientWidth)
+
+    
+
     Draggable.create(swiper.current,{
       inertia:true,
       type:'x',
       bounds:swipeWrapper.current,
-      
-
-
+      throwProps:true,
+      throwResistance:0,
+      snap:{
+        x:(value)=>{
+          console.log(value)
+          return value
+        }
+      }
     });
    
 
