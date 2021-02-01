@@ -4128,6 +4128,48 @@ const theme = {
         zIndex: 99,
         borderBottom: ["1px solid #CACACE", "none"],
 
+        ".SubMenu__arrow": {
+          cursor: "pointer",
+          path: {
+            stroke: "#CACACE",
+          },
+        },
+        ".SubMenu__left": {
+          position: "absolute",
+          visibility: "visible",
+          opacity:1,
+          width: "40px",
+          height: "39px",
+          top: 0,
+          left: 0,
+          zIndex: 99,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          ".SubMenu__arrow": {
+            transform: "rotate(90deg)",
+          },
+        },
+        ".SubMenu__right": {
+          position: "absolute",
+          width: "40px",
+          height: "39px",
+          visibility:'visible',
+          opacity:1,
+          top: 0,
+          right: 0,
+          zIndex: 99,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-start",
+
+          ".SubMenu__arrow": {
+            transform: "rotate(-90deg)",
+          },
+        },
+
+    
+
         ".SubMenu__mobileContainer": {
           px:['20px'],
           display:'flex',
@@ -4136,42 +4178,7 @@ const theme = {
   
        
 
-          ".SubMenu__mobileContainer-arrow": {
-            cursor: "pointer",
-            path: {
-              stroke: "#CACACE",
-            },
-          },
-          ".SubMenu__mobileContainer-left": {
-            position: "absolute",
-            visibility: "visible",
-            width: "40px",
-            height: "39px",
-            top: 0,
-            left: 0,
-            zIndex: 99,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-end",
-            ".SubMenu__mobileContainer-arrow": {
-              transform: "rotate(90deg)",
-            },
-          },
-          ".SubMenu__mobileContainer-right": {
-            position: "absolute",
-            width: "40px",
-            height: "39px",
-            top: 0,
-            right: 0,
-            zIndex: 99,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-start",
 
-            ".SubMenu__mobileContainer-arrow": {
-              transform: "rotate(-90deg)",
-            },
-          },
     
           ".SubMenu__mobileContainer-draggable-item": {
             height: "100%",
