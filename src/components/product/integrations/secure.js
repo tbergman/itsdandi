@@ -32,7 +32,7 @@ const keyHole = useRef(null)
 
   useEffect(() => {
     if (inView) {
-      console.log('hello')
+  
       animationControls.start((i) => {
         return globalSlideUp.visible(i);
       });
