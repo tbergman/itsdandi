@@ -18,7 +18,7 @@ const SubMenuMobile = ({ subPages, subMenuStyling,slidesPerView }) => {
   const right = useRef(null)
   const left = useRef(null);
 
-  const swipe = ({swiper, snapGrid,currentOffset,direction,gsap}) => { 
+  const swipe = ({swiper, snapGrid,currentOffset,direction}) => { 
 
     const currentIdx = snapGrid.indexOf(currentOffset);
 
