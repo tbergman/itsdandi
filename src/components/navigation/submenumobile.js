@@ -57,13 +57,17 @@ const SubMenuMobile = ({ subPages, subMenuStyling,slidesPerView }) => {
     gsap.registerPlugin(Draggable);
     gsap.registerPlugin(InertiaPlugin);
     const snapGrid_ = createSnapGrid({swiperWrapper,swiper});
+
+
     send({
       type:'UPDATENAV',
       payload:{
-        snapTo:0,
-        snapGrid:snapGrid_
+        snapTo:snapGrid_.startingOffset,
+        snapGrid:snapGrid_.grid
       }
     })
+
+
 
     Draggable.create(swiper.current,{
       inertia:true,
@@ -73,13 +77,13 @@ const SubMenuMobile = ({ subPages, subMenuStyling,slidesPerView }) => {
       edgeResistance:.7,
       snap:{
         x: (value) => {
-          const snapTo = gsap.utils.snap(snapGrid_,value);
+          const snapTo = gsap.utils.snap(snapGrid_.grid,value);
           // update navigation state
           send({
             type:'UPDATENAV',
             payload:{
               snapTo,
-              snapGrid: snapGrid_
+              snapGrid: snapGrid_.grid
             }
           })
           return snapTo;
@@ -152,7 +156,7 @@ const SubMenuMobile = ({ subPages, subMenuStyling,slidesPerView }) => {
               bg: subMenuStyling.bg,
             }}
             ref={right}
-            onClick={()=>swipe({swiper,snapGrid,currentOffset,direction:'next'})}
+            onClick={()=>swipe({swiper,snapGrid:snapGrid.grid,currentOffset,direction:'next'})}
             className={"SubMenu__right"}
           >
             <svg
@@ -175,7 +179,7 @@ const SubMenuMobile = ({ subPages, subMenuStyling,slidesPerView }) => {
             sx={{
               bg: subMenuStyling.bg,
             }}
-            onClick={()=>swipe({swiper,snapGrid,currentOffset,direction:'prev'})}
+            onClick={()=>swipe({swiper,snapGrid:snapGrid.grid,currentOffset,direction:'prev'})}
             ref={left}
             className={"SubMenu__left"}
           >
