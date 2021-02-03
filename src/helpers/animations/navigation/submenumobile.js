@@ -12,7 +12,7 @@ export const createSnapGrid = ({swiperWrapper,swiper,}) => {
     elements.forEach((val,key,arr)=>{
 
       if (val.classList.contains("current")) {
-        snapGrid.startingOffset = -currentPos;
+        snapGrid.startingOffset = currentPos<maxOffset ? -currentPos : -maxOffset;
       }
 
       if (key===0) {
