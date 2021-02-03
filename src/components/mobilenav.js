@@ -63,6 +63,8 @@ const MobileNav = ({
               },
             },
             ".logo": {
+              height:'40px',
+              width:'40px',
               svg: {
                 path: {
                   fill: "white",
