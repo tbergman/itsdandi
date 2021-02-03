@@ -16,6 +16,9 @@ export const BigLogo__machine = createMachine({
                 OPEN_MENU:{
                     actions:'switch',
                     target:'small'
+                },
+                MAKE_STATIC:{
+                    target:'small'
                 }
             }
         },
