@@ -3921,7 +3921,7 @@ const theme = {
             color: (t) => `${t.colors.black} !important`,
           },
           ".current": {
-            bg: "yellow !important",
+            bg: "#FFF !important",
           },
         },
         ".item": {

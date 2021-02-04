@@ -27,7 +27,7 @@ const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
         //animate height
         gsap.to(navItemsRef.current.querySelector(`.sub.${item.type}`),{
           height:state.context[item.type].open ? "auto" : 0,
-          // paddingTop:state.context[item.type].open ? "16px" : 0,
+          paddingTop:state.context[item.type].open ? "16px" : 0,
           duration:.5,
           ease:"power4.out", 
         })
