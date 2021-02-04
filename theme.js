@@ -4398,7 +4398,6 @@ const theme = {
           mb: [2],
 
           ".wrapper": {
-            // display: "flex",
 
             ".main": {
               display: "flex",
@@ -4417,7 +4416,6 @@ const theme = {
                 display: "flex",
                 alignItems: "center",
                 svg: {
-                  transition: "transform 250ms ease-out",
                   path: {
                     strokeWidth: "3",
                   },
@@ -4446,7 +4444,7 @@ const theme = {
                   outline: "none",
                 },
                 "&:hover": {
-                  bg: "#262629",
+                  bg: ["none","#262629"],
                 },
               },
             },
