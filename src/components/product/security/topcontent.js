@@ -13,7 +13,7 @@ const TopContent = ({ isDesktop }) => {
   useEffect(() => {
     if(isDesktop) {
       gsap.fromTo([chainGroup.current],{
-        rotate:-30,
+        rotate:-15,
       },{
         rotate:0,
         delay:.1,
@@ -22,7 +22,7 @@ const TopContent = ({ isDesktop }) => {
       })
   
       gsap.fromTo([topChain.current],{
-        rotate:50
+        rotate:25
       },{
         rotate:0,
         delay:.1,
