@@ -25,8 +25,8 @@ const TopContent = ({ isDesktop, content }) => {
 
     })
     gsap.fromTo([bigCircle.current],{
-      x:-10,
-      scale:.8
+      x:-5,
+      scale:.9
     },{
       x:0,
       scale:1,
