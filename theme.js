@@ -3847,12 +3847,13 @@ const theme = {
           },
         },
         ".logo": {
+          bg:'transparent',
           path: {
             fill: "white",
           },
         },
         ".BigLogo": {
-          bg: "transparent",
+          bg: "transparent !important",
         },
         ".hamburger": {
           span: {
@@ -3892,10 +3893,11 @@ const theme = {
           },
         },
         ".logo": {
+          bg:'transparent',
           path: { fill: (t) => `${t.colors.black} !important` },
         },
         ".BigLogo": {
-          bg: "transparent",
+          bg: "transparent !important",
         },
         ".hamburger": {
           span: {
@@ -3935,10 +3937,11 @@ const theme = {
           },
         },
         ".logo": {
+          bg:'transparent',
           path: { fill: (t) => `${t.colors.black} !important` },
         },
         ".BigLogo": {
-          bg: "transparent",
+          bg: "transparent !important",
         },
         ".hamburger": {
           span: {
@@ -3977,7 +3980,11 @@ const theme = {
             stroke: (t) => `${t.colors.blue} !important`,
           },
         },
+        '.BigLogo':{
+          bg:'transparent',
+        },
         ".logo": {
+          bg:'transparent',
           path: { fill: (t) => `${t.colors.black} !important` },
         },
         ".hamburger": {
@@ -4019,10 +4026,11 @@ const theme = {
           },
         },
         ".logo": {
+          bg:'transparent',
           path: { fill: (t) => `${t.colors.black} !important` },
         },
         ".BigLogo": {
-          bg: "transparent",
+          bg: "transparent !important",
         },
         ".hamburger": {
           span: {
@@ -4062,10 +4070,11 @@ const theme = {
           },
         },
         ".logo": {
+          bg:'transparent',
           path: { fill: (t) => `${t.colors.black} !important` },
         },
         ".BigLogo": {
-          bg: "transparent",
+          bg: "transparent !important",
         },
         ".hamburger": {
           span: {
@@ -4105,10 +4114,11 @@ const theme = {
           },
         },
         ".logo": {
+          bg:'transparent',
           path: { fill: (t) => `${t.colors.black} !important` },
         },
         ".BigLogo": {
-          bg: "transparent",
+          bg: "transparent !important",
         },
         ".hamburger": {
           span: {
@@ -4144,6 +4154,7 @@ const theme = {
             },
           },
           ".logo": {
+            bg:'transparent',
      
             svg: {
               path: {

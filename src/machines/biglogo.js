@@ -13,11 +13,9 @@ export const BigLogo__machine = createMachine({
                     actions:'animateDown',
                     target:'small',
                 },
-                OPEN_MENU:{
-                    actions:'switch',
-                    target:'small'
-                },
+     
                 MAKE_STATIC:{
+                    actions:'switch',
                     target:'small'
                 }
             }
@@ -57,7 +55,7 @@ export const BigLogo__machine = createMachine({
 
             gsap.to(letters,{
                 opacity:0,
-                duration:.1
+                duration:0
             })
         }
     }
