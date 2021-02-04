@@ -2404,7 +2404,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktopMassive} * 4) + 120px)`,
             ],
             height: ["126px", "34em"],
-            bottom: [0, "-5em"],
+            bottom: [0, "-6em"],
             right: [0, "40px", (t) => t.desktopBigGutters,(t) => t.desktopMassiveGutters],
             overflow: "hidden",
             ".TopContent__graphics-chainsDesktop": {
@@ -2413,7 +2413,7 @@ const theme = {
               bottom: ["-35%", 0],
               height: ["unset", "100%"],
               width: ["unset", "100%"],
-              maxHeight:'400px'
+              maxHeight:'500px'
             },
             ".TopContent__graphics-chainsMobile": {
               position: "absolute",
