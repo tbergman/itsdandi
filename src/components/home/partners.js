@@ -18,6 +18,7 @@ const Partners = ({
   setNavbarStyling,
   windowHeight,
   navBarStyling,
+  width,
   isDesktop,
   content,
   isServer
@@ -28,39 +29,40 @@ const Partners = ({
  
   useEffect(() => {
     if (!isServer) {
-   // offset row container
-   const offsetAmount = `-${rowWrapper1.current.clientWidth * 2}px`
+      // offset row container
+      const offsetAmount = `-${rowWrapper1.current.clientWidth * 2}px`
+      // containerRow1.current.style.right =  offsetAmount
 
-   containerRow1.current.style.right =  offsetAmount
+      let totalWidth = 0;
+      const elements = Array.from(rowWrapper1.current.querySelectorAll('.Partners__logoCarousel-rowWrapper-container-row-imageWrapper'))
 
-   let totalWidth = 0;
-   const elements = Array.from(rowWrapper1.current.querySelectorAll('.Partners__logoCarousel-rowWrapper-container-row-imageWrapper'))
-   elements.reverse().map((val,key,arr)=>{
-     if (key===0){
-       totalWidth = -(val.clientWidth +elements[0].clientWidth)
-     } else {
-       totalWidth = totalWidth - val.clientWidth
-     }
-     gsap.set(val,{
-       x: totalWidth
-     })
-   })
+      elements.map((val,key,arr)=>{
+        console.log(val.clientWidth);
+      })
 
-   const animateWidth = totalWidth + elements[0].clientWidth;
+      // elements.reverse().map((val,key,arr)=>{
+      //   if (key===0){
+      //     totalWidth = -(val.clientWidth +elements[0].clientWidth)
+      //   } else {
+      //     totalWidth = totalWidth - val.clientWidths
+      //   }
+      //   gsap.set(val,{
+      //     x: totalWidth
+      //   })
+      // })
 
-   gsap.to(elements,{
-     duration:45,
-     ease:'none',
-     x:`+=${animateWidth}`,
-     modifiers:{
-       x:gsap.utils.unitize(x=>parseFloat(x) % animateWidth)
-     },
-     repeat:-1
-   })
+      const animateWidth = totalWidth + elements[0].clientWidth;
+
+      // gsap.to(elements,{
+      //   duration:45,
+      //   ease:'none',
+      //   x:`+=${animateWidth}`,
+      //   modifiers:{
+      //     x:gsap.utils.unitize(x=>parseFloat(x) % animateWidth)
+      //   },
+      //   repeat:-1
+      // })
     }
- 
-
-
   }, [isServer])
 
   return (
@@ -82,7 +84,7 @@ const Partners = ({
         <div className="Partners__logoCarousel">
           <div className="Partners__logoCarousel-rowWrapper"
           
-          ref={rowWrapper1}  >
+          ref={rowWrapper1}>
             <div
             
             className="Partners__logoCarousel-rowWrapper-container">
