@@ -24,36 +24,44 @@ const Partners = ({
   isServer
 }) => {
   const { header, logosRow1, logosRow2 } = content;
+
   const rowWrapper1 = useRef(null)
   const containerRow1 = useRef(null)
+  const elementsRow1 = useRef([])
+
+  const addRef = (refArray, el) => {
+    if (el && !refArray.current.includes(el)) {
+      refArray.current.push(el);
+    }
+  }
  
   useEffect(() => {
     if (!isServer) {
       // offset row container
       const offsetAmount = `-${rowWrapper1.current.clientWidth * 2}px`
-      // containerRow1.current.style.right =  offsetAmount
+      // containerRow1.current.style.right = offsetAmount
 
       let totalWidth = 0;
-      const elements = Array.from(rowWrapper1.current.querySelectorAll('.Partners__logoCarousel-rowWrapper-container-row-imageWrapper'))
+      // const elements = Array.from(rowWrapper1.current.querySelectorAll('.Partners__logoCarousel-rowWrapper-container-row-imageWrapper'))
+  
+      elementsRow1.current.reverse().map((val,key,arr)=>{
+        console.log(val.getBoundingClientRect().width);
 
-      elements.map((val,key,arr)=>{
-        console.log(val.clientWidth);
+        if (key===0){
+          totalWidth = -(val.clientWidth +arr[0].clientWidth)
+        } else {
+          totalWidth = totalWidth - val.clientWidth
+        }
+        gsap.set(val,{
+          x: totalWidth
+        })
       })
 
-      // elements.reverse().map((val,key,arr)=>{
-      //   if (key===0){
-      //     totalWidth = -(val.clientWidth +elements[0].clientWidth)
-      //   } else {
-      //     totalWidth = totalWidth - val.clientWidths
-      //   }
-      //   gsap.set(val,{
-      //     x: totalWidth
-      //   })
-      // })
+    
 
-      const animateWidth = totalWidth + elements[0].clientWidth;
+      // const animateWidth = totalWidth + elementsRow1.current[0].clientWidth;
 
-      // gsap.to(elements,{
+      // gsap.to(elementsRow1.current,{
       //   duration:45,
       //   ease:'none',
       //   x:`+=${animateWidth}`,
@@ -63,7 +71,7 @@ const Partners = ({
       //   repeat:-1
       // })
     }
-  }, [isServer])
+  }, [isServer, elementsRow1.current])
 
   return (
     <InView
@@ -95,6 +103,7 @@ const Partners = ({
            
                  {logosRow1.map((url, i) => (
                   <div
+                    ref={(el)=>addRef(elementsRow1,el)}
                     className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
                     key={i}
                   >
