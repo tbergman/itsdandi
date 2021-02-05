@@ -4461,6 +4461,7 @@ const theme = {
           fontFamily: "display",
           fontWeight: "500",
           fontSize: "28px",
+          lineHeight:'32px'
         },
         p: {
           mt: ["20px", 4],
@@ -4527,15 +4528,26 @@ const theme = {
       ".socials": {
         gridArea: ["3/1/4/-1", "2/4/3/6"],
         mt: [6, 0],
-        // display: "grid",
-        // gridTemplateColumns: ["repeat(6,1fr)"],
-        // columnGap: ["20px", "40px"],
-        // gridTemplateRows: "auto",
         display: "flex",
         alignItems: "center",
+
         ".item": {
           mr: [2],
           cursor: "pointer",
+          height:'38px',
+          width:'38px',
+          div:{
+            height:'inherit',
+            width:'inherit',
+            div:{
+              height:'inherit',
+              width:'inherit',
+              svg:{
+                width:'100%',
+                height:'100%'
+              }
+            }
+          }
         },
       },
       ".newsletter": {
