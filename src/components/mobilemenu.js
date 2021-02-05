@@ -24,15 +24,16 @@ const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
           duration: .5
         })
 
+        const paddingTop=16
         const height = gsap.utils.toArray(navItemsRef.current.querySelectorAll(`.subitem.${item.type}`)).reduce((prev,curr)=>{
-          return curr.clientHeight + prev; 
-        },0)
+          return curr.clientHeight+prev; 
+        },paddingTop)
 
         //animate height
         gsap.to(navItemsRef.current.querySelector(`.sub.${item.type}`),{
    
           height:state.context[item.type].open ? height : 0,
-          paddingTop:state.context[item.type].open ? "16px" : 0,
+          paddingTop:state.context[item.type].open ? paddingTop : 0,
           duration:.5,
           ease:"power4.out", 
         })

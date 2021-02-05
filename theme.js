@@ -3921,7 +3921,7 @@ const theme = {
             color: (t) => `${t.colors.black} !important`,
           },
           ".current": {
-            bg: "#FFF !important",
+            bg: "rgba(0,0,0,0.04)",
           },
         },
         ".item": {
@@ -3965,7 +3965,7 @@ const theme = {
             color: (t) => `${t.colors.black} !important`,
           },
           ".current": {
-            bg: "#FFF !important",
+            bg: "rgba(0,0,0,0.05)",
           },
         },
         ".item": {
@@ -4098,7 +4098,7 @@ const theme = {
             color: (t) => `${t.colors.black} !important`,
           },
           ".current": {
-            bg: "#FFF !important",
+            bg: "rgba(0,0,0,0.05)",
           },
         },
         ".item": {
