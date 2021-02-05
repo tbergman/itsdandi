@@ -110,7 +110,7 @@ const Community = (props) => {
         styling={{
           mb: [
             `calc(calc(calc(calc(${theme.colWidthMob} * 3) + 40px) * .88) + 8px)`,
-            , 16],
+             16],
         }}
       >
         {!isServer() && <TopContent />}
