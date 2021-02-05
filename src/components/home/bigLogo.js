@@ -24,7 +24,7 @@ const BigLogo = ({
 
     gsap.to(svgRef.current,{
       translateY: yOffset,
-      scale: staticLogo || menuOpen ? scaleTo : 1,
+      scale: staticLogo || menuOpen || state.matches("small") ? scaleTo : 1,
       transformOrigin: "0% 100%",
       rotate: 90,
       duration:.1
@@ -68,7 +68,6 @@ const BigLogo = ({
             gsap,
             ref:svgRef,
             scaleTo
-
           }
         })
       }
