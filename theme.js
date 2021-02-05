@@ -3285,13 +3285,31 @@ const theme = {
           ".graphics": {
             position: "absolute",
             bottom: 0,
-            left: [(t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`, "unset"],
-            width: [(t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`, "unset"],
-            display: ["flex", "none"],
+            maxHeight:'350px',
+            left: [
+              (t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`, 
+              t=> `calc(calc(calc(${t.colWidthDesktop} * 8) + 320px) + 40px)`,
+              t=> `calc(calc(calc(${t.colWidthDesktopBig} * 8) + 320px) + ${t.desktopBigGutters})`,
+              t=> `calc(calc(calc(${t.colWidthDesktopMassive} * 8) + 320px) + ${t.desktopMassiveGutters})`
+          ],
+            width: [
+              (t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`,
+              t=>`calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
+              t=>`calc(calc(${t.colWidthDesktopBig} * 3) + 120px)`,
+              t=>`calc(calc(${t.colWidthDesktopMassive} * 3) + 120px)`,
+            ],
+            height:[
+              'unset',
+              t=>`calc(calc(calc(${t.colWidthDesktop} * 3) + 120px) * .86)`,
+              t=>`calc(calc(calc(${t.colWidthDesktopBig} * 3) + 120px) * .86)`,
+              t=>`calc(calc(calc(${t.colWidthDesktopMassive} * 3) + 120px) * .86)`,
+            ],
+            display: ["flex",],
             alignItems: "flex-end",
             svg: {
+              position:['unset','absolute'],
               width: "100%",
-              height: "100%",
+              height: ["100%",],
             },
           },
         },
