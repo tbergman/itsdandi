@@ -108,7 +108,9 @@ const Community = (props) => {
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{
-          mb: [17, 16],
+          mb: [
+            `calc(calc(calc(calc(${theme.colWidthMob} * 3) + 40px) * .88) + 8px)`,
+            , 16],
         }}
       >
         {!isServer() && <TopContent />}
