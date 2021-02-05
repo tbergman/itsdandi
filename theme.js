@@ -952,39 +952,33 @@ const theme = {
       payequity: {
         topgraphic: {
           position: "absolute",
-          // top: [0],
           bottom: [
             `calc(calc(calc(100vw - 80px) * .55) / -1)`,
-            (t) =>
-              `calc(calc(calc(calc(${t.colWidthDesktop} * 4) + 120px) * .55) / -1)`,
-            (t) =>
-              `calc(calc(calc(calc(calc(${t.colWidthDesktopBig} * 4) + 80px) + ${t.desktopBigGutters}) * .55) / -1)`,
-              (t) =>
-              `calc(calc(calc(calc(calc(${t.colWidthDesktopMassive} * 4) + 80px) + ${t.desktopMassiveGutters}) * .55) / -1)`,
+            (t) =>`calc(calc(calc(calc(${t.colWidthDesktop} * 4) + 120px) * .55) / -1)`,
+            (t) =>`calc(calc(calc(calc(${t.colWidthDesktopBig} * 4) + 120px) * .55) / -1)`,
+            (t) =>`calc(calc(calc(calc(${t.colWidthDesktopMassive} * 4) + 120px) * .55) / -1)`,
           ],
           left: [
             "40px",
             (t) => `calc(calc(${t.colWidthDesktop} * 8) + 360px)`,
-            (t) =>
-              `calc(calc(calc(${t.colWidthDesktopBig} * 8) + 320px) + ${t.desktopBigGutters})`,
-              (t) =>
-              `calc(calc(calc(${t.colWidthDesktopMassive} * 8) + 320px) + ${t.desktopMassiveGutters})`,
+            (t) =>`calc(calc(calc(${t.colWidthDesktopBig} * 8) + 320px) + ${t.desktopBigGutters})`,
+            (t) =>`calc(calc(calc(${t.colWidthDesktopMassive} * 8) + 320px) + ${t.desktopMassiveGutters})`,
+         
+
           ],
           height: [
             `calc(100vw - 80px)`,
             (t) => `calc(calc(${t.colWidthDesktop} * 4) + 120px)`,
-            (t) =>
-              `calc(calc(calc(${t.colWidthDesktopBig} * 4) + 80px) + ${t.desktopBigGutters})`,
-              (t) =>
-              `calc(calc(calc(${t.colWidthDesktopMassive} * 4) + 80px) + ${t.desktopMassiveGutters})`,
+            (t) =>`calc(calc(${t.colWidthDesktopBig} * 4) + 120px)`,
+            (t) =>`calc(calc(${t.colWidthDesktopMassive} * 4) + 120px)`,
+
           ],
           width: [
             `calc(100vw - 80px)`,
             (t) => `calc(calc(${t.colWidthDesktop} * 4) + 120px)`,
-            (t) =>
-              `calc(calc(calc(${t.colWidthDesktopBig} * 4) + 80px) + ${t.desktopBigGutters})`,
-              (t) =>
-              `calc(calc(calc(${t.colWidthDesktopMassive} * 4) + 80px) + ${t.desktopMassiveGutters})`,
+            (t) =>`calc(calc(${t.colWidthDesktopBig} * 4) + 120px)`,
+            (t) =>`calc(calc(${t.colWidthDesktopMassive} * 4) + 120px)`,
+
           ],
           img: {
             position: "absolute",
