@@ -9,7 +9,7 @@ import {
 import InView from "../inview";
 import theme from "../../../theme";
 import { rootMargin } from "../../helpers/utils";
-import { useState, useEffect,useRef } from "react";
+import { useState, useEffect,useRef,useCallback } from "react";
 import { useInView } from "react-intersection-observer";
 import {gsap} from 'gsap';
 
@@ -34,9 +34,10 @@ const Partners = ({
       refArray.current.push(el);
     }
   }
- 
+
   useEffect(() => {
     if (!isServer) {
+
       // offset row container
       const offsetAmount = `-${rowWrapper1.current.clientWidth * 2}px`
       // containerRow1.current.style.right = offsetAmount
@@ -44,18 +45,23 @@ const Partners = ({
       let totalWidth = 0;
       // const elements = Array.from(rowWrapper1.current.querySelectorAll('.Partners__logoCarousel-rowWrapper-container-row-imageWrapper'))
   
-      elementsRow1.current.reverse().map((val,key,arr)=>{
-        console.log(val.getBoundingClientRect().width);
-
-        if (key===0){
-          totalWidth = -(val.clientWidth +arr[0].clientWidth)
-        } else {
-          totalWidth = totalWidth - val.clientWidth
-        }
-        gsap.set(val,{
-          x: totalWidth
-        })
+      const elements =  gsap.utils.toArray(document.querySelectorAll('.Partners__logoCarousel-rowWrapper-container-row-imageWrapper'))
+      .map((val,key,arr)=>{
+        console.log(val.clientWidth);
       })
+
+
+
+      // elementsRow1.current.reverse().map((val,key,arr)=>{
+      //   if (key===0){
+      //     totalWidth = -(val.clientWidth +arr[0].clientWidth)
+      //   } else {
+      //     totalWidth = totalWidth - val.clientWidth
+      //   }
+      //   gsap.set(val,{
+      //     x: totalWidth
+      //   })
+      // })
 
     
 
@@ -71,7 +77,7 @@ const Partners = ({
       //   repeat:-1
       // })
     }
-  }, [isServer, elementsRow1.current])
+  }, [isServer])
 
   return (
     <InView
@@ -101,9 +107,9 @@ const Partners = ({
                 className="Partners__logoCarousel-rowWrapper-container-row"
               >
            
-                 {logosRow1.map((url, i) => (
+                 {logosRow1.slice(0,1).map((url, i) => (
                   <div
-                    ref={(el)=>addRef(elementsRow1,el)}
+               
                     className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
                     key={i}
                   >

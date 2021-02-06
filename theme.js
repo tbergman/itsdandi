@@ -631,7 +631,6 @@ const theme = {
           },
           ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper": {
             position:'absolute',
-       
             height: "100%",
             width:'auto',
             px:[2],
