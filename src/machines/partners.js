@@ -4,6 +4,7 @@ export const Partners__machine = createMachine({
     id:"Partners",
     context:{
         elements:[],
+        duration:45
     },
     initial:'idle',
     states:{
@@ -19,7 +20,7 @@ export const Partners__machine = createMachine({
             }
         },
         positioning:{
-            entry:'setPositions',
+            entry:['setPositions','setDuration'],
             always:'animating'
         },
         animating:{
@@ -40,9 +41,6 @@ export const Partners__machine = createMachine({
 
         }),
         setPositions:(c,e)=>{
-
-            console.log("setting positions");
-
             const {ref,gsap}=e.payload;
             const { elements} = c;
 
@@ -61,17 +59,23 @@ export const Partners__machine = createMachine({
             })
       })
         },
+        setDuration:assign((_,e)=>{
+            console.log(`setting duration to: ${e.payload.duration}`)
+            return{
+                duration:e.payload.duration
+            }
+        }),
         animateCarousel:(c,e)=>{
             const {ref,gsap}=e.payload;
-            const { elements}=c;
-            const animateWidth = elements.reduce((acc,a)=>{
+            const { elements,duration}=c;
+            const animateWidth =  -elements.reduce((acc,a)=>{
                 return acc+a
-            },elements[0])
+            },0)
             
             const targetElements = ref.querySelectorAll(".Partners__logoCarousel-rowWrapper-container-row-imageWrapper")
 
          gsap.to(targetElements,{
-          duration:45,
+          duration:duration,
           ease:'none',
           x:`+=${animateWidth}`,
           modifiers:{
