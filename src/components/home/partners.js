@@ -12,72 +12,52 @@ import { rootMargin } from "../../helpers/utils";
 import { useState, useEffect,useRef,useCallback } from "react";
 import { useInView } from "react-intersection-observer";
 import {gsap} from 'gsap';
+import Logo from "./logo";
+import { useMachine } from "@xstate/react";
+import { Partners__machine } from "../../machines/partners";
 
 
 const Partners = ({
   setNavbarStyling,
   windowHeight,
   navBarStyling,
-  width,
   isDesktop,
   content,
   isServer
 }) => {
   const { header, logosRow1, logosRow2 } = content;
-
   const rowWrapper1 = useRef(null)
   const containerRow1 = useRef(null)
-  const elementsRow1 = useRef([])
 
-  const addRef = (refArray, el) => {
-    if (el && !refArray.current.includes(el)) {
-      refArray.current.push(el);
+  const [ state,send ] = useMachine(Partners__machine)
+
+  useEffect(() => {
+    if (!isServer) {
+      console.log("offset rowWrapper")
+        // offset row container
+        const offsetAmount = `-${rowWrapper1.current.clientWidth * 2}px`
+        containerRow1.current.style.right = offsetAmount
     }
-  }
+
+  }, [isServer])
 
   useEffect(() => {
     if (!isServer) {
 
-      // offset row container
-      const offsetAmount = `-${rowWrapper1.current.clientWidth * 2}px`
-      // containerRow1.current.style.right = offsetAmount
+      // ready to position & animate? 
+      if (state.context.elements.length === logosRow1.length) {
+        send({
+          type:"SET_POSITIONS",
+          payload:{
+            ref: containerRow1.current,
+            gsap,
+          }
+        })
+      }
 
-      let totalWidth = 0;
-      // const elements = Array.from(rowWrapper1.current.querySelectorAll('.Partners__logoCarousel-rowWrapper-container-row-imageWrapper'))
-  
-      const elements =  gsap.utils.toArray(document.querySelectorAll('.Partners__logoCarousel-rowWrapper-container-row-imageWrapper'))
-      .map((val,key,arr)=>{
-        console.log(val.clientWidth);
-      })
-
-
-
-      // elementsRow1.current.reverse().map((val,key,arr)=>{
-      //   if (key===0){
-      //     totalWidth = -(val.clientWidth +arr[0].clientWidth)
-      //   } else {
-      //     totalWidth = totalWidth - val.clientWidth
-      //   }
-      //   gsap.set(val,{
-      //     x: totalWidth
-      //   })
-      // })
-
-    
-
-      // const animateWidth = totalWidth + elementsRow1.current[0].clientWidth;
-
-      // gsap.to(elementsRow1.current,{
-      //   duration:45,
-      //   ease:'none',
-      //   x:`+=${animateWidth}`,
-      //   modifiers:{
-      //     x:gsap.utils.unitize(x=>parseFloat(x) % animateWidth)
-      //   },
-      //   repeat:-1
-      // })
     }
-  }, [isServer])
+ 
+  }, [isServer, state.context])
 
   return (
     <InView
@@ -107,25 +87,14 @@ const Partners = ({
                 className="Partners__logoCarousel-rowWrapper-container-row"
               >
            
-                 {logosRow1.slice(0,1).map((url, i) => (
-                  <div
-               
-                    className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
-                    key={i}
-                  >
-                    <picture>
-                      <source
-                        media="(min-width: 800px)"
-                        srcSet={url.desktop_image}
-                      ></source>
-                      <source srcSet={url.mobile_image}></source>
-                      <img
-                        className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper-image"
-                        src={url.desktop_image}
-                        alt=""
-                      />
-                    </picture>
-                  </div>
+                 {logosRow1.map((url, i) => (
+                   <Logo 
+                    url={url} 
+                    key={i} 
+                    idx={i}
+                    send={send}
+                    state={state}
+                   />
                 ))} 
              
               </div>
@@ -164,7 +133,7 @@ const Partners = ({
         </div>
       </div>
     </InView>
-  );
-};
+   );
+  }
 
-export default Partners;
+export default Partners

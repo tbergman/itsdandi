@@ -41,6 +41,7 @@
     "swiper": "^6.4.5",
     "theme-ui": "^0.4.0-rc.12",
     "tiny-slider": "^2.9.3",
+    "use-resize-observer": "^7.0.0",
     "xstate": "^4.15.3"
   },
   "devDependencies": {
