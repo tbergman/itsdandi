@@ -639,6 +639,7 @@ const theme = {
 
             img: {
               height: "100%",
+              objectFit:'contain',
             },
           },
         },
