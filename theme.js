@@ -4496,6 +4496,11 @@ const theme = {
           mt: ["12px"],
           mb: 0,
         },
+        'input:-webkit-autofill, input:-webkit-autofill:hover, select:-webkit-autofill, select:-webkit-autofill:hover':{
+          boxShadow:'0 0  0px 1000px #262629 inset',
+          '-webkit-text-fill-color':'rgb(242,242,242)',
+        },
+   
         ".dropdownwrapper": {
           flex: [1, "1 100%"],
           height: ["64px"],
