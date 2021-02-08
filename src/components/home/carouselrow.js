@@ -3,15 +3,14 @@ import { useMachine } from '@xstate/react'
 import {jsx} from 'theme-ui'
 import {useRef,useEffect}from'react'
 import Logo from './logo';
-import { Partners__machine } from '../../machines/partners'
+import { Partners__machine , Partners__machine2} from '../../machines/partners'
 import {gsap } from 'gsap';
 
 
-const CarouselRow = ({logosRow,isServer,duration}) => {
-    const  [state,send] = useMachine(Partners__machine); 
+const CarouselRow = ({logosRow,isServer,duration, additionalClass}) => {
+    const  [state,send] = useMachine(additionalClass==="row1" ? Partners__machine : Partners__machine2); 
     const containerRow = useRef(null)
     const rowWrapper = useRef(null)
-
 
   useEffect(() => {
     if (!isServer) {
@@ -25,14 +24,15 @@ const CarouselRow = ({logosRow,isServer,duration}) => {
   useEffect(() => {
     if (!isServer) {
 
-      // ready to position & animate row1? 
+      // ready to position & animate row? 
       if (state.context.elements.length === logosRow.length) {
         send({
           type:"SET_POSITIONS",
           payload:{
             ref: containerRow.current,
             gsap,
-            duration
+            duration,
+            targetClass: `.Partners__logoCarousel-rowWrapper-container-row-imageWrapper.${additionalClass}`
           }
         })
       }
@@ -55,12 +55,11 @@ const CarouselRow = ({logosRow,isServer,duration}) => {
             idx={i}
             send={send}
             state={state}
+            additionalClass={additionalClass}
            />
         ))} </div>
-
-              </div>
-              
-              </div> 
+        </div>
+    </div> 
    
     
      

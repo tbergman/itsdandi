@@ -2,24 +2,26 @@
 import { jsx} from 'theme-ui';
 import useResizeObserver from 'use-resize-observer';
 
-const Logo = ({url,idx,state,send}) =>{
+const Logo = ({url,idx,state,send,additionalClass}) =>{
     const { elements } = state.context
     const  { ref } = useResizeObserver({onResize:({width})=>{
         if (width !== 0 && !elements[idx]) {
-            send({
-                type:"ADD_ELEMENT",
-                payload:{
-                    width,
-                    idx
-                }
-            })
+                send({
+                    type:"ADD_ELEMENT",
+                    payload:{
+                        width,
+                        idx
+                    }
+                })
+
+   
         }
     } })
 
     return(
         <div
         ref={ref}
-        className="Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
+        className={`Partners__logoCarousel-rowWrapper-container-row-imageWrapper ${additionalClass}`}
    
       >
         <picture>

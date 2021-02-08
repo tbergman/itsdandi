@@ -615,6 +615,7 @@ const theme = {
             width: "100%",
             height: "100%",
             position: "relative",
+            mb:[2],
           },
           ".Partners__logoCarousel-rowWrapper-container": {
             width: "100%",

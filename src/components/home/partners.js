@@ -41,8 +41,8 @@ const Partners = ({
           <Styled.h2 className="Partners__text-header">{header}</Styled.h2>
         </div>
         <div className="Partners__logoCarousel">
-              <CarouselRow logosRow={logosRow1} duration={45} isServer={isServer} />
-              <CarouselRow logosRow={logosRow2} duration={300} isServer={isServer} />
+              <CarouselRow key={0} logosRow={logosRow1} duration={60} isServer={isServer} additionalClass={`row1`} />
+              <CarouselRow key={1} logosRow={logosRow2} duration={320} isServer={isServer} additionalClass={`row2`} />
         </div>
       </div>
     </InView>
