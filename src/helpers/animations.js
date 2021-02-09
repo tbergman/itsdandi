@@ -1,7 +1,7 @@
 export const globalSlideUp = {
   hidden: {
     opacity: 0,
-    y: 50,
+    y: 10,
   },
   visible: (i) => ({
     opacity: 1,
