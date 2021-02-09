@@ -4478,7 +4478,7 @@ const theme = {
           fontWeight: "400",
         },
       },
-      ".form": {
+      ".Form": {
         mt: [0, 11],
         position: "relative",
         top: [0, "-12px"],
@@ -4502,13 +4502,23 @@ const theme = {
           '-webkit-text-fill-color':'rgb(242,242,242)',
         },
    
-        ".dropdownwrapper": {
+        ".Form__dropdownWrapper": {
           flex: [1, "1 100%"],
+          position:'relative',
           height: ["64px"],
           borderRadius: "8px",
           bg: "#262629",
           mt: ["12px"],
-          ".dropdown": {
+
+          '.Form__dropdownWrapper-arrow':{
+            position:'absolute',
+            right:[2],
+            top:'50%',
+            transform:'translateY(-50%)',
+
+          },
+
+          ".Form__dropdownWrapper-dropdown": {
             appearance: "none",
             m: 0,
             width: "100%",
@@ -4523,6 +4533,10 @@ const theme = {
             fontFamily: "body",
             fontWeight: "400",
             border: "none",
+            outline:'none',
+            cursor:'pointer',
+
+ 
             ":focus": {
               outline: "none",
             },
@@ -4531,7 +4545,7 @@ const theme = {
             },
           },
         },
-        ".button": {
+        ".Form__button": {
           mt: [3, 5],
           flex: [1, "1 100%"],
           display: "flex",
@@ -4547,8 +4561,8 @@ const theme = {
         ".item": {
           mr: [2],
           cursor: "pointer",
-          height:'38px',
-          width:'38px',
+          height:'30px',
+          width:'30px',
           div:{
             height:'inherit',
             width:'inherit',
