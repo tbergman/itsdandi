@@ -1557,11 +1557,11 @@ const theme = {
 
       subnavigation: {
         display: "flex",
-        height: ["auto", "356px"],
+        height: ["auto", "275px"],
         flexFlow: ["column-reverse", "unset"],
 
         ".SubNavigation__next": {
-          height: ["224px", "100%"],
+          height: ["200px", "100%"],
           pl: [0],
           flex: [1, "0 50%"],
           display: "flex",
@@ -1572,7 +1572,7 @@ const theme = {
         },
 
         ".SubNavigation__prev": {
-          height: ["224px", "100%"],
+          height: ["200px", "100%"],
           flex: [1, "0 50%"],
           pl: [0],
           display: "flex",
