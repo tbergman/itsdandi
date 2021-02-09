@@ -4579,6 +4579,7 @@ const theme = {
       },
       ".newsletter": {
         gridArea: ["4/1/5/-1", "3/4/4/7"],
+        mt:['33px',0],
         mb: ["44px", 6],
         a: {
           mb: 0,

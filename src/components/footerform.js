@@ -48,14 +48,9 @@ const FooterForm = () => {
         onChange={e=>send({type:"EDIT_EMPLOYEES",value:e.target.value})}
         className="Form__dropdownWrapper-dropdown"
           sx={{
-
             color:employees.value !== '' ? 'white !important' : 'rgba(242, 242, 242, 0.24) !important'
           }}
         >
-
-
-
-
 
         <option value="">How many employees work there?</option>
             <option value="0-249">0 to 249 people</option>
