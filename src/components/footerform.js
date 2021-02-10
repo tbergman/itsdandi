@@ -2,6 +2,7 @@
 import { useMachine } from "@xstate/react";
 import { jsx, Styled, Input, Select, Button } from "theme-ui";
 import { FooterForm__machine } from "../machines/form";
+import InputWrapper from './inputwrapper';
 
 const FooterForm = () => {
   const [state,send] = useMachine(FooterForm__machine)
@@ -13,31 +14,24 @@ const FooterForm = () => {
     phone,
     company,
     website,
-    employees
+    employees,
+    allValidated
   } = state.context;
-
-  console.log(employees.value)
-
 
   return (
     <div className="Form">
-      <Input id="namefield" placeholder="First Name *" value={firstName.value} onChange={(e)=>send({type:'EDIT_FIRSTNAME',value:e.target.value})} />
-      <Input placeholder="Last Name *" value={lastName.value}
-      onChange={(e)=>send({type:"EDIT_LASTNAME",value:e.target.value})}
-      />
-      <Input placeholder="Email *" value={email.value}
-        onChange={(e)=>send({type:"EDIT_EMAIL",value:e.target.value})}
-      />
-      <Input placeholder="Phone Number" value={phone.value}
-        onChange={(e)=>send({type:'EDIT_PHONE',value:e.target.value})}
-      />
-      <Input placeholder="Company Name" value={company.value}
-        onChange={e=>send({type:"EDIT_COMPANY",value:e.target.value})}
-      />
-      <Input placeholder="Website URL" value={website.value}
-        onChange={e=>send({type:'EDIT_WEBSITE',value:e.target.value})}
-      />
-      <div className="Form__dropdownWrapper">
+      <InputWrapper field={firstName} send={send} sendType={'EDIT_FIRSTNAME'} placeholder="First Name*" />
+      <InputWrapper field={lastName} send={send} sendType={'EDIT_LASTNAME'} placeholder="Last Name*"/>
+      <InputWrapper field={email} send={send} sendType={'EDIT_EMAIL'} placeholder="Email"  />
+      <InputWrapper field={phone} send={send} sendType={'EDIT_PHONE'} placeholder="Phone" />
+      <InputWrapper field={company} send={send} sendType={'EDIT_COMPANY'} placeholder="Company" />
+      <InputWrapper field={website} send={send} sendType={'EDIT_WEBSITE'} placeholder="Website" />
+    
+      <div
+         sx={{
+          border: employees.error ? '1px solid #FF5C17' : 'none',
+        }}
+      className="Form__dropdownWrapper">
       <svg 
          className="Form__dropdownWrapper-arrow" 
               width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +42,8 @@ const FooterForm = () => {
         onChange={e=>send({type:"EDIT_EMPLOYEES",value:e.target.value})}
         className="Form__dropdownWrapper-dropdown"
           sx={{
-            color:employees.value !== '' ? 'white !important' : 'rgba(242, 242, 242, 0.24) !important'
+            color:employees.value !== '' ? 'white !important' : 'rgba(242, 242, 242, 0.24) !important',
+         
           }}
         >
 
@@ -69,10 +64,24 @@ const FooterForm = () => {
           
 
         </select>
+          {employees.error && (
+            <div className="Form__dropdownWrapper-error">
+              <Styled.p>{employees.error}</Styled.p>
+            </div>
+          )}
       </div>
 
       <div className="Form__button">
-        <Button variant="primary">Send request</Button>
+        <Button
+          sx={{
+            bg:allValidated ? '#FFD93B !important' : null,
+            color:allValidated ? "#1A1A1D !important" : null,
+            fontFamily:'medium',
+            '&:hover':{
+              bg:allValidated ? '#FF9133 !important' : null
+            }
+          }}
+        variant="primary">Send request</Button>
       </div>
     </div>
   );

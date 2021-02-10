@@ -1,27 +1,49 @@
 import { createMachine,assign } from "xstate";
+import * as EmailValidator from 'email-validator';
+
+const errorMessages = {
+    isEmpty:'Please complete this required field',
+    isNotEmail:'Email must be formatted correctly'
+}
+
+const checkValidation = (context) => {
+    const _ = Object.keys(c).map(key=>{
+        if (key!=='allValidated') {
+            return context[key].error
+        }
+    })
+
+    return _
+}
 
 export const FooterForm__machine = createMachine({
     id:"footerForm",
     context:{
+        allValidated:false,
         firstName:{
             value:'',
-            error:null
+            error:null,
+            
         },
         lastName:{
             value:'',
-            error:null
+            error:null,
+           
         },
         email:{
             value:'',
-            error:null
+            error:null,
+       
         },
         phone:{
             value:'',
-            error:null
+            error:null,
+         
         },
         company:{
             value:'',
-            error:null
+            error:null,
+   
         },
         website:{
             value:'',
@@ -68,34 +90,41 @@ export const FooterForm__machine = createMachine({
     }
 },{
     actions:{
-        editFirstName:assign({
-            firstName:(c,e)=>({
-                ...c.firstName,
-                value:e.value
-            })
+        editFirstName: assign((c,e)=>{
+
+
+            return {
+                firstName:{
+                    value:e.value,
+                    error:e.value==='' ? errorMessages.isEmpty : false
+                },
+            }
+
         }),
         editLastName:assign({
             lastName:(c,e)=>({
-                ...c.lastName,
-                value:e.value
+                
+                value:e.value,
+                error:e.value==='' ? errorMessages.isEmpty : false
             })
         }),
         editEmail:assign({
             email:(c,e)=>({
-                ...c.email,
-                value:e.value
+       
+                value:e.value,
+                error:!EmailValidator.validate(e.value) ? errorMessages.isNotEmail : false
             })
         }),
         editPhone:assign({
             phone:(c,e)=>({
-                ...c.phone,
-                value:e.value
+                value:e.value,
+                error:e.value === '' ? errorMessages.isEmpty : false
             })
         }),
         editCompany:assign({
             company:(c,e)=>({
-                ...c.company,
-                value:e.value
+                value:e.value,
+                error:e.value === '' ? errorMessages.isEmpty : false
             })
         }),
         editWebsite:assign({
@@ -106,8 +135,8 @@ export const FooterForm__machine = createMachine({
         }),
         editEmployees:assign({
             employees:(c,e)=>({
-                ...c.employees,
-                value:e.value
+                value:e.value,
+                error:e.value==='' ? errorMessages.isEmpty : false
             })
         })
     }

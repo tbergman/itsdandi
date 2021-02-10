@@ -25,6 +25,7 @@
     "@react-hook/window-size": "^3.0.7",
     "@xstate/react": "^1.2.2",
     "buttercms": "^1.2.5",
+    "email-validator": "^2.0.4",
     "framer-motion": "^2.9.4",
     "gsap": "npm:@gsap/shockingly@^3.6.0",
     "next": "10.0.2",

@@ -4485,22 +4485,43 @@ const theme = {
         gridArea: ["2/1/3/-1", "1/7/3/-1"],
         display: "flex",
         flexFlow: ["column wrap", "row wrap"],
-        "input:nth-child(odd)": {
+
+        '.Form__inputWrapper':{
+          '.Form__inputWrapper-error':{
+            fontSize:'14px',
+            pl:[3],
+            mt:[1],
+          },
+          'input':{
+            mb:0,
+            caretColor:'yellow',
+            '&:focus':{
+              bg:'#3A3A3D',
+            },
+            '&:hover':{
+              cursor:['auto','pointer']
+            }
+          },
+          'input:-webkit-autofill, input:-webkit-autofill:hover, select:-webkit-autofill, select:-webkit-autofill:hover':{
+            boxShadow:'0 0  0px 1000px #262629 inset',
+            WebkitTextFillColor:'rgb(242,242,242)',
+          },
+        },
+
+     
+        ".Form__inputWrapper:nth-child(odd)": {
           flex: [1, "1 40%"],
           mr: [0, "6px"],
           mt: ["12px"],
           mb: 0,
         },
-        "input:nth-child(even)": {
+        ".Form__inputWrapper:nth-child(even)": {
           flex: [1, "1 40%"],
           ml: [0, "6px"],
           mt: ["12px"],
           mb: 0,
         },
-        'input:-webkit-autofill, input:-webkit-autofill:hover, select:-webkit-autofill, select:-webkit-autofill:hover':{
-          boxShadow:'0 0  0px 1000px #262629 inset',
-          '-webkit-text-fill-color':'rgb(242,242,242)',
-        },
+    
    
         ".Form__dropdownWrapper": {
           flex: [1, "1 100%"],
@@ -4509,6 +4530,12 @@ const theme = {
           borderRadius: "8px",
           bg: "#262629",
           mt: ["12px"],
+
+          '.Form__dropdownWrapper-error':{
+            pl:[3],
+            mt:[1],
+            fontSize:'14px',
+          },
 
           '.Form__dropdownWrapper-arrow':{
             position:'absolute',
