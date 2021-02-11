@@ -21,9 +21,8 @@ const Navigation = ({
   const animationControls = useAnimation();
   const scrollY = useScrollPosition(60);
   const widths = columnWidths(width);
-  const scrollThreshold = 400;
-  console.log(isDesktop);
-  
+  const scrollThreshold = 400;s
+
 
   const loginMotion = {
     rest: {
