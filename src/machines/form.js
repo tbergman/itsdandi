@@ -29,34 +29,39 @@ export const FooterForm__machine = createMachine({
             value:'',
             error:null,
             
+            
         },
         lastName:{
             value:'',
             error:null,
+            
            
         },
         email:{
             value:'',
             error:null,
+            
        
         },
         phone:{
             value:'',
             error:null,
-         
+            
         },
         company:{
             value:'',
             error:null,
-   
+            
         },
         website:{
             value:'',
-            error:null
+            error:null,
+            
         },
         employees:{
             value:'',
-            error:null
+            error:null,
+            
         }
     },
     initial:'editing',
@@ -84,10 +89,12 @@ export const FooterForm__machine = createMachine({
                 EDIT_EMPLOYEES:{
                     actions:'editEmployees'
                 },
-                SUBMIT:'submitting'
+                SUBMIT:{target:'submitting',cond:(c,e)=>c.allValidated}
             }
         },
-        submitting:{},
+        submitting:{
+            entry:[(c,e)=>console.log('inside submitting')]
+        },
         success:{
             type:'final'
         },

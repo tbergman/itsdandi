@@ -4487,10 +4487,12 @@ const theme = {
         flexFlow: ["column wrap", "row wrap"],
 
         '.Form__inputWrapper':{
+  
           '.Form__inputWrapper-error':{
             fontSize:'14px',
             pl:[3],
             mt:[1],
+      
           },
           'input':{
             mb:0,
@@ -4500,13 +4502,21 @@ const theme = {
               border:'none'
             },
             '&:hover':{
-              cursor:['auto','pointer']
+              cursor:['auto','pointer'],
+           
             }
           },
           'input:-webkit-autofill, input:-webkit-autofill:hover, select:-webkit-autofill, select:-webkit-autofill:hover':{
             boxShadow:'0 0  0px 1000px #262629 inset',
             WebkitTextFillColor:'rgb(242,242,242)',
+            border:'solid 8px #262629',
+            px:[2],
+            py:[1]
           },
+          'input:-webkit-autofill::first-line':{
+            fontSize:'18px',
+            fontFamily:'body'
+          }
         },
 
      
@@ -4578,6 +4588,11 @@ const theme = {
           flex: [1, "1 100%"],
           display: "flex",
           justifyContent: ["flex-start", "flex-end"],
+          button:{
+            '&:focus':{
+              outline:'none'
+            },
+          }
         },
       },
       ".socials": {
@@ -4591,6 +4606,7 @@ const theme = {
           cursor: "pointer",
           height:'30px',
           width:'30px',
+
           div:{
             height:'inherit',
             width:'inherit',
@@ -4599,7 +4615,15 @@ const theme = {
               width:'inherit',
               svg:{
                 width:'100%',
-                height:'100%'
+                height:'100%',
+                path:{
+                  fill:'white'
+                },
+                '&:hover':{
+                  path:{
+                    fill:'rgba(242,242,242,.7)'
+                  }
+                }
               }
             }
           }

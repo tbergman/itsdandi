@@ -1,19 +1,24 @@
 /** @jsx jsx */
 import {jsx,Styled,Input} from 'theme-ui'
+import {useState} from 'react';
 
 const InputWrapper = ({field,send,sendType,placeholder}) => {
+  const [focused, setFocused] = useState(false)
+
 return (
     <div className="Form__inputWrapper">
     <Input 
     id="namefield" 
     placeholder={placeholder} 
     value={field.value} 
+  onFocus={()=>setFocused(true)}
+  onBlur={()=>setFocused(false)}
     onChange={(e)=>send({type:sendType,value:e.target.value})}
     sx={{
       border: field.error ? '1px solid #FF5C17' : 'none',
     }}
     />
-    {field.error && (
+    {field.error && !focused && (
   <div className="Form__inputWrapper-error">
   <Styled.p>{field.error}</Styled.p>
 </div>

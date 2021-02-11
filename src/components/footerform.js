@@ -74,6 +74,9 @@ const FooterForm = () => {
 
       <div className="Form__button">
         <Button
+        onClick={()=>send({
+          type:'SUBMIT'
+        })}
           sx={{
             bg:allValidated ? '#FFD93B !important' : null,
             color:allValidated ? "#1A1A1D !important" : null,
