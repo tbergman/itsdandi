@@ -3744,29 +3744,22 @@ const theme = {
       display: ["none", "block"],
       fontFamily: "body",
       ".demobtn": {
-        position: "absolute",
-        top: "44px",
-        width: [
-          (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
-          (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
-          (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 80px)`,
-          (t) => `calc(calc(${t.colWidthDesktopMassive} * 2) + 80px)`,
-        ],
-        left: [
-          "20px",
-          (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
-          (t) =>
-            `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,
-            (t) =>
-            `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 60px) + ${t.desktopMassiveGutters})`,
-        ],
+        '&:hover':{
+          bg:'#FF9133',
+        },
         display: "flex",
         justifyContent: "center",
+        alignItems:'center',
+        bg:'yellow',
+        borderRadius:'200px',
+        cursor: "pointer",
+        height:'48px',
+        width:'165px',
         ".demobtn-text": {
-          color: "blue",
-          fontSize: "14px",
+          color: "black",
+          fontSize: "16px",
           fontFamily: "medium",
-          cursor: "pointer",
+      
         },
       },
 
@@ -3796,10 +3789,12 @@ const theme = {
         },
       },
       ".links": {
+        height:'100%',
         display: "flex",
         justifyContent: "flex-end",
+        alignItems:'center',
         px: ["40px"],
-        pt: ["44px"],
+        // pt: ["44px"],
         ".item": {
           fontSize: "nav",
           fontFamily: "medium",

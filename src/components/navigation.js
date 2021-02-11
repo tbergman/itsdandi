@@ -94,19 +94,7 @@ const Navigation = ({
           </a>
         </Link>
       </div>
-      <motion.div
-        variants={demoButton}
-        initial="initial"
-        animate={animationControls}
-        className={"demobtn"}
-      >
-        <Styled.p
-          className="demobtn-text"
-          onClick={() => scrollToBottom(window, document.body.scrollHeight)}
-        >
-          Request a demo
-        </Styled.p>
-      </motion.div>
+
       <div className="links">
         <Link href="/">
           <a className="item">
@@ -165,40 +153,28 @@ const Navigation = ({
         </Link>
 
         <a href="www.google.com" target="_blank" className="item">
-          <motion.div
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-            variants={loginMotion}
-            className="login"
+          <div
+      
+ 
           >
-            <motion.div className="text">Log in</motion.div>
-            <motion.div variants={arrowMotion} className="arrow">
-              <svg
-                width="15"
-                height="16"
-                viewBox="0 0 15 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9 3.00464L14 8.00464L9 13.0046"
-                  stroke={"#335AFF"}
-                  strokeWidth="1.6"
-                />
-                <line
-                  x1="14"
-                  y1="8.00425"
-                  x2="1"
-                  y2="8.00425"
-                  stroke={"#335AFF"}
-                  strokeWidth="1.8"
-                />
-              </svg>
-            </motion.div>
-          </motion.div>
+            <div sx={{
+              opacity:.5
+            }} className="text">Log in</div>
+        
+          </div>
         </a>
+        <div
+          className="item demobtn"
+      >
+        <Styled.p
+          className="demobtn-text"
+          onClick={() => scrollToBottom(window, document.body.scrollHeight)}
+        >
+          Request a demo
+        </Styled.p>
       </div>
+      </div>
+
     </motion.nav>
   );
 };
