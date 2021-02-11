@@ -21,7 +21,7 @@ const FooterForm = () => {
 
   return (
     <div className="Form">
-      <InputWrapper field={firstName} send={send} sendType={'EDIT_FIRSTNAME'} placeholder="First Name*" />
+      <InputWrapper scrollTo={true} field={firstName} send={send} sendType={'EDIT_FIRSTNAME'} placeholder="First Name*"  />
       <InputWrapper field={lastName} send={send} sendType={'EDIT_LASTNAME'} placeholder="Last Name*"/>
       <InputWrapper field={email} send={send} sendType={'EDIT_EMAIL'} placeholder="Email"  />
       <InputWrapper field={phone} send={send} sendType={'EDIT_PHONE'} placeholder="Phone" />

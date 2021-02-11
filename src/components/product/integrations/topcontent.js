@@ -44,7 +44,7 @@ const TopContent = ({ isDesktop, content }) => {
       className="TopContent"
     >
       <div className="TopContent__buttonWrapper">
-        <Button url={url} text={button_text} />
+        <Button url={url} text={button_text} isDesktop={isDesktop} />
       </div>
       <div className="TopContent__graphics">
         <div className="TopContent__graphicsWrapper">

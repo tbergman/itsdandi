@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui";
 import { scrollToBottom } from "../../helpers/utils";
 
-const Button = ({ text }) => {
+const Button = ({ text,isDesktop }) => {
   return (
     <div
       sx={{
@@ -11,7 +11,7 @@ const Button = ({ text }) => {
     >
       <div
         className="button"
-        onClick={() => scrollToBottom(window, document.body.scrollHeight)}
+        onClick={() => scrollToBottom(window, document.body.scrollHeight,isDesktop)}
       >
         <Styled.p>{text}</Styled.p>
       </div>

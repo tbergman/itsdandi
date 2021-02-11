@@ -16,7 +16,7 @@ const TopContent = ({ isDesktop, content }) => {
       }}
     >
       <div className="buttonwrapper">
-        <Button url={url} text={button_text} />
+        <Button url={url} text={button_text} isDesktop={isDesktop} />
       </div>
       <div className="graphics">
         {isDesktop ? (

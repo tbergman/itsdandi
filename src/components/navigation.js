@@ -14,6 +14,7 @@ const Navigation = ({
   navBarStyling,
   staticLogo,
   setStaticLogo,
+  isDesktop,
   width,
   demoButtonStatic,
 }) => {
@@ -21,6 +22,8 @@ const Navigation = ({
   const scrollY = useScrollPosition(60);
   const widths = columnWidths(width);
   const scrollThreshold = 400;
+  console.log(isDesktop);
+  
 
   const loginMotion = {
     rest: {
@@ -168,7 +171,7 @@ const Navigation = ({
       >
         <Styled.p
           className="demobtn-text"
-          onClick={() => scrollToBottom(window, document.body.scrollHeight)}
+          onClick={() => scrollToBottom(window, document.body.scrollHeight,isDesktop)}
         >
           Request a demo
         </Styled.p>

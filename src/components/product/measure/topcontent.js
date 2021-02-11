@@ -15,7 +15,7 @@ const TopContent = ({ isDesktop, content, width }) => {
       }}
     >
       <div className="buttonwrapper">
-        <Button text={button_text} />
+        <Button text={button_text} isDesktop={isDesktop} />
       </div>
 
       <div className="graphics">

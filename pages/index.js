@@ -68,6 +68,7 @@ const Home = (props) => {
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
         width={width}
+        isDesktop={isDesktop}
       />
       <MobileNav
         menuOpen={menuOpen}

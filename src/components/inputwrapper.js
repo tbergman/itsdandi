@@ -2,13 +2,13 @@
 import {jsx,Styled,Input} from 'theme-ui'
 import {useState} from 'react';
 
-const InputWrapper = ({field,send,sendType,placeholder}) => {
+const InputWrapper = ({field,send,sendType,placeholder,scrollTo}) => {
   const [focused, setFocused] = useState(false)
 
 return (
     <div className="Form__inputWrapper">
         <Input 
-          id="namefield" 
+          id={scrollTo ? "namefield" : ''}
           placeholder={placeholder} 
           value={field.value} 
           onFocus={()=>setFocused(true)}

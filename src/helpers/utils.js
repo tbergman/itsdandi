@@ -28,12 +28,22 @@ export const columnWidths = (width) => {
 
 export const isServer = () => typeof window === "undefined";
 
-export const scrollToBottom = (window, height) => {
-  window.scrollTo({
-    top: height,
-    left: 0,
-    behavior: "smooth",
-  });
+export const scrollToBottom = (window, height, isDesktop) => {
+
+  if (isDesktop) {
+    window.scrollTo({
+      top: height,
+      left: 0,
+      behavior: "smooth",
+    });
+  } else {
+    window.scrollTo({
+      top:height*.8,
+      left:0,
+      behavior:'smooth'
+    })
+  }
+
 
   setTimeout(() => {
     // click on input field
