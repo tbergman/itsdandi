@@ -21,7 +21,7 @@ const Navigation = ({
   const animationControls = useAnimation();
   const scrollY = useScrollPosition(60);
   const widths = columnWidths(width);
-  const scrollThreshold = 400;s
+  const scrollThreshold = 400;
 
 
   const loginMotion = {
