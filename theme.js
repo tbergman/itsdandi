@@ -4497,6 +4497,7 @@ const theme = {
             caretColor:'yellow',
             '&:focus':{
               bg:'#3A3A3D',
+              border:'none'
             },
             '&:hover':{
               cursor:['auto','pointer']

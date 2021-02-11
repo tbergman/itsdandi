@@ -18,6 +18,7 @@ const FooterForm = () => {
     allValidated
   } = state.context;
 
+
   return (
     <div className="Form">
       <InputWrapper field={firstName} send={send} sendType={'EDIT_FIRSTNAME'} placeholder="First Name*" />

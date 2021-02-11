@@ -6,14 +6,19 @@ const errorMessages = {
     isNotEmail:'Email must be formatted correctly'
 }
 
-const checkValidation = (context) => {
-    const _ = Object.keys(c).map(key=>{
-        if (key!=='allValidated') {
+const checkValidation = ({context, current }) => {
+
+    const toArray = Object.keys(context);
+
+    const validations = toArray.slice(1,toArray.length).map(key=>{
+            if (key===current.key) {
+                return current.error
+            }
             return context[key].error
-        }
     })
 
-    return _
+    return validations.every((value)=>value===false)
+
 }
 
 export const FooterForm__machine = createMachine({
@@ -92,52 +97,119 @@ export const FooterForm__machine = createMachine({
     actions:{
         editFirstName: assign((c,e)=>{
 
+            const current = {
+                key:'firstName',
+                error:e.value==='' ? errorMessages.isEmpty : false
+            }
 
             return {
                 firstName:{
                     value:e.value,
-                    error:e.value==='' ? errorMessages.isEmpty : false
+                    error:current.error
                 },
+                allValidated:checkValidation({context:c,current})
             }
 
         }),
-        editLastName:assign({
-            lastName:(c,e)=>({
-                
-                value:e.value,
+        editLastName:assign((c,e)=>{
+            const current = {
+                key:'lastName',
                 error:e.value==='' ? errorMessages.isEmpty : false
-            })
+            }
+
+            return {
+                lastName:{
+                    value:e.value,
+                    error:current.error
+                },
+                allValidated:checkValidation({context:c,current})
+            }
         }),
-        editEmail:assign({
-            email:(c,e)=>({
-       
-                value:e.value,
-                error:!EmailValidator.validate(e.value) ? errorMessages.isNotEmail : false
-            })
+   
+        editEmail:assign((c,e)=>{
+            const current={key:'email',error:!EmailValidator.validate(e.value) ? errorMessages.isNotEmail : false}
+
+            return{
+                email:{
+                    value:e.value,
+                    error:current.error
+                },
+                allValidated:checkValidation({context:c,current})
+            }
         }),
-        editPhone:assign({
-            phone:(c,e)=>({
-                value:e.value,
-                error:e.value === '' ? errorMessages.isEmpty : false
-            })
+        
+     
+        editPhone:assign((c,e)=>{
+
+            const current={
+                key:'phone',
+                error:e.value==='' ? errorMessages.isEmpty : false,
+            }
+
+            return {
+                phone:{
+                    value:e.value,
+                    error:current.error
+                },
+                allValidated:checkValidation({context:c,current})
+            }
+
+
         }),
-        editCompany:assign({
-            company:(c,e)=>({
-                value:e.value,
-                error:e.value === '' ? errorMessages.isEmpty : false
-            })
-        }),
-        editWebsite:assign({
-            website:(c,e)=>({
-                ...c.website,
-                value:e.value
-            })
-        }),
-        editEmployees:assign({
-            employees:(c,e)=>({
-                value:e.value,
-                error:e.value==='' ? errorMessages.isEmpty : false
-            })
+        
+  
+        editCompany:assign((c,e)=>{
+            const current={
+                key:'company',
+                error:e.value==='' ? errorMessages.isEmpty : false,
+
+            }
+
+            return {
+                company:{
+                    value:e.value,
+                    error:current.error
+                },
+                allValidated:checkValidation({context:c,current})
+            }
         })
+    ,
+        editWebsite: assign((c,e)=>{
+            const current={
+                key:'website',
+                error:e.value==='' ? errorMessages.isEmpty : false
+            }
+
+            return {
+                website:{
+                    value:e.value,
+                    error:current.error,
+                    
+                },
+                allValidated:checkValidation({context:c,current})
+            }
+        }),
+
+        editEmployees:assign((c,e)=>{
+
+        
+
+
+            const current = {
+                key:'employees',
+                error:e.value==='' ? errorMessages.isEmpty : false
+            }
+
+
+            return {
+                employees:{
+                    value:e.value,
+                    error:current.error,
+                    
+                },
+                allValidated:checkValidation({context:c,current})
+            }
+        })
+
     }
 })
