@@ -28,7 +28,11 @@ export const columnWidths = (width) => {
 
 export const isServer = () => typeof window === "undefined";
 
+
 export const scrollToBottom = (window, height, isDesktop) => {
+
+  console.log(isDesktop);
+
 
   if (isDesktop) {
     window.scrollTo({
@@ -36,20 +40,28 @@ export const scrollToBottom = (window, height, isDesktop) => {
       left: 0,
       behavior: "smooth",
     });
+     setTimeout(() => {
+    // click on input field
+   
+
+  const nameField = window.document.getElementById("namefield")
+  nameField.focus();
+  }, 1500);
   } else {
+    const scrollTarget = window.document.querySelector('#footerHeader').getBoundingClientRect().y;
     window.scrollTo({
-      top:height*.8,
+      top:scrollTarget-74,
       left:0,
       behavior:'smooth'
     })
+
+  const nameField = window.document.getElementById("namefield")
+  nameField.focus();
   }
 
 
-  setTimeout(() => {
-    // click on input field
-    const nameField = window.document.getElementById("namefield");
-    nameField.focus();
-  }, 1500);
+
+ 
 
   return;
 };

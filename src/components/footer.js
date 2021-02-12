@@ -22,7 +22,7 @@ const Footer = () => {
           variant: "grid",
         }}
       >
-        <div className="header">
+        <div className="header" id="footerHeader">
           <Styled.h2>Take Dandi for a test drive</Styled.h2>
           <Styled.p>
             Because there’s only one place for today’s DEI challenges: <br />
