@@ -28,9 +28,19 @@ export const DemoBtn__machine = createMachine(
     actions: {
       hide: (_, e) => {
         const { ref, gsap } = e.payload;
+
+        gsap.to(ref.current, {
+          autoAlpha: 0,
+          duration: 0.5,
+        });
       },
       show: (_, e) => {
         const { ref, gsap } = e.payload;
+
+        gsap.to(ref.current, {
+          autoAlpha: 1,
+          duration: 0.5,
+        });
       },
     },
   }
