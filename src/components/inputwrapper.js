@@ -8,7 +8,7 @@ const InputWrapper = ({field,send,sendType,placeholder,scrollTo}) => {
 return (
     <div className="Form__inputWrapper">
         <Input 
-          id={scrollTo ? "namefield" : ''}
+          id={scrollTo ? "namefield" : field.key}
           placeholder={placeholder} 
           value={field.value} 
           onFocus={()=>setFocused(true)}

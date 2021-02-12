@@ -2,11 +2,21 @@ import { createMachine } from "xstate";
 
 export const BigLogo__machine = createMachine({
     id:"BigLogo",
-    initial:'large',
-    context:{
-
-    },
+    initial:'hidden',
+    context:{},
     states:{
+        hidden:{
+            on:{
+                SET_LARGE:{
+                    actions:'switchLarge',
+                    target:'large'
+                },
+                SET_SMALL:{
+                    actions:'switch',
+                    target:'small'
+                }
+            }
+        },
         large:{
             on:{
                 SCROLL_TRIGGERED:{
@@ -21,7 +31,7 @@ export const BigLogo__machine = createMachine({
             }
         },
         small:{
-       
+            type:'final',
         }
     }
 },{
@@ -50,12 +60,22 @@ export const BigLogo__machine = createMachine({
 
             gsap.to(ref.current,{
                 scale:scaleTo,
-                duration:.1
+                opacity:1,
+                duration:.1,
             })
 
             gsap.to(letters,{
                 opacity:0,
                 duration:0
+            })
+        },
+        switchLarge:(_,e)=>{
+            const {gsap,ref}=e.payload;
+
+            gsap.to(ref.current,{
+                scale:1,
+                opacity:1,
+                duration:.1
             })
         }
     }

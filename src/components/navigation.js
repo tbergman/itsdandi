@@ -5,9 +5,10 @@ import { ReactSVG } from "react-svg";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation, animationControls } from "framer-motion";
 import BigLogo from "./home/bigLogo";
-import { columnWidths, scrollToBottom } from "../helpers/utils";
+import { columnWidths } from "../helpers/utils";
 import useScrollPosition from "@react-hook/window-scroll";
 import { useEffect } from "react";
+import DemoBtn from "./navigation/demobtn";
 
 const Navigation = ({
   current,
@@ -15,63 +16,11 @@ const Navigation = ({
   staticLogo,
   setStaticLogo,
   isDesktop,
+  isServer,
   width,
   demoButtonStatic,
 }) => {
-  const animationControls = useAnimation();
-  const scrollY = useScrollPosition(60);
   const widths = columnWidths(width);
-  const scrollThreshold = 400;
-
-
-  const loginMotion = {
-    rest: {
-      x: 0,
-    },
-    hover: {
-      x: 0,
-    },
-  };
-
-  const arrowMotion = {
-    rest: {
-      x: 0,
-    },
-    hover: {
-      x: 10,
-      transition: {
-        type: "tween",
-        ease: "easeOut",
-        duration: 0.175,
-      },
-    },
-  };
-
-  const demoButton = {
-    initial: {
-      opacity: 0,
-      visibility: "hidden",
-    },
-    animate: {
-      opacity: 1,
-      visibility: "visible",
-      transition: {
-        opacity: {
-          duration: 0.2,
-        },
-      },
-    },
-  };
-
-  useEffect(() => {
-    if (demoButtonStatic) {
-      animationControls.start("animate");
-    } else if (scrollY >= scrollThreshold) {
-      animationControls.start("animate");
-    } else {
-      animationControls.start("initial");
-    }
-  }, [scrollY, demoButtonStatic]);
 
   return (
     <motion.nav
@@ -85,14 +34,16 @@ const Navigation = ({
       <div className="logoWrapper">
         <Link href="/">
           <a className="logo">
-            <BigLogo
-              navBarStyling={navBarStyling}
-              staticLogo={staticLogo}
-              setStaticLogo={setStaticLogo}
-              scaleTo={32 / widths.desktop}
-              yOffset={-widths.desktop + 35}
-              width={width}
-            />
+            {!isServer && (
+              <BigLogo
+                navBarStyling={navBarStyling}
+                staticLogo={staticLogo}
+                setStaticLogo={setStaticLogo}
+                scaleTo={32 / widths.desktop}
+                yOffset={-widths.desktop + 35}
+                width={width}
+              />
+            )}
           </a>
         </Link>
       </div>
@@ -155,28 +106,19 @@ const Navigation = ({
         </Link>
 
         <a href="www.google.com" target="_blank" className="item">
-          <div
-      
- 
-          >
-            <div sx={{
-              opacity:.5
-            }} className="text">Log in</div>
-        
+          <div>
+            <div
+              sx={{
+                opacity: 0.5,
+              }}
+              className="text"
+            >
+              Log in
+            </div>
           </div>
         </a>
-        <div
-          className="item demobtn"
-      >
-        <Styled.p
-          className="demobtn-text"
-          onClick={() => scrollToBottom(window, document.body.scrollHeight,isDesktop)}
-        >
-          Request a demo
-        </Styled.p>
+        <DemoBtn variant={"yellow"} demoButtonStatic={demoButtonStatic} />
       </div>
-      </div>
-
     </motion.nav>
   );
 };

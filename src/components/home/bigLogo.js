@@ -5,6 +5,7 @@ import { useEffect, useRef, useState, memo } from "react";
 import {gsap} from 'gsap';
 import { useMachine } from "@xstate/react";
 import {BigLogo__machine} from '../../machines/biglogo';
+import {scrollYPos} from '../../helpers/utils';
 
 const BigLogo = ({
   navBarStyling,
@@ -19,29 +20,69 @@ const BigLogo = ({
   const scrollThreshold = 150;
   const svgRef = useRef(null);
 
-  // onLoad animation
+  // onLoad set initial
   useEffect(() => {
-
-    gsap.to(svgRef.current,{
+    gsap.set(svgRef.current,{
       translateY: yOffset,
-      scale: staticLogo || menuOpen || state.matches("small") ? scaleTo : 1,
       transformOrigin: "0% 100%",
       rotate: 90,
-      duration:.1
-    })
-    
-    gsap.to(svgRef.current,{
-      opacity:1,
-      duration:.5,
-      delay:.1
     })
 
+    const initialY = scrollYPos(window);
+    const aboveThreshold = initialY >=scrollThreshold;
+
+    // onLoad and scroll
+    if (state.matches("hidden")) {
+      if (aboveThreshold || staticLogo || menuOpen) {
+          send({
+            type:'SET_SMALL',
+            payload:{
+              gsap,
+              ref:svgRef,
+              scaleTo,
+            }
+          })
+      } else {
+        send({
+          type:'SET_LARGE',
+          payload:{
+            gsap,
+            ref:svgRef,
+
+          }
+        })
+      } 
+    }
+    
+
+    //on load from top
+    // if (state.matches('hidden')) {
+    //   if (staticLogo || menuOpen) {
+    //     send({
+    //       type:'SET_SMALL',
+    //       payload:{
+    //         gsap,
+    //         ref:svgRef,
+    //         scaleTo
+    //       }
+    //     })
+    //   } else {
+    //     send({
+    //       type:"SET_LARGE",
+    //       payload:{
+    //         gsap,
+    //         ref:svgRef
+    //       }
+
+    //     })
+    //   }
+    // }
 
   }, [width])
 
   // menuOpen
   useEffect(() => {
-    if (menuOpen || staticLogo){
+    if (menuOpen){
       send({
         type:"MAKE_STATIC",
         payload:{
@@ -57,9 +98,11 @@ const BigLogo = ({
   // animate onScroll
   useScrollPosition(
     ({ prevPos, currPos }) => {
-      if (
-        state.matches("large") &&
-        Math.abs(currPos.y) >= scrollThreshold
+
+      const aboveThreshold = Math.abs(currPos.y) >= scrollThreshold;
+
+
+      if (state.matches("large") && aboveThreshold
       ) {
 
         send({
@@ -72,7 +115,7 @@ const BigLogo = ({
         })
       }
     },
-    [],
+    [state],
     null,
     true,
     250,
@@ -90,7 +133,7 @@ const BigLogo = ({
       className="BigLogo"
     >
       <svg
-            ref={svgRef}
+        ref={svgRef}
         className="BigLogo__logoSvg"
 
         width="82"

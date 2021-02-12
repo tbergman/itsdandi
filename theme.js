@@ -113,7 +113,8 @@ const theme = {
           width: "100%",
           pointerEvents: "none",
           ".BigLogo__logoSvg": {
-            opacity:0 // starting point
+            opacity:0 // starting point,
+            
           },
           ".BigLogo__logoSvg-letter": {},
           ".BigLogo__logoSvg-svg": {},

@@ -31,7 +31,6 @@ export const isServer = () => typeof window === "undefined";
 
 export const scrollToBottom = (window, height, isDesktop) => {
 
-  console.log(isDesktop);
 
 
   if (isDesktop) {
@@ -75,4 +74,8 @@ export const pricingCalulation = (employees) => {
 
   return 5000 + (adjustedEmployees * 10)
 
+}
+
+export const scrollYPos = (window)=>{
+  return Math.max(window.pageYOffset,window.document.documentElement.scrollTop,window.document.body.scrollTop,window.scrollY,0)
 }
