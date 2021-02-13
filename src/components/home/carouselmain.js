@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import CarouselItem from "../carouselitem";
 import { globalSlideUp, imageCarousel } from "../../helpers/animations";
+import { Transition } from "react-transition-group";
 
 const CarouselMain = ({ description, items, inView }) => {
   const items_ = items.map((i) => i.fields);
@@ -26,7 +27,7 @@ const CarouselMain = ({ description, items, inView }) => {
 
   return (
     <div className="Carousel__carouselWrapper">
-      <motion.div
+      {/* <motion.div
         variants={globalSlideUp}
         initial="hidden"
         animate={animationControls}
@@ -36,19 +37,25 @@ const CarouselMain = ({ description, items, inView }) => {
         <Styled.p className="Carousel__carouselWrapper-description-text">
           {description}
         </Styled.p>
-      </motion.div>
-      <AnimatePresence initial={false}>
-        <motion.div className="Carousel__carouselWrapper-imageWrapper">
-          <motion.picture>
-            <motion.source
+      </motion.div> */}
+      {/* <AnimatePresence initial={false}> */}
+      <Transition
+        in={true}
+        timeout={200}
+        unmountOnExit
+        onExited={(node) => console.log(node)}
+      >
+        {(state) => (
+          <div key={current} className="Carousel__carouselWrapper-imageWrapper">
+            {state}
+            {/* <picture>
+            <source
               media="(min-width: 800px)"
               srcSet={items_[current].desktop_image}
-            ></motion.source>
-            <motion.source
-              srcSet={items_[current].mobile_image}
-            ></motion.source>
+            ></source>
+            <source srcSet={items_[current].mobile_image}></source>
 
-            <motion.img
+            <img
               key={current}
               variants={imageCarousel}
               initial="enter"
@@ -58,9 +65,12 @@ const CarouselMain = ({ description, items, inView }) => {
               alt=""
               className="Carousel__carouselWrapper-imageWrapper-image"
             />
-          </motion.picture>
-        </motion.div>
-      </AnimatePresence>
+          </picture> */}
+          </div>
+        )}
+      </Transition>
+
+      {/* </AnimatePresence> */}
 
       <div className="Carousel__carouselWrapper-textWrapper">
         <div

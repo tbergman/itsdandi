@@ -4,8 +4,20 @@ export const DemoBtn__machine = createMachine(
   {
     id: "DemoBtn",
     context: {},
-    initial: "visible",
+    initial: "idle",
     states: {
+      idle: {
+        on: {
+          HIDE: {
+            actions: "hide",
+            target: "hidden",
+          },
+          SHOW: {
+            actions: "show",
+            target: "visible",
+          },
+        },
+      },
       visible: {
         on: {
           HIDE: {
@@ -31,7 +43,7 @@ export const DemoBtn__machine = createMachine(
 
         gsap.to(ref.current, {
           autoAlpha: 0,
-          duration: 0.5,
+          duration: 0.1,
         });
       },
       show: (_, e) => {
@@ -39,7 +51,7 @@ export const DemoBtn__machine = createMachine(
 
         gsap.to(ref.current, {
           autoAlpha: 1,
-          duration: 0.5,
+          duration: 0.25,
         });
       },
     },

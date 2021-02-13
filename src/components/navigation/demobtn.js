@@ -1,21 +1,56 @@
 /** @jsx jsx */
 import { useMachine } from "@xstate/react";
 import { jsx, Styled } from "theme-ui";
-import { scrollToBottom } from "../../helpers/utils";
+import { scrollToBottom, scrollYPos } from "../../helpers/utils";
 import { DemoBtn__machine } from "../../machines/demobtn";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import useScrollPosition from "@react-hook/window-scroll";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 const DemoBtn = ({ variant, demoButtonStatic }) => {
   const [state, send] = useMachine(DemoBtn__machine);
   const scrollThreshold = 400;
   const ref = useRef(null);
 
+  const setInitial = async () => {
+    await setTimeout(() => {
+      const initialY = scrollYPos(window);
+      const aboveThreshold = initialY > scrollThreshold;
+
+      if (state.matches("idle") && aboveThreshold) {
+        send({
+          type: "SHOW",
+          payload: {
+            gsap,
+            ref: ref,
+          },
+        });
+      } else if (state.matches("idle") && !aboveThreshold) {
+        send({
+          type: "HIDE",
+          payload: {
+            gsap,
+            ref: ref,
+          },
+        });
+      }
+    }, 1);
+
+    return;
+  };
+
+  // initial load
+  useEffect(() => {
+    gsap.set(ref.current, {
+      autoAlpha: 0,
+    });
+
+    setInitial();
+  }, []);
+
   useScrollPosition(
     ({ prevPos, currPos }) => {
       const aboveThreshold = Math.abs(currPos.y) >= scrollThreshold;
-
       if (state.matches("hidden") && aboveThreshold) {
         send({
           type: "SHOW",
