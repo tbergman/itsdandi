@@ -28,54 +28,52 @@ export const columnWidths = (width) => {
 
 export const isServer = () => typeof window === "undefined";
 
-
 export const scrollToBottom = (window, height, isDesktop) => {
-
-
-
   if (isDesktop) {
     window.scrollTo({
       top: height,
       left: 0,
       behavior: "smooth",
     });
-     setTimeout(() => {
-    // click on input field
-   
+    setTimeout(() => {
+      // click on input field
 
-  const nameField = window.document.getElementById("namefield")
-  nameField.focus();
-  }, 1500);
+      const nameField = window.document.getElementById("namefield");
+      nameField.focus();
+    }, 1500);
   } else {
-    const scrollTarget = window.document.querySelector('#footerHeader').getBoundingClientRect().y;
+    const scrollTarget = window.document
+      .querySelector("#footerHeader")
+      .getBoundingClientRect().y;
     window.scrollTo({
-      top:scrollTarget-74,
-      left:0,
-      behavior:'smooth'
-    })
+      top: scrollTarget - 74,
+      left: 0,
+      behavior: "smooth",
+    });
 
-  const nameField = window.document.getElementById("namefield")
-  nameField.focus();
+    const nameField = window.document.getElementById("namefield");
+    nameField.focus();
   }
-
-
-
- 
 
   return;
 };
 
 export const pricingCalulation = (employees) => {
-  if (employees <=500) {
-    return 5000
+  if (employees <= 500) {
+    return 5000;
   }
 
   const adjustedEmployees = employees - 500;
 
-  return 5000 + (adjustedEmployees * 10)
+  return 5000 + adjustedEmployees * 10;
+};
 
-}
-
-export const scrollYPos = (window)=>{
-  return Math.max(window.pageYOffset,window.document.documentElement.scrollTop,window.document.body.scrollTop,window.scrollY,0)
-}
+export const scrollYPos = (window) => {
+  return Math.max(
+    window.pageYOffset,
+    window.document.documentElement.scrollTop,
+    window.document.scrollingElement.scrollTop,
+    window.document.body.scrollTop,
+    window.scrollY
+  );
+};
