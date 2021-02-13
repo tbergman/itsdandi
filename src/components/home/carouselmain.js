@@ -50,26 +50,22 @@ const CarouselMain = ({ description, items, inView }) => {
 
             <Transition
               in={current === i}
-              timeout={500}
+              timeout={1000}
+              unmountOnExit
+              mountOnEnter
               onEnter={(node, isAppearing) => {
-                gsap.fromTo(
-                  node,
-                  {
-                    x: 1000,
-                    autoAlpha: 0,
-                  },
-                  {
-                    x: 0,
-                    autoAlpha: 1,
-                    duration: 0.25,
-                  }
-                );
-              }}
-              onExit={(node) => {
-                gsap.to(node, {
-                  x: -1000,
+                gsap.set(node, {
+                  x: 1000,
                   autoAlpha: 0,
-                  duration: 0.25,
+                });
+              }}
+              addEndListener={(node, done) => {
+                gsap.to(node, {
+                  x: 0,
+                  autoAlpha: current === i ? 1 : 0,
+                  duration: current === i ? 0.45 : 0.1,
+                  onComplete: done,
+                  ease: "power2.out",
                 });
               }}
             >
