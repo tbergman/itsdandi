@@ -64,7 +64,7 @@ const CarouselMain = ({ description, items, inView }) => {
                   x: 0,
 
                   autoAlpha: current === i ? 1 : 0,
-                  duration: current === i ? 0.45 : 0,
+                  duration: current === i ? 0.6 : 0,
                   onComplete: done,
                   ease: "power2.out",
                 });

@@ -47,7 +47,7 @@ const CarouselItem = ({
         .to(ref.current, {
           opacity: 1,
           duration: 0.5,
-          ease: "power3.out",
+          ease: "power1.inOut",
         });
     } else if (state.matches("inactive")) {
       const tl = gsap.timeline().to(ref.current, {
