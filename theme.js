@@ -1,5 +1,5 @@
 const theme = {
-  breakpoints: ["1024px", "1500px","2000px"],
+  breakpoints: ["1024px", "1500px", "2000px"],
   fonts: {
     body: '"Dandi Grotesk", sans-serif',
     display: '"Dandi Grotesk Display", sans-serif',
@@ -81,7 +81,7 @@ const theme = {
 
   desktopMaxSectionWidth: "475px",
   desktopBigGutters: `calc(100vw * .12)`,
-  desktopMassiveGutters:`calc(100vw*.175)`,
+  desktopMassiveGutters: `calc(100vw*.175)`,
   desktopGutters: `40px`,
   mobileGutters: `20px`,
   colWidthMob: `calc(calc(100vw - 140px)/6)`,
@@ -113,8 +113,7 @@ const theme = {
           width: "100%",
           pointerEvents: "none",
           ".BigLogo__logoSvg": {
-            opacity:0 // starting point,
-            
+            opacity: 0, // starting point,
           },
           ".BigLogo__logoSvg-letter": {},
           ".BigLogo__logoSvg-svg": {},
@@ -141,7 +140,6 @@ const theme = {
           mt: [24, 28],
           mb: [2, 0],
           ".Top__text-header": {
-   
             mr: [
               "unset",
               (t) => t.colWidthDesktop,
@@ -181,10 +179,12 @@ const theme = {
           gridArea: ["2/1/3/-1"],
           position: "relative",
           width: "100vw",
-          left: ["-20px",
-          "-40px", 
-          (t) => `calc(${t.desktopBigGutters} / -1)`,
-          (t) => `calc(${t.desktopMassiveGutters} / -1)`],
+          left: [
+            "-20px",
+            "-40px",
+            (t) => `calc(${t.desktopBigGutters} / -1)`,
+            (t) => `calc(${t.desktopMassiveGutters} / -1)`,
+          ],
           height: ["191px", "168px", "232px"],
 
           ".Bars__barWrapper": {
@@ -329,11 +329,11 @@ const theme = {
         position: "relative",
         ".LearnMore__toptext": {
           position: "fixed",
-          cursor:'pointer',
+          cursor: "pointer",
           bottom: 0,
           zIndex: 99,
-          opacity:1,
-          transition:'opacity 400ms ease-in',
+          opacity: 1,
+          transition: "opacity 400ms ease-in",
           ml: [
             (t) => `calc(calc(${t.colWidthMob} * 2) + 30px)`,
             (t) => `calc(calc(${t.colWidthDesktop} * 7) + 240px)`,
@@ -356,9 +356,9 @@ const theme = {
             pt: ["4%", "1.6%"],
           },
         },
-        '.hidden':{
-          opacity:0,
-          transition:'opacity 200ms ease-in',
+        ".hidden": {
+          opacity: 0,
+          transition: "opacity 200ms ease-in",
         },
         ".LearnMore__imageWrapper": {
           gridArea: ["2/1/3/-1", "1/6/2/-1"],
@@ -440,17 +440,21 @@ const theme = {
           position: "relative",
           gridArea: ["3/1/4/-1", "2/1/3/-1"],
           width: ["100%", "100vw"],
-          left: [0, 
-            "-40px", 
+          left: [
+            0,
+            "-40px",
             (t) => `calc(${t.desktopBigGutters} / -1)`,
-            (t) => `calc(${t.desktopMassiveGutters} / -1)`],
+            (t) => `calc(${t.desktopMassiveGutters} / -1)`,
+          ],
           display: ["flex", "grid"],
           gridTemplateColumns: ["repeat(12,1fr)"],
           gridTemplateRows: ["auto"],
-          px: [0, 
-            "40px", 
+          px: [
+            0,
+            "40px",
             (t) => t.desktopBigGutters,
-            (t) => t.desktopMassiveGutters],
+            (t) => t.desktopMassiveGutters,
+          ],
           columnGap: ["40px"],
           rowGap: ["0"],
           flexFlow: "column wrap",
@@ -605,10 +609,11 @@ const theme = {
           mb: ["50px", 14],
           width: "100vw",
           left: [
-            "-20px", 
-            "-40px", 
+            "-20px",
+            "-40px",
             (t) => `calc(${t.desktopBigGutters} / -1)`,
-            (t) => `calc(${t.desktopMassiveGutters} / -1)`],
+            (t) => `calc(${t.desktopMassiveGutters} / -1)`,
+          ],
           position: "relative",
           display: "flex",
           flexFlow: "column",
@@ -616,15 +621,14 @@ const theme = {
             width: "100%",
             height: "100%",
             position: "relative",
-            mb:[2],
+            mb: [2],
           },
           ".Partners__logoCarousel-rowWrapper-container": {
             width: "100%",
             height: "100%",
             position: "absolute",
             overflowX: "hidden",
-            overflowY:'hidden',
-
+            overflowY: "hidden",
           },
 
           ".Partners__logoCarousel-rowWrapper-container-row": {
@@ -632,15 +636,15 @@ const theme = {
             height: "100%",
           },
           ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper": {
-            position:'absolute',
+            position: "absolute",
             height: "100%",
-            width:'auto',
-            px:[2],
-            py:[2],
+            width: "auto",
+            px: [2],
+            py: [2],
 
             img: {
               height: "100%",
-              objectFit:'contain',
+              objectFit: "contain",
             },
           },
         },
@@ -688,7 +692,12 @@ const theme = {
             (t) =>
               `calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 160px) + ${t.desktopMassiveGutters})`,
           ],
-          left: ["-20px", "-40px", (t) => `calc(${t.desktopBigGutters} / -1)`,(t) => `calc(${t.desktopMassiveGutters} / -1)`],
+          left: [
+            "-20px",
+            "-40px",
+            (t) => `calc(${t.desktopBigGutters} / -1)`,
+            (t) => `calc(${t.desktopMassiveGutters} / -1)`,
+          ],
           ".AdvanceDEI__graphics-box1": {
             position: "absolute",
             left: 0,
@@ -768,19 +777,22 @@ const theme = {
             (t) =>
               `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 160px) + ${t.desktopMassiveGutters}) )`,
           ],
-          left: ["-20px", "-40px", (t) => `calc(${t.desktopBigGutters} / -1)`,(t) => `calc(${t.desktopMassiveGutters} / -1)`],
+          left: [
+            "-20px",
+            "-40px",
+            (t) => `calc(${t.desktopBigGutters} / -1)`,
+            (t) => `calc(${t.desktopMassiveGutters} / -1)`,
+          ],
           picture: {
             position: "absolute",
             width: "100%",
             height: ["100%"],
             top: [0],
             left: 0,
-  
+
             img: {
-         
               width: "100%",
               height: "100%",
-      
             },
           },
         },
@@ -895,7 +907,12 @@ const theme = {
             (t) =>
               `calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 200px) + ${t.desktopMassiveGutters})`,
           ],
-          left: ["-20px", "-40px", (t) => `calc(${t.desktopBigGutters} / -1)`,(t) => `calc(${t.desktopMassiveGutters} / -1)`],
+          left: [
+            "-20px",
+            "-40px",
+            (t) => `calc(${t.desktopBigGutters} / -1)`,
+            (t) => `calc(${t.desktopMassiveGutters} / -1)`,
+          ],
           position: "relative",
           ".MPP__graphics-background": {
             position: "absolute",
@@ -905,7 +922,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktop} * 3) + 160px)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 3) + 120px) + ${t.desktopBigGutters})`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 3) + 120px) + ${t.desktopMassiveGutters})`,
             ],
             bg: "lightViolet",
@@ -956,31 +973,32 @@ const theme = {
           position: "absolute",
           bottom: [
             `calc(calc(calc(100vw - 80px) * .55) / -1)`,
-            (t) =>`calc(calc(calc(calc(${t.colWidthDesktop} * 4) + 120px) * .55) / -1)`,
-            (t) =>`calc(calc(calc(calc(${t.colWidthDesktopBig} * 4) + 120px) * .55) / -1)`,
-            (t) =>`calc(calc(calc(calc(${t.colWidthDesktopMassive} * 4) + 120px) * .55) / -1)`,
+            (t) =>
+              `calc(calc(calc(calc(${t.colWidthDesktop} * 4) + 120px) * .55) / -1)`,
+            (t) =>
+              `calc(calc(calc(calc(${t.colWidthDesktopBig} * 4) + 120px) * .55) / -1)`,
+            (t) =>
+              `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 4) + 120px) * .55) / -1)`,
           ],
           left: [
             "40px",
             (t) => `calc(calc(${t.colWidthDesktop} * 8) + 360px)`,
-            (t) =>`calc(calc(calc(${t.colWidthDesktopBig} * 8) + 320px) + ${t.desktopBigGutters})`,
-            (t) =>`calc(calc(calc(${t.colWidthDesktopMassive} * 8) + 320px) + ${t.desktopMassiveGutters})`,
-         
-
+            (t) =>
+              `calc(calc(calc(${t.colWidthDesktopBig} * 8) + 320px) + ${t.desktopBigGutters})`,
+            (t) =>
+              `calc(calc(calc(${t.colWidthDesktopMassive} * 8) + 320px) + ${t.desktopMassiveGutters})`,
           ],
           height: [
             `calc(100vw - 80px)`,
             (t) => `calc(calc(${t.colWidthDesktop} * 4) + 120px)`,
-            (t) =>`calc(calc(${t.colWidthDesktopBig} * 4) + 120px)`,
-            (t) =>`calc(calc(${t.colWidthDesktopMassive} * 4) + 120px)`,
-
+            (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 120px)`,
+            (t) => `calc(calc(${t.colWidthDesktopMassive} * 4) + 120px)`,
           ],
           width: [
             `calc(100vw - 80px)`,
             (t) => `calc(calc(${t.colWidthDesktop} * 4) + 120px)`,
-            (t) =>`calc(calc(${t.colWidthDesktopBig} * 4) + 120px)`,
-            (t) =>`calc(calc(${t.colWidthDesktopMassive} * 4) + 120px)`,
-
+            (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 120px)`,
+            (t) => `calc(calc(${t.colWidthDesktopMassive} * 4) + 120px)`,
           ],
           img: {
             position: "absolute",
@@ -1011,7 +1029,7 @@ const theme = {
                   `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 9) + 320px) * .33) * .51) + 88px)`,
                 (t) =>
                   `calc(calc(calc(calc(calc(${t.colWidthDesktopBig} * 9) + 320px) * .33) * .51) + 88px)`,
-                  (t) =>
+                (t) =>
                   `calc(calc(calc(calc(calc(${t.colWidthDesktopMassive} * 9) + 320px) * .33) * .51) + 88px)`,
               ],
               ".section1": {
@@ -1051,7 +1069,7 @@ const theme = {
                   `calc(calc(calc(${t.colWidthDesktop} * 9) + 320px) * .33)`,
                 (t) =>
                   `calc(calc(calc(${t.colWidthDesktopBig} * 9) + 320px) * .33)`,
-                  (t) =>
+                (t) =>
                   `calc(calc(calc(${t.colWidthDesktopMassive} * 9) + 320px) * .33)`,
               ],
               bottom: [
@@ -1061,7 +1079,7 @@ const theme = {
                   `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 9) + 320px) * .33) * .49) / -1)`,
                 (t) =>
                   `calc(calc(calc(calc(calc(${t.colWidthDesktopBig} * 9) + 320px) * .33) * .49) / -1)`,
-                  (t) =>
+                (t) =>
                   `calc(calc(calc(calc(calc(${t.colWidthDesktopMassive} * 9) + 320px) * .33) * .49) / -1)`,
               ],
               width: [
@@ -1203,7 +1221,12 @@ const theme = {
             },
             ".body": {
               mt: [3, 0],
-              ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,(t) => t.colWidthDesktopMassive],
+              ml: [
+                0,
+                (t) => t.colWidthDesktop,
+                (t) => t.colWidthDesktopBig,
+                (t) => t.colWidthDesktopMassive,
+              ],
               width: [
                 "100%",
                 (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
@@ -1232,7 +1255,12 @@ const theme = {
             mt: [8, "268px"],
             mb: [0, "307px"],
             gridArea: ["1/1/2/-1", "1/7/2/-1"],
-            ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,(t) => t.colWidthDesktopMassive],
+            ml: [
+              0,
+              (t) => t.colWidthDesktop,
+              (t) => t.colWidthDesktopBig,
+              (t) => t.colWidthDesktopMassive,
+            ],
 
             ".Affordable__text-header": {
               ".Affordable__text-header-text": {
@@ -1297,7 +1325,7 @@ const theme = {
             (t) => `calc(calc(${t.colWidthDesktop}) + 80px)`,
             (t) =>
               `calc(calc(calc(${t.colWidthDesktopBig}) + 40px) + ${t.desktopBigGutters})`,
-              (t) =>
+            (t) =>
               `calc(calc(calc(${t.colWidthDesktopMassive}) + 40px) + ${t.desktopMassiveGutters})`,
           ],
           width: [(t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`, "200px"],
@@ -1354,14 +1382,24 @@ const theme = {
             },
             ".TextBlock__textWrapper-section:nth-of-type(3)": {
               order: ["unset", 2],
-              ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+              ml: [
+                0,
+                (t) => t.colWidthDesktop,
+                (t) => t.colWidthDesktopBig,
+                (t) => t.colWidthDesktopMassive,
+              ],
             },
             ".TextBlock__textWrapper-section:nth-of-type(2)": {
               order: ["unset", 3],
             },
             ".TextBlock__textWrapper-section:nth-of-type(4)": {
               order: ["unset", 4],
-              ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+              ml: [
+                0,
+                (t) => t.colWidthDesktop,
+                (t) => t.colWidthDesktopBig,
+                (t) => t.colWidthDesktopMassive,
+              ],
             },
           },
         },
@@ -1436,21 +1474,28 @@ const theme = {
           width: [
             "calc(100vw - 20px)",
             (t) => `calc(calc(${t.colWidthDesktop} * 10) +  400px)`,
-            (t) =>`calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters})`,
-            (t) =>`calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters})`,
+            (t) =>
+              `calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters})`,
+            (t) =>
+              `calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters})`,
           ],
           right: 0,
           top: [
             (t) => `calc(calc(calc(calc(100vw - 20px) * .6) * .7) / -1)`,
-            (t) =>`calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) +  400px) * .45) * .5) / -1)`,
-            (t) =>`calc(calc(calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters}) * .45) * .5) / -1)`,
-            (t) =>`calc(calc(calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters}) * .45) * .5) / -1)`,
+            (t) =>
+              `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) +  400px) * .45) * .5) / -1)`,
+            (t) =>
+              `calc(calc(calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters}) * .45) * .5) / -1)`,
+            (t) =>
+              `calc(calc(calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters}) * .45) * .5) / -1)`,
           ],
           height: [
             0,
             (t) => `calc(calc(calc(${t.colWidthDesktop} * 10) +  400px) * .45)`,
-            (t) =>`calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters}) * .45)`,
-            (t) =>`calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters}) * .45)`,
+            (t) =>
+              `calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters}) * .45)`,
+            (t) =>
+              `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters}) * .45)`,
           ],
           pt: ["60%", 0],
           img: {
@@ -1464,9 +1509,12 @@ const theme = {
         textmodules: {
           pt: [
             `calc(calc(calc(calc(100vw - 20px) * .6) * .3) + 40px)`,
-            t=>`calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) +  400px) * .45) * .5) + 115px)`,
-            t=>`calc(calc(calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters}) * .45) * .5) + 115px)`,
-            t=>`calc(calc(calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters}) * .45) * .5) + 115px)`,
+            (t) =>
+              `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) +  400px) * .45) * .5) + 115px)`,
+            (t) =>
+              `calc(calc(calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters}) * .45) * .5) + 115px)`,
+            (t) =>
+              `calc(calc(calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters}) * .45) * .5) + 115px)`,
           ],
           bg: "lightGray",
 
@@ -1488,7 +1536,7 @@ const theme = {
                   (t) => `calc(calc(${t.colWidthDesktop} * 10) + 400px)`,
                   (t) =>
                     `calc(calc(calc(${t.colWidthDesktopBig} * 10) + 360px) + ${t.desktopBigGutters})`,
-                    (t) =>
+                  (t) =>
                     `calc(calc(calc(${t.colWidthDesktopMassive} * 10) + 360px) + ${t.desktopMassiveGutters})`,
                 ],
 
@@ -1641,7 +1689,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 60px) + ${t.desktopMassiveGutters})`,
             ],
           },
@@ -1652,7 +1700,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktop} * 7) + 280px)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 7) + 240px) + ${t.desktopBigGutters})`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 7) + 240px) + ${t.desktopMassiveGutters})`,
             ],
             right: 0,
@@ -1680,7 +1728,12 @@ const theme = {
           ".section2": {
             mt: [3, 16],
             gridArea: ["2/1/3/-1", "1/7/2/-2"],
-            ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+            ml: [
+              0,
+              (t) => t.colWidthDesktop,
+              (t) => t.colWidthDesktopBig,
+              (t) => t.colWidthDesktopMassive,
+            ],
             mb: [10, 16],
             p: {
               lineHeight: ["24px"],
@@ -1704,7 +1757,8 @@ const theme = {
               width: [
                 "100%",
                 (t) => t.desktopSectionWidth,
-                (t) => t.desktopSectionWidthBig,t=>t.desktopSectionWidthMassive
+                (t) => t.desktopSectionWidthBig,
+                (t) => t.desktopSectionWidthMassive,
               ],
               ".WhyMeasure__top-section1-header": {
                 maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
@@ -1715,9 +1769,15 @@ const theme = {
               width: [
                 "100%",
                 (t) => t.desktopSectionWidth,
-                (t) => t.desktopSectionWidthBig,t=>t.desktopSectionWidthMassive
+                (t) => t.desktopSectionWidthBig,
+                (t) => t.desktopSectionWidthMassive,
               ],
-              ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+              ml: [
+                0,
+                (t) => t.colWidthDesktop,
+                (t) => t.colWidthDesktopBig,
+                (t) => t.colWidthDesktopMassive,
+              ],
               ".WhyMeasure__top-section2-body": {
                 mt: [3, 0],
                 fontSize: ["16px"],
@@ -1805,7 +1865,7 @@ const theme = {
                 `calc(calc(calc(${t.colWidthDesktop} * 5) + 200px) * .605)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 5) + 200px) * .605)`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 200px) * .605)`,
             ],
             position: "relative",
@@ -1840,14 +1900,20 @@ const theme = {
               pr: [
                 "unset",
                 (t) => t.colWidthDesktop,
-                (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive,
+                (t) => t.colWidthDesktopBig,
+                (t) => t.colWidthDesktopMassive,
               ],
               ".Thoughtful__section1-body-text": {},
             },
           },
           ".Thoughtful__section2": {
             gridArea: ["2/1/3/-1", "1/7/2/-2"],
-            ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+            ml: [
+              0,
+              (t) => t.colWidthDesktop,
+              (t) => t.colWidthDesktopBig,
+              (t) => t.colWidthDesktopMassive,
+            ],
             mt: [0, 26],
             ".Thoughtful__section2-body": {
               mt: 0,
@@ -1900,7 +1966,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 60px) + ${t.desktopMassiveGutters})`,
             ],
             bottom: ["-26px", "-24px"],
@@ -1912,7 +1978,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktop} * 8) + 360px)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 8) + 320px) + ${t.desktopBigGutters})`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 8) + 320px) + ${t.desktopMassiveGutters})`,
             ],
             height: ["90px", "310px"],
@@ -1944,7 +2010,8 @@ const theme = {
               width: [
                 "100%",
                 (t) => t.desktopSectionWidth,
-                (t) => t.desktopSectionWidthBig,t=>t.desktopSectionWidthMassive
+                (t) => t.desktopSectionWidthBig,
+                (t) => t.desktopSectionWidthMassive,
               ],
               ".insightscircle": {
                 svg: {
@@ -1957,9 +2024,15 @@ const theme = {
               width: [
                 "100%",
                 (t) => t.desktopSectionWidth,
-                (t) => t.desktopSectionWidthBig,t=>t.desktopSectionWidthMassive
+                (t) => t.desktopSectionWidthBig,
+                (t) => t.desktopSectionWidthMassive,
               ],
-              ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+              ml: [
+                0,
+                (t) => t.colWidthDesktop,
+                (t) => t.colWidthDesktopBig,
+                (t) => t.colWidthDesktopMassive,
+              ],
               display: "flex",
               alignItems: "center",
               mt: [6, 0],
@@ -2007,7 +2080,12 @@ const theme = {
               },
             },
             ".text": {
-              mx: [3, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+              mx: [
+                3,
+                (t) => t.colWidthDesktop,
+                (t) => t.colWidthDesktopBig,
+                (t) => t.colWidthDesktopMassive,
+              ],
               mt: [4, 8],
               mb: [4, 9],
               h3: {
@@ -2040,7 +2118,7 @@ const theme = {
                 "100%",
                 (t) => t.desktopSectionWidth,
                 (t) => t.desktopSectionWidthBig,
-                t=>t.desktopSectionWidthMassive
+                (t) => t.desktopSectionWidthMassive,
               ],
               h2: {
                 maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
@@ -2052,9 +2130,14 @@ const theme = {
                 "100%",
                 (t) => t.desktopSectionWidth,
                 (t) => t.desktopSectionWidthBig,
-                t=>t.desktopSectionWidthMassive
+                (t) => t.desktopSectionWidthMassive,
               ],
-              ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+              ml: [
+                0,
+                (t) => t.colWidthDesktop,
+                (t) => t.colWidthDesktopBig,
+                (t) => t.colWidthDesktopMassive,
+              ],
               p: {
                 maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               },
@@ -2129,7 +2212,12 @@ const theme = {
             gridArea: ["2/1/3/-1", "1/7/2/-1"],
             mt: [0, 16],
             mb: [13, 16],
-            ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+            ml: [
+              0,
+              (t) => t.colWidthDesktop,
+              (t) => t.colWidthDesktopBig,
+              (t) => t.colWidthDesktopMassive,
+            ],
             height: ["auto", "440px"],
             display: "flex",
             justifyContent: "center",
@@ -2185,7 +2273,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 60px) + ${t.desktopMassiveGutters})`,
             ],
           },
@@ -2196,7 +2284,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktop} * 8) + 320px)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 8) + 280px) + ${t.desktopBigGutters})`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 8) + 280px) + ${t.desktopMassiveGutters})`,
             ],
             bottom: 0,
@@ -2206,7 +2294,7 @@ const theme = {
             svg: {
               width: "100%",
               height: "100%",
-              maxHeight:'375px'
+              maxHeight: "375px",
             },
           },
         },
@@ -2244,7 +2332,11 @@ const theme = {
 
               ".carousel": {
                 mt: [8],
-                mr: [(t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+                mr: [
+                  (t) => t.colWidthDesktop,
+                  (t) => t.colWidthDesktopBig,
+                  (t) => t.colWidthDesktopMassive,
+                ],
                 maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
               },
             },
@@ -2266,7 +2358,7 @@ const theme = {
                   `calc(calc(calc(${t.colWidthDesktop} * 6) + 200px) * .60)`,
                 (t) =>
                   `calc(calc(calc(${t.colWidthDesktopBig} * 6) + 200px) * .60)`,
-                  (t) =>
+                (t) =>
                   `calc(calc(calc(${t.colWidthDesktopMassive} * 6) + 200px) * .60)`,
               ],
               img: {
@@ -2306,7 +2398,7 @@ const theme = {
               (t) => `calc(calc(calc(${t.colWidthDesktop} * 2) + 80px) * .74)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 80px) * .74)`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 80px) * .74)`,
             ],
             width: [
@@ -2379,7 +2471,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 60px) + ${t.desktopMassiveGutters})`,
             ],
             ".TopContent__btnWrapper-btn": {},
@@ -2396,7 +2488,12 @@ const theme = {
             ],
             height: ["126px", "34em"],
             bottom: [0, "-6em"],
-            right: [0, "40px", (t) => t.desktopBigGutters,(t) => t.desktopMassiveGutters],
+            right: [
+              0,
+              "40px",
+              (t) => t.desktopBigGutters,
+              (t) => t.desktopMassiveGutters,
+            ],
             overflow: "hidden",
             ".TopContent__graphics-chainsDesktop": {
               position: "absolute",
@@ -2404,7 +2501,7 @@ const theme = {
               bottom: ["-35%", 0],
               height: ["unset", "100%"],
               width: ["unset", "100%"],
-              maxHeight:'500px'
+              maxHeight: "500px",
             },
             ".TopContent__graphics-chainsMobile": {
               position: "absolute",
@@ -2491,7 +2588,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 60px) + ${t.desktopMassiveGutters})`,
             ],
 
@@ -2543,7 +2640,6 @@ const theme = {
             gridArea: ["2/1/3/5", "2/6/3/-1"],
             mb: [10, 26],
             ".Workflows__section2-categories": {
-        
               zIndex: 99,
 
               pt: [1, 0],
@@ -2586,8 +2682,6 @@ const theme = {
             display: "flex",
             alignItems: "center",
             ".text": {
-         
-
               h2: {},
               ".link": {
                 mt: [1],
@@ -2611,9 +2705,15 @@ const theme = {
             mr: [
               "unset",
               (t) => t.colWidthDesktop,
-              (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive,
+              (t) => t.colWidthDesktopBig,
+              (t) => t.colWidthDesktopMassive,
             ],
-            ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+            ml: [
+              0,
+              (t) => t.colWidthDesktop,
+              (t) => t.colWidthDesktopBig,
+              (t) => t.colWidthDesktopMassive,
+            ],
 
             height: [
               "auto",
@@ -2651,7 +2751,6 @@ const theme = {
         },
       },
       integrations: {
-       
         topcontent: {
           position: "relative",
           ".TopContent__buttonWrapper": {
@@ -2662,7 +2761,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 60px) + ${t.desktopMassiveGutters})`,
             ],
           },
@@ -2686,7 +2785,6 @@ const theme = {
                 (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
                 (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 160px)`,
                 (t) => `calc(calc(${t.colWidthDesktopMassive} * 4) + 160px)`,
-                
               ],
               position: "relative",
             },
@@ -2704,7 +2802,7 @@ const theme = {
                   `calc(calc(calc(${t.colWidthDesktop} * 4) + 160px) * .85)`,
                 (t) =>
                   `calc(calc(calc(${t.colWidthDesktopBig} * 4) + 160px) * .85)`,
-                  (t) =>
+                (t) =>
                   `calc(calc(calc(${t.colWidthDesktopMassive} * 4) + 160px) * .85)`,
               ],
               left: 0,
@@ -2714,7 +2812,7 @@ const theme = {
                 position: "absolute",
                 height: "100%",
                 width: "100%",
-                maxHeight:['unset','375px'],
+                maxHeight: ["unset", "375px"],
                 bottom: 0,
                 g: {
                   circle: {
@@ -2749,7 +2847,12 @@ const theme = {
                 (t) => t.desktopSectionWidthBig,
                 (t) => t.desktopSectionWidthMassive,
               ],
-              ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+              ml: [
+                0,
+                (t) => t.colWidthDesktop,
+                (t) => t.colWidthDesktopBig,
+                (t) => t.colWidthDesktopMassive,
+              ],
               mt: [3, 0],
               maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
             },
@@ -2801,7 +2904,12 @@ const theme = {
           ".Secure__graphic": {
             mt: [0, 7],
             gridArea: ["2/1/3/-1", "1/7/2/-1"],
-            ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+            ml: [
+              0,
+              (t) => t.colWidthDesktop,
+              (t) => t.colWidthDesktopBig,
+              (t) => t.colWidthDesktopMassive,
+            ],
             mb: [10, 12],
             display: "flex",
             justifyContent: "center",
@@ -2833,7 +2941,12 @@ const theme = {
         color: "black",
         ".text": {
           gridArea: ["1/1/2/-1", "1/2/2/7"],
-          mr: ["unset", (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+          mr: [
+            "unset",
+            (t) => t.colWidthDesktop,
+            (t) => t.colWidthDesktopBig,
+            (t) => t.colWidthDesktopMassive,
+          ],
           mt: [18, 21],
           mb: [2, 15],
           h1: {
@@ -2873,7 +2986,8 @@ const theme = {
             left: [
               (t) => `calc(${t.colWidthMob} * .5)`,
               (t) => t.colWidthDesktop,
-              (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive,
+              (t) => t.colWidthDesktopBig,
+              (t) => t.colWidthDesktopMassive,
             ],
             width: [
               (t) => `calc(calc(${t.colWidthMob} * 2.5) + 60px)`,
@@ -2941,8 +3055,18 @@ const theme = {
         ".section2": {
           gridArea: ["3/1/4/-1", "1/7/2/-1"],
           mt: [0, 16],
-          ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
-          mr: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+          ml: [
+            0,
+            (t) => t.colWidthDesktop,
+            (t) => t.colWidthDesktopBig,
+            (t) => t.colWidthDesktopMassive,
+          ],
+          mr: [
+            0,
+            (t) => t.colWidthDesktop,
+            (t) => t.colWidthDesktopBig,
+            (t) => t.colWidthDesktopMassive,
+          ],
           ".calculator": {
             ".description": {
               p: {
@@ -3044,7 +3168,12 @@ const theme = {
         ".Table": {
           position: "relative",
           width: "100vw",
-          left: ["-20px", "-40px", (t) => `calc(${t.desktopBigGutters} / -1)`,(t) => `calc(${t.desktopMassiveGutters} / -1)`],
+          left: [
+            "-20px",
+            "-40px",
+            (t) => `calc(${t.desktopBigGutters} / -1)`,
+            (t) => `calc(${t.desktopMassiveGutters} / -1)`,
+          ],
           mb: [9, 16],
           gridArea: ["2/1/3/-1"],
 
@@ -3056,7 +3185,12 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktopBig}) + 80px)`,
               (t) => `calc(calc(${t.colWidthDesktopMassive}) + 80px)`,
             ],
-            pr: ["20px", "40px", (t) => t.desktopBigGutters,(t) => t.desktopMassiveGutters],
+            pr: [
+              "20px",
+              "40px",
+              (t) => t.desktopBigGutters,
+              (t) => t.desktopMassiveGutters,
+            ],
             display: "grid",
             gridAutoRows: ["200px"],
             gridTemplateColumns: ["4fr 1fr 1fr 1fr", "4fr 1fr 2fr 1fr"],
@@ -3097,7 +3231,12 @@ const theme = {
                 (t) => `calc(calc(${t.colWidthDesktopBig}) + 80px)`,
                 (t) => `calc(calc(${t.colWidthDesktopMassive}) + 80px)`,
               ],
-              pr: ["20px", "40px", (t) => t.desktopBigGutters,(t) => t.desktopMassiveGutters],
+              pr: [
+                "20px",
+                "40px",
+                (t) => t.desktopBigGutters,
+                (t) => t.desktopMassiveGutters,
+              ],
               position: "relative",
               ".Table__body-row-grid": {
                 display: "grid",
@@ -3115,7 +3254,7 @@ const theme = {
                     position: "relative",
                     ".Table__body-row-grid-item-title-text": {
                       display: "inline",
-           
+
                       mr: [0],
                     },
 
@@ -3125,7 +3264,6 @@ const theme = {
                       ml: [1],
                       cursor: "pointer",
                       transform: "translateY(4px)",
-              
                     },
                   },
 
@@ -3222,7 +3360,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
               (t) => `calc(calc(${t.colWidthDesktop} * 3) + 80px)`,
               (t) => `calc(calc(${t.colWidthDesktopBig} * 3) + 80px)`,
-              `315px`
+              `315px`,
               // (t) => `calc(calc(${t.colWidthDesktopMassive} * 3) + 80px)`,
             ],
             height: [
@@ -3230,16 +3368,18 @@ const theme = {
               (t) => `calc(calc(calc(${t.colWidthDesktop} * 3) + 80px) * .88)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 3) + 80px) * .88)`,
-                `calc(315px * .88)`
-                // (t) =>
-                // `calc(calc(calc(${t.colWidthDesktopMassive} * 3) + 80px) * .88)`,
+              `calc(315px * .88)`,
+              // (t) =>
+              // `calc(calc(calc(${t.colWidthDesktopMassive} * 3) + 80px) * .88)`,
             ],
 
             left: [
               (t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`,
               (t) => `calc(calc(${t.colWidthDesktop} * 9) + 400px)`,
-              (t) =>`calc(calc(calc(${t.colWidthDesktopBig} * 9) + 360px) + ${t.desktopBigGutters})`,
-              (t) =>`calc(calc(calc(${t.colWidthDesktopMassive} * 9) + 360px) + ${t.desktopMassiveGutters})`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopBig} * 9) + 360px) + ${t.desktopBigGutters})`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopMassive} * 9) + 360px) + ${t.desktopMassiveGutters})`,
             ],
             svg: {
               width: "100%",
@@ -3247,7 +3387,6 @@ const theme = {
             },
           },
         },
-       
       },
       partners: {
         header: {
@@ -3287,31 +3426,36 @@ const theme = {
           ".graphics": {
             position: "absolute",
             bottom: 0,
-            maxHeight:'350px',
+            maxHeight: "350px",
             left: [
-              (t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`, 
-              t=> `calc(calc(calc(${t.colWidthDesktop} * 8) + 320px) + 40px)`,
-              t=> `calc(calc(calc(${t.colWidthDesktopBig} * 8) + 320px) + ${t.desktopBigGutters})`,
-              t=> `calc(calc(calc(${t.colWidthDesktopMassive} * 8) + 320px) + ${t.desktopMassiveGutters})`
-          ],
+              (t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktop} * 8) + 320px) + 40px)`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopBig} * 8) + 320px) + ${t.desktopBigGutters})`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopMassive} * 8) + 320px) + ${t.desktopMassiveGutters})`,
+            ],
             width: [
               (t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`,
-              t=>`calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
-              t=>`calc(calc(${t.colWidthDesktopBig} * 3) + 120px)`,
-              t=>`calc(calc(${t.colWidthDesktopMassive} * 3) + 120px)`,
+              (t) => `calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
+              (t) => `calc(calc(${t.colWidthDesktopBig} * 3) + 120px)`,
+              (t) => `calc(calc(${t.colWidthDesktopMassive} * 3) + 120px)`,
             ],
-            height:[
-              'unset',
-              t=>`calc(calc(calc(${t.colWidthDesktop} * 3) + 120px) * .86)`,
-              t=>`calc(calc(calc(${t.colWidthDesktopBig} * 3) + 120px) * .86)`,
-              t=>`calc(calc(calc(${t.colWidthDesktopMassive} * 3) + 120px) * .86)`,
+            height: [
+              "unset",
+              (t) => `calc(calc(calc(${t.colWidthDesktop} * 3) + 120px) * .86)`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopBig} * 3) + 120px) * .86)`,
+              (t) =>
+                `calc(calc(calc(${t.colWidthDesktopMassive} * 3) + 120px) * .86)`,
             ],
-            display: ["flex",],
+            display: ["flex"],
             alignItems: "flex-end",
             svg: {
-              position:['unset','absolute'],
+              position: ["unset", "absolute"],
               width: "100%",
-              height: ["100%",],
+              height: ["100%"],
             },
           },
         },
@@ -3401,7 +3545,12 @@ const theme = {
               (t) => t.desktopSectionWidthBig,
               (t) => t.desktopSectionWidthMassive,
             ],
-            ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+            ml: [
+              0,
+              (t) => t.colWidthDesktop,
+              (t) => t.colWidthDesktopBig,
+              (t) => t.colWidthDesktopMassive,
+            ],
             p: {
               maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
             },
@@ -3467,7 +3616,7 @@ const theme = {
                 `calc(calc(calc(${t.colWidthDesktop} * 10) + 400px) * .45)`,
               (t) =>
                 `calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) + 360px) + ${t.desktopBigGutters}) * .45)`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) + 360px) + ${t.desktopMassiveGutters}) * .45)`,
             ],
             width: [
@@ -3475,7 +3624,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktop} * 10) + 400px)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 10) + 360px) + ${t.desktopBigGutters})`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 10) + 360px) + ${t.desktopMassiveGutters})`,
             ],
             left: [
@@ -3483,7 +3632,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 80px) + ${t.desktopBigGutters})`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 80px) + ${t.desktopMassiveGutters})`,
             ],
             img: {
@@ -3506,7 +3655,7 @@ const theme = {
                 `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) + 400px) * .45) * .5) + 128px)`,
               (t) =>
                 `calc(calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) + 360px) + ${t.desktopBigGutters}) * .45) * .5) + 128px)`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) + 360px) + ${t.desktopMassiveGutters}) * .45) * .5) + 128px)`,
             ],
             mb: [5, 7],
@@ -3528,7 +3677,7 @@ const theme = {
                   (t) => `calc(calc(${t.colWidthDesktop} * 10) + 400px)`,
                   (t) =>
                     `calc(calc(calc(${t.colWidthDesktopBig} * 10) + 360px) + ${t.desktopBigGutters})`,
-                    (t) =>
+                  (t) =>
                     `calc(calc(calc(${t.colWidthDesktopMassive} * 10) + 360px) + ${t.desktopMassiveGutters})`,
                 ],
                 left: ["-20px", 0],
@@ -3564,7 +3713,12 @@ const theme = {
                   (t) => t.desktopSectionWidthBig,
                   (t) => t.desktopSectionWidthMassive,
                 ],
-                ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+                ml: [
+                  0,
+                  (t) => t.colWidthDesktop,
+                  (t) => t.colWidthDesktopBig,
+                  (t) => t.colWidthDesktopMassive,
+                ],
                 p: {
                   maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
                 },
@@ -3609,7 +3763,7 @@ const theme = {
               (t) => `calc(calc(calc(${t.colWidthDesktop} * 5) + 200px) * .74)`,
               (t) =>
                 `calc(calc(calc(calc(${t.colWidthDesktopBig} * 5) + 160px) + ${t.desktopBigGutters}) * .74)`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 160px) + ${t.desktopMassiveGutters}) * .74)`,
             ],
             width: [
@@ -3617,7 +3771,7 @@ const theme = {
               (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopBig} * 5) + 160px) + ${t.desktopBigGutters})`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 160px) + ${t.desktopMassiveGutters})`,
             ],
             left: ["-20px", 0],
@@ -3632,7 +3786,12 @@ const theme = {
 
           ".text": {
             gridArea: ["2/1/3/-1", "1/3/2/8"],
-            mr: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,t=>t.colWidthDesktopMassive],
+            mr: [
+              0,
+              (t) => t.colWidthDesktop,
+              (t) => t.colWidthDesktopBig,
+              (t) => t.colWidthDesktopMassive,
+            ],
             display: "flex",
             justifyContent: "center",
             flexFlow: ["column"],
@@ -3674,7 +3833,7 @@ const theme = {
                 (t) => `calc(calc(${t.colWidthDesktop} * 10) +  400px)`,
                 (t) =>
                   `calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters})`,
-                  (t) =>
+                (t) =>
                   `calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters})`,
               ],
               left: ["-20px", 0],
@@ -3705,7 +3864,12 @@ const theme = {
                 (t) => t.desktopSectionWidthBig,
                 (t) => t.desktopSectionWidthMassive,
               ],
-              ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,(t) => t.colWidthDesktopMassive],
+              ml: [
+                0,
+                (t) => t.colWidthDesktop,
+                (t) => t.colWidthDesktopBig,
+                (t) => t.colWidthDesktopMassive,
+              ],
               mt: [2],
               ".listtitle": {
                 mb: [1],
@@ -3745,22 +3909,21 @@ const theme = {
       display: ["none", "block"],
       fontFamily: "body",
       ".demobtn": {
-        '&:hover':{
-          bg:'#FF9133',
+        "&:hover": {
+          bg: "#FF9133",
         },
         display: "flex",
         justifyContent: "center",
-        alignItems:'center',
-        bg:'yellow',
-        borderRadius:'200px',
+        alignItems: "center",
+        bg: "yellow",
+        borderRadius: "200px",
         cursor: "pointer",
-        height:'48px',
-        width:'165px',
+        height: "48px",
+        width: "165px",
         ".demobtn-text": {
           color: "black",
           fontSize: "16px",
           fontFamily: "medium",
-      
         },
       },
 
@@ -3790,10 +3953,10 @@ const theme = {
         },
       },
       ".links": {
-        height:'100%',
+        height: "100%",
         display: "flex",
         justifyContent: "flex-end",
-        alignItems:'center',
+        alignItems: "center",
         px: ["40px"],
         // pt: ["44px"],
         ".item": {
@@ -3851,7 +4014,7 @@ const theme = {
           },
         },
         ".logo": {
-          bg:'transparent',
+          bg: "transparent",
           path: {
             fill: "white",
           },
@@ -3897,7 +4060,7 @@ const theme = {
           },
         },
         ".logo": {
-          bg:'transparent',
+          bg: "transparent",
           path: { fill: (t) => `${t.colors.black} !important` },
         },
         ".BigLogo": {
@@ -3941,7 +4104,7 @@ const theme = {
           },
         },
         ".logo": {
-          bg:'transparent',
+          bg: "transparent",
           path: { fill: (t) => `${t.colors.black} !important` },
         },
         ".BigLogo": {
@@ -3984,11 +4147,11 @@ const theme = {
             stroke: (t) => `${t.colors.blue} !important`,
           },
         },
-        '.BigLogo':{
-          bg:'transparent',
+        ".BigLogo": {
+          bg: "transparent",
         },
         ".logo": {
-          bg:'transparent',
+          bg: "transparent",
           path: { fill: (t) => `${t.colors.black} !important` },
         },
         ".hamburger": {
@@ -4030,7 +4193,7 @@ const theme = {
           },
         },
         ".logo": {
-          bg:'transparent',
+          bg: "transparent",
           path: { fill: (t) => `${t.colors.black} !important` },
         },
         ".BigLogo": {
@@ -4074,7 +4237,7 @@ const theme = {
           },
         },
         ".logo": {
-          bg:'transparent',
+          bg: "transparent",
           path: { fill: (t) => `${t.colors.black} !important` },
         },
         ".BigLogo": {
@@ -4118,7 +4281,7 @@ const theme = {
           },
         },
         ".logo": {
-          bg:'transparent',
+          bg: "transparent",
           path: { fill: (t) => `${t.colors.black} !important` },
         },
         ".BigLogo": {
@@ -4158,8 +4321,8 @@ const theme = {
             },
           },
           ".logo": {
-            bg:'transparent',
-     
+            bg: "transparent",
+
             svg: {
               path: {
                 fill: "white",
@@ -4191,7 +4354,7 @@ const theme = {
         ".SubMenu__left": {
           position: "absolute",
           visibility: "visible",
-          opacity:1,
+          opacity: 1,
           width: "40px",
           height: "39px",
           top: 0,
@@ -4208,8 +4371,8 @@ const theme = {
           position: "absolute",
           width: "40px",
           height: "39px",
-          visibility:'visible',
-          opacity:1,
+          visibility: "visible",
+          opacity: 1,
           top: 0,
           right: 0,
           zIndex: 99,
@@ -4222,22 +4385,16 @@ const theme = {
           },
         },
 
-    
-
         ".SubMenu__mobileContainer": {
-          px:['20px'],
-          display:'flex',
+          px: ["20px"],
+          display: "flex",
           height: ["100%"],
           width: "fit-content",
-  
-       
 
-
-    
           ".SubMenu__mobileContainer-draggable-item": {
             height: "100%",
             cursor: "pointer",
-            pr:[3],
+            pr: [3],
             display: ["flex", "unset"],
             justifyContent: ["space-between", "unset"],
             alignItems: "center",
@@ -4253,7 +4410,6 @@ const theme = {
               color: "inherit",
               fontFamily: "medium",
             },
-    
           },
           ".current": {
             opacity: 1,
@@ -4267,7 +4423,6 @@ const theme = {
           //   alignItems: ["center", "unset"],
 
           // },
-
         },
       },
       desktop: {
@@ -4402,7 +4557,6 @@ const theme = {
           mb: [2],
 
           ".wrapper": {
-
             ".main": {
               display: "flex",
               justifyContent: "space-between",
@@ -4448,7 +4602,7 @@ const theme = {
                   outline: "none",
                 },
                 "&:hover": {
-                  bg: ["none","#262629"],
+                  bg: ["none", "#262629"],
                 },
               },
             },
@@ -4465,7 +4619,7 @@ const theme = {
           fontFamily: "display",
           fontWeight: "500",
           fontSize: "28px",
-          lineHeight:'32px'
+          lineHeight: "32px",
         },
         p: {
           mt: ["20px", 4],
@@ -4482,40 +4636,36 @@ const theme = {
         display: "flex",
         flexFlow: ["column wrap", "row wrap"],
 
-        '.Form__inputWrapper':{
-  
-          '.Form__inputWrapper-error':{
-            fontSize:'14px',
-            pl:[3],
-            mt:[1],
-      
+        ".Form__inputWrapper": {
+          ".Form__inputWrapper-error": {
+            fontSize: "14px",
+            pl: [3],
+            mt: [1],
           },
-          'input':{
-            mb:0,
-            caretColor:'yellow',
-            '&:focus':{
-              bg:'#3A3A3D',
-              border:'none'
+          input: {
+            mb: 0,
+            caretColor: "yellow",
+            "&:focus": {
+              bg: "#3A3A3D",
+              border: "none",
             },
-            '&:hover':{
-              cursor:['auto','pointer'],
-           
-            }
+            "&:hover": {
+              cursor: ["auto", "pointer"],
+            },
           },
-          'input:-webkit-autofill, input:-webkit-autofill:hover, select:-webkit-autofill, select:-webkit-autofill:hover':{
-            boxShadow:'0 0  0px 1000px #262629 inset',
-            WebkitTextFillColor:'rgb(242,242,242)',
-            border:'solid 8px #262629',
-            px:[2],
-            py:[1]
+          "input:-webkit-autofill, input:-webkit-autofill:hover, select:-webkit-autofill, select:-webkit-autofill:hover": {
+            boxShadow: "0 0  0px 1000px #262629 inset",
+            WebkitTextFillColor: "rgb(242,242,242)",
+            border: "solid 8px #262629",
+            px: [2],
+            py: [1],
           },
-          'input:-webkit-autofill::first-line':{
-            fontSize:'18px',
-            fontFamily:'body'
-          }
+          "input:-webkit-autofill::first-line": {
+            fontSize: "18px",
+            fontFamily: "body",
+          },
         },
 
-     
         ".Form__inputWrapper:nth-child(odd)": {
           flex: [1, "1 40%"],
           mr: [0, "6px"],
@@ -4528,28 +4678,26 @@ const theme = {
           mt: ["12px"],
           mb: 0,
         },
-    
-   
+
         ".Form__dropdownWrapper": {
           flex: [1, "1 100%"],
-          position:'relative',
+          position: "relative",
           height: ["64px"],
           borderRadius: "8px",
           bg: "#262629",
           mt: ["12px"],
 
-          '.Form__dropdownWrapper-error':{
-            pl:[3],
-            mt:[1],
-            fontSize:'14px',
+          ".Form__dropdownWrapper-error": {
+            pl: [3],
+            mt: [1],
+            fontSize: "14px",
           },
 
-          '.Form__dropdownWrapper-arrow':{
-            position:'absolute',
-            right:[2],
-            top:'50%',
-            transform:'translateY(-50%)',
-
+          ".Form__dropdownWrapper-arrow": {
+            position: "absolute",
+            right: [2],
+            top: "50%",
+            transform: "translateY(-50%)",
           },
 
           ".Form__dropdownWrapper-dropdown": {
@@ -4567,10 +4715,9 @@ const theme = {
             fontFamily: "body",
             fontWeight: "400",
             border: "none",
-            outline:'none',
-            cursor:'pointer',
+            outline: "none",
+            cursor: "pointer",
 
- 
             ":focus": {
               outline: "none",
             },
@@ -4584,11 +4731,11 @@ const theme = {
           flex: [1, "1 100%"],
           display: "flex",
           justifyContent: ["flex-start", "flex-end"],
-          button:{
-            '&:focus':{
-              outline:'none'
+          button: {
+            "&:focus": {
+              outline: "none",
             },
-          }
+          },
         },
       },
       ".socials": {
@@ -4600,34 +4747,34 @@ const theme = {
         ".item": {
           mr: [2],
           cursor: "pointer",
-          height:'30px',
-          width:'30px',
+          height: "30px",
+          width: "30px",
 
-          div:{
-            height:'inherit',
-            width:'inherit',
-            div:{
-              height:'inherit',
-              width:'inherit',
-              svg:{
-                width:'100%',
-                height:'100%',
-                path:{
-                  fill:'white'
+          div: {
+            height: "inherit",
+            width: "inherit",
+            div: {
+              height: "inherit",
+              width: "inherit",
+              svg: {
+                width: "100%",
+                height: "100%",
+                path: {
+                  fill: "white",
                 },
-                '&:hover':{
-                  path:{
-                    fill:'rgba(242,242,242,.7)'
-                  }
-                }
-              }
-            }
-          }
+                "&:hover": {
+                  path: {
+                    fill: "rgba(242,242,242,.7)",
+                  },
+                },
+              },
+            },
+          },
         },
       },
       ".newsletter": {
         gridArea: ["4/1/5/-1", "3/4/4/7"],
-        mt:['33px',0],
+        mt: ["33px", 0],
         mb: ["44px", 6],
         a: {
           mb: 0,
@@ -4709,7 +4856,7 @@ const theme = {
             (t) => `calc(calc(calc(${t.colWidthDesktop} * 5) + 240px) * .83)`,
             (t) =>
               `calc(calc(calc(calc(${t.colWidthDesktopBig} * 5) + 200px) + ${t.desktopBigGutters}) * .83)`,
-              (t) =>
+            (t) =>
               `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 200px) + ${t.desktopMassiveGutters}) * .83)`,
           ],
           width: [
@@ -4717,7 +4864,7 @@ const theme = {
             (t) => `calc(calc(${t.colWidthDesktop} * 5) + 240px)`,
             (t) =>
               `calc(calc(calc(${t.colWidthDesktopBig} * 5) + 200px) + ${t.desktopBigGutters})`,
-              (t) =>
+            (t) =>
               `calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 200px) + ${t.desktopMassiveGutters})`,
           ],
           left: ["-20px", "-40px"],
@@ -4788,7 +4935,12 @@ const theme = {
           gridArea: ["2/1/3/-1", "2/1/3/-1"],
           position: "relative",
           width: ["100vw"],
-          left: ["-20px", "-40px", (t) => `calc(${t.desktopBigGutters} / -1)`,(t) => `calc(${t.desktopMassiveGutters} / -1)`],
+          left: [
+            "-20px",
+            "-40px",
+            (t) => `calc(${t.desktopBigGutters} / -1)`,
+            (t) => `calc(${t.desktopMassiveGutters} / -1)`,
+          ],
         },
       },
       carousel: {
@@ -4842,7 +4994,7 @@ const theme = {
           ".SharedCarousel__item-body": {
             mt: [2],
             ml: [2],
-            maxHeight: 0,
+            height: 0, // initial
             overflow: "hidden",
             ".SharedCarousel__item-body-text": {
               fontSize: ["16px"],
@@ -4877,7 +5029,12 @@ const theme = {
             },
           },
           ".section2": {
-            ml: [0, (t) => t.colWidthDesktop, (t) => t.colWidthDesktopBig,(t) => t.colWidthDesktopMassive],
+            ml: [
+              0,
+              (t) => t.colWidthDesktop,
+              (t) => t.colWidthDesktopBig,
+              (t) => t.colWidthDesktopMassive,
+            ],
             width: [
               "100%",
               (t) => t.desktopSectionWidth,
@@ -4917,7 +5074,7 @@ const theme = {
                 `calc(calc(calc(calc(${t.colWidthDesktop} * 10) + 358px) - calc(calc(calc(${t.colWidthDesktop} * 2) + 80px) * 4)) / 3)`,
               (t) =>
                 `calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) + 358px) - calc(calc(calc(${t.colWidthDesktopBig} * 2) + 80px) * 4)) / 3)`,
-                (t) =>
+              (t) =>
                 `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) + 358px) - calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 80px) * 4)) / 3)`,
             ],
 

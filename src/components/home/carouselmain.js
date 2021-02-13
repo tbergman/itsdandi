@@ -28,7 +28,7 @@ const CarouselMain = ({ description, items, inView }) => {
 
   return (
     <div className="Carousel__carouselWrapper">
-      {/* <motion.div
+      <motion.div
         variants={globalSlideUp}
         initial="hidden"
         animate={animationControls}
@@ -38,7 +38,7 @@ const CarouselMain = ({ description, items, inView }) => {
         <Styled.p className="Carousel__carouselWrapper-description-text">
           {description}
         </Styled.p>
-      </motion.div> */}
+      </motion.div>
       {items_.map((item, i) => (
         <div className="Carousel__carouselWrapper-imageWrapper">
           <picture>
@@ -62,8 +62,9 @@ const CarouselMain = ({ description, items, inView }) => {
               addEndListener={(node, done) => {
                 gsap.to(node, {
                   x: 0,
+
                   autoAlpha: current === i ? 1 : 0,
-                  duration: current === i ? 0.45 : 0.1,
+                  duration: current === i ? 0.45 : 0,
                   onComplete: done,
                   ease: "power2.out",
                 });

@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import { motion, useAnimation, animationControls } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import ProgressBar from "./progressbar";
 import { useMachine } from "@xstate/react";
 import { CarouselItemMachine } from "../machines/carousel";
+import { gsap } from "gsap";
 
 const CarouselItem = ({
   header,
@@ -15,12 +15,17 @@ const CarouselItem = ({
   time,
   children,
 }) => {
-  const animationControls = useAnimation();
   const [state, send] = useMachine(CarouselItemMachine);
+  const ref = useRef(null);
   const duration = 2;
   const delay = 0.3;
 
+  // onload
   useEffect(() => {
+    gsap.set(ref.current, {
+      opacity: 0,
+    });
+
     send({
       type: "TOGGLE",
       payload: {
@@ -29,27 +34,26 @@ const CarouselItem = ({
     });
   }, [current]);
 
+  // state updates
   useEffect(() => {
     if (state.matches("active")) {
-      animationControls.start({
-        opacity: [0, 0, 1],
-        maxHeight: [0, 1000, 1000],
-        transition: {
-          duration: duration,
-          ease: "easeInOut",
-          times: [0, 0.25, 0.2],
-          delay: delay,
-        },
-      });
+      const tl = gsap
+        .timeline()
+        .to(ref.current, {
+          height: "auto",
+          duration: 0.25,
+          opacity: 0,
+        })
+        .to(ref.current, {
+          opacity: 1,
+          duration: 0.5,
+          ease: "power3.out",
+        });
     } else if (state.matches("inactive")) {
-      animationControls.start({
-        opacity: [1, 0, 0],
-        maxHeight: [1000, 1000, 0],
-        transition: {
-          duration: duration,
-          ease: "easeInOut",
-          times: [0, 0.1, 0.25],
-        },
+      const tl = gsap.timeline().to(ref.current, {
+        height: 0,
+        duration: 0.25,
+        opacity: 0,
       });
     }
   }, [state]);
@@ -65,7 +69,7 @@ const CarouselItem = ({
           time,
         }}
       />
-      <motion.div layout className="SharedCarousel__item-header">
+      <div layout className="SharedCarousel__item-header">
         <Styled.p
           className="SharedCarousel__item-header-text"
           sx={{
@@ -74,20 +78,17 @@ const CarouselItem = ({
               : "rgba(242, 242, 242, 0.35)",
             "&:hover": {
               color: "rgba(242, 242, 242, 1)",
-              transition: "color 100ms linear",
+              transition: "color 75ms linear",
             },
-            transition: "color 100ms linear",
+            transition: "color 75ms linear",
           }}
         >
           {header}
         </Styled.p>
-      </motion.div>
-      <motion.div
-        animate={animationControls}
-        className="SharedCarousel__item-body"
-      >
+      </div>
+      <div ref={ref} className="SharedCarousel__item-body">
         {children}
-      </motion.div>
+      </div>
     </div>
   );
 };
