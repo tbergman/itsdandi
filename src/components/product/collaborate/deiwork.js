@@ -4,9 +4,10 @@ import InView from "../../inview";
 import { useState, useEffect } from "react";
 import { rootMargin, rootMarginSub } from "../../../helpers/utils";
 import SubInView from "../../subinview";
-import { motion, AnimatePresence } from "framer-motion";
 import CarouselItem from "../../carouselitem";
 import { imageCarousel } from "../../../helpers/animations";
+import { Transition } from "react-transition-group";
+import { gsap } from "gsap";
 
 const DeiWork = ({
   setNavbarStyling,
@@ -58,7 +59,7 @@ const DeiWork = ({
           <div className="wrapper">
             <div className="section1">
               {isDesktop && (
-                <div className="text">
+                <div className="carouselText">
                   <Styled.p>
                     Dandi’s workflow tools are designed to make the day-to-day
                     work of advancing DEI easier and more impactful.
@@ -96,27 +97,46 @@ const DeiWork = ({
                 </div>
               </div>
             </div>
-            <AnimatePresence initial={false}>
-              <motion.div className="section2">
-                <motion.picture>
+            <div className="section2">
+              {carousel_item.map((item, i) => (
+                <picture key={i}>
                   <source
                     media="(min-width: 800px)"
                     srcSet={carousel_item[current].desktop_image}
                   ></source>
                   <source srcSet={carousel_item[current].mobile_image}></source>
 
-                  <motion.img
-                    key={current}
-                    variants={imageCarousel}
-                    initial="enter"
-                    animate="center"
-                    exit="exit"
-                    src={carousel_item[current].desktop_image}
-                    alt=""
-                  />
-                </motion.picture>
-              </motion.div>
-            </AnimatePresence>
+                  <Transition
+                    in={current === i}
+                    timeout={1000}
+                    unmountOnExit
+                    mountOnEnter
+                    onEnter={(node, isAppearing) => {
+                      gsap.set(node, {
+                        x: 1000,
+                        autoAlpha: 0,
+                      });
+                    }}
+                    addEndListener={(node, done) => {
+                      gsap.to(node, {
+                        x: 0,
+
+                        autoAlpha: current === i ? 1 : 0,
+                        duration: current === i ? 0.45 : 0,
+                        onComplete: done,
+                        ease: "power2.out",
+                      });
+                    }}
+                  >
+                    <img
+                      key={current}
+                      src={carousel_item[current].desktop_image}
+                      alt=""
+                    />
+                  </Transition>
+                </picture>
+              ))}
+            </div>
           </div>
         </div>
       </SubInView>
