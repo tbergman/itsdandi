@@ -6,6 +6,7 @@ import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import CarouselItem from "../carouselitem";
 import { globalSlideUp, imageCarousel } from "../../helpers/animations";
 import { Transition } from "react-transition-group";
+import { gsap } from "gsap";
 
 const CarouselMain = ({ description, items, inView }) => {
   const items_ = items.map((i) => i.fields);
@@ -38,39 +39,54 @@ const CarouselMain = ({ description, items, inView }) => {
           {description}
         </Styled.p>
       </motion.div> */}
-      {/* <AnimatePresence initial={false}> */}
-      <Transition
-        in={true}
-        timeout={200}
-        unmountOnExit
-        onExited={(node) => console.log(node)}
-      >
-        {(state) => (
-          <div key={current} className="Carousel__carouselWrapper-imageWrapper">
-            {state}
-            {/* <picture>
+      {items_.map((item, i) => (
+        <div className="Carousel__carouselWrapper-imageWrapper">
+          <picture>
             <source
               media="(min-width: 800px)"
               srcSet={items_[current].desktop_image}
             ></source>
             <source srcSet={items_[current].mobile_image}></source>
 
-            <img
-              key={current}
-              variants={imageCarousel}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              src={items_[current].desktop_image}
-              alt=""
-              className="Carousel__carouselWrapper-imageWrapper-image"
-            />
-          </picture> */}
-          </div>
-        )}
-      </Transition>
-
-      {/* </AnimatePresence> */}
+            <Transition
+              in={current === i}
+              timeout={500}
+              onEnter={(node, isAppearing) => {
+                gsap.fromTo(
+                  node,
+                  {
+                    x: 1000,
+                    autoAlpha: 0,
+                  },
+                  {
+                    x: 0,
+                    autoAlpha: 1,
+                    duration: 0.25,
+                  }
+                );
+              }}
+              onExit={(node) => {
+                gsap.to(node, {
+                  x: -1000,
+                  autoAlpha: 0,
+                  duration: 0.25,
+                });
+              }}
+            >
+              <img
+                key={current}
+                variants={imageCarousel}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                src={items_[current].desktop_image}
+                alt=""
+                className="Carousel__carouselWrapper-imageWrapper-image"
+              />
+            </Transition>
+          </picture>
+        </div>
+      ))}
 
       <div className="Carousel__carouselWrapper-textWrapper">
         <div
