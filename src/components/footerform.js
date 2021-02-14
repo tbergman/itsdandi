@@ -18,8 +18,6 @@ const FooterForm = () => {
     allValidated,
   } = state.context;
 
-  console.log(state.value);
-
   return (
     <div className="Form">
       <InputWrapper

@@ -93,7 +93,6 @@ const SubNavigation = ({ next, prev }) => {
                   />
                 </motion.svg>
                 <Styled.h3 className="SubNavigation__link-content-text">
-                  Prev <br />
                   {prev.name}
                 </Styled.h3>
               </motion.div>
@@ -141,11 +140,7 @@ const SubNavigation = ({ next, prev }) => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M9 3.00464L14 8.00464L9 13.0046"
-                  // stroke="#FFD93B"
-                  strokeWidth="1.6"
-                />
+                <path d="M9 3.00464L14 8.00464L9 13.0046" strokeWidth="1.6" />
                 <line
                   x1="14"
                   y1="8.00425"
@@ -155,7 +150,6 @@ const SubNavigation = ({ next, prev }) => {
                 />
               </motion.svg>
               <Styled.h3 className="SubNavigation__link-content-text">
-                Next <br />
                 {next.name}
               </Styled.h3>
             </motion.div>

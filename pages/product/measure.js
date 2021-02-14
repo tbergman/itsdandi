@@ -81,6 +81,7 @@ const Product = (props) => {
         navBarStyling={navBarStyling}
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
+        demoButtonStatic={true}
         width={width}
       />
       <MobileNav
@@ -201,7 +202,6 @@ export async function getStaticProps() {
   try {
     const butter = Butter(process.env.BUTTER_CMS);
     const response = await butter.page.retrieve("*", "product_measure");
-
 
     return {
       props: {

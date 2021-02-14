@@ -14,7 +14,6 @@ const InfoBox = ({ open, body, url, buttonText, send, isDesktop }) => {
     if (!isDesktop) {
       document.addEventListener("click", handleClickOutside, true);
       return () => {
-        console.log("cleaning up!");
         document.removeEventListener("click", handleClickOutside, true);
       };
     }

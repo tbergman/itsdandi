@@ -63,7 +63,7 @@ const BigLogo = ({
 
   // menuOpen
   useEffect(() => {
-    if (menuOpen) {
+    if (menuOpen && state.matches("large")) {
       send({
         type: "MAKE_STATIC",
         payload: {
@@ -73,7 +73,7 @@ const BigLogo = ({
         },
       });
     }
-  }, [menuOpen, staticLogo, width]);
+  }, [menuOpen]);
 
   // animate onScroll
   useScrollPosition(

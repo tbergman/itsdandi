@@ -1606,7 +1606,7 @@ const theme = {
 
       subnavigation: {
         display: "flex",
-        height: ["auto", "275px"],
+        height: ["auto", "225px"],
         flexFlow: ["column-reverse", "unset"],
 
         ".SubNavigation__next": {
@@ -1664,7 +1664,7 @@ const theme = {
               height: ["30px"],
               width: ["30px"],
               position: "relative",
-              mb: [4, 7],
+              mb: [4, 4],
               left: 0,
               path: {
                 stroke: "black",

@@ -80,6 +80,7 @@ const Product = (props) => {
         navBarStyling={navBarStyling}
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
+        demoButtonStatic={true}
         width={width}
       />
       <MobileNav

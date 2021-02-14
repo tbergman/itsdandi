@@ -69,7 +69,7 @@ const CarouselItem = ({
           time,
         }}
       />
-      <div layout className="SharedCarousel__item-header">
+      <div className="SharedCarousel__item-header">
         <Styled.p
           className="SharedCarousel__item-header-text"
           sx={{

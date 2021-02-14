@@ -17,7 +17,7 @@ const DemoBtn = ({ variant, demoButtonStatic }) => {
       const initialY = scrollYPos(window);
       const aboveThreshold = initialY > scrollThreshold;
 
-      if (state.matches("idle") && aboveThreshold) {
+      if ((state.matches("idle") && aboveThreshold) || demoButtonStatic) {
         send({
           type: "SHOW",
           payload: {
@@ -25,7 +25,11 @@ const DemoBtn = ({ variant, demoButtonStatic }) => {
             ref: ref,
           },
         });
-      } else if (state.matches("idle") && !aboveThreshold) {
+      } else if (
+        state.matches("idle") &&
+        !aboveThreshold &&
+        !demoButtonStatic
+      ) {
         send({
           type: "HIDE",
           payload: {
@@ -59,7 +63,11 @@ const DemoBtn = ({ variant, demoButtonStatic }) => {
             ref: ref,
           },
         });
-      } else if (state.matches("visible") && !aboveThreshold) {
+      } else if (
+        state.matches("visible") &&
+        !aboveThreshold &&
+        !demoButtonStatic
+      ) {
         send({
           type: "HIDE",
           payload: {
