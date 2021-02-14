@@ -39,9 +39,9 @@ const CarouselMain = ({ description, items, inView }) => {
           {description}
         </Styled.p>
       </motion.div>
-      {items_.map((item, i) => (
-        <div className="Carousel__carouselWrapper-imageWrapper">
-          <picture>
+      <div className="Carousel__carouselWrapper-imageWrapper">
+        {items_.map((item, i) => (
+          <picture key={i}>
             <source
               media="(min-width: 800px)"
               srcSet={items_[current].desktop_image}
@@ -82,8 +82,8 @@ const CarouselMain = ({ description, items, inView }) => {
               />
             </Transition>
           </picture>
-        </div>
-      ))}
+        ))}
+      </div>
 
       <div className="Carousel__carouselWrapper-textWrapper">
         <div
