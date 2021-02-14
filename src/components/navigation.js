@@ -69,7 +69,6 @@ const Navigation = ({
             >
               Why Dandi?
             </div>
-            Z
           </a>
         </Link>
         <Link href="/product/measure">
