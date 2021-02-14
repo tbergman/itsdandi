@@ -3987,6 +3987,13 @@ const theme = {
             bg: "white",
             display: "flex",
             flexFlow: "column",
+            ".item-dropdown-filler": {
+              bg: "transparent",
+              width: "100%",
+              height: "30px",
+              position: "absolute",
+              top: "-24px",
+            },
             ".item-dropdown-item": {
               px: [2],
               textDecoration: "none",

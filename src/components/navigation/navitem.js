@@ -58,6 +58,7 @@ const NavItem = ({ url, active, body, sub }) => {
               </a>
             </Link>
           ))}
+          <span className="item-dropdown-filler"></span>
         </div>
       )}
     </div>
