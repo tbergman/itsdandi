@@ -1606,7 +1606,7 @@ const theme = {
 
       subnavigation: {
         display: "flex",
-        height: ["auto", "225px"],
+        height: ["auto", "250px"],
         flexFlow: ["column-reverse", "unset"],
 
         ".SubNavigation__next": {
@@ -1653,6 +1653,7 @@ const theme = {
               fontFamily: "display",
               fontSize: ["24px", "40px"],
               lineHeight: ["24px", "40px"],
+              mr: [3],
               // mb: [8],
               color: "black",
             },
@@ -3984,13 +3985,13 @@ const theme = {
             left: "-16px",
             pb: [2],
             borderRadius: "8px",
-            bg: "white",
+            bg: "black",
             display: "flex",
             flexFlow: "column",
             ".item-dropdown-filler": {
               bg: "transparent",
               width: "100%",
-              height: "30px",
+              height: "24px",
               position: "absolute",
               top: "-24px",
             },
@@ -3998,9 +3999,15 @@ const theme = {
               px: [2],
               textDecoration: "none",
               pt: [2],
-              color: "black",
+              color: "white",
+              opacity: 0.5,
+              "&:hover": {
+                opacity: 1,
+              },
               ".item-dropdown-item-text": {
                 whiteSpace: "nowrap",
+                fontSize: "14px",
+                fontFamily: "medium",
               },
             },
           },
@@ -4036,6 +4043,16 @@ const theme = {
         },
         ".item": {
           color: "white",
+          ".item-dropdown": {
+            bg: (t) => `${t.colors.black} !important`,
+            ".item-dropdown-item": {
+              color: (t) => `${t.colors.white} !important`,
+              opacity: 0.5,
+              "&:hover": {
+                opacity: 1,
+              },
+            },
+          },
         },
         ".login": {
           bg: "transparent",
@@ -4075,6 +4092,16 @@ const theme = {
         },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
+          ".item-dropdown": {
+            bg: (t) => `${t.colors.violet} !important`,
+            ".item-dropdown-item": {
+              color: (t) => `${t.colors.black} !important`,
+              opacity: 0.5,
+              "&:hover": {
+                opacity: 1,
+              },
+            },
+          },
         },
         ".sub": {
           ".subitem": {
@@ -4127,6 +4154,16 @@ const theme = {
         },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
+          ".item-dropdown": {
+            bg: `#F8F8F8 !important`,
+            ".item-dropdown-item": {
+              color: (t) => `${t.colors.black} !important`,
+              opacity: 0.5,
+              "&:hover": {
+                opacity: 1,
+              },
+            },
+          },
         },
         ".login": {
           color: (t) => `${t.colors.blue} !important`,
@@ -4171,6 +4208,16 @@ const theme = {
         },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
+          ".item-dropdown": {
+            bg: `#F2F2F2 !important`,
+            ".item-dropdown-item": {
+              color: (t) => `${t.colors.black} !important`,
+              opacity: 0.5,
+              "&:hover": {
+                opacity: 1,
+              },
+            },
+          },
         },
         ".login": {
           color: (t) => `${t.colors.blue} !important`,
@@ -4216,6 +4263,16 @@ const theme = {
         },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
+          ".item-dropdown": {
+            bg: `#FFF !important`,
+            ".item-dropdown-item": {
+              color: (t) => `${t.colors.black} !important`,
+              opacity: 0.5,
+              "&:hover": {
+                opacity: 1,
+              },
+            },
+          },
         },
         ".login": {
           color: (t) => `${t.colors.blue} !important`,
@@ -4260,6 +4317,16 @@ const theme = {
         },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
+          ".item-dropdown": {
+            bg: (t) => `${t.colors.lightTurquoise} !important`,
+            ".item-dropdown-item": {
+              color: (t) => `${t.colors.black} !important`,
+              opacity: 0.5,
+              "&:hover": {
+                opacity: 1,
+              },
+            },
+          },
         },
         ".login": {
           color: (t) => `${t.colors.blue} !important`,
@@ -4304,6 +4371,16 @@ const theme = {
         },
         ".item": {
           color: (t) => `${t.colors.black} !important`,
+          ".item-dropdown": {
+            bg: (t) => `${t.colors.yellow} !important`,
+            ".item-dropdown-item": {
+              color: (t) => `${t.colors.black} !important`,
+              opacity: 0.5,
+              "&:hover": {
+                opacity: 1,
+              },
+            },
+          },
         },
         ".login": {
           color: (t) => `${t.colors.blue} !important`,
