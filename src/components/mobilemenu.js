@@ -2,142 +2,54 @@
 import { jsx, Styled } from "theme-ui";
 import { ReactSVG } from "react-svg";
 import Link from "next/link";
-import {useRef,useEffect} from 'react';
+import { useRef, useEffect } from "react";
 import { useMachine } from "@xstate/react";
-import {MobileMenu__machine} from '../machines/mobilemenu';
-import {gsap}from'gsap'
-
-
+import { MobileMenu__machine } from "../machines/mobilemenu";
+import { gsap } from "gsap";
+import { navItems } from "../helpers/navigation";
 
 const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
-  const [state,send] = useMachine(MobileMenu__machine)
+  const [state, send] = useMachine(MobileMenu__machine);
   const navItemsRef = useRef(null);
 
   useEffect(() => {
-    navItems.map((item,i)=>{
-
+    navItems.map((item, i) => {
       if (item.sub) {
-         //animate arrow
-        gsap.to(navItemsRef.current.querySelector(`.arrow.${item.type}`),{
+        //animate arrow
+        gsap.to(navItemsRef.current.querySelector(`.arrow.${item.type}`), {
           rotate: state.context[item.type].open ? 180 : 0,
-          ease:"power4.out", 
-          duration: .5
-        })
+          ease: "power4.out",
+          duration: 0.5,
+        });
 
-        const paddingTop=16
-        const height = gsap.utils.toArray(navItemsRef.current.querySelectorAll(`.subitem.${item.type}`)).reduce((prev,curr)=>{
-          return curr.clientHeight+prev; 
-        },paddingTop)
+        const paddingTop = 16;
+        const height = gsap.utils
+          .toArray(
+            navItemsRef.current.querySelectorAll(`.subitem.${item.type}`)
+          )
+          .reduce((prev, curr) => {
+            return curr.clientHeight + prev;
+          }, paddingTop);
 
         //animate height
-        gsap.to(navItemsRef.current.querySelector(`.sub.${item.type}`),{
-   
-          height:state.context[item.type].open ? height : 0,
-          paddingTop:state.context[item.type].open ? paddingTop : 0,
-          duration:.5,
-          ease:"power4.out", 
-        })
+        gsap.to(navItemsRef.current.querySelector(`.sub.${item.type}`), {
+          height: state.context[item.type].open ? height : 0,
+          paddingTop: state.context[item.type].open ? paddingTop : 0,
+          duration: 0.5,
+          ease: "power4.out",
+        });
 
         // animate in subItems
-        gsap.to(navItemsRef.current.querySelectorAll(`.subitem.${item.type}`),{
-          opacity:state.context[item.type].open ? 1 : 0,
-          x:state.context[item.type].open ? 0 : -100,
-          duration:.2,
-          delay:.2,
-          ease:"power4.out", 
-        })
+        gsap.to(navItemsRef.current.querySelectorAll(`.subitem.${item.type}`), {
+          opacity: state.context[item.type].open ? 1 : 0,
+          x: state.context[item.type].open ? 0 : -100,
+          duration: 0.2,
+          delay: 0.2,
+          ease: "power4.out",
+        });
       }
-
-  
-
-
-    }) 
-  }, [state])
-
-
-  const navItems = [
-    {
-      title: "Home",
-      url: "/",
-    },
-    {
-      title: "Why Dandi?",
-      type: "values",
-      sub: [
-        {
-          title: "Pay Equity",
-          url: "/values/equitypay",
-          type: "equitypay",
-        },
-        {
-          title: "The DEI Journey",
-          url: "/values/deijourney",
-          type: "deijourney",
-        },
-        {
-          title: "For Your Role",
-          url: "/values/leadership",
-          type: "leadership",
-        },
-      ],
-    },
-    {
-      title: "Product",
-      type: "product",
-      sub: [
-        {
-          title: "Measure",
-          url: "/product/measure",
-          type: "measure",
-        },
-        {
-          title: "Analyze",
-          url: "/product/analyze",
-          type: "analyze",
-        },
-        {
-          title: "Collaborate",
-          url: "/product/collaborate",
-          type: "collaborate",
-        },
-        {
-          title: "Security",
-          url: "/product/security",
-          type: "security",
-        },
-        {
-          title: "Integrations",
-          url: "/product/integrations",
-          type: "integrations",
-        },
-      ],
-    },
-    {
-      title: "Pricing",
-      url: "/pricing",
-    },
-    {
-      title: "Community",
-      type: "community",
-      sub: [
-        {
-          title: "DEI Advisory Board",
-          url: "/community/board",
-          type: "board",
-        },
-        {
-          title: "Marketplace Partners",
-          url: "/community/partners",
-          type: "partners",
-        },
-        {
-          title: "Service & Support",
-          url: "/community/support",
-          type: "support",
-        },
-      ],
-    },
-  ];
+    });
+  }, [state]);
 
   return (
     <div
@@ -152,23 +64,18 @@ const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
           variant: "grid",
         }}
       >
-        <nav
-          ref={navItemsRef}
-        className="navitems">
+        <nav ref={navItemsRef} className="navitems">
           {navItems.map((item, i) => (
-            <div 
-            
-            className="item" key={i}>
+            <div className="item" key={i}>
               {item.sub ? (
                 <div
                   onClick={() =>
                     send({
-                      type:"TOGGLE",
-                      payload:{
-                        target:item.type 
-                      }
+                      type: "TOGGLE",
+                      payload: {
+                        target: item.type,
+                      },
                     })
-            
                   }
                   className="wrapper"
                 >
@@ -176,7 +83,6 @@ const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
                     <Styled.h2>{item.title}</Styled.h2>
                     <div className={`arrow ${item.type}`}>
                       <svg
-              
                         width="20"
                         height="13"
                         viewBox="0 0 20 13"
@@ -192,9 +98,7 @@ const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
                       </svg>
                     </div>
                   </div>
-                  <div
-                    className={`sub ${item.type}`}
-                  >
+                  <div className={`sub ${item.type}`}>
                     {item.sub.map((sub, i) => (
                       <Link href={sub.url} key={i}>
                         <a

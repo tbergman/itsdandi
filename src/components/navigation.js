@@ -9,6 +9,8 @@ import { columnWidths } from "../helpers/utils";
 import useScrollPosition from "@react-hook/window-scroll";
 import { useEffect } from "react";
 import DemoBtn from "./navigation/demobtn";
+import NavItem from "./navigation/navitem";
+import { navItems } from "../helpers/navigation";
 
 const Navigation = ({
   current,
@@ -49,74 +51,47 @@ const Navigation = ({
       </div>
 
       <div className="links">
-        <Link href="/">
-          <a className="item">
-            <div
-              sx={{
-                opacity: current === "home" ? 0.95 : 0.5,
-              }}
-            >
-              Home
+        {navItems.map((item, i) => (
+          <NavItem
+            url={item.url}
+            active={current === item.type}
+            sub={item.sub}
+            body={item.title}
+            key={i}
+          />
+        ))}
+        {/* <NavItem url="/" active={current === "home"} body="Home" />
+        <NavItem
+          url="/values/equitypay"
+          active={current === "values"}
+          body="Why Dandi?"
+        />
+        <NavItem
+          url="/product/measure"
+          active={current === "product"}
+          body="Product"
+        />
+        <NavItem url="/pricing" active={current === "pricing"} body="Pricing" />
+        <NavItem
+          url="/community/board"
+          active={current === "community"}
+          body="Community"
+        /> */}
+        <div className="item">
+          <a href="www.google.com" target="_blank" className="item-link">
+            <div>
+              <div
+                sx={{
+                  opacity: 0.5,
+                }}
+                className="text"
+              >
+                Log in
+              </div>
             </div>
           </a>
-        </Link>
-        <Link href="/values/equitypay">
-          <a className="item">
-            <div
-              sx={{
-                opacity: current === "values" ? 0.95 : 0.5,
-              }}
-            >
-              Why Dandi?
-            </div>
-          </a>
-        </Link>
-        <Link href="/product/measure">
-          <a className="item">
-            <div
-              sx={{
-                opacity: current === "product" ? 0.95 : 0.5,
-              }}
-            >
-              Product
-            </div>
-          </a>
-        </Link>
-        <Link href="/pricing">
-          <a className="item">
-            <div
-              sx={{
-                opacity: current === "pricing" ? 0.95 : 0.5,
-              }}
-            >
-              Pricing
-            </div>
-          </a>
-        </Link>
-        <Link href="/community/board">
-          <a className="item">
-            <div
-              sx={{
-                opacity: current === "community" ? 0.95 : 0.5,
-              }}
-            >
-              Community
-            </div>
-          </a>
-        </Link>
+        </div>
 
-        <a href="www.google.com" target="_blank" className="item">
-          <div>
-            <div
-              sx={{
-                opacity: 0.5,
-              }}
-              className="text"
-            >
-              Log in
-            </div>
-          </div>
-        </a>
         <DemoBtn variant={"yellow"} demoButtonStatic={demoButtonStatic} />
       </div>
     </motion.nav>

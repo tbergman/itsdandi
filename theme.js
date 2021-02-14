@@ -3964,10 +3964,37 @@ const theme = {
           fontFamily: "medium",
           color: "white",
           ml: [4],
-          textDecoration: "none",
-          div: {
-            "&:hover": {
-              opacity: 0.95,
+          position: "relative",
+          ".item-link": {
+            textDecoration: "none",
+            color: "inherit",
+            div: {
+              "&:hover": {
+                opacity: 0.95,
+              },
+            },
+          },
+          ".item-dropdown": {
+            position: "absolute",
+            visibility: "hidden", // initial state
+            opacity: 0, // initial state
+            transform: "translateY(12px)",
+            mt: ["12px"],
+            width: "fit-content",
+            left: "-16px",
+            pb: [2],
+            borderRadius: "8px",
+            bg: "white",
+            display: "flex",
+            flexFlow: "column",
+            ".item-dropdown-item": {
+              px: [2],
+              textDecoration: "none",
+              pt: [2],
+              color: "black",
+              ".item-dropdown-item-text": {
+                whiteSpace: "nowrap",
+              },
             },
           },
         },
