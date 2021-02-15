@@ -322,8 +322,8 @@ const theme = {
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 6) + 200px) + ${t.desktopMassiveGutters})`,
             ],
-            maxWidth: ["811px", "811px", "811px", "1000px"],
-            maxHeight: "308px",
+            maxWidth: ["811px", "811px", "1000px", "1250px"],
+            maxHeight: ["308px", "308px", "350px", "500px"],
             zIndex: 99,
             svg: {
               height: "100%",
@@ -331,6 +331,10 @@ const theme = {
               position: "absolute",
               top: 0,
               right: 0,
+              path: {
+                stroke: "#FFF",
+                strokeWidth: [4, 3, 2, 2],
+              },
               circle: {
                 transform: "scale(0)",
               },

@@ -100,23 +100,18 @@ const Graphics = () => {
         </motion.div>
         <motion.div className="Bars__barWrapper-line">
           <motion.svg
-            width="811"
-            height="308"
-            viewBox="0 0 200 80"
+            width="100%"
+            height="100%"
+            viewBox="0 0 1000 400"
+            preserveAspectRatio="none"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <motion.path
-              style={{
-                stroke: "white",
-                strokeWidth: 1,
-              }}
               initial="start"
               animate="animate"
               variants={lineMotion}
-              d={`M-50 75 H80`}
-
-              //C100 75  160 75 195 0
+              d={`M0 395 C600 395 800 395 975 30`}
             />
 
             <motion.circle
@@ -132,9 +127,9 @@ const Graphics = () => {
                 type: "spring",
                 stiffness: 175,
               }}
-              cx="98"
-              cy="0"
-              r="2"
+              cx="975"
+              cy="30"
+              r="15"
               fill="white"
             />
           </motion.svg>
