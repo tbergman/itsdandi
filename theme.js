@@ -3998,7 +3998,7 @@ const theme = {
             position: "absolute",
             visibility: "hidden", // initial state
             opacity: 0, // initial state
-            transform: "translateY(12px)",
+            // transform: "translateY(0px)",
             mt: ["12px"],
             width: "fit-content",
             left: "-16px",
@@ -4010,9 +4010,9 @@ const theme = {
             ".item-dropdown-filler": {
               bg: "transparent",
               width: "100%",
-              height: "24px",
+              height: "12px",
               position: "absolute",
-              top: "-24px",
+              top: "-12px",
             },
             ".item-dropdown-item": {
               px: [2],
