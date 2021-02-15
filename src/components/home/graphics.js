@@ -102,19 +102,21 @@ const Graphics = () => {
           <motion.svg
             width="811"
             height="308"
-            viewBox="0 0 811 308"
+            viewBox="0 0 200 80"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <motion.path
               style={{
                 stroke: "white",
-                strokeWidth: 2,
+                strokeWidth: 1,
               }}
               initial="start"
               animate="animate"
               variants={lineMotion}
-              d={`M0 307 H0 C400 307  645 307 795 16`}
+              d={`M-50 75 H80`}
+
+              //C100 75  160 75 195 0
             />
 
             <motion.circle
@@ -127,13 +129,12 @@ const Graphics = () => {
               transition={{
                 duration: 0.5,
                 delay: 1.5,
-                // ease: "easeOut",
                 type: "spring",
                 stiffness: 175,
               }}
-              cx="795"
-              cy="16"
-              r="10"
+              cx="98"
+              cy="0"
+              r="2"
               fill="white"
             />
           </motion.svg>

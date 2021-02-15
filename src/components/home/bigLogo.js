@@ -17,7 +17,7 @@ const BigLogo = ({
   width,
 }) => {
   const [state, send] = useMachine(BigLogo__machine);
-  const scrollThreshold = 150;
+  const scrollThreshold = 25;
   const svgRef = useRef(null);
 
   // setTimeout hack to remove glitch in logo on load

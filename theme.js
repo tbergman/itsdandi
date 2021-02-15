@@ -192,20 +192,25 @@ const theme = {
             width: "100%",
             bottom: 0,
             left: 0,
-            height: ["178px", "246px"],
+            height: ["178px", "246px", "275px", "300px"],
           },
           ".Bars__barWrapper-bar1": {
             zIndex: 99,
             position: "absolute",
             height: "100%",
-            width: [(t) => `calc(${t.colWidthMob} + 10px)`, `95px`],
+            width: [
+              (t) => `calc(${t.colWidthMob} + 10px)`,
+              `95px`,
+              (t) => `calc(${t.colWidthDesktopBig} + 40px)`,
+              (t) => `calc(${t.colWidthDesktopMassive} + 40px)`,
+            ],
             ml: [
               "20px",
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 56px)`,
               (t) =>
-                `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 80px) + ${t.desktopBigGutters})`,
+                `calc(calc(calc(${t.colWidthDesktopBig} * 1) + 40px) + ${t.desktopBigGutters})`,
               (t) =>
-                `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 80px) + ${t.desktopMassiveGutters})`,
+                `calc(calc(calc(${t.colWidthDesktopMassive} * 1) + 40px) + ${t.desktopMassiveGutters})`,
             ],
             ".Bars__barWrapper-bar1-top": {
               position: "absolute",
@@ -228,14 +233,19 @@ const theme = {
           },
           ".Bars__barWrapper-bar2": {
             zIndex: 99,
-            width: [(t) => `calc(${t.colWidthMob} + 10px)`, "95px"],
+            width: [
+              (t) => `calc(${t.colWidthMob} + 10px)`,
+              "95px",
+              (t) => `calc(${t.colWidthDesktopBig} + 40px)`,
+              (t) => `calc(${t.colWidthDesktopMassive} + 40px)`,
+            ],
             ml: [
               (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 225px)`,
               (t) =>
-                `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 249px) + ${t.desktopBigGutters})`,
+                `calc(calc(calc(calc(${t.colWidthDesktopBig} * 3) + 80px) + ${t.desktopBigGutters}))`,
               (t) =>
-                `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 249px) + ${t.desktopMassiveGutters})`,
+                `calc(calc(calc(${t.colWidthDesktopMassive} * 3) + 80px) + ${t.desktopMassiveGutters})`,
             ],
             bottom: 0,
             height: "100%",
@@ -261,7 +271,12 @@ const theme = {
           },
           ".Bars__barWrapper-bar3": {
             zIndex: 99,
-            width: [(t) => `calc(${t.colWidthMob} + 10px)`, "95px"],
+            width: [
+              (t) => `calc(${t.colWidthMob} + 10px)`,
+              "95px",
+              (t) => `calc(${t.colWidthDesktopBig} + 40px)`,
+              (t) => `calc(${t.colWidthDesktopMassive} + 40px)`,
+            ],
             height: "100%",
             bottom: 0,
             position: "absolute",
@@ -269,9 +284,9 @@ const theme = {
               (t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`,
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 394px)`,
               (t) =>
-                `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 418px) + ${t.desktopBigGutters})`,
+                `calc(calc(calc(${t.colWidthDesktopBig} * 5) + 120px) + ${t.desktopBigGutters})`,
               (t) =>
-                `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 418px) + ${t.desktopMassiveGutters})`,
+                `calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 120px) + ${t.desktopMassiveGutters})`,
             ],
 
             ".Bars__barWrapper-bar3-bottom": {
@@ -307,7 +322,7 @@ const theme = {
               (t) =>
                 `calc(calc(calc(${t.colWidthDesktopMassive} * 6) + 200px) + ${t.desktopMassiveGutters})`,
             ],
-            maxWidth: "811px",
+            maxWidth: ["811px", "811px", "811px", "1000px"],
             maxHeight: "308px",
             zIndex: 99,
             svg: {
