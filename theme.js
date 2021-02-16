@@ -1502,19 +1502,19 @@ const theme = {
           top: [
             (t) => `calc(calc(calc(calc(100vw - 20px) * .6) * .7) / -1)`,
             (t) =>
-              `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) +  400px) * .45) * .5) / -1)`,
+              `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) +  400px) * .59) * .5) / -1)`,
             (t) =>
-              `calc(calc(calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters}) * .45) * .5) / -1)`,
+              `calc(calc(calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters}) * .59) * .5) / -1)`,
             (t) =>
-              `calc(calc(calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters}) * .45) * .5) / -1)`,
+              `calc(calc(calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters}) * .59) * .5) / -1)`,
           ],
           height: [
             0,
-            (t) => `calc(calc(calc(${t.colWidthDesktop} * 10) +  400px) * .45)`,
+            (t) => `calc(calc(calc(${t.colWidthDesktop} * 10) +  400px) * .59)`,
             (t) =>
-              `calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters}) * .45)`,
+              `calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters}) * .59)`,
             (t) =>
-              `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters}) * .45)`,
+              `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters}) * .59)`,
           ],
           pt: ["60%", 0],
           img: {
@@ -1529,11 +1529,11 @@ const theme = {
           pt: [
             `calc(calc(calc(calc(100vw - 20px) * .6) * .3) + 40px)`,
             (t) =>
-              `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) +  400px) * .45) * .5) + 115px)`,
+              `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) +  400px) * .59) * .5) + 115px)`,
             (t) =>
-              `calc(calc(calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters}) * .45) * .5) + 115px)`,
+              `calc(calc(calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters}) * .59) * .5) + 115px)`,
             (t) =>
-              `calc(calc(calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters}) * .45) * .5) + 115px)`,
+              `calc(calc(calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) +  360px) + ${t.desktopMassiveGutters}) * .59) * .5) + 115px)`,
           ],
           bg: "lightGray",
 
