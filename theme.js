@@ -645,6 +645,7 @@ const theme = {
           ".Partners__logoCarousel-rowWrapper-container": {
             width: "100%",
             height: "100%",
+            maxHeight: ["unset", "100px"],
             position: "absolute",
             overflowX: "hidden",
             overflowY: "hidden",
@@ -653,13 +654,18 @@ const theme = {
           ".Partners__logoCarousel-rowWrapper-container-row": {
             position: "relative",
             height: "100%",
+            width: "fit-content",
+            display: "flex",
+            justifyContent: "flex-start",
+            transform: "scale(-1)",
           },
           ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper": {
-            position: "absolute",
+            // position: "absolute",
             height: "100%",
             width: "auto",
             px: [2],
             py: [2],
+            transform: "scale(-1)",
 
             img: {
               height: "100%",

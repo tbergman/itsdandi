@@ -134,19 +134,18 @@ const Home = (props) => {
         }}
       />
       <Partners
-      setNavbarStyling={setNavbarStyling}
-      windowHeight={windowHeight}
-      navBarStyling={theme.components.navigation.white}
-      width={width}
-      isServer={isServer()}
-      isDesktop={isDesktop}
-      content={{
-        header: props.partner_header,
-        logosRow1: props.row1_logos,
-        logosRow2: props.row2_logos,
-      }}
-    />
-
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+        navBarStyling={theme.components.navigation.white}
+        width={width}
+        isServer={isServer()}
+        isDesktop={isDesktop}
+        content={{
+          header: props.partner_header,
+          logosRow1: props.row1_logos,
+          logosRow2: props.row2_logos,
+        }}
+      />
 
       <AdvanceDEI
         setNavbarStyling={setNavbarStyling}

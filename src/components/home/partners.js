@@ -45,11 +45,11 @@ const Partners = ({
             duration={60}
             isServer={isServer}
             additionalClass={`row1`}
-          />
-          <CarouselRow
+          /> */}
+          {/* <CarouselRow
             key={1}
             logosRow={logosRow2}
-            duration={320}
+            duration={80}
             isServer={isServer}
             additionalClass={`row2`}
           /> */}
