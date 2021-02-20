@@ -3937,6 +3937,7 @@ const theme = {
       ".demobtn": {
         "&:hover": {
           bg: "#FF9133",
+          fontFamily: "medium",
         },
         display: "flex",
         justifyContent: "center",
@@ -3949,7 +3950,7 @@ const theme = {
         ".demobtn-text": {
           color: "black",
           fontSize: "14px",
-          fontFamily: "medium",
+          fontFamily: "body",
         },
       },
 
@@ -4016,39 +4017,51 @@ const theme = {
             position: "absolute",
             visibility: "hidden", // initial state
             opacity: 0, // initial state
-            // transform: "translateY(0px)",
             mt: ["12px"],
-            width: "fit-content",
             left: "-16px",
-            pb: [2],
-            borderRadius: "8px",
-            bg: "black",
-            display: "flex",
-            flexFlow: "column",
+            bg: "#FFF",
+
+            ".item-dropdown-bg": {
+              bg: "rgba(58, 58, 61, 0.5)",
+              pb: [2],
+              borderRadius: "8px",
+              display: "flex",
+              flexFlow: "column",
+              width: "fit-content",
+              ".item-dropdown-bg-item": {
+                px: [2],
+                textDecoration: "none",
+                pt: [2],
+                color: "white",
+                opacity: 0.5,
+                "&:hover": {
+                  opacity: 1,
+                  ".item-dropdown-item-text": {
+                    fontFamily: "medium",
+                  },
+                },
+                ".item-dropdown-bg-item-text": {
+                  whiteSpace: "nowrap",
+                  fontSize: "14px",
+                  fontFamily: "body",
+                  "&:after": {
+                    content: "attr(title)",
+                    display: "block",
+                    height: 0,
+                    overflow: "hidden",
+                    visibility: "hidden",
+                    fontFamily: "medium",
+                  },
+                },
+              },
+            },
+
             ".item-dropdown-filler": {
               bg: "transparent",
               width: "100%",
               height: "12px",
               position: "absolute",
               top: "-12px",
-            },
-            ".item-dropdown-item": {
-              px: [2],
-              textDecoration: "none",
-              pt: [2],
-              color: "white",
-              opacity: 0.5,
-              "&:hover": {
-                opacity: 1,
-                ".item-dropdown-item-text": {
-                  fontFamily: "medium",
-                },
-              },
-              ".item-dropdown-item-text": {
-                whiteSpace: "nowrap",
-                fontSize: "14px",
-                fontFamily: "body",
-              },
             },
           },
         },
@@ -4085,61 +4098,85 @@ const theme = {
           color: "white",
           ".item-dropdown": {
             bg: (t) => `${t.colors.black} !important`,
-            ".item-dropdown-item": {
-              color: (t) => `${t.colors.white} !important`,
-              opacity: 0.5,
-              "&:hover": {
-                opacity: 1,
+            ".item-dropdown-bg": {
+              bg: `rgba(58, 58, 61, 0.5) !important`,
+              ".item-dropdown-bg-item": {
+                color: (t) => `${t.colors.white} !important`,
+                opacity: 0.5,
+                "&:hover": {
+                  opacity: 1,
+                  ".item-dropdown-bg-item": {
+                    ".item-dropdown-bg-item-text": {
+                      fontFamily: "medium",
+                    },
+                  },
+                },
               },
             },
           },
         },
-        ".login": {
-          bg: "transparent",
-          color: "yellow",
-          path: {
-            stroke: "yellow",
-          },
-          line: {
-            stroke: "yellow",
-          },
+      },
+      ".login": {
+        bg: "transparent",
+        color: "yellow",
+        path: {
+          stroke: "yellow",
         },
-        ".logo": {
-          bg: "transparent",
-          path: {
-            fill: "white",
-          },
-        },
-        ".BigLogo": {
-          bg: "transparent !important",
-        },
-        ".hamburger": {
-          span: {
-            bg: "white",
-          },
+        line: {
+          stroke: "yellow",
         },
       },
-      violet: {
-        bg: "violet",
-        color: "black",
-        ".main": {
-          a: {
-            color: "black !important",
-          },
-          path: {
-            stroke: "black !important",
-          },
+      ".logo": {
+        bg: "transparent",
+        path: {
+          fill: "white",
         },
-        ".item": {
-          color: (t) => `${t.colors.black} !important`,
-          ".item-dropdown": {
-            bg: (t) => `${t.colors.violet} !important`,
-            ".item-dropdown-item": {
-              color: (t) => `${t.colors.black} !important`,
+      },
+      ".BigLogo": {
+        bg: "transparent !important",
+      },
+      ".hamburger": {
+        span: {
+          bg: "white",
+        },
+      },
+    },
+    violet: {
+      bg: "violet",
+      color: "black",
+      ".main": {
+        a: {
+          color: "black !important",
+        },
+        path: {
+          stroke: "black !important",
+        },
+      },
+      ".item": {
+        color: (t) => `${t.colors.black} !important`,
+        ".item-dropdown": {
+          bg: (t) => `${t.colors.violet} !important`,
+          ".item-dropdown-bg": {
+            ".item-dropdown-bg-item": {
+              color: `#FFF !important`,
               opacity: 0.5,
               "&:hover": {
                 opacity: 1,
               },
+              // ".item-dropdown-bg": {
+              //   ".item-dropdown-bg-item": {
+              //     ".item-dropdown-bg-item-text": {
+              //       "&:after": {
+              //         content: "attr(title)",
+              //         display: "block",
+              //         height: 0,
+              //         overflow: "hidden",
+              //         fontFamily: "medium",
+              //         visibility: "hidden",
+              //       },
+              //     },
+              //   },
+              // },
             },
           },
         },

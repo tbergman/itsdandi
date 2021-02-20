@@ -51,18 +51,21 @@ const NavItem = ({ url, active, body, sub }) => {
       </Link>
       {sub && (
         <div ref={ref} className="item-dropdown">
-          {sub.map((link, i) => (
-            <Link href={link.url} key={i}>
-              <a className="item-dropdown-item">
-                <Styled.p
-                  className="item-dropdown-item-text"
-                  title={link.title}
-                >
-                  {link.title}
-                </Styled.p>
-              </a>
-            </Link>
-          ))}
+          <div className="item-dropdown-bg">
+            {sub.map((link, i) => (
+              <Link href={link.url} key={i}>
+                <a className="item-dropdown-bg-item">
+                  <Styled.p
+                    className="item-dropdown-bg-item-text"
+                    title={link.title}
+                  >
+                    {link.title}
+                  </Styled.p>
+                </a>
+              </Link>
+            ))}
+          </div>
+
           <span className="item-dropdown-filler"></span>
         </div>
       )}
