@@ -60,23 +60,7 @@ const Navigation = ({
             key={i}
           />
         ))}
-        {/* <NavItem url="/" active={current === "home"} body="Home" />
-        <NavItem
-          url="/values/equitypay"
-          active={current === "values"}
-          body="Why Dandi?"
-        />
-        <NavItem
-          url="/product/measure"
-          active={current === "product"}
-          body="Product"
-        />
-        <NavItem url="/pricing" active={current === "pricing"} body="Pricing" />
-        <NavItem
-          url="/community/board"
-          active={current === "community"}
-          body="Community"
-        /> */}
+
         <div className="item">
           <a href="www.google.com" target="_blank" className="item-link">
             <div>

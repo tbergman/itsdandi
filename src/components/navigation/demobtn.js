@@ -12,78 +12,78 @@ const DemoBtn = ({ variant, demoButtonStatic }) => {
   const scrollThreshold = 400;
   const ref = useRef(null);
 
-  const setInitial = async () => {
-    await setTimeout(() => {
-      const initialY = scrollYPos(window);
-      const aboveThreshold = initialY > scrollThreshold;
+  // const setInitial = async () => {
+  //   await setTimeout(() => {
+  //     const initialY = scrollYPos(window);
+  //     const aboveThreshold = initialY > scrollThreshold;
 
-      if ((state.matches("idle") && aboveThreshold) || demoButtonStatic) {
-        send({
-          type: "SHOW",
-          payload: {
-            gsap,
-            ref: ref,
-          },
-        });
-      } else if (
-        state.matches("idle") &&
-        !aboveThreshold &&
-        !demoButtonStatic
-      ) {
-        send({
-          type: "HIDE",
-          payload: {
-            gsap,
-            ref: ref,
-          },
-        });
-      }
-    }, 1);
+  //     if ((state.matches("idle") && aboveThreshold) || demoButtonStatic) {
+  //       send({
+  //         type: "SHOW",
+  //         payload: {
+  //           gsap,
+  //           ref: ref,
+  //         },
+  //       });
+  //     } else if (
+  //       state.matches("idle") &&
+  //       !aboveThreshold &&
+  //       !demoButtonStatic
+  //     ) {
+  //       send({
+  //         type: "HIDE",
+  //         payload: {
+  //           gsap,
+  //           ref: ref,
+  //         },
+  //       });
+  //     }
+  //   }, 1);
 
-    return;
-  };
+  //   return;
+  // };
 
-  // initial load
-  useEffect(() => {
-    gsap.set(ref.current, {
-      autoAlpha: 0,
-    });
+  // // initial load
+  // useEffect(() => {
+  //   gsap.set(ref.current, {
+  //     autoAlpha: 0,
+  //   });
 
-    setInitial();
-  }, []);
+  //   setInitial();
+  // }, []);
 
-  useScrollPosition(
-    ({ prevPos, currPos }) => {
-      const aboveThreshold = Math.abs(currPos.y) >= scrollThreshold;
-      if (state.matches("hidden") && aboveThreshold) {
-        send({
-          type: "SHOW",
-          payload: {
-            gsap,
-            ref: ref,
-          },
-        });
-      } else if (
-        state.matches("visible") &&
-        !aboveThreshold &&
-        !demoButtonStatic
-      ) {
-        send({
-          type: "HIDE",
-          payload: {
-            gsap,
-            ref: ref,
-          },
-        });
-      }
-    },
+  // useScrollPosition(
+  //   ({ prevPos, currPos }) => {
+  //     const aboveThreshold = Math.abs(currPos.y) >= scrollThreshold;
+  //     if (state.matches("hidden") && aboveThreshold) {
+  //       send({
+  //         type: "SHOW",
+  //         payload: {
+  //           gsap,
+  //           ref: ref,
+  //         },
+  //       });
+  //     } else if (
+  //       state.matches("visible") &&
+  //       !aboveThreshold &&
+  //       !demoButtonStatic
+  //     ) {
+  //       send({
+  //         type: "HIDE",
+  //         payload: {
+  //           gsap,
+  //           ref: ref,
+  //         },
+  //       });
+  //     }
+  //   },
 
-    [state],
-    null,
-    true,
-    250,
-    null
-  );
+  //   [state],
+  //   null,
+  //   true,
+  //   250,
+  //   null
+  // );
 
   switch (variant) {
     case "yellow": {

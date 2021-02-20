@@ -3944,11 +3944,11 @@ const theme = {
         bg: "yellow",
         borderRadius: "200px",
         cursor: "pointer",
-        height: "48px",
+        height: "40px",
         width: "165px",
         ".demobtn-text": {
           color: "black",
-          fontSize: "16px",
+          fontSize: "14px",
           fontFamily: "medium",
         },
       },
@@ -3984,19 +3984,31 @@ const theme = {
         justifyContent: "flex-end",
         alignItems: "center",
         px: ["40px"],
-        // pt: ["44px"],
         ".item": {
           fontSize: "nav",
-          fontFamily: "medium",
+
           color: "white",
           ml: [4],
           position: "relative",
           ".item-link": {
             textDecoration: "none",
             color: "inherit",
+            fontFamily: "body", // initial
+            width: "100%",
+
             div: {
               "&:hover": {
                 opacity: 0.95,
+                fontFamily: "medium",
+              },
+              "&:after": {
+                // reserve space for hover
+                content: "attr(body)",
+                display: "block",
+                fontFamily: "medium",
+                height: 0,
+                overflow: "hidden",
+                visibility: "hidden",
               },
             },
           },
@@ -4028,11 +4040,14 @@ const theme = {
               opacity: 0.5,
               "&:hover": {
                 opacity: 1,
+                ".item-dropdown-item-text": {
+                  fontFamily: "medium",
+                },
               },
               ".item-dropdown-item-text": {
                 whiteSpace: "nowrap",
                 fontSize: "14px",
-                fontFamily: "medium",
+                fontFamily: "body",
               },
             },
           },

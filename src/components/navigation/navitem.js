@@ -39,8 +39,10 @@ const NavItem = ({ url, active, body, sub }) => {
       <Link href={url}>
         <a className="item-link">
           <div
+            body={body}
             sx={{
               opacity: active ? 0.95 : 0.5,
+              fontFamily: active ? "medium" : null,
             }}
           >
             {body}
@@ -52,7 +54,10 @@ const NavItem = ({ url, active, body, sub }) => {
           {sub.map((link, i) => (
             <Link href={link.url} key={i}>
               <a className="item-dropdown-item">
-                <Styled.p className="item-dropdown-item-text">
+                <Styled.p
+                  className="item-dropdown-item-text"
+                  title={link.title}
+                >
                   {link.title}
                 </Styled.p>
               </a>
