@@ -4019,12 +4019,16 @@ const theme = {
             opacity: 0, // initial state
             mt: ["12px"],
             left: "-16px",
-            bg: "#FFF",
+            bg: "black",
+            borderRadius: "8px",
 
             ".item-dropdown-bg": {
+              width: "100%",
+              height: "100%",
+              borderRadius: "8px",
               bg: "rgba(58, 58, 61, 0.5)",
               pb: [2],
-              borderRadius: "8px",
+
               display: "flex",
               flexFlow: "column",
               width: "fit-content",
