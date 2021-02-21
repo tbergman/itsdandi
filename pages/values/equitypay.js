@@ -44,10 +44,10 @@ const Values = (props) => {
   });
   const [windowHeight, setWindowHeight] = useState(500);
   const [subMenuStyling, setSubMenuStyling] = useState({
-    ...theme.components.submenu.white,
+    ...theme.components.submenu.variants.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.white,
+    ...theme.components.navigation.variants.white,
   });
 
   const subPages_ = subPages({
@@ -112,9 +112,9 @@ const Values = (props) => {
       <Header
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.white}
+        navBarStyling={theme.components.navigation.variants.white}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
         content={{
           header: props.header.header,
@@ -134,9 +134,9 @@ const Values = (props) => {
       </Header>
       <Compensation
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.gray}
+        navBarStyling={theme.components.navigation.variants.gray}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
         isServer={isServer()}
@@ -146,9 +146,9 @@ const Values = (props) => {
       />
       <CompensationGraph
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.default}
+        subMenuStyling={theme.components.submenu.variants.default}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.default}
+        navBarStyling={theme.components.navigation.variants.default}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
         content={{
@@ -158,9 +158,9 @@ const Values = (props) => {
       />
       <Reports
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.white}
+        navBarStyling={theme.components.navigation.variants.white}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
         content={{
@@ -169,10 +169,10 @@ const Values = (props) => {
       />
       <Quote
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.gray}
+        navBarStyling={theme.components.navigation.variants.gray}
         bg="#FAFAFA"
         content={{
           ...props.quote,
@@ -182,10 +182,10 @@ const Values = (props) => {
 
       <Affordable
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.white}
+        navBarStyling={theme.components.navigation.variants.white}
         isDesktop={isDesktop}
         content={{
           ...props.affordable,

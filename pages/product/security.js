@@ -46,7 +46,7 @@ const Product = (props) => {
     ...theme.components.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.white,
+    ...theme.components.navigation.variants.white,
   });
   useEffect(() => {
     if (window) {
@@ -109,9 +109,9 @@ const Product = (props) => {
           ...props.header,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.gray}
+        navBarStyling={theme.components.navigation.variants.gray}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
         bg="#fff"
         styling={{
@@ -133,10 +133,10 @@ const Product = (props) => {
       </Header>
       <BestInClass
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.default}
+        subMenuStyling={theme.components.submenu.variants.default}
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.default}
+        navBarStyling={theme.components.navigation.variants.default}
         windowHeight={windowHeight}
         content={{
           ...props.best_in_class,
@@ -149,17 +149,17 @@ const Product = (props) => {
         }}
         bg="white"
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.gray2}
+        navBarStyling={theme.components.navigation.variants.gray2}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
       />
       <Workflows
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.white}
+        navBarStyling={theme.components.navigation.variants.white}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
         content={{
           ...props.workflows,
@@ -168,9 +168,9 @@ const Product = (props) => {
       <Connect
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.white}
+        navBarStyling={theme.components.navigation.variants.white}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
         content={{
           ...props.connect,

@@ -40,10 +40,10 @@ const Values = (props) => {
   });
   const [windowHeight, setWindowHeight] = useState(500);
   const [subMenuStyling, setSubMenuStyling] = useState({
-    ...theme.components.submenu.white,
+    ...theme.components.submenu.variants.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.white,
+    ...theme.components.navigation.variants.white,
   });
   useEffect(() => {
     if (window) {
@@ -105,8 +105,8 @@ const Values = (props) => {
       <Header
         setNavbarStyling={setNavbarStyling}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
-        navBarStyling={theme.components.navigation.white}
+        subMenuStyling={theme.components.submenu.variants.white}
+        navBarStyling={theme.components.navigation.variants.white}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
         bg="#FFF"
@@ -130,9 +130,9 @@ const Values = (props) => {
         }}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.gray}
+        navBarStyling={theme.components.navigation.variants.gray}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
       />
       <TextBlock
         isDesktop={isDesktop}
@@ -144,19 +144,19 @@ const Values = (props) => {
             mb: [21, 18],
           },
         }}
-        navBarStyling={theme.components.navigation.white}
+        navBarStyling={theme.components.navigation.variants.white}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
       />
       <Partners
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.white}
+        navBarStyling={theme.components.navigation.variants.white}
         windowHeight={windowHeight}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         content={{
           ...props.transformation,
         }}
@@ -168,9 +168,9 @@ const Values = (props) => {
         }}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.white}
+        navBarStyling={theme.components.navigation.variants.white}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
       />
       <TextBlock
         isDesktop={isDesktop}
@@ -182,9 +182,9 @@ const Values = (props) => {
         }}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.gray}
+        navBarStyling={theme.components.navigation.variants.gray}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
       />
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />

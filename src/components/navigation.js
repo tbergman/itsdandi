@@ -61,7 +61,7 @@ const Navigation = ({
           />
         ))}
 
-        <div className="item">
+        <div className="item login">
           <a href="www.google.com" target="_blank" className="item-link">
             <div>
               <div

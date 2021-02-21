@@ -41,10 +41,10 @@ const Community = (props) => {
   });
   const [windowHeight, setWindowHeight] = useState(500);
   const [subMenuStyling, setSubMenuStyling] = useState({
-    ...theme.components.submenu.white,
+    ...theme.components.submenu.variants.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.white,
+    ...theme.components.navigation.variants.white,
   });
   useEffect(() => {
     if (window) {
@@ -98,29 +98,30 @@ const Community = (props) => {
       />
       <Header
         isDesktop={isDesktop}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         setSubMenuStyling={setSubMenuStyling}
         content={{
           ...props.header,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.white}
+        navBarStyling={theme.components.navigation.variants.white}
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{
           mb: [
             `calc(calc(calc(calc(${theme.colWidthMob} * 3) + 40px) * .88) + 8px)`,
-             16],
+            16,
+          ],
         }}
       >
         {!isServer() && <TopContent />}
       </Header>
       <People
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         setSubMenuStyling={setSubMenuStyling}
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.gray}
+        navBarStyling={theme.components.navigation.variants.gray}
         windowHeight={windowHeight}
         content={{
           ...props.better,

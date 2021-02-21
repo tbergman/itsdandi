@@ -32,7 +32,7 @@ const Pricing = (props) => {
   });
   const [windowHeight, setWindowHeight] = useState(500);
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.white,
+    ...theme.components.navigation.variants.white,
   });
 
   const toggleMenu = (menuOpen) => {
@@ -82,7 +82,7 @@ const Pricing = (props) => {
       <Header
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.white}
+        navBarStyling={theme.components.navigation.variants.white}
         windowHeight={windowHeight}
         isServer={isServer()}
         content={{
@@ -92,7 +92,7 @@ const Pricing = (props) => {
       <Cost
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.gray}
+        navBarStyling={theme.components.navigation.variants.gray}
         windowHeight={windowHeight}
         content={{
           ...props.cost,
@@ -101,7 +101,7 @@ const Pricing = (props) => {
       <BetterInsights
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.default}
+        navBarStyling={theme.components.navigation.variants.default}
         windowHeight={windowHeight}
         width={width}
         content={{

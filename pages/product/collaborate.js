@@ -41,10 +41,10 @@ const Product = (props) => {
   });
   const [windowHeight, setWindowHeight] = useState(500);
   const [subMenuStyling, setSubMenuStyling] = useState({
-    ...theme.components.submenu.white,
+    ...theme.components.submenu.variants.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.gray,
+    ...theme.components.navigation.variants.gray,
   });
   useEffect(() => {
     if (window) {
@@ -107,8 +107,8 @@ const Product = (props) => {
           ...props.header,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.gray}
-        subMenuStyling={theme.components.submenu.white}
+        navBarStyling={theme.components.navigation.variants.gray}
+        subMenuStyling={theme.components.submenu.variants.white}
         setSubMenuStyling={setSubMenuStyling}
         windowHeight={windowHeight}
         bg="#fff"
@@ -128,8 +128,8 @@ const Product = (props) => {
       <DeiWork
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.default}
-        subMenuStyling={theme.components.submenu.default}
+        navBarStyling={theme.components.navigation.variants.default}
+        subMenuStyling={theme.components.submenu.variants.default}
         setSubMenuStyling={setSubMenuStyling}
         windowHeight={windowHeight}
         content={{
@@ -139,8 +139,8 @@ const Product = (props) => {
       <Customizable
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.white}
-        subMenuStyling={theme.components.submenu.white}
+        navBarStyling={theme.components.navigation.variants.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         setSubMenuStyling={setSubMenuStyling}
         windowHeight={windowHeight}
         content={{

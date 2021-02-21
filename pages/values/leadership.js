@@ -40,10 +40,10 @@ const Values = (props) => {
   });
   const [windowHeight, setWindowHeight] = useState(500);
   const [subMenuStyling, setSubMenuStyling] = useState({
-    ...theme.components.submenu.white,
+    ...theme.components.submenu.variants.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.white,
+    ...theme.components.navigation.variants.white,
   });
   useEffect(() => {
     if (window) {
@@ -109,9 +109,9 @@ const Values = (props) => {
           body: props.header.body,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.white}
+        navBarStyling={theme.components.navigation.variants.white}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         bg="#FFF"
         windowHeight={windowHeight}
         styling={{
@@ -134,17 +134,17 @@ const Values = (props) => {
         isDesktop={isDesktop}
         modules={props.text_modules.modules}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.gray}
+        navBarStyling={theme.components.navigation.variants.gray}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
       />
       <Quote
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.yellow}
+        navBarStyling={theme.components.navigation.variants.yellow}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
         content={{
           ...props.quote,

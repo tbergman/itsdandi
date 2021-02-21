@@ -43,10 +43,10 @@ const Product = (props) => {
   });
   const [windowHeight, setWindowHeight] = useState(500);
   const [subMenuStyling, setSubMenuStyling] = useState({
-    ...theme.components.submenu.white,
+    ...theme.components.submenu.variants.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.gray,
+    ...theme.components.navigation.variants.gray,
   });
   useEffect(() => {
     if (window) {
@@ -110,9 +110,9 @@ const Product = (props) => {
           ...props.header,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.gray}
+        navBarStyling={theme.components.navigation.variants.gray}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{
@@ -131,9 +131,9 @@ const Product = (props) => {
       <Insights
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.default}
+        navBarStyling={theme.components.navigation.variants.default}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.default}
+        subMenuStyling={theme.components.submenu.variants.default}
         windowHeight={windowHeight}
         content={{
           ...props.insights,
@@ -142,9 +142,9 @@ const Product = (props) => {
       <NewInsights
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.white}
+        navBarStyling={theme.components.navigation.variants.white}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
         content={{
           ...props.new_insights,
@@ -153,9 +153,9 @@ const Product = (props) => {
       <InAction
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.default}
+        navBarStyling={theme.components.navigation.variants.default}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.default}
+        subMenuStyling={theme.components.submenu.variants.default}
         windowHeight={windowHeight}
         content={{
           ...props.in_action,
@@ -164,9 +164,9 @@ const Product = (props) => {
       <Sharable
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.white}
+        navBarStyling={theme.components.navigation.variants.white}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
         content={{
           ...props.sharable,
