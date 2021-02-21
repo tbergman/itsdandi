@@ -72,7 +72,7 @@ export const quotesCarousel = {
 
 export const quotesCarouselText = {
   enter: {
-    y: 50,
+    y: 10,
 
     opacity: 0,
   },
@@ -82,15 +82,15 @@ export const quotesCarouselText = {
     transition: {
       y: {
         ease: "easeOut",
-        duration: 0.3,
+        duration: 0.175,
       },
       opacity: {
-        duration: 0.4,
+        duration: 0.2,
       },
     },
   },
   exit: {
-    y: -50,
+    y: -10,
     opacity: 0,
     transition: {
       y: {
