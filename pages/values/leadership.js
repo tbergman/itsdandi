@@ -142,7 +142,7 @@ const Values = (props) => {
       <Quote
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.yellow}
+        navBarStyling={theme.components.navigation.variants.gray}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}

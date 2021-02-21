@@ -172,7 +172,7 @@ const Values = (props) => {
         subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.variants.gray}
+        navBarStyling={theme.components.navigation.variants.gray2}
         bg="#FAFAFA"
         content={{
           ...props.quote,

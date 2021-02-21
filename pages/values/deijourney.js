@@ -126,7 +126,7 @@ const Values = (props) => {
           ...props.getting_started,
         }}
         styling={{
-          bg: "rgba(250, 250, 250, 0.96)",
+          bg: "rgba(248, 248, 248, 1)",
         }}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
@@ -178,7 +178,7 @@ const Values = (props) => {
           ...props.sustaining_progress,
         }}
         styling={{
-          bg: "rgba(250, 250, 250, 0.96)",
+          bg: "rgba(248, 248, 248, 1)",
         }}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
