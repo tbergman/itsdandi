@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { useMachine } from "@xstate/react";
 import { jsx } from "theme-ui";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Logo from "./logo";
-import { Partners__machine, Partners__machine2 } from "../../machines/partners";
 import { gsap } from "gsap";
 
 const CarouselRow = ({ logosRow, isServer, duration, width }) => {
@@ -12,6 +11,7 @@ const CarouselRow = ({ logosRow, isServer, duration, width }) => {
 
   useEffect(() => {
     if (!isServer) {
+      const wrapperBounds = rowWrapper.current.getBoundingClientRect();
       const containerBounds = containerRow.current.getBoundingClientRect();
 
       const elements = gsap.utils.toArray(
@@ -19,24 +19,26 @@ const CarouselRow = ({ logosRow, isServer, duration, width }) => {
           ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
         )
       );
-      const widest = elements.reduce((acc, curr) =>
-        acc.offsetWidth > curr.offsetWidth ? acc : curr
-      ).offsetWidth;
+      const overflow = containerBounds.width - wrapperBounds.width;
+
+      // const widest = elements.reduce((acc, curr) =>
+      //   acc.offsetWidth > curr.offsetWidth ? acc : curr
+      // ).offsetWidth;
 
       // start animations
       elements.map((el) => {
         const bounds = el.getBoundingClientRect();
 
-        gsap.to(el, {
-          duration: 10,
+        const tween = gsap.to(el, {
+          duration,
           ease: "none",
           repeat: -1,
-          x: -containerBounds.width - widest,
+          x: -containerBounds.width,
           modifiers: {
             x: gsap.utils.unitize(
               gsap.utils.wrap(
-                containerBounds.left - widest - bounds.left,
-                containerBounds.right - bounds.left
+                containerBounds.left - bounds.left - overflow / 2,
+                containerBounds.right - bounds.left - overflow / 2
               ),
               "px"
             ),

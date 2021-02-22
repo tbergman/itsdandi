@@ -42,18 +42,18 @@ const Partners = ({
         <div className="Partners__logoCarousel">
           <CarouselRow
             key={0}
-            logosRow={logosRow1}
-            duration={60}
+            logosRow={[...logosRow1, ...logosRow1]}
+            duration={30}
             isServer={isServer}
             width={width}
           />
-          {/* <CarouselRow
+          <CarouselRow
             key={1}
-            logosRow={logosRow2}
-            duration={80}
+            logosRow={[...logosRow2, ...logosRow2]}
+            duration={40}
             isServer={isServer}
-            additionalClass={`row2`}
-          /> */}
+            width={width}
+          />
         </div>
       </div>
     </InView>

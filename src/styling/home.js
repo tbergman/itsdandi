@@ -542,7 +542,7 @@ export const home = {
       ".Partners__logoCarousel-rowWrapper-container-row": {
         position: "relative",
         height: "100%",
-        width: "auto",
+        width: "fit-content",
         display: "flex",
         justifyContent: "space-between",
       },
