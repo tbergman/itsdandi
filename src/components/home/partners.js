@@ -19,6 +19,7 @@ const Partners = ({
   isDesktop,
   content,
   isServer,
+  width,
 }) => {
   const { header, logosRow1, logosRow2 } = content;
 
@@ -39,13 +40,13 @@ const Partners = ({
           <Styled.h2 className="Partners__text-header">{header}</Styled.h2>
         </div>
         <div className="Partners__logoCarousel">
-          {/* <CarouselRow
+          <CarouselRow
             key={0}
             logosRow={logosRow1}
             duration={60}
             isServer={isServer}
-            additionalClass={`row1`}
-          /> */}
+            width={width}
+          />
           {/* <CarouselRow
             key={1}
             logosRow={logosRow2}

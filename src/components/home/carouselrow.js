@@ -6,45 +6,45 @@ import Logo from "./logo";
 import { Partners__machine, Partners__machine2 } from "../../machines/partners";
 import { gsap } from "gsap";
 
-const CarouselRow = ({ logosRow, isServer, duration, additionalClass }) => {
-  const [state, send] = useMachine(
-    additionalClass === "row1" ? Partners__machine : Partners__machine2
-  );
+const CarouselRow = ({ logosRow, isServer, duration, width }) => {
   const containerRow = useRef(null);
   const rowWrapper = useRef(null);
 
   useEffect(() => {
     if (!isServer) {
-      // offset containers
-      // const offsetAmount = `-${rowWrapper.current.clientWidth * 2}px`;
-      // containerRow.current.style.right = offsetAmount;
-      send({
-        type: "ANIMATE",
-        payload: {
-          gsap,
-          ref: containerRow.current,
-          targetClass: `.Partners__logoCarousel-rowWrapper-container-row-imageWrapper.${additionalClass}`,
-        },
+      const containerBounds = containerRow.current.getBoundingClientRect();
+
+      const elements = gsap.utils.toArray(
+        containerRow.current.querySelectorAll(
+          ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
+        )
+      );
+      const widest = elements.reduce((acc, curr) =>
+        acc.offsetWidth > curr.offsetWidth ? acc : curr
+      ).offsetWidth;
+
+      // start animations
+      elements.map((el) => {
+        const bounds = el.getBoundingClientRect();
+
+        gsap.to(el, {
+          duration: 10,
+          ease: "none",
+          repeat: -1,
+          x: -containerBounds.width - widest,
+          modifiers: {
+            x: gsap.utils.unitize(
+              gsap.utils.wrap(
+                containerBounds.left - widest - bounds.left,
+                containerBounds.right - bounds.left
+              ),
+              "px"
+            ),
+          },
+        });
       });
     }
-  }, [isServer]);
-
-  useEffect(() => {
-    if (!isServer) {
-      // ready to position & animate row?
-      if (state.context.elements.length === logosRow.length) {
-        // send({
-        //   type: "SET_POSITIONS",
-        //   payload: {
-        //     ref: containerRow.current,
-        //     gsap,
-        //     duration,
-        //     targetClass: `.Partners__logoCarousel-rowWrapper-container-row-imageWrapper.${additionalClass}`,
-        //   },
-        // });
-      }
-    }
-  }, [isServer, state.context]);
+  }, [isServer, width]);
 
   return (
     <div className="Partners__logoCarousel-rowWrapper" ref={rowWrapper}>
@@ -54,15 +54,8 @@ const CarouselRow = ({ logosRow, isServer, duration, additionalClass }) => {
           className="Partners__logoCarousel-rowWrapper-container-row"
         >
           {logosRow.map((url, i) => (
-            <Logo
-              url={url}
-              key={i}
-              idx={i}
-              send={send}
-              state={state}
-              additionalClass={additionalClass}
-            />
-          ))}{" "}
+            <Logo url={url} key={i} idx={i} />
+          ))}
         </div>
       </div>
     </div>
