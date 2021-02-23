@@ -1,35 +1,11 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import { motion } from "framer-motion";
-import { Table__circle } from "../../helpers/animations/pricing";
+import AnimatingCircle from "./animatingcircle";
 
 const ItemSymbol = ({ input_, color, animate, idx }) => {
   switch (input_) {
     case "circle": {
-      if (animate) {
-        return (
-          <motion.svg viewBox="0 0 100 100">
-            <motion.circle
-              sx={{
-                transform: "scale(0)",
-              }}
-              initial="initial"
-              animate="animate"
-              variants={Table__circle}
-              custom={idx}
-              cx="50"
-              cy="50"
-              r="50"
-              fill={color}
-            />
-          </motion.svg>
-        );
-      }
-      return (
-        <svg viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="50" fill={color} />
-        </svg>
-      );
+      return <AnimatingCircle fill={color} />;
     }
     case "circlesmall": {
       return (
