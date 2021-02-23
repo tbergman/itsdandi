@@ -10,6 +10,8 @@ const CarouselRow = ({ logosRow, isServer, duration, width }) => {
   const rowWrapper = useRef(null);
 
   useEffect(() => {
+    let tweens = [];
+
     if (!isServer) {
       const wrapperBounds = rowWrapper.current.getBoundingClientRect();
       const containerBounds = containerRow.current.getBoundingClientRect();
@@ -44,8 +46,25 @@ const CarouselRow = ({ logosRow, isServer, duration, width }) => {
             ),
           },
         });
+        tweens = [...tweens, tween];
       });
     }
+
+    return () => {
+      gsap.set(
+        containerRow.current.querySelectorAll(
+          ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
+        ),
+        {
+          clearProps: "all",
+        }
+      );
+      tweens.length &&
+        tweens.map((tween) => {
+          tween.kill();
+        });
+      tweens = [];
+    };
   }, [isServer, width]);
 
   return (
