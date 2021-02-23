@@ -185,7 +185,7 @@ const Home = (props) => {
       />
       <SubNavigation
         next={{
-          name: "Why Dandi?",
+          name: "Values",
           url: "values/equitypay",
           bg: "violet",
         }}

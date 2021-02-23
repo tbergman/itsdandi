@@ -65,6 +65,7 @@ const Navigation = ({
           <a href="www.google.com" target="_blank" className="item-link">
             <div>
               <div
+                body="Log in"
                 sx={{
                   opacity: 0.5,
                 }}
@@ -76,7 +77,11 @@ const Navigation = ({
           </a>
         </div>
 
-        <DemoBtn variant={"yellow"} demoButtonStatic={demoButtonStatic} />
+        <DemoBtn
+          variant={"yellow"}
+          demoButtonStatic={demoButtonStatic}
+          isDesktop={isDesktop}
+        />
       </div>
     </motion.nav>
   );

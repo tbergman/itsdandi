@@ -4,7 +4,7 @@ import { jsx, Styled } from "theme-ui";
 import { scrollToBottom, scrollYPos } from "../../helpers/utils";
 import { useRef, useEffect } from "react";
 
-const DemoBtn = ({ variant, demoButtonStatic }) => {
+const DemoBtn = ({ variant, demoButtonStatic, isDesktop }) => {
   const ref = useRef(null);
 
   switch (variant) {

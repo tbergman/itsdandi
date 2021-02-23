@@ -191,7 +191,14 @@ const Values = (props) => {
           ...props.affordable,
         }}
       />
-      <SubNavigation next={subPages_.next} prev={subPages_.prev} />
+      <SubNavigation
+        next={subPages_.next}
+        prev={{
+          name: "Home",
+          url: "/",
+          bg: "violet",
+        }}
+      />
       <Footer />
     </div>
   );

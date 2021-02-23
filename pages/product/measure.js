@@ -192,7 +192,14 @@ const Product = (props) => {
           ...props.thoughtful,
         }}
       />
-      <SubNavigation next={subPages_.next} />
+      <SubNavigation
+        next={subPages_.next}
+        prev={{
+          name: "Values",
+          url: "/values/equitypay",
+          bg: "blue",
+        }}
+      />
       <Footer />
     </div>
   );

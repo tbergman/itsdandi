@@ -12,7 +12,7 @@ export default [
     url: "/values/leadership",
   },
   {
-    name: "Measure",
+    name: "Product",
     url: "/product/measure",
   },
 ];

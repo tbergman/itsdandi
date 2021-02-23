@@ -114,6 +114,11 @@ const Pricing = (props) => {
           name: "Community",
           bg: "blue",
         }}
+        prev={{
+          url: "/product/measure",
+          name: "Product",
+          bg: "violet",
+        }}
       />
       <Footer />
     </div>

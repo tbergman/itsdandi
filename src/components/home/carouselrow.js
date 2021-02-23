@@ -51,14 +51,15 @@ const CarouselRow = ({ logosRow, isServer, duration, width }) => {
     }
 
     return () => {
-      gsap.set(
-        containerRow.current.querySelectorAll(
-          ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
-        ),
-        {
-          clearProps: "all",
-        }
-      );
+      containerRow.current &&
+        gsap.set(
+          containerRow.current.querySelectorAll(
+            ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper"
+          ),
+          {
+            clearProps: "all",
+          }
+        );
       tweens.length &&
         tweens.map((tween) => {
           tween.kill();

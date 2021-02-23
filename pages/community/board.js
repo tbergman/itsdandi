@@ -128,7 +128,14 @@ const Community = (props) => {
         }}
       />
 
-      <SubNavigation next={subPages_.next} prev={subPages_.prev} />
+      <SubNavigation
+        next={subPages_.next}
+        prev={{
+          name: "Pricing",
+          url: "/pricing",
+          bg: "blue",
+        }}
+      />
       <Footer />
     </div>
   );

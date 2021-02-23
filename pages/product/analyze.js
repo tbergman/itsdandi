@@ -46,7 +46,7 @@ const Product = (props) => {
     ...theme.components.submenu.variants.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.variants.gray,
+    ...theme.components.navigation.variants.white,
   });
   useEffect(() => {
     if (window) {
@@ -110,7 +110,7 @@ const Product = (props) => {
           ...props.header,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.gray}
+        navBarStyling={theme.components.navigation.variants.white}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}

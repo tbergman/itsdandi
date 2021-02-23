@@ -8,7 +8,9 @@ export const navigation = {
   ".demobtn": {
     "&:hover": {
       bg: "#FF9133",
-      fontFamily: "medium",
+      ".demobtn-text": {
+        fontFamily: "medium",
+      },
     },
     display: "flex",
     justifyContent: "center",
@@ -105,13 +107,14 @@ export const navigation = {
           width: "fit-content",
           ".item-dropdown-bg-item": {
             px: [2],
+            mr: [1],
             textDecoration: "none",
             pt: [2],
             color: "white",
             opacity: 0.5,
             "&:hover": {
               opacity: 1,
-              ".item-dropdown-item-text": {
+              ".item-dropdown-bg-item-text": {
                 fontFamily: "medium",
               },
             },
@@ -271,8 +274,10 @@ export const navigation = {
       },
       ".demobtn": {
         "&:hover": {
-          bg: "#f2f2f2 !important",
-          fontFamily: "medium",
+          // bg: "#f2f2f2 !important",
+          ".demobtn-text": {
+            fontFamily: "medium",
+          },
         },
         display: "flex",
         justifyContent: "center",
