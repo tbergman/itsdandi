@@ -524,8 +524,9 @@ export const navigation = {
       },
       ".demobtn": {
         "&:hover": {
-          bg: "#f2f2f2 !important",
-          fontFamily: "medium",
+          ".demobtn-text": {
+            fontFamily: "medium",
+          },
         },
         display: "flex",
         justifyContent: "center",
