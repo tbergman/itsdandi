@@ -47,7 +47,7 @@ const Values = (props) => {
     ...theme.components.submenu.variants.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.variants.white,
+    ...theme.components.navBarVariants.white,
   });
 
   const subPages_ = subPages({
@@ -112,7 +112,7 @@ const Values = (props) => {
       <Header
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
@@ -136,7 +136,7 @@ const Values = (props) => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.gray}
+        navBarStyling={theme.components.navBarVariants.gray}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
         isServer={isServer()}
@@ -148,7 +148,7 @@ const Values = (props) => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.default}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.default}
+        navBarStyling={theme.components.navBarVariants.default}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
         content={{
@@ -160,7 +160,7 @@ const Values = (props) => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
         content={{
@@ -172,7 +172,7 @@ const Values = (props) => {
         subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.variants.gray2}
+        navBarStyling={theme.components.navBarVariants.gray2}
         bg="#FAFAFA"
         content={{
           ...props.quote,
@@ -185,7 +185,7 @@ const Values = (props) => {
         subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         isDesktop={isDesktop}
         content={{
           ...props.affordable,

@@ -46,7 +46,7 @@ const Product = (props) => {
     ...theme.components.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.variants.white,
+    ...theme.components.navBarVariants.white,
   });
   useEffect(() => {
     if (window) {
@@ -109,7 +109,7 @@ const Product = (props) => {
           ...props.header,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.gray}
+        navBarStyling={theme.components.navBarVariants.gray}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
@@ -136,7 +136,7 @@ const Product = (props) => {
         subMenuStyling={theme.components.submenu.variants.default}
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.default}
+        navBarStyling={theme.components.navBarVariants.default}
         windowHeight={windowHeight}
         content={{
           ...props.best_in_class,
@@ -149,7 +149,7 @@ const Product = (props) => {
         }}
         bg="white"
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.gray2}
+        navBarStyling={theme.components.navBarVariants.gray2}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
@@ -157,7 +157,7 @@ const Product = (props) => {
       <Workflows
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
@@ -168,7 +168,7 @@ const Product = (props) => {
       <Connect
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}

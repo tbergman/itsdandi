@@ -46,7 +46,7 @@ const Product = (props) => {
     ...theme.components.submenu.variants.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.variants.white,
+    ...theme.components.navBarVariants.white,
   });
   useEffect(() => {
     if (window) {
@@ -110,7 +110,7 @@ const Product = (props) => {
           ...props.header,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
@@ -131,7 +131,7 @@ const Product = (props) => {
       <Insights
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.default}
+        navBarStyling={theme.components.navBarVariants.default}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.default}
         windowHeight={windowHeight}
@@ -142,7 +142,7 @@ const Product = (props) => {
       <NewInsights
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
@@ -153,7 +153,7 @@ const Product = (props) => {
       <InAction
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.default}
+        navBarStyling={theme.components.navBarVariants.default}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.default}
         windowHeight={windowHeight}
@@ -164,7 +164,7 @@ const Product = (props) => {
       <Sharable
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}

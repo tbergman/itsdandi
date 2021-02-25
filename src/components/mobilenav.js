@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import BigLogo from "../components/home/bigLogo";
 import { columnWidths } from "../helpers/utils";
+import DemoBtn from "./navigation/demobtn";
 
 const MobileNav = ({
   menuOpen,
@@ -26,64 +27,25 @@ const MobileNav = ({
 
   return (
     <div
+      className="MobileNav"
       sx={{
-        position: "fixed",
-        zIndex: 1000,
-        width: "100%",
-        bg: "#FFF",
-        height: "74px",
-        width: "100%",
-        display: ["unset", "none"],
+        variant: "components.mobileNavigation",
       }}
     >
       <div
+        className="MobileNav__container"
         sx={{
-          height: "100%",
-          width: "100%",
-          ".wrapper": {
-            display: ["flex", "none"],
-            justifyContent: "space-between",
-
-            ".hamburger": {
-              cursor: "pointer",
-              mr: "20px",
-              mt: "33px",
-              position: "relative",
-              height: "21px",
-              width: "25px",
-              span: {
-                position: "absolute",
-                transition: "all 200ms ease-out",
-                left: 0,
-                p: 0,
-                m: 0,
-                height: "3px",
-                width: "25px",
-                bg: "white",
-              },
-            },
-            ".logo": {
-              height:'40px',
-              width:'40px',
-              svg: {
-                path: {
-                  fill: "white",
-                },
-              },
-            },
-          },
           ...navBarStyling,
-          transition: "all 100ms cubic-bezier(.01,.66,.83,.67)",
         }}
       >
-        <div className="wrapper">
+        <div className="MobileNav__container-wrapper">
           <Link href="/">
             <a
               sx={{
                 mt: 3,
                 ml: "20px",
               }}
-              className="logo"
+              className="MobileNav__container-wrapper-logo"
             >
               <BigLogo
                 navBarStyling={navBarStyling}
@@ -93,33 +55,15 @@ const MobileNav = ({
                 scaleTo={32 / widths.mobile}
                 yOffset={-widths.mobile + 30}
               />
-
-              {/* <motion.svg
-                style={{
-                  opacity: 1,
-                }}
-                width="32"
-                height="27"
-                viewBox="0 0 32 27"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <motion.path
-                  d="M31.0664 11.2834L31.0664 8.53613L26.6282 8.53613L26.6282 11.2834C26.6282 17.2224 21.7468 22.062 15.5339 22.062C9.32108 22.062 4.43909 17.2229 4.43909 11.2834L4.43909 8.53613L0.00148582 8.53613L0.00148577 11.2834C0.00148559 19.8621 7.10199 26.901 15.5339 26.901C23.9659 26.901 31.0664 19.8621 31.0664 11.2834Z"
-                  fill="#1A1A1D"
-                />
-                <motion.path
-                  d="M24.1873 5.34393L24.1873 0.504883L19.3579 0.504883L19.3579 5.34393L24.1873 5.34393Z"
-                  fill="#1A1A1D"
-                />
-                <motion.path
-                  d="M11.9936 5.34394L11.9936 0.504883L7.16412 0.504883L7.16412 5.34394L11.9936 5.34394Z"
-                  fill="#1A1A1D"
-                />
-              </motion.svg> */}
             </a>
           </Link>
-          <div onClick={() => setMenuOpen(!menuOpen)} className="hamburger">
+          <div className="MobileNav__container-wrapper-button">
+            <DemoBtn variant="mobile" />
+          </div>
+          <div
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="MobileNav__container-wrapper-hamburger"
+          >
             <span
               sx={{
                 top: menuOpen ? "33.33%" : "0",

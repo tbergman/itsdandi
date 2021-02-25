@@ -45,7 +45,7 @@ const Community = (props) => {
     ...theme.components.submenu.variants.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.variants.white,
+    ...theme.components.navBarVariants.white,
   });
   useEffect(() => {
     if (window) {
@@ -109,7 +109,7 @@ const Community = (props) => {
           ...props.header,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{
@@ -126,7 +126,7 @@ const Community = (props) => {
           ...props.do_more,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.gray}
+        navBarStyling={theme.components.navBarVariants.gray}
         windowHeight={windowHeight}
       />
 
@@ -135,7 +135,7 @@ const Community = (props) => {
         setSubMenuStyling={setSubMenuStyling}
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         windowHeight={windowHeight}
         content={{
           ...props.curious,

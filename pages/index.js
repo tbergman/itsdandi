@@ -39,7 +39,7 @@ const Home = (props) => {
   const [windowHeight, setWindowHeight] = useState(500);
   const [staticLogo, setStaticLogo] = useState(false);
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.variants.default,
+    ...theme.components.navBarVariants.default,
   });
 
   const toggleMenu = (menuOpen) => {
@@ -86,7 +86,7 @@ const Home = (props) => {
       />
       <Top
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.default}
+        navBarStyling={theme.components.navBarVariants.default}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
         content={{
@@ -96,7 +96,7 @@ const Home = (props) => {
       />
       <LearnMore
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.violet}
+        navBarStyling={theme.components.navBarVariants.violet}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
         content={{
@@ -110,7 +110,7 @@ const Home = (props) => {
       />
       <Carousel
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.default}
+        navBarStyling={theme.components.navBarVariants.default}
         windowHeight={windowHeight}
         isDesktop={isDesktop}
         content={{
@@ -122,7 +122,7 @@ const Home = (props) => {
       <PayEquity
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.variants.gray}
+        navBarStyling={theme.components.navBarVariants.gray}
         isDesktop={isDesktop}
         content={{
           header: props.pay_equity[0].fields.header,
@@ -136,7 +136,7 @@ const Home = (props) => {
       <Partners
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         width={width}
         isServer={isServer()}
         isDesktop={isDesktop}
@@ -150,7 +150,7 @@ const Home = (props) => {
       <AdvanceDEI
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.variants.lightTurquoise}
+        navBarStyling={theme.components.navBarVariants.lightTurquoise}
         isDesktop={isDesktop}
         content={{
           header: props.advance_dei[0].fields.header,
@@ -163,7 +163,7 @@ const Home = (props) => {
       <Quotes
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.variants.gray2}
+        navBarStyling={theme.components.navBarVariants.gray2}
         isDesktop={isDesktop}
         isServer={isServer()}
         content={{
@@ -174,7 +174,7 @@ const Home = (props) => {
       <MarketPlacePartners
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         isDesktop={isDesktop}
         content={{
           header: props.marketplace_partners[0].fields.header,

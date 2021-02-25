@@ -22,7 +22,21 @@ const DemoBtn = ({ variant, demoButtonStatic, isDesktop }) => {
         </div>
       );
     }
-    case "blue": {
+    case "mobile": {
+      return (
+        <div ref={ref} className="mobileDemoBtn">
+          <Styled.p
+            className="mobileDemoBtn-text"
+            onClick={() =>
+              scrollToBottom(window, document.body.scrollHeight, isDesktop)
+            }
+          >
+            Request a demo
+          </Styled.p>
+        </div>
+      );
+    }
+    default: {
       return <div></div>;
     }
   }

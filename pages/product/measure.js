@@ -48,7 +48,7 @@ const Product = (props) => {
     ...theme.components.submenu.variants.gray,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navigation.variants.gray,
+    ...theme.components.navBarVariants.gray,
   });
   useEffect(() => {
     if (window) {
@@ -110,7 +110,7 @@ const Product = (props) => {
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navigation.variants.gray}
+        navBarStyling={theme.components.navBarVariants.gray}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.gray}
         content={{
@@ -135,7 +135,7 @@ const Product = (props) => {
       <Metrics
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
@@ -153,7 +153,7 @@ const Product = (props) => {
         }}
         color={theme.colors.white}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.gray2}
+        navBarStyling={theme.components.navBarVariants.gray2}
         windowHeight={windowHeight}
         bg="white"
       />
@@ -162,7 +162,7 @@ const Product = (props) => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         windowHeight={windowHeight}
         content={{
           header: props.measurement.header,
@@ -173,7 +173,7 @@ const Product = (props) => {
       <Intersectional
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.default}
+        navBarStyling={theme.components.navBarVariants.default}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.default}
         windowHeight={windowHeight}
@@ -184,7 +184,7 @@ const Product = (props) => {
       <Thoughtful
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navigation.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}

@@ -1,5 +1,7 @@
 import { home } from "./src/styling/home";
 import { navigation } from "./src/styling/navigation";
+import { mobileNavigation } from "./src/styling/mobilenavigation";
+import { navBarVariants } from "./src/styling/navbarvariants";
 import { submenu } from "./src/styling/submenu";
 
 const theme = {
@@ -3046,6 +3048,8 @@ const theme = {
   },
   components: {
     navigation: { ...navigation },
+    mobileNavigation: { ...mobileNavigation },
+    navBarVariants: { ...navBarVariants },
     submenu: { ...submenu },
 
     mobilemenu: {

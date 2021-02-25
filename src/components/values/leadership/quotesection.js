@@ -9,7 +9,7 @@ const QuoteSection = ({ setNavbarStyling, windowHeight }) => {
     <InView
       variant="pages.values.leadership.quotesection"
       setNavbarStyling={setNavbarStyling}
-      navBarStyling={theme.components.navigation.variants.yellow}
+      navBarStyling={theme.components.navBarVariants.yellow}
       rootMargin={`0px 0px -${windowHeight - 94}px 0px`}
     >
       <Quote
