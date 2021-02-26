@@ -1,8 +1,8 @@
 import { createMachine } from "xstate";
 
-export const DemoBtn__machine = createMachine(
+export const MobileDemoBtn__machine = createMachine(
   {
-    id: "DemoBtn",
+    id: "MobileDemoBtn",
     context: {},
     initial: "idle",
     states: {
@@ -40,6 +40,7 @@ export const DemoBtn__machine = createMachine(
     actions: {
       hide: (_, e) => {
         const { ref, gsap } = e.payload;
+        console.log("hide");
 
         gsap.to(ref.current, {
           autoAlpha: 0,
@@ -48,6 +49,7 @@ export const DemoBtn__machine = createMachine(
       },
       show: (_, e) => {
         const { ref, gsap } = e.payload;
+        console.log("show");
 
         gsap.to(ref.current, {
           autoAlpha: 1,

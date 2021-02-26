@@ -9,7 +9,7 @@ import {
 import Link from "next/link";
 import BigLogo from "../components/home/bigLogo";
 import { columnWidths } from "../helpers/utils";
-import DemoBtn from "./navigation/demobtn";
+import MobileDemoBtn from "./navigation/mobiledemobtn";
 
 const MobileNav = ({
   menuOpen,
@@ -19,6 +19,7 @@ const MobileNav = ({
   width,
   staticLogo,
   setStaticLogo,
+  staticDemoBtn,
 }) => {
   const widths = columnWidths(width);
 
@@ -58,7 +59,7 @@ const MobileNav = ({
             </a>
           </Link>
           <div className="MobileNav__container-wrapper-button">
-            <DemoBtn variant="mobile" />
+            <MobileDemoBtn menuOpen={menuOpen} staticDemoBtn={staticDemoBtn} />
           </div>
           <div
             onClick={() => setMenuOpen(!menuOpen)}
@@ -85,7 +86,6 @@ const MobileNav = ({
             />
           </div>
         </div>
-        {subPages && <div className=""></div>}
       </div>
     </div>
   );

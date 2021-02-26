@@ -78,6 +78,7 @@ const Home = (props) => {
         width={width}
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
+        staticDemoBtn={false}
       />
       <MobileMenu
         menuOpen={menuOpen}

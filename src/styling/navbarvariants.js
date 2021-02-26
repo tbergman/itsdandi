@@ -151,7 +151,9 @@ export const navBarVariants = {
       bg: "transparent",
     },
     ".MobileNav__container-wrapper-button": {
-      ".mobileDemoBtn": {},
+      ".mobileDemoBtn": {
+        color: (t) => `${t.colors.blue} !important`,
+      },
     },
 
     ".main": {
@@ -184,7 +186,9 @@ export const navBarVariants = {
       bg: "transparent",
     },
     ".MobileNav__container-wrapper-button": {
-      ".mobileDemoBtn": {},
+      ".mobileDemoBtn": {
+        color: (t) => `${t.colors.blue} !important`,
+      },
     },
 
     // desktop
@@ -251,7 +255,9 @@ export const navBarVariants = {
       bg: "transparent",
     },
     ".MobileNav__container-wrapper-button": {
-      ".mobileDemoBtn": {},
+      ".mobileDemoBtn": {
+        color: (t) => `${t.colors.blue} !important`,
+      },
     },
 
     //desktop
@@ -319,7 +325,9 @@ export const navBarVariants = {
       bg: "transparent",
     },
     ".MobileNav__container-wrapper-button": {
-      ".mobileDemoBtn": {},
+      ".mobileDemoBtn": {
+        color: (t) => `${t.colors.blue} !important`,
+      },
     },
 
     //desktop
@@ -386,7 +394,9 @@ export const navBarVariants = {
       bg: "transparent",
     },
     ".MobileNav__container-wrapper-button": {
-      ".mobileDemoBtn": {},
+      ".mobileDemoBtn": {
+        color: (t) => `${t.colors.blue} !important`,
+      },
     },
 
     //desktop

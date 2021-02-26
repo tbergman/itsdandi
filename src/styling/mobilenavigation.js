@@ -37,6 +37,10 @@ export const mobileNavigation = {
         alignItems: "flex-start",
         mt: "30px",
         ".mobileDemoBtn": {
+          // initial state
+          visibility: "hidden",
+          opacity: 0,
+          //
           color: "yellow",
           fontFamily: "medium",
           cursor: "pointer",

@@ -51,7 +51,7 @@ export const home = {
         mt: ["24px", "48px"],
         bg: "yellow",
         borderRadius: "200px",
-        display: "flex",
+        display: ["flex", "none"],
         flexFlow: "row",
         justifyContent: "center",
         alignItems: "center",

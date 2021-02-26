@@ -6,7 +6,6 @@ import { useInView } from "react-intersection-observer";
 import { motion, useAnimation, animationControls } from "framer-motion";
 import BigLogo from "./home/bigLogo";
 import { columnWidths } from "../helpers/utils";
-import useScrollPosition from "@react-hook/window-scroll";
 import { useEffect } from "react";
 import DemoBtn from "./navigation/demobtn";
 import NavItem from "./navigation/navitem";
@@ -76,12 +75,7 @@ const Navigation = ({
             </div>
           </a>
         </div>
-
-        <DemoBtn
-          variant={"yellow"}
-          demoButtonStatic={demoButtonStatic}
-          isDesktop={isDesktop}
-        />
+        <DemoBtn />
       </div>
     </motion.nav>
   );

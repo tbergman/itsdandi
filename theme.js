@@ -3719,6 +3719,7 @@ const theme = {
 
       "&.menu-open": {
         overflow: "hidden",
+        position: "relative",
       },
     },
     h1: {
