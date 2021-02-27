@@ -78,7 +78,6 @@ const Values = (props) => {
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
         width={width}
-        demoButtonStatic={true}
       />
       <MobileNav
         menuOpen={menuOpen}
@@ -87,6 +86,7 @@ const Values = (props) => {
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
         width={width}
+        staticDemoBtn={true}
       />
       <MobileMenu
         menuOpen={menuOpen}

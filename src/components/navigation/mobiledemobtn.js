@@ -79,7 +79,7 @@ const MobileDemoBtn = ({ menuOpen, staticDemoBtn }) => {
         }
       }
     },
-    [],
+    [state],
     null,
     true,
     250,
@@ -90,9 +90,7 @@ const MobileDemoBtn = ({ menuOpen, staticDemoBtn }) => {
     <div ref={ref} className="mobileDemoBtn">
       <Styled.p
         className="mobileDemoBtn-text"
-        onClick={() =>
-          scrollToBottom(window, document.body.scrollHeight, false)
-        }
+        onClick={() => scrollToBottom(window, false)}
       >
         Request a demo
       </Styled.p>

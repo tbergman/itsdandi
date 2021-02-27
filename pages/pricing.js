@@ -68,7 +68,6 @@ const Pricing = (props) => {
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
         width={width}
-        demoButtonStatic={true}
       />
       <MobileNav
         menuOpen={menuOpen}
@@ -76,6 +75,7 @@ const Pricing = (props) => {
         navBarStyling={navBarStyling}
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
+        staticDemoBtn={true}
         width={width}
       />
       <MobileMenu menuOpen={menuOpen} navBarStyling={navBarStyling} />

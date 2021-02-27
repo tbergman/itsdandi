@@ -31,9 +31,7 @@ const Home = ({
           <Styled.h1 className="Top__text-header">{header}</Styled.h1>
           <div
             className="Top__text-button"
-            onClick={() =>
-              scrollToBottom(window, document.body.scrollHeight, isDesktop)
-            }
+            onClick={() => scrollToBottom(window, isDesktop)}
           >
             <Styled.p className="Top__text-button-text">{buttonText}</Styled.p>
           </div>

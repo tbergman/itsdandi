@@ -6,9 +6,7 @@ const DemoBtn = () => {
     <div className="item demobtn">
       <Styled.p
         className="demobtn-text"
-        onClick={() =>
-          scrollToBottom(window, document.body.scrollHeight, isDesktop)
-        }
+        onClick={() => scrollToBottom(window, isDesktop)}
       >
         Request a demo
       </Styled.p>

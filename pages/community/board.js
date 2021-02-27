@@ -73,7 +73,6 @@ const Community = (props) => {
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
         width={width}
-        demoButtonStatic={true}
       />
       <MobileNav
         menuOpen={menuOpen}
@@ -81,6 +80,7 @@ const Community = (props) => {
         navBarStyling={navBarStyling}
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
+        staticDemoBtn={true}
         width={width}
       />
       <MobileMenu

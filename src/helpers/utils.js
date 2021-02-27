@@ -28,25 +28,26 @@ export const columnWidths = (width) => {
 
 export const isServer = () => typeof window === "undefined";
 
-export const scrollToBottom = (window, height, isDesktop) => {
+export const scrollToBottom = (window, isDesktop) => {
   if (isDesktop) {
     window.scrollTo({
-      top: height,
+      top: window.document.body.scrollHeight,
       left: 0,
       behavior: "smooth",
     });
     setTimeout(() => {
       // click on input field
-
       const nameField = window.document.getElementById("namefield");
       nameField.focus();
     }, 1500);
   } else {
-    const scrollTarget = window.document
-      .querySelector("#footerHeader")
-      .getBoundingClientRect().y;
+    // const scrollTarget = window.document
+    //   .querySelector("#footerHeader")
+    //   .getBoundingClientRect().y;
+    const scrollTarget = window.document.body.scrollHeight - 1200;
+
     window.scrollTo({
-      top: scrollTarget - 74,
+      top: scrollTarget,
       left: 0,
       behavior: "smooth",
     });

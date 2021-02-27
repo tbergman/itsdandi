@@ -1,4 +1,5 @@
 import { createMachine } from "xstate";
+import { scrollToBottom } from "../helpers/utils";
 
 export const MobileDemoBtn__machine = createMachine(
   {
@@ -40,7 +41,6 @@ export const MobileDemoBtn__machine = createMachine(
     actions: {
       hide: (_, e) => {
         const { ref, gsap } = e.payload;
-        console.log("hide");
 
         gsap.to(ref.current, {
           autoAlpha: 0,
@@ -49,7 +49,6 @@ export const MobileDemoBtn__machine = createMachine(
       },
       show: (_, e) => {
         const { ref, gsap } = e.payload;
-        console.log("show");
 
         gsap.to(ref.current, {
           autoAlpha: 1,

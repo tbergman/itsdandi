@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  transform,
-} from "framer-motion";
+// import {
+//   motion,
+//   useViewportScroll,
+//   useTransform,
+//   transform,
+// } from "framer-motion";
 import Link from "next/link";
 import BigLogo from "../components/home/bigLogo";
 import { columnWidths } from "../helpers/utils";
@@ -22,9 +22,6 @@ const MobileNav = ({
   staticDemoBtn,
 }) => {
   const widths = columnWidths(width);
-
-  const { scrollYProgress } = useViewportScroll();
-  const opacityAnim = useTransform(scrollYProgress, [0, 0.05, 0.1], [0, 0, 1]);
 
   return (
     <div
