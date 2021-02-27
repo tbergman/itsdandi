@@ -548,7 +548,7 @@ export const home = {
       },
       ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper": {
         height: "100%",
-        px: [2],
+        px: [5],
         py: [2],
 
         img: {

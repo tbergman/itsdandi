@@ -50,7 +50,7 @@ const Partners = ({
           <CarouselRow
             key={1}
             logosRow={[...logosRow2, ...logosRow2]}
-            duration={40}
+            duration={50}
             isServer={isServer}
             width={width}
           />
