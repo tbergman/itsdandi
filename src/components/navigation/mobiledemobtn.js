@@ -6,11 +6,6 @@ import { useRef, useEffect, useState } from "react";
 import { MobileDemoBtn__machine } from "../../machines/demobtn";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { gsap } from "gsap";
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from "body-scroll-lock";
 
 const MobileDemoBtn = ({ menuOpen, staticDemoBtn }) => {
   const [state, send] = useMachine(MobileDemoBtn__machine);

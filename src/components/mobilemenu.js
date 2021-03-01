@@ -7,10 +7,27 @@ import { useMachine } from "@xstate/react";
 import { MobileMenu__machine } from "../machines/mobilemenu";
 import { gsap } from "gsap";
 import { navItems } from "../helpers/navigation";
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock";
 
 const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
   const [state, send] = useMachine(MobileMenu__machine);
   const navItemsRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (menuOpen) {
+      disableBodyScroll(containerRef.current);
+    } else {
+      enableBodyScroll(containerRef.current);
+    }
+    return () => {
+      //
+    };
+  }, [menuOpen]);
 
   useEffect(() => {
     navItems.map((item, i) => {
@@ -21,7 +38,6 @@ const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
           ease: "power4.out",
           duration: 0.5,
         });
-
         const paddingTop = 16;
         const height = gsap.utils
           .toArray(
@@ -53,6 +69,7 @@ const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
 
   return (
     <div
+      ref={containerRef}
       sx={{
         variant: "components.mobilemenu",
         visibility: menuOpen ? "visible" : "hidden",
