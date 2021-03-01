@@ -26,6 +26,8 @@ import {
 } from "framer-motion";
 import MobileNav from "../src/components/mobilenav";
 import SubNavigation from "../src/components/subnavigation";
+import { useMachine } from "@xstate/react";
+import { MenuState__machine } from "../src/machines/mobilemenu";
 
 const Home = (props) => {
   const { theme } = useThemeUI();
