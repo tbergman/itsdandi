@@ -25,7 +25,7 @@ const MobileMenu = ({ menuOpen, navBarStyling, currentPage }) => {
       enableBodyScroll(containerRef.current);
     }
     return () => {
-      //
+      clearAllBodyScrollLocks();
     };
   }, [menuOpen]);
 
