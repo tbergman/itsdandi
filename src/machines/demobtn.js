@@ -1,10 +1,12 @@
-import { createMachine } from "xstate";
+import { createMachine, assign } from "xstate";
 import { scrollToBottom } from "../helpers/utils";
 
 export const MobileDemoBtn__machine = createMachine(
   {
     id: "MobileDemoBtn",
-    context: {},
+    context: {
+      previouslyClosed: false,
+    },
     initial: "idle",
     states: {
       idle: {
@@ -39,22 +41,30 @@ export const MobileDemoBtn__machine = createMachine(
   },
   {
     actions: {
-      hide: (_, e) => {
-        const { ref, gsap } = e.payload;
+      hide: assign((c, e) => {
+        const { ref, gsap, previouslyClosed } = e.payload;
 
         gsap.to(ref.current, {
           autoAlpha: 0,
           duration: 0.1,
         });
-      },
-      show: (_, e) => {
-        const { ref, gsap } = e.payload;
+
+        return {
+          previouslyClosed,
+        };
+      }),
+      show: assign((c, e) => {
+        const { ref, gsap, previouslyClosed } = e.payload;
 
         gsap.to(ref.current, {
           autoAlpha: 1,
           duration: 0.25,
         });
-      },
+
+        return {
+          previouslyClosed,
+        };
+      }),
     },
   }
 );

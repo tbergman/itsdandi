@@ -25,6 +25,7 @@ import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
+import { findLastIndex } from "ramda";
 
 const Values = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -86,7 +87,7 @@ const Values = (props) => {
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
         width={width}
-        staticDemoBtn={true}
+        staticDemoBtn={false}
       />
       <MobileMenu
         menuOpen={menuOpen}

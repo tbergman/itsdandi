@@ -2,7 +2,7 @@
 import { useMachine } from "@xstate/react";
 import { jsx, Styled } from "theme-ui";
 import { scrollToBottom } from "../../helpers/utils";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { MobileDemoBtn__machine } from "../../machines/demobtn";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { gsap } from "gsap";
@@ -14,6 +14,7 @@ import {
 
 const MobileDemoBtn = ({ menuOpen, staticDemoBtn }) => {
   const [state, send] = useMachine(MobileDemoBtn__machine);
+  const [wasClosed, setWasClosed] = useState(false);
   const ref = useRef(null);
   const scrollThreshold = 200;
 
@@ -36,24 +37,29 @@ const MobileDemoBtn = ({ menuOpen, staticDemoBtn }) => {
 
   // menuOpen
   useEffect(() => {
-    if (state.matches("visible") && menuOpen) {
-      // disable scroll on body but not on mobile menu
-      disableBodyScroll(document.body, {
-        allowTouchMove: (el) => el.tagName === "NAV",
+    if (state.matches("hidden") && menuOpen) {
+      send({
+        type: "SHOW",
+        payload: {
+          gsap,
+          ref,
+          previouslyClosed: true,
+        },
       });
+    } else if (
+      state.matches("visible") &&
+      !menuOpen &&
+      state.context.previouslyClosed
+    ) {
       send({
         type: "HIDE",
         payload: {
           gsap,
           ref,
+          previouslyClosed: false,
         },
       });
-    } else {
-      clearAllBodyScrollLocks(document.body);
     }
-    return () => {
-      clearAllBodyScrollLocks(document.body);
-    };
   }, [menuOpen]);
 
   // scrollListener

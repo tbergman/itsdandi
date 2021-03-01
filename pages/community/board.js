@@ -80,7 +80,7 @@ const Community = (props) => {
         navBarStyling={navBarStyling}
         staticLogo={staticLogo}
         setStaticLogo={setStaticLogo}
-        staticDemoBtn={true}
+        staticDemoBtn={false}
         width={width}
       />
       <MobileMenu
