@@ -541,14 +541,14 @@ export const home = {
 
       ".Partners__logoCarousel-rowWrapper-container-row": {
         position: "relative",
-        height: "100%",
+        height: "60%",
         width: "fit-content",
         display: "flex",
         justifyContent: "space-between",
       },
       ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper": {
         height: "100%",
-        px: [5],
+        px: [6],
         py: [2],
 
         img: {
