@@ -44,16 +44,16 @@ export const navBarVariants = {
       },
     },
 
-    ".login": {
-      bg: "transparent",
-      color: "yellow",
-      path: {
-        stroke: "yellow",
-      },
-      line: {
-        stroke: "yellow",
-      },
-    },
+    // ".login": {
+    //   bg: "transparent",
+    //   color: "yellow",
+    //   path: {
+    //     stroke: "yellow",
+    //   },
+    //   line: {
+    //     stroke: "yellow",
+    //   },
+    // },
     ".logo": {
       bg: "transparent",
       path: {
@@ -131,15 +131,15 @@ export const navBarVariants = {
         },
       },
     },
-    ".login": {
-      color: (t) => `${t.colors.blue} !important`,
-      path: {
-        stroke: (t) => `${t.colors.blue} !important`,
-      },
-      line: {
-        stroke: (t) => `${t.colors.blue} !important`,
-      },
-    },
+    // ".login": {
+    //   color: (t) => `${t.colors.blue} !important`,
+    //   path: {
+    //     stroke: (t) => `${t.colors.blue} !important`,
+    //   },
+    //   line: {
+    //     stroke: (t) => `${t.colors.blue} !important`,
+    //   },
+    // },
 
     // mobile
     ".MobileNav__container-wrapper-hamburger": {
@@ -224,15 +224,15 @@ export const navBarVariants = {
         },
       },
     },
-    ".login": {
-      color: (t) => `${t.colors.blue} !important`,
-      path: {
-        stroke: (t) => `${t.colors.blue} !important`,
-      },
-      line: {
-        stroke: (t) => `${t.colors.blue} !important`,
-      },
-    },
+    // ".login": {
+    //   color: (t) => `${t.colors.blue} !important`,
+    //   path: {
+    //     stroke: (t) => `${t.colors.blue} !important`,
+    //   },
+    //   line: {
+    //     stroke: (t) => `${t.colors.blue} !important`,
+    //   },
+    // },
   },
   gray2: {
     // global
@@ -293,15 +293,15 @@ export const navBarVariants = {
         },
       },
     },
-    ".login": {
-      color: (t) => `${t.colors.blue} !important`,
-      path: {
-        stroke: (t) => `${t.colors.blue} !important`,
-      },
-      line: {
-        stroke: (t) => `${t.colors.blue} !important`,
-      },
-    },
+    // ".login": {
+    //   color: (t) => `${t.colors.blue} !important`,
+    //   path: {
+    //     stroke: (t) => `${t.colors.blue} !important`,
+    //   },
+    //   line: {
+    //     stroke: (t) => `${t.colors.blue} !important`,
+    //   },
+    // },
   },
 
   white: {
@@ -363,15 +363,15 @@ export const navBarVariants = {
         },
       },
     },
-    ".login": {
-      color: (t) => `${t.colors.blue} !important`,
-      path: {
-        stroke: (t) => `${t.colors.blue} !important`,
-      },
-      line: {
-        stroke: (t) => `${t.colors.blue} !important`,
-      },
-    },
+    // ".login": {
+    //   color: (t) => `${t.colors.blue} !important`,
+    //   path: {
+    //     stroke: (t) => `${t.colors.blue} !important`,
+    //   },
+    //   line: {
+    //     stroke: (t) => `${t.colors.blue} !important`,
+    //   },
+    // },
   },
   lightTurquoise: {
     // global
@@ -432,15 +432,15 @@ export const navBarVariants = {
         },
       },
     },
-    ".login": {
-      color: (t) => `${t.colors.blue} !important`,
-      path: {
-        stroke: (t) => `${t.colors.blue} !important`,
-      },
-      line: {
-        stroke: (t) => `${t.colors.blue} !important`,
-      },
-    },
+    // ".login": {
+    //   color: (t) => `${t.colors.blue} !important`,
+    //   path: {
+    //     stroke: (t) => `${t.colors.blue} !important`,
+    //   },
+    //   line: {
+    //     stroke: (t) => `${t.colors.blue} !important`,
+    //   },
+    // },
 
     ".demobtn": {
       "&:hover": {
@@ -518,14 +518,14 @@ export const navBarVariants = {
         },
       },
     },
-    ".login": {
-      color: (t) => `${t.colors.blue} !important`,
-      path: {
-        stroke: (t) => `${t.colors.blue} !important`,
-      },
-      line: {
-        stroke: (t) => `${t.colors.blue} !important`,
-      },
-    },
+    // ".login": {
+    //   color: (t) => `${t.colors.blue} !important`,
+    //   path: {
+    //     stroke: (t) => `${t.colors.blue} !important`,
+    //   },
+    //   line: {
+    //     stroke: (t) => `${t.colors.blue} !important`,
+    //   },
+    // },
   },
 };

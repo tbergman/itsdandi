@@ -143,14 +143,14 @@ export const navigation = {
         },
       },
     },
-    ".login": {
-      color: "yellow",
-      display: "flex",
-      justifyContent: "flex-start",
-      alignItems: "flex-start",
-      ".arrow": {
-        pl: "14px",
-      },
-    },
+    // ".login": {
+    //   color: "yellow",
+    //   display: "flex",
+    //   justifyContent: "flex-start",
+    //   alignItems: "flex-start",
+    //   ".arrow": {
+    //     pl: "14px",
+    //   },
+    // },
   },
 };
