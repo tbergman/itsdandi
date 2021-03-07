@@ -19,14 +19,13 @@ export const home = {
         left: ["20px", "40px"],
         height: [
           (t) => t.colWidthMob,
-          (t) => `calc(${t.colWidthDesktop} + 20px)`,
-          // (t) => `calc(${t.colWidthDesktop})`,
+          // (t) => `calc(${t.colWidthDesktop} + 20px)`,
+          "112px",
         ],
         width: [
           "125px",
-          (t) => `calc(calc(${t.colWidthDesktop} + 20px) * 3.4)`,
-
-          // (t) => `calc(calc(${t.colWidthDesktop}) * 3.4)`,
+          // (t) => `calc(calc(${t.colWidthDesktop} + 20px) * 3.4)`,
+          "calc(112px * 3.4)",
         ],
         mb: ["20px", "40px"],
       },
@@ -48,7 +47,7 @@ export const home = {
           "unset",
           (t) => t.colWidthDesktop,
           (t) => t.colWidthDesktopBig,
-          (t) => t.colWidthDesktopMassive,
+          (t) => `calc(${t.colWidthDesktopMassive} + 60px)`,
         ],
       },
       ".Top__text-button": {
@@ -89,14 +88,14 @@ export const home = {
         (t) => `calc(${t.desktopBigGutters} / -1)`,
         (t) => `calc(${t.desktopMassiveGutters} / -1)`,
       ],
-      height: ["191px", "112px", "232px"],
+      height: ["191px", "112px", "136px"],
 
       ".Bars__barWrapper": {
         position: "absolute",
         width: "100%",
         bottom: 0,
         left: 0,
-        height: ["178px", "300px", "275px", "300px"],
+        height: ["178px", "300px", "330px", "350px"],
       },
       ".Bars__barWrapper-bar1": {
         zIndex: 99,

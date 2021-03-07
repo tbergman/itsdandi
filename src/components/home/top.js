@@ -4,7 +4,7 @@ import BigLogo from "./bigLogo";
 import Graphics from "./graphics";
 import Link from "next/link";
 import InView from "../inview";
-import { rootMargin, scrollToBottom } from "../../helpers/utils";
+import { lineBreaks, rootMargin, scrollToBottom } from "../../helpers/utils";
 
 const Home = ({
   setNavbarStyling,
