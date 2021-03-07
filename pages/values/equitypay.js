@@ -125,12 +125,12 @@ const Values = (props) => {
           mb: [23, 15],
         }}
       >
-        <TopGraphic
+        {/* <TopGraphic
           images={{
             desktop: props.header.desktop_image,
             mobile: props.header.mobile_image,
           }}
-        />
+        /> */}
       </Header>
       <Compensation
         setSubMenuStyling={setSubMenuStyling}

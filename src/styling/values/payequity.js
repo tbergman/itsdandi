@@ -66,6 +66,8 @@ export const payequity = {
           width: [
             "unset",
             (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
+            (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 160px)`,
+            (t) => `calc(calc(${t.colWidthDesktopMassive} * 4) + 160px)`,
           ],
           mr: [
             0,
