@@ -39,7 +39,7 @@ export const scrollToBottom = (window, isDesktop) => {
       // click on input field
       const nameField = window.document.getElementById("namefield");
       nameField.focus();
-    }, 1500);
+    }, 500);
   } else {
     // const scrollTarget = window.document
     //   .querySelector("#footerHeader")
