@@ -118,9 +118,9 @@ const Values = (props) => {
         styling={{
           mb: [
             `calc(calc(calc(calc(100vw - 20px) * .6) * .7) + 32px)`,
-            `calc(calc(calc(calc(calc(${theme.colWidthDesktop} * 10) +  400px) * .59) * .5) + 115px)`,
-            `calc(calc(calc(calc(calc(calc(${theme.colWidthDesktopBig} * 10) +  360px) + ${theme.desktopBigGutters}) * .59) * .5) + 115px)`,
-            `calc(calc(calc(calc(calc(calc(${theme.colWidthDesktopMassive} * 10) +  360px) + ${theme.desktopMassiveGutters}) * .59) * .5) + 115px)`,
+            `calc(calc(calc(calc(calc(${theme.colWidthDesktop} * 10) +  400px) * .46) * .5) + 115px)`,
+            `calc(calc(calc(calc(calc(calc(${theme.colWidthDesktopBig} * 10) +  360px) + ${theme.desktopBigGutters}) * .46) * .5) + 115px)`,
+            `calc(calc(calc(calc(calc(calc(${theme.colWidthDesktopMassive} * 10) +  360px) + ${theme.desktopMassiveGutters}) * .46) * .5) + 115px)`,
           ],
         }}
       >
