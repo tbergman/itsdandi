@@ -42,7 +42,7 @@ const SubNavigation = ({ next, prev }) => {
   return (
     <div
       sx={{
-        variant: "pages.values.subnavigation",
+        variant: "components.subnavigation",
       }}
       className="SubNavigation"
     >
@@ -65,7 +65,8 @@ const SubNavigation = ({ next, prev }) => {
                   ml: [
                     0,
                     (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,
-                    (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 120px)`,
+                    (t) => `calc(${t.desktopBigGutters} )`,
+                    (t) => `calc(${t.desktopMassiveGutters} )`,
                   ],
                 }}
                 className="SubNavigation__link-content"
@@ -119,14 +120,15 @@ const SubNavigation = ({ next, prev }) => {
                   ? [
                       0,
                       (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,
-                      (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 120px)`,
+                      (t) => `calc(${t.desktopBigGutters})`,
+                      (t) => `calc(${t.desktopMassiveGutters})`,
                     ]
                   : [
                       0,
                       (t) =>
                         `calc(calc(calc(${t.colWidthDesktop} * 2) + 120px) + 50vw)`,
-                      (t) =>
-                        `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 120px) + 50vw)`,
+                      (t) => `calc(${t.desktopBigGutters}) + 50vw)`,
+                      (t) => `calc(${t.desktopMassiveGutters}) + 50vw)`,
                     ],
               }}
               className={"SubNavigation__link-content"}
