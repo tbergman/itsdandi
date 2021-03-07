@@ -509,7 +509,7 @@ export const home = {
     bg: "clearWhite",
     color: "black",
     ".Partners__text": {
-      mt: [10],
+      mt: [10, 21],
       mb: [9],
       gridArea: ["1/1/2/-1", "1/2/2/6"],
       ".Partners__text-header": {
