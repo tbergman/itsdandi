@@ -2,11 +2,12 @@
 import { jsx, Styled } from "theme-ui";
 import LearnMoreLink from "../learnmorelink";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import CarouselItem from "../carouselitem";
 import { globalSlideUp, imageCarousel } from "../../helpers/animations";
 import { Transition } from "react-transition-group";
 import { gsap } from "gsap";
+import Magnifier from "react-magnifier";
 
 const CarouselMain = ({ description, items, inView }) => {
   const items_ = items.map((i) => i.fields);
@@ -70,12 +71,12 @@ const CarouselMain = ({ description, items, inView }) => {
                 });
               }}
             >
-              <img
+              <Magnifier
                 key={current}
-                variants={imageCarousel}
-                initial="enter"
-                animate="center"
-                exit="exit"
+                // variants={imageCarousel}
+                // initial="enter"
+                // animate="center"
+                // exit="exit"
                 src={items_[current].desktop_image}
                 alt=""
                 className="Carousel__carouselWrapper-imageWrapper-image"
