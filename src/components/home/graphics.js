@@ -61,7 +61,7 @@ const Graphics = () => {
               height: 0,
             }}
             animate={{
-              height: "61%",
+              height: "40%",
             }}
             transition={{
               duration: 1,

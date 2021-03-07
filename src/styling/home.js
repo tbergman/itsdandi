@@ -17,8 +17,17 @@ export const home = {
         zIndex: 9999,
         top: [0],
         left: ["20px", "40px"],
-        height: [(t) => t.colWidthMob, (t) => t.colWidthDesktop],
-        width: ["125px", (t) => `calc(${t.colWidthDesktop} * 3.4)`],
+        height: [
+          (t) => t.colWidthMob,
+          (t) => `calc(${t.colWidthDesktop} + 20px)`,
+          // (t) => `calc(${t.colWidthDesktop})`,
+        ],
+        width: [
+          "125px",
+          (t) => `calc(calc(${t.colWidthDesktop} + 20px) * 3.4)`,
+
+          // (t) => `calc(calc(${t.colWidthDesktop}) * 3.4)`,
+        ],
         mb: ["20px", "40px"],
       },
     },
@@ -30,9 +39,11 @@ export const home = {
         (t) => t.colWidthDesktopBig,
         (t) => t.colWidthDesktopMassive,
       ],
-      mt: [24, 28],
+      mt: [24, "352px"],
       mb: [2, 0],
       ".Top__text-header": {
+        fontSize: ["unset", "72px"],
+        lineHeight: ["unset", "70px"],
         mr: [
           "unset",
           (t) => t.colWidthDesktop,
@@ -78,14 +89,14 @@ export const home = {
         (t) => `calc(${t.desktopBigGutters} / -1)`,
         (t) => `calc(${t.desktopMassiveGutters} / -1)`,
       ],
-      height: ["191px", "168px", "232px"],
+      height: ["191px", "112px", "232px"],
 
       ".Bars__barWrapper": {
         position: "absolute",
         width: "100%",
         bottom: 0,
         left: 0,
-        height: ["178px", "246px", "275px", "300px"],
+        height: ["178px", "300px", "275px", "300px"],
       },
       ".Bars__barWrapper-bar1": {
         zIndex: 99,
@@ -111,14 +122,13 @@ export const home = {
           left: 0,
           bottom: 0,
           width: "100%",
-          height: "100%",
           borderRadius: "7px 7px 0px 0px",
         },
         ".Bars__barWrapper-bar1-bottom": {
           position: "absolute",
           bg: "blue",
           width: "100%",
-          height: "40%",
+
           borderRadius: "0px 0px 7px 7px",
           top: "100%",
           left: 0,
@@ -146,7 +156,6 @@ export const home = {
         ".Bars__barWrapper-bar2-top": {
           position: "absolute",
           width: "100%",
-          height: ["61%"],
           bg: "turquoise",
           bottom: 0,
           left: 0,
@@ -155,7 +164,6 @@ export const home = {
         ".Bars__barWrapper-bar2-bottom": {
           position: "absolute",
           width: "100%",
-          height: "40%",
           bg: "blue",
           top: "100%",
           left: 0,
@@ -185,7 +193,6 @@ export const home = {
         ".Bars__barWrapper-bar3-bottom": {
           position: "absolute",
           width: "100%",
-          height: "40%",
           left: 0,
           top: "100%",
           bg: "blue",

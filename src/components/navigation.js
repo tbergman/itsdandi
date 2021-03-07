@@ -41,7 +41,7 @@ const Navigation = ({
                 staticLogo={staticLogo}
                 setStaticLogo={setStaticLogo}
                 scaleTo={32 / widths.desktop}
-                yOffset={-widths.desktop + 35}
+                yOffset={-widths.desktop + 15}
                 width={width}
               />
             )}
