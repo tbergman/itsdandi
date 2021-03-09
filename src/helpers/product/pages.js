@@ -1,9 +1,5 @@
 export default [
   {
-    name: "Measure",
-    url: "/product/measure",
-  },
-  {
     name: "Analyze",
     url: "/product/analyze",
   },

@@ -1,5 +1,9 @@
 export default [
   {
+    name: "DEI metrics",
+    url: "/values/deimetrics",
+  },
+  {
     name: "Pay Equity",
     url: "/values/equitypay",
   },
@@ -12,7 +16,7 @@ export default [
     url: "/values/leadership",
   },
   {
-    name: "Product",
-    url: "/product/measure",
+    name: "Analyze",
+    url: "/product/analyze",
   },
 ];

@@ -1,7 +1,6 @@
 /** @jsx jsx  */
 import { ReactSVG } from "react-svg";
 import { jsx } from "theme-ui";
-import Button from "../button";
 import { motion } from "framer-motion";
 import { lineUp } from "../../../helpers/animations/product/measure";
 
@@ -11,14 +10,11 @@ const TopContent = ({ isDesktop, content, width }) => {
   return (
     <div
       sx={{
-        variant: "pages.product.measure.topcontent",
+        variant: "pages.values.deimetrics.topcontent",
       }}
+      className="TopContent"
     >
-      <div className="buttonwrapper">
-        <Button text={button_text} isDesktop={isDesktop} />
-      </div>
-
-      <div className="graphics">
+      <div className="graphics noOverflow">
         {isDesktop ? (
           <motion.svg
             className="graphics__desktop-svg"

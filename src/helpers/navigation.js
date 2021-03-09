@@ -7,8 +7,13 @@ export const navItems = [
   {
     title: "Why Dandi?",
     type: "values",
-    url: "/values/equitypay",
+    url: "/values/deimetrics",
     sub: [
+      {
+        title: "DEI Metrics",
+        url: "/values/deimetrics",
+        type: "metrics",
+      },
       {
         title: "Pay Equity",
         url: "/values/equitypay",
@@ -27,15 +32,10 @@ export const navItems = [
     ],
   },
   {
-    title: "Product",
+    title: "Analyze",
     type: "product",
-    url: "/product/measure",
+    url: "/product/analyze",
     sub: [
-      {
-        title: "Measure",
-        url: "/product/measure",
-        type: "measure",
-      },
       {
         title: "Analyze",
         url: "/product/analyze",

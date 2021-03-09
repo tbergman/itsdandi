@@ -6,6 +6,11 @@ import { navBarVariants } from "./src/styling/navbarvariants";
 import { submenu } from "./src/styling/submenu";
 import { subnavigation } from "./src/styling/subnavigation";
 import { leadership } from "./src/styling/values/leadership";
+import { deimetrics } from "./src/styling/values/deimetrics";
+import { root } from "./src/styling/root";
+import { buttons } from "./src/styling/buttons";
+import { categories } from "./src/styling/categories";
+import { standardModule } from "./src/styling/standardmodule";
 
 const theme = {
   breakpoints: ["1024px", "1500px", "2000px"],
@@ -116,6 +121,7 @@ const theme = {
   pages: {
     home: { ...home },
     values: {
+      deimetrics: { ...deimetrics },
       payequity: { ...payequity },
       deijourney: {
         topgraphic: {
@@ -272,284 +278,6 @@ const theme = {
       leadership: { ...leadership },
     },
     product: {
-      measure: {
-        topcontent: {
-          position: "relative",
-          ".buttonwrapper": {
-            position: "absolute",
-            bottom: ["-28px", "-24px"],
-            left: [
-              "20px",
-              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 60px) + ${t.desktopMassiveGutters})`,
-            ],
-          },
-          ".graphics": {
-            position: "absolute",
-            left: [
-              (t) => `calc(calc(${t.colWidthMob} * 4) + 70px)`,
-              (t) => `calc(calc(${t.colWidthDesktop} * 7) + 280px)`,
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktopBig} * 7) + 240px) + ${t.desktopBigGutters})`,
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktopMassive} * 7) + 240px) + ${t.desktopMassiveGutters})`,
-            ],
-            right: 0,
-            bottom: 0,
-            overflow: "hidden",
-            display: "flex",
-            alignItems: "flex-end",
-            svg: {
-              width: "100%",
-              height: "100%",
-            },
-          },
-        },
-        metrics: {
-          bg: "transparent",
-          color: "black",
-
-          ".section1": {
-            mt: [10, 16],
-            gridArea: ["1/1/2/-1", "1/3/2/7"],
-            h2: {
-              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-            },
-          },
-          ".section2": {
-            mt: [3, 16],
-            gridArea: ["2/1/3/-1", "1/7/2/-2"],
-            ml: [
-              0,
-              (t) => t.colWidthDesktop,
-              (t) => t.colWidthDesktopBig,
-              (t) => t.colWidthDesktopMassive,
-            ],
-            mb: [10, 16],
-            p: {
-              lineHeight: ["24px"],
-              fontSize: ["16px"],
-              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-            },
-          },
-        },
-        whymeasure: {
-          bg: "transparent",
-          color: "black",
-
-          ".WhyMeasure__top": {
-            gridArea: ["1/1/2/-1", "1/3/2/-2"],
-            display: "flex",
-            flexFlow: ["column", "unset"],
-            mt: [8, 16],
-            mb: [6, 13],
-            ".WhyMeasure__top-section1": {
-              flex: "auto",
-              width: [
-                "100%",
-                (t) => t.desktopSectionWidth,
-                (t) => t.desktopSectionWidthBig,
-                (t) => t.desktopSectionWidthMassive,
-              ],
-              ".WhyMeasure__top-section1-header": {
-                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-              },
-            },
-
-            ".WhyMeasure__top-section2": {
-              width: [
-                "100%",
-                (t) => t.desktopSectionWidth,
-                (t) => t.desktopSectionWidthBig,
-                (t) => t.desktopSectionWidthMassive,
-              ],
-              ml: [
-                0,
-                (t) => t.colWidthDesktop,
-                (t) => t.colWidthDesktopBig,
-                (t) => t.colWidthDesktopMassive,
-              ],
-              ".WhyMeasure__top-section2-body": {
-                mt: [3, 0],
-                fontSize: ["16px"],
-                lineHeight: ["24px"],
-                maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-              },
-            },
-          },
-
-          ".WhyMeasure__categories": {
-            mb: [7],
-            gridArea: ["2/1/3/-1", "2/3/3/-1"],
-            display: "flex",
-            flexFlow: ["column", "row"],
-            ".WhyMeasure__categories-category": {
-              display: ["flex", "unset"],
-              width: [
-                "auto",
-                (t) => `calc(calc(${t.colWidthDesktop} * 3) +  80px)`,
-                (t) => `calc(calc(${t.colWidthDesktopBig} * 3) +  80px)`,
-                (t) => `calc(calc(${t.colWidthDesktopMassive} * 3) +  80px)`,
-              ],
-              mr: [0, "40px"],
-              position: "relative",
-              ".WhyMeasure__categories-category-divider": {
-                mb: [1, 0],
-                mt: [1, 0],
-                top: ["unset", 4],
-                position: ["absolute"],
-                width: "100%",
-                height: ["2px"],
-                span: {
-                  position: "absolute",
-                  width: "100%",
-                  height: "100%",
-                },
-              },
-              ".WhyMeasure__categories-category-title": {
-                width: [
-                  (t) => `calc(calc(${t.colWidthMob} * 3) + 60px)`,
-                  "unset",
-                ],
-                mt: [2, 0],
-                mb: [4],
-                p: {
-                  fontFamily: "medium",
-                  fontSize: "14px",
-                  lineHeight: "21px",
-                },
-              },
-              ".WhyMeasure__categories-category-items": {
-                width: [
-                  (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
-                  "unset",
-                ],
-                mt: [2, 0],
-                display: "flex",
-                flexFlow: "column",
-                ".WhyMeasure__categories-category-items-item": {
-                  ".WhyMeasure__categories-category-items-item-text": {
-                    fontSize: ["14px"],
-                    lineHeight: ["21px"],
-                  },
-                },
-              },
-            },
-          },
-        },
-        intersectional: {
-          bg: "black",
-          color: "white",
-          ".Intersectional__graphic": {
-            mt: [10, 16],
-            mb: [0, 24],
-            gridArea: ["1/1/2/-1", "1/7/2/-1"],
-            width: [
-              "unset",
-              (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
-              (t) => `calc(calc(${t.colWidthDesktopBig} * 5) + 200px)`,
-              (t) => `calc(calc(${t.colWidthDesktopMassive} * 5) + 200px)`,
-            ],
-            height: [
-              "225px",
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktop} * 5) + 200px) * .605)`,
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktopBig} * 5) + 200px) * .605)`,
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 200px) * .605)`,
-            ],
-            position: "relative",
-            ".Intersectional__graphic-image": {
-              position: "absolute",
-              width: "100%",
-              height: "100%",
-            },
-          },
-          ".Intersectional__text": {
-            mt: [10, 16],
-            mb: [12, 27],
-            gridArea: ["2/1/3/-1", "1/3/2/6"],
-            ".Intersectional__text-text": {
-              lineHeight: ["24px"],
-              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-            },
-          },
-        },
-        thoughtful: {
-          bg: "transparent",
-          color: "black",
-          ".Thoughtful__section1": {
-            gridArea: ["1/1/2/-1", "1/3/2/8"],
-            mt: [12, 16],
-            mb: [5, 19],
-            ".Thoughtful__section1-header": {
-              ".Thoughtful__section1-header-text": {},
-            },
-            ".Thoughtful__section1-body": {
-              mt: [3, 4],
-              pr: [
-                "unset",
-                (t) => t.colWidthDesktop,
-                (t) => t.colWidthDesktopBig,
-                (t) => t.colWidthDesktopMassive,
-              ],
-              ".Thoughtful__section1-body-text": {},
-            },
-          },
-          ".Thoughtful__section2": {
-            gridArea: ["2/1/3/-1", "1/7/2/-2"],
-            ml: [
-              0,
-              (t) => t.colWidthDesktop,
-              (t) => t.colWidthDesktopBig,
-              (t) => t.colWidthDesktopMassive,
-            ],
-            mt: [0, 26],
-            ".Thoughtful__section2-body": {
-              mt: 0,
-              pr: 0,
-              ".Thoughtful__section2-body-text": {},
-            },
-            ".Thoughtful__section2-team": {
-              mt: [3],
-              ".Thoughtful__section2-team-divider": {
-                position: "relative",
-                height: "1px",
-                width: "100%",
-                span: {
-                  position: "absolute",
-                  height: "100%",
-                  width: "100%",
-                  bg: "#CACACE",
-                },
-              },
-              ".Thoughtful__section2-team-header": {
-                mt: [1],
-                ".Thoughtful__section2-team-header-text": {
-                  fontFamily: "medium",
-                },
-              },
-              ".Thoughtful__section2-team-links": {
-                mt: [0, 1],
-                mb: [12],
-                a: {
-                  mb: [1],
-                },
-                display: "flex",
-                flexFlow: ["column"],
-                p: {
-                  mt: 0,
-                  fontFamily: "display",
-                },
-              },
-            },
-          },
-        },
-      },
       analyze: {
         topcontent: {
           position: "relative",
@@ -2569,6 +2297,8 @@ const theme = {
         },
       },
     },
+    standardModule: { ...standardModule },
+    categories: { ...categories },
     subnavigation: { ...subnavigation },
     footer: {
       bg: "#1F1F21",
@@ -3132,44 +2862,9 @@ const theme = {
       option: {},
     },
   },
-  buttons: {
-    primary: {
-      bg: "#3A3A3D",
-      height: ["56px"],
-      mt: ["12px"],
-      color: "black",
-      borderRadius: "200px",
-      width: ["191px"],
-      fontFamily: "body",
-      fontWeight: "500",
-      fontSize: ["18px"],
-      cursor: "pointer",
-    },
-    secondary: {
-      bg: "blue",
-      borderRadius: ["200px"],
-      width: ["168px"],
-      height: ["56px"],
-      cursor: "pointer",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      p: {
-        fontWeight: "500",
-        fontFamily: "medium",
-      },
-    },
-  },
+  buttons: { ...buttons },
   styles: {
-    root: {
-      bg: "#fff",
-      color: "white",
-
-      "&.menu-open": {
-        overflow: "hidden",
-        position: "relative",
-      },
-    },
+    root: { ...root },
     h1: {
       fontFamily: "display",
       fontSize: ["36px", "60px"],

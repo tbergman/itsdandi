@@ -4,16 +4,16 @@ import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
-import Metrics from "../../src/components/product/measure/metrics";
+import Metrics from "../../src/components/values/deimetrics/metrics";
 import Quote from "../../src/components/quote";
-import WhyMeasure from "../../src/components/product/measure/whymeasure";
-import Intersectional from "../../src/components/product/measure/intersectional";
-import Thoughtful from "../../src/components/product/measure/thoughtful";
+import MeasurementCapabilities from "../../src/components/values/deimetrics/measurementcapabilities";
+import Intersectional from "../../src/components/values/deimetrics/intersectional";
+import Thoughtful from "../../src/components/values/deimetrics/thoughtful";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import { subPages } from "../../src/helpers/subpages";
-import pages from "../../src/helpers/product/pages";
-import TopContent from "../../src/components/product/measure/topcontent";
+import pages from "../../src/helpers/values/pages";
+import TopContent from "../../src/components/values/deimetrics/topcontent";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
 import { isServer } from "../../src/helpers/utils";
@@ -35,8 +35,8 @@ const Product = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [width, height] = useWindowSize();
   const currentPage = {
-    main: "product",
-    sub: "measure",
+    main: "values",
+    sub: "deimetrics",
   };
   const { theme } = useThemeUI();
   const isDesktop = useMediaQuery({
@@ -132,7 +132,20 @@ const Product = (props) => {
           />
         )}
       </Header>
-      <Metrics
+      <MeasurementCapabilities
+        isDesktop={isDesktop}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.variants.white}
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navBarVariants.white}
+        windowHeight={windowHeight}
+        content={{
+          header: props.measurement_capabilities.header,
+          body: props.measurement_capabilities.body,
+          categories: props.categories,
+        }}
+      />
+      {/* <Metrics
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navBarVariants.white}
@@ -157,19 +170,6 @@ const Product = (props) => {
         windowHeight={windowHeight}
         bg="white"
       />
-      <WhyMeasure
-        isDesktop={isDesktop}
-        setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.variants.white}
-        setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.white}
-        windowHeight={windowHeight}
-        content={{
-          header: props.measurement.header,
-          body: props.measurement.body,
-          categories: props.categories,
-        }}
-      />
       <Intersectional
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
@@ -191,12 +191,12 @@ const Product = (props) => {
         content={{
           ...props.thoughtful,
         }}
-      />
+      /> */}
       <SubNavigation
         next={subPages_.next}
         prev={{
-          name: "Values",
-          url: "/values/equitypay",
+          name: "Home",
+          url: "/",
           bg: "blue",
         }}
       />
@@ -208,7 +208,7 @@ const Product = (props) => {
 export async function getStaticProps() {
   try {
     const butter = Butter(process.env.BUTTER_CMS);
-    const response = await butter.page.retrieve("*", "product_measure");
+    const response = await butter.page.retrieve("*", "values_deimetrics");
 
     return {
       props: {
