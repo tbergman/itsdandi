@@ -29,6 +29,7 @@ const CenteredContainer = ({
           sx={{
             variant: "grid",
           }}
+          className="CenteredContainer"
         >
           <div className="container">{children}</div>
         </div>
