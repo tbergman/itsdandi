@@ -11,6 +11,8 @@ import { root } from "./src/styling/root";
 import { buttons } from "./src/styling/buttons";
 import { categories } from "./src/styling/categories";
 import { standardModule } from "./src/styling/standardmodule";
+import { quote } from "./src/styling/quote";
+import { containers } from "./src/styling/containers";
 
 const theme = {
   breakpoints: ["1024px", "1500px", "2000px"],
@@ -2223,6 +2225,7 @@ const theme = {
     },
   },
   components: {
+    containers: { ...containers },
     navigation: { ...navigation },
     mobileNavigation: { ...mobileNavigation },
     navBarVariants: { ...navBarVariants },
@@ -2506,6 +2509,7 @@ const theme = {
         alignItems: "center",
       },
     },
+    quote: { ...quote },
     shared: {
       button: {
         width: [
@@ -2537,74 +2541,7 @@ const theme = {
           color: "white",
         },
       },
-      quote: {
-        ".Quote__imageWrapper": {
-          position: "relative",
-          gridArea: ["1/1/2/-1", "1/8/2/-1"],
-          height: [
-            "calc(100vw * .426)",
-            (t) => `calc(calc(calc(${t.colWidthDesktop} * 5) + 240px) * .83)`,
-            (t) =>
-              `calc(calc(calc(calc(${t.colWidthDesktopBig} * 5) + 200px) + ${t.desktopBigGutters}) * .83)`,
-            (t) =>
-              `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 200px) + ${t.desktopMassiveGutters}) * .83)`,
-          ],
-          width: [
-            "100vw",
-            (t) => `calc(calc(${t.colWidthDesktop} * 5) + 240px)`,
-            (t) =>
-              `calc(calc(calc(${t.colWidthDesktopBig} * 5) + 200px) + ${t.desktopBigGutters})`,
-            (t) =>
-              `calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 200px) + ${t.desktopMassiveGutters})`,
-          ],
-          left: ["-20px", "-40px"],
 
-          ".Quote__imageWrapper-image": {
-            position: "absolute",
-            height: "100%",
-            width: "100%",
-            img: {
-              width: "inherit",
-              height: "inherit",
-            },
-          },
-        },
-        ".Quote__textWrapper": {
-          gridArea: ["2/1/3/-1", "1/3/2/7"],
-          display: "flex",
-          alignItems: "center",
-          mt: [4, 0],
-          ".Quote__textWrapper-text": {
-            color: "black",
-            position: "relative",
-            ".Quote__textWrapper-text-quotation": {
-              position: "absolute",
-              top: [0],
-            },
-            ".Quote__textWrapper-text-body": {
-              ml: [5],
-
-              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-              ".Quote__textWrapper-text-body-text": {
-                fontFamily: "display",
-                fontSize: ["24px", "40px"],
-                lineHeight: ["31.2px", "48px"],
-              },
-            },
-            ".Quote__textWrapper-text-name": {
-              mt: [4],
-              ml: [5],
-              mb: [8, 0],
-
-              ".Quote__textWrapper-text-name-text": {
-                lineHeight: ["20px"],
-                fontSize: ["14px"],
-                fontFamily: "body",
-              },
-            },
-          },
-        },
-      },
       header: {
         color: "black",
         ".Header__text": {

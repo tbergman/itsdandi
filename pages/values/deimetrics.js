@@ -17,6 +17,7 @@ import TopContent from "../../src/components/values/deimetrics/topcontent";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
 import { isServer } from "../../src/helpers/utils";
+import StandardModule from "../../src/components/standardmodule";
 
 import {
   motion,
@@ -30,6 +31,7 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
 import { prop } from "ramda";
+import CenteredContainer from "../../src/components/containers/container_c";
 
 const Product = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -132,37 +134,29 @@ const Product = (props) => {
           />
         )}
       </Header>
-      <MeasurementCapabilities
+      <CenteredContainer
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navBarVariants.white}
         windowHeight={windowHeight}
-        content={{
-          header: props.measurement_capabilities.header,
-          body: props.measurement_capabilities.body,
-          categories: props.categories,
-        }}
-      />
-      {/* <Metrics
-        isDesktop={isDesktop}
-        setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.white}
-        setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.variants.white}
-        windowHeight={windowHeight}
-        content={{
-          ...props.metrics,
-        }}
-      />
+      >
+        <MeasurementCapabilities
+          content={{
+            header: props.measurement_capabilities.header,
+            body: props.measurement_capabilities.body,
+            categories: props.categories,
+          }}
+        />
+      </CenteredContainer>
 
       <Quote
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         content={{
-          ...props.quote,
+          ...props.quote1,
         }}
         color={theme.colors.white}
         setNavbarStyling={setNavbarStyling}
@@ -170,28 +164,63 @@ const Product = (props) => {
         windowHeight={windowHeight}
         bg="white"
       />
-      <Intersectional
-        isDesktop={isDesktop}
-        setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.default}
-        setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.variants.default}
-        windowHeight={windowHeight}
-        content={{
-          ...props.intersectional,
-        }}
-      />
-      <Thoughtful
+
+      {/* Metrics */}
+      <CenteredContainer
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navBarVariants.white}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
+      >
+        <StandardModule
+          header={props.metrics.header}
+          body={props.metrics.body}
+        />
+      </CenteredContainer>
+
+      <CenteredContainer
+        isDesktop={isDesktop}
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navBarVariants.white}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.variants.white}
+        windowHeight={windowHeight}
+      >
+        <StandardModule header={props.speed.header} body={props.speed.body} />
+      </CenteredContainer>
+
+      <Quote
+        isDesktop={isDesktop}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.variants.white}
         content={{
-          ...props.thoughtful,
+          ...props.quote2,
         }}
-      /> */}
+        color={theme.colors.white}
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navBarVariants.gray2}
+        windowHeight={windowHeight}
+        bg="white"
+      />
+
+      {/* Continuing Effort */}
+      <CenteredContainer
+        isDesktop={isDesktop}
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navBarVariants.white}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.variants.white}
+        windowHeight={windowHeight}
+      >
+        <Thoughtful
+          content={{
+            ...props.continuing_effort,
+          }}
+        />
+      </CenteredContainer>
+
       <SubNavigation
         next={subPages_.next}
         prev={{

@@ -4,10 +4,11 @@ import InView from "./inview";
 import { ReactSVG } from "react-svg";
 import { rootMargin, rootMarginSub } from "../helpers/utils";
 import SubInView from "./subinview";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
-import { globalSlideUp } from "../helpers/animations";
+import { useEffect, useRef } from "react";
+import { useMachine } from "@xstate/react";
+import { slideUp__machine } from "../machines/slideup";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 const Quote = ({
   setNavbarStyling,
@@ -20,24 +21,23 @@ const Quote = ({
   isDesktop,
 }) => {
   const { body, desktop_image, mobile_image, name, title } = content;
-
-  const animationControls = useAnimation();
-
-  const { inView, ref, entry } = useInView({
-    triggerOnce: true,
-  });
+  const ref = useRef(null);
+  const [state, send] = useMachine(slideUp__machine);
 
   useEffect(() => {
-    if (inView) {
-      animationControls.start((i) => {
-        return globalSlideUp.visible(i);
-      });
-    }
-  }, [inView]);
+    gsap.registerPlugin(ScrollTrigger);
+    send({
+      type: "SLIDE_UP",
+      payload: {
+        gsap,
+        ref,
+      },
+    });
+  }, []);
 
   return (
     <InView
-      variant="components.shared.quote"
+      variant="components.quote"
       navBarStyling={navBarStyling}
       setNavbarStyling={setNavbarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
@@ -55,7 +55,7 @@ const Quote = ({
           className="Quote"
         >
           <div className="Quote__imageWrapper">
-            <picture className="Quote__imageWrapper-image">
+            <picture className="Quote__image containedPicture">
               <source
                 media="(min-width: 800px)"
                 srcSet={desktop_image}
@@ -64,15 +64,9 @@ const Quote = ({
               <img src={desktop_image} alt="" />
             </picture>
           </div>
-          <div className="Quote__textWrapper">
-            <motion.div ref={ref} className="Quote__textWrapper-text">
-              <motion.div
-                initial="hidden"
-                animate={animationControls}
-                variants={globalSlideUp}
-                custom={0}
-                className="Quote__textWrapper-text-quotation"
-              >
+          <div ref={ref} className="Quote__textWrapper">
+            <div className="Quote__text slideUp">
+              <div className="Quote__quotation">
                 <svg
                   width="17"
                   height="17"
@@ -85,34 +79,20 @@ const Quote = ({
                     fill="#1A1A1D"
                   />
                 </svg>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial="hidden"
-                animate={animationControls}
-                variants={globalSlideUp}
-                custom={0}
-                className="Quote__textWrapper-text-body"
-              >
-                <Styled.h3 className="Quote__textWrapper-text-body-text">
-                  {body}
-                </Styled.h3>
-              </motion.div>
+              <div className="Quote__body slideUp">
+                <Styled.h3 className="Quote__bodyText">{body}</Styled.h3>
+              </div>
 
-              <motion.div
-                initial="hidden"
-                animate={animationControls}
-                variants={globalSlideUp}
-                custom={1}
-                className="Quote__textWrapper-text-name"
-              >
-                <Styled.p className="Quote__textWrapper-text-name-text">
+              <div className="Quote__name slideUp">
+                <Styled.p className="Quote__nameText">
                   {name}
                   <br />
                   {title}
                 </Styled.p>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </SubInView>

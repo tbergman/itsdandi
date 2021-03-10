@@ -35,73 +35,22 @@ export const deimetrics = {
     ".MeasurementCapabilities__row2": {
       gridArea: ["2/1/3/-1", "2/3/3/-2"],
     },
-
-    ".WhyMeasure__top": {
-      display: "flex",
-      flexFlow: ["column", "unset"],
-      mt: [8, 16],
-      mb: [6, 13],
-      ".WhyMeasure__top-section1": {
-        flex: "auto",
-        width: [
-          "100%",
-          (t) => t.desktopSectionWidth,
-          (t) => t.desktopSectionWidthBig,
-          (t) => t.desktopSectionWidthMassive,
-        ],
-        ".WhyMeasure__top-section1-header": {
-          maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-        },
-      },
-
-      ".WhyMeasure__top-section2": {
-        width: [
-          "100%",
-          (t) => t.desktopSectionWidth,
-          (t) => t.desktopSectionWidthBig,
-          (t) => t.desktopSectionWidthMassive,
-        ],
-        ml: [
-          0,
-          (t) => t.colWidthDesktop,
-          (t) => t.colWidthDesktopBig,
-          (t) => t.colWidthDesktopMassive,
-        ],
-        ".WhyMeasure__top-section2-body": {
-          mt: [3, 0],
-          fontSize: ["16px"],
-          lineHeight: ["24px"],
-          maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-        },
-      },
-    },
   },
   metrics: {
     bg: "transparent",
     color: "black",
 
-    ".section1": {
-      mt: [10, 16],
-      gridArea: ["1/1/2/-1", "1/3/2/7"],
-      h2: {
-        maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-      },
+    ".container": {
+      gridArea: ["1/1/2/-1", "1/3/2/-2"],
     },
-    ".section2": {
-      mt: [3, 16],
-      gridArea: ["2/1/3/-1", "1/7/2/-2"],
-      ml: [
-        0,
-        (t) => t.colWidthDesktop,
-        (t) => t.colWidthDesktopBig,
-        (t) => t.colWidthDesktopMassive,
-      ],
-      mb: [10, 16],
-      p: {
-        lineHeight: ["24px"],
-        fontSize: ["16px"],
-        maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-      },
+  },
+
+  speed: {
+    bg: "transparent",
+    color: "black",
+
+    ".container": {
+      gridArea: ["1/1/2/-1", "1/3/2/-2"],
     },
   },
 

@@ -1,26 +1,24 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import { lineBreaks, rootMargin, rootMarginSub } from "../../../helpers/utils";
-import InView from "../../inview";
-import StandardModule from "../../standardmodule";
-import SubInView from "../../subinview";
+import { rootMargin, rootMarginSub } from "../../helpers/utils";
+import InView from "../inview";
+import SubInView from "../subinview";
 
-const Metrics = ({
+const CenteredContainer = ({
   setNavbarStyling,
   navBarStyling,
   windowHeight,
   subMenuStyling,
   setSubMenuStyling,
   isDesktop,
-  content,
+  children,
 }) => {
-  const { header, body } = content;
   return (
     <InView
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
-      variant="pages.values.deimetrics.metrics"
+      variant="components.containers.centered"
     >
       <SubInView
         subMenuStyling={subMenuStyling}
@@ -32,13 +30,11 @@ const Metrics = ({
             variant: "grid",
           }}
         >
-          <div className="container">
-            <StandardModule header={header} body={body} />
-          </div>
+          <div className="container">{children}</div>
         </div>
       </SubInView>
     </InView>
   );
 };
 
-export default Metrics;
+export default CenteredContainer;

@@ -11,6 +11,14 @@ export const root = {
   ".slideUp": {
     // initial
     opacity: 0,
-    transform: "translate(0px, 10px)",
+  },
+  ".containedPicture": {
+    position: "absolute",
+    height: "100%",
+    width: "100%",
+    img: {
+      width: "inherit",
+      height: "inherit",
+    },
   },
 };
