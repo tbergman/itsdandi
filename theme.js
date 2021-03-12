@@ -13,6 +13,10 @@ import { categories } from "./src/styling/categories";
 import { standardModule } from "./src/styling/standardmodule";
 import { quote } from "./src/styling/quote";
 import { containers } from "./src/styling/containers";
+import { section } from "./src/styling/section";
+import { quotetext } from "./src/styling/quotetext";
+import { quoteimage } from "./src/styling/quoteimage";
+import { textBlockAndLinks } from "./src/styling/textblock_and_links";
 
 const theme = {
   breakpoints: ["1024px", "1500px", "2000px"],
@@ -2226,6 +2230,9 @@ const theme = {
   },
   components: {
     containers: { ...containers },
+    quotetext: { ...quotetext },
+    quoteimage: { ...quoteimage },
+    textBlockAndLinks: { ...textBlockAndLinks },
     navigation: { ...navigation },
     mobileNavigation: { ...mobileNavigation },
     navBarVariants: { ...navBarVariants },
@@ -2300,6 +2307,7 @@ const theme = {
         },
       },
     },
+    section: { ...section },
     standardModule: { ...standardModule },
     categories: { ...categories },
     subnavigation: { ...subnavigation },

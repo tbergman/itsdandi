@@ -21,4 +21,9 @@ export const root = {
       height: "inherit",
     },
   },
+  ".BaseContainer": {
+    color: "black",
+    bg: "#FFF",
+    position: "relative",
+  },
 };

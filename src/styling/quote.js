@@ -21,37 +21,37 @@ export const quote = {
     left: ["-20px", "-40px"],
   },
   ".Quote__image": {},
-  ".Quote__textWrapper": {
-    gridArea: ["2/1/3/-1", "1/3/2/7"],
-    display: "flex",
-    alignItems: "center",
-    mt: [4, 0],
-  },
-  ".Quote__text": {
-    color: "black",
-    position: "relative",
-    ".Quote__textWrapper-text-quotation": {
-      position: "absolute",
-      top: [0],
-    },
-  },
-  ".Quote__body": {
-    ml: [5],
-    maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-  },
-  ".Quote__bodyText": {
-    fontFamily: "display",
-    fontSize: ["24px", "40px"],
-    lineHeight: ["31.2px", "48px"],
-  },
-  ".Quote__name": {
-    mt: [4],
-    ml: [5],
-    mb: [8, 0],
-  },
-  ".Quote__nameText": {
-    lineHeight: ["20px"],
-    fontSize: ["14px"],
-    fontFamily: "body",
-  },
+  // ".Quote__textWrapper": {
+  //   // gridArea: ["2/1/3/-1", "1/3/2/7"],
+  //   display: "flex",
+  //   alignItems: "center",
+  //   mt: [4, 0],
+  // },
+  // ".Quote__text": {
+  //   color: "black",
+  //   position: "relative",
+  //   ".Quote__textWrapper-text-quotation": {
+  //     position: "absolute",
+  //     top: [0],
+  //   },
+  // },
+  // ".Quote__body": {
+  //   ml: [5],
+  //   maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+  // },
+  // ".Quote__bodyText": {
+  //   fontFamily: "display",
+  //   fontSize: ["24px", "40px"],
+  //   lineHeight: ["31.2px", "48px"],
+  // },
+  // ".Quote__name": {
+  //   mt: [4],
+  //   ml: [5],
+  //   mb: [8, 0],
+  // },
+  // ".Quote__nameText": {
+  //   lineHeight: ["20px"],
+  //   fontSize: ["14px"],
+  //   fontFamily: "body",
+  // },
 };

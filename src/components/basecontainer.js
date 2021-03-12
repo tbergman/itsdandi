@@ -1,12 +1,13 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
-import { rootMargin, rootMarginSub } from "../../helpers/utils";
-import InView from "../inview";
-import SubInView from "../subinview";
+import { jsx } from "theme-ui";
+import { rootMargin, rootMarginSub } from "../helpers/utils";
+import InView from "./inview";
+import SubInView from "./subinview";
 
-const CenteredContainer = ({
+const BaseContainer = ({
   setNavbarStyling,
   navBarStyling,
+  bg,
   windowHeight,
   subMenuStyling,
   setSubMenuStyling,
@@ -18,7 +19,8 @@ const CenteredContainer = ({
       setNavbarStyling={setNavbarStyling}
       navBarStyling={navBarStyling}
       rootMargin={rootMargin(isDesktop, windowHeight)}
-      variant="components.containers.centered"
+      bg={bg}
+      className="BaseContainer"
     >
       <SubInView
         subMenuStyling={subMenuStyling}
@@ -28,14 +30,15 @@ const CenteredContainer = ({
         <div
           sx={{
             variant: "grid",
+            bg: bg ? `${bg} !important` : null,
           }}
-          className="CenteredContainer"
+          className="BaseContainer"
         >
-          <div className="container">{children}</div>
+          {children}
         </div>
       </SubInView>
     </InView>
   );
 };
 
-export default CenteredContainer;
+export default BaseContainer;

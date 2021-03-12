@@ -13,7 +13,6 @@ const StandardModule = ({ header, body }) => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     send({
       type: "SLIDE_UP",
       payload: {
