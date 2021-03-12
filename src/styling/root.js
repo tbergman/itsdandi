@@ -21,7 +21,12 @@ export const root = {
       height: "inherit",
     },
   },
-  ".BaseContainer": {
+  ".GridContainer": {
+    color: "black",
+    bg: "#FFF",
+    position: "relative",
+  },
+  ".FreeContainer": {
     color: "black",
     bg: "#FFF",
     position: "relative",

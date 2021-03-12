@@ -1,11 +1,15 @@
 export default [
   {
-    name: "Analyze",
-    url: "/product/analyze",
+    name: "Discover",
+    url: "/product/discover",
   },
   {
-    name: "Collaborate",
-    url: "/product/collaborate",
+    name: "Reporting",
+    url: "/product/reporting",
+  },
+  {
+    name: "Data Collection",
+    url: "/product/datacollection",
   },
   {
     name: "Security",

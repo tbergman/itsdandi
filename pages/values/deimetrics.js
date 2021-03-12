@@ -32,7 +32,7 @@ import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
-import BaseContainer from "../../src/components/basecontainer";
+import GridContainer from "../../src/components/gridcontainer";
 import Categories from "../../src/components/categories";
 import QuoteText from "../../src/components/quotetext";
 import TextBlockAndLinks from "../../src/components/textblock_and_links";
@@ -140,7 +140,7 @@ const DEIMetrics = (props) => {
       </Header>
 
       {/* List Categories */}
-      <BaseContainer
+      <GridContainer
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
@@ -156,10 +156,10 @@ const DEIMetrics = (props) => {
         >
           <Categories categories={props.categories} />
         </Section>
-      </BaseContainer>
+      </GridContainer>
 
       {/* Measurement Capabilities */}
-      <BaseContainer
+      <GridContainer
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
@@ -168,7 +168,7 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.first"
+          variant="components.section.one.primary"
           shouldSlideUp={true}
           styling={{
             mt: [16],
@@ -179,7 +179,7 @@ const DEIMetrics = (props) => {
           </div>
         </Section>
         <Section
-          variant="components.section.second"
+          variant="components.section.two.primary"
           shouldSlideUp={true}
           styling={{
             mt: [16],
@@ -192,9 +192,9 @@ const DEIMetrics = (props) => {
             </Styled.p>
           </div>
         </Section>
-      </BaseContainer>
+      </GridContainer>
 
-      <BaseContainer
+      <GridContainer
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
@@ -203,16 +203,16 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
         bg={theme.colors.white}
       >
-        <Section variant="components.section.first" shouldSlideUp={true}>
+        <Section variant="components.section.one.primary" shouldSlideUp={true}>
           <QuoteText content={{ ...props.quote1 }} />
         </Section>
-        <Section variant="components.section.second">
+        <Section variant="components.section.two.primary">
           <QuoteImage content={{ ...props.quote1 }} />
         </Section>
-      </BaseContainer>
+      </GridContainer>
 
       {/* Metrics */}
-      <BaseContainer
+      <GridContainer
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
@@ -221,7 +221,7 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.first"
+          variant="components.section.one.primary"
           shouldSlideUp={true}
           styling={{
             mt: [16],
@@ -232,7 +232,7 @@ const DEIMetrics = (props) => {
           </div>
         </Section>
         <Section
-          variant="components.section.second"
+          variant="components.section.two.primary"
           shouldSlideUp={true}
           styling={{
             mt: [16],
@@ -243,10 +243,10 @@ const DEIMetrics = (props) => {
             <Styled.p>{lineBreaks(props.metrics.body)}</Styled.p>
           </div>
         </Section>
-      </BaseContainer>
+      </GridContainer>
 
       {/* Speed */}
-      <BaseContainer
+      <GridContainer
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
@@ -255,7 +255,7 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.first"
+          variant="components.section.one.primary"
           shouldSlideUp={true}
           styling={{
             mt: [16],
@@ -266,7 +266,7 @@ const DEIMetrics = (props) => {
           </div>
         </Section>
         <Section
-          variant="components.section.second"
+          variant="components.section.two.primary"
           shouldSlideUp={true}
           styling={{
             mt: [16],
@@ -277,10 +277,10 @@ const DEIMetrics = (props) => {
             <Styled.p>{lineBreaks(props.speed.body)}</Styled.p>
           </div>
         </Section>
-      </BaseContainer>
+      </GridContainer>
 
       {/* Quote 2 */}
-      <BaseContainer
+      <GridContainer
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
@@ -289,17 +289,17 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
         bg={theme.colors.white}
       >
-        <Section variant="components.section.first" shouldSlideUp={true}>
+        <Section variant="components.section.one.primary" shouldSlideUp={true}>
           <QuoteText content={{ ...props.quote2 }} />
         </Section>
-        <Section variant="components.section.second">
+        <Section variant="components.section.two.primary">
           <QuoteImage content={{ ...props.quote2 }} />
         </Section>
-      </BaseContainer>
+      </GridContainer>
 
       {/* Continuing Effort */}
 
-      <BaseContainer
+      <GridContainer
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
@@ -308,7 +308,7 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.first"
+          variant="components.section.one.primary"
           shouldSlideUp={true}
           styling={{
             mt: [16],
@@ -319,7 +319,7 @@ const DEIMetrics = (props) => {
           </div>
         </Section>
         <Section
-          variant="components.section.second"
+          variant="components.section.two.primary"
           shouldSlideUp={true}
           styling={{
             mt: [16],
@@ -328,77 +328,7 @@ const DEIMetrics = (props) => {
         >
           <TextBlockAndLinks content={{ ...props.continuing_effort }} />
         </Section>
-      </BaseContainer>
-      {/* <Quote
-        isDesktop={isDesktop}
-        setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.variants.white}
-        content={{
-          ...props.quote1,
-        }}
-        color={theme.colors.white}
-        setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.gray2}
-        windowHeight={windowHeight}
-        bg="white"
-      /> */}
-
-      {/* Metrics */}
-      {/* 
-      <BaseContainer
-        isDesktop={isDesktop}
-        setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.white}
-        setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.variants.white}
-        windowHeight={windowHeight}
-      >
-        <StandardModule
-          header={props.metrics.header}
-          body={props.metrics.body}
-        />
-      </BaseContainer> */}
-      {/* 
-      <BaseContainer
-        isDesktop={isDesktop}
-        setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.white}
-        setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.variants.white}
-        windowHeight={windowHeight}
-      >
-        <StandardModule header={props.speed.header} body={props.speed.body} />
-      </BaseContainer> */}
-
-      {/* <Quote
-        isDesktop={isDesktop}
-        setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.variants.white}
-        content={{
-          ...props.quote2,
-        }}
-        color={theme.colors.white}
-        setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.gray2}
-        windowHeight={windowHeight}
-        bg="white"
-      /> */}
-
-      {/* Continuing Effort */}
-      {/* <BaseContainer
-        isDesktop={isDesktop}
-        setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.white}
-        setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.variants.white}
-        windowHeight={windowHeight}
-      >
-        <Thoughtful
-          content={{
-            ...props.continuing_effort,
-          }}
-        />
-      </BaseContainer> */}
+      </GridContainer>
 
       <SubNavigation
         next={subPages_.next}

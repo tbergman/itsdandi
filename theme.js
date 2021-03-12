@@ -289,6 +289,7 @@ const theme = {
           position: "relative",
           ".buttonwrapper": {
             position: "absolute",
+            zIndex: 1,
             left: [
               "20px",
               (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
@@ -2230,6 +2231,7 @@ const theme = {
   },
   components: {
     containers: { ...containers },
+
     quotetext: { ...quotetext },
     quoteimage: { ...quoteimage },
     textBlockAndLinks: { ...textBlockAndLinks },

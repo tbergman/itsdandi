@@ -25,12 +25,12 @@ const TextBlockAndLinks = ({ content }) => {
             {lineBreaks(body_section2)}
           </Styled.p>
         </div>
-        <div className="TextBlock__team slideUp">
+        <div className="TextBlock__list slideUp">
           <div className="TextBlock__divider">
             <span />
           </div>
-          <div className="TextBlock__teamHeader">
-            <Styled.p className="TextBlock__teamHeadertext">
+          <div className="TextBlock__listHeader">
+            <Styled.p className="TextBlock__listHeaderText">
               {link_description}
             </Styled.p>
           </div>

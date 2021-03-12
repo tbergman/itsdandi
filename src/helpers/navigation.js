@@ -32,19 +32,24 @@ export const navItems = [
     ],
   },
   {
-    title: "Analyze",
+    title: "Product",
     type: "product",
-    url: "/product/analyze",
+    url: "/product/discover",
     sub: [
       {
-        title: "Analyze",
-        url: "/product/analyze",
-        type: "analyze",
+        title: "Discover",
+        url: "/product/discover",
+        type: "discover",
       },
       {
-        title: "Collaborate",
-        url: "/product/collaborate",
-        type: "collaborate",
+        title: "Reporting",
+        url: "/product/reporting",
+        type: "reporting",
+      },
+      {
+        title: "Data Collection",
+        url: "/product/datacollection",
+        type: "datacollection",
       },
       {
         title: "Security",
