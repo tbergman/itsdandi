@@ -6,10 +6,10 @@ import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
 import Compensation from "../../src/components/values/payequity/compensation";
 import Reports from "../../src/components/values/payequity/reports";
-import Quote from "../../src/components/quote";
+
 import Affordable from "../../src/components/values/payequity/affordable";
 import CompensationGraph from "../../src/components/values/payequity/compensationgraph";
-import TopGraphic from "../../src/components/values/payequity/topgraphic";
+
 import MobileNav from "../../src/components/mobilenav";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/values/pages";
@@ -17,18 +17,15 @@ import MobileMenu from "../../src/components/mobilemenu";
 import { useState, useEffect } from "react";
 import { useWindowSize } from "@react-hook/window-size";
 import Butter from "buttercms";
-
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import { isServer } from "../../src/helpers/utils";
+import GridContainer from "../../src/components/gridcontainer";
+import Section from "../../src/components/section";
+import QuoteText from "../../src/components/quotetext";
+import QuoteImage from "../../src/components/quoteimage";
 
 const Values = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -167,18 +164,24 @@ const Values = (props) => {
           ...props.reports,
         }}
       />
-      <Quote
+
+      {/* Quote */}
+      <GridContainer
+        isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navBarVariants.gray}
         windowHeight={windowHeight}
-        navBarStyling={theme.components.navBarVariants.gray2}
-        bg="#FAFAFA"
-        content={{
-          ...props.quote,
-        }}
-        isDesktop={isDesktop}
-      />
+        bg={"#F8F8F8"}
+      >
+        <Section variant="components.section.one.primary" shouldSlideUp={true}>
+          <QuoteText content={{ ...props.quote }} />
+        </Section>
+        <Section variant="components.section.two.primary">
+          <QuoteImage content={{ ...props.quote }} />
+        </Section>
+      </GridContainer>
 
       <Affordable
         setSubMenuStyling={setSubMenuStyling}
