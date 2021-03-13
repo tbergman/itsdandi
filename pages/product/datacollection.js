@@ -169,7 +169,7 @@ const DataCollection = (props) => {
         </Section>
       </GridContainer>
 
-      {/* Video One */}
+      {/* Static Image */}
       <FreeContainer
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
@@ -185,12 +185,30 @@ const DataCollection = (props) => {
             py: [10],
           }}
         >
-          <VideoSection
-            content={{
-              ...props.video1,
-              video_url: "/assets/videos/DISCOVER1.mp4",
+          <div
+            sx={{
+              display: "flex",
+              justifyContent: "center",
             }}
-          />
+          >
+            <div
+              sx={{
+                width: ["1200px"],
+                height: ["calc(1200px * .54)"],
+                position: "relative",
+              }}
+              className="noOverflow"
+            >
+              <picture className="containedPicture">
+                <source
+                  media="(min-width: 800px)"
+                  srcSet={props.image.desktop_image}
+                ></source>
+                <source srcSet={props.imagemobile_image}></source>
+                <img src={props.image.desktop_image} alt="" />
+              </picture>
+            </div>
+          </div>
         </Section>
       </FreeContainer>
 
