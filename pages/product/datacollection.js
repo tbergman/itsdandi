@@ -10,7 +10,7 @@ import InAction from "../../src/components/product/analyze/inaction";
 import Sharable from "../../src/components/product/analyze/sharable";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
-import TopContent from "../../src/components/product/analyze/topcontent";
+import TopContent from "../../src/components/product/discover/topcontent";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
 import { isServer, lineBreaks } from "../../src/helpers/utils";
@@ -29,6 +29,8 @@ import VideoSection from "../../src/components/videosection";
 import QuoteText from "../../src/components/quotetext";
 import QuoteImage from "../../src/components/quoteimage";
 import LearnMoreLink from "../../src/components/learnmorelink";
+import SimpleList from "../../src/components/simplelist";
+import LinkList from "../../src/components/linklist";
 
 const DataCollection = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -161,11 +163,13 @@ const DataCollection = (props) => {
             sx={{
               fontSize: ["24px !important"],
               lineHeight: ["31.2px !important"],
+              mb: [3],
             }}
           >
-            {lineBreaks(props.collect.body_title)}
+            {props.collect.body_title}
           </Styled.p>
-          <Styled.p>{lineBreaks(props.collect.body)}</Styled.p>
+          <SimpleList list={props.collect.list} />
+          <LinkList links={props.collect.links} />
         </Section>
       </GridContainer>
 
@@ -174,6 +178,7 @@ const DataCollection = (props) => {
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.variants.default}
         navBarStyling={theme.components.navBarVariants.default}
         windowHeight={windowHeight}
         bg={theme.colors.black}
@@ -242,22 +247,13 @@ const DataCollection = (props) => {
             sx={{
               fontSize: ["24px !important"],
               lineHeight: ["31.2px !important"],
+              mb: [3],
             }}
           >
-            {lineBreaks(props.support.body_title)}
+            {props.support.body_title}
           </Styled.p>
-          <Styled.p>{lineBreaks(props.support.body)}</Styled.p>
-          <div
-            sx={{
-              mt: [2],
-            }}
-          >
-            <LearnMoreLink
-              href={props.support.link_url}
-              text={props.support.link_text}
-              color="#335AFF"
-            />
-          </div>
+          <SimpleList list={props.support.list} />
+          <LinkList links={props.support.links} />
         </Section>
       </GridContainer>
 

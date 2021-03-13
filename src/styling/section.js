@@ -4,7 +4,13 @@ export const section = {
   },
   one: {
     primary: {
-      gridArea: ["1/1/2/-1", "1/3/2/7"],
+      gridArea: ["1/1/2/-1", "1/3/2/8"],
+      pr: [
+        0,
+        (t) => t.colWidthDesktop,
+        (t) => t.colWidthDesktopBig,
+        (t) => t.colWidthDesktopMassive,
+      ],
     },
     secondary: {
       gridArea: ["1/1/2/-1", "1/3/2/7"],

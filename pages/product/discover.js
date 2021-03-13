@@ -4,13 +4,9 @@ import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
-import Insights from "../../src/components/product/analyze/insights";
-import NewInsights from "../../src/components/product/analyze/newinsights";
-import InAction from "../../src/components/product/analyze/inaction";
-import Sharable from "../../src/components/product/analyze/sharable";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
-import TopContent from "../../src/components/product/analyze/topcontent";
+import TopContent from "../../src/components/product/discover/topcontent";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
 import { isServer, lineBreaks } from "../../src/helpers/utils";
@@ -34,6 +30,7 @@ import FreeContainer from "../../src/components/freecontainer";
 import VideoSection from "../../src/components/videosection";
 import QuoteText from "../../src/components/quotetext";
 import QuoteImage from "../../src/components/quoteimage";
+import SimpleList from "../../src/components/simplelist";
 
 const Discover = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -52,7 +49,7 @@ const Discover = (props) => {
     ...theme.components.submenu.variants.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navBarVariants.white,
+    ...theme.components.navBarVariants.gray,
   });
   useEffect(() => {
     if (window) {
@@ -116,11 +113,11 @@ const Discover = (props) => {
           ...props.header,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.white}
+        navBarStyling={theme.components.navBarVariants.gray}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
-        bg="#FFF"
+        bg="#F8F8F8"
         styling={{
           mb: [12, 23],
         }}
@@ -170,7 +167,7 @@ const Discover = (props) => {
           >
             {lineBreaks(props.explore.body_title)}
           </Styled.p>
-          <Styled.p>{lineBreaks(props.explore.body)}</Styled.p>
+          <SimpleList list={props.explore.list} />
         </Section>
       </GridContainer>
 
@@ -224,16 +221,21 @@ const Discover = (props) => {
             mt: [16],
             mb: 12,
           }}
+          shouldSlideUp={true}
         >
           <Styled.p
             sx={{
               fontSize: ["24px !important"],
               lineHeight: ["31.2px !important"],
+              mb: [3],
             }}
           >
             {lineBreaks(props.intersectionality.body_title)}
           </Styled.p>
-          <Styled.p>{lineBreaks(props.intersectionality.body)}</Styled.p>
+          <SimpleList
+            list={props.intersectionality.list}
+            shouldSlideUp={true}
+          />
         </Section>
       </GridContainer>
 
@@ -287,6 +289,7 @@ const Discover = (props) => {
             mt: [16],
             mb: 12,
           }}
+          shouldSlideUp={true}
         >
           <Styled.p
             sx={{
@@ -296,7 +299,7 @@ const Discover = (props) => {
           >
             {lineBreaks(props.collaboration.body_title)}
           </Styled.p>
-          <Styled.p>{lineBreaks(props.collaboration.body)}</Styled.p>
+          <SimpleList list={props.collaboration.list} shouldSlideUp={true} />
         </Section>
       </GridContainer>
 
@@ -330,9 +333,9 @@ const Discover = (props) => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.gray2}
+        navBarStyling={theme.components.navBarVariants.gray}
         windowHeight={windowHeight}
-        bg={theme.colors.white}
+        bg="#F8F8F8"
       >
         <Section variant="components.section.one.primary" shouldSlideUp={true}>
           <QuoteText content={{ ...props.quote }} />

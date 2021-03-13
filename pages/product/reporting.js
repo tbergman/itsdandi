@@ -10,7 +10,7 @@ import InAction from "../../src/components/product/analyze/inaction";
 import Sharable from "../../src/components/product/analyze/sharable";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
-import TopContent from "../../src/components/product/analyze/topcontent";
+import TopContent from "../../src/components/product/discover/topcontent";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
 import { isServer, lineBreaks } from "../../src/helpers/utils";
@@ -29,6 +29,8 @@ import VideoSection from "../../src/components/videosection";
 import QuoteText from "../../src/components/quotetext";
 import QuoteImage from "../../src/components/quoteimage";
 import LearnMoreLink from "../../src/components/learnmorelink";
+import SimpleList from "../../src/components/simplelist";
+import LinkList from "../../src/components/linklist";
 
 const Reporting = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,7 +49,7 @@ const Reporting = (props) => {
     ...theme.components.submenu.variants.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navBarVariants.white,
+    ...theme.components.navBarVariants.gray,
   });
   useEffect(() => {
     if (window) {
@@ -69,8 +71,6 @@ const Reporting = (props) => {
       ? body.classList.add("menu-open")
       : body.classList.remove("menu-open");
   };
-
-  console.log(subPages_.next);
 
   return (
     <div
@@ -113,11 +113,11 @@ const Reporting = (props) => {
           ...props.header,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.white}
+        navBarStyling={theme.components.navBarVariants.gray}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
-        bg="#FFF"
+        bg="#F8F8F8"
         styling={{
           mb: [12, 23],
         }}
@@ -167,7 +167,7 @@ const Reporting = (props) => {
           >
             {lineBreaks(props.dashboards.body_title)}
           </Styled.p>
-          <Styled.p>{lineBreaks(props.dashboards.body)}</Styled.p>
+          <SimpleList list={props.dashboards.list} />
         </Section>
       </GridContainer>
 
@@ -226,22 +226,13 @@ const Reporting = (props) => {
             sx={{
               fontSize: ["24px !important"],
               lineHeight: ["31.2px !important"],
+              mb: [3],
             }}
           >
-            {lineBreaks(props.report_builder.body_title)}
+            {props.report_builder.body_title}
           </Styled.p>
-          <Styled.p>{lineBreaks(props.report_builder.body)}</Styled.p>
-          <div
-            sx={{
-              mt: [2],
-            }}
-          >
-            <LearnMoreLink
-              href={props.report_builder.link_url}
-              text={props.report_builder.link_text}
-              color="#335AFF"
-            />
-          </div>
+          <SimpleList list={props.report_builder.list} />
+          <LinkList links={props.report_builder.links} />
         </Section>
       </GridContainer>
 
@@ -269,7 +260,7 @@ const Reporting = (props) => {
         </Section>
       </FreeContainer>
 
-      {/* Collaboration */}
+      {/* Roles & Permissions */}
       <GridContainer
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
@@ -300,11 +291,12 @@ const Reporting = (props) => {
             sx={{
               fontSize: ["24px !important"],
               lineHeight: ["31.2px !important"],
+              mb: [3],
             }}
           >
-            {lineBreaks(props.roles.body_title)}
+            {props.roles.body_title}
           </Styled.p>
-          <Styled.p>{lineBreaks(props.roles.body)}</Styled.p>
+          <SimpleList list={props.roles.list} />
         </Section>
       </GridContainer>
 

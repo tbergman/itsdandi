@@ -17,6 +17,7 @@ import { section } from "./src/styling/section";
 import { quotetext } from "./src/styling/quotetext";
 import { quoteimage } from "./src/styling/quoteimage";
 import { textBlockAndLinks } from "./src/styling/textblock_and_links";
+import { discover } from "./src/styling/product/discover";
 
 const theme = {
   breakpoints: ["1024px", "1500px", "2000px"],
@@ -284,44 +285,8 @@ const theme = {
       leadership: { ...leadership },
     },
     product: {
+      discover: { ...discover },
       analyze: {
-        topcontent: {
-          position: "relative",
-          ".buttonwrapper": {
-            position: "absolute",
-            zIndex: 1,
-            left: [
-              "20px",
-              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 60px) + ${t.desktopMassiveGutters})`,
-            ],
-            bottom: ["-26px", "-24px"],
-          },
-          ".graphics": {
-            position: "absolute",
-            left: [
-              (t) => `calc(calc(${t.colWidthMob} * 4) + 70px)`,
-              (t) => `calc(calc(${t.colWidthDesktop} * 8) + 360px)`,
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktopBig} * 8) + 320px) + ${t.desktopBigGutters})`,
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktopMassive} * 8) + 320px) + ${t.desktopMassiveGutters})`,
-            ],
-            height: ["90px", "310px"],
-            bottom: 0,
-            right: [0, "40px"],
-            overflow: "hidden",
-            display: "flex",
-            alignItems: "flex-end",
-            svg: {
-              width: "100%",
-              height: "100%",
-            },
-          },
-        },
         insights: {
           bg: "black",
           ".top": {
@@ -2508,11 +2473,13 @@ const theme = {
       textDecoration: "none",
       display: "flex",
       cursor: "pointer",
+
       zIndex: 98,
       alignItems: "center",
       width: "fit-content",
       p: {
         mr: "10px",
+        fontFamily: "medium",
       },
       ".arrow": {
         display: "flex",

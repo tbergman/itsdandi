@@ -183,7 +183,7 @@ const DEIMetrics = (props) => {
           shouldSlideUp={true}
           styling={{
             mt: [16],
-            mb: [12],
+            mb: [10],
           }}
         >
           <div className="slideUp">
@@ -236,7 +236,7 @@ const DEIMetrics = (props) => {
           shouldSlideUp={true}
           styling={{
             mt: [16],
-            mb: [12],
+            mb: [0],
           }}
         >
           <div className="slideUp">
@@ -270,7 +270,7 @@ const DEIMetrics = (props) => {
           shouldSlideUp={true}
           styling={{
             mt: [16],
-            mb: 12,
+            mb: [10],
           }}
         >
           <div className="slideUp">
