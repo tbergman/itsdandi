@@ -78,6 +78,15 @@ export const home = {
         },
       },
     },
+    ".Top__learnMore": {
+      mt: [4],
+      display: "flex",
+      alignItems: "center",
+      cursor: "pointer",
+    },
+    ".Top__arrow": {
+      mr: [2],
+    },
     bars: {
       gridArea: ["2/1/3/-1"],
       position: "relative",

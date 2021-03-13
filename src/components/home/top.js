@@ -35,6 +35,33 @@ const Home = ({
           >
             <Styled.p className="Top__text-button-text">{buttonText}</Styled.p>
           </div>
+          <div className="Top__learnMore">
+            <svg
+              className="Top__arrow"
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 8L7 13L2 8"
+                stroke="#F2F2F2"
+                strokeOpacity="0.7"
+                strokeWidth="1.6"
+              />
+              <line
+                x1="7.00039"
+                y1="13"
+                x2="7.00039"
+                y2="-1.18022e-07"
+                stroke="#F2F2F2"
+                strokeOpacity="0.7"
+                strokeWidth="1.8"
+              />
+            </svg>
+            <Styled.p>Learn more about Dandi</Styled.p>
+          </div>
         </div>
 
         <Graphics />
