@@ -25,7 +25,7 @@ export const datacollection = {
         (t) =>
           `calc(calc(calc(${t.colWidthDesktopMassive} * 7) + 240px) + ${t.desktopMassiveGutters})`,
       ],
-      height: ["90x", "150px", "200px"],
+      height: ["90x", "150px"],
       bottom: 0,
       right: [
         0,

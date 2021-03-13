@@ -15,12 +15,6 @@ import { useState, useEffect } from "react";
 import Butter from "buttercms";
 import { isServer } from "../../src/helpers/utils";
 
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
@@ -28,6 +22,10 @@ import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
+import GridContainer from "../../src/components/gridcontainer";
+import Section from "../../src/components/section";
+import QuoteText from "../../src/components/quotetext";
+import QuoteImage from "../../src/components/quoteimage";
 
 const Product = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -142,18 +140,25 @@ const Product = (props) => {
           ...props.best_in_class,
         }}
       />
-      <Quote
+
+      {/* Quote */}
+      <GridContainer
         isDesktop={isDesktop}
-        content={{
-          ...props.quote,
-        }}
-        bg="white"
-        setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.gray2}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navBarVariants.gray}
         windowHeight={windowHeight}
-      />
+        bg={"#F8F8F8"}
+      >
+        <Section variant="components.section.one.primary" shouldSlideUp={true}>
+          <QuoteText content={{ ...props.quote }} />
+        </Section>
+        <Section variant="components.section.two.primary">
+          <QuoteImage content={{ ...props.quote }} />
+        </Section>
+      </GridContainer>
+
       <Workflows
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
