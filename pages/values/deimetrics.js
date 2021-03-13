@@ -17,16 +17,8 @@ import TopContent from "../../src/components/values/deimetrics/topcontent";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
 import { isServer, lineBreaks } from "../../src/helpers/utils";
-import StandardModule from "../../src/components/standardmodule";
 import Section from "../../src/components/section";
 import QuoteImage from "../../src/components/quoteimage";
-
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
 import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
@@ -194,14 +186,15 @@ const DEIMetrics = (props) => {
         </Section>
       </GridContainer>
 
+      {/* Quote1 */}
       <GridContainer
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.gray2}
+        navBarStyling={theme.components.navBarVariants.gray}
         windowHeight={windowHeight}
-        bg={theme.colors.white}
+        bg="#F8F8F8"
       >
         <Section variant="components.section.one.primary" shouldSlideUp={true}>
           <QuoteText content={{ ...props.quote1 }} />
@@ -285,9 +278,9 @@ const DEIMetrics = (props) => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.gray2}
+        navBarStyling={theme.components.navBarVariants.gray}
         windowHeight={windowHeight}
-        bg={theme.colors.white}
+        bg={"#F8F8F8"}
       >
         <Section variant="components.section.one.primary" shouldSlideUp={true}>
           <QuoteText content={{ ...props.quote2 }} />
