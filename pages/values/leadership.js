@@ -26,6 +26,10 @@ import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
 import { findLastIndex } from "ramda";
+import GridContainer from "../../src/components/gridcontainer";
+import Section from "../../src/components/section";
+import QuoteText from "../../src/components/quotetext";
+import QuoteImage from "../../src/components/quoteimage";
 
 const Values = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -140,18 +144,25 @@ const Values = (props) => {
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
       />
-      <Quote
+
+      {/* Quote */}
+      <GridContainer
         isDesktop={isDesktop}
-        setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.gray}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
+        navBarStyling={theme.components.navBarVariants.white}
+        setNavbarStyling={setNavbarStyling}
         windowHeight={windowHeight}
-        content={{
-          ...props.quote,
-        }}
-        bg="yellow"
-      />
+        bg={theme.colors.yellow}
+      >
+        <Section variant="components.section.one.primary" shouldSlideUp={true}>
+          <QuoteText content={{ ...props.quote }} />
+        </Section>
+        <Section variant="components.section.two.primary">
+          <QuoteImage content={{ ...props.quote }} />
+        </Section>
+      </GridContainer>
+
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>

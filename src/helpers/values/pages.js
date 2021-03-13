@@ -16,7 +16,7 @@ export default [
     url: "/values/leadership",
   },
   {
-    name: "Analyze",
-    url: "/product/analyze",
+    name: "Product",
+    url: "/product/discover",
   },
 ];
