@@ -281,11 +281,12 @@ export const home = {
       mb: [0, "224px"],
       height: [
         "277px",
-        (t) => `calc(calc(calc(${t.colWidthDesktop} * 6) + 280px) * .6)`,
-        (t) =>
-          `calc(calc(calc(calc(${t.colWidthDesktopBig} * 6) + 240px) + ${t.desktopBigGutters}) * .6)`,
-        (t) =>
-          `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 6) + 240px) + ${t.desktopMassiveGutters}) * .6)`,
+        "500px",
+        // (t) => `calc(calc(calc(${t.colWidthDesktop} * 6) + 280px) * .6)`,
+        // (t) =>
+        //   `calc(calc(calc(calc(${t.colWidthDesktopBig} * 6) + 240px) + ${t.desktopBigGutters}) * .6)`,
+        // (t) =>
+        //   `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 6) + 240px) + ${t.desktopMassiveGutters}) * .6)`,
       ],
       position: "relative",
       width: [
@@ -305,8 +306,9 @@ export const home = {
       ".LearnMore__imageWrapper-image": {
         position: "absolute",
         height: "100%",
-        width: ["unset", "100%"],
+        // width: ["unset", "100%"],
         right: 0,
+        left: 0,
       },
     },
     ".LearnMore__text": {

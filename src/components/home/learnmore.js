@@ -50,8 +50,8 @@ const LearnMore = ({
         id="learnmore"
         className="LearnMore"
       >
-        <TextParallax />
-        <div className="LearnMore__imageWrapper">
+        {/* <TextParallax /> */}
+        <div className="LearnMore__imageWrapper noOverflow">
           <picture>
             <source media="(min-width: 800px)" srcSet={desktopImage}></source>
             <source srcSet={mobileImage}></source>
@@ -62,7 +62,7 @@ const LearnMore = ({
             />
           </picture>
         </div>
-        <motion.div ref={ref}   className="LearnMore__text">
+        <motion.div ref={ref} className="LearnMore__text">
           <motion.div
             initial="hidden"
             custom={1}
