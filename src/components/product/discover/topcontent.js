@@ -1,14 +1,26 @@
 /** @jsx jsx */
 import { motion } from "framer-motion";
-import { jsx, get } from "theme-ui";
-import {
-  TopContentCircles,
-  TopContentLines,
-} from "../../../helpers/animations/product/analyze";
+import { jsx } from "theme-ui";
+import { useRef, useEffect } from "react";
 import Button from "../button";
+import { gsap } from "gsap";
 
 const TopContent = ({ isDesktop, content }) => {
+  const ref = useRef(null);
   const { button_text, url } = content;
+
+  useEffect(() => {
+    const animation = gsap.to(ref.current.getElementById("magnifingGlass"), {
+      x: -25,
+      duration: 0.5,
+      ease: "power2.out",
+      delay: 0.4,
+    });
+    return () => {
+      animation.kill();
+    };
+  }, []);
+
   return (
     <div
       sx={{
@@ -20,6 +32,7 @@ const TopContent = ({ isDesktop, content }) => {
       </div>
       <div className="graphics">
         <svg
+          ref={ref}
           width="303"
           height="302"
           viewBox="0 0 303 302"

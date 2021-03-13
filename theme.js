@@ -18,6 +18,8 @@ import { quotetext } from "./src/styling/quotetext";
 import { quoteimage } from "./src/styling/quoteimage";
 import { textBlockAndLinks } from "./src/styling/textblock_and_links";
 import { discover } from "./src/styling/product/discover";
+import { reporting } from "./src/styling/product/reporting";
+import { datacollection } from "./src/styling/product/datacollection";
 
 const theme = {
   breakpoints: ["1024px", "1500px", "2000px"],
@@ -286,6 +288,8 @@ const theme = {
     },
     product: {
       discover: { ...discover },
+      reporting: { ...reporting },
+      datacollection: { ...datacollection },
       analyze: {
         insights: {
           bg: "black",

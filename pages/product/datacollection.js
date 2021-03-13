@@ -4,13 +4,9 @@ import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
-import Insights from "../../src/components/product/analyze/insights";
-import NewInsights from "../../src/components/product/analyze/newinsights";
-import InAction from "../../src/components/product/analyze/inaction";
-import Sharable from "../../src/components/product/analyze/sharable";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
-import TopContent from "../../src/components/product/discover/topcontent";
+import TopContent from "../../src/components/product/datacollection/topcontent";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
 import { isServer, lineBreaks } from "../../src/helpers/utils";
@@ -49,7 +45,7 @@ const DataCollection = (props) => {
     ...theme.components.submenu.variants.white,
   });
   const [navBarStyling, setNavbarStyling] = useState({
-    ...theme.components.navBarVariants.white,
+    ...theme.components.navBarVariants.gray,
   });
   useEffect(() => {
     if (window) {
@@ -113,11 +109,11 @@ const DataCollection = (props) => {
           ...props.header,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.white}
+        navBarStyling={theme.components.navBarVariants.gray}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
-        bg="#FFF"
+        bg="#F8F8F8"
         styling={{
           mb: [12, 23],
         }}

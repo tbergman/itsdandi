@@ -10,13 +10,12 @@ import InAction from "../../src/components/product/analyze/inaction";
 import Sharable from "../../src/components/product/analyze/sharable";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
-import TopContent from "../../src/components/product/discover/topcontent";
+import TopContent from "../../src/components/product/reporting/topcontent";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
 import { isServer, lineBreaks } from "../../src/helpers/utils";
 import GridContainer from "../../src/components/gridcontainer";
 import Section from "../../src/components/section";
-
 import MobileNav from "../../src/components/mobilenav";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
