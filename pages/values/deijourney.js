@@ -61,7 +61,7 @@ const Values = (props) => {
 
   const subPages_ = subPages({
     pages,
-    currentIndex: 1,
+    currentIndex: 2,
     nextBg: "violet",
     prevBg: "blue",
   });
