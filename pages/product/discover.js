@@ -12,13 +12,6 @@ import Butter from "buttercms";
 import { isServer, lineBreaks } from "../../src/helpers/utils";
 import GridContainer from "../../src/components/gridcontainer";
 import Section from "../../src/components/section";
-
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
@@ -176,6 +169,7 @@ const Discover = (props) => {
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.variants.default}
         navBarStyling={theme.components.navBarVariants.default}
         windowHeight={windowHeight}
         bg={theme.colors.black}
@@ -244,6 +238,7 @@ const Discover = (props) => {
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.variants.default}
         navBarStyling={theme.components.navBarVariants.default}
         windowHeight={windowHeight}
         bg={theme.colors.black}
@@ -309,6 +304,7 @@ const Discover = (props) => {
         setNavbarStyling={setNavbarStyling}
         setSubMenuStyling={setSubMenuStyling}
         navBarStyling={theme.components.navBarVariants.default}
+        subMenuStyling={theme.components.submenu.variants.default}
         windowHeight={windowHeight}
         bg={theme.colors.black}
       >
