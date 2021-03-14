@@ -142,7 +142,7 @@ const DataCollection = (props) => {
           variant="components.section.one.secondary"
           shouldSlideUp={true}
           styling={{
-            mt: [16],
+            mt: [8, 16],
           }}
         >
           <div className="slideUp">
@@ -152,8 +152,8 @@ const DataCollection = (props) => {
         <Section
           variant="components.section.two.primary"
           styling={{
-            mt: [16],
-            mb: 12,
+            mt: [3, 16],
+            mb: [4, 12],
           }}
         >
           <Styled.p
@@ -264,7 +264,7 @@ const DataCollection = (props) => {
           variant="components.section.one.secondary"
           shouldSlideUp={true}
           styling={{
-            mt: [16],
+            mt: [8, 16],
           }}
         >
           <div className="slideUp">
@@ -274,8 +274,8 @@ const DataCollection = (props) => {
         <Section
           variant="components.section.two.primary"
           styling={{
-            mt: [16],
-            mb: 12,
+            mt: [3, 16],
+            mb: [4, 12],
           }}
         >
           <Styled.p

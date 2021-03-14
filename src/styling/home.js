@@ -316,8 +316,8 @@ export const home = {
         position: "absolute",
         height: "100%",
         // width: ["unset", "100%"],
-        right: 0,
-        left: 0,
+        right: [0, "unset"],
+        left: ["unset", 0],
       },
     },
     ".LearnMore__text": {
@@ -565,7 +565,7 @@ export const home = {
       },
       ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper": {
         height: "100%",
-        px: [6],
+        px: [3, 6],
         py: [2],
 
         img: {

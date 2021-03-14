@@ -120,7 +120,7 @@ const EquityPay = (props) => {
         }}
         bg="#FFF"
         styling={{
-          mb: [23, 15],
+          mb: [8, 15],
         }}
       >
         {/* <TopGraphic

@@ -139,7 +139,7 @@ const Discover = (props) => {
           variant="components.section.one.secondary"
           shouldSlideUp={true}
           styling={{
-            mt: [16],
+            mt: [8, 16],
           }}
         >
           <div className="slideUp">
@@ -149,8 +149,8 @@ const Discover = (props) => {
         <Section
           variant="components.section.two.primary"
           styling={{
-            mt: [16],
-            mb: 12,
+            mt: [3, 16],
+            mb: [8, 12],
           }}
         >
           <Styled.p
@@ -203,7 +203,7 @@ const Discover = (props) => {
           variant="components.section.one.secondary"
           shouldSlideUp={true}
           styling={{
-            mt: [16],
+            mt: [8, 16],
           }}
         >
           <div className="slideUp">
@@ -213,8 +213,8 @@ const Discover = (props) => {
         <Section
           variant="components.section.two.primary"
           styling={{
-            mt: [16],
-            mb: 12,
+            mt: [3, 16],
+            mb: [8, 12],
           }}
           shouldSlideUp={true}
         >
@@ -272,7 +272,7 @@ const Discover = (props) => {
           variant="components.section.one.secondary"
           shouldSlideUp={true}
           styling={{
-            mt: [16],
+            mt: [8, 16],
           }}
         >
           <div className="slideUp">
@@ -282,8 +282,8 @@ const Discover = (props) => {
         <Section
           variant="components.section.two.primary"
           styling={{
-            mt: [16],
-            mb: 12,
+            mt: [3, 16],
+            mb: [8, 12],
           }}
           shouldSlideUp={true}
         >

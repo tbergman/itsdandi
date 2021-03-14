@@ -238,7 +238,7 @@ const DEIMetrics = (props) => {
           variant="components.section.one.primary"
           shouldSlideUp={true}
           styling={{
-            mt: [16],
+            mt: [8, 16],
           }}
         >
           <div className="slideUp">
@@ -249,7 +249,7 @@ const DEIMetrics = (props) => {
           variant="components.section.two.primary"
           shouldSlideUp={true}
           styling={{
-            mt: [16],
+            mt: [3, 16],
             mb: [0],
           }}
         >
@@ -272,7 +272,7 @@ const DEIMetrics = (props) => {
           variant="components.section.one.primary"
           shouldSlideUp={true}
           styling={{
-            mt: [16],
+            mt: [8, 16],
           }}
         >
           <div className="slideUp">
@@ -283,8 +283,8 @@ const DEIMetrics = (props) => {
           variant="components.section.two.primary"
           shouldSlideUp={true}
           styling={{
-            mt: [16],
-            mb: [10],
+            mt: [3, 16],
+            mb: [8, 10],
           }}
         >
           <div className="slideUp">
@@ -332,7 +332,6 @@ const DEIMetrics = (props) => {
       </GridContainer>
 
       {/* Continuing Effort */}
-
       <GridContainer
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
@@ -345,7 +344,7 @@ const DEIMetrics = (props) => {
           variant="components.section.one.primary"
           shouldSlideUp={true}
           styling={{
-            mt: [16],
+            mt: [8, 16],
           }}
         >
           <div className="slideUp">
@@ -356,8 +355,8 @@ const DEIMetrics = (props) => {
           variant="components.section.two.primary"
           shouldSlideUp={true}
           styling={{
-            mt: [16],
-            mb: 12,
+            mt: [3, 16],
+            mb: [8, 12],
           }}
         >
           <TextBlockAndLinks content={{ ...props.continuing_effort }} />
