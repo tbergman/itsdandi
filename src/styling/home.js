@@ -41,8 +41,8 @@ export const home = {
       mt: [24, "352px"],
       mb: [2, 0],
       ".Top__text-header": {
-        fontSize: ["unset", "72px"],
-        lineHeight: ["unset", "70px"],
+        fontSize: ["36px", "72px"],
+        lineHeight: ["43.2px", "70px"],
         mr: [
           "unset",
           (t) => t.colWidthDesktop,
@@ -80,7 +80,7 @@ export const home = {
     },
     ".Top__learnMore": {
       mt: [4],
-      display: "flex",
+      display: ["none", "flex"],
       alignItems: "center",
       cursor: "pointer",
     },
