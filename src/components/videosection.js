@@ -13,8 +13,8 @@ const VideoSection = ({ content }) => {
     >
       <div
         sx={{
-          width: ["1200px"],
-          height: ["calc(1200px * .54)"],
+          width: ["100vw", "1200px"],
+          height: ["calc(100vw * .54)", "calc(1200px * .54)"],
           position: "relative",
         }}
         className="VideoSection__container noOverflow"
@@ -29,6 +29,7 @@ const VideoSection = ({ content }) => {
           }}
           loop={true}
           autoPlay
+          playsInline
         >
           <source src={video_url} type="video/mp4"></source>
         </video>
