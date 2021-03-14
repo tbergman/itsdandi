@@ -40,7 +40,7 @@ const Discover = (props) => {
   });
   const [windowHeight, setWindowHeight] = useState(500);
   const [subMenuStyling, setSubMenuStyling] = useState({
-    ...theme.components.submenu.variants.white,
+    ...theme.components.submenu.variants.gray,
   });
   const [navBarStyling, setNavbarStyling] = useState({
     ...theme.components.navBarVariants.gray,
@@ -109,7 +109,7 @@ const Discover = (props) => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navBarVariants.gray}
         setSubMenuStyling={setSubMenuStyling}
-        subMenuStyling={theme.components.submenu.variants.white}
+        subMenuStyling={theme.components.submenu.variants.gray}
         windowHeight={windowHeight}
         bg="#F8F8F8"
         styling={{

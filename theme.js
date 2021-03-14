@@ -20,6 +20,7 @@ import { textBlockAndLinks } from "./src/styling/textblock_and_links";
 import { discover } from "./src/styling/product/discover";
 import { reporting } from "./src/styling/product/reporting";
 import { datacollection } from "./src/styling/product/datacollection";
+import { learnMoreLink } from "./src/styling/learmorelink";
 
 const theme = {
   breakpoints: ["1024px", "1500px", "2000px"],
@@ -2472,24 +2473,7 @@ const theme = {
         },
       },
     },
-    learnMoreLink: {
-      mb: [4],
-      textDecoration: "none",
-      display: "flex",
-      cursor: "pointer",
-
-      zIndex: 98,
-      alignItems: "center",
-      width: "fit-content",
-      p: {
-        mr: "10px",
-        fontFamily: "medium",
-      },
-      ".arrow": {
-        display: "flex",
-        alignItems: "center",
-      },
-    },
+    learnMoreLink: { ...learnMoreLink },
     quote: { ...quote },
     shared: {
       button: {

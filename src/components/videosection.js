@@ -1,14 +1,32 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
+import { useInView } from "react-intersection-observer";
+import { useEffect, useRef } from "react";
 
 const VideoSection = ({ content }) => {
+  const { inView, ref, entry } = useInView({});
+  const videoPlayer = useRef(null);
+
   const { desktop_image, mobile_image, video_url } = content;
+
+  useEffect(() => {
+    // play video
+    if (inView) {
+      videoPlayer.current.play();
+    }
+
+    return () => {
+      // clean up ?
+    };
+  }, [inView]);
+
   return (
     <div
       sx={{
         display: "flex",
         justifyContent: "center",
       }}
+      ref={ref}
       className="VideoSection"
     >
       <div
@@ -20,6 +38,7 @@ const VideoSection = ({ content }) => {
         className="VideoSection__container noOverflow"
       >
         <video
+          ref={videoPlayer}
           width="73%"
           sx={{
             position: "absolute",
@@ -28,7 +47,7 @@ const VideoSection = ({ content }) => {
             zIndex: 11,
           }}
           loop={true}
-          autoPlay
+          // autoPlay
           playsInline
         >
           <source src={video_url} type="video/mp4"></source>
