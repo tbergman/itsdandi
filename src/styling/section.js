@@ -1,6 +1,6 @@
 export const section = {
   wide: {
-    gridArea: ["1/1/2/3", "1/3/2/-1"],
+    gridArea: ["1/1/2/-1", "1/3/2/-1"],
   },
   one: {
     primary: {

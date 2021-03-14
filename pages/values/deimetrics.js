@@ -28,6 +28,7 @@ import GridContainer from "../../src/components/gridcontainer";
 import Categories from "../../src/components/categories";
 import QuoteText from "../../src/components/quotetext";
 import TextBlockAndLinks from "../../src/components/textblock_and_links";
+import React from "react";
 
 const DEIMetrics = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -143,7 +144,7 @@ const DEIMetrics = (props) => {
         <Section
           variant="components.section.wide"
           styling={{
-            mt: [16],
+            mt: [6, 16],
           }}
         >
           <Categories categories={props.categories} />
@@ -163,7 +164,7 @@ const DEIMetrics = (props) => {
           variant="components.section.one.primary"
           shouldSlideUp={true}
           styling={{
-            mt: [16],
+            mt: [8, 16],
           }}
         >
           <div className="slideUp">
@@ -174,8 +175,8 @@ const DEIMetrics = (props) => {
           variant="components.section.two.primary"
           shouldSlideUp={true}
           styling={{
-            mt: [16],
-            mb: [10],
+            mt: [3, 16],
+            mb: [6, 10],
           }}
         >
           <div className="slideUp">
@@ -196,12 +197,32 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
         bg="#F8F8F8"
       >
-        <Section variant="components.section.one.primary" shouldSlideUp={true}>
-          <QuoteText content={{ ...props.quote1 }} />
-        </Section>
-        <Section variant="components.section.two.primary">
-          <QuoteImage content={{ ...props.quote1 }} />
-        </Section>
+        {/* Change order depending on device */}
+        {isDesktop ? (
+          <React.Fragment>
+            <Section
+              variant="components.section.one.primary"
+              shouldSlideUp={true}
+            >
+              <QuoteText content={{ ...props.quote1 }} />
+            </Section>
+            <Section variant="components.section.two.primary">
+              <QuoteImage content={{ ...props.quote1 }} />
+            </Section>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <Section variant="components.section.one.primary">
+              <QuoteImage content={{ ...props.quote1 }} />
+            </Section>
+            <Section
+              variant="components.section.two.primary"
+              shouldSlideUp={true}
+            >
+              <QuoteText content={{ ...props.quote1 }} />
+            </Section>
+          </React.Fragment>
+        )}
       </GridContainer>
 
       {/* Metrics */}
@@ -282,12 +303,32 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
         bg={"#F8F8F8"}
       >
-        <Section variant="components.section.one.primary" shouldSlideUp={true}>
-          <QuoteText content={{ ...props.quote2 }} />
-        </Section>
-        <Section variant="components.section.two.primary">
-          <QuoteImage content={{ ...props.quote2 }} />
-        </Section>
+        {/* Change order depending on device */}
+        {isDesktop ? (
+          <React.Fragment>
+            <Section
+              variant="components.section.one.primary"
+              shouldSlideUp={true}
+            >
+              <QuoteText content={{ ...props.quote2 }} />
+            </Section>
+            <Section variant="components.section.two.primary">
+              <QuoteImage content={{ ...props.quote2 }} />
+            </Section>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <Section variant="components.section.one.primary">
+              <QuoteImage content={{ ...props.quote2 }} />
+            </Section>
+            <Section
+              variant="components.section.two.primary"
+              shouldSlideUp={true}
+            >
+              <QuoteText content={{ ...props.quote2 }} />
+            </Section>
+          </React.Fragment>
+        )}
       </GridContainer>
 
       {/* Continuing Effort */}

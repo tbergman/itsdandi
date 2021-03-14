@@ -27,6 +27,7 @@ import QuoteImage from "../../src/components/quoteimage";
 import LearnMoreLink from "../../src/components/learnmorelink";
 import SimpleList from "../../src/components/simplelist";
 import LinkList from "../../src/components/linklist";
+import React from "react";
 
 const DataCollection = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -193,8 +194,8 @@ const DataCollection = (props) => {
           >
             <div
               sx={{
-                width: ["1200px"],
-                height: ["calc(1200px * .54)"],
+                width: ["100vw", "1200px"],
+                height: ["calc(100vw * .54)", "calc(1200px * .54)"],
                 position: "relative",
               }}
               className="noOverflow"
@@ -222,12 +223,32 @@ const DataCollection = (props) => {
         windowHeight={windowHeight}
         bg={theme.colors.white}
       >
-        <Section variant="components.section.one.primary" shouldSlideUp={true}>
-          <QuoteText content={{ ...props.quote }} />
-        </Section>
-        <Section variant="components.section.two.primary">
-          <QuoteImage content={{ ...props.quote }} />
-        </Section>
+        {/* Change order depending on device */}
+        {isDesktop ? (
+          <React.Fragment>
+            <Section
+              variant="components.section.one.primary"
+              shouldSlideUp={true}
+            >
+              <QuoteText content={{ ...props.quote }} />
+            </Section>
+            <Section variant="components.section.two.primary">
+              <QuoteImage content={{ ...props.quote }} />
+            </Section>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <Section variant="components.section.one.primary">
+              <QuoteImage content={{ ...props.quote }} />
+            </Section>
+            <Section
+              variant="components.section.two.primary"
+              shouldSlideUp={true}
+            >
+              <QuoteText content={{ ...props.quote }} />
+            </Section>
+          </React.Fragment>
+        )}
       </GridContainer>
 
       {/* Support */}

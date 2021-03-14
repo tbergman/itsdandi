@@ -26,8 +26,9 @@ import GridContainer from "../../src/components/gridcontainer";
 import Section from "../../src/components/section";
 import QuoteText from "../../src/components/quotetext";
 import QuoteImage from "../../src/components/quoteimage";
+import React from "react";
 
-const Values = (props) => {
+const EquityPay = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [width, height] = useWindowSize();
   const [staticLogo, setStaticLogo] = useState(true);
@@ -175,12 +176,32 @@ const Values = (props) => {
         windowHeight={windowHeight}
         bg={"#F8F8F8"}
       >
-        <Section variant="components.section.one.primary" shouldSlideUp={true}>
-          <QuoteText content={{ ...props.quote }} />
-        </Section>
-        <Section variant="components.section.two.primary">
-          <QuoteImage content={{ ...props.quote }} />
-        </Section>
+        {/* Change order depending on device */}
+        {isDesktop ? (
+          <React.Fragment>
+            <Section
+              variant="components.section.one.primary"
+              shouldSlideUp={true}
+            >
+              <QuoteText content={{ ...props.quote }} />
+            </Section>
+            <Section variant="components.section.two.primary">
+              <QuoteImage content={{ ...props.quote }} />
+            </Section>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <Section variant="components.section.one.primary">
+              <QuoteImage content={{ ...props.quote }} />
+            </Section>
+            <Section
+              variant="components.section.two.primary"
+              shouldSlideUp={true}
+            >
+              <QuoteText content={{ ...props.quote }} />
+            </Section>
+          </React.Fragment>
+        )}
       </GridContainer>
 
       <Affordable
@@ -227,4 +248,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Values;
+export default EquityPay;
