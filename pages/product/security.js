@@ -153,31 +153,22 @@ const Product = (props) => {
         bg={"#F8F8F8"}
       >
         {/* Change order depending on device */}
-        {isDesktop ? (
-          <React.Fragment>
-            <Section
-              variant="components.section.one.primary"
-              shouldSlideUp={true}
-            >
-              <QuoteText content={{ ...props.quote }} />
-            </Section>
-            <Section variant="components.section.two.primary">
-              <QuoteImage content={{ ...props.quote }} />
-            </Section>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <Section variant="components.section.one.primary">
-              <QuoteImage content={{ ...props.quote }} />
-            </Section>
-            <Section
-              variant="components.section.two.primary"
-              shouldSlideUp={true}
-            >
-              <QuoteText content={{ ...props.quote }} />
-            </Section>
-          </React.Fragment>
-        )}
+
+        <Section
+          styling={{
+            ...theme.components.section.one.primary,
+          }}
+          shouldSlideUp={true}
+        >
+          <QuoteText content={{ ...props.quote }} />
+        </Section>
+        <Section
+          styling={{
+            ...theme.components.section.two.primary,
+          }}
+        >
+          <QuoteImage content={{ ...props.quote }} />
+        </Section>
       </GridContainer>
 
       <Workflows

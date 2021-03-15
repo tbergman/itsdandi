@@ -136,10 +136,10 @@ const Discover = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.one.secondary"
           shouldSlideUp={true}
           styling={{
             mt: [8, 16],
+            ...theme.components.section.one.secondary,
           }}
         >
           <div className="slideUp">
@@ -147,10 +147,10 @@ const Discover = (props) => {
           </div>
         </Section>
         <Section
-          variant="components.section.two.primary"
           styling={{
             mt: [3, 16],
             mb: [8, 12],
+            ...theme.components.section.two.primary,
           }}
         >
           <Styled.p
@@ -200,10 +200,10 @@ const Discover = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.one.secondary"
           shouldSlideUp={true}
           styling={{
             mt: [8, 16],
+            ...theme.components.section.one.secondary,
           }}
         >
           <div className="slideUp">
@@ -211,10 +211,10 @@ const Discover = (props) => {
           </div>
         </Section>
         <Section
-          variant="components.section.two.primary"
           styling={{
             mt: [3, 16],
             mb: [8, 12],
+            ...theme.components.section.two.primary,
           }}
           shouldSlideUp={true}
         >
@@ -269,10 +269,10 @@ const Discover = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.one.secondary"
           shouldSlideUp={true}
           styling={{
             mt: [8, 16],
+            ...theme.components.section.one.secondary,
           }}
         >
           <div className="slideUp">
@@ -280,10 +280,10 @@ const Discover = (props) => {
           </div>
         </Section>
         <Section
-          variant="components.section.two.primary"
           styling={{
             mt: [3, 16],
             mb: [8, 12],
+            ...theme.components.section.two.primary,
           }}
           shouldSlideUp={true}
         >
@@ -310,9 +310,9 @@ const Discover = (props) => {
         bg={theme.colors.black}
       >
         <Section
-          variant="components.section.fullScreen"
           styling={{
             py: [10],
+            ...theme.components.section.fullScreen,
           }}
         >
           <VideoSection
@@ -332,34 +332,25 @@ const Discover = (props) => {
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navBarVariants.gray}
         windowHeight={windowHeight}
-        bg="#F8F8F8"
+        bg={"#F8F8F8"}
       >
         {/* Change order depending on device */}
-        {isDesktop ? (
-          <React.Fragment>
-            <Section
-              variant="components.section.one.primary"
-              shouldSlideUp={true}
-            >
-              <QuoteText content={{ ...props.quote }} />
-            </Section>
-            <Section variant="components.section.two.primary">
-              <QuoteImage content={{ ...props.quote }} />
-            </Section>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <Section variant="components.section.one.primary">
-              <QuoteImage content={{ ...props.quote }} />
-            </Section>
-            <Section
-              variant="components.section.two.primary"
-              shouldSlideUp={true}
-            >
-              <QuoteText content={{ ...props.quote }} />
-            </Section>
-          </React.Fragment>
-        )}
+
+        <Section
+          shouldSlideUp={true}
+          styling={{
+            ...theme.components.section.one.quote,
+          }}
+        >
+          <QuoteText content={{ ...props.quote }} />
+        </Section>
+        <Section
+          styling={{
+            ...theme.components.section.two.quote,
+          }}
+        >
+          <QuoteImage content={{ ...props.quote }} />
+        </Section>
       </GridContainer>
 
       <SubNavigation

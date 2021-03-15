@@ -139,10 +139,10 @@ const DataCollection = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.one.secondary"
           shouldSlideUp={true}
           styling={{
             mt: [8, 16],
+            ...theme.components.section.one.secondary,
           }}
         >
           <div className="slideUp">
@@ -150,10 +150,10 @@ const DataCollection = (props) => {
           </div>
         </Section>
         <Section
-          variant="components.section.two.primary"
           styling={{
             mt: [3, 16],
             mb: [4, 12],
+            ...theme.components.section.two.primary,
           }}
         >
           <Styled.p
@@ -181,9 +181,9 @@ const DataCollection = (props) => {
         bg={theme.colors.black}
       >
         <Section
-          variant="components.section.fullScreen"
           styling={{
             py: [10],
+            ...theme.components.section.fullScreen,
           }}
         >
           <div
@@ -224,31 +224,22 @@ const DataCollection = (props) => {
         bg={theme.colors.white}
       >
         {/* Change order depending on device */}
-        {isDesktop ? (
-          <React.Fragment>
-            <Section
-              variant="components.section.one.primary"
-              shouldSlideUp={true}
-            >
-              <QuoteText content={{ ...props.quote }} />
-            </Section>
-            <Section variant="components.section.two.primary">
-              <QuoteImage content={{ ...props.quote }} />
-            </Section>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <Section variant="components.section.one.primary">
-              <QuoteImage content={{ ...props.quote }} />
-            </Section>
-            <Section
-              variant="components.section.two.primary"
-              shouldSlideUp={true}
-            >
-              <QuoteText content={{ ...props.quote }} />
-            </Section>
-          </React.Fragment>
-        )}
+
+        <Section
+          styling={{
+            ...theme.components.section.one.quote,
+          }}
+          shouldSlideUp={true}
+        >
+          <QuoteText content={{ ...props.quote }} />
+        </Section>
+        <Section
+          styling={{
+            ...theme.components.section.two.quote,
+          }}
+        >
+          <QuoteImage content={{ ...props.quote }} />
+        </Section>
       </GridContainer>
 
       {/* Support */}
@@ -261,10 +252,10 @@ const DataCollection = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.one.secondary"
           shouldSlideUp={true}
           styling={{
             mt: [8, 16],
+            ...theme.components.section.one.secondary,
           }}
         >
           <div className="slideUp">
@@ -272,10 +263,10 @@ const DataCollection = (props) => {
           </div>
         </Section>
         <Section
-          variant="components.section.two.primary"
           styling={{
             mt: [3, 16],
             mb: [4, 12],
+            ...theme.components.section.two.primary,
           }}
         >
           <Styled.p

@@ -4,11 +4,6 @@ import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
-import Metrics from "../../src/components/values/deimetrics/metrics";
-import Quote from "../../src/components/quote";
-import MeasurementCapabilities from "../../src/components/values/deimetrics/measurementcapabilities";
-import Intersectional from "../../src/components/values/deimetrics/intersectional";
-import Thoughtful from "../../src/components/values/deimetrics/thoughtful";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import { subPages } from "../../src/helpers/subpages";
@@ -28,7 +23,6 @@ import GridContainer from "../../src/components/gridcontainer";
 import Categories from "../../src/components/categories";
 import QuoteText from "../../src/components/quotetext";
 import TextBlockAndLinks from "../../src/components/textblock_and_links";
-import React from "react";
 
 const DEIMetrics = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -142,9 +136,9 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.wide"
           styling={{
             mt: [6, 16],
+            ...theme.components.section.wide,
           }}
         >
           <Categories categories={props.categories} />
@@ -161,10 +155,10 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.one.primary"
           shouldSlideUp={true}
           styling={{
             mt: [8, 16],
+            ...theme.components.section.one.primary,
           }}
         >
           <div className="slideUp">
@@ -172,11 +166,11 @@ const DEIMetrics = (props) => {
           </div>
         </Section>
         <Section
-          variant="components.section.two.primary"
           shouldSlideUp={true}
           styling={{
             mt: [3, 16],
             mb: [6, 10],
+            ...theme.components.section.two.primary,
           }}
         >
           <div className="slideUp">
@@ -198,32 +192,42 @@ const DEIMetrics = (props) => {
         bg="#F8F8F8"
       >
         {/* Change order depending on device */}
-        {isDesktop ? (
-          <React.Fragment>
-            <Section
-              variant="components.section.one.primary"
-              shouldSlideUp={true}
-            >
-              <QuoteText content={{ ...props.quote1 }} />
-            </Section>
-            <Section variant="components.section.two.primary">
-              <QuoteImage content={{ ...props.quote1 }} />
-            </Section>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <Section variant="components.section.one.primary">
-              <QuoteImage content={{ ...props.quote1 }} />
-            </Section>
-            <Section
-              variant="components.section.two.primary"
-              shouldSlideUp={true}
-            >
-              <QuoteText content={{ ...props.quote1 }} />
-            </Section>
-          </React.Fragment>
-        )}
+
+        <Section
+          styling={{
+            ...theme.components.section.one.quote,
+          }}
+          shouldSlideUp={true}
+        >
+          <QuoteText content={{ ...props.quote1 }} />
+        </Section>
+        <Section
+          styling={{
+            ...theme.components.section.two.quote,
+          }}
+        >
+          <QuoteImage content={{ ...props.quote1 }} />
+        </Section>
       </GridContainer>
+
+      {/* Mobile */}
+      {/* <React.Fragment>
+            <Section
+              styling={{
+                ...theme.components.section.one.primary,
+              }}
+            >
+              <QuoteImage content={{ ...props.quote1 }} />
+            </Section>
+            <Section
+              styling={{
+                ...theme.components.section.two.primary,
+              }}
+              shouldSlideUp={true}
+            >
+              <QuoteText content={{ ...props.quote1 }} />
+            </Section>
+          </React.Fragment> */}
 
       {/* Metrics */}
       <GridContainer
@@ -235,10 +239,10 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.one.primary"
           shouldSlideUp={true}
           styling={{
             mt: [8, 16],
+            ...theme.components.section.one.primary,
           }}
         >
           <div className="slideUp">
@@ -246,11 +250,11 @@ const DEIMetrics = (props) => {
           </div>
         </Section>
         <Section
-          variant="components.section.two.primary"
           shouldSlideUp={true}
           styling={{
             mt: [3, 16],
             mb: [0],
+            ...theme.components.section.two.primary,
           }}
         >
           <div className="slideUp">
@@ -269,10 +273,10 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.one.primary"
           shouldSlideUp={true}
           styling={{
             mt: [8, 16],
+            ...theme.components.section.one.primary,
           }}
         >
           <div className="slideUp">
@@ -280,11 +284,11 @@ const DEIMetrics = (props) => {
           </div>
         </Section>
         <Section
-          variant="components.section.two.primary"
           shouldSlideUp={true}
           styling={{
             mt: [3, 16],
             mb: [8, 10],
+            ...theme.components.section.two.primary,
           }}
         >
           <div className="slideUp">
@@ -294,6 +298,7 @@ const DEIMetrics = (props) => {
       </GridContainer>
 
       {/* Quote 2 */}
+
       <GridContainer
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
@@ -304,31 +309,22 @@ const DEIMetrics = (props) => {
         bg={"#F8F8F8"}
       >
         {/* Change order depending on device */}
-        {isDesktop ? (
-          <React.Fragment>
-            <Section
-              variant="components.section.one.primary"
-              shouldSlideUp={true}
-            >
-              <QuoteText content={{ ...props.quote2 }} />
-            </Section>
-            <Section variant="components.section.two.primary">
-              <QuoteImage content={{ ...props.quote2 }} />
-            </Section>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <Section variant="components.section.one.primary">
-              <QuoteImage content={{ ...props.quote2 }} />
-            </Section>
-            <Section
-              variant="components.section.two.primary"
-              shouldSlideUp={true}
-            >
-              <QuoteText content={{ ...props.quote2 }} />
-            </Section>
-          </React.Fragment>
-        )}
+
+        <Section
+          shouldSlideUp={true}
+          styling={{
+            ...theme.components.section.one.quote,
+          }}
+        >
+          <QuoteText content={{ ...props.quote2 }} />
+        </Section>
+        <Section
+          styling={{
+            ...theme.components.section.two.quote,
+          }}
+        >
+          <QuoteImage content={{ ...props.quote2 }} />
+        </Section>
       </GridContainer>
 
       {/* Continuing Effort */}
@@ -341,10 +337,10 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
       >
         <Section
-          variant="components.section.one.primary"
           shouldSlideUp={true}
           styling={{
             mt: [8, 16],
+            ...theme.components.section.one.primary,
           }}
         >
           <div className="slideUp">
@@ -352,11 +348,11 @@ const DEIMetrics = (props) => {
           </div>
         </Section>
         <Section
-          variant="components.section.two.primary"
           shouldSlideUp={true}
           styling={{
             mt: [3, 16],
             mb: [8, 12],
+            ...theme.components.section.two.primary,
           }}
         >
           <TextBlockAndLinks content={{ ...props.continuing_effort }} />

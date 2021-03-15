@@ -157,31 +157,22 @@ const Values = (props) => {
         bg={theme.colors.yellow}
       >
         {/* Change order depending on device */}
-        {isDesktop ? (
-          <React.Fragment>
-            <Section
-              variant="components.section.one.primary"
-              shouldSlideUp={true}
-            >
-              <QuoteText content={{ ...props.quote }} />
-            </Section>
-            <Section variant="components.section.two.primary">
-              <QuoteImage content={{ ...props.quote }} />
-            </Section>
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <Section variant="components.section.one.primary">
-              <QuoteImage content={{ ...props.quote }} />
-            </Section>
-            <Section
-              variant="components.section.two.primary"
-              shouldSlideUp={true}
-            >
-              <QuoteText content={{ ...props.quote }} />
-            </Section>
-          </React.Fragment>
-        )}
+
+        <Section
+          styling={{
+            ...theme.components.section.one.quote,
+          }}
+          shouldSlideUp={true}
+        >
+          <QuoteText content={{ ...props.quote }} />
+        </Section>
+        <Section
+          styling={{
+            ...theme.components.section.two.quote,
+          }}
+        >
+          <QuoteImage content={{ ...props.quote }} />
+        </Section>
       </GridContainer>
 
       <SubNavigation next={subPages_.next} prev={subPages_.prev} />
