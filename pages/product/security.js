@@ -156,7 +156,7 @@ const Product = (props) => {
 
         <Section
           styling={{
-            ...theme.components.section.one.primary,
+            ...theme.components.section.one.quote,
           }}
           shouldSlideUp={true}
         >
@@ -164,7 +164,7 @@ const Product = (props) => {
         </Section>
         <Section
           styling={{
-            ...theme.components.section.two.primary,
+            ...theme.components.section.two.quote,
           }}
         >
           <QuoteImage content={{ ...props.quote }} />

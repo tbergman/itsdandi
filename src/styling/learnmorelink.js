@@ -1,18 +1,17 @@
 export const learnMoreLink = {
   mb: [4],
   textDecoration: "none",
-  display: ["inline"],
+  display: ["inline-flex"],
   cursor: "pointer",
-
   zIndex: 98,
   alignItems: "center",
   width: "fit-content",
-  p: {
+  ".learnMoreLink__text": {
     mr: "10px",
     fontFamily: "medium",
+    width: "fit-content",
   },
-  ".arrow": {
-    display: "flex",
-    alignItems: "center",
+  ".learnMoreLink__arrow": {
+    width: "fit-content",
   },
 };

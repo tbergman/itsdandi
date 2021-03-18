@@ -20,7 +20,7 @@ import { textBlockAndLinks } from "./src/styling/textblock_and_links";
 import { discover } from "./src/styling/product/discover";
 import { reporting } from "./src/styling/product/reporting";
 import { datacollection } from "./src/styling/product/datacollection";
-import { learnMoreLink } from "./src/styling/learmorelink";
+import { learnMoreLink } from "./src/styling/learnmorelink";
 
 const theme = {
   breakpoints: ["1024px", "1500px", "2000px"],

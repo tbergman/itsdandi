@@ -14,6 +14,16 @@ const Home = ({
   content,
 }) => {
   const { header, buttonText } = content;
+
+  const scrollToText = () => {
+    const el = document.getElementById("learnmore");
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <InView
       variant="pages.home.top"
@@ -35,7 +45,7 @@ const Home = ({
           >
             <Styled.p className="Top__text-button-text">{buttonText}</Styled.p>
           </div>
-          <div className="Top__learnMore">
+          <div className="Top__learnMore" onClick={scrollToText}>
             <svg
               className="Top__arrow"
               width="15"
@@ -46,7 +56,8 @@ const Home = ({
             >
               <path
                 d="M12 8L7 13L2 8"
-                stroke="#F2F2F2"
+                stroke="inherit"
+                fill="inherit"
                 strokeOpacity="0.7"
                 strokeWidth="1.6"
               />
@@ -55,8 +66,9 @@ const Home = ({
                 y1="13"
                 x2="7.00039"
                 y2="-1.18022e-07"
-                stroke="#F2F2F2"
-                strokeOpacity="0.7"
+                stroke="inherit"
+                fill="inherit"
+                strokeOpacity="1"
                 strokeWidth="1.8"
               />
             </svg>

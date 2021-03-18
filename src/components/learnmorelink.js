@@ -1,44 +1,48 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import Link from "next/link";
-import { ReactSVG } from "react-svg";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
+import { gsap } from "gsap";
+import { useRef } from "react";
 
 const LearnMoreLink = ({ href, text, color, external }) => {
-  const arrowMotion = {
-    hover: {
-      x: 10,
-      transition: {
-        ease: "easeOut",
-        duration: 0.175,
-        type: "tween",
-      },
-    },
-  };
+  // const arrowMotion = {
+  //   hover: {
+  //     x: 10,
+  //     transition: {
+  //       ease: "easeOut",
+  //       duration: 0.175,
+  //       type: "tween",
+  //     },
+  //   },
+  // };
 
+  const ref = useRef(null);
 
   return external ? (
-    <motion.a
-    href={href}
-    target="_blank"
-    whileHover="hover"
-    sx={{
-      variant: "components.learnMoreLink",
-    }}
-  >
-    <Styled.p
+    <a
+      ref={ref}
+      href={href}
+      target="_blank"
       sx={{
-        color: color,
+        variant: "components.learnMoreLink",
       }}
+      className="learnMoreLink"
     >
-      {text}
-    </Styled.p>
+      <Styled.p
+        sx={{
+          color: color,
+        }}
+        className="learnMoreLink__text"
+      >
+        {text}
+      </Styled.p>
 
-    <motion.div className="arrow" variants={arrowMotion}>
       <svg
-        width="15"
+        className="learnMoreLink__arrow"
+        width="16"
         height="16"
-        viewBox="0 0 15 16"
+        viewBox="0 0 16 16"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -56,29 +60,44 @@ const LearnMoreLink = ({ href, text, color, external }) => {
           strokeWidth="1.8"
         />
       </svg>
-    </motion.div>
-  </motion.a>
+    </a>
   ) : (
     <Link href={href}>
-    <motion.a
-      whileHover="hover"
-      sx={{
-        variant: "components.learnMoreLink",
-      }}
-    >
-      <Styled.p
-        sx={{
-          color: color,
+      <a
+        ref={ref}
+        onMouseOver={() => {
+          gsap.to(ref.current.querySelector(".learnMoreLink__arrow"), {
+            x: 10,
+            duration: 0.175,
+            ease: "power2.out",
+          });
         }}
+        onMouseOut={() => {
+          gsap.to(ref.current.querySelector(".learnMoreLink__arrow"), {
+            x: 0,
+            duration: 0.175,
+            ease: "power2.out",
+          });
+        }}
+        sx={{
+          variant: "components.learnMoreLink",
+        }}
+        className="learnMoreLink"
       >
-        {text}
-      </Styled.p>
+        <Styled.p
+          sx={{
+            color: color,
+          }}
+          className="learnMoreLink__text"
+        >
+          {text}
+        </Styled.p>
 
-      <motion.div className="arrow" variants={arrowMotion}>
         <svg
-          width="15"
+          className="learnMoreLink__arrow"
+          width="16"
           height="16"
-          viewBox="0 0 15 16"
+          viewBox="0 0 16 16"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -96,13 +115,9 @@ const LearnMoreLink = ({ href, text, color, external }) => {
             strokeWidth="1.8"
           />
         </svg>
-      </motion.div>
-    </motion.a>
-  </Link>
-  )
-
-
-  
+      </a>
+    </Link>
+  );
 };
 
 export default LearnMoreLink;

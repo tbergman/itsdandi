@@ -10,7 +10,7 @@ const TopContent = ({ isDesktop, content }) => {
   const { button_text, url } = content;
 
   useEffect(() => {
-    const animation = gsap.to(ref.current.getElementById("magnifingGlass"), {
+    const animation = gsap.to(ref.current.querySelectorAll(".shouldMove"), {
       x: -25,
       duration: 0.5,
       ease: "power2.out",
@@ -39,23 +39,8 @@ const TopContent = ({ isDesktop, content }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* <rect width="303" height="302" fill="#E5E5E5" /> */}
-
-          {/* <rect
-              width="1440"
-              height="5874"
-              transform="translate(-1008 -214)"
-              fill="white"
-            /> */}
-          {/* <rect
-              x="-1008"
-              y="-213"
-              width="1440"
-              height="513"
-              fill="#F2F2F2"
-              fillOpacity="0.5"
-            /> */}
-          {/* <mask
+          <g className="shouldMove">
+            <mask
               id="mask0"
               maskType="alpha"
               maskUnits="userSpaceOnUse"
@@ -73,10 +58,29 @@ const TopContent = ({ isDesktop, content }) => {
                 stroke="#00FCFF"
                 strokeWidth="2"
               />
-            </mask> */}
+            </mask>
+          </g>
 
-          {/* LINES */}
-          <g id="lines">
+          <g className="shouldMove">
+            <circle
+              cx="159.913"
+              cy="143.415"
+              r="99.7664"
+              transform="rotate(45 159.913 143.415)"
+              stroke="#00FCFF"
+              strokeWidth="2"
+            />
+            <line
+              x1="87.9527"
+              y1="213.961"
+              x2="1.20716"
+              y2="300.707"
+              stroke="#00FCFF"
+              strokeWidth="2"
+            />
+          </g>
+
+          <g mask="url(#mask0)">
             <line
               x1="28.5514"
               y1="118.281"
@@ -99,24 +103,6 @@ const TopContent = ({ isDesktop, content }) => {
               x2="113.777"
               y2="155.33"
               stroke="#335AFF"
-              strokeWidth="2"
-            />
-          </g>
-          <g id="magnifingGlass">
-            <circle
-              cx="159.913"
-              cy="143.415"
-              r="99.7664"
-              transform="rotate(45 159.913 143.415)"
-              stroke="#00FCFF"
-              strokeWidth="2"
-            />
-            <line
-              x1="87.9527"
-              y1="213.961"
-              x2="1.20716"
-              y2="300.707"
-              stroke="#00FCFF"
               strokeWidth="2"
             />
           </g>

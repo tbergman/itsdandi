@@ -98,13 +98,13 @@ const Community = (props) => {
       />
       <Header
         isDesktop={isDesktop}
-        subMenuStyling={theme.components.submenu.variants.white}
         setSubMenuStyling={setSubMenuStyling}
         content={{
           ...props.header,
         }}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navBarVariants.white}
+        subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{

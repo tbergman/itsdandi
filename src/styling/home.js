@@ -83,11 +83,21 @@ export const home = {
       display: ["none", "flex"],
       alignItems: "center",
       cursor: "pointer",
+      "&:hover": {
+        color: ["yellow"],
+        ".Top__arrow": {
+          fill: ["yellow"],
+          stroke: ["yellow"],
+        },
+      },
     },
     ".Top__arrow": {
       mr: [2],
+      fill: "white",
+      stroke: "white",
     },
     bars: {
+      pointerEvents: "none",
       gridArea: ["2/1/3/-1"],
       position: "relative",
       width: "100vw",
