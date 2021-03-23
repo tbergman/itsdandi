@@ -17,7 +17,7 @@ const CompensationGraph = ({
   isDesktop,
   content,
 }) => {
-  const { cities, body } = content;
+  const { chart_items, body } = content;
   const animationControls = useAnimation();
 
   const { inView, ref, entry } = useInView({
@@ -52,7 +52,7 @@ const CompensationGraph = ({
           <div className="wrapper">
             <div className="graph">
               <div className="maingraph">
-                {cities.map((dataPoint, i) => (
+                {chart_items.map((dataPoint, i) => (
                   <div className="yAxis" key={i}>
                     <div
                       sx={{
@@ -60,16 +60,16 @@ const CompensationGraph = ({
                       }}
                       className="bar"
                     >
-                      <Styled.h3>{`${dataPoint.maxnumber}x`}</Styled.h3>
+                      <Styled.h3>{`${dataPoint.value}x`}</Styled.h3>
                     </div>
                   </div>
                 ))}
               </div>
               <div className="divider"></div>
               <div className="labels">
-                {cities.map((dataPoint, i) => (
+                {chart_items.map((dataPoint, i) => (
                   <div className="label" key={i}>
-                    <Styled.p>{dataPoint.city}</Styled.p>
+                    <Styled.p>{dataPoint.label}</Styled.p>
                   </div>
                 ))}
               </div>

@@ -150,8 +150,8 @@ const EquityPay = (props) => {
         windowHeight={windowHeight}
         isDesktop={isDesktop}
         content={{
-          cities: props.cities,
-          body: props.text,
+          chart_items: props.bar_chart.chart_items,
+          body: props.bar_chart.text,
         }}
       />
       <Reports
