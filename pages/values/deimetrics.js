@@ -191,8 +191,6 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
         bg="#F8F8F8"
       >
-        {/* Change order depending on device */}
-
         <Section
           styling={{
             ...theme.components.section.one.quote,
@@ -210,26 +208,6 @@ const DEIMetrics = (props) => {
         </Section>
       </GridContainer>
 
-      {/* Mobile */}
-      {/* <React.Fragment>
-            <Section
-              styling={{
-                ...theme.components.section.one.primary,
-              }}
-            >
-              <QuoteImage content={{ ...props.quote1 }} />
-            </Section>
-            <Section
-              styling={{
-                ...theme.components.section.two.primary,
-              }}
-              shouldSlideUp={true}
-            >
-              <QuoteText content={{ ...props.quote1 }} />
-            </Section>
-          </React.Fragment> */}
-
-      {/* Metrics */}
       <GridContainer
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}
@@ -308,8 +286,7 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
         bg={"#F8F8F8"}
       >
-        {/* Change order depending on device */}
-
+        =
         <Section
           shouldSlideUp={true}
           styling={{
