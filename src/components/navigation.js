@@ -40,8 +40,8 @@ const Navigation = ({
                 navBarStyling={navBarStyling}
                 staticLogo={staticLogo}
                 setStaticLogo={setStaticLogo}
-                scaleTo={32 / 95}
-                yOffset={-95 + 35}
+                scaleTo={32 / 90}
+                yOffset={-90 + 35}
                 width={width}
               />
             )}

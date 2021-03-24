@@ -17,15 +17,11 @@ export const home = {
         zIndex: 9999,
         top: [0],
         left: ["20px", "40px"],
-        height: [
-          (t) => t.colWidthMob,
-          // (t) => `calc(${t.colWidthDesktop} + 20px)`,
-          "95px",
-        ],
+        height: [(t) => t.colWidthMob, "90px"],
         width: [
           "125px",
           // (t) => `calc(calc(${t.colWidthDesktop} + 20px) * 3.4)`,
-          "calc(95px * 3.4)",
+          "calc(90px * 3.4)",
         ],
         mb: ["20px", "40px"],
       },
