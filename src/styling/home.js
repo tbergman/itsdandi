@@ -20,12 +20,12 @@ export const home = {
         height: [
           (t) => t.colWidthMob,
           // (t) => `calc(${t.colWidthDesktop} + 20px)`,
-          "112px",
+          "95px",
         ],
         width: [
           "125px",
           // (t) => `calc(calc(${t.colWidthDesktop} + 20px) * 3.4)`,
-          "calc(112px * 3.4)",
+          "calc(95px * 3.4)",
         ],
         mb: ["20px", "40px"],
       },
