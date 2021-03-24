@@ -102,7 +102,6 @@ const theme = {
     violet: "#F9D2FF",
     lightViolet: "#FDF1FF",
   },
-
   desktopMaxSectionWidth: "475px",
   desktopBigGutters: `calc(100vw * .12)`,
   desktopMassiveGutters: `calc(100vw*.175)`,
