@@ -34,7 +34,7 @@ export const home = {
         (t) => t.colWidthDesktopBig,
         (t) => t.colWidthDesktopMassive,
       ],
-      mt: [24, "352px"],
+      mt: [24, "250px"],
       mb: [2, 0],
       ".Top__text-header": {
         fontSize: ["36px", "72px"],
