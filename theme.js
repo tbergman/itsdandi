@@ -1389,19 +1389,19 @@ const theme = {
                 m: 0,
                 bg: "transparent",
                 appearance: "none",
+                height: "2px",
+                background: (t) =>
+                  `linear-gradient(to right, rgba(51, 90, 255, 1) 0%, rgba(51, 90, 255, 1) 10%, rgba(51, 90, 255, .2) 10%, rgba(51, 90, 255, .2) 100%)`,
               },
               "input[type=range]:focus": {
                 outline: "none",
               },
               "input[type=range]::-webkit-slider-runnable-track": {
-                bg: "blue",
                 border: "none",
                 width: "100%",
-                height: "2px",
                 cursor: "pointer",
               },
               "input[type=range]::-webkit-slider-thumb": {
-                mt: ["-11px"],
                 width: "24px",
                 height: "24px",
                 bg: "blue",
