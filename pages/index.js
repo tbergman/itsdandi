@@ -17,17 +17,8 @@ import { useState, useEffect } from "react";
 import Butter from "buttercms";
 import { useWindowSize } from "@react-hook/window-size";
 import { isServer } from "../src/helpers/utils";
-
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
 import MobileNav from "../src/components/mobilenav";
 import SubNavigation from "../src/components/subnavigation";
-import { useMachine } from "@xstate/react";
-import { MenuState__machine } from "../src/machines/mobilemenu";
 
 const Home = (props) => {
   const { theme } = useThemeUI();
@@ -97,6 +88,7 @@ const Home = (props) => {
           buttonText: props.button_text,
         }}
       />
+
       <LearnMore
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navBarVariants.violet}
@@ -111,7 +103,7 @@ const Home = (props) => {
           url: props.learn_more[0].fields.url,
         }}
       />
-      <Carousel
+      {/* <Carousel
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navBarVariants.default}
         windowHeight={windowHeight}
@@ -185,7 +177,7 @@ const Home = (props) => {
           url: props.marketplace_partners[0].fields.url,
           buttonText: props.marketplace_partners[0].fields.button_text,
         }}
-      />
+      /> */}
       <SubNavigation
         next={{
           name: "Values",

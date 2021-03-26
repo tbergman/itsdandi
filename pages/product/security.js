@@ -108,13 +108,13 @@ const Product = (props) => {
           ...props.header,
         }}
         setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.gray}
+        navBarStyling={theme.components.navBarVariants.white}
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
         windowHeight={windowHeight}
         bg="#fff"
         styling={{
-          mb: [13, 16],
+          mb: [13, 16, 23],
           h1: {
             fontSize: ["36px", "52px"],
             lineHeight: ["43px", "58px"],
