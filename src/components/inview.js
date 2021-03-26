@@ -18,7 +18,6 @@ const InView = ({
   //   rootMargin,
   // });
   const ref = useRef(null);
-  console.log(rootMargin);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -31,10 +30,9 @@ const InView = ({
         // markers: true,
         start: "-=94",
         end: `+=${offsetEnd}`,
-        toggleClass: {
-          targets: ".Navigation",
-          className: "grey",
-        },
+        onEnter: () => console.log("inView enter"),
+        onLeaveBack: () => console.log("inView onleaveback"),
+        onEnterBack: () => console.log("inView onenterback"),
       },
     });
     // if (inView) {

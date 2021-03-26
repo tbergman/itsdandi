@@ -44,3 +44,15 @@ export const NavItem__machine = createMachine(
     },
   }
 );
+
+export const NavigationStyle__machine = createMachine({
+  id: "NavigationStyle__machine",
+  context: {},
+  initial: "idle",
+  states: {
+    idle: {},
+    default: {},
+    violet: {},
+    gray: {},
+  },
+});
