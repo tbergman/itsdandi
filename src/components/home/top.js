@@ -5,6 +5,8 @@ import Graphics from "./graphics";
 import Link from "next/link";
 import InView from "../inview";
 import { lineBreaks, rootMargin, scrollToBottom } from "../../helpers/utils";
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
 
 const Home = ({
   setNavbarStyling,
@@ -14,6 +16,7 @@ const Home = ({
   content,
 }) => {
   const { header, buttonText } = content;
+  const ref = useRef(null);
 
   const scrollToText = () => {
     const el = document.getElementById("learnmore");
@@ -45,8 +48,24 @@ const Home = ({
           >
             <Styled.p className="Top__text-button-text">{buttonText}</Styled.p>
           </div>
-          <div className="Top__learnMore" onClick={scrollToText}>
+          <div
+            onMouseOver={() => {
+              const tl = gsap.timeline();
+              tl.to(ref.current, {
+                y: 10,
+                duration: 0.25,
+              });
+              tl.to(ref.current, {
+                y: 0,
+                duration: 0.25,
+                // ease: "elastic.out(1, 0.3)",
+              });
+            }}
+            className="Top__learnMore"
+            onClick={scrollToText}
+          >
             <svg
+              ref={ref}
               className="Top__arrow"
               width="15"
               height="15"
@@ -57,8 +76,8 @@ const Home = ({
               <path
                 d="M12 8L7 13L2 8"
                 stroke="inherit"
-                fill="inherit"
-                strokeOpacity="0.7"
+                fill="none"
+                strokeOpacity="1"
                 strokeWidth="1.6"
               />
               <line
