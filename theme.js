@@ -22,6 +22,8 @@ import { reporting } from "./src/styling/product/reporting";
 import { datacollection } from "./src/styling/product/datacollection";
 import { learnMoreLink } from "./src/styling/learnmorelink";
 import { pricing } from "./src/styling/pricing";
+import { board } from "./src/styling/board";
+import { people } from "./src/styling/people";
 
 const theme = {
   breakpoints: ["1024px", "1500px", "2000px"],
@@ -1234,81 +1236,9 @@ const theme = {
         },
       },
     },
-    pricing: {...pricing},
+    pricing: { ...pricing },
     community: {
-      board: {
-        header: {
-          bg: "transparent",
-          color: "black",
-          ".text": {
-            gridArea: ["1/1/2/-1"],
-            mt: [18],
-            h1: {},
-            h3: {
-              mt: [3],
-              fontSize: ["18px"],
-            },
-          },
-          ".graphic": {
-            gridArea: ["2/1/3/-1"],
-            width: "100vw",
-            left: ["-20px"],
-            position: "relative",
-            px: ["20px"],
-            mb: [1],
-            div: {
-              width: "100%",
-              height: "100%",
-              div: {
-                height: "100%",
-                width: "100%",
-                display: "flex",
-                justifyContent: "flex-end",
-                svg: {
-                  height: "100%",
-                },
-              },
-            },
-          },
-        },
-        topcontent: {
-          position: "relative",
-
-          ".graphics": {
-            position: "absolute",
-            bottom: [0, "40px"],
-            width: [
-              (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
-              (t) => `calc(calc(${t.colWidthDesktop} * 3) + 80px)`,
-              (t) => `calc(calc(${t.colWidthDesktopBig} * 3) + 80px)`,
-              `315px`,
-              // (t) => `calc(calc(${t.colWidthDesktopMassive} * 3) + 80px)`,
-            ],
-            height: [
-              (t) => `calc(calc(calc(${t.colWidthMob} * 3) + 40px) * .88)`,
-              (t) => `calc(calc(calc(${t.colWidthDesktop} * 3) + 80px) * .88)`,
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktopBig} * 3) + 80px) * .88)`,
-              `calc(315px * .88)`,
-              // (t) =>
-              // `calc(calc(calc(${t.colWidthDesktopMassive} * 3) + 80px) * .88)`,
-            ],
-
-            left: [
-              (t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`,
-              (t) => `calc(calc(${t.colWidthDesktop} * 9) + 400px)`,
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktopBig} * 9) + 360px) + ${t.desktopBigGutters})`,
-              (t) =>
-                `calc(calc(calc(${t.colWidthDesktopMassive} * 9) + 360px) + ${t.desktopMassiveGutters})`,
-            ],
-            svg: {
-              width: "100%",
-              height: "100%",
-            },
-          },
-        },
-      },
+      board: { ...board },
       partners: {
         header: {
           bg: "transparent",
@@ -2221,129 +2151,7 @@ const theme = {
           },
         },
       },
-      people: {
-        bg: "#F8F8F8",
-        color: "black",
-        ".toptext": {
-          mt: [8, 16],
-          mb: [12],
-          gridArea: ["1/1/2/-1", "1/3/2/-1"],
-          display: "flex",
-          flexFlow: ["column", "unset"],
-
-          ".section1": {
-            width: [
-              "100%",
-              (t) => t.desktopSectionWidth,
-              (t) => t.desktopSectionWidthBig,
-              (t) => t.desktopSectionWidthMassive,
-            ],
-            h2: {
-              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-            },
-          },
-          ".section2": {
-            ml: [
-              0,
-              (t) => t.colWidthDesktop,
-              (t) => t.colWidthDesktopBig,
-              (t) => t.colWidthDesktopMassive,
-            ],
-            width: [
-              "100%",
-              (t) => t.desktopSectionWidth,
-              (t) => t.desktopSectionWidthBig,
-              (t) => t.desktopSectionWidthMassive,
-            ],
-
-            p: {
-              mt: [2, 1],
-              maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-            },
-          },
-        },
-
-        ".people": {
-          gridArea: ["2/1/3/-1", "2/3/3/-1"],
-          width: ["unset"],
-          left: ["unset"],
-          position: "relative",
-          mb: [14, 16],
-          display: "flex",
-          flexFlow: ["row wrap"],
-          justifyContent: ["space-between", "unset"],
-          ".person:nth-of-type(4n)": {
-            mr: 0,
-          },
-          ".person": {
-            width: [
-              (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
-              (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
-              (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 80px)`,
-              (t) => `calc(calc(${t.colWidthDesktopMassive} * 2) + 80px)`,
-            ],
-            mr: [
-              0,
-              (t) =>
-                `calc(calc(calc(calc(${t.colWidthDesktop} * 10) + 358px) - calc(calc(calc(${t.colWidthDesktop} * 2) + 80px) * 4)) / 3)`,
-              (t) =>
-                `calc(calc(calc(calc(${t.colWidthDesktopBig} * 10) + 358px) - calc(calc(calc(${t.colWidthDesktopBig} * 2) + 80px) * 4)) / 3)`,
-              (t) =>
-                `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 10) + 358px) - calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 80px) * 4)) / 3)`,
-            ],
-
-            mb: [4],
-            display: "flex",
-            flexFlow: ["column"],
-            alignItems: "center",
-            ".imagewrapper": {
-              clipPath: ["circle(80px)", "circle(50%)"],
-              position: "relative",
-              width: [
-                "160px",
-                (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
-                (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 80px)`,
-                (t) => `calc(calc(${t.colWidthDesktopMassive} * 2) + 80px)`,
-              ],
-              height: [
-                "160px",
-                (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
-                (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 80px)`,
-                (t) => `calc(calc(${t.colWidthDesktopMassive} * 2) + 80px)`,
-              ],
-              img: {
-                position: "absolute",
-                height: "100%",
-                width: "100%",
-                top: 0,
-                left: 0,
-              },
-            },
-            ".text": {
-              mt: [1, 2],
-              ml: [1],
-              mb: [0],
-              width: ["150px", "200px"],
-              ".name": {
-                mt: 0,
-                mb: 0,
-                fontSize: ["14px"],
-                fontWeight: "400",
-                fontFamily: "display",
-                lineHeight: ["21px"],
-              },
-              ".title": {
-                mt: 0,
-                mb: 0,
-                fontSize: ["13px"],
-                fontWeight: "400",
-                fontFamily: "body",
-                lineHeight: ["19.5px"],
-              },
-            },
-          },
-        },
-      },
+      people: { ...people },
     },
   },
   forms: {
