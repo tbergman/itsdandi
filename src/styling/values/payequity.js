@@ -41,7 +41,7 @@ export const payequity = {
     ".top": {
       position: "relative",
       gridArea: ["1/1/2/-1", "1/3/2/-2"],
-      mt: [8, "248px "],
+      mt: [8, 16],
       color: "black",
       h2: {
         fontFamily: "display",
