@@ -4,6 +4,7 @@ import Link from "next/link";
 // import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { useRef } from "react";
+import { lineBreaks } from "../helpers/utils";
 
 const LearnMoreLink = ({ href, text, color, external }) => {
   // const arrowMotion = {
@@ -35,7 +36,7 @@ const LearnMoreLink = ({ href, text, color, external }) => {
         }}
         className="learnMoreLink__text"
       >
-        {text}
+        {lineBreaks(text)}
       </Styled.p>
 
       <svg
@@ -91,30 +92,29 @@ const LearnMoreLink = ({ href, text, color, external }) => {
           className="learnMoreLink__text"
         >
           {text}
+          <svg
+            className="learnMoreLink__arrow"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 3.00464L14 8.00464L9 13.0046"
+              stroke={color}
+              strokeWidth="1.6"
+            />
+            <line
+              x1="14"
+              y1="8.00425"
+              x2="1"
+              y2="8.00425"
+              stroke={color}
+              strokeWidth="1.8"
+            />
+          </svg>
         </Styled.p>
-
-        <svg
-          className="learnMoreLink__arrow"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M9 3.00464L14 8.00464L9 13.0046"
-            stroke={color}
-            strokeWidth="1.6"
-          />
-          <line
-            x1="14"
-            y1="8.00425"
-            x2="1"
-            y2="8.00425"
-            stroke={color}
-            strokeWidth="1.8"
-          />
-        </svg>
       </a>
     </Link>
   );

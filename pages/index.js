@@ -103,7 +103,7 @@ const Home = (props) => {
           url: props.learn_more[0].fields.url,
         }}
       />
-      {/* <Carousel
+      <Carousel
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navBarVariants.default}
         windowHeight={windowHeight}
@@ -177,7 +177,7 @@ const Home = (props) => {
           url: props.marketplace_partners[0].fields.url,
           buttonText: props.marketplace_partners[0].fields.button_text,
         }}
-      /> */}
+      />
       <SubNavigation
         next={{
           name: "Values",

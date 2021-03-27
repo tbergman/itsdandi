@@ -354,6 +354,10 @@ export const pricing = {
               },
               ".Table__body-row-grid-item-infoBox-link": {
                 width: ["272px"],
+                svg: {
+                  width: "16px",
+                  height: "16px",
+                },
                 p: {
                   fontFamily: "display",
                 },
