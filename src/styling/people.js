@@ -53,6 +53,9 @@ export const people = {
       mr: 0,
     },
     ".person": {
+      textDecoration: "none",
+      color: "inherit",
+      cursor: "pointer",
       width: [
         (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
         (t) => `calc(calc(${t.colWidthDesktop} * 3) + 120px)`,

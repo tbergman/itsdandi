@@ -9,7 +9,7 @@ import {
   personImageAnimation,
 } from "../../helpers/animations";
 
-const Person = ({ images, name, title,company,linkedin, idx }) => {
+const Person = ({ images, name, title, company, linkedin_url, idx }) => {
   const textAnimation = useAnimation();
   const imageAnimation = useAnimation();
 
@@ -29,7 +29,12 @@ const Person = ({ images, name, title,company,linkedin, idx }) => {
   }, [inView]);
 
   return (
-    <div ref={ref} className="person">
+    <a
+      ref={ref}
+      href="https://www.google.com"
+      target="_blank"
+      className="person"
+    >
       <motion.div
         initial="hidden"
         animate={imageAnimation}
@@ -52,7 +57,7 @@ const Person = ({ images, name, title,company,linkedin, idx }) => {
         <Styled.p className="name">{name}</Styled.p>
         <Styled.p className="title">{`${title},  ${company}`}</Styled.p>
       </motion.div>
-    </div>
+    </a>
   );
 };
 export default Person;
