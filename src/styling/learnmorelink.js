@@ -15,6 +15,6 @@ export const learnMoreLink = {
     ml: "10px",
     width: "16px",
     height: "16px",
-    transform: "translate3d(0px, 2px,0px)",
+    transform: "translate3d(0px, 3px,0px)",
   },
 };

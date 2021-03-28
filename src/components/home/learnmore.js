@@ -13,7 +13,6 @@ import useWindowScroll from "@react-hook/window-scroll";
 import { useRef, useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { globalSlideUp } from "../../helpers/animations";
-import TextParallax from "./textparallax";
 
 const LearnMore = ({
   setNavbarStyling,
