@@ -193,6 +193,7 @@ const DEIMetrics = (props) => {
       >
         <Section
           styling={{
+            py: [10, 20],
             ...theme.components.section.one.quote,
           }}
           shouldSlideUp={true}
@@ -201,6 +202,7 @@ const DEIMetrics = (props) => {
         </Section>
         <Section
           styling={{
+            py: [10, 20],
             ...theme.components.section.two.quote,
           }}
         >
@@ -290,6 +292,7 @@ const DEIMetrics = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
+            py: [10, 20],
             ...theme.components.section.one.quote,
           }}
         >
@@ -297,6 +300,7 @@ const DEIMetrics = (props) => {
         </Section>
         <Section
           styling={{
+            py: [10, 20],
             ...theme.components.section.two.quote,
           }}
         >

@@ -1,7 +1,7 @@
 export const quotetext = {
   height: "100%",
   display: "flex",
-  alignItems: "center",
+  alignItems: ["center", "flex-start"],
   mt: [4, 0],
 
   ".QuoteText__text": {
