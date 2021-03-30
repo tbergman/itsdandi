@@ -108,13 +108,13 @@ export const integrations = {
       mb: [0, 7],
       display: "flex",
       flexFlow: ["row wrap"],
-      justifyContent: ["space-between", "unset"],
+      justifyContent: ["space-between"],
       alignItems: ["center"],
     },
     ".logos__logo": {
-      height: ["60px"],
+      height: ["50px", "75px"],
       mb: [5, 12],
-      mr: [4, 4, 4, 6],
+      mr: [4, 4, 5, 7],
     },
     ".logos__image": {
       height: ["100%"],

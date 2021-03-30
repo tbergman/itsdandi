@@ -38,16 +38,7 @@ const Connections = ({
           </div>
           <div className="logos">
             {logos.map((logo, i) => (
-              <div
-                // sx={{
-                //   flex: [
-                //     `0 1 ${logo.mobile_size}%`,
-                //     `0 1 ${logo.desktop_size}%`,
-                //   ],
-                // }}
-                className="logos__logo"
-                key={i}
-              >
+              <div className="logos__logo" key={i}>
                 <picture>
                   <source
                     media="(min-width: 800px)"
