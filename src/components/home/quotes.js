@@ -140,8 +140,14 @@ const Quotes = ({
                     {quotes[index].fields.name}
                   </Styled.p>
                   <Styled.p className="Quotes__title">
-                    {quotes[index].fields.title},<br />{" "}
-                    {quotes[index].fields.company}
+                    {quotes[index].fields.title && (
+                      <span>
+                        {quotes[index].fields.title},<br />
+                      </span>
+                    )}
+                    {quotes[index].fields.company && (
+                      <span>{quotes[index].fields.company}</span>
+                    )}
                   </Styled.p>
                 </div>
               </motion.div>

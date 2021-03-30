@@ -763,7 +763,7 @@ export const home = {
       position: "relative",
       display: "flex",
       overflow: "hidden",
-      height: ["280px", "unset"],
+      height: ["280ppx", "unset"],
       alignItems: ["unset", "flex-start"],
     },
     ".Quotes__text": {
