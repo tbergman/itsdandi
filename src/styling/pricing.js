@@ -181,7 +181,7 @@ export const pricing = {
           mt: [5],
           mb: [5],
           h1: {
-            fontSize: ["72px"],
+            fontSize: ["3.4rem", "72px"],
 
             fontFamily: "display",
             lineHeight: ["100px"],
