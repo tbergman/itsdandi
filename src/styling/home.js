@@ -720,38 +720,32 @@ export const home = {
     bg: "#FAFAFA",
     color: "black",
     position: "relative",
-    ".Quotes": {
-      height: ["unset", "650px"],
-    },
-    ".Quotes__imageContainer": {
-      gridArea: ["1/1/2/-1", "1/1/2/6"],
+    ".Quotes": {},
+    ".Quotes__content": {
+      gridArea: ["1/1/2/-1", "1/3/2/-2"],
       display: "flex",
-      alignItems: "center",
-      justifyContent: "flex-end",
+      flexFlow: ["column", "row nowrap"],
+      py: [0, 20],
     },
+
     ".Quotes__imageWrapper": {
-      position: "relative",
+      flexShrink: [0],
+      transform: ["translate(-20px,0px)", "unset"],
       overflow: "hidden",
-      // ml: [(t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`],
       width: [
         "100vw",
-        (t) => `calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
-        (t) => `calc(calc(${t.colWidthDesktopBig} * 3) + 120px)`,
-        (t) => `calc(calc(${t.colWidthDesktopMassive} * 3) + 120px)`,
+        (t) => `calc(calc(${t.colWidthDesktop} * 4) + 120px)`,
+        (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 120px)`,
+        (t) => `calc(calc(${t.colWidthDesktopMassive} * 4) + 120px)`,
       ],
       height: [
-        "calc(100vw * .64)",
-        (t) => `calc(calc(calc(${t.colWidthDesktop} * 3) + 120px) * .75)`,
-        (t) => `calc(calc(calc(${t.colWidthDesktopBig} * 3) + 120px) * .75)`,
+        "calc(100vw * .75)",
+        (t) => `calc(calc(calc(${t.colWidthDesktop} * 4) + 120px) * .75)`,
+        (t) => `calc(calc(calc(${t.colWidthDesktopBig} * 4) + 120px) * .75)`,
         (t) =>
-          `calc(calc(calc(${t.colWidthDesktopMassive} * 3) + 120px) * .75)`,
+          `calc(calc(calc(${t.colWidthDesktopMassive} * 4) + 120px) * .75)`,
       ],
-      // left: [
-      //   "-20px",
-      //   "-40px",
-      //   (t) => `calc(${t.desktopBigGutters} / -1)`,
-      //   (t) => `calc(${t.desktopMassiveGutters} / -1)`,
-      // ],
+      left: ["-20px", "unset"],
     },
     ".Quote__picture": {
       position: "absolute",
@@ -764,18 +758,13 @@ export const home = {
       width: "100%",
     },
     ".Quotes__textWrapper": {
-      gridArea: ["2/1/3/-1", "1/6/2/-2"],
-      ml: [
-        (t) => `calc(${t.colWidthMob} + 5px)`,
-        (t) => `calc(calc(${t.colWidthDesktop} * 1) + 40px)`,
-        (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 40px)`,
-        (t) => `calc(calc(${t.colWidthDesktopMassive} * 2) + 40px)`,
-      ],
+      flexShrink: 1,
+      ml: [0, "40px"],
       position: "relative",
       display: "flex",
       overflow: "hidden",
       height: ["280px", "unset"],
-      alignItems: ["unset", "center"],
+      alignItems: ["unset", "flex-start"],
     },
     ".Quotes__text": {
       position: "relative",
@@ -846,7 +835,12 @@ export const home = {
 
     ".Quotes__timerWrapper": {
       position: ["relative", "absolute"],
-      right: 0,
+      right: [
+        0,
+        // (t) => `calc(calc(${t.desktopGutters}) / -1)`,
+        // (t) => `calc(calc(${t.desktopBigGutters}) / -1)`,
+        // (t) => `calc(calc(${t.desktopMassiveGutters}) / -1)`,
+      ],
       gridArea: ["3/1/4/-1", "unset"],
       height: ["64px", "100%"],
       width: ["100vw", "72px"],
