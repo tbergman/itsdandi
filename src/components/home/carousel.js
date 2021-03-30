@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled, useThemeUI } from "theme-ui";
-import CarouselMain from "./carouselmain";
+import { jsx, Styled } from "theme-ui";
 import InView from "../inview";
 import { lineBreaks, rootMargin } from "../../helpers/utils";
 import { useState, useEffect } from "react";
