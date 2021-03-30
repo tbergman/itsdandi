@@ -39,13 +39,13 @@ const Connections = ({
           <div className="logos">
             {logos.map((logo, i) => (
               <div
-                sx={{
-                  flex: [
-                    `0 1 ${logo.mobile_size}%`,
-                    `0 1 ${logo.desktop_size}%`,
-                  ],
-                }}
-                className="logo"
+                // sx={{
+                //   flex: [
+                //     `0 1 ${logo.mobile_size}%`,
+                //     `0 1 ${logo.desktop_size}%`,
+                //   ],
+                // }}
+                className="logos__logo"
                 key={i}
               >
                 <picture>
@@ -54,7 +54,11 @@ const Connections = ({
                     srcSet={logo.desktop_image}
                   ></source>
                   <source srcSet={logo.mobile_image}></source>
-                  <img src={logo.desktop_image} alt="" />
+                  <img
+                    className="logos__image"
+                    src={logo.desktop_image}
+                    alt=""
+                  />
                 </picture>
               </div>
             ))}
