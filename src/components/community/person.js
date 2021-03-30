@@ -9,7 +9,16 @@ import {
   personImageAnimation,
 } from "../../helpers/animations";
 
-const Person = ({ images, name, title, company, linkedin_url, idx }) => {
+const Person = ({ content, idx }) => {
+  const {
+    company,
+    company_url,
+    linkedin_url,
+    name,
+    title,
+    desktop_image,
+    mobile_image,
+  } = content;
   const textAnimation = useAnimation();
   const imageAnimation = useAnimation();
 
@@ -29,7 +38,7 @@ const Person = ({ images, name, title, company, linkedin_url, idx }) => {
   }, [inView]);
 
   return (
-    <a
+    <div
       ref={ref}
       href="https://www.google.com"
       target="_blank"
@@ -39,12 +48,12 @@ const Person = ({ images, name, title, company, linkedin_url, idx }) => {
         initial="hidden"
         animate={imageAnimation}
         variants={personImageAnimation}
-        className="imagewrapper"
+        className="person__imageWrapper"
       >
         <picture>
-          <source media="(min-width: 800px)" srcSet={images.desktop}></source>
-          <source srcSet={images.mobile}></source>
-          <img src={images.desktop} alt="" />
+          <source media="(min-width: 800px)" srcSet={desktop_image}></source>
+          <source srcSet={mobile_image}></source>
+          <img className="person__image" src={desktop_image} alt="" />
         </picture>
       </motion.div>
       <motion.div
@@ -52,12 +61,25 @@ const Person = ({ images, name, title, company, linkedin_url, idx }) => {
         animate={textAnimation}
         variants={personAnimation}
         custom={idx}
-        className="text"
+        className="person__text"
       >
-        <Styled.p className="name">{name}</Styled.p>
-        <Styled.p className="title">{`${title},  ${company}`}</Styled.p>
+        <a href={linkedin_url} target="_blank" className="person__link">
+          <Styled.p className="person__name">{name}</Styled.p>
+        </a>
+
+        {company_url ? (
+          <a href={company_url} target="_blank" className="person__link">
+            <Styled.p className="person__title">
+              {title}, {company}
+            </Styled.p>
+          </a>
+        ) : (
+          <Styled.p className="person__title">
+            {title}, {company}
+          </Styled.p>
+        )}
       </motion.div>
-    </a>
+    </div>
   );
 };
 export default Person;

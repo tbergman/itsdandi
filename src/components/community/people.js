@@ -44,18 +44,7 @@ const People = ({
 
           <motion.div className="people">
             {people.map((person, i) => (
-              <Person
-                key={i}
-                images={{
-                  desktop: person.desktop_image,
-                  mobile: person.mobile_image,
-                }}
-                name={person.name}
-                title={person.title}
-                company={person.company}
-                linkedin={person.linkedin}
-                idx={i}
-              />
+              <Person key={i} content={person} idx={i} />
             ))}
           </motion.div>
         </div>
