@@ -158,8 +158,8 @@ const DataCollection = (props) => {
         >
           <Styled.p
             sx={{
-              fontSize: ["24px !important"],
-              lineHeight: ["31.2px !important"],
+              fontSize: ["16px", "24px !important"],
+              lineHeight: ["24px", "31.2px !important"],
               mb: [3],
             }}
           >
@@ -271,8 +271,8 @@ const DataCollection = (props) => {
         >
           <Styled.p
             sx={{
-              fontSize: ["24px !important"],
-              lineHeight: ["31.2px !important"],
+              fontSize: ["16px", "24px !important"],
+              lineHeight: ["24px", "31.2px !important"],
               mb: [3],
             }}
           >

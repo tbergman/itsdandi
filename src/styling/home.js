@@ -562,9 +562,7 @@ export const home = {
       mt: [10, 21],
       mb: [9],
       gridArea: ["1/1/2/-1", "1/2/2/6"],
-      ".Partners__text-header": {
-        lineHeight: ["48px"],
-      },
+      ".Partners__text-header": {},
     },
     ".Partners__logoCarousel": {
       gridArea: ["2/1/3/-1"],
@@ -894,9 +892,14 @@ export const home = {
       },
       ".MPP__graphics-background-circles": {
         position: "absolute",
-        width: ["215px", "464px"],
-        bottom: ["-107.5px", "unset"],
-        height: ["215px", "100%"],
+        width: [(t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`, "464px"],
+        bottom: [
+          (t) =>
+            `calc(calc(calc(calc(${t.colWidthMob} * 4) + 60px) * .5) / -1)`,
+
+          "unset",
+        ],
+        height: [(t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`, "100%"],
         display: "flex",
         alignItems: "center",
         right: ["20%", "-232px"],
@@ -910,7 +913,7 @@ export const home = {
     },
     ".MPP__text": {
       gridArea: ["2/1/3/-1", "1/7/2/-1"],
-      mt: ["149px", "275px"],
+      mt: [20, "275px"],
       mb: [10, "303px"],
       ".MPP__text-header": {
         ".MPP__text-header-text": {},

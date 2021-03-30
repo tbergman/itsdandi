@@ -25,6 +25,7 @@ import { pricing } from "./src/styling/pricing";
 import { board } from "./src/styling/board";
 import { people } from "./src/styling/people";
 import { integrations } from "./src/styling/product/integrations";
+import { header } from "./src/styling/header";
 
 const theme = {
   breakpoints: ["1024px", "1500px", "2000px"],
@@ -1877,34 +1878,7 @@ const theme = {
         },
       },
 
-      header: {
-        color: "black",
-        ".Header__text": {
-          mt: [18, 22],
-          gridArea: ["1/1/2/-1", "1/3/2/9"],
-        },
-        ".Header__text-header": {
-          fontSize: ["36px", "52px"],
-          lineHeight: ["43px", "60px"],
-        },
-        ".Header__text-body": {
-          mt: [2, 3],
-          fontFamily: "body",
-          lineHeight: ["30px", "36px"],
-          fontSize: ["20px", "24px"],
-        },
-        ".Header__graphic": {
-          gridArea: ["2/1/3/-1", "2/1/3/-1"],
-          position: "relative",
-          width: ["100vw"],
-          left: [
-            "-20px",
-            "-40px",
-            (t) => `calc(${t.desktopBigGutters} / -1)`,
-            (t) => `calc(${t.desktopMassiveGutters} / -1)`,
-          ],
-        },
-      },
+      header: { ...header },
       carousel: {
         position: "relative",
         height: ["350px"],
@@ -2017,8 +1991,8 @@ const theme = {
     root: { ...root },
     h1: {
       fontFamily: "display",
-      fontSize: ["36px", "60px"],
-      lineHeight: ["43.2px", "64px"],
+      fontSize: ["32px", "60px"],
+      lineHeight: ["38.4px", "64px"],
       fontWeight: "500",
       m: 0,
     },

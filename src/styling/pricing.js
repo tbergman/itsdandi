@@ -13,8 +13,8 @@ export const pricing = {
       mt: [18, 21],
       mb: [2, 15],
       h1: {
-        fontSize: ["36px", "52px"],
-        lineHeight: ["43px", "58px"],
+        fontSize: ["32px", "52px"],
+        lineHeight: ["38.4px", "58px"],
         maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
       },
       h3: {
