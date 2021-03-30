@@ -64,47 +64,50 @@ const Quotes = ({
         }}
         className="Quotes"
       >
-        <motion.div ref={imageRef} className="Quotes__imageWrapper">
-          <AnimatePresence initial={false} custom={settings}>
-            <motion.picture
-              key={page}
-              custom={settings}
-              variants={quotesCarousel}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              drag="x"
-              dragConstraints={{
-                left: 0,
-                right: 0,
-              }}
-              dragElastic={0}
-              onDragEnd={(e, { offset, velocity }) => {
-                const swipe = swipePower(offset.x, velocity.y);
+        <div className="Quotes__imageContainer">
+          <motion.div ref={imageRef} className="Quotes__imageWrapper">
+            <AnimatePresence initial={false} custom={settings}>
+              <motion.picture
+                className="Quotes__picture"
+                key={page}
+                custom={settings}
+                variants={quotesCarousel}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                drag="x"
+                dragConstraints={{
+                  left: 0,
+                  right: 0,
+                }}
+                dragElastic={0}
+                onDragEnd={(e, { offset, velocity }) => {
+                  const swipe = swipePower(offset.x, velocity.y);
 
-                if (offset.x < 0) {
-                  paginate(1);
-                } else if (offset.x > 0) {
-                  paginate(-1);
-                }
-              }}
-            >
-              <motion.source
-                media="(min-width: 800px)"
-                srcSet={quotes[index].fields.desktop_image}
-              ></motion.source>
-              <motion.source
-                srcSet={quotes[index].fields.mobile_image}
-              ></motion.source>
+                  if (offset.x < 0) {
+                    paginate(1);
+                  } else if (offset.x > 0) {
+                    paginate(-1);
+                  }
+                }}
+              >
+                <motion.source
+                  media="(min-width: 800px)"
+                  srcSet={quotes[index].fields.desktop_image}
+                ></motion.source>
+                <motion.source
+                  srcSet={quotes[index].fields.mobile_image}
+                ></motion.source>
 
-              <motion.img
-                className="Quotes__imageWrapper-image"
-                src={quotes[index].fields.desktop_image}
-                alt=""
-              />
-            </motion.picture>
-          </AnimatePresence>
-        </motion.div>
+                <motion.img
+                  className="Quotes__image"
+                  src={quotes[index].fields.desktop_image}
+                  alt=""
+                />
+              </motion.picture>
+            </AnimatePresence>
+          </motion.div>
+        </div>
 
         <motion.div className="Quotes__textWrapper">
           <AnimatePresence initial={false} exitBeforeEnter>
@@ -114,10 +117,10 @@ const Quotes = ({
               animate="center"
               exit="exit"
               variants={quotesCarouselText}
-              className="Quotes__textWrapper-text"
+              className="Quotes__text"
             >
               <motion.svg
-                className="Quotes__textWrapper-text-quotationmark"
+                className="Quotes__quotationmark"
                 width="17"
                 height="17"
                 viewBox="0 0 17 17"
@@ -130,15 +133,16 @@ const Quotes = ({
                 />
               </motion.svg>
 
-              <Styled.h3 className="Quotes__textWrapper-text-body">
+              <Styled.h3 className="Quotes__body">
                 {lineBreaks(quotes[index].fields.body)}
               </Styled.h3>
-              <div className="Quotes__textWrapper-text-source">
-                <Styled.p className="Quotes_textWrapper-text-source-name">
+              <div className="Quotes__source">
+                <Styled.p className="Quotes_name">
                   {quotes[index].fields.name}
                 </Styled.p>
-                <Styled.p className="Quotes__textWrapper-text-source-title">
-                  {quotes[index].fields.title}
+                <Styled.p className="Quotes__title">
+                  {quotes[index].fields.title},<br />{" "}
+                  {quotes[index].fields.company}
                 </Styled.p>
               </div>
             </motion.div>
@@ -146,10 +150,10 @@ const Quotes = ({
         </motion.div>
 
         <div className="Quotes__navigation">
-          <div className="Quotes__navigation-prev">
+          <div className="Quotes__prev">
             <svg
               onClick={() => paginate(-1)}
-              className="Quotes__navigation-arrow"
+              className="Quotes__arrow"
               width="15"
               height="26"
               viewBox="0 0 15 26"
@@ -164,10 +168,10 @@ const Quotes = ({
               />
             </svg>
           </div>
-          <div className="Quotes__navigation-next">
+          <div className="Quotes__next">
             <svg
               onClick={() => paginate(1)}
-              className="Quotes__navigation-arrow"
+              className="Quotes__arrow"
               width="15"
               height="26"
               viewBox="0 0 15 26"
@@ -184,14 +188,14 @@ const Quotes = ({
           </div>
         </div>
         {!isServer && (
-          <div className="Quotes__navigation-timerWrapper">
+          <div className="Quotes__timerWrapper">
             {isDesktop ? (
               <motion.div
                 key={page}
                 initial="initial"
                 animate="animate"
                 variants={quotesCarouselTimerDesktop}
-                className="Quotes__navigation-timerWrapper-timer"
+                className="Quotes__timer"
               />
             ) : (
               <motion.div
@@ -199,7 +203,7 @@ const Quotes = ({
                 initial="initial"
                 animate="animate"
                 variants={quotesCarouselTimerMobile}
-                className="Quotes__navigation-timerWrapper-timer"
+                className="Quotes__timer"
               />
             )}
           </div>

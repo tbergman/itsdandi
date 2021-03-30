@@ -19,15 +19,6 @@ export const quoteimage = {
     width: "100%",
   },
 
-  ".Quote__graphics": {
-    position: "absolute",
-    height: "200%",
-    width: "200%",
-    transform: "translate3d(-25%,-25%,0)",
-  },
-  ".Quote__circle": {
-    stroke: (t) => t.colors.turquoise,
-  },
   // height: [
   //   "calc(100vw * .426)",
   //   (t) => `calc(calc(calc(${t.colWidthDesktop} * 5) + 240px) * .83)`,

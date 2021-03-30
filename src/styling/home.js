@@ -720,95 +720,99 @@ export const home = {
     bg: "#FAFAFA",
     color: "black",
     position: "relative",
-    ".Quotes__imageWrapper": {
+    ".Quotes": {
+      height: ["unset", "650px"],
+    },
+    ".Quotes__imageContainer": {
       gridArea: ["1/1/2/-1", "1/1/2/6"],
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "flex-end",
+    },
+    ".Quotes__imageWrapper": {
       position: "relative",
       overflow: "hidden",
+      // ml: [(t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`],
       width: [
         "100vw",
-        (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
-        (t) =>
-          `calc(calc(calc(${t.colWidthDesktopBig} * 5) + 160px) + ${t.desktopBigGutters})`,
-        (t) =>
-          `calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 160px) + ${t.desktopMassiveGutters})`,
+        (t) => `calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
+        (t) => `calc(calc(${t.colWidthDesktopBig} * 3) + 120px)`,
+        (t) => `calc(calc(${t.colWidthDesktopMassive} * 3) + 120px)`,
       ],
       height: [
         "calc(100vw * .64)",
-        (t) => `calc(calc(calc(${t.colWidthDesktop} * 5) + 200px) )`,
+        (t) => `calc(calc(calc(${t.colWidthDesktop} * 3) + 120px) * .75)`,
+        (t) => `calc(calc(calc(${t.colWidthDesktopBig} * 3) + 120px) * .75)`,
         (t) =>
-          `calc(calc(calc(calc(${t.colWidthDesktopBig} * 5) + 160px) + ${t.desktopBigGutters}) )`,
-        (t) =>
-          `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 160px) + ${t.desktopMassiveGutters}) )`,
+          `calc(calc(calc(${t.colWidthDesktopMassive} * 3) + 120px) * .75)`,
       ],
-      left: [
-        "-20px",
-        "-40px",
-        (t) => `calc(${t.desktopBigGutters} / -1)`,
-        (t) => `calc(${t.desktopMassiveGutters} / -1)`,
-      ],
-      picture: {
-        position: "absolute",
-        width: "100%",
-        height: ["100%"],
-        top: [0],
-        left: 0,
-
-        img: {
-          width: "100%",
-          height: "100%",
-        },
-      },
+      // left: [
+      //   "-20px",
+      //   "-40px",
+      //   (t) => `calc(${t.desktopBigGutters} / -1)`,
+      //   (t) => `calc(${t.desktopMassiveGutters} / -1)`,
+      // ],
+    },
+    ".Quote__picture": {
+      position: "absolute",
+      height: "100%",
+      width: "100%",
+      top: 0,
+      left: 0,
+    },
+    ".Quotes__image": {
+      width: "100%",
     },
     ".Quotes__textWrapper": {
       gridArea: ["2/1/3/-1", "1/6/2/-2"],
+      ml: [
+        (t) => `calc(${t.colWidthMob} + 5px)`,
+        (t) => `calc(calc(${t.colWidthDesktop} * 1) + 40px)`,
+        (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 40px)`,
+        (t) => `calc(calc(${t.colWidthDesktopMassive} * 2) + 40px)`,
+      ],
       position: "relative",
       display: "flex",
       overflow: "hidden",
       height: ["280px", "unset"],
       alignItems: ["unset", "center"],
-      ".Quotes__textWrapper-text": {
-        position: "relative",
-        mt: [4, 0],
-        ml: [
-          (t) => `calc(${t.colWidthMob} + 5px)`,
-          (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`,
-          (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 40px)`,
-          (t) => `calc(calc(${t.colWidthDesktopMassive} * 2) + 40px)`,
-        ],
+    },
+    ".Quotes__text": {
+      position: "relative",
+      mt: [4, 0],
+      ml: [0, 5],
+    },
+    ".Quotes__body": {
+      fontFamily: "display",
+      fontSize: ["24px", "40px"],
+      lineHeight: ["31.2px", "48px"],
+    },
+    ".Quotes__source": {
+      mt: [3, 5],
+      mb: [5],
+    },
+    ".Quotes__name": {
+      fontFamily: "medium",
 
-        ".Quotes__textWrapper-text-body": {
-          fontFamily: "display",
+      lineHeight: ["24px", "32px"],
+      fontSize: ["16px"],
+    },
+    ".Quotes__quotationmark": {
+      display: ["none", "unset"],
+      position: "absolute",
+      left: [0, "-40px"],
+      // left: [
+      //   0,
+      //   (t) => `calc(${t.colWidthDesktop} / -1)`,
+      //   (t) => `calc(${t.colWidthDesktopBig} / -1)`,
+      //   (t) => `calc(${t.colWidthDesktopMassive} / -1)`,
+      // ],
+    },
+    ".Quotes__title": {
+      fontFamily: "body",
 
-          fontSize: ["24px", "40px"],
-          lineHeight: ["31.2px", "48px"],
-        },
-        ".Quotes__textWrapper-text-source": {
-          mt: [3, 7],
-          mb: [5],
-          ".Quotes__textWrapper-text-source-name": {
-            fontFamily: "medium",
-
-            lineHeight: ["24px", "32px"],
-            fontSize: ["16px"],
-          },
-          ".Quotes__textWrapper-text-source-title": {
-            fontFamily: "body",
-
-            fontSize: ["16px"],
-            lineHeight: "24px",
-          },
-        },
-        ".Quotes__textWrapper-text-quotationmark": {
-          display: ["none", "unset"],
-          position: "absolute",
-          left: [
-            0,
-            (t) => `calc(${t.colWidthDesktop} / -1)`,
-            (t) => `calc(${t.colWidthDesktopBig} / -1)`,
-            (t) => `calc(${t.colWidthDesktopMassive} / -1)`,
-          ],
-        },
-      },
+      fontSize: ["16px"],
+      lineHeight: "24px",
     },
     ".Quotes__navigation": {
       width: ["100vw"],
@@ -821,26 +825,26 @@ export const home = {
       px: [9, 3],
       zIndex: 1,
       pointerEvents: "none",
-      ".Quotes__navigation-arrow": {
-        pointerEvents: "auto",
-        cursor: "pointer",
-      },
-      ".Quotes__navigation-prev": {
-        flex: 1,
-        display: "flex",
-        justifyContent: "flex-start",
-      },
-      ".Quotes__navigation-next": {
-        flex: 1,
-        display: "flex",
-        justifyContent: "flex-end",
-
-        ".Quotes__navigation-arrow": {
-          transform: "rotate(180deg)",
-        },
+    },
+    ".Quotes__prev": {
+      flex: 1,
+      display: "flex",
+      justifyContent: "flex-start",
+    },
+    ".Quotes__next": {
+      flex: 1,
+      display: "flex",
+      justifyContent: "flex-end",
+      ".Quotes__arrow": {
+        transform: "rotate(180deg)",
       },
     },
-    ".Quotes__navigation-timerWrapper": {
+    ".Quotes__arrow": {
+      pointerEvents: "auto",
+      cursor: "pointer",
+    },
+
+    ".Quotes__timerWrapper": {
       position: ["relative", "absolute"],
       right: 0,
       gridArea: ["3/1/4/-1", "unset"],
@@ -848,11 +852,11 @@ export const home = {
       width: ["100vw", "72px"],
       left: ["-20px", "unset"],
       bg: "rgba(255,255,255,0.24)",
-      ".Quotes__navigation-timerWrapper-timer": {
-        bg: "rgba(58,58,61,0.1)",
-        height: ["100%", "unset"],
-        width: ["unset", "100%"],
-      },
+    },
+    ".Quotes__timer": {
+      bg: "rgba(58,58,61,0.1)",
+      height: ["100%", "unset"],
+      width: ["unset", "100%"],
     },
   },
   marketplacepartners: {
