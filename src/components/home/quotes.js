@@ -11,8 +11,8 @@ import {
   quotesCarouselTimerMobile,
   quotesCarouselTimerDesktop,
 } from "../../helpers/animations";
-import { Transition } from "react-transition-group";
-import { gsap } from "gsap";
+// import { Transition } from "react-transition-group";
+// import { gsap } from "gsap";
 
 const Quotes = ({
   setNavbarStyling,
@@ -66,69 +66,49 @@ const Quotes = ({
         className="Quotes"
       >
         <div className="Quotes__content">
-          <div ref={imageRef} className="Quotes__imageWrapper">
-            {/* <AnimatePresence initial={false} custom={settings}> */}
-            <picture
-              className="Quotes__picture"
-              key={page}
-              // custom={settings}
-              // variants={quotesCarousel}
-              // initial="enter"
-              // animate="center"
-              // exit="exit"
-              // drag="x"
-              // dragConstraints={{
-              //   left: 0,
-              //   right: 0,
-              // }}
-              // dragElastic={0}
-              // onDragEnd={(e, { offset, velocity }) => {
-              //   const swipe = swipePower(offset.x, velocity.y);
-
-              //   if (offset.x < 0) {
-              //     paginate(1);
-              //   } else if (offset.x > 0) {
-              //     paginate(-1);
-              //   }
-              // }}
-            >
-              <source
-                media="(min-width: 800px)"
-                srcSet={quotes[index].fields.desktop_image}
-              ></source>
-              <source srcSet={quotes[index].fields.mobile_image}></source>
-
-              <Transition
-                in={true}
-                timeout={1000}
-                unmountOnExit
-                mountOnEnter
-                onEnter={(node, isAppearing) => {
-                  gsap.set(node, {
-                    x: 1000,
-                    autoAlpha: 0,
-                  });
+          <motion.div ref={imageRef} className="Quotes__imageWrapper">
+            <AnimatePresence initial={false} custom={settings}>
+              <motion.picture
+                className="Quotes__picture"
+                key={index}
+                custom={settings}
+                variants={quotesCarousel}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                drag="x"
+                dragConstraints={{
+                  left: 0,
+                  right: 0,
                 }}
-                addEndListener={(node, done) => {
-                  gsap.to(node, {
-                    x: 0,
+                dragElastic={0}
+                onDragEnd={(e, { offset, velocity }) => {
+                  const swipe = swipePower(offset.x, velocity.y);
 
-                    autoAlpha: current === i ? 1 : 0,
-                    duration: current === i ? 0.6 : 0,
-                    onComplete: done,
-                    ease: "power2.out",
-                  });
+                  if (offset.x < 0) {
+                    paginate(1);
+                  } else if (offset.x > 0) {
+                    paginate(-1);
+                  }
                 }}
               >
-                <img
+                <motion.source
+                  media="(min-width: 800px)"
+                  srcSet={quotes[index].fields.desktop_image}
+                ></motion.source>
+                <motion.source
+                  srcSet={quotes[index].fields.mobile_image}
+                ></motion.source>
+
+                <motion.img
+                  key={index}
                   className="Quotes__image"
                   src={quotes[index].fields.desktop_image}
                   alt=""
                 />
-              </Transition>
-            </picture>
-            {/* </AnimatePresence> */}
-          </div>
+              </motion.picture>
+            </AnimatePresence>
+          </motion.div>
 
           <motion.div className="Quotes__textWrapper">
             <AnimatePresence initial={false} exitBeforeEnter>

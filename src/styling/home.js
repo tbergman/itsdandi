@@ -732,6 +732,7 @@ export const home = {
       flexShrink: [0],
       transform: ["translate(-20px,0px)", "unset"],
       overflow: "hidden",
+      position: "relative",
       width: [
         "100vw",
         (t) => `calc(calc(${t.colWidthDesktop} * 4) + 120px)`,
@@ -747,7 +748,7 @@ export const home = {
       ],
       left: ["-20px", "unset"],
     },
-    ".Quote__picture": {
+    ".Quotes__picture": {
       position: "absolute",
       height: "100%",
       width: "100%",
