@@ -746,7 +746,7 @@ export const home = {
         (t) =>
           `calc(calc(calc(${t.colWidthDesktopMassive} * 4) + 120px) * .75)`,
       ],
-      left: ["-20px", "unset"],
+      // left: ["-20px", "unset"],
     },
     ".Quotes__picture": {
       position: "absolute",
@@ -764,13 +764,14 @@ export const home = {
       position: "relative",
       display: "flex",
       overflow: "hidden",
-      height: ["280ppx", "unset"],
+      height: ["250px", "unset"],
       alignItems: ["unset", "flex-start"],
     },
     ".Quotes__text": {
       position: "relative",
       mt: [4, 0],
       ml: [0, 5],
+      pr: [3, 0],
     },
     ".Quotes__body": {
       fontFamily: "display",

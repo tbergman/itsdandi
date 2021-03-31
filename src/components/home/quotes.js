@@ -143,9 +143,7 @@ const Quotes = ({
                   </Styled.p>
                   <Styled.p className="Quotes__title">
                     {quotes[index].fields.title && (
-                      <span>
-                        {quotes[index].fields.title},<br />
-                      </span>
+                      <span>{quotes[index].fields.title}, </span>
                     )}
                     {quotes[index].fields.company && (
                       <span>{quotes[index].fields.company}</span>
