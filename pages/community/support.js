@@ -5,20 +5,17 @@ import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
 import Onboarding from "../../src/components/community/support/onboarding";
-import LearnMore from "../../src/components/community/support/learnmore";
+// import LearnMore from "../../src/components/community/support/learnmore";
 import GetCreative from "../../src/components/community/support/getcreative";
 import TopContent from "../../src/components/community/support/topcontent";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/community/pages";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
+import { isServer } from "../../src/helpers/utils";
 
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
+import Quotes from "../../src/components/quotes";
+
 import MobileNav from "../../src/components/mobilenav";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
@@ -130,7 +127,18 @@ const Community = (props) => {
         windowHeight={windowHeight}
         content={props.onboarding}
       />
-      <LearnMore
+      <Quotes
+        setNavbarStyling={setNavbarStyling}
+        windowHeight={windowHeight}
+        navBarStyling={theme.components.navBarVariants.gray2}
+        isDesktop={isDesktop}
+        isServer={isServer()}
+        content={{
+          quotes: props.quotes,
+        }}
+      />
+
+      {/* <LearnMore
         isDesktop={isDesktop}
         subMenuStyling={theme.components.submenu.variants.white}
         setSubMenuStyling={setSubMenuStyling}
@@ -140,7 +148,7 @@ const Community = (props) => {
         content={{
           ...props.learnmore,
         }}
-      />
+      /> */}
       <GetCreative
         isDesktop={isDesktop}
         subMenuStyling={theme.components.submenu.variants.white}

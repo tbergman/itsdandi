@@ -9,7 +9,7 @@ import PayEquity from "../src/components/home/payequity";
 import MobileMenu from "../src/components/mobilemenu";
 import Partners from "../src/components/home/partners";
 import AdvanceDEI from "../src/components/home/advancedei";
-import Quotes from "../src/components/home/quotes";
+import Quotes from "../src/components/quotes";
 import MarketPlacePartners from "../src/components/home/marketplacepartners";
 import { useMediaQuery } from "react-responsive";
 import devices from "../src/helpers/devices";

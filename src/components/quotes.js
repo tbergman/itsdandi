@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
 import { useState, useRef, useEffect } from "react";
-import InView from "../inview";
-import { lineBreaks, rootMargin } from "../../helpers/utils";
+import InView from "./inview";
+import { lineBreaks, rootMargin } from "../helpers/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { wrap } from "popmotion";
 import {
@@ -10,7 +10,7 @@ import {
   quotesCarouselText,
   quotesCarouselTimerMobile,
   quotesCarouselTimerDesktop,
-} from "../../helpers/animations";
+} from "../helpers/animations";
 // import { Transition } from "react-transition-group";
 // import { gsap } from "gsap";
 
@@ -94,16 +94,16 @@ const Quotes = ({
               >
                 <motion.source
                   media="(min-width: 800px)"
-                  srcSet={quotes[index].fields.desktop_image}
+                  srcSet={quotes[index].desktop_image}
                 ></motion.source>
                 <motion.source
-                  srcSet={quotes[index].fields.mobile_image}
+                  srcSet={quotes[index].mobile_image}
                 ></motion.source>
 
                 <motion.img
                   key={index}
                   className="Quotes__image"
-                  src={quotes[index].fields.desktop_image}
+                  src={quotes[index].desktop_image}
                   alt=""
                 />
               </motion.picture>
@@ -135,18 +135,18 @@ const Quotes = ({
                 </motion.svg>
 
                 <Styled.h3 className="Quotes__body">
-                  {lineBreaks(quotes[index].fields.body)}
+                  {lineBreaks(quotes[index].body)}
                 </Styled.h3>
                 <div className="Quotes__source">
                   <Styled.p className="Quotes_name">
-                    {quotes[index].fields.name}
+                    {quotes[index].name}
                   </Styled.p>
                   <Styled.p className="Quotes__title">
-                    {quotes[index].fields.title && (
-                      <span>{quotes[index].fields.title}, </span>
+                    {quotes[index].title && (
+                      <span>{quotes[index].title}, </span>
                     )}
-                    {quotes[index].fields.company && (
-                      <span>{quotes[index].fields.company}</span>
+                    {quotes[index].company && (
+                      <span>{quotes[index].company}</span>
                     )}
                   </Styled.p>
                 </div>
