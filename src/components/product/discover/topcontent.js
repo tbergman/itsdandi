@@ -6,20 +6,7 @@ import Button from "../button";
 import { gsap } from "gsap";
 
 const TopContent = ({ isDesktop, content }) => {
-  const ref = useRef(null);
   const { button_text, url } = content;
-
-  useEffect(() => {
-    const animation = gsap.to(ref.current.querySelectorAll(".shouldMove"), {
-      x: -25,
-      duration: 0.5,
-      ease: "power2.out",
-      delay: 0.4,
-    });
-    return () => {
-      animation.kill();
-    };
-  }, []);
 
   return (
     <div
@@ -32,7 +19,6 @@ const TopContent = ({ isDesktop, content }) => {
       </div>
       <div className="graphics">
         <svg
-          ref={ref}
           width="303"
           height="302"
           viewBox="0 0 303 302"

@@ -26,7 +26,12 @@ export const discover = {
       ],
       height: ["90px", "310px"],
       bottom: 0,
-      right: [0, "40px"],
+      right: [
+        0,
+        (t) => t.desktopGutters,
+        (t) => t.desktopBigGutters,
+        (t) => t.desktopMassiveGutters,
+      ],
       overflow: "hidden",
       display: ["none", "flex"],
       alignItems: "flex-end",
