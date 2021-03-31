@@ -15,12 +15,11 @@ import { useState, useEffect } from "react";
 import Butter from "buttercms";
 import { isServer } from "../../src/helpers/utils";
 
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
+import GridContainer from "../../src/components/gridcontainer";
+import Section from "../../src/components/section";
+import QuoteText from "../../src/components/quotetext";
+import QuoteImage from "../../src/components/quoteimage";
+
 import MobileNav from "../../src/components/mobilenav";
 import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
@@ -116,6 +115,7 @@ const Community = (props) => {
       >
         {!isServer() && <TopContent />}
       </Header>
+
       <People
         subMenuStyling={theme.components.submenu.variants.white}
         setSubMenuStyling={setSubMenuStyling}
@@ -128,6 +128,34 @@ const Community = (props) => {
         }}
       />
 
+      {/* Quote */}
+      <GridContainer
+        isDesktop={isDesktop}
+        setSubMenuStyling={() => null}
+        // subMenuStyling={theme.components.submenu.variants.white}
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navBarVariants.gray}
+        windowHeight={windowHeight}
+        bg={"#F8F8F8"}
+      >
+        <Section
+          styling={{
+            py: [0, 20],
+            ...theme.components.section.one.quote,
+          }}
+          shouldSlideUp={true}
+        >
+          <QuoteText content={{ ...props.quote }} />
+        </Section>
+        <Section
+          styling={{
+            py: [0, 20],
+            ...theme.components.section.two.quote,
+          }}
+        >
+          <QuoteImage content={{ ...props.quote }} />
+        </Section>
+      </GridContainer>
       <SubNavigation
         next={subPages_.next}
         prev={{

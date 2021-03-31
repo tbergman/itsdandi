@@ -223,10 +223,9 @@ const DataCollection = (props) => {
         windowHeight={windowHeight}
         bg={theme.colors.white}
       >
-        {/* Change order depending on device */}
-
         <Section
           styling={{
+            py: [0, 20],
             ...theme.components.section.one.quote,
           }}
           shouldSlideUp={true}
@@ -235,6 +234,7 @@ const DataCollection = (props) => {
         </Section>
         <Section
           styling={{
+            py: [0, 20],
             ...theme.components.section.two.quote,
           }}
         >

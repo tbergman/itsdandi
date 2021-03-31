@@ -334,11 +334,10 @@ const Discover = (props) => {
         windowHeight={windowHeight}
         bg={"#F8F8F8"}
       >
-        {/* Change order depending on device */}
-
         <Section
           shouldSlideUp={true}
           styling={{
+            py: [0, 20],
             ...theme.components.section.one.quote,
           }}
         >
@@ -346,6 +345,7 @@ const Discover = (props) => {
         </Section>
         <Section
           styling={{
+            py: [0, 20],
             ...theme.components.section.two.quote,
           }}
         >

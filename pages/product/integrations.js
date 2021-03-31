@@ -12,13 +12,10 @@ import TopContent from "../../src/components/product/integrations/topcontent";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
 import { isServer } from "../../src/helpers/utils";
-
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
+import GridContainer from "../../src/components/gridcontainer";
+import Section from "../../src/components/section";
+import QuoteText from "../../src/components/quotetext";
+import QuoteImage from "../../src/components/quoteimage";
 import MobileNav from "../../src/components/mobilenav";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
@@ -137,6 +134,34 @@ const Product = (props) => {
           ...props.connections,
         }}
       />
+      {/* Quote */}
+      <GridContainer
+        isDesktop={isDesktop}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.variants.white}
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navBarVariants.gray}
+        windowHeight={windowHeight}
+        bg={"#F8F8F8"}
+      >
+        <Section
+          styling={{
+            py: [0, 20],
+            ...theme.components.section.one.quote,
+          }}
+          shouldSlideUp={true}
+        >
+          <QuoteText content={{ ...props.quote }} />
+        </Section>
+        <Section
+          styling={{
+            py: [0, 20],
+            ...theme.components.section.two.quote,
+          }}
+        >
+          <QuoteImage content={{ ...props.quote }} />
+        </Section>
+      </GridContainer>
       <Secure
         subMenuStyling={theme.components.submenu.variants.white}
         setSubMenuStyling={setSubMenuStyling}

@@ -25,6 +25,10 @@ import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
+import GridContainer from "../../src/components/gridcontainer";
+import Section from "../../src/components/section";
+import QuoteImage from "../../src/components/quoteimage";
+import QuoteText from "../../src/components/quotetext";
 
 const Values = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -134,6 +138,36 @@ const Values = (props) => {
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
       />
+
+      {/* Quote */}
+      <GridContainer
+        isDesktop={isDesktop}
+        setSubMenuStyling={setSubMenuStyling}
+        subMenuStyling={theme.components.submenu.variants.white}
+        setNavbarStyling={setNavbarStyling}
+        navBarStyling={theme.components.navBarVariants.gray}
+        windowHeight={windowHeight}
+        bg="#F8F8F8"
+      >
+        <Section
+          styling={{
+            py: [0, 20],
+            ...theme.components.section.one.quote,
+          }}
+          shouldSlideUp={true}
+        >
+          <QuoteText content={{ ...props.quote }} />
+        </Section>
+        <Section
+          styling={{
+            py: [0, 20],
+            ...theme.components.section.two.quote,
+          }}
+        >
+          <QuoteImage content={{ ...props.quote }} />
+        </Section>
+      </GridContainer>
+
       <TextBlock
         isDesktop={isDesktop}
         content={{
