@@ -336,52 +336,54 @@ export const pricing = {
                 },
               },
 
-              ".Table__body-row-grid-item-infoBox": {
-                position: "absolute",
-                zIndex: 998,
-                bg: "black",
-                boxShadow:
-                  "0px 0px 1px rgba(0, 0, 0, 0.75), 0px 8px 30px rgba(0, 0, 0, 0.45)",
-                borderRadius: "8px",
-                left: ["20px", "110%"],
-                bottom: "-200%",
-                py: [4],
-                px: [4],
-              },
-              ".Table__body-row-grid-item-infoBox-body": {
-                width: ["272px"],
-                mb: [2],
-              },
-              ".Table__body-row-grid-item-infoBox-link": {
-                width: ["272px"],
-                svg: {
-                  width: "16px",
-                  height: "16px",
-                },
-                p: {
-                  fontFamily: "display",
-                },
-                ".arrow": {
-                  svg: {
-                    width: "unset",
-                    height: "unset",
-                  },
-                },
-              },
-
               ".Table__body-row-grid-item-symbol": {
                 fontSize: ["14px"],
                 lineHeight: ["16.8px"],
-              },
-              svg: {
-                width: "10px",
-                height: "10px",
               },
             },
           },
         },
         ".Table__body-row:nth-of-type(2n-1)": {
           bg: "#262629",
+        },
+      },
+      ".Table__itemSymbol": {
+        width: "10px",
+        height: "10px",
+      },
+      ".infoBox": {
+        position: "absolute",
+        zIndex: 998,
+        bg: "black",
+        boxShadow:
+          "0px 0px 1px rgba(0, 0, 0, 0.75), 0px 8px 30px rgba(0, 0, 0, 0.45)",
+        borderRadius: "8px",
+        left: ["20px", "110%"],
+        bottom: "-200%",
+        py: [4],
+        px: [4],
+      },
+      ".infoBox__body": {
+        width: ["272px"],
+        mb: [2],
+      },
+      ".infoBox__links": {
+        display: "flex",
+        flexFlow: "column",
+      },
+
+      ".infoBox__link": {
+        width: ["272px"],
+        mb: [1],
+        a: {
+          mb: 0,
+        },
+        p: {
+          fontFamily: "display",
+        },
+        ".learnMoreLink__arrow": {
+          width: "16px",
+          height: "16px",
         },
       },
     },

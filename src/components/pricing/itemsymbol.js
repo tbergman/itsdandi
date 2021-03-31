@@ -9,7 +9,7 @@ const ItemSymbol = ({ input_, color, animate, idx }) => {
     }
     case "circlesmall": {
       return (
-        <svg viewBox="0 0 100 100">
+        <svg className="Table__itemSymbol" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="40" fill={color} />
         </svg>
       );

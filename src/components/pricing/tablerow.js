@@ -21,41 +21,53 @@ const TableRow = ({ row, idx, isDesktop }) => {
           <div className="Table__body-row-grid-item-title">
             <Styled.p className="Table__body-row-grid-item-title-text">
               {row.row_header}
-              <svg
-                onMouseEnter={() => (isDesktop ? send("OPEN") : null)}
-                onClick={() => {
-                  return !isDesktop ? send("OPEN") : null;
-                }}
-                className="Table__body-row-grid-item-title-infoIcon"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.49 6.5V11.3H7.5V6.5H8.49ZM7.5 5.5V4.5H8.49V5.5H7.5Z"
-                  fill="#F2F2F2"
-                  fillOpacity="0.7"
-                />
-                <circle
-                  cx="8"
-                  cy="8"
-                  r="5.5"
-                  stroke="#F2F2F2"
-                  strokeOpacity="0.7"
-                />
-              </svg>
+              {!row.hide_infobox && (
+                <svg
+                  onMouseEnter={() => (isDesktop ? send("OPEN") : null)}
+                  onClick={() => {
+                    return !isDesktop ? send("OPEN") : null;
+                  }}
+                  className="Table__body-row-grid-item-title-infoIcon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.49 6.5V11.3H7.5V6.5H8.49ZM7.5 5.5V4.5H8.49V5.5H7.5Z"
+                    fill="#F2F2F2"
+                    fillOpacity="0.7"
+                  />
+                  <circle
+                    cx="8"
+                    cy="8"
+                    r="5.5"
+                    stroke="#F2F2F2"
+                    strokeOpacity="0.7"
+                  />
+                </svg>
+              )}
             </Styled.p>
-            <InfoBox
-              open={state.matches("opened")}
-              body={row.infobox_body}
-              url={row.infobox_url}
-              buttonText={row.infobox_button_text}
-              state={state}
-              send={send}
-              isDesktop={isDesktop}
-            />
+            {!row.hide_infobox && (
+              <InfoBox
+                open={state.matches("opened")}
+                content={{
+                  body: row.infobox_body,
+                  button1: {
+                    url: row.infobox_button_url1,
+                    text: row.infobox_button_text1,
+                  },
+                  button2: {
+                    url: row.infobox_button_url2,
+                    text: row.infobox_button_text2,
+                  },
+                }}
+                state={state}
+                send={send}
+                isDesktop={isDesktop}
+              />
+            )}
           </div>
         </div>
         <div

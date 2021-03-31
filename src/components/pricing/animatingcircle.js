@@ -32,7 +32,7 @@ const AnimatingCircle = ({ fill }) => {
   }, []);
 
   return (
-    <svg viewBox="0 0 100 100">
+    <svg className="Table__itemSymbol" viewBox="0 0 100 100">
       <circle ref={circleRef} cx="50" cy="50" r="50" fill={fill} />
     </svg>
   );
