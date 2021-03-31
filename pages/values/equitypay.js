@@ -180,6 +180,7 @@ const EquityPay = (props) => {
 
         <Section
           styling={{
+            py: [0, 20],
             ...theme.components.section.one.quote,
           }}
           shouldSlideUp={true}
@@ -188,6 +189,7 @@ const EquityPay = (props) => {
         </Section>
         <Section
           styling={{
+            py: [0, 20],
             ...theme.components.section.two.quote,
           }}
         >

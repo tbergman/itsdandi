@@ -83,11 +83,10 @@ export const people = {
         ],
       },
       ".person__image": {
-        position: "absolute",
+        position: "relative",
         height: "100%",
         width: "100%",
-        top: 0,
-        left: 0,
+        objectFit: "cover",
       },
       ".person__text": {
         mt: [2, 0],
