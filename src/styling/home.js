@@ -395,8 +395,8 @@ export const home = {
       position: ["absolute"],
       height: ["unset"],
       width: ["100%"],
-      left: [0, "unset"],
-      bottom: [0, "unset"],
+      left: [0],
+      bottom: [0],
     },
 
     // ".Carousel__wrapper": {

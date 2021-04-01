@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-// import { useInView } from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -11,36 +11,46 @@ const InView = ({
   setNavbarStyling,
   navBarStyling,
   bg,
-
   children,
 }) => {
-  // const { inView, ref, entry } = useInView({
-  //   rootMargin,
-  // });
-  const ref = useRef(null);
+  const { inView, ref, entry } = useInView({ rootMargin });
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    if (inView) {
+      setNavbarStyling({
+        ...navBarStyling,
+      });
+    }
+    return () => {
+      //
+    };
+  }, [inView]);
+  // const ref = useRef(null);
 
-    const offsetEnd = ref.current.offsetHeight + 1304;
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(ref.current, {
-      scrollTrigger: {
-        trigger: ref.current,
-        // markers: true,
-        start: "-=94",
-        end: `+=${offsetEnd}`,
-        onEnter: () => console.log("inView enter"),
-        onLeaveBack: () => console.log("inView onleaveback"),
-        onEnterBack: () => console.log("inView onenterback"),
-      },
-    });
-    // if (inView) {
-    //   setNavbarStyling({
-    //     ...navBarStyling,
-    //   });
-    // }
-  }, []);
+  //   const offsetEnd = ref.current.offsetHeight + 1304;
+
+  //   gsap.to(ref.current, {
+  //     scrollTrigger: {
+  //       trigger: ref.current,
+  //       // markers: true,
+  //       start: "-=94",
+  //       end: `+=${offsetEnd}`,
+  //       onEnter: () => console.log("inView enter"),
+  //       onLeaveBack: () => console.log("inView onleaveback"),
+  //       onEnterBack: () => console.log("inView onenterback"),
+  //     },
+  //   });
+  // if(inView) {
+  //   setNavbarStyling({
+  //     ...navBarStyling,
+  //   });
+  // },
+  //   },
+  //   []
+  // );
 
   return (
     <div
