@@ -37,25 +37,25 @@ const FooterForm = () => {
         field={email}
         send={send}
         sendType={"EDIT_EMAIL"}
-        placeholder="Email"
+        placeholder="Email*"
       />
       <InputWrapper
         field={phone}
         send={send}
         sendType={"EDIT_PHONE"}
-        placeholder="Phone"
+        placeholder="Phone*"
       />
       <InputWrapper
         field={company}
         send={send}
         sendType={"EDIT_COMPANY"}
-        placeholder="Company"
+        placeholder="Company*"
       />
       <InputWrapper
         field={website}
         send={send}
         sendType={"EDIT_WEBSITE"}
-        placeholder="Website"
+        placeholder="Website*"
       />
 
       <div

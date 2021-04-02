@@ -2,7 +2,7 @@
 import { jsx, Styled } from "theme-ui";
 
 const QuoteText = ({ content }) => {
-  const { body, name, title } = content;
+  const { body, name, title, company } = content;
 
   return (
     <div
@@ -32,11 +32,9 @@ const QuoteText = ({ content }) => {
         </div>
 
         <div className="QuoteText__name slideUp">
-          <Styled.p className="QuoteText__nameText">
-            {name}
-            <br />
-            {title}
-          </Styled.p>
+          <Styled.p className="QuoteText__nameText">{name}</Styled.p>
+          <Styled.p className="QuoteText__title">{title}</Styled.p>
+          <Styled.p className="QuoteText__company">{company}</Styled.p>
         </div>
       </div>
     </div>

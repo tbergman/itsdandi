@@ -801,10 +801,15 @@ export const home = {
     },
     ".Quotes__title": {
       fontFamily: "body",
-
       fontSize: ["16px"],
       lineHeight: "24px",
     },
+    ".Quotes__company": {
+      fontFamily: "body",
+      fontSize: ["16px"],
+      lineHeight: "24px",
+    },
+
     ".Quotes__navigation": {
       width: ["100vw"],
       height: "100%",

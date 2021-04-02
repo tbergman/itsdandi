@@ -40,7 +40,7 @@ const Calculator = ({ description, label }) => {
       </div>
       <div className="result">
         <Styled.h1>{`$${price.toLocaleString()}${
-          price === 100000 ? "+" : ""
+          price === 120000 ? "+" : ""
         }/y`}</Styled.h1>
       </div>
     </div>

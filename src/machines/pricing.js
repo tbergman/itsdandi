@@ -27,7 +27,7 @@ export const Calculator__machine = createMachine(
     id: "Calculator",
     context: {
       employees: 1000,
-      price: 10000,
+      price: 12000,
     },
     initial: "idle",
     states: {

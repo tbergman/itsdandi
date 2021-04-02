@@ -141,14 +141,16 @@ const Quotes = ({
                   <Styled.p className="Quotes_name">
                     {quotes[index].name}
                   </Styled.p>
-                  <Styled.p className="Quotes__title">
-                    {quotes[index].title && (
-                      <span>{quotes[index].title}, </span>
-                    )}
-                    {quotes[index].company && (
-                      <span>{quotes[index].company}</span>
-                    )}
-                  </Styled.p>
+                  {quotes[index].title && (
+                    <Styled.p className="Quotes__title">
+                      {quotes[index].title}
+                    </Styled.p>
+                  )}
+                  {quotes[index].company && (
+                    <Styled.p className="Quotes__company">
+                      {quotes[index].company}
+                    </Styled.p>
+                  )}
                 </div>
               </motion.div>
             </AnimatePresence>

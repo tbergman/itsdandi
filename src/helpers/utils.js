@@ -61,12 +61,12 @@ export const scrollToBottom = (window, isDesktop) => {
 
 export const pricingCalulation = (employees) => {
   if (employees <= 500) {
-    return 5000;
+    return 6000;
   }
 
   const adjustedEmployees = employees - 500;
 
-  return 5000 + adjustedEmployees * 10;
+  return 6000 + adjustedEmployees * 12;
 };
 
 export const scrollYPos = (window) => {

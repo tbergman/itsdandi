@@ -1,6 +1,6 @@
 export default [
   {
-    name: "DEI metrics",
+    name: "DEI Metrics",
     url: "/values/deimetrics",
   },
   {

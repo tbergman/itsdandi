@@ -50,7 +50,7 @@ const Footer = () => {
         <div className="newsletter">
           <LearnMoreLink
             href="https://www.dandiweekly.com"
-            text="Sign up for newsletter"
+            text="Sign up for our newsletter"
             color="#FFD93B"
             external={true}
           />

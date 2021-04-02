@@ -31,4 +31,14 @@ export const quotetext = {
     fontSize: ["14px"],
     fontFamily: "body",
   },
+  ".QuoteText__title": {
+    lineHeight: ["20px"],
+    fontSize: ["14px"],
+    fontFamily: "body",
+  },
+  ".QuoteText__company": {
+    lineHeight: ["20px"],
+    fontSize: ["14px"],
+    fontFamily: "body",
+  },
 };

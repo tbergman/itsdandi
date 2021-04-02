@@ -364,7 +364,7 @@ export const pricing = {
         px: [4],
       },
       ".infoBox__body": {
-        width: ["272px"],
+        width: ["70vw", "300px"],
         mb: [2],
       },
       ".infoBox__links": {
@@ -373,7 +373,6 @@ export const pricing = {
       },
 
       ".infoBox__link": {
-        width: ["272px"],
         mb: [1],
         a: {
           mb: 0,
