@@ -52,7 +52,7 @@ const EquityPay = (props) => {
     pages,
     currentIndex: 1,
     nextBg: "turquoise",
-    prevBg: "",
+    prevBg: "yellow",
   });
 
   const toggleMenu = (menuOpen) => {
