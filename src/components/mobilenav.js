@@ -50,8 +50,8 @@ const MobileNav = ({
                 menuOpen={menuOpen}
                 setStaticLogo={setStaticLogo}
                 staticLogo={staticLogo}
-                scaleTo={32 / widths.mobile}
-                yOffset={-widths.mobile + 30}
+                scaleTo={widths.mobile < 32 ? 32 / widths.mobile : 1}
+                yOffset={-43 + 30}
               />
             </a>
           </Link>

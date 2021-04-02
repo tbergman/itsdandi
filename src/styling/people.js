@@ -2,25 +2,29 @@ export const people = {
   bg: "#F8F8F8",
   color: "black",
   ".toptext": {
-    mt: [8, 16],
+    mt: [8, 8, 8, 16],
     mb: [12],
-    gridArea: ["1/1/2/-1", "1/3/2/-1"],
+    gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/3/2/-1"],
     display: "flex",
     flexFlow: ["column", "unset"],
 
     ".section1": {
       width: [
         "100%",
+        "100%",
+        "100%",
         (t) => t.desktopSectionWidth,
         (t) => t.desktopSectionWidthBig,
         (t) => t.desktopSectionWidthMassive,
       ],
       h2: {
-        maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+        maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
       },
     },
     ".section2": {
       ml: [
+        0,
+        0,
         0,
         (t) => t.colWidthDesktop,
         (t) => t.colWidthDesktopBig,
@@ -28,27 +32,34 @@ export const people = {
       ],
       width: [
         "100%",
+        "100%",
+        "100%",
         (t) => t.desktopSectionWidth,
         (t) => t.desktopSectionWidthBig,
         (t) => t.desktopSectionWidthMassive,
       ],
 
       p: {
-        mt: [2, 1],
-        maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+        mt: [2, 2, 2, 1],
+        maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
       },
     },
   },
 
   ".people": {
-    gridArea: ["2/1/3/-1", "2/3/3/-1"],
+    gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "2/3/3/-1"],
     width: ["unset"],
     left: ["unset"],
     position: "relative",
-    mb: [14, 16],
+    mb: [14, 14, 14, 16],
     display: "flex",
     flexFlow: ["row wrap"],
-    justifyContent: ["space-between", "unset"],
+    justifyContent: [
+      "space-between",
+      "space-between",
+      "space-between",
+      "unset",
+    ],
     ".person:nth-of-type(4n)": {
       mr: 0,
     },
@@ -56,6 +67,8 @@ export const people = {
       textDecoration: "none",
       color: "inherit",
       width: [
+        "100%",
+        "100%",
         "100%",
         (t) => `calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
         (t) => `calc(calc(${t.colWidthDesktopBig} * 3) + 120px)`,
@@ -71,11 +84,15 @@ export const people = {
         position: "relative",
         width: [
           (t) => `calc(calc(${t.colWidthMob} * 2) + 20px)`,
+          (t) => `calc(calc(${t.colWidthMob} * 2) + 20px)`,
+          (t) => `calc(calc(${t.colWidthMob} * 2) + 20px)`,
           (t) => t.colWidthDesktop,
           (t) => t.colWidthDesktopBig,
           (t) => t.colWidthDesktopMassive,
         ],
         height: [
+          (t) => `calc(calc(${t.colWidthMob} * 2) + 20px)`,
+          (t) => `calc(calc(${t.colWidthMob} * 2) + 20px)`,
           (t) => `calc(calc(${t.colWidthMob} * 2) + 20px)`,
           (t) => t.colWidthDesktop,
           (t) => t.colWidthDesktopBig,
@@ -89,10 +106,17 @@ export const people = {
         objectFit: "cover",
       },
       ".person__text": {
-        mt: [2, 0],
-        ml: [(t) => `calc(${t.colWidthMob} + 20px)`, "40px"],
+        mt: [2, 2, 2, 0],
+        ml: [
+          (t) => `calc(${t.colWidthMob} + 20px)`,
+          (t) => `calc(${t.colWidthMob} + 20px)`,
+          (t) => `calc(${t.colWidthMob} + 20px)`,
+          "40px",
+        ],
         mb: [0],
         width: [
+          (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
+          (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
           (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
 
           (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`,

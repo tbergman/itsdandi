@@ -178,13 +178,13 @@ const Home = (props) => {
           buttonText: props.marketplace_partners[0].fields.button_text,
         }}
       />
-      <SubNavigation
+      {/* <SubNavigation
         next={{
           name: "Why Dandi?",
           url: "values/deimetrics",
           bg: "violet",
         }}
-      />
+      /> */}
       <Footer />
     </div>
   );

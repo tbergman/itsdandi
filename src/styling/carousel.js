@@ -21,20 +21,10 @@ export const carousel = {
         width: "100%",
         height: "0",
         borderRadius: "6px",
-        // transition: "all 0ms linear",
+
         transformOrigin: "top center",
       },
-      // ".active": {
-      //   transition: "all 7500ms 1000ms linear",
-      //   height: "100%",
-      //   minHeight: "unset",
-      // },
     },
-
-    // ".active": {
-    //   height: "80%",
-    //   minHeight: "32px",
-    // },
 
     ".SharedCarousel__item-header": {
       position: "relative",

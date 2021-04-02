@@ -17,12 +17,7 @@ export const home = {
         zIndex: 9999,
         top: [0],
         left: ["20px", "20px", "20px", "40px"],
-        height: [
-          (t) => t.colWidthMob,
-          (t) => t.colWidthMob,
-          (t) => t.colWidthMob,
-          "90px",
-        ],
+        height: ["43px", "43px", "43px", "90px"],
         width: ["125px", "125px", "125px", "calc(90px * 3.4)"],
         mb: ["20px", "20px", "20px", "40px"],
       },
@@ -319,7 +314,12 @@ export const home = {
       gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/6/2/-1"],
       mt: ["213px", "213px", "213px", "290px"],
       mb: [0, 0, 0, "224px"],
-      height: ["277px", "277px", "277px", "500px"],
+      height: [
+        "calc(100vw * .54)",
+        "calc(100vw * .54)",
+        "calc(100vw * .54)",
+        "500px",
+      ],
       position: "relative",
       width: [
         "100vw",
@@ -386,6 +386,7 @@ export const home = {
       fontFamily: "body",
       fontWeight: "400",
       mt: [3, 3, 3, 4],
+      pr: [0, 0, (t) => t.colWidthMob, 0],
 
       fontSize: ["16px", "16px", "16px", "20px"],
       lineHeight: ["32px"],
@@ -436,6 +437,7 @@ export const home = {
       },
       ".PayEquity__text-body": {
         mt: [3, 3, 3, 4],
+        pr: [0, 0, (t) => t.colWidthMob, 0],
         maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
         ".PayEquity__text-body-text": {},
       },
@@ -459,7 +461,12 @@ export const home = {
         (t) => `calc(calc(${t.colWidthDesktopBig} * 6)  + 220px)`,
         (t) => `calc(calc(${t.colWidthDesktopMassive} * 6)  + 220px)`,
       ],
-      height: ["320px", "320px", "320px", "calc(50vw * .82)"],
+      height: [
+        "calc(100vw * .82)",
+        "calc(100vw * .82)",
+        "calc(100vw * .82)",
+        "calc(50vw * .82)",
+      ],
       gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/1/2/-1"],
       ".PayEquity__imageWrapper-image": {
         zIndex: 99,
@@ -480,7 +487,9 @@ export const home = {
       mt: [10, 10, 10, 21],
       mb: [9],
       gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/2/2/6"],
-      ".Partners__text-header": {},
+      ".Partners__text-header": {
+        pr: [0, (t) => t.colWidthMob, (t) => t.colWidthMob, 0],
+      },
     },
     ".Partners__logoCarousel": {
       gridArea: ["2/1/3/-1"],
@@ -537,7 +546,8 @@ export const home = {
     color: "black",
     ".AdvanceDEI__text": {
       mt: [10, 10, 10, 22],
-      mb: [0, 0, 0, 30],
+      mb: [0, 5, 5, 30],
+      pr: [0, (t) => t.colWidthMob, (t) => t.colWidthMob, 0],
       gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/7/2/-2"],
       ml: [
         0,
@@ -567,7 +577,7 @@ export const home = {
     },
     ".AdvanceDEI__graphics": {
       gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/1/2/6"],
-      height: ["120px", "120px", "120px", "100%"],
+      height: ["120px", "180px", "200px", "100%"],
       position: "relative",
       width: [
         "100vw",
@@ -591,11 +601,11 @@ export const home = {
         position: "absolute",
         left: 0,
         bottom: 0,
-        height: ["67px", "67px", "67px", "36%"],
+        height: ["50%", "50%", "50%", "36%"],
         width: [
-          "115px",
-          "115px",
-          "115px",
+          "20%",
+          "20%",
+          "20%",
           (t) => `calc(calc(${t.colWidthDesktop} * 2.5) + 120px)`,
           (t) =>
             `calc(calc(calc(${t.colWidthDesktopBig} * 2.5) + 80px) + ${t.desktopBigGutters})`,
@@ -608,25 +618,25 @@ export const home = {
       ".AdvanceDEI__graphics-box2": {
         position: "absolute",
         left: [
-          "42px",
-          "42px",
-          "42px",
+          "5%",
+          "5%",
+          "5%",
           (t) => `calc(${t.colWidthDesktop} + 40px)`,
           (t) => `calc(${t.colWidthDesktopBig} + 40px)`,
           (t) => `calc(${t.colWidthDesktopMassive} + 40px)`,
         ],
         bottom: "0",
         width: [
-          "134px",
-          "134px",
-          "134px",
+          "20%",
+          "20%",
+          "20%",
           (t) => `calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
           (t) =>
             `calc(calc(calc(${t.colWidthDesktopBig} * 3) + 80px) + ${t.desktopBigGutters})`,
           (t) =>
             `calc(calc(calc(${t.colWidthDesktopMassive} * 3) + 80px) + ${t.desktopMassiveGutters})`,
         ],
-        height: ["120px", "120px", "120px", "64%"],
+        height: ["100%", "100%", "100%", "64%"],
         bg: "#A4F0F4",
         zIndex: 89,
       },

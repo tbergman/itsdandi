@@ -245,8 +245,8 @@ const theme = {
     },
     h2: {
       fontFamily: "display",
-      fontSize: ["32px", "32px", "32px", "40px"],
-      lineHeight: ["38.4px", "38.4px", "38.4px", "48px"],
+      fontSize: ["32px", "32px", "34px", "40px"],
+      lineHeight: ["38.4px", "38.4px", "40px", "48px"],
       fontWeight: "500",
       m: 0,
     },
