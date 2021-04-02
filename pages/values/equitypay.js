@@ -208,14 +208,7 @@ const EquityPay = (props) => {
           ...props.affordable,
         }}
       />
-      <SubNavigation
-        next={subPages_.next}
-        prev={{
-          name: "Home",
-          url: "/",
-          bg: "violet",
-        }}
-      />
+      <SubNavigation next={subPages_.next} prev={subPages_.prev} />
       <Footer />
     </div>
   );
