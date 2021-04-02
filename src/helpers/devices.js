@@ -1,3 +1,3 @@
 export default {
-  desktop: "(min-device-width: 800px)",
+  desktop: "(min-device-width: 1024px)",
 };

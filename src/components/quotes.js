@@ -11,8 +11,6 @@ import {
   quotesCarouselTimerMobile,
   quotesCarouselTimerDesktop,
 } from "../helpers/animations";
-// import { Transition } from "react-transition-group";
-// import { gsap } from "gsap";
 
 const Quotes = ({
   setNavbarStyling,

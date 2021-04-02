@@ -577,7 +577,7 @@ export const home = {
     },
     ".AdvanceDEI__graphics": {
       gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/1/2/6"],
-      height: ["120px", "180px", "200px", "100%"],
+      height: ["120px", "180px", "225px", "100%"],
       position: "relative",
       width: [
         "100vw",
@@ -603,9 +603,9 @@ export const home = {
         bottom: 0,
         height: ["50%", "50%", "50%", "36%"],
         width: [
-          "20%",
-          "20%",
-          "20%",
+          "25%",
+          "30%",
+          "35%",
           (t) => `calc(calc(${t.colWidthDesktop} * 2.5) + 120px)`,
           (t) =>
             `calc(calc(calc(${t.colWidthDesktopBig} * 2.5) + 80px) + ${t.desktopBigGutters})`,
@@ -618,18 +618,18 @@ export const home = {
       ".AdvanceDEI__graphics-box2": {
         position: "absolute",
         left: [
-          "5%",
-          "5%",
-          "5%",
+          "10%",
+          "10%",
+          "10%",
           (t) => `calc(${t.colWidthDesktop} + 40px)`,
           (t) => `calc(${t.colWidthDesktopBig} + 40px)`,
           (t) => `calc(${t.colWidthDesktopMassive} + 40px)`,
         ],
         bottom: "0",
         width: [
-          "20%",
-          "20%",
-          "20%",
+          "25%",
+          "30%",
+          "35%",
           (t) => `calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
           (t) =>
             `calc(calc(calc(${t.colWidthDesktopBig} * 3) + 80px) + ${t.desktopBigGutters})`,
@@ -808,7 +808,15 @@ export const home = {
     bg: "#FFF",
     ".MPP__graphics": {
       gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/1/2/6"],
-      height: ["184px", "184px", "184px", "100%"],
+      pt: [10, 10, 10, 0],
+      bg: ["lightViolet", "lightViolet", "lightViolet", "unset"],
+      height: [
+        (t) => `calc(calc(calc(${t.colWidthMob} * 4) + 60px) / 2)`,
+        (t) => `calc(calc(calc(${t.colWidthMob} * 4) + 60px) / 2)`,
+        (t) => `calc(calc(calc(${t.colWidthMob} * 4) + 60px) / 2)`,
+
+        "100%",
+      ],
       width: [
         "100vw",
         "100vw",
@@ -885,10 +893,21 @@ export const home = {
     },
     ".MPP__text": {
       gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/7/2/-1"],
-      mt: [20, 20, 20, "275px"],
+      mt: [10, 10, 10, "275px"],
       mb: [10, 10, 10, "303px"],
       ".MPP__text-header": {
-        ".MPP__text-header-text": {},
+        mt: [
+          (t) =>
+            `calc(calc(calc(calc(${t.colWidthMob} * 4) + 60px) / 2) + 40px)`,
+          (t) =>
+            `calc(calc(calc(calc(${t.colWidthMob} * 4) + 60px) / 2) + 40px)`,
+          (t) =>
+            `calc(calc(calc(calc(${t.colWidthMob} * 4) + 60px) / 2) + 40px)`,
+          0,
+        ],
+        ".MPP__text-header-text": {
+          pr: [0, 0, (t) => t.colWidthMob, 0],
+        },
       },
 
       ".MPP__text-body": {
