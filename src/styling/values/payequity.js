@@ -3,6 +3,8 @@ export const payequity = {
     position: "absolute",
     bottom: [
       `calc(calc(calc(100vw - 80px) * .55) / -1)`,
+      `calc(calc(calc(100vw - 80px) * .55) / -1)`,
+      `calc(calc(calc(100vw - 80px) * .55) / -1)`,
       (t) =>
         `calc(calc(calc(calc(${t.colWidthDesktop} * 4) + 120px) * .55) / -1)`,
       (t) =>
@@ -12,6 +14,8 @@ export const payequity = {
     ],
     left: [
       "40px",
+      "40px",
+      "40px",
       (t) => `calc(calc(${t.colWidthDesktop} * 8) + 360px)`,
       (t) =>
         `calc(calc(calc(${t.colWidthDesktopBig} * 8) + 320px) + ${t.desktopBigGutters})`,
@@ -20,11 +24,15 @@ export const payequity = {
     ],
     height: [
       `calc(100vw - 80px)`,
+      `calc(100vw - 80px)`,
+      `calc(100vw - 80px)`,
       (t) => `calc(calc(${t.colWidthDesktop} * 4) + 120px)`,
       (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 220px)`,
       (t) => `calc(calc(${t.colWidthDesktopMassive} * 4) + 220px)`,
     ],
     width: [
+      `calc(100vw - 80px)`,
+      `calc(100vw - 80px)`,
       `calc(100vw - 80px)`,
       (t) => `calc(calc(${t.colWidthDesktop} * 4) + 120px)`,
       (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 220px)`,
@@ -40,19 +48,23 @@ export const payequity = {
     bg: "lightGray",
     ".top": {
       position: "relative",
-      gridArea: ["1/1/2/-1", "1/3/2/-2"],
-      mt: [8, 16],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/3/2/-2"],
+      mt: [8, 8, 8, 16],
       color: "black",
       h2: {
         fontFamily: "display",
-        fontSize: ["32px", "40px"],
-        lineHeight: ["38.4px", "48px"],
+        fontSize: ["32px", "32px", "32px", "40px"],
+        lineHeight: ["38.4px", "38.4px", "38.4px", "48px"],
       },
       ".body": {
         display: "flex",
-        flexFlow: ["column", "unset"],
+        flexFlow: ["column", "column", "column", "unset"],
         mt: [3],
         mb: [
+          (t) =>
+            `calc(calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .25) + 64px)`,
+          (t) =>
+            `calc(calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .25) + 64px)`,
           (t) =>
             `calc(calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .25) + 64px)`,
           (t) =>
@@ -65,20 +77,27 @@ export const payequity = {
         ".section1": {
           width: [
             "unset",
+            "unset",
+            "unset",
             (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
             (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 160px)`,
             (t) => `calc(calc(${t.colWidthDesktopMassive} * 4) + 160px)`,
           ],
           mr: [
             0,
+            0,
+            0,
+
             (t) => `calc(${t.colWidthDesktop})`,
             (t) => t.colWidthDesktopBig,
             (t) => t.colWidthDesktopMassive,
           ],
         },
         ".section2": {
-          mt: [3, 0],
+          mt: [3, 3, 3, 0],
           width: [
+            "unset",
+            "unset",
             "unset",
             (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
             (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 160px)`,
@@ -89,13 +108,20 @@ export const payequity = {
           fontFamily: "body",
           fontSize: "16px",
           lineHeight: "24px",
-          maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+          maxWidth: [
+            "unset",
+            "unset",
+            "unset",
+            (t) => t.desktopMaxSectionWidth,
+          ],
         },
       },
 
       ".compensationTopGraphic": {
         position: ["absolute"],
         height: [
+          (t) => `calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .87)`,
+          (t) => `calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .87)`,
           (t) => `calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .87)`,
           (t) => `calc(calc(calc(${t.colWidthDesktop} * 9) + 320px) * .33)`,
           (t) => `calc(calc(calc(${t.colWidthDesktopBig} * 9) + 320px) * .33)`,
@@ -106,6 +132,10 @@ export const payequity = {
           (t) =>
             `calc(calc(calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .87) * .85) / -1)`,
           (t) =>
+            `calc(calc(calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .87) * .85) / -1)`,
+          (t) =>
+            `calc(calc(calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .87) * .85) / -1)`,
+          (t) =>
             `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 9) + 320px) * .33) * .49) / -1)`,
           (t) =>
             `calc(calc(calc(calc(calc(${t.colWidthDesktopBig} * 9) + 320px) * .33) * .49) / -1)`,
@@ -113,6 +143,8 @@ export const payequity = {
             `calc(calc(calc(calc(calc(${t.colWidthDesktopMassive} * 9) + 320px) * .33) * .49) / -1)`,
         ],
         width: [
+          "100%",
+          "100%",
           "100%",
           (t) => `calc(calc(${t.colWidthDesktop} * 9) + 320px)`,
           (t) => `calc(calc(${t.colWidthDesktopBig} * 9) + 320px)`,
@@ -135,11 +167,15 @@ export const payequity = {
   compensationgraph: {
     bg: "black",
     ".wrapper": {
-      gridArea: ["1/1/2/-1", "1/3/2/-2"],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/3/2/-2"],
       display: "flex",
-      flexFlow: ["column-reverse", "unset"],
+      flexFlow: ["column-reverse", "column-reverse", "column-reverse", "unset"],
       alignItems: "flex-start",
       mt: [
+        (t) =>
+          `calc(calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .85) + 48px)`,
+        (t) =>
+          `calc(calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .85) + 48px)`,
         (t) =>
           `calc(calc(calc(calc(${t.colWidthMob} * 6) + 100px) * .85) + 48px)`,
         (t) =>
@@ -152,10 +188,12 @@ export const payequity = {
       mb: [13],
       ".graph": {
         position: "relative",
-        height: ["206px", "215px"],
-        left: ["-20px", "unset"],
-        mb: [6, 0],
+        height: ["206px", "206px", "206px", "215px"],
+        left: ["-20px", "-20px", "-20px", "unset"],
+        mb: [6, 6, 6, 0],
         width: [
+          "100%",
+          "100%",
           "100%",
           (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
           (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 160px)`,
@@ -185,7 +223,7 @@ export const payequity = {
           },
         },
         ".divider": {
-          display: ["none", "unset"],
+          display: ["none", "none", "none", "unset"],
           position: "absolute",
           width: "100%",
           height: "1px",
@@ -193,7 +231,7 @@ export const payequity = {
           bottom: 0,
         },
         ".labels": {
-          mt: ["30px", 0],
+          mt: ["30px", "30px", "30px", 0],
           width: "100%",
           display: "flex",
           ".label": {
@@ -212,18 +250,22 @@ export const payequity = {
       ".text": {
         ml: [
           0,
+          0,
+          0,
           (t) => `calc(${t.colWidthDesktop})`,
           (t) => `calc(${t.colWidthDesktopBig})`,
           (t) => `calc(${t.colWidthDesktopMassive})`,
         ],
-        mb: [7, 0],
+        mb: [7, 7, 7, 0],
         width: [
+          "unset",
+          "unset",
           "unset",
           (t) => `calc(calc(${t.colWidthDesktop} * 4) +  160px)`,
           (t) => `calc(calc(${t.colWidthDesktopBig} * 4) +  160px)`,
           (t) => `calc(calc(${t.colWidthDesktopMassive} * 4) +  160px)`,
         ],
-        maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+        maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
         fontSize: "16px",
         lineHeight: "24px",
       },
@@ -231,14 +273,16 @@ export const payequity = {
   },
   reports: {
     ".text": {
-      gridArea: ["1/1/2/-1", "1/3/2/-1"],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/3/2/-1"],
       color: "black",
       display: "flex",
-      flexFlow: ["column", "unset"],
-      mt: [10, 16],
-      mb: [8, 20],
+      flexFlow: ["column", "column", "column", "unset"],
+      mt: [10, 10, 10, 16],
+      mb: [8, 8, 8, 20],
       ".heading": {
         width: [
+          "100%",
+          "100%",
           "100%",
           (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
           (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 160px)`,
@@ -246,18 +290,28 @@ export const payequity = {
         ],
         h2: {
           fontFamily: "display",
-          maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+          maxWidth: [
+            "unset",
+            "unset",
+            "unset",
+            (t) => t.desktopMaxSectionWidth,
+          ],
         },
       },
       ".body": {
-        mt: [3, 0],
+        mt: [3, 3, 3, 0],
         ml: [
           0,
+          0,
+          0,
+
           (t) => t.colWidthDesktop,
           (t) => t.colWidthDesktopBig,
           (t) => t.colWidthDesktopMassive,
         ],
         width: [
+          "100%",
+          "100%",
           "100%",
           (t) => `calc(calc(${t.colWidthDesktop} * 4) + 160px)`,
           (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 160px)`,
@@ -268,7 +322,12 @@ export const payequity = {
         p: {
           fontSize: "16px",
           lineHeight: "24px",
-          maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+          maxWidth: [
+            "unset",
+            "unset",
+            "unset",
+            (t) => t.desktopMaxSectionWidth,
+          ],
         },
         ".section1": {},
         ".section2": {
@@ -282,10 +341,12 @@ export const payequity = {
     bg: "transparent",
     color: "black",
     ".Affordable__text": {
-      mt: [8, "268px"],
-      mb: [0, "307px"],
-      gridArea: ["1/1/2/-1", "1/7/2/-1"],
+      mt: [8, 8, 8, "268px"],
+      mb: [0, 0, 0, "307px"],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/7/2/-1"],
       ml: [
+        0,
+        0,
         0,
         (t) => t.colWidthDesktop,
         (t) => t.colWidthDesktopBig,
@@ -298,7 +359,7 @@ export const payequity = {
         },
       },
       ".Affordable__text-body": {
-        mt: [3, 4],
+        mt: [3, 3, 3, 4],
         ".Affordable__text-body-text": {
           fontSize: "16px",
         },
@@ -313,11 +374,18 @@ export const payequity = {
       },
     },
     ".Affordable__graphic": {
-      gridArea: ["2/1/3/-1", "1/2/2/7"],
+      gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/2/2/7"],
       position: "relative",
-      mb: [10, 0],
-      height: [(t) => `calc(calc(${t.colWidthMob} * 4) + 100px)`, "100%"],
+      mb: [10, 10, 10, 0],
+      height: [
+        (t) => `calc(calc(${t.colWidthMob} * 4) + 100px)`,
+        (t) => `calc(calc(${t.colWidthMob} * 4) + 100px)`,
+        (t) => `calc(calc(${t.colWidthMob} * 4) + 100px)`,
+        "100%",
+      ],
       width: [
+        (t) => `calc(calc(${t.colWidthMob} * 4) + 100px)`,
+        (t) => `calc(calc(${t.colWidthMob} * 4) + 100px)`,
         (t) => `calc(calc(${t.colWidthMob} * 4) + 100px)`,
         (t) => `calc(calc(${t.colWidthDesktop} * 4) + 200px)`,
         (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 200px)`,
@@ -325,18 +393,22 @@ export const payequity = {
       ],
       left: [
         (t) => t.colWidthMob,
+        (t) => t.colWidthMob,
+        (t) => t.colWidthMob,
         (t) => t.colWidthDesktop,
         (t) => t.colWidthDesktopBig,
         (t) => t.colWidthDesktopMassive,
       ],
-      display: ["unset", "flex"],
+      display: ["unset", "unset", "unset", "flex"],
       alignItems: "center",
       ".Affordable__graphic-image": {
-        position: ["absolute", "relative"],
-        top: [0, "unset"],
-        left: [0, "unset"],
+        position: ["absolute", "absolute", "absolute", "relative"],
+        top: [0, 0, 0, "unset"],
+        left: [0, 0, 0, "unset"],
         width: "100%",
         height: [
+          "100%",
+          "100%",
           "100%",
           (t) => `calc(calc(${t.colWidthDesktop} * 4) + 200px)`,
           (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 200px)`,

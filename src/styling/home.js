@@ -1,6 +1,6 @@
 export const home = {
   top: {
-    bg: "transparent",
+    bg: ["transparent"],
     bigLogo: {
       height: "100%",
       width: "100%",
@@ -16,30 +16,35 @@ export const home = {
         position: "fixed",
         zIndex: 9999,
         top: [0],
-        left: ["20px", "40px"],
-        height: [(t) => t.colWidthMob, "90px"],
-        width: [
-          "125px",
-          // (t) => `calc(calc(${t.colWidthDesktop} + 20px) * 3.4)`,
-          "calc(90px * 3.4)",
+        left: ["20px", "20px", "20px", "40px"],
+        height: [
+          (t) => t.colWidthMob,
+          (t) => t.colWidthMob,
+          (t) => t.colWidthMob,
+          "90px",
         ],
-        mb: ["20px", "40px"],
+        width: ["125px", "125px", "125px", "calc(90px * 3.4)"],
+        mb: ["20px", "20px", "20px", "40px"],
       },
     },
     ".Top__text": {
-      gridArea: ["1/2/2/-1", "1/7/2/-1"],
+      gridArea: ["1/2/2/-1", "1/2/2/-1", "1/2/2/-1", "1/7/2/-1"],
       ml: [
+        (t) => `calc(${t.colWidthMob} + 10px)`,
+        (t) => `calc(${t.colWidthMob} + 10px)`,
         (t) => `calc(${t.colWidthMob} + 10px)`,
         (t) => t.colWidthDesktop,
         (t) => t.colWidthDesktopBig,
         (t) => t.colWidthDesktopMassive,
       ],
-      mt: [24, "250px"],
-      mb: [2, 0],
+      mt: [24, 24, 24, "250px"],
+      mb: [2, 2, 2, 0],
       ".Top__text-header": {
-        fontSize: ["36px", "72px"],
-        lineHeight: ["43.2px", "70px"],
+        fontSize: ["36px", "36px", "36px", "72px"],
+        lineHeight: ["43.2px", "43.2px", "43.2px", "70px"],
         mr: [
+          "unset",
+          "unset",
           "unset",
           (t) => t.colWidthDesktop,
           (t) => t.colWidthDesktopBig,
@@ -50,14 +55,14 @@ export const home = {
         position: "relative",
         cursor: "pointer",
         zIndex: 99,
-        left: [0, "-8px"],
-        gridArea: ["2/2/3/6", "2/7/3/-1"],
+        left: [0, 0, 0, "-8px"],
+        gridArea: ["2/2/3/6", "2/2/3/6", "2/2/3/6", "2/7/3/-1"],
         width: ["160px"],
-        height: ["56px", "56px"],
-        mt: ["24px", "48px"],
+        height: ["56px"],
+        mt: ["24px", "24px", "24px", "48px"],
         bg: "yellow",
         borderRadius: "200px",
-        display: ["flex", "none"],
+        display: ["flex", "flex", "flex", "none"],
         flexFlow: "row",
         justifyContent: "center",
         alignItems: "center",
@@ -76,7 +81,7 @@ export const home = {
     },
     ".Top__learnMore": {
       mt: [4],
-      display: ["none", "flex"],
+      display: ["none", "none", "none", "flex"],
       alignItems: "center",
       cursor: "pointer",
       "&:hover": {
@@ -99,18 +104,20 @@ export const home = {
       width: "100vw",
       left: [
         "-20px",
+        "-20px",
+        "-20px",
         "-40px",
         (t) => `calc(${t.desktopBigGutters} / -1)`,
         (t) => `calc(${t.desktopMassiveGutters} / -1)`,
       ],
-      height: ["191px", "112px", "136px"],
+      height: ["191px", "191px", "191px", "112px", "136px"],
 
       ".Bars__barWrapper": {
         position: "absolute",
         width: "100%",
         bottom: 0,
         left: 0,
-        height: ["175px", "250px", "275px", "300px"],
+        height: ["175px", "175px", "175px", "250px", "275px", "300px"],
       },
       ".Bars__barWrapper-bar1": {
         zIndex: 99,
@@ -118,12 +125,14 @@ export const home = {
         height: "100%",
         width: [
           (t) => `calc(${t.colWidthMob} + 10px)`,
+          (t) => `calc(${t.colWidthMob} + 10px)`,
+          (t) => `calc(${t.colWidthMob} + 10px)`,
           `95px`,
-          // (t) => `calc(${t.colWidthDesktopBig} + 40px)`,
-          // (t) => `calc(${t.colWidthDesktopMassive} + 40px)`,
           ,
         ],
         ml: [
+          "20px",
+          "20px",
           "20px",
           (t) => `calc(calc(${t.colWidthDesktop} * 2) + 56px)`,
           (t) =>
@@ -153,11 +162,13 @@ export const home = {
         zIndex: 99,
         width: [
           (t) => `calc(${t.colWidthMob} + 10px)`,
+          (t) => `calc(${t.colWidthMob} + 10px)`,
+          (t) => `calc(${t.colWidthMob} + 10px)`,
           "95px",
-          // (t) => `calc(${t.colWidthDesktopBig} + 40px)`,
-          // (t) => `calc(${t.colWidthDesktopMassive} + 40px)`,
         ],
         ml: [
+          (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
+          (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
           (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
           (t) => `calc(calc(${t.colWidthDesktop} * 2) + 225px)`,
           (t) =>
@@ -189,14 +200,16 @@ export const home = {
         zIndex: 99,
         width: [
           (t) => `calc(${t.colWidthMob} + 10px)`,
+          (t) => `calc(${t.colWidthMob} + 10px)`,
+          (t) => `calc(${t.colWidthMob} + 10px)`,
           "95px",
-          // (t) => `calc(${t.colWidthDesktopBig} + 40px)`,
-          // (t) => `calc(${t.colWidthDesktopMassive} + 40px)`,
         ],
         height: "100%",
         bottom: 0,
         position: "absolute",
         ml: [
+          (t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`,
+          (t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`,
           (t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`,
           (t) => `calc(calc(${t.colWidthDesktop} * 2) + 394px)`,
           (t) =>
@@ -216,8 +229,10 @@ export const home = {
       },
       ".Bars__barWrapper-line": {
         position: "absolute",
-        bottom: ["-45%", "-37%", "-30%"],
+        bottom: ["-45%", "-45%", "-45%", "-37%", "-30%"],
         height: [
+          "120%",
+          "120%",
           "120%",
           (t) => `calc(calc(calc(${t.colWidthDesktop} * 6) + 240px) * .38)`,
           (t) =>
@@ -225,8 +240,15 @@ export const home = {
           (t) =>
             `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 6) + 200px) + ${t.desktopMassiveGutters}) * .38)`,
         ],
-        right: [(t) => `calc(calc(${t.colWidthMob} * 1.5) + 40px)`, "unset"],
+        right: [
+          (t) => `calc(calc(${t.colWidthMob} * 1.5) + 40px)`,
+          (t) => `calc(calc(${t.colWidthMob} * 1.5) + 40px)`,
+          (t) => `calc(calc(${t.colWidthMob} * 1.5) + 40px)`,
+          "unset",
+        ],
         width: [
+          (t) => `calc(calc(${t.colWidthMob} * 5.5) + 100px)`,
+          (t) => `calc(calc(${t.colWidthMob} * 5.5) + 100px)`,
           (t) => `calc(calc(${t.colWidthMob} * 5.5) + 100px)`,
           (t) => `calc(calc(${t.colWidthDesktop} * 6) + 240px)`,
           (t) =>
@@ -234,18 +256,18 @@ export const home = {
           (t) =>
             `calc(calc(calc(${t.colWidthDesktopMassive} * 6) + 200px) + ${t.desktopMassiveGutters})`,
         ],
-        maxWidth: ["811px", "811px", "1000px", "1250px"],
-        maxHeight: ["308px", "308px", "350px", "500px"],
+        maxWidth: ["811px", "811px", "811px", "811px", "1000px", "1250px"],
+        maxHeight: ["308px", "308px", "308px", "308px", "350px", "500px"],
         zIndex: 99,
         svg: {
           height: "100%",
-          width: ["unset", "100%"],
+          width: ["unset", "unset", "unset", "100%"],
           position: "absolute",
           top: 0,
           right: 0,
           path: {
             stroke: "#FFF",
-            strokeWidth: [4, 3, 2, 2],
+            strokeWidth: [4, 4, 4, 3, 2, 2],
           },
           circle: {
             transform: "scale(0)",
@@ -267,14 +289,16 @@ export const home = {
       transition: "opacity 400ms ease-in",
       ml: [
         (t) => `calc(calc(${t.colWidthMob} * 2) + 30px)`,
+        (t) => `calc(calc(${t.colWidthMob} * 2) + 30px)`,
+        (t) => `calc(calc(${t.colWidthMob} * 2) + 30px)`,
         (t) => `calc(calc(${t.colWidthDesktop} * 7) + 240px)`,
         (t) => `calc(calc(${t.colWidthDesktopBig} * 7) + 240px)`,
         (t) => `calc(calc(${t.colWidthDesktopMassive} * 7) + 240px)`,
       ],
-      mb: [1, 2],
-      display: ["none", "flex"],
+      mb: [1, 1, 1, 2],
+      display: ["none", "none", "none", "flex"],
       alignItems: "flex-start",
-      justifyContent: ["flex-end", "flex-start"],
+      justifyContent: ["flex-end", "flex-end", "flex-end", "flex-start"],
       ".LearnMore__toptext-text": {
         fontFamily: "display",
         fontWeight: "500",
@@ -284,7 +308,7 @@ export const home = {
       ".LearnMore__toptext-arrow": {
         ml: "10px",
         width: ["55px"],
-        pt: ["4%", "1.6%"],
+        pt: ["4%", "4%", "4%", "1.6%"],
       },
     },
     ".hidden": {
@@ -292,20 +316,14 @@ export const home = {
       transition: "opacity 200ms ease-in",
     },
     ".LearnMore__imageWrapper": {
-      gridArea: ["2/1/3/-1", "1/6/2/-1"],
-      mt: ["213px", "290px"],
-      mb: [0, "224px"],
-      height: [
-        "277px",
-        "500px",
-        // (t) => `calc(calc(calc(${t.colWidthDesktop} * 6) + 280px) * .6)`,
-        // (t) =>
-        //   `calc(calc(calc(calc(${t.colWidthDesktopBig} * 6) + 240px) + ${t.desktopBigGutters}) * .6)`,
-        // (t) =>
-        //   `calc(calc(calc(calc(${t.colWidthDesktopMassive} * 6) + 240px) + ${t.desktopMassiveGutters}) * .6)`,
-      ],
+      gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/6/2/-1"],
+      mt: ["213px", "213px", "213px", "290px"],
+      mb: [0, 0, 0, "224px"],
+      height: ["277px", "277px", "277px", "500px"],
       position: "relative",
       width: [
+        "100vw",
+        "100vw",
         "100vw",
         (t) => `calc(calc(${t.colWidthDesktop} * 6) + 280px)`,
         (t) =>
@@ -315,6 +333,8 @@ export const home = {
       ],
       left: [
         "-20px",
+        "-20px",
+        "-20px",
         (t) => `calc(${t.colWidthDesktop})`,
         (t) => `calc(${t.colWidthDesktopBig})`,
         (t) => `calc(${t.colWidthDesktopMassive})`,
@@ -322,18 +342,17 @@ export const home = {
       ".LearnMore__imageWrapper-image": {
         position: "absolute",
         height: "100%",
-        // width: ["unset", "100%"],
-        right: [0, "unset"],
-        left: ["unset", 0],
+        right: [0, 0, 0, "unset"],
+        left: ["unset", "unset", "unset", 0],
       },
     },
     ".LearnMore__text": {
-      gridArea: ["3/1/4/-1", "1/2/2/6"],
-      mt: [6, "290px"],
+      gridArea: ["3/1/4/-1", "3/1/4/-1", "3/1/4/-1", "1/2/2/6"],
+      mt: [6, 6, 6, "290px"],
       ml: [0],
-      mb: [16, 26],
+      mb: [16, 16, 16, 26],
       ".LearnMore__text-header": {
-        maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+        maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
       },
       ".LearnMore__text-link": {
         mt: [1],
@@ -343,21 +362,21 @@ export const home = {
         },
       },
       ".LearnMore__text-body": {
-        mt: [3, 4],
-        fontSize: ["16px", "20px"],
-        lineHeight: ["24px", "32px"],
-        maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+        mt: [3, 3, 3, 4],
+        fontSize: ["16px", "16px", "16px", "20px"],
+        lineHeight: ["24px", "24px", "24px", "32px"],
+        maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
       },
     },
   },
   carousel: {
     bg: "transparent",
-    pb: [10, "192px"],
-    pt: [10, 16],
+    pb: [10, 10, 10, "192px"],
+    pt: [10, 10, 10, 16],
     ".Carousel__topText": {
-      gridArea: ["1/1/2/-1", "1/2/2/6"],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/2/2/6"],
       height: "fit-content",
-      mb: [3, 0],
+      mb: [3, 3, 3, 0],
     },
     ".Carousel__header": {
       fontFamily: "display",
@@ -366,25 +385,31 @@ export const home = {
     ".Carousel__description": {
       fontFamily: "body",
       fontWeight: "400",
-      mt: [3, 4],
-      // mb: ["24px"],
-      fontSize: ["16px", "20px"],
+      mt: [3, 3, 3, 4],
+
+      fontSize: ["16px", "16px", "16px", "20px"],
       lineHeight: ["32px"],
-      maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+      maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
     },
     ".Carousel__textWrapper": {
-      gridArea: ["3/1/4/-1", "2/2/3/6"],
-      mt: [3, 10, 16],
-      maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+      gridArea: ["3/1/4/-1", "3/1/4/-1", "3/1/4/-1", "2/2/3/6"],
+      mt: [3, 3, 3, 10, 16],
+      maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
     },
 
     ".Carousel__imageWrapper": {
-      gridArea: ["2/1/3/-1", "1/7/4/-1"],
+      gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/7/4/-1"],
       overflow: "hidden",
-      // left: ["0px", "unset"],
       position: "relative",
-      width: ["calc(100vw - 40px)", "100%"],
+      width: [
+        "calc(100vw - 40px)",
+        "calc(100vw - 40px)",
+        "calc(100vw - 40px)",
+        "100%",
+      ],
       height: [
+        "calc(100vw - 40px)",
+        "calc(100vw - 40px)",
         "calc(100vw - 40px)",
         (t) => `calc(calc(calc(${t.colWidthDesktop} * 6) + 200px))`,
         (t) => `calc(calc(calc(${t.colWidthDesktopBig} * 6) + 200px))`,
@@ -398,129 +423,20 @@ export const home = {
       left: [0],
       bottom: [0],
     },
-
-    // ".Carousel__wrapper": {
-    //   mt: ["30px"],
-    //   mb: [6, 24],
-    //   position: "relative",
-    //   gridArea: ["3/1/4/-1", "2/1/3/-1"],
-    //   width: ["100%", "100vw"],
-    //   left: [
-    //     0,
-    //     "-40px",
-    //     (t) => `calc(${t.desktopBigGutters} / -1)`,
-    //     (t) => `calc(${t.desktopMassiveGutters} / -1)`,
-    //   ],
-    //   display: ["flex", "grid"],
-    //   gridTemplateColumns: ["repeat(12,1fr)"],
-    //   gridTemplateRows: ["auto"],
-    //   px: [
-    //     0,
-    //     "40px",
-    //     (t) => t.desktopBigGutters,
-    //     (t) => t.desktopMassiveGutters,
-    //   ],
-    //   columnGap: ["40px"],
-    //   rowGap: ["0"],
-    //   flexFlow: "column wrap",
-    //   ".Carousel__carouselWrapper-description": {
-    //     gridArea: ["1/2/2/6"],
-    //     width: ["100%", "unset"],
-    //     ".Carousel__carouselWrapper-description-text": {
-    //       fontSize: ["16px", "20px"],
-    //       lineHeight: ["32px"],
-    //       maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-    //     },
-    //   },
-    //   ".Carousel__carouselWrapper-imageWrapper": {
-    //     gridArea: ["2/1/3/-1", "1/7/3/-1"],
-    //     mt: [4, 0],
-    //     mb: [4, 0],
-    //     overflow: ["hidden"],
-    //     left: ["0px", "unset"],
-    //     position: "relative",
-    //     width: ["calc(100vw - 40px)", "100%"],
-    //     height: [
-    //       "calc(100vw - 40px)",
-    //       (t) => `calc(calc(calc(${t.colWidthDesktop} * 6) + 200px))`,
-    //       (t) => `calc(calc(calc(${t.colWidthDesktopBig} * 6) + 200px))`,
-    //       (t) => `calc(calc(calc(${t.colWidthDesktopMassive} * 6) + 200px))`,
-    //     ],
-    //     ".Carousel__carouselWrapper-imageWrapper-image": {
-    //       position: ["absolute"],
-    //       height: ["unset"],
-    //       width: ["100%"],
-    //       left: [0, "unset"],
-    //       bottom: [0, "unset"],
-    //     },
-    //   },
-    //   ".Carousel__carouselWrapper-textWrapper": {
-    //     mt: [0, 4],
-    //     gridArea: ["3/1/4/-1", "2/2/3/6"],
-    //     width: "100%",
-    //     maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
-    //   },
-    //   ".texts": {
-    //     gridArea: ["2/2/3/6"],
-    //     mt: [6],
-    //     ".item": {
-    //       mb: ["24px", 2],
-    //       ".header": {
-    //         position: "relative",
-    //         display: "flex",
-    //         alignItems: "center",
-    //         ".progressBar": {
-    //           position: "absolute",
-    //           height: "32px",
-    //           width: "2px",
-    //           bg: "#EDEDF1",
-    //           borderRadius: "6px",
-    //           ".progressBarAnimation": {
-    //             bg: "turquoise",
-    //             width: "100%",
-    //             borderRadius: "6px",
-    //           },
-    //         },
-    //         p: {
-    //           ml: "20px",
-    //           fontWeight: "500",
-    //           fontFamily: "medium",
-    //           fontSize: ["16px"],
-    //         },
-    //       },
-    //     },
-    //     ".body": {
-    //       mx: "20px",
-    //       mt: "8px",
-    //       p: {
-    //         fontWeight: "400",
-    //         fontFamily: "body",
-    //         fontSize: ["16px"],
-    //       },
-    //       ".link": {
-    //         p: {
-    //           fontWeight: "500",
-    //           fontFamily: "medium",
-    //           fontSize: ["16px"],
-    //         },
-    //       },
-    //     },
-    //   },
-    // },
   },
   payequity: {
     bg: "#F8F8F8",
     color: "black",
     ".PayEquity__text": {
-      gridArea: ["1/1/2/-1", "1/2/2/6"],
-      mt: [10, 21],
-      mb: [3, 0],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/2/2/6"],
+      mt: [10, 10, 10, 21],
+      mb: [3, 3, 3, 0],
       ".PayEquity__text-header": {
         ".PayEquity__text-header-text": {},
       },
       ".PayEquity__text-body": {
-        mt: [3, 4],
-        maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+        mt: [3, 3, 3, 4],
+        maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
         ".PayEquity__text-body-text": {},
       },
       ".PayEquity__text-link": {
@@ -534,22 +450,24 @@ export const home = {
     },
     ".PayEquity__imageWrapper": {
       position: "relative",
-      width: ["100vw", "50vw"],
+      width: ["100vw", "100vw", "100vw", "50vw"],
       left: [
+        "-20px",
+        "-20px",
         "-20px",
         (t) => `calc(calc(${t.colWidthDesktop} * 6)  + 220px  )`,
         (t) => `calc(calc(${t.colWidthDesktopBig} * 6)  + 220px)`,
         (t) => `calc(calc(${t.colWidthDesktopMassive} * 6)  + 220px)`,
       ],
-      height: ["320px", "calc(50vw * .82)"],
-      gridArea: ["2/1/3/-1", "1/1/2/-1"],
+      height: ["320px", "320px", "320px", "calc(50vw * .82)"],
+      gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/1/2/-1"],
       ".PayEquity__imageWrapper-image": {
         zIndex: 99,
         position: "absolute",
-        height: ["100%", "100%"],
+        height: ["100%"],
         width: ["100%"],
-        top: ["unset", 0],
-        bottom: [0, "unset"],
+        top: ["unset", "unset", "unset", 0],
+        bottom: [0, 0, 0, "unset"],
         display: "flex",
         justifyContent: "center",
       },
@@ -559,17 +477,19 @@ export const home = {
     bg: "clearWhite",
     color: "black",
     ".Partners__text": {
-      mt: [10, 21],
+      mt: [10, 10, 10, 21],
       mb: [9],
-      gridArea: ["1/1/2/-1", "1/2/2/6"],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/2/2/6"],
       ".Partners__text-header": {},
     },
     ".Partners__logoCarousel": {
       gridArea: ["2/1/3/-1"],
-      height: ["200px", "250px"],
-      mb: ["50px", 14],
+      height: ["200px", "200px", "200px", "250px"],
+      mb: ["50px", "50px", "50px", 14],
       width: "100vw",
       left: [
+        "-20px",
+        "-20px",
         "-20px",
         "-40px",
         (t) => `calc(${t.desktopBigGutters} / -1)`,
@@ -587,7 +507,7 @@ export const home = {
       ".Partners__logoCarousel-rowWrapper-container": {
         width: "100%",
         height: "100%",
-        maxHeight: ["unset", "100px"],
+        maxHeight: ["unset", "unset", "unset", "100px"],
         position: "absolute",
         overflowX: "hidden",
         overflowY: "hidden",
@@ -602,7 +522,7 @@ export const home = {
       },
       ".Partners__logoCarousel-rowWrapper-container-row-imageWrapper": {
         height: "100%",
-        px: [3, 6],
+        px: [3, 3, 3, 6],
         py: [2],
 
         img: {
@@ -616,10 +536,12 @@ export const home = {
     bg: "lightTurquoise",
     color: "black",
     ".AdvanceDEI__text": {
-      mt: [10, 22],
-      mb: [0, 30],
-      gridArea: ["1/1/2/-1", "1/7/2/-2"],
+      mt: [10, 10, 10, 22],
+      mb: [0, 0, 0, 30],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/7/2/-2"],
       ml: [
+        0,
+        0,
         0,
         (t) => `calc(${t.colWidthDesktop})`,
         (t) => `calc(${t.colWidthDesktopBig})`,
@@ -629,13 +551,13 @@ export const home = {
         ".AdvanceDEI__text-header-text": {},
       },
       ".AdvanceDEI__text-body": {
-        mt: ["30px", 4],
+        mt: ["30px", "30px", "30px", 4],
         fontFamily: "body",
         color: "black",
         ".AdvanceDEI__text-body-text": {},
       },
       ".AdvanceDEI__link": {
-        mt: [1, 3],
+        mt: [1, 1, 1, 3],
         p: {
           fontFamily: "medium",
           fontWeight: "500",
@@ -644,10 +566,12 @@ export const home = {
       },
     },
     ".AdvanceDEI__graphics": {
-      gridArea: ["2/1/3/-1", "1/1/2/6"],
-      height: ["120px", "100%"],
+      gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/1/2/6"],
+      height: ["120px", "120px", "120px", "100%"],
       position: "relative",
       width: [
+        "100vw",
+        "100vw",
         "100vw",
         (t) => `calc(calc(${t.colWidthDesktop} * 5) + 200px)`,
         (t) =>
@@ -657,6 +581,8 @@ export const home = {
       ],
       left: [
         "-20px",
+        "-20px",
+        "-20px",
         "-40px",
         (t) => `calc(${t.desktopBigGutters} / -1)`,
         (t) => `calc(${t.desktopMassiveGutters} / -1)`,
@@ -665,8 +591,10 @@ export const home = {
         position: "absolute",
         left: 0,
         bottom: 0,
-        height: ["67px", "36%"],
+        height: ["67px", "67px", "67px", "36%"],
         width: [
+          "115px",
+          "115px",
           "115px",
           (t) => `calc(calc(${t.colWidthDesktop} * 2.5) + 120px)`,
           (t) =>
@@ -681,6 +609,8 @@ export const home = {
         position: "absolute",
         left: [
           "42px",
+          "42px",
+          "42px",
           (t) => `calc(${t.colWidthDesktop} + 40px)`,
           (t) => `calc(${t.colWidthDesktopBig} + 40px)`,
           (t) => `calc(${t.colWidthDesktopMassive} + 40px)`,
@@ -688,29 +618,34 @@ export const home = {
         bottom: "0",
         width: [
           "134px",
+          "134px",
+          "134px",
           (t) => `calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
           (t) =>
             `calc(calc(calc(${t.colWidthDesktopBig} * 3) + 80px) + ${t.desktopBigGutters})`,
           (t) =>
             `calc(calc(calc(${t.colWidthDesktopMassive} * 3) + 80px) + ${t.desktopMassiveGutters})`,
         ],
-        height: ["120px", "64%"],
+        height: ["120px", "120px", "120px", "64%"],
         bg: "#A4F0F4",
         zIndex: 89,
       },
       ".AdvanceDEI__graphics-box3": {
         position: "absolute",
-        display: ["none", "block"],
+        display: ["none", "none", "none", "block"],
         left: 0,
         bottom: "0",
         width: [
+          0,
+          0,
+          0,
           (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,
           (t) =>
             `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 80px) + ${t.desktopBigGutters})`,
           (t) =>
             `calc(calc(calc(${t.colWidthDesktopMassive} * 2) + 80px) + ${t.desktopMassiveGutters})`,
         ],
-        height: ["120px", "100%"],
+        height: ["120px", "120px", "120px", "100%"],
         bg: "#000",
         zIndex: 88,
       },
@@ -722,18 +657,25 @@ export const home = {
     position: "relative",
     ".Quotes": {},
     ".Quotes__content": {
-      gridArea: ["1/1/2/-1", "1/3/2/-2"],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/3/2/-2"],
       display: "flex",
-      flexFlow: ["column", "row nowrap"],
-      py: [0, 20],
+      flexFlow: ["column", "column", "column", "row nowrap"],
+      py: [0, 0, 0, 20],
     },
 
     ".Quotes__imageWrapper": {
       flexShrink: [0],
-      transform: ["translate(-20px,0px)", "unset"],
+      transform: [
+        "translate(-20px,0px)",
+        "translate(-20px,0px)",
+        "translate(-20px,0px)",
+        "unset",
+      ],
       overflow: "hidden",
       position: "relative",
       width: [
+        "100vw",
+        "100vw",
         "100vw",
         (t) => `calc(calc(${t.colWidthDesktop} * 4) + 120px)`,
         (t) => `calc(calc(${t.colWidthDesktopBig} * 4) + 120px)`,
@@ -741,12 +683,13 @@ export const home = {
       ],
       height: [
         "calc(100vw * .75)",
+        "calc(100vw * .75)",
+        "calc(100vw * .75)",
         (t) => `calc(calc(calc(${t.colWidthDesktop} * 4) + 120px) * .75)`,
         (t) => `calc(calc(calc(${t.colWidthDesktopBig} * 4) + 120px) * .75)`,
         (t) =>
           `calc(calc(calc(${t.colWidthDesktopMassive} * 4) + 120px) * .75)`,
       ],
-      // left: ["-20px", "unset"],
     },
     ".Quotes__picture": {
       position: "absolute",
@@ -760,44 +703,38 @@ export const home = {
     },
     ".Quotes__textWrapper": {
       flexShrink: 1,
-      ml: [0, "40px"],
+      ml: [0, 0, 0, "40px"],
       position: "relative",
       display: "flex",
       overflow: "hidden",
-      height: ["fit-content", "unset"],
-      alignItems: ["unset", "flex-start"],
+      height: ["fit-content", "fit-content", "fit-content", "unset"],
+      alignItems: ["unset", "unset", "unset", "flex-start"],
     },
     ".Quotes__text": {
       position: "relative",
-      mt: [4, 0],
-      ml: [0, 5],
-      pr: [3, 0],
+      mt: [4, 4, 4, 0],
+      ml: [0, 0, 0, 5],
+      pr: [3, 3, 3, 0],
     },
     ".Quotes__body": {
       fontFamily: "display",
-      fontSize: ["24px", "40px"],
-      lineHeight: ["31.2px", "48px"],
+      fontSize: ["24px", "24px", "24px", "40px"],
+      lineHeight: ["31.2px", "31.2px", "31.2px", "48px"],
     },
     ".Quotes__source": {
-      mt: [3, 5],
+      mt: [3, 3, 3, 5],
       mb: [5],
     },
     ".Quotes__name": {
       fontFamily: "medium",
 
-      lineHeight: ["24px", "32px"],
+      lineHeight: ["24px", "24px", "24px", "32px"],
       fontSize: ["16px"],
     },
     ".Quotes__quotationmark": {
-      display: ["none", "unset"],
+      display: ["none", "none", "none", "unset"],
       position: "absolute",
-      left: [0, "-40px"],
-      // left: [
-      //   0,
-      //   (t) => `calc(${t.colWidthDesktop} / -1)`,
-      //   (t) => `calc(${t.colWidthDesktopBig} / -1)`,
-      //   (t) => `calc(${t.colWidthDesktopMassive} / -1)`,
-      // ],
+      left: [0, 0, 0, "-40px"],
     },
     ".Quotes__title": {
       fontFamily: "body",
@@ -816,9 +753,9 @@ export const home = {
       position: "absolute",
       left: [0],
       display: "flex",
-      alignItems: ["flex-end", "center"],
-      pb: [2, 0],
-      px: [9, 3],
+      alignItems: ["flex-end", "flex-end", "flex-end", "center"],
+      pb: [2, 2, 2, 0],
+      px: [9, 9, 9, 3],
       zIndex: 1,
       pointerEvents: "none",
     },
@@ -841,23 +778,18 @@ export const home = {
     },
 
     ".Quotes__timerWrapper": {
-      position: ["relative", "absolute"],
-      right: [
-        0,
-        // (t) => `calc(calc(${t.desktopGutters}) / -1)`,
-        // (t) => `calc(calc(${t.desktopBigGutters}) / -1)`,
-        // (t) => `calc(calc(${t.desktopMassiveGutters}) / -1)`,
-      ],
-      gridArea: ["3/1/4/-1", "unset"],
-      height: ["64px", "100%"],
-      width: ["100vw", "72px"],
-      left: ["-20px", "unset"],
+      position: ["relative", "relative", "relative", "absolute"],
+      right: [0],
+      gridArea: ["3/1/4/-1", "3/1/4/-1", "3/1/4/-1", "unset"],
+      height: ["64px", "64px", "64px", "100%"],
+      width: ["100vw", "100vw", "100vw", "72px"],
+      left: ["-20px", "-20px", "-20px", "unset"],
       bg: "rgba(255,255,255,0.24)",
     },
     ".Quotes__timer": {
       bg: "rgba(58,58,61,0.1)",
-      height: ["100%", "unset"],
-      width: ["unset", "100%"],
+      height: ["100%", "100%", "100%", "unset"],
+      width: ["unset", "unset", "unset", "100%"],
     },
   },
   marketplacepartners: {
@@ -865,9 +797,11 @@ export const home = {
     position: "relative",
     bg: "#FFF",
     ".MPP__graphics": {
-      gridArea: ["1/1/2/-1", "1/1/2/6"],
-      height: ["184px", "100%"],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/1/2/6"],
+      height: ["184px", "184px", "184px", "100%"],
       width: [
+        "100vw",
+        "100vw",
         "100vw",
         (t) => `calc(calc(${t.colWidthDesktop} * 5) + 240px)`,
         (t) =>
@@ -876,6 +810,8 @@ export const home = {
           `calc(calc(calc(${t.colWidthDesktopMassive} * 5) + 200px) + ${t.desktopMassiveGutters})`,
       ],
       left: [
+        "-20px",
+        "-20px",
         "-20px",
         "-40px",
         (t) => `calc(${t.desktopBigGutters} / -1)`,
@@ -887,6 +823,8 @@ export const home = {
         height: "100%",
         width: [
           "100%",
+          "100%",
+          "100%",
           (t) => `calc(calc(${t.colWidthDesktop} * 3) + 160px)`,
           (t) =>
             `calc(calc(calc(${t.colWidthDesktopBig} * 3) + 120px) + ${t.desktopBigGutters})`,
@@ -897,36 +835,55 @@ export const home = {
       },
       ".MPP__graphics-background-circles": {
         position: "absolute",
-        width: [(t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`, "464px"],
+        width: [
+          (t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`,
+          (t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`,
+          (t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`,
+          "464px",
+        ],
         bottom: [
+          (t) =>
+            `calc(calc(calc(calc(${t.colWidthMob} * 4) + 60px) * .5) / -1)`,
+          (t) =>
+            `calc(calc(calc(calc(${t.colWidthMob} * 4) + 60px) * .5) / -1)`,
           (t) =>
             `calc(calc(calc(calc(${t.colWidthMob} * 4) + 60px) * .5) / -1)`,
 
           "unset",
         ],
-        height: [(t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`, "100%"],
+        height: [
+          (t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`,
+          (t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`,
+          (t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`,
+          "100%",
+        ],
         display: "flex",
         alignItems: "center",
-        right: ["20%", "-232px"],
+        right: ["20%", "20%", "20%", "-232px"],
 
         ".MPP__graphics-background-circles-circle": {
-          transform: ["rotate(90deg)", "unset"],
+          transform: [
+            "rotate(90deg)",
+            "rotate(90deg)",
+            "rotate(90deg)",
+            "unset",
+          ],
           width: "inherit",
           height: "inherit",
         },
       },
     },
     ".MPP__text": {
-      gridArea: ["2/1/3/-1", "1/7/2/-1"],
-      mt: [20, "275px"],
-      mb: [10, "303px"],
+      gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/7/2/-1"],
+      mt: [20, 20, 20, "275px"],
+      mb: [10, 10, 10, "303px"],
       ".MPP__text-header": {
         ".MPP__text-header-text": {},
       },
 
       ".MPP__text-body": {
-        mt: ["20px", 4],
-        maxWidth: ["unset", (t) => t.desktopMaxSectionWidth],
+        mt: ["20px", "20px", "20px", 4],
+        maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
         ".MPP__text-body-text": {},
       },
       ".MPP__link": {

@@ -1,10 +1,4 @@
 export const textBlockAndLinks = {
-  // mr: [
-  //   0,
-  //   (t) => `calc(${t.colWidthDesktop} + 40px)`,
-  //   (t) => `calc(${t.colWidthDesktopBig} + 40px)`,
-  //   (t) => `calc(${t.colWidthDesktopMassive} + 40px)`,
-  // ],
   display: "flex",
   flexFlow: "column",
   ".TextBlock__section1": {},

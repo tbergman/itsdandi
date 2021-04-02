@@ -3,7 +3,7 @@ export const navigation = {
   zIndex: 999,
   height: "94px",
   width: ["100vw"],
-  display: ["none", "block"],
+  display: ["none", "none", "none", "block"],
   fontFamily: "body",
   ".demobtn": {
     "&:hover": {
@@ -143,14 +143,5 @@ export const navigation = {
         },
       },
     },
-    // ".login": {
-    //   color: "yellow",
-    //   display: "flex",
-    //   justifyContent: "flex-start",
-    //   alignItems: "flex-start",
-    //   ".arrow": {
-    //     pl: "14px",
-    //   },
-    // },
   },
 };

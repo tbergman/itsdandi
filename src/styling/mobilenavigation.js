@@ -5,13 +5,13 @@ export const mobileNavigation = {
   bg: "#FFF",
   height: "74px",
   width: "100%",
-  display: ["unset", "none"],
+  display: ["unset", "unset", "unset", "none"],
   ".MobileNav__container": {
     height: "100%",
     width: "100%",
     transition: "all 100ms cubic-bezier(.01,.66,.83,.67)",
     ".MobileNav__container-wrapper": {
-      display: ["flex", "none"],
+      display: ["flex", "flex", "flex", "none"],
       justifyContent: "space-between",
       ".MobileNav__container-wrapper-hamburger": {
         cursor: "pointer",

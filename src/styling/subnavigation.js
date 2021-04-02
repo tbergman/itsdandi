@@ -1,27 +1,37 @@
 export const subnavigation = {
   display: "flex",
-  height: ["auto", "250px"],
-  flexFlow: ["column-reverse", "unset"],
+  height: ["auto", "auto", "auto", "250px"],
+  flexFlow: ["column-reverse", "column-reverse", "column-reverse", "unset"],
 
   ".SubNavigation__next": {
-    height: ["200px", "100%"],
+    height: ["200px", "200px", "200px", "100%"],
     pl: [0],
-    flex: [1, "0 50%"],
+    flex: [1, 1, 1, "0 50%"],
     display: "flex",
     alignItems: "center",
     ".SubNavigation__link": {
-      pl: [(t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`, 0],
+      pl: [
+        (t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`,
+        (t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`,
+        (t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`,
+        0,
+      ],
     },
   },
 
   ".SubNavigation__prev": {
-    height: ["200px", "100%"],
-    flex: [1, "0 50%"],
+    height: ["200px", "200px", "200px", "100%"],
+    flex: [1, 1, 1, "0 50%"],
     pl: [0],
     display: "flex",
     alignItems: "center",
     ".SubNavigation__link": {
-      pl: [(t) => `calc(${t.colWidthMob} + 40px)`, 0],
+      pl: [
+        (t) => `calc(${t.colWidthMob} + 40px)`,
+        (t) => `calc(${t.colWidthMob} + 40px)`,
+        (t) => `calc(${t.colWidthMob} + 40px)`,
+        0,
+      ],
     },
   },
   ".full": {
@@ -36,19 +46,19 @@ export const subnavigation = {
     alignItems: "center",
 
     ".SubNavigation__link-content": {
-      mr: [6, 0],
+      mr: [6, 6, 6, 0],
       cursor: "pointer",
       textDecoration: "none",
-      height: ["100%", "auto"],
+      height: ["100%", "100%", "100%", "auto"],
       display: "flex",
       flexFlow: "column nowrap",
-      justifyContent: ["center", "flex-end"],
+      justifyContent: ["center", "center", "center", "flex-end"],
       ".SubNavigation__link-content-text": {
         fontFamily: "display",
-        fontSize: ["24px", "40px"],
-        lineHeight: ["24px", "40px"],
+        fontSize: ["24px", "24px", "24px", "40px"],
+        lineHeight: ["24px", "24px", "24px", "40px"],
         mr: [3],
-        // mb: [8],
+
         color: "black",
       },
       ".rotated": {
@@ -59,7 +69,7 @@ export const subnavigation = {
         height: ["30px"],
         width: ["30px"],
         position: "relative",
-        mb: [4, 4],
+        mb: [4, 4, 4, 4],
         left: 0,
         path: {
           stroke: "black",

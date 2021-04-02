@@ -38,24 +38,27 @@ export const board = {
 
     ".graphics": {
       position: "absolute",
-      bottom: [0, "40px"],
+      bottom: [0, 0, 0, "40px"],
       width: [
+        (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
+        (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
         (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
         (t) => `calc(calc(${t.colWidthDesktop} * 3) + 80px)`,
         (t) => `calc(calc(${t.colWidthDesktopBig} * 3) + 80px)`,
         `315px`,
-        // (t) => `calc(calc(${t.colWidthDesktopMassive} * 3) + 80px)`,
       ],
       height: [
+        (t) => `calc(calc(calc(${t.colWidthMob} * 3) + 40px) * .88)`,
+        (t) => `calc(calc(calc(${t.colWidthMob} * 3) + 40px) * .88)`,
         (t) => `calc(calc(calc(${t.colWidthMob} * 3) + 40px) * .88)`,
         (t) => `calc(calc(calc(${t.colWidthDesktop} * 3) + 80px) * .88)`,
         (t) => `calc(calc(calc(${t.colWidthDesktopBig} * 3) + 80px) * .88)`,
         `calc(315px * .88)`,
-        // (t) =>
-        // `calc(calc(calc(${t.colWidthDesktopMassive} * 3) + 80px) * .88)`,
       ],
 
       left: [
+        (t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`,
+        (t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`,
         (t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`,
         (t) => `calc(calc(${t.colWidthDesktop} * 9) + 400px)`,
         (t) =>

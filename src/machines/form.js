@@ -85,9 +85,20 @@ export const FooterForm__machine = createMachine(
         invoke: {
           id: "submitForm",
           src: (c, e) => {
-            return new Promise((res, rej) => {
-              res("success");
-            });
+            const init = {
+              method: "POST",
+              body: JSON.stringify({
+                firstName: c.firstName.value,
+                lastName: c.lastName.value,
+              }),
+            };
+            return fetch(
+              "https://us-central1-dandi-dev.cloudfunctions.net/contactPOST",
+              init
+            )
+              .then((response) => response.json())
+              .then((data) => console.log(data))
+              .catch((err) => console.log(err));
           },
           onDone: {
             target: "success",

@@ -1,6 +1,6 @@
 export const submenu = {
   mobile: {
-    display: ["unset", "none"],
+    display: ["unset", "unset", "unset", "none"],
     position: "absolute",
     top: "74px",
     left: 0,
@@ -8,7 +8,7 @@ export const submenu = {
     height: "40px",
     overflow: "hidden",
     zIndex: 99,
-    borderBottom: ["1px solid #CACACE", "none"],
+    borderBottom: ["1px solid #CACACE"],
 
     ".SubMenu__arrow": {
       cursor: "pointer",
@@ -60,8 +60,8 @@ export const submenu = {
         height: "100%",
         cursor: "pointer",
         pr: [3],
-        display: ["flex", "unset"],
-        justifyContent: ["space-between", "unset"],
+        display: ["flex"],
+        justifyContent: ["space-between"],
         alignItems: "center",
 
         color: "inherit",
@@ -79,26 +79,19 @@ export const submenu = {
       ".current": {
         opacity: 1,
         position: "relative",
-        pl: [0, 3],
+        pl: [0],
       },
-      // ".SubMenu__mobileContainer-draggable": {
-      //   height: "100%",
-      //   display: "flex",
-      //   flexFlow: ["row nowrap", "column"],
-      //   alignItems: ["center", "unset"],
-
-      // },
     },
   },
   desktop: {
-    display: ["none", "unset"],
+    display: ["none", "none", "none", "unset"],
     position: "fixed",
     top: [24],
     left: "40px",
 
     zIndex: 99,
     ".SubMenu__container": {
-      height: ["100%", "unset"],
+      // height: ["100%", ""],
       width: "100%",
       borderBottom: ["1px solid #CACACE", "none"],
       display: "flex",
