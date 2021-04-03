@@ -118,7 +118,7 @@ const Pricing = (props) => {
       >
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.one.quote,
           }}
           shouldSlideUp={true}
@@ -127,7 +127,7 @@ const Pricing = (props) => {
         </Section>
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.two.quote,
           }}
         >

@@ -113,7 +113,7 @@ const Discover = (props) => {
         windowHeight={windowHeight}
         bg="#F8F8F8"
         styling={{
-          mb: [12, 23],
+          mb: [12, 12, 12, 23],
         }}
       >
         {!isServer() && (
@@ -138,7 +138,7 @@ const Discover = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [8, 16],
+            mt: [8, 8, 8, 16],
             ...theme.components.section.one.secondary,
           }}
         >
@@ -148,8 +148,8 @@ const Discover = (props) => {
         </Section>
         <Section
           styling={{
-            mt: [3, 16],
-            mb: [8, 12],
+            mt: [3, 3, 4, 16],
+            mb: [8, 8, 8, 12],
             ...theme.components.section.two.primary,
           }}
         >
@@ -202,7 +202,7 @@ const Discover = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [8, 16],
+            mt: [8, 8, 8, 16],
             ...theme.components.section.one.secondary,
           }}
         >
@@ -212,8 +212,8 @@ const Discover = (props) => {
         </Section>
         <Section
           styling={{
-            mt: [3, 16],
-            mb: [8, 12],
+            mt: [3, 3, 4, 16],
+            mb: [8, 8, 8, 12],
             ...theme.components.section.two.primary,
           }}
           shouldSlideUp={true}
@@ -271,7 +271,7 @@ const Discover = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [8, 16],
+            mt: [8, 8, 8, 16],
             ...theme.components.section.one.secondary,
           }}
         >
@@ -281,8 +281,8 @@ const Discover = (props) => {
         </Section>
         <Section
           styling={{
-            mt: [3, 16],
-            mb: [8, 12],
+            mt: [3, 3, 4, 16],
+            mb: [8, 8, 8, 12],
             ...theme.components.section.two.primary,
           }}
           shouldSlideUp={true}
@@ -337,7 +337,7 @@ const Discover = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.one.quote,
           }}
         >
@@ -345,7 +345,7 @@ const Discover = (props) => {
         </Section>
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.two.quote,
           }}
         >

@@ -6,7 +6,6 @@ import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
 import TopImage from "../../src/components/values/leadership/topimage";
 import TextModules from "../../src/components/values/leadership/textmodules";
-import Quote from "../../src/components/quote";
 import SubMenuMobile from "../../src/components/navigation/submenumobile";
 import SubMenuDesktop from "../../src/components/navigation/submenudesktop";
 import pages from "../../src/helpers/values/pages";
@@ -14,25 +13,18 @@ import { subPages } from "../../src/helpers/subpages";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
 
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
 import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
 import devices from "../../src/helpers/devices";
 import { useWindowSize } from "@react-hook/window-size";
-import { findLastIndex } from "ramda";
+
 import GridContainer from "../../src/components/gridcontainer";
 import Section from "../../src/components/section";
 import QuoteText from "../../src/components/quotetext";
 import QuoteImage from "../../src/components/quoteimage";
-import React from "react";
 
-const Values = (props) => {
+const Leadership = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useThemeUI();
   const currentPage = {
@@ -123,6 +115,8 @@ const Values = (props) => {
         styling={{
           mb: [
             `calc(calc(calc(calc(100vw - 20px) * .6) * .7) + 32px)`,
+            `calc(calc(calc(calc(100vw - 20px) * .6) * .7) + 32px)`,
+            `calc(calc(calc(calc(100vw - 20px) * .6) * .7) + 32px)`,
             `calc(calc(calc(calc(calc(${theme.colWidthDesktop} * 10) +  400px) * .46) * .5) + 115px)`,
             `calc(calc(calc(calc(calc(calc(${theme.colWidthDesktopBig} * 10) +  360px) + ${theme.desktopBigGutters}) * .46) * .5) + 115px)`,
             `calc(calc(calc(calc(calc(calc(${theme.colWidthDesktopMassive} * 10) +  360px) + ${theme.desktopMassiveGutters}) * .46) * .5) + 115px)`,
@@ -156,11 +150,9 @@ const Values = (props) => {
         windowHeight={windowHeight}
         bg={theme.colors.yellow}
       >
-        {/* Change order depending on device */}
-
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.one.quote,
           }}
           shouldSlideUp={true}
@@ -169,7 +161,7 @@ const Values = (props) => {
         </Section>
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.two.quote,
           }}
         >
@@ -203,4 +195,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Values;
+export default Leadership;

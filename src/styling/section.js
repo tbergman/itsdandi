@@ -7,8 +7,8 @@ export const section = {
       gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/3/2/8"],
       pr: [
         0,
-        0,
-        0,
+        (t) => t.colWidthMob,
+        (t) => t.colWidthMob,
         (t) => t.colWidthDesktop,
         (t) => t.colWidthDesktopBig,
         (t) => t.colWidthDesktopMassive,
@@ -21,8 +21,8 @@ export const section = {
       gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/3/2/8"],
       pr: [
         0,
-        0,
-        0,
+        (t) => t.colWidthMob,
+        (t) => t.colWidthMob,
         (t) => t.colWidthDesktop,
         (t) => t.colWidthDesktopBig,
         (t) => t.colWidthDesktopMassive,
@@ -42,8 +42,8 @@ export const section = {
       ],
       pr: [
         0,
-        0,
-        0,
+        (t) => t.colWidthMob,
+        (t) => t.colWidthMob,
         (t) => `calc(${t.colWidthDesktop} + 40px)`,
         (t) => `calc(${t.colWidthDesktopBig} + 40px)`,
         (t) => `calc(${t.colWidthDesktopMassive} + 40px)`,

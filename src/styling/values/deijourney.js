@@ -69,8 +69,8 @@ export const deijourney = {
           lineHeight: ["24px"],
           maxWidth: [
             "unset",
-            "unset",
-            "unset",
+            (t) => t.tabletMaxSectionWidth,
+            (t) => t.tabletMaxSectionWidth,
             (t) => t.desktopMaxSectionWidth,
           ],
         },
@@ -79,8 +79,8 @@ export const deijourney = {
           lineHeight: ["24px"],
           maxWidth: [
             "unset",
-            "unset",
-            "unset",
+            (t) => t.tabletMaxSectionWidth,
+            (t) => t.tabletMaxSectionWidth,
             (t) => t.desktopMaxSectionWidth,
           ],
         },
@@ -164,7 +164,12 @@ export const deijourney = {
     },
     ".Partners__text": {
       gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/3/2/8"],
-      mt: [20, 20, 20, 18],
+      mt: [
+        (t) => `calc(calc(${t.colWidthMob} * 2) + 80px)`,
+        (t) => `calc(calc(${t.colWidthMob} * 2) + 80px)`,
+        (t) => `calc(calc(${t.colWidthMob} * 2) + 80px)`,
+        18,
+      ],
       mb: [10, 10, 10, 19],
       ".Partners__text-header": {
         ".Partners__text-header-text": {
@@ -172,7 +177,12 @@ export const deijourney = {
         },
       },
       ".Partners__text-body": {
-        maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
+        maxWidth: [
+          "unset",
+          (t) => t.tabletMaxSectionWidth,
+          (t) => t.tabletMaxSectionWidth,
+          (t) => t.desktopMaxSectionWidth,
+        ],
         mt: [3, 3, 3, 4],
         ".Partners__text-body-text": {
           fontSize: ["16px"],

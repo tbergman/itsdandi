@@ -4,7 +4,6 @@ import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
-import DoMore from "../../src/components/community/partners/domore";
 import People from "../../src/components/community/people";
 import Curious from "../../src/components/community/partners/curious";
 import { subPages } from "../../src/helpers/subpages";
@@ -112,7 +111,7 @@ const Community = (props) => {
         windowHeight={windowHeight}
         bg="#FFF"
         styling={{
-          mb: [18, 16],
+          mb: [18, 18, 18, 16],
         }}
       >
         {!isServer() && <TopContent isDesktop={isDesktop} />}
@@ -141,7 +140,7 @@ const Community = (props) => {
       >
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.one.quote,
           }}
           shouldSlideUp={true}
@@ -150,7 +149,7 @@ const Community = (props) => {
         </Section>
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.two.quote,
           }}
         >

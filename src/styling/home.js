@@ -23,7 +23,7 @@ export const home = {
       },
     },
     ".Top__text": {
-      gridArea: ["1/2/2/-1", "1/2/2/-1", "1/2/2/-1", "1/7/2/-1"],
+      gridArea: ["1/2/2/-1", "1/2/2/-1", "1/3/2/-1", "1/7/2/-1"],
       ml: [
         (t) => `calc(${t.colWidthMob} + 10px)`,
         (t) => `calc(${t.colWidthMob} + 10px)`,
@@ -39,8 +39,8 @@ export const home = {
         lineHeight: ["43.2px", "43.2px", "43.2px", "70px"],
         mr: [
           "unset",
-          "unset",
-          "unset",
+          (t) => t.colWidthMob,
+          (t) => t.colWidthMob,
           (t) => t.colWidthDesktop,
           (t) => t.colWidthDesktopBig,
           (t) => `calc(${t.colWidthDesktopMassive} + 60px)`,
@@ -105,7 +105,7 @@ export const home = {
         (t) => `calc(${t.desktopBigGutters} / -1)`,
         (t) => `calc(${t.desktopMassiveGutters} / -1)`,
       ],
-      height: ["191px", "191px", "191px", "112px", "136px"],
+      height: ["191px", "191px", "220px", "112px", "136px"],
 
       ".Bars__barWrapper": {
         position: "absolute",
@@ -118,17 +118,11 @@ export const home = {
         zIndex: 99,
         position: "absolute",
         height: "100%",
-        width: [
-          (t) => `calc(${t.colWidthMob} + 10px)`,
-          (t) => `calc(${t.colWidthMob} + 10px)`,
-          (t) => `calc(${t.colWidthMob} + 10px)`,
-          `95px`,
-          ,
-        ],
+        width: ["55px", "65px", "80px", `95px`, ,],
         ml: [
           "20px",
           "20px",
-          "20px",
+          "40px",
           (t) => `calc(calc(${t.colWidthDesktop} * 2) + 56px)`,
           (t) =>
             `calc(calc(calc(${t.colWidthDesktopBig} * 1) + 40px) + ${t.desktopBigGutters})`,
@@ -155,16 +149,11 @@ export const home = {
       },
       ".Bars__barWrapper-bar2": {
         zIndex: 99,
-        width: [
-          (t) => `calc(${t.colWidthMob} + 10px)`,
-          (t) => `calc(${t.colWidthMob} + 10px)`,
-          (t) => `calc(${t.colWidthMob} + 10px)`,
-          "95px",
-        ],
+        width: ["55px", "65px", "80px", "95px"],
         ml: [
-          (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
-          (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
-          (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
+          (t) => `calc(20px + 105px)`,
+          (t) => `calc(20px + 115px)`,
+          (t) => `calc(40px + 130px)`,
           (t) => `calc(calc(${t.colWidthDesktop} * 2) + 225px)`,
           (t) =>
             `calc(calc(calc(calc(${t.colWidthDesktopBig} * 1) + 40px) + ${t.desktopBigGutters}) + 185px)`,
@@ -193,19 +182,15 @@ export const home = {
       },
       ".Bars__barWrapper-bar3": {
         zIndex: 99,
-        width: [
-          (t) => `calc(${t.colWidthMob} + 10px)`,
-          (t) => `calc(${t.colWidthMob} + 10px)`,
-          (t) => `calc(${t.colWidthMob} + 10px)`,
-          "95px",
-        ],
+        width: ["55px", "65px", "80px", "95px"],
         height: "100%",
         bottom: 0,
         position: "absolute",
         ml: [
-          (t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`,
-          (t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`,
-          (t) => `calc(calc(${t.colWidthMob} * 3.5) + 80px)`,
+          (t) => `calc(20px + 210px)`,
+          (t) => `calc(20px + 230px)`,
+          (t) => `calc(40px + 260px)`,
+
           (t) => `calc(calc(${t.colWidthDesktop} * 2) + 394px)`,
           (t) =>
             `calc(calc(calc(calc(${t.colWidthDesktopBig} * 1) + 40px) + ${t.desktopBigGutters}) + 370px)`,
@@ -228,7 +213,7 @@ export const home = {
         height: [
           "120%",
           "120%",
-          "120%",
+          (t) => `calc(calc(calc(${t.colWidthMob} * 5.5) + 100px) * .38)`,
           (t) => `calc(calc(calc(${t.colWidthDesktop} * 6) + 240px) * .38)`,
           (t) =>
             `calc(calc(calc(calc(${t.colWidthDesktopBig} * 6) + 200px) + ${t.desktopBigGutters}) * .38)`,
@@ -238,9 +223,10 @@ export const home = {
         right: [
           (t) => `calc(calc(${t.colWidthMob} * 1.5) + 40px)`,
           (t) => `calc(calc(${t.colWidthMob} * 1.5) + 40px)`,
-          (t) => `calc(calc(${t.colWidthMob} * 1.5) + 40px)`,
+          "unset",
           "unset",
         ],
+        left: ["unset", "unset", 0, "unset"],
         width: [
           (t) => `calc(calc(${t.colWidthMob} * 5.5) + 100px)`,
           (t) => `calc(calc(${t.colWidthMob} * 5.5) + 100px)`,
@@ -251,12 +237,12 @@ export const home = {
           (t) =>
             `calc(calc(calc(${t.colWidthDesktopMassive} * 6) + 200px) + ${t.desktopMassiveGutters})`,
         ],
-        maxWidth: ["811px", "811px", "811px", "811px", "1000px", "1250px"],
-        maxHeight: ["308px", "308px", "308px", "308px", "350px", "500px"],
+        maxWidth: ["811px", "811px", "600px", "811px", "1000px", "1250px"],
+        maxHeight: ["308px", "308px", "222px", "308px", "350px", "500px"],
         zIndex: 99,
         svg: {
           height: "100%",
-          width: ["unset", "unset", "unset", "100%"],
+          width: ["unset", "unset", "100%", "100%"],
           position: "absolute",
           top: 0,
           right: 0,
@@ -902,7 +888,7 @@ export const home = {
           (t) =>
             `calc(calc(calc(calc(${t.colWidthMob} * 4) + 60px) / 2) + 40px)`,
           (t) =>
-            `calc(calc(calc(calc(${t.colWidthMob} * 4) + 60px) / 2) + 40px)`,
+            `calc(calc(calc(calc(${t.colWidthMob} * 4) + 60px) / 2) + 60px)`,
           0,
         ],
         ".MPP__text-header-text": {

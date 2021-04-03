@@ -5,7 +5,6 @@ import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
 import Onboarding from "../../src/components/community/support/onboarding";
-// import LearnMore from "../../src/components/community/support/learnmore";
 import GetCreative from "../../src/components/community/support/getcreative";
 import TopContent from "../../src/components/community/support/topcontent";
 import { subPages } from "../../src/helpers/subpages";
@@ -112,6 +111,8 @@ const Community = (props) => {
         styling={{
           mb: [
             `calc(calc(calc(calc(100vw - 20px) * .6) *  .7) + 32px)`,
+            `calc(calc(calc(calc(100vw - 20px) * .6) *  .7) + 32px)`,
+            `calc(calc(calc(calc(100vw - 20px) * .6) *  .7) + 32px)`,
             `calc(calc(calc(calc(calc(${theme.colWidthDesktop} * 10) + 400px) * .45) * .5) + 92px)`,
           ],
         }}
@@ -138,17 +139,6 @@ const Community = (props) => {
         }}
       />
 
-      {/* <LearnMore
-        isDesktop={isDesktop}
-        subMenuStyling={theme.components.submenu.variants.white}
-        setSubMenuStyling={setSubMenuStyling}
-        setNavbarStyling={setNavbarStyling}
-        navBarStyling={theme.components.navBarVariants.gray}
-        windowHeight={windowHeight}
-        content={{
-          ...props.learnmore,
-        }}
-      /> */}
       <GetCreative
         isDesktop={isDesktop}
         subMenuStyling={theme.components.submenu.variants.white}

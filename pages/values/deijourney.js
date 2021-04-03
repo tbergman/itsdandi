@@ -14,12 +14,6 @@ import { subPages } from "../../src/helpers/subpages";
 import { useState, useEffect } from "react";
 import Butter from "buttercms";
 
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
 import MobileNav from "../../src/components/mobilenav";
 import MobileMenu from "../../src/components/mobilemenu";
 import { useMediaQuery } from "react-responsive";
@@ -115,7 +109,7 @@ const Values = (props) => {
         isDesktop={isDesktop}
         bg="#FFF"
         styling={{
-          mb: [12, 9],
+          mb: [12, 12, 16, 9],
         }}
         content={{
           header: props.header.header,
@@ -151,7 +145,7 @@ const Values = (props) => {
       >
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.one.quote,
           }}
           shouldSlideUp={true}
@@ -160,7 +154,7 @@ const Values = (props) => {
         </Section>
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.two.quote,
           }}
         >
@@ -175,7 +169,12 @@ const Values = (props) => {
         }}
         styling={{
           ".TextBlock__textWrapper": {
-            mb: [21, 18],
+            mb: [
+              (t) => `calc(calc(${t.colWidthMob} * 2) + 50px)`,
+              (t) => `calc(calc(${t.colWidthMob} * 2) + 50px)`,
+              (t) => `calc(calc(${t.colWidthMob} * 2) + 50px)`,
+              18,
+            ],
           },
         }}
         navBarStyling={theme.components.navBarVariants.white}

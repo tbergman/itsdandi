@@ -4,7 +4,6 @@ import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
-import Better from "../../src/components/community/board/better";
 import { subPages } from "../../src/helpers/subpages";
 import People from "../../src/components/community/people";
 import pages from "../../src/helpers/community/pages";
@@ -109,6 +108,8 @@ const Community = (props) => {
         styling={{
           mb: [
             `calc(calc(calc(calc(${theme.colWidthMob} * 3) + 40px) * .88) + 8px)`,
+            `calc(calc(calc(calc(${theme.colWidthMob} * 3) + 40px) * .88) + 8px)`,
+            `calc(calc(calc(calc(${theme.colWidthMob} * 3) + 40px) * .88) + 8px)`,
             16,
           ],
         }}
@@ -140,7 +141,7 @@ const Community = (props) => {
       >
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.one.quote,
           }}
           shouldSlideUp={true}
@@ -149,7 +150,7 @@ const Community = (props) => {
         </Section>
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.two.quote,
           }}
         >

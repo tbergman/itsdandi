@@ -4,10 +4,6 @@ import Navigation from "../../src/components/navigation";
 import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
-import Insights from "../../src/components/product/analyze/insights";
-import NewInsights from "../../src/components/product/analyze/newinsights";
-import InAction from "../../src/components/product/analyze/inaction";
-import Sharable from "../../src/components/product/analyze/sharable";
 import { subPages } from "../../src/helpers/subpages";
 import pages from "../../src/helpers/product/pages";
 import TopContent from "../../src/components/product/reporting/topcontent";
@@ -27,10 +23,8 @@ import FreeContainer from "../../src/components/freecontainer";
 import VideoSection from "../../src/components/videosection";
 import QuoteText from "../../src/components/quotetext";
 import QuoteImage from "../../src/components/quoteimage";
-import LearnMoreLink from "../../src/components/learnmorelink";
 import SimpleList from "../../src/components/simplelist";
 import LinkList from "../../src/components/linklist";
-import React from "react";
 
 const Reporting = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -119,7 +113,7 @@ const Reporting = (props) => {
         windowHeight={windowHeight}
         bg="#F8F8F8"
         styling={{
-          mb: [12, 23],
+          mb: [12, 12, 12, 23],
         }}
       >
         {!isServer() && (
@@ -144,7 +138,7 @@ const Reporting = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [8, 16],
+            mt: [8, 8, 8, 16],
             ...theme.components.section.one.secondary,
           }}
         >
@@ -154,8 +148,8 @@ const Reporting = (props) => {
         </Section>
         <Section
           styling={{
-            mt: [3, 16],
-            mb: [8, 12],
+            mt: [3, 3, 4, 16],
+            mb: [8, 8, 8, 12],
             ...theme.components.section.two.primary,
           }}
         >
@@ -207,7 +201,7 @@ const Reporting = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [8, 16],
+            mt: [8, 8, 8, 16],
             ...theme.components.section.one.secondary,
           }}
         >
@@ -217,8 +211,8 @@ const Reporting = (props) => {
         </Section>
         <Section
           styling={{
-            mt: [3, 16],
-            mb: [8, 12],
+            mt: [3, 3, 4, 16],
+            mb: [8, 8, 8, 12],
             ...theme.components.section.two.primary,
           }}
         >
@@ -272,7 +266,7 @@ const Reporting = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [8, 16],
+            mt: [8, 8, 8, 16],
             ...theme.components.section.one.secondary,
           }}
         >
@@ -282,8 +276,8 @@ const Reporting = (props) => {
         </Section>
         <Section
           styling={{
-            mt: [3, 16],
-            mb: [8, 12],
+            mt: [3, 3, 4, 16],
+            mb: [8, 8, 8, 12],
             ...theme.components.section.two.primary,
           }}
         >
@@ -337,7 +331,7 @@ const Reporting = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.one.quote,
           }}
         >
@@ -345,7 +339,7 @@ const Reporting = (props) => {
         </Section>
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.two.quote,
           }}
         >

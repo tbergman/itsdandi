@@ -3,6 +3,8 @@ export const header = {
   ".Header__text": {
     mt: [18, 18, 18, 22],
     gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/3/2/9"],
+    pr: [0, (t) => t.colWidthMob, (t) => t.colWidthMob, 0],
+    maxWidth: ["650px", "650px", "650px", "unset"],
   },
   ".Header__text-header": {
     fontSize: ["32px", "32px", "32px", "52px"],

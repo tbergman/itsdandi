@@ -116,6 +116,7 @@ const theme = {
     lightViolet: "#FDF1FF",
   },
   desktopMaxSectionWidth: "475px",
+  tabletMaxSectionWidth: "650px",
   desktopBigGutters: `calc(100vw * .12)`,
   desktopMassiveGutters: `calc(100vw*.175)`,
   desktopGutters: `40px`,

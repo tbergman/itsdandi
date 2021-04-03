@@ -112,7 +112,7 @@ const DEIMetrics = (props) => {
         }}
         bg="#F8F8F8"
         styling={{
-          mb: [12, 22],
+          mb: [12, 16, 20, 22],
         }}
       >
         {!isServer() && (
@@ -137,7 +137,7 @@ const DEIMetrics = (props) => {
       >
         <Section
           styling={{
-            mt: [6, 16],
+            mt: [6, 6, 6, 16],
             ...theme.components.section.wide,
           }}
         >
@@ -157,7 +157,7 @@ const DEIMetrics = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [8, 16],
+            mt: [8, 8, 8, 16],
             ...theme.components.section.one.primary,
           }}
         >
@@ -168,8 +168,8 @@ const DEIMetrics = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [3, 16],
-            mb: [6, 10],
+            mt: [3, 3, 4, 16],
+            mb: [6, 6, 6, 10],
             ...theme.components.section.two.primary,
           }}
         >
@@ -193,7 +193,7 @@ const DEIMetrics = (props) => {
       >
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.one.quote,
           }}
           shouldSlideUp={true}
@@ -202,7 +202,7 @@ const DEIMetrics = (props) => {
         </Section>
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.two.quote,
           }}
         >
@@ -221,7 +221,7 @@ const DEIMetrics = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [8, 16],
+            mt: [8, 8, 8, 16],
             ...theme.components.section.one.primary,
           }}
         >
@@ -232,7 +232,7 @@ const DEIMetrics = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [3, 16],
+            mt: [3, 3, 4, 16],
             mb: [0],
             ...theme.components.section.two.primary,
           }}
@@ -255,7 +255,7 @@ const DEIMetrics = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [8, 16],
+            mt: [8, 8, 8, 16],
             ...theme.components.section.one.primary,
           }}
         >
@@ -266,8 +266,8 @@ const DEIMetrics = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [3, 16],
-            mb: [8, 10],
+            mt: [3, 3, 4, 16],
+            mb: [8, 8, 8, 10],
             ...theme.components.section.two.primary,
           }}
         >
@@ -288,11 +288,10 @@ const DEIMetrics = (props) => {
         windowHeight={windowHeight}
         bg={"#F8F8F8"}
       >
-        =
         <Section
           shouldSlideUp={true}
           styling={{
-            py: [10, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.one.quote,
           }}
         >
@@ -300,7 +299,7 @@ const DEIMetrics = (props) => {
         </Section>
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.two.quote,
           }}
         >
@@ -320,7 +319,7 @@ const DEIMetrics = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [8, 16],
+            mt: [8, 8, 8, 16],
             ...theme.components.section.one.primary,
           }}
         >
@@ -331,8 +330,8 @@ const DEIMetrics = (props) => {
         <Section
           shouldSlideUp={true}
           styling={{
-            mt: [3, 16],
-            mb: [8, 12],
+            mt: [3, 3, 4, 16],
+            mb: [8, 8, 8, 12],
             ...theme.components.section.two.primary,
           }}
         >

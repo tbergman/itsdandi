@@ -120,16 +120,9 @@ const EquityPay = (props) => {
         }}
         bg="#FFF"
         styling={{
-          mb: [8, 15],
+          mb: [8, 8, 12, 15],
         }}
-      >
-        {/* <TopGraphic
-          images={{
-            desktop: props.header.desktop_image,
-            mobile: props.header.mobile_image,
-          }}
-        /> */}
-      </Header>
+      ></Header>
       <Compensation
         setSubMenuStyling={setSubMenuStyling}
         subMenuStyling={theme.components.submenu.variants.white}
@@ -180,7 +173,7 @@ const EquityPay = (props) => {
 
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.one.quote,
           }}
           shouldSlideUp={true}
@@ -189,7 +182,7 @@ const EquityPay = (props) => {
         </Section>
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.two.quote,
           }}
         >

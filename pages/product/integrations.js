@@ -111,7 +111,7 @@ const Product = (props) => {
         windowHeight={windowHeight}
         bg="#F8F8F8"
         styling={{
-          mb: [12, 16],
+          mb: [12, 12, 12, 16],
         }}
       >
         {!isServer() && (
@@ -146,7 +146,7 @@ const Product = (props) => {
       >
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.one.quote,
           }}
           shouldSlideUp={true}
@@ -155,7 +155,7 @@ const Product = (props) => {
         </Section>
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.two.quote,
           }}
         >

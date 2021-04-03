@@ -5,7 +5,6 @@ import Footer from "../../src/components/footer";
 import SubNavigation from "../../src/components/subnavigation";
 import Header from "../../src/components/header";
 import BestInClass from "../../src/components/product/security/bestinclass";
-import Quote from "../../src/components/quote";
 import Workflows from "../../src/components/product/security/workflows";
 import Connect from "../../src/components/product/security/connect";
 import { subPages } from "../../src/helpers/subpages";
@@ -26,7 +25,6 @@ import GridContainer from "../../src/components/gridcontainer";
 import Section from "../../src/components/section";
 import QuoteText from "../../src/components/quotetext";
 import QuoteImage from "../../src/components/quoteimage";
-import React from "react";
 
 const Product = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -114,10 +112,10 @@ const Product = (props) => {
         windowHeight={windowHeight}
         bg="#fff"
         styling={{
-          mb: [13, 16, 23],
+          mb: [13, 13, 13, 16, 23],
           h1: {
-            fontSize: ["36px", "52px"],
-            lineHeight: ["43px", "58px"],
+            fontSize: ["36px", "36px", "36px", "52px"],
+            lineHeight: ["43px", "43px", "43px", "58px"],
           },
         }}
       >
@@ -152,11 +150,9 @@ const Product = (props) => {
         windowHeight={windowHeight}
         bg={"#F8F8F8"}
       >
-        {/* Change order depending on device */}
-
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.one.quote,
           }}
           shouldSlideUp={true}
@@ -165,7 +161,7 @@ const Product = (props) => {
         </Section>
         <Section
           styling={{
-            py: [0, 20],
+            py: [0, 0, 0, 20],
             ...theme.components.section.two.quote,
           }}
         >
