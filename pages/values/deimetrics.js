@@ -278,7 +278,6 @@ const DEIMetrics = (props) => {
       </GridContainer>
 
       {/* Quote 2 */}
-
       <GridContainer
         isDesktop={isDesktop}
         setSubMenuStyling={setSubMenuStyling}

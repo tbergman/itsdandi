@@ -2,7 +2,7 @@ export const button = {
   width: [
     (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
     (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
-    (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
+    (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
     (t) => `calc(calc(${t.colWidthDesktop} * 2) + 80px)`,
     (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 80px)`,
     (t) => `calc(calc(${t.colWidthDesktopMassive} * 2) + 80px)`,

@@ -24,5 +24,12 @@ export const quoteimage = {
     width: "100%",
   },
 
-  left: ["-20px", "-20px", "-20px", 0],
+  left: [
+    (t) => `calc(${t.mobileGutters} / -1)`,
+    (t) => `calc(${t.mobileGutters} / -1)`,
+
+    (t) => `calc(${t.desktopGutters} / -1)`,
+
+    0,
+  ],
 };

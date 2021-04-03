@@ -142,7 +142,7 @@ const theme = {
     mx: [
       (t) => t.mobileGutters,
       (t) => t.mobileGutters,
-      (t) => t.mobileGutters,
+      (t) => t.desktopGutters,
       (t) => t.desktopGutters,
       (t) => t.desktopBigGutters,
       (t) => t.desktopMassiveGutters,

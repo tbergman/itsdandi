@@ -64,6 +64,8 @@ const SubNavigation = ({ next, prev }) => {
                 sx={{
                   ml: [
                     0,
+                    0,
+                    0,
                     (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,
                     (t) => `calc(${t.desktopBigGutters} )`,
                     (t) => `calc(${t.desktopMassiveGutters} )`,
@@ -119,11 +121,16 @@ const SubNavigation = ({ next, prev }) => {
                 ml: prev
                   ? [
                       0,
+                      ,
+                      0,
+                      0,
                       (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,
                       (t) => `calc(${t.desktopBigGutters})`,
                       (t) => `calc(${t.desktopMassiveGutters})`,
                     ]
                   : [
+                      0,
+                      0,
                       0,
                       (t) =>
                         `calc(calc(calc(${t.colWidthDesktop} * 2) + 120px) + 50vw)`,

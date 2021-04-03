@@ -5,9 +5,9 @@ export const discover = {
       position: "absolute",
       zIndex: 1,
       left: [
-        "20px",
-        "20px",
-        "20px",
+        (t) => t.mobileGutters,
+        (t) => t.mobileGutters,
+        (t) => t.desktopGutters,
         (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
         (t) =>
           `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,

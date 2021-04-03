@@ -21,10 +21,9 @@ export const header = {
     position: "relative",
     width: ["100vw"],
     left: [
-      "-20px",
-      "-20px",
-      "-20px",
-      "-40px",
+      (t) => `calc(${t.mobileGutters} / -1)`,
+      (t) => `calc(${t.mobileGutters} / -1)`,
+      (t) => `calc(${t.desktopGutters} / -1)`,
       (t) => `calc(${t.desktopBigGutters} / -1)`,
       (t) => `calc(${t.desktopMassiveGutters} / -1)`,
     ],
