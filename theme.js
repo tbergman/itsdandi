@@ -122,6 +122,7 @@ const theme = {
   desktopGutters: `40px`,
   mobileGutters: `20px`,
   colWidthMob: `calc(calc(100vw - 140px)/6)`,
+  colWidthTablet: `calc(calc(100vw - 180px)/6)`,
   colWidthDesktop: `calc(calc(calc(100vw - 440px) - 80px)/12)`,
   colWidthDesktopBig: `calc(calc(100vw - calc(calc(calc(100vw * .12) * 2) + 440px)) / 12)`,
   colWidthDesktopMassive: `calc(calc(100vw - calc(calc(calc(100vw * .175) * 2) + 440px)) / 12)`,

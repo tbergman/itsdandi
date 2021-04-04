@@ -38,12 +38,7 @@ const Person = ({ content, idx }) => {
   }, [inView]);
 
   return (
-    <div
-      ref={ref}
-      href="https://www.google.com"
-      target="_blank"
-      className="person"
-    >
+    <div ref={ref} className="person">
       <motion.div
         initial="hidden"
         animate={imageAnimation}

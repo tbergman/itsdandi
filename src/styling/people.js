@@ -6,7 +6,7 @@ export const people = {
     mb: [12],
     gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/3/2/-1"],
     display: "flex",
-    flexFlow: ["column", "unset"],
+    flexFlow: ["column", "column", "column", "unset"],
 
     ".section1": {
       width: [
@@ -41,7 +41,12 @@ export const people = {
 
       p: {
         mt: [2, 2, 2, 1],
-        maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
+        maxWidth: [
+          "unset",
+          "unset",
+          (t) => t.tabletMaxSectionWidth,
+          (t) => t.desktopMaxSectionWidth,
+        ],
       },
     },
   },
@@ -69,7 +74,7 @@ export const people = {
       width: [
         "100%",
         "100%",
-        "100%",
+        (t) => `calc(calc(${t.colWidthTablet} * 3) + 40px)`,
         (t) => `calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
         (t) => `calc(calc(${t.colWidthDesktopBig} * 3) + 120px)`,
         (t) => `calc(calc(${t.colWidthDesktopMassive} * 3) + 120px)`,
@@ -85,7 +90,7 @@ export const people = {
         width: [
           (t) => `calc(calc(${t.colWidthMob} * 2) + 20px)`,
           (t) => `calc(calc(${t.colWidthMob} * 2) + 20px)`,
-          (t) => `calc(calc(${t.colWidthMob} * 2) + 20px)`,
+          (t) => `calc(calc(${t.colWidthTablet} * 1) + 20px)`,
           (t) => t.colWidthDesktop,
           (t) => t.colWidthDesktopBig,
           (t) => t.colWidthDesktopMassive,
@@ -93,7 +98,7 @@ export const people = {
         height: [
           (t) => `calc(calc(${t.colWidthMob} * 2) + 20px)`,
           (t) => `calc(calc(${t.colWidthMob} * 2) + 20px)`,
-          (t) => `calc(calc(${t.colWidthMob} * 2) + 20px)`,
+          (t) => `calc(calc(${t.colWidthTablet} * 1) + 20px)`,
           (t) => t.colWidthDesktop,
           (t) => t.colWidthDesktopBig,
           (t) => t.colWidthDesktopMassive,
@@ -110,15 +115,14 @@ export const people = {
         ml: [
           (t) => `calc(${t.colWidthMob} + 20px)`,
           (t) => `calc(${t.colWidthMob} + 20px)`,
-          (t) => `calc(${t.colWidthMob} + 20px)`,
+          "20px",
           "40px",
         ],
         mb: [0],
         width: [
           (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
           (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
-          (t) => `calc(calc(${t.colWidthMob} * 2) + 40px)`,
-
+          (t) => `calc(${t.colWidthTablet} * 2)`,
           (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`,
           (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 40px)`,
           (t) => `calc(calc(${t.colWidthDesktopMassive} * 2) + 40px)`,

@@ -726,10 +726,12 @@ export const home = {
       fontFamily: "display",
       fontSize: ["24px", "24px", "24px", "40px"],
       lineHeight: ["31.2px", "31.2px", "31.2px", "48px"],
+      ml: ["40px", "40px", "40px", "unset"],
     },
     ".Quotes__source": {
       mt: [3, 3, 3, 5],
       mb: [5],
+      ml: ["40px", "40px", "40px", "unset"],
     },
     ".Quotes__name": {
       fontFamily: "medium",
@@ -738,7 +740,7 @@ export const home = {
       fontSize: ["16px"],
     },
     ".Quotes__quotationmark": {
-      display: ["none", "none", "none", "unset"],
+      // display: ["none", "none", "none", "unset"],
       position: "absolute",
       left: [0, 0, 0, "-40px"],
     },

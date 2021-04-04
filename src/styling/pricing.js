@@ -413,13 +413,18 @@ export const pricing = {
         boxShadow:
           "0px 0px 1px rgba(0, 0, 0, 0.75), 0px 8px 30px rgba(0, 0, 0, 0.45)",
         borderRadius: "8px",
-        left: ["20px", "20px", "20px", "110%"],
+        left: [
+          (t) => t.mobileGutters,
+          (t) => t.mobileGutters,
+          (t) => t.desktopGutters,
+          "110%",
+        ],
         bottom: "-200%",
         py: [4],
         px: [4],
       },
       ".infoBox__body": {
-        width: ["70vw", "70vw", "70vw", "300px"],
+        width: ["70vw", "70vw", "50vw", "300px"],
         mb: [2],
       },
       ".infoBox__links": {

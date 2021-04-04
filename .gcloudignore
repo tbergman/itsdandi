@@ -2,5 +2,6 @@
 /pages/
 /src/
 .env.local
+.env
 /.git/
 /node_modules/

@@ -1,56 +1,26 @@
 export const partners = {
-  header: {
-    bg: "transparent",
-    color: "black",
-    ".text": {
-      gridArea: ["1/1/2/-1"],
-      mt: [18],
-      h1: {},
-      h3: {
-        mt: [3],
-        fontSize: ["18px"],
-      },
-    },
-    ".graphic": {
-      gridArea: ["2/1/3/-1"],
-      width: "100vw",
-      left: ["-20px"],
-      position: "relative",
-      div: {
-        width: "100%",
-        height: "100%",
-        div: {
-          height: "100%",
-          width: "100%",
-          display: "flex",
-          justifyContent: "flex-end",
-          svg: {
-            height: "100%",
-          },
-        },
-      },
-    },
-  },
   topcontent: {
     position: "relative",
     ".graphics": {
       position: "absolute",
       bottom: 0,
-      maxHeight: "350px",
+      maxHeight: ["350px"],
       left: [
         (t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`,
         (t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`,
-        (t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`,
+        // (t) => `calc(calc(${t.colWidthTablet} * 3) + 70px)`,
+        "unset",
         (t) => `calc(calc(calc(${t.colWidthDesktop} * 8) + 320px) + 40px)`,
         (t) =>
           `calc(calc(calc(${t.colWidthDesktopBig} * 8) + 320px) + ${t.desktopBigGutters})`,
         (t) =>
           `calc(calc(calc(${t.colWidthDesktopMassive} * 8) + 320px) + ${t.desktopMassiveGutters})`,
       ],
+      right: ["unset", "unset", 0, "unset"],
       width: [
         (t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`,
         (t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`,
-        (t) => `calc(calc(${t.colWidthMob} * 3) + 70px)`,
+        (t) => `calc(calc(${t.colWidthTablet} * 2) + 60px)`,
         (t) => `calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
         (t) => `calc(calc(${t.colWidthDesktopBig} * 3) + 120px)`,
         (t) => `calc(calc(${t.colWidthDesktopMassive} * 3) + 120px)`,
