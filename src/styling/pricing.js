@@ -263,10 +263,10 @@ export const pricing = {
       position: "relative",
       width: "100vw",
       left: [
-        "-20px",
-        "-20px",
-        "-20px",
-        "-40px",
+        (t) => `calc(${t.mobileGutters} / -1)`,
+        (t) => `calc(${t.mobileGutters} / -1)`,
+        (t) => `calc(${t.desktopGutters} / -1)`,
+        (t) => `calc(${t.desktopGutters} / -1)`,
         (t) => `calc(${t.desktopBigGutters} / -1)`,
         (t) => `calc(${t.desktopMassiveGutters} / -1)`,
       ],
@@ -276,9 +276,9 @@ export const pricing = {
       ".Table__head": {
         position: "relative",
         pl: [
-          "20px",
-          "20px",
-          "20px",
+          (t) => t.mobileGutters,
+          (t) => t.mobileGutters,
+          (t) => t.desktopGutters,
           (t) =>
             `calc(calc(calc(${t.colWidthDesktop}) + ${t.desktopGutters}) + 40px)`,
           (t) =>
@@ -287,9 +287,9 @@ export const pricing = {
             `calc(calc(calc(${t.colWidthDesktopMassive}) + 40px) + ${t.desktopMassiveGutters})`,
         ],
         pr: [
-          "20px",
-          "20px",
-          "20px",
+          (t) => t.mobileGutters,
+          (t) => t.mobileGutters,
+          (t) => t.desktopGutters,
           (t) => t.desktopGutters,
           (t) => t.desktopBigGutters,
           (t) => t.desktopMassiveGutters,
@@ -319,7 +319,7 @@ export const pricing = {
           ".Table__head-item-logo": {
             position: "absolute",
             top: ["37%", "37%", "37%", "unset"],
-            left: ["22%"],
+            left: ["30%", "30%", "35%", "unset"],
             bottom: ["unset", "unset", "unset", 0],
             transform: [
               "rotate(90deg)",
@@ -339,9 +339,9 @@ export const pricing = {
       ".Table__body": {
         ".Table__body-row": {
           pl: [
-            "20px",
-            "20px",
-            "20px",
+            (t) => t.mobileGutters,
+            (t) => t.mobileGutters,
+            (t) => t.desktopGutters,
             (t) =>
               `calc(calc(calc(${t.colWidthDesktop}) + 40px) + ${t.desktopGutters})`,
             (t) =>
@@ -350,10 +350,10 @@ export const pricing = {
               `calc(calc(calc(${t.colWidthDesktopMassive}) + 40px) + ${t.desktopMassiveGutters})`,
           ],
           pr: [
-            "20px",
-            "20px",
-            "20px",
-            "40px",
+            (t) => t.mobileGutters,
+            (t) => t.mobileGutters,
+            (t) => t.desktopGutters,
+            (t) => t.desktopGutters,
             (t) => t.desktopBigGutters,
             (t) => t.desktopMassiveGutters,
           ],
