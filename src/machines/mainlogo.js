@@ -1,8 +1,8 @@
 import { createMachine } from "xstate";
 
-export const BigLogo__machine = createMachine(
+export const MainLogo__machine = createMachine(
   {
-    id: "BigLogo",
+    id: "MainLogo",
     initial: "hidden",
     context: {},
     states: {
@@ -40,10 +40,8 @@ export const BigLogo__machine = createMachine(
     actions: {
       animateDown: (_, e) => {
         const { gsap, ref, scaleTo } = e.payload;
-        const letters = ref.current.querySelectorAll(
-          ".BigLogo__logoSvg-letter"
-        );
-
+        const letters = ref.current.querySelectorAll(".mainLogo__letter");
+        console.log("animate down!");
         // scale down logo
         gsap.to(ref.current, {
           scale: scaleTo,
@@ -59,9 +57,7 @@ export const BigLogo__machine = createMachine(
       },
       switch: (_, e) => {
         const { gsap, ref, scaleTo } = e.payload;
-        const letters = ref.current.querySelectorAll(
-          ".BigLogo__logoSvg-letter"
-        );
+        const letters = ref.current.querySelectorAll(".mainLogo__letter");
 
         gsap.to(ref.current, {
           scale: scaleTo,

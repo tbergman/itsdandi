@@ -1,12 +1,10 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui";
+import { jsx } from "theme-ui";
 import Link from "next/link";
-import { ReactSVG } from "react-svg";
-import { useInView } from "react-intersection-observer";
+
 import { motion, useAnimation, animationControls } from "framer-motion";
-import BigLogo from "./home/bigLogo";
+import MainLogo from "./home/mainlogo";
 import { columnWidths } from "../helpers/utils";
-import { useEffect } from "react";
 import DemoBtn from "./navigation/demobtn";
 import NavItem from "./navigation/navitem";
 import { navItems } from "../helpers/navigation";
@@ -33,20 +31,16 @@ const Navigation = ({
       className="Navigation"
     >
       <div className="logoWrapper">
-        <Link href="/">
-          <a className="logo">
-            {!isServer && (
-              <BigLogo
-                navBarStyling={navBarStyling}
-                staticLogo={staticLogo}
-                setStaticLogo={setStaticLogo}
-                scaleTo={32 / 90}
-                yOffset={-90 + 35}
-                width={width}
-              />
-            )}
-          </a>
-        </Link>
+        {!isServer && (
+          <MainLogo
+            navBarStyling={navBarStyling}
+            staticLogo={staticLogo}
+            setStaticLogo={setStaticLogo}
+            scaleTo={32 / 90}
+            yOffset={-90 + 35}
+            width={width}
+          />
+        )}
       </div>
 
       <div className="links">

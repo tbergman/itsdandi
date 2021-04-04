@@ -27,6 +27,7 @@ import { people } from "./src/styling/people";
 import { integrations } from "./src/styling/product/integrations";
 import { header } from "./src/styling/header";
 import { deijourney } from "./src/styling/values/deijourney";
+import { mainLogo } from "./src/styling/mainlogo";
 
 const theme = {
   breakpoints: ["1024px", "1500px", "2000px"],
@@ -1422,7 +1423,7 @@ const theme = {
   },
   components: {
     containers: { ...containers },
-
+    mainLogo: { ...mainLogo },
     quotetext: { ...quotetext },
     quoteimage: { ...quoteimage },
     textBlockAndLinks: { ...textBlockAndLinks },
