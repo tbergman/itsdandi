@@ -130,6 +130,7 @@ const Leadership = (props) => {
           }}
         />
       </Header>
+
       <TextModules
         isDesktop={isDesktop}
         modules={props.text_modules.modules}

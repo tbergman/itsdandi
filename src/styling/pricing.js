@@ -38,7 +38,7 @@ export const pricing = {
       left: [
         (t) => `calc(calc(${t.colWidthMob} * 3) + 60px)`,
         (t) => `calc(calc(${t.colWidthMob} * 3) + 60px)`,
-        (t) => `calc(calc(${t.colWidthMob} * 3) + 60px)`,
+        (t) => `calc(calc(${t.colWidthMob} * 3) + 40px)`,
         "unset",
       ],
       height: [

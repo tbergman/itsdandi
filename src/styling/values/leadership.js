@@ -5,7 +5,7 @@ export const leadership = {
     width: [
       "calc(100vw - 20px)",
       "calc(100vw - 20px)",
-      "calc(100vw - 20px)",
+      "calc(100vw - 40px)",
       (t) => `calc(calc(${t.colWidthDesktop} * 10) +  400px)`,
       (t) =>
         `calc(calc(calc(${t.colWidthDesktopBig} * 10) +  360px) + ${t.desktopBigGutters})`,
@@ -46,7 +46,7 @@ export const leadership = {
     pt: [
       `calc(calc(calc(calc(100vw - 20px) * .6) * .3) + 40px)`,
       `calc(calc(calc(calc(100vw - 20px) * .6) * .3) + 40px)`,
-      `calc(calc(calc(calc(100vw - 20px) * .6) * .3) + 40px)`,
+      `calc(calc(calc(calc(100vw - 40px) * .6) * .3) + 40px)`,
       (t) =>
         `calc(calc(calc(calc(calc(${t.colWidthDesktop} * 10) +  400px) * .46) * .5) + 115px)`,
       (t) =>
@@ -72,7 +72,7 @@ export const leadership = {
           width: [
             "calc(100vw - 20px)",
             "calc(100vw - 20px)",
-            "calc(100vw - 20px)",
+            "calc(100vw - 40px)",
             (t) => `calc(calc(${t.colWidthDesktop} * 10) + 400px)`,
             (t) =>
               `calc(calc(calc(${t.colWidthDesktopBig} * 10) + 360px) + ${t.desktopBigGutters})`,
@@ -115,9 +115,9 @@ export const leadership = {
           ],
           mt: [3, 3, 3, 0],
           pr: [
-            "20px",
-            "20px",
-            "20px",
+            (t) => t.mobileGutters,
+            (t) => t.mobileGutters,
+            (t) => t.desktopGutters,
             (t) => `calc(calc(${t.colWidthDesktop}) + 40px)`,
             (t) => `calc(calc(${t.colWidthDesktopBig}) + 40px)`,
             (t) => `calc(calc(${t.colWidthDesktopMassive}) + 40px)`,

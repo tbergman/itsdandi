@@ -191,8 +191,13 @@ const DataCollection = (props) => {
           >
             <div
               sx={{
-                width: ["100vw", "1200px"],
-                height: ["calc(100vw * .54)", "calc(1200px * .54)"],
+                width: ["100vw", "100vw", "100vw", "1200px"],
+                height: [
+                  "calc(100vw * .54)",
+                  "calc(100vw * .54)",
+                  "calc(100vw * .54)",
+                  "calc(1200px * .54)",
+                ],
                 position: "relative",
               }}
               className="noOverflow"

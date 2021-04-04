@@ -5,9 +5,9 @@ export const integrations = {
       position: "absolute",
       bottom: ["-28px", "-28px", "-28px", "-24px"],
       left: [
-        "20px",
-        "20px",
-        "20px",
+        (t) => t.mobileGutters,
+        (t) => t.mobileGutters,
+        (t) => t.desktopGutters,
         (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
         (t) =>
           `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,
@@ -67,7 +67,13 @@ export const integrations = {
             `calc(calc(calc(${t.colWidthDesktopMassive} * 4) + 160px) * .85)`,
         ],
         left: 0,
-        bottom: ["-20px", "-20px", "-20px", 0],
+        bottom: [
+          (t) => `calc(${t.mobileGutters} / -1)`,
+          (t) => `calc(${t.mobileGutters} / -1)`,
+          (t) => `calc(${t.desktopGutters} / -1)`,
+
+          0,
+        ],
         position: "relative",
         svg: {
           position: "absolute",

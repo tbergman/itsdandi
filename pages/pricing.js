@@ -87,7 +87,7 @@ const Pricing = (props) => {
           ...props.header,
         }}
       />
-      <Cost
+      {/* <Cost
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navBarVariants.gray}
@@ -95,8 +95,8 @@ const Pricing = (props) => {
         content={{
           ...props.cost,
         }}
-      />
-      <BetterInsights
+      /> */}
+      {/* <BetterInsights
         isDesktop={isDesktop}
         setNavbarStyling={setNavbarStyling}
         navBarStyling={theme.components.navBarVariants.default}
@@ -105,7 +105,7 @@ const Pricing = (props) => {
         content={{
           ...props.better_insights,
         }}
-      />
+      /> */}
       {/* Quote */}
       <GridContainer
         isDesktop={isDesktop}

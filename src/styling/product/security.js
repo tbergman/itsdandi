@@ -31,9 +31,9 @@ export const security = {
       bottom: ["-28px", "-28px", "-28px", "-24px"],
       zIndex: 99,
       left: [
-        "20px",
-        "20px",
-        "20px",
+        (t) => t.mobileGutters,
+        (t) => t.mobileGutters,
+        (t) => t.desktopGutters,
         (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
         (t) =>
           `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,
@@ -48,7 +48,7 @@ export const security = {
       left: [
         (t) => `calc(calc(${t.colWidthMob} * 4) + 80px)`,
         (t) => `calc(calc(${t.colWidthMob} * 4) + 80px)`,
-        (t) => `calc(calc(${t.colWidthMob} * 4) + 80px)`,
+        (t) => `calc(calc(${t.colWidthMob} * 4) + 160px)`,
         "unset",
       ],
       width: [
@@ -153,7 +153,7 @@ export const security = {
       ml: [0],
       zIndex: 1,
       overflow: "hidden",
-      height: ["unset", "unset", "unset", "100%"],
+      height: ["unset", "unset", "400px", "100%"],
       width: [
         "100vw",
         "100vw",
@@ -163,9 +163,9 @@ export const security = {
         (t) => `calc(calc(${t.colWidthDesktopMassive} * 4) + 160px)`,
       ],
       left: [
-        "-20px",
-        "-20px",
-        "-20px",
+        (t) => `calc(${t.mobileGutters} / -1)`,
+        (t) => `calc(${t.mobileGutters} / -1)`,
+        (t) => `calc(${t.desktopGutters} / -1)`,
         (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
         (t) =>
           `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,
@@ -175,103 +175,96 @@ export const security = {
 
       display: "flex",
       alignItems: ["flex-end", "flex-end", "flex-end", "center"],
-      div: {
-        width: ["100%"],
-        pt: ["100%"],
-        height: [0],
-        left: [
-          (t) => `calc(${t.colWidthMob} + 30px)`,
-          (t) => `calc(${t.colWidthMob} + 30px)`,
-          (t) => `calc(${t.colWidthMob} + 30px)`,
-          "unset",
-        ],
-        position: "relative",
-        div: {
-          position: "absolute",
-          top: 0,
-          left: 0,
-          svg: {
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-          },
-        },
-      },
+      // div: {
+      //   width: ["100%"],
+      //   pt: ["100%"],
+      //   height: [0],
+      //   left: [
+      //     (t) => `calc(${t.colWidthMob} + 30px)`,
+      //     (t) => `calc(${t.colWidthMob} + 30px)`,
+      //     (t) => `calc(${t.colWidthMob} + 30px)`,
+      //     "unset",
+      //   ],
+      //   position: "relative",
+      //   div: {
+      //     position: "absolute",
+      //     top: 0,
+      //     left: 0,
+      //     svg: {
+      //       position: "absolute",
+      //       top: 0,
+      //       left: 0,
+      //       width: "100%",
+      //       height: "100%",
+      //     },
+      //   },
+      // },
+    },
+    ".Workflows__svg": {
+      position: ["relative", "relative", "absolute", "relative"],
+      right: ["unset", "unset", -80, "unset"],
+      top: ["unset", "unset", 0, "unset"],
+      height: ["unset", "unset", "100%", "unset"],
     },
     ".Workflows__section1": {
       gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/6/2/-1"],
       zIndex: 99,
       mt: [6, 6, 6, 26],
       mb: [8, 8, 8, 5],
-      ".Workflows__section1-toptext": {
-        mr: [
-          0,
-          0,
-          0,
-          (t) => `calc(calc(${t.colWidthDesktop} * 3) + 80px)`,
-          (t) => `calc(calc(${t.colWidthDesktopBig} * 3) + 80px)`,
-          (t) => `calc(calc(${t.colWidthDesktopMassive} * 3) + 80px)`,
-        ],
-        ".Workflows__section1-toptext-header": {
-          ".Workflows__section1-toptext-header-text": {},
-        },
-        ".Workflows__section1-toptext-body": {
-          mt: [3],
-          maxWidth: [
-            "unset",
-            "unset",
-            "unset",
-            (t) => t.desktopMaxSectionWidth,
-          ],
-          ".Workflows__section1-toptext-body-text": {},
-        },
-      },
+    },
+    ".Workflows__topText": {
+      mr: [
+        0,
+        0,
+        0,
+        (t) => `calc(calc(${t.colWidthDesktop} * 3) + 80px)`,
+        (t) => `calc(calc(${t.colWidthDesktopBig} * 3) + 80px)`,
+        (t) => `calc(calc(${t.colWidthDesktopMassive} * 3) + 80px)`,
+      ],
+    },
+    ".Workflows__body": {
+      mt: [3],
+      maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
     },
     ".Workflows__section2": {
       gridArea: ["2/1/3/5", "2/1/3/5", "2/1/3/5", "2/6/3/-1"],
       mb: [10, 10, 10, 26],
-      ".Workflows__section2-categories": {
-        zIndex: 99,
+    },
+    ".Workflows__categories": {
+      zIndex: 99,
 
-        pt: [1, 1, 1, 0],
-        pb: [1, 1, 1, 0],
-        height: ["100%", "100%", "100%", "unset"],
-        display: "flex",
-        flexFlow: ["column", "column", "column", "row"],
-        justifyContent: [
-          "space-between",
-          "space-between",
-          "space-between",
-          "unset",
-        ],
-
-        ".Workflows__section2-categories-category": {
-          zIndex: 99,
-          width: [
-            "100%",
-            "100%",
-            "100%",
-            (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`,
-            (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 40px)`,
-            (t) => `calc(calc(${t.colWidthDesktopMassive} * 2) + 40px)`,
-          ],
-          mr: ["40px"],
-
-          ".Workflows__section2-categories-category-header": {
-            ".Workflows__section2-categories-category-header-text": {
-              fontFamily: "display",
-            },
-          },
-          ".Workflows__section2-categories-category-body": {
-            mt: [0, 0, 0, 2],
-            ".Workflows__section2-categories-category-body-text": {
-              fontFamily: "body",
-            },
-          },
-        },
-      },
+      pt: [1, 1, 1, 0],
+      pb: [1, 1, 1, 0],
+      height: ["100%", "100%", "100%", "unset"],
+      display: "flex",
+      flexFlow: ["column", "column", "column", "row"],
+      justifyContent: [
+        "space-between",
+        "space-between",
+        "space-between",
+        "unset",
+      ],
+    },
+    ".Workflows__category": {
+      zIndex: 99,
+      width: [
+        "100%",
+        "100%",
+        "100%",
+        (t) => `calc(calc(${t.colWidthDesktop} * 2) + 40px)`,
+        (t) => `calc(calc(${t.colWidthDesktopBig} * 2) + 40px)`,
+        (t) => `calc(calc(${t.colWidthDesktopMassive} * 2) + 40px)`,
+      ],
+      mr: ["40px"],
+    },
+    ".Workflows__categoryBody": {
+      mt: [0, 0, 0, 2],
+    },
+    ".Workflows__categoryHeaderText": {
+      fontFamily: "display",
+    },
+    ".Workflows__categoryBodyText": {
+      fontFamily: "body",
     },
   },
   connect: {
