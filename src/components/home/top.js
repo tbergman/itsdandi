@@ -1,11 +1,9 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui";
-import BigLogo from "./bigLogo";
 import Graphics from "./graphics";
-import Link from "next/link";
 import InView from "../inview";
-import { lineBreaks, rootMargin, scrollToBottom } from "../../helpers/utils";
-import { useRef, useEffect } from "react";
+import { rootMargin, scrollToBottom } from "../../helpers/utils";
+import { useRef } from "react";
 import { gsap } from "gsap";
 
 const Home = ({

@@ -34,6 +34,7 @@ import { mobilemenu } from "./src/styling/mobilemenu";
 import { footer } from "./src/styling/footer";
 import { button } from "./src/styling/button";
 import { carousel } from "./src/styling/carousel";
+import { mainLogo } from "./src/styling/mainlogo";
 
 const theme = {
   breakpoints: ["500px", "768px", "1024px", "1500px", "2000px"],
@@ -173,6 +174,7 @@ const theme = {
   },
   components: {
     containers: { ...containers },
+    mainLogo: { ...mainLogo },
     quotetext: { ...quotetext },
     quoteimage: { ...quoteimage },
     textBlockAndLinks: { ...textBlockAndLinks },

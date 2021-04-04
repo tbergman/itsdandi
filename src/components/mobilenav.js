@@ -1,13 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-// import {
-//   motion,
-//   useViewportScroll,
-//   useTransform,
-//   transform,
-// } from "framer-motion";
-import Link from "next/link";
-import BigLogo from "../components/home/bigLogo";
+
+import MainLogo from "./home/mainlogo";
 import { columnWidths } from "../helpers/utils";
 import MobileDemoBtn from "./navigation/mobiledemobtn";
 
@@ -37,24 +31,14 @@ const MobileNav = ({
         }}
       >
         <div className="MobileNav__container-wrapper">
-          <Link href="/">
-            <a
-              sx={{
-                mt: 3,
-                ml: "20px",
-              }}
-              className="MobileNav__container-wrapper-logo"
-            >
-              <BigLogo
-                navBarStyling={navBarStyling}
-                menuOpen={menuOpen}
-                setStaticLogo={setStaticLogo}
-                staticLogo={staticLogo}
-                scaleTo={widths.mobile < 32 ? 32 / widths.mobile : 1}
-                yOffset={-43 + 30}
-              />
-            </a>
-          </Link>
+          <MainLogo
+            navBarStyling={navBarStyling}
+            menuOpen={menuOpen}
+            setStaticLogo={setStaticLogo}
+            staticLogo={staticLogo}
+            scaleTo={32 / 40}
+            yOffset={-widths.mobile + 30}
+          />
           <div className="MobileNav__container-wrapper-button">
             <MobileDemoBtn menuOpen={menuOpen} staticDemoBtn={staticDemoBtn} />
           </div>
