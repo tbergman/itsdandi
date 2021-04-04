@@ -39,12 +39,13 @@ export const MainLogo__machine = createMachine(
   {
     actions: {
       animateDown: (_, e) => {
-        const { gsap, ref, scaleTo } = e.payload;
+        const { gsap, ref } = e.payload;
         const letters = ref.current.querySelectorAll(".mainLogo__letter");
-        console.log("animate down!");
+
         // scale down logo
         gsap.to(ref.current, {
-          scale: scaleTo,
+          scale: 32 / ref.current.clientWidth,
+          transformOrigin: "0% 0%",
           ease: "power2.out",
           duration: 0.5,
         });

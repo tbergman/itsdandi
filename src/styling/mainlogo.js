@@ -5,13 +5,8 @@ export const mainLogo = {
   height: ["40px", "80px"],
   transform: "rotate(90deg)",
   position: "absolute",
+  left: ["10px"],
   top: "25%",
-  left: [
-    (t) => t.mobileGutters,
-    (t) => t.mobileGutters,
-    (t) => t.mobileGutters,
-    (t) => t.mobileGutters,
-  ],
   borderTop: " 1px solid yellow",
   ".mainLogo__svg": {
     position: "absolute",

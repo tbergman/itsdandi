@@ -13,7 +13,7 @@ const MainLogo = ({
   menuOpen,
   staticLogo,
   setStaticLogo,
-  scaleTo,
+  // scaleTo,
   yOffset,
   width,
 }) => {
@@ -35,7 +35,6 @@ const MainLogo = ({
             payload: {
               gsap,
               ref: ref,
-              scaleTo,
             },
           });
         } else {
@@ -87,7 +86,6 @@ const MainLogo = ({
           payload: {
             gsap,
             ref: ref,
-            scaleTo,
           },
         });
       }

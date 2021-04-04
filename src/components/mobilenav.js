@@ -36,7 +36,6 @@ const MobileNav = ({
             menuOpen={menuOpen}
             setStaticLogo={setStaticLogo}
             staticLogo={staticLogo}
-            scaleTo={32 / 40}
             yOffset={-widths.mobile + 30}
           />
           <div className="MobileNav__container-wrapper-button">
