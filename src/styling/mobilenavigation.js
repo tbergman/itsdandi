@@ -12,7 +12,7 @@ export const mobileNavigation = {
     transition: "all 100ms cubic-bezier(.01,.66,.83,.67)",
     ".MobileNav__container-wrapper": {
       display: ["flex", "flex", "flex", "none"],
-      justifyContent: "space-between",
+      justifyContent: "flex-end",
       ".MobileNav__container-wrapper-hamburger": {
         cursor: "pointer",
         mr: "20px",
@@ -32,6 +32,10 @@ export const mobileNavigation = {
         },
       },
       ".MobileNav__container-wrapper-button": {
+        position: "absolute",
+        left: ["50%"],
+        transform: "translateX(-50%)",
+        top: 0,
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start",
