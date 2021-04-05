@@ -7,9 +7,9 @@ import { InertiaPlugin } from "gsap/dist/InertiaPlugin";
 import { gsap } from "gsap";
 import { useMachine } from "@xstate/react";
 import { SubMenuMobile__Machine } from "../../machines/submenu";
-import { createSnapGrid } from "../../helpers/animations/navigation/submenumobile";
+import { createSnapGrid } from "../../helpers/utils";
 
-const SubMenuMobile = ({ subPages, subMenuStyling, slidesPerView }) => {
+const SubMenuMobile = ({ subPages, subMenuStyling }) => {
   const [state, send] = useMachine(SubMenuMobile__Machine);
   const { showNext, showPrev, snapGrid, currentOffset } = state.context;
   const swiper = useRef(null);
@@ -58,43 +58,53 @@ const SubMenuMobile = ({ subPages, subMenuStyling, slidesPerView }) => {
     gsap.registerPlugin(InertiaPlugin);
     const snapGrid_ = createSnapGrid({ swiperWrapper, swiper });
 
-    send({
-      type: "UPDATENAV",
-      payload: {
-        snapTo: snapGrid_.startingOffset,
-        snapGrid: snapGrid_.grid,
-      },
-    });
-
-    gsap.to(swiper.current, {
-      x: snapGrid_.startingOffset,
-      duration: 0.1,
-    });
-
-    Draggable.create(swiper.current, {
-      inertia: true,
-      type: "x",
-      bounds: swiperWrapper.current,
-      throwResistance: 0,
-      edgeResistance: 0.7,
-      snap: {
-        x: (value) => {
-          const snapTo = gsap.utils.snap(snapGrid_.grid, value);
-          // update navigation state
-          send({
-            type: "UPDATENAV",
-            payload: {
-              snapTo,
-              snapGrid: snapGrid_.grid,
-            },
-          });
-          return snapTo;
+    // has overflow?
+    if (
+      swiperWrapper.current.clientWidth <
+      swiper.current.querySelector(".SubMenu__mobileContainer")
+    ) {
+      send({
+        type: "UPDATENAV",
+        payload: {
+          snapTo: snapGrid_.startingOffset,
+          snapGrid: snapGrid_.grid,
         },
-      },
-    });
+      });
+
+      gsap.to(swiper.current, {
+        x: snapGrid_.startingOffset,
+        duration: 0.1,
+      });
+
+      Draggable.create(swiper.current, {
+        inertia: true,
+        type: "x",
+        bounds: swiperWrapper.current,
+        throwResistance: 0,
+        edgeResistance: 0.7,
+        snap: {
+          x: (value) => {
+            const snapTo = gsap.utils.snap(snapGrid_.grid, value);
+            // update navigation state
+            send({
+              type: "UPDATENAV",
+              payload: {
+                snapTo,
+                snapGrid: snapGrid_.grid,
+              },
+            });
+            return snapTo;
+          },
+        },
+      });
+    } else {
+      send({
+        type: "DISABLE",
+      });
+    }
   }, []);
 
-  // navigation animation toggel
+  // navigation animation toggle
   useEffect(() => {
     gsap.to(right.current, {
       opacity: showNext ? 1 : 0,

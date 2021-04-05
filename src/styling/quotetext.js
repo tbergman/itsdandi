@@ -19,7 +19,7 @@ export const quotetext = {
   ".QuoteText__bodyText": {
     fontFamily: "display",
     fontSize: ["24px", "24px", "24px", "40px"],
-    lineHeight: ["31.2px", "31.2px", "31.2px", "48px"],
+    lineHeight: ["31.2px", "31.2px", "48px"],
   },
   ".QuoteText__name": {
     mt: [4],

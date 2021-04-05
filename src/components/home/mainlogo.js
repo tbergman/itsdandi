@@ -64,7 +64,6 @@ const MainLogo = ({
         payload: {
           gsap,
           ref: ref,
-          scaleTo,
         },
       });
     }

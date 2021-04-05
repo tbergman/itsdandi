@@ -51,7 +51,11 @@ export const submenu = {
     },
 
     ".SubMenu__mobileContainer": {
-      px: ["20px"],
+      px: [
+        (t) => t.mobileGutters,
+        (t) => t.mobileGutters,
+        (t) => t.desktopGutters,
+      ],
       display: "flex",
       height: ["100%"],
       width: "fit-content",

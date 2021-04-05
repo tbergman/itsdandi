@@ -121,7 +121,6 @@ const SubNavigation = ({ next, prev }) => {
                 ml: prev
                   ? [
                       0,
-                      ,
                       0,
                       0,
                       (t) => `calc(calc(${t.colWidthDesktop} * 2) + 120px)`,

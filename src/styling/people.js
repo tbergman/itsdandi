@@ -56,7 +56,7 @@ export const people = {
     width: ["unset"],
     left: ["unset"],
     position: "relative",
-    mb: [14, 14, 14, 16],
+    mb: [8, 8, 14, 16],
     display: "flex",
     flexFlow: ["row wrap"],
     justifyContent: [

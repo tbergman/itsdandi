@@ -1,37 +1,37 @@
 export const home = {
   top: {
     bg: ["transparent"],
-    bigLogo: {
-      height: "100%",
-      width: "100%",
-      pointerEvents: "none",
-      ".BigLogo__logoSvg": {
-        opacity: 0, // starting point,
-      },
-      ".BigLogo__logoSvg-letter": {},
-      ".BigLogo__logoSvg-svg": {},
-      ".static": {},
+    // bigLogo: {
+    //   height: "100%",
+    //   width: "100%",
+    //   pointerEvents: "none",
+    //   ".BigLogo__logoSvg": {
+    //     opacity: 0, // starting point,
+    //   },
+    //   ".BigLogo__logoSvg-letter": {},
+    //   ".BigLogo__logoSvg-svg": {},
+    //   ".static": {},
 
-      svg: {
-        position: "fixed",
-        zIndex: 9999,
-        top: [0],
-        left: [
-          (t) => t.mobileGutters,
-          (t) => t.mobileGutters,
-          (t) => t.desktopGutters,
-          (t) => t.desktopGutters,
-        ],
-        height: ["43px", "43px", "43px", "90px"],
-        width: ["125px", "125px", "125px", "calc(90px * 3.4)"],
-        mb: [
-          (t) => t.mobileGutters,
-          (t) => t.mobileGutters,
-          (t) => t.desktopGutters,
-          (t) => t.desktopGutters,
-        ],
-      },
-    },
+    //   svg: {
+    //     position: "fixed",
+    //     zIndex: 9999,
+    //     top: [0],
+    //     left: [
+    //       (t) => t.mobileGutters,
+    //       (t) => t.mobileGutters,
+    //       (t) => t.desktopGutters,
+    //       (t) => t.desktopGutters,
+    //     ],
+    //     height: ["43px", "43px", "43px", "90px"],
+    //     width: ["125px", "125px", "125px", "calc(90px * 3.4)"],
+    //     mb: [
+    //       (t) => t.mobileGutters,
+    //       (t) => t.mobileGutters,
+    //       (t) => t.desktopGutters,
+    //       (t) => t.desktopGutters,
+    //     ],
+    //   },
+    // },
     ".Top__text": {
       gridArea: ["1/2/2/-1", "1/2/2/-1", "1/3/2/-1", "1/7/2/-1"],
       ml: [
@@ -311,9 +311,9 @@ export const home = {
       mt: ["213px", "213px", "213px", "290px"],
       mb: [0, 0, 0, "224px"],
       height: [
-        "calc(100vw * .54)",
-        "calc(100vw * .54)",
-        "calc(100vw * .54)",
+        "calc(120vw * .54)",
+        "calc(120vw * .54)",
+        "calc(120vw * .54)",
         "500px",
       ],
       position: "relative",
@@ -343,7 +343,7 @@ export const home = {
       },
     },
     ".LearnMore__text": {
-      gridArea: ["3/1/4/-1", "3/1/4/-1", "3/1/4/-1", "1/2/2/6"],
+      gridArea: ["3/1/4/-1", "3/1/4/-1", "3/1/4/-1", "1/2/2/7", "1/2/2/6"],
       mt: [6, 6, 6, "290px"],
       ml: [0],
       mb: [16, 16, 16, 26],
@@ -425,7 +425,7 @@ export const home = {
     bg: "#F8F8F8",
     color: "black",
     ".PayEquity__text": {
-      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/2/2/6"],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/2/2/7", "1/2/2/6"],
       mt: [10, 10, 10, 21],
       mb: [3, 3, 3, 0],
       ".PayEquity__text-header": {
@@ -482,7 +482,7 @@ export const home = {
     ".Partners__text": {
       mt: [10, 10, 10, 21],
       mb: [9],
-      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/2/2/6"],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/2/2/7", "1/2/2/6"],
       ".Partners__text-header": {
         pr: [0, (t) => t.colWidthMob, (t) => t.colWidthMob, 0],
       },
@@ -599,7 +599,7 @@ export const home = {
         bottom: 0,
         height: ["50%", "50%", "50%", "36%"],
         width: [
-          "25%",
+          "30%",
           "30%",
           "35%",
           (t) => `calc(calc(${t.colWidthDesktop} * 2.5) + 120px)`,
@@ -623,7 +623,7 @@ export const home = {
         ],
         bottom: "0",
         width: [
-          "25%",
+          "30%",
           "30%",
           "35%",
           (t) => `calc(calc(${t.colWidthDesktop} * 3) + 120px)`,
@@ -860,6 +860,7 @@ export const home = {
           (t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`,
           (t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`,
           (t) => `calc(calc(${t.colWidthMob} * 4) + 60px)`,
+          "380px",
           "464px",
         ],
         bottom: [
@@ -880,7 +881,7 @@ export const home = {
         ],
         display: "flex",
         alignItems: "center",
-        right: ["20%", "20%", "20%", "-232px"],
+        right: ["20%", "20%", "20%", "-190px", "-232px"],
 
         ".MPP__graphics-background-circles-circle": {
           transform: [

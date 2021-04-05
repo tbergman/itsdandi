@@ -202,7 +202,7 @@ export const security = {
     },
     ".Workflows__svg": {
       position: ["relative", "relative", "absolute", "relative"],
-      right: ["unset", "unset", -80, "unset"],
+      right: [-80, -40, -80, "unset"],
       top: ["unset", "unset", 0, "unset"],
       height: ["unset", "unset", "100%", "unset"],
     },

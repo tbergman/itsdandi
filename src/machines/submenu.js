@@ -1,4 +1,4 @@
-import { createMachine,assign } from "xstate";
+import { createMachine, assign } from "xstate";
 
 export const SubMenuDesktopMachine = createMachine({
   id: "SubMenuDesktopMachine",
@@ -19,46 +19,52 @@ export const SubMenuDesktopMachine = createMachine({
   },
 });
 
-export const SubMenuMobile__Machine = createMachine({
-  id:'SubMenuMobile',
-  initial:'idle',
-  context:{
-    showNext:true,
-    showPrev:false,
-    currentOffset:0,
-    snapGrid:null
-  },
-  states:{
-    idle:{
-      on:{
-        UPDATENAV:{
-          actions:'updateNav'
+export const SubMenuMobile__Machine = createMachine(
+  {
+    id: "SubMenuMobile",
+    initial: "idle",
+    context: {
+      showNext: true,
+      showPrev: false,
+      currentOffset: 0,
+      snapGrid: null,
+      enabled: true,
+    },
+    states: {
+      idle: {
+        on: {
+          UPDATENAV: {
+            actions: "updateNav",
+          },
+          DISABLE: {
+            actions: "disable",
+            target: "disabled",
+          },
         },
-
-      }
-    }
-  }
-},{
-
-
-  actions:{
-    updateNav: assign({
-      showNext:(_,e)=>{
-        const {snapTo,snapGrid}=e.payload;
-        return snapTo>snapGrid[snapGrid.length-1];
       },
-      showPrev:(_,e)=>{
-        const {snapTo,snapGrid}=e.payload;
-        return snapTo<0;
+      disabled: {
+        type: "final",
       },
-      currentOffset:(_,e)=>e.payload.snapTo,
-      snapGrid:(_,e)=>e.payload.snapGrid
-    }),
+    },
+  },
+  {
+    actions: {
+      updateNav: assign((c, e) => {
+        const { snapTo, snapGrid } = e.payload;
 
-
+        return {
+          showNext: snapTo > snapGrid[snapGrid.length - 1],
+          showPrev: snapTo < 0,
+          currentOffset: e.payload.snapTo,
+          snapGrid: e.payload.snapGrid,
+        };
+      }),
+      disable: assign((c, e) => {
+        return {
+          showPrev: false,
+          showNext: false,
+        };
+      }),
+    },
   }
-
-})
-
-
-  
+);
