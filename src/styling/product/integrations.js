@@ -132,16 +132,22 @@ export const integrations = {
     },
     ".logos": {
       gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "2/3/3/-1"],
-      mb: [0, 0, 0, 7],
+      mb: [0, 0, 0, 6],
+      mr: [0, 0, 0, 4],
       display: "flex",
       flexFlow: ["row wrap"],
-      justifyContent: ["space-between"],
+      justifyContent: [
+        "space-between",
+        "space-between",
+        "space-between",
+        "flex-start",
+      ],
       alignItems: ["center"],
     },
     ".logos__logo": {
       height: ["50px", "50px", "50px", "75px"],
-      mb: [5, 5, 5, 12],
-      mr: [4, 4, 4, 4, 5, 7],
+      mb: [3, 3, 4, 8],
+      mr: [2, 2, 4, 4, 5, 7],
     },
     ".logos__image": {
       height: ["100%"],
