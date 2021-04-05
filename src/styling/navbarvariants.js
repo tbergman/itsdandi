@@ -3,11 +3,11 @@ export const navBarVariants = {
     // global
     bg: "black",
     color: "white",
-    ".BigLogo": {
+    ".mainLogo": {
       bg: "transparent !important",
-      ".BigLogo__logoSvg": {
-        path: { fill: (t) => `${t.colors.white} !important` },
-      },
+    },
+    ".mainLogo__svg": {
+      path: { fill: (t) => `${t.colors.white} !important` },
     },
 
     // desktop
@@ -44,22 +44,12 @@ export const navBarVariants = {
       },
     },
 
-    // ".login": {
+    // ".logo": {
     //   bg: "transparent",
-    //   color: "yellow",
     //   path: {
-    //     stroke: "yellow",
-    //   },
-    //   line: {
-    //     stroke: "yellow",
+    //     fill: "white",
     //   },
     // },
-    ".logo": {
-      bg: "transparent",
-      path: {
-        fill: "white",
-      },
-    },
 
     // mobile
     ".MobileNav__container-wrapper-hamburger": {
@@ -78,11 +68,11 @@ export const navBarVariants = {
     // global
     bg: "violet",
     color: "black",
-    ".BigLogo": {
+    ".mainLogo": {
       bg: "transparent !important",
-      ".BigLogo__logoSvg": {
-        path: { fill: (t) => `${t.colors.black} !important` },
-      },
+    },
+    ".mainLogo__svg": {
+      path: { fill: (t) => `${t.colors.black} !important` },
     },
 
     // desktop
@@ -131,15 +121,6 @@ export const navBarVariants = {
         },
       },
     },
-    // ".login": {
-    //   color: (t) => `${t.colors.blue} !important`,
-    //   path: {
-    //     stroke: (t) => `${t.colors.blue} !important`,
-    //   },
-    //   line: {
-    //     stroke: (t) => `${t.colors.blue} !important`,
-    //   },
-    // },
 
     // mobile
     ".MobileNav__container-wrapper-hamburger": {
@@ -169,11 +150,11 @@ export const navBarVariants = {
     // global
     bg: "#F8F8F8",
     color: "black",
-    ".BigLogo": {
+    ".mainLogo": {
       bg: "transparent !important",
-      ".BigLogo__logoSvg": {
-        path: { fill: (t) => `${t.colors.black} !important` },
-      },
+    },
+    ".mainLogo__svg": {
+      path: { fill: (t) => `${t.colors.black} !important` },
     },
 
     // mobile
@@ -224,25 +205,16 @@ export const navBarVariants = {
         },
       },
     },
-    // ".login": {
-    //   color: (t) => `${t.colors.blue} !important`,
-    //   path: {
-    //     stroke: (t) => `${t.colors.blue} !important`,
-    //   },
-    //   line: {
-    //     stroke: (t) => `${t.colors.blue} !important`,
-    //   },
-    // },
   },
   gray2: {
     // global
     bg: "#FAFAFA",
     color: "black",
-    ".BigLogo": {
+    ".mainLogo": {
       bg: "transparent !important",
-      ".BigLogo__logoSvg": {
-        path: { fill: (t) => `${t.colors.black} !important` },
-      },
+    },
+    ".mainLogo__svg": {
+      path: { fill: (t) => `${t.colors.black} !important` },
     },
 
     // mobile
@@ -293,26 +265,17 @@ export const navBarVariants = {
         },
       },
     },
-    // ".login": {
-    //   color: (t) => `${t.colors.blue} !important`,
-    //   path: {
-    //     stroke: (t) => `${t.colors.blue} !important`,
-    //   },
-    //   line: {
-    //     stroke: (t) => `${t.colors.blue} !important`,
-    //   },
-    // },
   },
 
   white: {
     // global
     bg: "#FFF",
     color: "black",
-    ".BigLogo": {
+    ".mainLogo": {
       bg: "transparent !important",
-      ".BigLogo__logoSvg": {
-        path: { fill: (t) => `${t.colors.black} !important` },
-      },
+    },
+    ".mainLogo__svg": {
+      path: { fill: (t) => `${t.colors.black} !important` },
     },
 
     // mobile
@@ -363,25 +326,16 @@ export const navBarVariants = {
         },
       },
     },
-    // ".login": {
-    //   color: (t) => `${t.colors.blue} !important`,
-    //   path: {
-    //     stroke: (t) => `${t.colors.blue} !important`,
-    //   },
-    //   line: {
-    //     stroke: (t) => `${t.colors.blue} !important`,
-    //   },
-    // },
   },
   lightTurquoise: {
     // global
     bg: "lightTurquoise",
     color: "black",
-    ".BigLogo": {
+    ".mainLogo": {
       bg: "transparent !important",
-      ".BigLogo__logoSvg": {
-        path: { fill: (t) => `${t.colors.black} !important` },
-      },
+    },
+    ".mainLogo__svg": {
+      path: { fill: (t) => `${t.colors.black} !important` },
     },
 
     // mobile
@@ -432,15 +386,6 @@ export const navBarVariants = {
         },
       },
     },
-    // ".login": {
-    //   color: (t) => `${t.colors.blue} !important`,
-    //   path: {
-    //     stroke: (t) => `${t.colors.blue} !important`,
-    //   },
-    //   line: {
-    //     stroke: (t) => `${t.colors.blue} !important`,
-    //   },
-    // },
 
     ".demobtn": {
       "&:hover": {
@@ -468,11 +413,12 @@ export const navBarVariants = {
     // global
     bg: "yellow",
     color: "black",
-    ".BigLogo": {
+    ".mainLogo": {
       bg: "transparent !important",
-      ".BigLogo__logoSvg": {
-        path: { fill: (t) => `${t.colors.black} !important` },
-      },
+    },
+
+    ".mainLogo__svg": {
+      path: { fill: (t) => `${t.colors.black} !important` },
     },
 
     // mobile
@@ -518,14 +464,5 @@ export const navBarVariants = {
         },
       },
     },
-    // ".login": {
-    //   color: (t) => `${t.colors.blue} !important`,
-    //   path: {
-    //     stroke: (t) => `${t.colors.blue} !important`,
-    //   },
-    //   line: {
-    //     stroke: (t) => `${t.colors.blue} !important`,
-    //   },
-    // },
   },
 };

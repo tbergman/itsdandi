@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, useThemeUI } from "theme-ui";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
@@ -20,6 +20,7 @@ const MainLogo = ({
   const [state, send] = useMachine(MainLogo__machine);
   const scrollThreshold = 25;
   const ref = useRef(null);
+  const themeContext = useThemeUI();
 
   // setTimeout hack to remove glitch in logo on load
   const setInitialLogo = async () => {
@@ -52,28 +53,22 @@ const MainLogo = ({
 
   // onLoad set initial
   useEffect(() => {
-    // gsap.set(ref.current, {
-    //   translateY: yOffset,
-    //   transformOrigin: "0% 100%",
-    //   rotate: 90,
-    // });
-
     setInitialLogo();
   }, [width]);
 
-  // // menuOpen
-  // useEffect(() => {
-  //   if (menuOpen && state.matches("large")) {
-  //     send({
-  //       type: "MAKE_STATIC",
-  //       payload: {
-  //         gsap,
-  //         ref: ref,
-  //         scaleTo,
-  //       },
-  //     });
-  //   }
-  // }, [menuOpen]);
+  // menuOpen
+  useEffect(() => {
+    if (menuOpen && state.matches("large")) {
+      send({
+        type: "MAKE_STATIC",
+        payload: {
+          gsap,
+          ref: ref,
+          scaleTo,
+        },
+      });
+    }
+  }, [menuOpen]);
 
   // animate onScroll
   useScrollPosition(
@@ -102,8 +97,8 @@ const MainLogo = ({
       <a
         ref={ref}
         sx={{
-          variant: "components.mainLogo",
-          // ...navBarStyling,
+          ...navBarStyling,
+          ...themeContext.theme.components.mainLogo,
         }}
         className="mainLogo"
       >

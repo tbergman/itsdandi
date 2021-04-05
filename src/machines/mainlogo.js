@@ -42,12 +42,13 @@ export const MainLogo__machine = createMachine(
         const { gsap, ref } = e.payload;
         const letters = ref.current.querySelectorAll(".mainLogo__letter");
 
-        // scale down logo
         gsap.to(ref.current, {
-          scale: 32 / ref.current.clientWidth,
-          transformOrigin: "0% 0%",
+          // scale: 32 / ref.current.clientWidth,
+          height: "32px",
+          width: "32px",
+          transformOrigin: "50% 50%",
           ease: "power2.out",
-          duration: 0.5,
+          duration: 0.25,
         });
 
         // fade out letters
@@ -61,7 +62,8 @@ export const MainLogo__machine = createMachine(
         const letters = ref.current.querySelectorAll(".mainLogo__letter");
 
         gsap.to(ref.current, {
-          scale: scaleTo,
+          height: "32px",
+          width: "32px",
           opacity: 1,
           duration: 0,
         });
@@ -75,7 +77,6 @@ export const MainLogo__machine = createMachine(
         const { gsap, ref } = e.payload;
 
         gsap.to(ref.current, {
-          scale: 1,
           opacity: 1,
           duration: 0.1,
         });
