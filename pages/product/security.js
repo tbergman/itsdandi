@@ -112,7 +112,7 @@ const Product = (props) => {
         windowHeight={windowHeight}
         bg="#fff"
         styling={{
-          mb: [13, 13, 13, 16, 23],
+          mb: [12, 12, 12, 23],
           h1: {
             fontSize: ["36px", "36px", "36px", "52px"],
             lineHeight: ["43px", "43px", "43px", "58px"],

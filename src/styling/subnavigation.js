@@ -13,7 +13,7 @@ export const subnavigation = {
       pl: [
         (t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`,
         (t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`,
-        (t) => `calc(calc(${t.colWidthMob} * 3) + 80px)`,
+        (t) => `calc(calc(${t.colWidthTablet} * 3) + 80px)`,
         0,
       ],
     },
@@ -29,7 +29,7 @@ export const subnavigation = {
       pl: [
         (t) => `calc(${t.colWidthMob} + 40px)`,
         (t) => `calc(${t.colWidthMob} + 40px)`,
-        (t) => `calc(${t.colWidthMob} + 40px)`,
+        (t) => `calc(${t.colWidthTablet} + 40px)`,
         0,
       ],
     },

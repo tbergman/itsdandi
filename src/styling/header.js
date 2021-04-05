@@ -24,6 +24,7 @@ export const header = {
       (t) => `calc(${t.mobileGutters} / -1)`,
       (t) => `calc(${t.mobileGutters} / -1)`,
       (t) => `calc(${t.desktopGutters} / -1)`,
+      (t) => `calc(${t.desktopGutters} / -1)`,
       (t) => `calc(${t.desktopBigGutters} / -1)`,
       (t) => `calc(${t.desktopMassiveGutters} / -1)`,
     ],

@@ -111,7 +111,7 @@ const Product = (props) => {
         windowHeight={windowHeight}
         bg="#F8F8F8"
         styling={{
-          mb: [12, 12, 16, 16],
+          mb: [12, 12, 16, 23],
         }}
       >
         {!isServer() && (

@@ -8,7 +8,8 @@ export const discover = {
         (t) => t.mobileGutters,
         (t) => t.mobileGutters,
         (t) => t.desktopGutters,
-        (t) => `calc(calc(${t.colWidthDesktop} * 2) + 100px)`,
+        (t) =>
+          `calc(calc(calc(${t.colWidthDesktop} * 2) + 60px) + ${t.desktopGutters})`,
         (t) =>
           `calc(calc(calc(${t.colWidthDesktopBig} * 2) + 60px) + ${t.desktopBigGutters})`,
         (t) =>

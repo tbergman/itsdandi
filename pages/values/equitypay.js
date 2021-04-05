@@ -120,7 +120,7 @@ const EquityPay = (props) => {
         }}
         bg="#FFF"
         styling={{
-          mb: [8, 8, 12, 15],
+          mb: [12, 12, 12, 18],
         }}
       ></Header>
       <Compensation

@@ -112,7 +112,7 @@ const DEIMetrics = (props) => {
         }}
         bg="#F8F8F8"
         styling={{
-          mb: [12, 16, 20, 22],
+          mb: [12, 12, 12, 23],
         }}
       >
         {!isServer() && (
