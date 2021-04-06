@@ -95,7 +95,6 @@ const SubMenuMobile = ({ subPages, subMenuStyling }) => {
         },
       });
     } else {
-      console.log("hello ?");
       send({
         type: "DISABLE",
       });
