@@ -29,7 +29,7 @@ export const reporting = {
           `calc(calc(calc(${t.colWidthDesktopMassive} * 8) + 320px) + ${t.desktopMassiveGutters})`,
       ],
       height: ["90px", "90px", "90px", "310px"],
-      bottom: 0,
+      bottom: [0, 0, 0, "-20px", 0],
       right: [0, 0, 0, "40px"],
       overflow: "hidden",
       display: ["none", "none", "none", "flex"],

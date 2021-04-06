@@ -28,7 +28,7 @@ export const pricing = {
     },
     ".graphic": {
       gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/7/2/-1"],
-      mt: [0, 0, 0, 21],
+      mt: [0, 0, 0, "14em", 21],
       width: [
         (t) => `calc(calc(${t.colWidthMob} * 3) + 60px)`,
         (t) => `calc(calc(${t.colWidthMob} * 3) + 60px)`,
@@ -333,6 +333,7 @@ export const pricing = {
             writingMode: ["vertical-rl", "vertical-rl", "vertical-rl", "unset"],
             textAlign: ["right", "right", "right", "unset"],
             lineHeight: ["19.2px"],
+            px: [0, 0, 0, 2, 0],
           },
         },
       },

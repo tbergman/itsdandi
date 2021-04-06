@@ -1,28 +1,4 @@
 export const security = {
-  header: {
-    bg: "transparent",
-    ".text": {
-      gridArea: ["1/1/2/-1"],
-      mt: [18],
-      color: "black",
-      h1: {},
-      h3: {
-        mt: [2],
-        mb: [12],
-        fontWeight: "400",
-        lineHeight: ["30px"],
-        fontSize: ["20px"],
-      },
-    },
-    ".buttonWrapper": {
-      gridArea: ["2/1/3/-1"],
-      position: "relative",
-      ".button": {
-        position: "absolute",
-        top: ["-28px"],
-      },
-    },
-  },
   topcontent: {
     position: "relative",
 
@@ -60,7 +36,7 @@ export const security = {
         (t) => `calc(calc(${t.colWidthDesktopMassive} * 4) + 120px)`,
       ],
       height: ["126px", "126px", "126px", "34em"],
-      bottom: [0, 0, 0, "-6em"],
+      bottom: [0, 0, 0, "-7.4em", "-6em"],
       right: [
         0,
         0,
@@ -92,7 +68,7 @@ export const security = {
     position: "relative",
     zIndex: 9,
     ".toptext": {
-      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/3/2/8"],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/3/2/8", "1/3/2/8"],
       mt: [10, 10, 10, 16],
 
       h2: {},
@@ -132,6 +108,7 @@ export const security = {
               "100%",
               "100%",
               "100%",
+
               (t) => `calc(${t.colWidthDesktop} * 3)`,
               (t) => `calc(${t.colWidthDesktopBig} * 3)`,
               (t) => `calc(${t.colWidthDesktopMassive} * 3)`,

@@ -370,7 +370,7 @@ export const home = {
     pb: [10, 10, 10, "192px"],
     pt: [10, 10, 10, 16],
     ".Carousel__topText": {
-      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/2/2/6"],
+      gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/2/2/7", "1/2/2/6"],
       height: "fit-content",
       mb: [3, 3, 3, 0],
     },
@@ -389,14 +389,28 @@ export const home = {
       maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
     },
     ".Carousel__textWrapper": {
-      gridArea: ["3/1/4/-1", "3/1/4/-1", "3/1/4/-1", "2/2/3/6"],
+      gridArea: ["3/1/4/-1", "3/1/4/-1", "3/1/4/-1", "2/2/3/6", "2/2/3/6"],
       mt: [3, 3, 3, 10, 16],
       maxWidth: ["unset", "unset", "unset", (t) => t.desktopMaxSectionWidth],
     },
 
+    ".Carousel__imageSection": {
+      gridArea: [
+        "2/1/3/-1",
+        "2/1/3/-1",
+        "2/1/3/-1",
+        "1/7/4/-1",
+        "1/7/4/-1",
+        "1/7/3/-1",
+      ],
+      width: "100%",
+      height: "100%",
+      display: "flex",
+      alignItems: "flex-end",
+    },
     ".Carousel__imageWrapper": {
-      gridArea: ["2/1/3/-1", "2/1/3/-1", "2/1/3/-1", "1/7/4/-1"],
       overflow: "hidden",
+      mb: [0, 0, 0, 5, 0],
       position: "relative",
       width: [
         "calc(100vw - 40px)",
@@ -426,8 +440,11 @@ export const home = {
     color: "black",
     ".PayEquity__text": {
       gridArea: ["1/1/2/-1", "1/1/2/-1", "1/1/2/-1", "1/2/2/7", "1/2/2/6"],
-      mt: [10, 10, 10, 21],
+      mt: [10, 10, 10, 0],
       mb: [3, 3, 3, 0],
+      display: ["block", "block", "block", "flex"],
+      flexFlow: "column",
+      justifyContent: "center",
       ".PayEquity__text-header": {
         ".PayEquity__text-header-text": {},
       },
@@ -724,8 +741,8 @@ export const home = {
     },
     ".Quotes__body": {
       fontFamily: "display",
-      fontSize: ["24px", "24px", "24px", "40px"],
-      lineHeight: ["31.2px", "31.2px", "31.2px", "48px"],
+      fontSize: ["24px", "24px", "24px", "36px", "40px"],
+      lineHeight: ["31.2px", "31.2px", "31.2px", "44px", "48px"],
       ml: ["40px", "40px", "40px", "unset"],
     },
     ".Quotes__source": {

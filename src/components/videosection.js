@@ -36,7 +36,6 @@ const VideoSection = ({ content }) => {
             "calc(100vw * .54)",
             "calc(100vw * .54)",
             "calc(100vw * .54)",
-            ,
             "calc(1200px * .54)",
           ],
           position: "relative",
@@ -54,7 +53,7 @@ const VideoSection = ({ content }) => {
           }}
           loop={true}
           // autoPlay
-          playsInline
+          playsInlines
         >
           <source src={video_url} type="video/mp4"></source>
         </video>
