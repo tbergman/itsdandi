@@ -59,10 +59,7 @@ const SubMenuMobile = ({ subPages, subMenuStyling }) => {
     const snapGrid_ = createSnapGrid({ swiperWrapper, swiper });
 
     // has overflow?
-    if (
-      swiperWrapper.current.clientWidth <
-      swiper.current.querySelector(".SubMenu__mobileContainer")
-    ) {
+    if (swiperWrapper.current.clientWidth < swiper.current.clientWidth) {
       send({
         type: "UPDATENAV",
         payload: {
@@ -98,6 +95,7 @@ const SubMenuMobile = ({ subPages, subMenuStyling }) => {
         },
       });
     } else {
+      console.log("hello ?");
       send({
         type: "DISABLE",
       });
