@@ -183,7 +183,7 @@ const Reporting = (props) => {
           <VideoSection
             content={{
               ...props.video1,
-              video_url: "/assets/videos/DISCOVER1.mp4",
+              video_url: "/assets/videos/Reporting-1.mp4",
             }}
           />
         </Section>
@@ -248,7 +248,7 @@ const Reporting = (props) => {
           <VideoSection
             content={{
               ...props.video2,
-              video_url: "/assets/videos/DISCOVER2.mp4",
+              video_url: "/assets/videos/Reporting-2.mp4",
             }}
           />
         </Section>
@@ -293,30 +293,6 @@ const Reporting = (props) => {
           <SimpleList list={props.roles.list} />
         </Section>
       </GridContainer>
-
-      {/* Video Two */}
-      <FreeContainer
-        isDesktop={isDesktop}
-        setNavbarStyling={setNavbarStyling}
-        setSubMenuStyling={setSubMenuStyling}
-        navBarStyling={theme.components.navBarVariants.default}
-        windowHeight={windowHeight}
-        bg={theme.colors.black}
-      >
-        <Section
-          styling={{
-            py: [10],
-            ...theme.components.section.fullScreen,
-          }}
-        >
-          <VideoSection
-            content={{
-              ...props.video3,
-              video_url: "/assets/videos/DISCOVER3.mp4",
-            }}
-          />
-        </Section>
-      </FreeContainer>
 
       {/* Quote */}
       <GridContainer

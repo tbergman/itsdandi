@@ -184,7 +184,7 @@ const Discover = (props) => {
           <VideoSection
             content={{
               ...props.video1,
-              video_url: "/assets/videos/DISCOVER1.mp4",
+              video_url: "/assets/videos/Discover-1.mp4",
             }}
           />
         </Section>
@@ -253,7 +253,7 @@ const Discover = (props) => {
           <VideoSection
             content={{
               ...props.video2,
-              video_url: "/assets/videos/DISCOVER2.mp4",
+              video_url: "/assets/videos/Discover-2.mp4",
             }}
           />
         </Section>
@@ -318,7 +318,7 @@ const Discover = (props) => {
           <VideoSection
             content={{
               ...props.video3,
-              video_url: "/assets/videos/DISCOVER3.mp4",
+              video_url: "/assets/videos/Discover-3.mp4",
             }}
           />
         </Section>
