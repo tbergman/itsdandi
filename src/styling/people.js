@@ -134,6 +134,9 @@ export const people = {
         width: "fit-content",
         color: "inherit",
         cursor: "pointer",
+        "&:hover": {
+          textDecoration: "underline",
+        },
       },
       ".person__name": {
         mt: 0,
@@ -143,9 +146,6 @@ export const people = {
         fontWeight: "400",
         fontFamily: "display",
         lineHeight: ["21px"],
-        "&:hover": {
-          textDecoration: "underline",
-        },
       },
       ".person__title": {
         mt: 0,
@@ -154,9 +154,14 @@ export const people = {
         fontWeight: "400",
         fontFamily: "body",
         lineHeight: ["19.5px"],
-        "&:hover": {
-          textDecoration: "underline",
-        },
+      },
+      ".person__company": {
+        mt: 0,
+        mb: 0,
+        fontSize: ["13px"],
+        fontWeight: "400",
+        fontFamily: "body",
+        lineHeight: ["19.5px"],
       },
     },
   },

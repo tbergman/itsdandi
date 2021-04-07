@@ -12,7 +12,6 @@ import {
 const Person = ({ content, idx }) => {
   const {
     company,
-    company_url,
     linkedin_url,
     name,
     title,
@@ -60,19 +59,9 @@ const Person = ({ content, idx }) => {
       >
         <a href={linkedin_url} target="_blank" className="person__link">
           <Styled.p className="person__name">{name}</Styled.p>
+          <Styled.p className="person__title">{title}</Styled.p>
+          <Styled.p className="person__company">{company}</Styled.p>
         </a>
-
-        {company_url ? (
-          <a href={company_url} target="_blank" className="person__link">
-            <Styled.p className="person__title">
-              {title}, {company}
-            </Styled.p>
-          </a>
-        ) : (
-          <Styled.p className="person__title">
-            {title}, {company}
-          </Styled.p>
-        )}
       </motion.div>
     </div>
   );
