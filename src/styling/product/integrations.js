@@ -137,9 +137,9 @@ export const integrations = {
       display: "flex",
       flexFlow: ["row wrap"],
       justifyContent: [
-        "space-between",
-        "space-between",
-        "space-between",
+        // "space-between",
+        // "space-between",
+        // "space-between",
         "flex-start",
       ],
       alignItems: ["center"],
