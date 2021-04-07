@@ -16,12 +16,16 @@ const SimpleList = ({ list, shouldSlideUp }) => {
           key={i}
           sx={{
             mb: [3],
-            pl: [2],
+            pl: [3],
             position: "relative",
             "&:after": {
-              content: "'–'",
+              content: "''",
               position: "absolute",
-              top: "1px",
+              top: "25%",
+              height: "8px",
+              width: "8px",
+              borderRadius: "8px",
+              bg: "blue",
               left: [0],
             },
           }}

@@ -68,7 +68,20 @@ const Curious = ({
               custom={1}
               className="section2"
             >
-              <Styled.p>{lineBreaks(body1)}</Styled.p>
+              <Styled.p>
+                Curious about working with a Dandi Marketplace Partner? Contact
+                us at{" "}
+                <a
+                  style={{
+                    textDecoration: "none",
+                  }}
+                  href="mailto:marketplace@itsdandi.com"
+                >
+                  marketplace@itsdandi.com
+                </a>
+                . We’re happy to connect you to our partners, even if you’re not
+                a Dandi client.
+              </Styled.p>
             </motion.div>
           </div>
 
